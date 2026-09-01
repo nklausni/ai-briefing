@@ -15,7 +15,7 @@ Aufruf:
     python3 scripts/render.py
 """
 
-import json, math, html as _html, datetime
+import json, math, html as _html, datetime, re
 from pathlib import Path
 
 import history as history_mod
@@ -365,12 +365,32 @@ def nav_html(topics, active_id):
     return '<nav class="nav">' + "".join(links) + '</nav>'
 
 
+GERMAN_MONTHS = (
+    "Januar", "Februar", "März", "April", "Mai", "Juni",
+    "Juli", "August", "September", "Oktober", "November", "Dezember",
+)
+
+
+def generated_date_text(value):
+    """Formatiert ein kanonisches ISO-Datum; ungültige Werte bleiben unsichtbar."""
+    if not isinstance(value, str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
+        return ""
+    try:
+        date = datetime.date.fromisoformat(value)
+    except ValueError:
+        return ""
+    return f"Zuletzt aktualisiert: {date.day}. {GERMAN_MONTHS[date.month - 1]} {date.year}"
+
+
 def footer_html(meta):
+    updated = generated_date_text(meta.get("generated"))
+    updated_line = f'<br><span class="footer-updated">{esc(updated)}</span>' if updated else ""
     return (f'<div class="footer">{esc(meta.get("disclaimer", ""))}<br>'
             f'Aufbau nach dem Tech-Radar-Prinzip (Ringe = Impact, Segmente = Kategorie), '
             f'Design adaptiert von <a href="https://github.com/GodModeAI2025/private-apple-briefing" '
             f'target="_blank" rel="noopener">private-apple-briefing</a> (MIT). '
-            f'Statischer Export, kein JavaScript. Auswahl per Recherche — keine Gewähr auf Vollständigkeit.</div>')
+            f'Statischer Export, kein JavaScript. Auswahl per Recherche — keine Gewähr auf Vollständigkeit.'
+            f'{updated_line}</div>')
 
 
 def build_topic_page(topic, meta, topics, range_key="today"):

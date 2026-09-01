@@ -88,6 +88,22 @@ class TestRenderVariants(unittest.TestCase):
         sub = (render.SITE / "7d" / "index.html").read_text(encoding="utf-8")
         self.assertIn('<div class="range-period">4.–10. Juni 2026</div>', sub)
 
+    def test_generated_date_appears_in_every_page_footer(self):
+        expected = "Zuletzt aktualisiert: 10. Juni 2026"
+        for sub in ("", "7d", "14d", "30d"):
+            for page in ("index.html", "ai-news.html"):
+                rendered = (render.SITE / sub / page).read_text(encoding="utf-8")
+                footer = rendered.split('<div class="footer">', 1)[1].split("</div>", 1)[0]
+                self.assertIn(expected, footer, f"fehlt: {sub}/{page}")
+
+    def test_footer_omits_update_text_for_missing_or_invalid_generated_date(self):
+        for generated in (None, "", "10.06.2026", "2026-02-30"):
+            meta = {"disclaimer": "D."}
+            if generated is not None:
+                meta["generated"] = generated
+            with self.subTest(generated=generated):
+                self.assertNotIn("Zuletzt aktualisiert:", render.footer_html(meta))
+
     def test_rerender_is_idempotent(self):
         render.main()
         h = json.loads(history.HISTORY.read_text(encoding="utf-8"))
