@@ -1,6 +1,6 @@
 # AI-Briefing
 
-Privates, automatisch befülltes Briefing zu vier Themen — im Stil des
+Öffentliches, automatisch befülltes Briefing zu acht Themen — im Stil des
 [private-apple-briefing](https://github.com/GodModeAI2025/private-apple-briefing) (MIT),
 dessen Renderer/Design hier adaptiert wurden.
 
@@ -10,6 +10,10 @@ dessen Renderer/Design hier adaptiert wurden.
 - Lokale LLMs
 - Agentic Engineering / Vibe Coding
 - AI Tools
+- Context Engineering
+- AI Security
+- AI Governance
+- Enterprise
 
 Pro Bereich gibt es eine Detailseite mit einem **Radar** (Ringe = Impact, innen = wichtiger;
 Segmente = Kategorie) und den Meldungen im Detail inkl. Quell-Links. Die Übersichtsseite
@@ -90,28 +94,17 @@ Impact-Skala: 2 Nennenswert · 3 Relevant · 4 Stark · 5 Game-Changer.
 
 ## Tägliche Aktualisierung
 
-**Aktiver Weg (ohne API-Key):** Ein geplanter Cowork-Task (`ai-briefing-daily`, täglich 7:00)
-recherchiert jeden Morgen die News der letzten 24h zu den acht Bereichen — Web-Recherche
-und Second Brain „Collana Gildentreffen" —,
-aktualisiert `data/briefing.json` und ruft
-`scripts/render.py` auf. Die Recherche übernimmt Claude in der App über das bestehende Abo;
-der Task läuft, solange die Claude-App offen ist (sonst beim nächsten Start). Zeit/Prompt
-unter „Scheduled" in der Seitenleiste änderbar.
+**Aktiver Weg (ohne zusätzlichen Recherche-API-Key):** Ein Hermes-Cronjob
+(`ai-briefing-daily`, täglich um 08:00 Uhr Europe/Berlin) recherchiert die Meldungen
+der letzten 24 Stunden mit den Hermes-Web-Tools. Er aktualisiert ausschließlich
+`data/briefing.json`, führt anschließend `scripts/render.py` aus und pusht die dadurch
+aktualisierten Daten und statischen Seiten auf `main`.
 
-**Optional, nur für Standalone/Server (`scripts/update.py`):** Wer das Update unabhängig von
-der App per Cron laufen lassen will, nutzt `update.py`. Das braucht
-`pip install anthropic` und einen `ANTHROPIC_API_KEY` (pay-per-use):
+`scripts/update.py` ist nur ein optionaler Standalone-Weg und wird von der Hermes-Routine
+nicht verwendet.
 
-```bash
-export ANTHROPIC_API_KEY=sk-ant-...
-python3 scripts/update.py            # letzte 24h, dann render
-python3 scripts/update.py --dry-run  # Pipeline testen (überschreibt briefing.json mit Platzhaltern!)
-```
+## Veröffentlichung
 
-Für den App-Weg wird `update.py` nicht gebraucht.
-
-## Veröffentlichen (optional)
-
-Der `site/`-Ordner ist eine fertige statische Seite. Zum Hosten auf GitHub Pages den
-Ordner committen und Pages auf `/site` zeigen lassen (eine `.nojekyll`-Datei liegt bereits
-dort). Lokal genügt das Öffnen von `site/index.html` im Browser.
+Der Workflow `.github/workflows/pages.yml` veröffentlicht bei Änderungen unter `site/`
+die statische Seite über GitHub Pages. Lokal genügt das Öffnen von `site/index.html` im
+Browser.
