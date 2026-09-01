@@ -1,0 +1,117 @@
+# AI-Briefing
+
+Privates, automatisch befülltes Briefing zu vier Themen — im Stil des
+[private-apple-briefing](https://github.com/GodModeAI2025/private-apple-briefing) (MIT),
+dessen Renderer/Design hier adaptiert wurden.
+
+**Themen (Bereiche):**
+
+- AI News
+- Lokale LLMs
+- Agentic Engineering / Vibe Coding
+- AI Tools
+
+Pro Bereich gibt es eine Detailseite mit einem **Radar** (Ringe = Impact, innen = wichtiger;
+Segmente = Kategorie) und den Meldungen im Detail inkl. Quell-Links. Die Übersichtsseite
+bündelt die Top-Meldungen aller Bereiche.
+
+## Aufbau
+
+```
+AI Briefing/
+├── index.html              ← Redirect auf site/index.html
+├── data/
+│   ├── briefing.json       ← Datenquelle des Tages (Inhalt aller Bereiche)
+│   └── history.json        ← kumulativer Pool aller bisherigen Meldungen (Historie)
+├── scripts/
+│   ├── history.py          ← Pool: Ingest/Dedup, Zeitraum-Filter
+│   └── render.py           ← Generator: merged briefing.json in den Pool → schreibt site/
+└── site/                   ← generierte statische Seiten (kein JavaScript)
+    ├── 7d/ · 14d/ · 30d/   ← Zeitraum-Ansichten (letzte 7/14/30 Tage)
+    ├── index.html
+    ├── ai-news.html
+    ├── lokale-llms.html
+    ├── agentic-engineering.html
+    ├── ai-tools.html
+    ├── context-engineering.html
+    ├── ai-security.html
+    ├── ai-governance.html
+    └── enterprise.html
+```
+
+Acht Themenbereiche. Bereiche werden auf der Übersicht nach
+`group` gebündelt (Überblick, Praxis, Sicherheit & Recht, Markt & Branchen).
+
+## Neu generieren
+
+```bash
+python3 scripts/render.py
+```
+
+Liest `data/briefing.json` und schreibt alle Seiten neu nach `site/`. Keine
+Abhängigkeiten außer der Python-Standardbibliothek.
+
+## Historie & Zeiträume
+
+`render.py` merged bei jedem Lauf die Items aus `briefing.json` in den
+kumulativen Pool `data/history.json` (dedupliziert: identischer Titel, oder
+gemeinsame Quell-URL plus ähnlicher Titel; idempotent — mehrfaches Rendern
+erzeugt keine Duplikate). Vergangene Meldungen gehen beim täglichen Update
+damit nicht mehr verloren.
+
+Die Seite wird in vier Ansichten gerendert, umschaltbar über die Zeile
+„Zeitraum" in der Navigation (reine Links, weiterhin kein JavaScript):
+
+- **Heute** (`site/`) — das aktuelle Tagesbriefing, wie bisher.
+- **7 / 14 / 30 Tage** (`site/7d/`, `site/14d/`, `site/30d/`) — Meldungen aus
+  dem Pool im jeweiligen Zeitfenster, je Topic neu nummeriert (sortiert nach
+  Impact, dann Datum). Lede ist die jüngste Tages-Summary; der
+  „Überspringen"-Block erscheint nur in der Heute-Ansicht.
+
+Tests: `python3 scripts/test/test_history.py && python3 scripts/test/test_render.py`
+
+## Inhalt bearbeiten
+
+Alles steckt in `data/briefing.json`:
+
+- `meta` — Titel, Untertitel, Zeitraum (`period`), Intro, Disclaimer.
+- `topics[]` — die vier Bereiche. Je Bereich:
+  - `summary` — Lede-Satz (erscheint auch auf der Übersicht).
+  - `angle` — der Blickwinkel, aus dem der Impact bewertet wird.
+  - `items[]` — Meldungen, je mit:
+    - `n` (Nummer, fortlaufend ab 1, = Punkt im Radar)
+    - `title`, `date`, `summary`
+    - `category` — eine von: `modelle`, `tools`, `agents`, `lokal`, `security`, `business`
+    - `impact` — 2–5 (1 = Routine gehört unter „Überspringen")
+    - `sources[]` — `{ "label": "...", "url": "..." }` (beliebig viele)
+  - `skip[]` — Themen ohne eigenen Eintrag, je `{ "reason": "...", "text": "..." }`.
+
+Impact-Skala: 2 Nennenswert · 3 Relevant · 4 Stark · 5 Game-Changer.
+
+## Tägliche Aktualisierung
+
+**Aktiver Weg (ohne API-Key):** Ein geplanter Cowork-Task (`ai-briefing-daily`, täglich 7:00)
+recherchiert jeden Morgen die News der letzten 24h zu den acht Bereichen — Web-Recherche
+und Second Brain „Collana Gildentreffen" —,
+aktualisiert `data/briefing.json` und ruft
+`scripts/render.py` auf. Die Recherche übernimmt Claude in der App über das bestehende Abo;
+der Task läuft, solange die Claude-App offen ist (sonst beim nächsten Start). Zeit/Prompt
+unter „Scheduled" in der Seitenleiste änderbar.
+
+**Optional, nur für Standalone/Server (`scripts/update.py`):** Wer das Update unabhängig von
+der App per Cron laufen lassen will, nutzt `update.py`. Das braucht
+`pip install anthropic` und einen `ANTHROPIC_API_KEY` (pay-per-use):
+
+```bash
+export ANTHROPIC_API_KEY=sk-ant-...
+python3 scripts/update.py            # letzte 24h, dann render
+python3 scripts/update.py --dry-run  # Pipeline testen (überschreibt briefing.json mit Platzhaltern!)
+```
+
+Für den App-Weg wird `update.py` nicht gebraucht.
+
+## Veröffentlichen (optional)
+
+Der `site/`-Ordner ist eine fertige statische Seite. Zum Hosten auf GitHub Pages den
+Ordner committen und Pages auf `/site` zeigen lassen (eine `.nojekyll`-Datei liegt bereits
+dort). Lokal genügt das Öffnen von `site/index.html` im Browser.

@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI-Radar — Enterprise &amp; Vertikalisierung — 3. August – 1. September 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#0075de;
+    --blue-active:#005bab;
+    --badge-bg:#f2f9ff;
+    --badge-text:#097fe8;
+    --white:#ffffff;
+    --wg10:#f6f5f4;
+    --wg20:#efedea;
+    --wg40:rgba(0,0,0,0.10);
+    --wg60:#a39e98;
+    --wg90:#615d59;
+    --ink:#31302e;
+    --wg100:rgba(0,0,0,0.95);
+    --radius:12px;
+    --radius-lg:16px;
+    --pad:24px;
+    --shadow-card:rgba(0,0,0,0.04) 0px 4px 18px, rgba(0,0,0,0.027) 0px 2.025px 7.84688px, rgba(0,0,0,0.02) 0px 0.8px 2.925px, rgba(0,0,0,0.01) 0px 0.175px 1.04062px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:var(--white);color:var(--wg100);
+    font-family:Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+    font-feature-settings:"lnum","locl";
+    -webkit-font-smoothing:antialiased;padding:48px clamp(16px,4vw,56px) 64px;line-height:1.5}
+  .sheet{max-width:1280px;margin:0 auto}
+  .impuls{display:none}
+  header.top{padding-bottom:20px;border-bottom:1px solid var(--wg40)}
+  .top h1{font-weight:700;font-size:clamp(30px,3.6vw,46px);color:var(--wg100);
+    letter-spacing:-0.03em;margin:0;line-height:1.04}
+  .subrow{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;
+    flex-wrap:wrap;margin-top:12px}
+  .subs{display:flex;flex-direction:column;gap:6px;min-width:0}
+  .sub{font-size:14px;font-weight:500;color:var(--wg90);line-height:1.43}
+  .meta-right{font-size:13px;color:var(--wg90);text-align:right;line-height:1.6;font-weight:500;flex:none}
+  .nav{margin:18px 0 0;font-size:13px;font-weight:500}
+  .nav a{color:var(--wg90);text-decoration:none;margin-right:14px;transition:color .2s ease}
+  .nav a:hover{color:var(--blue)}
+  .nav a.active{color:var(--wg100);font-weight:700}
+  .range-sw{font-weight:500}
+  .range-sw a{color:var(--wg90);text-decoration:none;margin-left:12px;transition:color .2s ease}
+  .range-sw a:first-child{margin-left:0}
+  .range-sw a:hover{color:var(--blue)}
+  .range-sw a.active{color:var(--wg100);font-weight:700}
+  .range-period{color:var(--wg60)}
+  .lede{font-size:clamp(17px,1.9vw,20px);color:var(--wg100);font-weight:500;max-width:70ch;
+    margin:24px 0 32px;line-height:1.5;letter-spacing:-0.0125em}
+  .board{margin:8px 0 0}
+  @media (min-width:960px){
+    .board{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);
+      gap:clamp(28px,3.5vw,56px);align-items:start}
+  }
+  .panel{background:var(--wg10);border:1px solid var(--wg40);border-radius:var(--radius-lg);
+    box-shadow:var(--shadow-card);padding:clamp(18px,3vw,32px);margin:0}
+  svg{width:100%;height:auto;display:block;overflow:visible}
+  .panel svg{max-width:600px;margin-left:auto;margin-right:auto}
+  .sector-label{font-family:Inter,Arial,sans-serif;font-weight:700;font-size:13px;letter-spacing:-0.01em}
+  .axis-label{font-family:Inter,Arial,sans-serif;font-size:10.5px;font-weight:600;fill:var(--wg90);letter-spacing:0}
+  .blip-num{font-family:Inter,Arial,sans-serif;font-weight:700;font-size:12px}
+  .key{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;margin:18px 0 0;
+    font-size:13px;color:var(--wg90);font-weight:500}
+  .key b{color:var(--wg100);font-weight:600}
+  .section{margin:48px 0 20px}
+  .section h2{font-weight:700;font-size:clamp(24px,3vw,32px);color:var(--wg100);margin:0;letter-spacing:-0.03em;line-height:1.05}
+  .scale{max-width:none;margin:0;background:var(--wg10);border:1px solid var(--wg40);
+    border-radius:var(--radius-lg);box-shadow:var(--shadow-card);padding:24px 26px}
+  .scale h3{font-weight:700;font-size:18px;color:var(--wg100);margin:0 0 8px;letter-spacing:-0.0125em}
+  .scale .scale-lead{font-size:14px;color:var(--wg90);margin:0 0 16px;line-height:1.5}
+  .scale ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+  .scale li{display:flex;gap:14px;align-items:baseline;font-size:14px;line-height:1.45}
+  .scale .sc-dots{letter-spacing:1px;color:var(--ink);flex:none;min-width:64px;font-weight:700}
+  .scale .sc-name{font-weight:600;color:var(--wg100)}
+  .scale .sc-desc{color:var(--wg90)}
+  .scale .sc-note{font-size:13px;color:var(--wg90);margin:15px 0 0;line-height:1.5}
+  .detail-list{display:flex;flex-direction:column}
+  @media (min-width:1200px){
+    .detail-list{display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(40px,4vw,72px)}
+    .detail-list .dcard:nth-child(2){border-top:none}
+    .dcard p{max-width:none}
+  }
+  .dcard{display:flex;gap:16px;padding:24px 0;border-top:1px solid var(--wg40)}
+  .dcard:first-child{border-top:none}
+  .dnum{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:14px;margin-top:2px}
+  .dbody{flex:1;min-width:0}
+  .dtitle{font-weight:700;font-size:clamp(19px,2.2vw,22px);line-height:1.27;letter-spacing:-0.0125em;color:var(--wg100);margin:0 0 9px}
+  .dtitle-link{color:inherit;text-decoration:none}
+  .dtitle-link:hover{color:var(--blue);text-decoration:underline}
+  .dmeta{font-size:13px;color:var(--wg90);font-weight:500;margin-bottom:13px;display:flex;align-items:center;flex-wrap:wrap;gap:8px}
+  .cat-badge{display:inline-flex;align-items:center;border-radius:9999px;padding:3px 10px;
+    font-size:12px;font-weight:600;letter-spacing:0.0125em;line-height:1.33}
+  .dmeta-src{color:var(--wg90)}
+  .dmeta-imp{color:var(--wg90);font-weight:600}
+  .dcard p{margin:0 0 14px;font-size:16px;line-height:1.55;color:var(--wg100);max-width:68ch}
+  .dsources{font-size:14px;color:var(--wg90);display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+  .dsources-k{font-weight:600;color:var(--wg90)}
+  .dots{letter-spacing:1px;color:var(--ink)}
+  .dlink{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--blue);
+    text-decoration:none;transition:color .2s ease}
+  .dlink .arw{transition:transform .2s ease}
+  .dlink:hover{text-decoration:underline;color:var(--blue-active)}
+  .dlink:hover .arw{transform:translateX(3px)}
+  .skip{margin-top:16px;background:var(--wg10);border:1px solid var(--wg40);border-radius:var(--radius-lg);
+    box-shadow:var(--shadow-card);padding:22px 26px}
+  .skip-lead{margin:0 0 16px;font-size:14px;color:var(--wg90);line-height:1.55}
+  .skip ul{margin:0;padding-left:20px}
+  .skip li{font-size:15px;line-height:1.6;color:var(--wg100);margin-bottom:11px}
+  .skip li::marker{color:var(--wg60)}
+  .skip li:last-child{margin-bottom:0}
+  .skip li b{font-weight:600;color:var(--wg100)}
+  .footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--wg40);font-size:13px;color:var(--wg90);line-height:1.6}
+  .footer a{color:var(--blue);text-decoration:none}
+  .footer a:hover{text-decoration:underline}
+  .ov-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:20px;margin-top:12px}
+  .ov-card{background:var(--white);border:1px solid var(--wg40);border-radius:var(--radius-lg);
+    box-shadow:var(--shadow-card);padding:22px 24px;display:flex;flex-direction:column;
+    transition:border-color .2s ease, box-shadow .2s ease}
+  .ov-card:hover{border-color:var(--wg60);box-shadow:rgba(0,0,0,.07) 0px 8px 24px}
+  .ov-card-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:8px}
+  .ov-card h3{margin:0;font-size:19px;font-weight:700;color:var(--wg100);letter-spacing:-0.0125em}
+  .ov-count{flex:none;font-size:12px;font-weight:600;color:var(--wg90);background:var(--wg10);
+    border:1px solid var(--wg40);border-radius:9999px;padding:2px 10px;white-space:nowrap}
+  .ov-card .ov-sub{font-size:13px;font-weight:500;color:var(--wg90);line-height:1.45;margin-bottom:14px;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .ov-list{list-style:none;margin:0 0 16px;padding:0;display:flex;flex-direction:column;gap:10px;flex:1}
+  .ov-list li{display:flex;gap:10px;align-items:baseline;font-size:14px;line-height:1.4}
+  .ov-dot{flex:none;width:9px;height:9px;border-radius:50%;margin-top:5px}
+  .ov-item-t{color:var(--wg100);font-weight:500;text-decoration:none}
+  a.ov-item-t:hover{color:var(--blue);text-decoration:underline}
+  .ov-item-d{color:var(--ink);letter-spacing:1px;font-size:11px;font-weight:700;white-space:nowrap;margin-left:auto;padding-left:8px}
+  .ov-link{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--blue);text-decoration:none;transition:color .2s ease}
+  .ov-link:hover{text-decoration:underline;color:var(--blue-active)}
+  .ov-empty{font-size:14px;color:var(--wg90);font-style:italic;flex:1}
+  .ov-group{margin:44px 0 0}
+  .ov-group h2{font-weight:700;font-size:clamp(19px,2.2vw,24px);color:var(--wg100);margin:0;letter-spacing:-0.02em}
+  .ov-group:first-of-type{margin-top:10px}
+  .repo-list{display:flex;flex-direction:column;margin-top:8px}
+  .repo{display:flex;gap:16px;padding:22px 0;border-top:1px solid var(--wg40)}
+  .repo:first-child{border-top:none}
+  .repo-rank{flex:none;width:30px;height:30px;border-radius:8px;display:grid;place-items:center;font-weight:700;font-size:14px;background:var(--wg10);border:1px solid var(--wg40);color:var(--wg90);margin-top:2px}
+  .repo-body{flex:1;min-width:0}
+  .repo-name{font-weight:700;font-size:clamp(18px,2.1vw,21px);margin:0 0 8px;letter-spacing:-0.0125em}
+  .repo-name a{color:var(--blue);text-decoration:none}
+  .repo-name a:hover{text-decoration:underline;color:var(--blue-active)}
+  .repo-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+  .repo-badge{display:inline-flex;align-items:center;gap:5px;border-radius:9999px;padding:3px 11px;font-size:12px;font-weight:600;color:var(--wg100);background:var(--wg10);border:1px solid var(--wg40)}
+  .repo-badge.area{background:#f2f9ff;border-color:#cfe6fb;color:var(--badge-text)}
+  .repo-badge.week{background:#eaf6ec;border-color:#cfe8d3;color:#1a7f37}
+  .repo-body p{margin:0 0 8px;font-size:16px;line-height:1.55;color:var(--wg100);max-width:68ch}
+  .repo-note{font-size:13px;color:var(--wg90)}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <header class="top">
+    <h1>AI-Radar · Enterprise &amp; Vertikalisierung</h1>
+    <div class="subrow">
+      <div class="subs">
+        <div class="sub">Briefing-Infografik · Stand der AI-Welt für Enterprise &amp; Vertikalisierung</div>
+        <div class="sub">Blickwinkel: AI in Branchen und Unternehmen: Vertikalisierung, Verdrängung klassischer Software und Augmentation</div>
+      </div>
+      <div class="meta-right">
+        <nav class="range-sw"><a href="../enterprise.html">Heute</a><a href="../7d/enterprise.html">7 Tage</a><a href="../14d/enterprise.html">14 Tage</a><a href="../30d/enterprise.html" class="active">30 Tage</a></nav><div class="range-period">3. August – 1. September 2026</div>
+      </div>
+    </div>
+  </header>
+  <nav class="nav"><a href="index.html">Übersicht</a><a href="ai-news.html">AI News</a><a href="lokale-llms.html">Lokale LLMs</a><a href="agentic-engineering.html">Agentic Engineering / Vibe Coding</a><a href="ai-tools.html">AI Tools</a><a href="context-engineering.html">Context &amp; Prompt Engineering</a><a href="ai-security.html">AI Security &amp; Safety</a><a href="ai-governance.html">AI Governance &amp; Regulierung</a><a href="enterprise.html" class="active">Enterprise &amp; Vertikalisierung</a></nav>
+
+  <p class="lede">OpenAI diversifiziert sein Geschäftsmodell gleich zweifach - mit einer auf 1 Milliarde Dollar Jahresrate wachsenden Werbeplattform und erfolgsbasierter Bezahlung für Großkunden -, während Nvidia sich über MediaTek gegen den Eigenchip-Trend absichert und das Pentagon ChatGPT sowie Grok als Regierungs-Varianten einführt.</p>
+
+  <div class="board">
+    <div class="board-left">
+      <div class="panel">
+<svg viewBox="-70 -20 940 860" role="img" aria-label="AI-Radar">
+<circle cx="400" cy="400" r="320" fill="rgba(49,48,46,.012)" stroke="#e3e0dc" stroke-width="1"/>
+<circle cx="400" cy="400" r="256" fill="rgba(49,48,46,.022)" stroke="#e3e0dc" stroke-width="1"/>
+<circle cx="400" cy="400" r="198.4" fill="rgba(49,48,46,.038)" stroke="#e3e0dc" stroke-width="1"/>
+<circle cx="400" cy="400" r="144" fill="rgba(49,48,46,.055)" stroke="#e3e0dc" stroke-width="1"/>
+<circle cx="400" cy="400" r="83.2" fill="rgba(0,117,222,.06)" stroke="#e3e0dc" stroke-width="1"/>
+<line x1="400" y1="400" x2="80" y2="400" stroke="#e3e0dc" stroke-width="1"/>
+<line x1="400" y1="400" x2="240" y2="122.87" stroke="#e3e0dc" stroke-width="1"/>
+<line x1="400" y1="400" x2="560" y2="122.87" stroke="#e3e0dc" stroke-width="1"/>
+<line x1="400" y1="400" x2="720" y2="400" stroke="#e3e0dc" stroke-width="1"/>
+<line x1="400" y1="400" x2="560" y2="677.13" stroke="#e3e0dc" stroke-width="1"/>
+<line x1="400" y1="400" x2="240" y2="677.13" stroke="#e3e0dc" stroke-width="1"/>
+<circle cx="400" cy="400" r="3" fill="#0075de"/>
+<g>
+<rect x="318.5" y="330.21" width="92.8" height="16" rx="8" fill="#ffffff" opacity="0.94" stroke="#e3e0dc" stroke-width="1"/>
+<text x="364.9" y="342.21" class="axis-label" text-anchor="middle">Game-Changer</text>
+</g>
+<g>
+<rect x="310.5" y="277.55" width="48" height="16" rx="8" fill="#ffffff" opacity="0.94" stroke="#e3e0dc" stroke-width="1"/>
+<text x="334.5" y="289.55" class="axis-label" text-anchor="middle">Stark</text>
+</g>
+<g>
+<rect x="273.7" y="230.44" width="67.2" height="16" rx="8" fill="#ffffff" opacity="0.94" stroke="#e3e0dc" stroke-width="1"/>
+<text x="307.3" y="242.44" class="axis-label" text-anchor="middle">Relevant</text>
+</g>
+<g>
+<rect x="235.3" y="180.56" width="86.4" height="16" rx="8" fill="#ffffff" opacity="0.94" stroke="#e3e0dc" stroke-width="1"/>
+<text x="278.5" y="192.56" class="axis-label" text-anchor="middle">Nennenswert</text>
+</g>
+<g>
+<rect x="216.1" y="125.13" width="60.8" height="16" rx="8" fill="#ffffff" opacity="0.94" stroke="#e3e0dc" stroke-width="1"/>
+<text x="246.5" y="137.13" class="axis-label" text-anchor="middle">Routine</text>
+</g>
+<text x="96.89" y="229" class="sector-label" text-anchor="end" fill="#1f1d1b">Modelle</text>
+<text x="400" y="54" class="sector-label" text-anchor="middle" fill="#1f1d1b">Tools &amp; IDEs</text>
+<text x="703.11" y="229" class="sector-label" text-anchor="start" fill="#1f1d1b">Agents &amp; Frameworks</text>
+<text x="703.11" y="579" class="sector-label" text-anchor="start" fill="#1f1d1b">Open Weight / Lokal</text>
+<text x="400" y="754" class="sector-label" text-anchor="middle" fill="#1f1d1b">Security &amp; Governance</text>
+<text x="96.89" y="579" class="sector-label" text-anchor="end" fill="#1f1d1b">Business &amp; Markt</text>
+<g>
+<circle cx="381.9" cy="418.1" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="381.9" y="422.1" class="blip-num" text-anchor="middle" fill="#1f1d1b">1</text>
+</g>
+<g>
+<circle cx="363.97" cy="420.8" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="363.97" y="424.8" class="blip-num" text-anchor="middle" fill="#1f1d1b">2</text>
+</g>
+<g>
+<circle cx="344.36" cy="414.91" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="344.36" y="418.91" class="blip-num" text-anchor="middle" fill="#1f1d1b">3</text>
+</g>
+<g>
+<circle cx="414.47" cy="377.38" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="414.47" y="381.38" class="blip-num" text-anchor="middle" fill="#1f1d1b">4</text>
+</g>
+<g>
+<circle cx="407.77" cy="388.99" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="407.77" y="392.99" class="blip-num" text-anchor="middle" fill="#1f1d1b">5</text>
+</g>
+<g>
+<circle cx="400.06" cy="399.92" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="400.06" y="403.92" class="blip-num" text-anchor="middle" fill="#1f1d1b">6</text>
+</g>
+<g>
+<circle cx="391.39" cy="410.11" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="391.39" y="414.11" class="blip-num" text-anchor="middle" fill="#1f1d1b">7</text>
+</g>
+<g>
+<circle cx="381.81" cy="419.48" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="381.81" y="423.48" class="blip-num" text-anchor="middle" fill="#1f1d1b">8</text>
+</g>
+<g>
+<circle cx="371.37" cy="427.98" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="371.37" y="431.98" class="blip-num" text-anchor="middle" fill="#1f1d1b">9</text>
+</g>
+<g>
+<circle cx="360.15" cy="435.56" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="360.15" y="439.56" class="blip-num" text-anchor="middle" fill="#1f1d1b">10</text>
+</g>
+<g>
+<circle cx="348.19" cy="442.15" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="348.19" y="446.15" class="blip-num" text-anchor="middle" fill="#1f1d1b">11</text>
+</g>
+<g>
+<circle cx="335.58" cy="447.71" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="335.58" y="451.71" class="blip-num" text-anchor="middle" fill="#1f1d1b">12</text>
+</g>
+<g>
+<circle cx="322.38" cy="452.19" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="322.38" y="456.19" class="blip-num" text-anchor="middle" fill="#1f1d1b">13</text>
+</g>
+<g>
+<circle cx="308.65" cy="455.55" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="308.65" y="459.55" class="blip-num" text-anchor="middle" fill="#1f1d1b">14</text>
+</g>
+<g>
+<circle cx="294.49" cy="457.76" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="294.49" y="461.76" class="blip-num" text-anchor="middle" fill="#1f1d1b">15</text>
+</g>
+<g>
+<circle cx="279.95" cy="458.78" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="279.95" y="462.78" class="blip-num" text-anchor="middle" fill="#1f1d1b">16</text>
+</g>
+<g>
+<circle cx="265.13" cy="458.58" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="265.13" y="462.58" class="blip-num" text-anchor="middle" fill="#1f1d1b">17</text>
+</g>
+<g>
+<circle cx="250.11" cy="457.15" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="250.11" y="461.15" class="blip-num" text-anchor="middle" fill="#1f1d1b">18</text>
+</g>
+<g>
+<circle cx="234.96" cy="454.46" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="234.96" y="458.46" class="blip-num" text-anchor="middle" fill="#1f1d1b">19</text>
+</g>
+<g>
+<circle cx="219.77" cy="450.5" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="219.77" y="454.5" class="blip-num" text-anchor="middle" fill="#1f1d1b">20</text>
+</g>
+<g>
+<circle cx="204.63" cy="445.26" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="204.63" y="449.26" class="blip-num" text-anchor="middle" fill="#1f1d1b">22</text>
+</g>
+<g>
+<circle cx="189.62" cy="438.74" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="189.62" y="442.74" class="blip-num" text-anchor="middle" fill="#1f1d1b">23</text>
+</g>
+<g>
+<circle cx="174.82" cy="430.95" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="174.82" y="434.95" class="blip-num" text-anchor="middle" fill="#1f1d1b">24</text>
+</g>
+<g>
+<circle cx="160.33" cy="421.89" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="160.33" y="425.89" class="blip-num" text-anchor="middle" fill="#1f1d1b">25</text>
+</g>
+<g>
+<circle cx="146.22" cy="411.56" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="146.22" y="415.56" class="blip-num" text-anchor="middle" fill="#1f1d1b">26</text>
+</g>
+<g>
+<circle cx="400" cy="513.6" r="13" fill="#dd5b00" stroke="#ffffff" stroke-width="2"/>
+<text x="400" y="517.6" class="blip-num" text-anchor="middle" fill="#ffffff">21</text>
+</g>
+<g>
+<circle cx="435.54" cy="341.84" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="435.54" y="345.84" class="blip-num" text-anchor="middle" fill="#1f1d1b">27</text>
+</g>
+<g>
+<circle cx="430.49" cy="352.8" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="430.49" y="356.8" class="blip-num" text-anchor="middle" fill="#1f1d1b">28</text>
+</g>
+<g>
+<circle cx="424.91" cy="363.46" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="424.91" y="367.46" class="blip-num" text-anchor="middle" fill="#1f1d1b">29</text>
+</g>
+<g>
+<circle cx="418.83" cy="373.81" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="418.83" y="377.81" class="blip-num" text-anchor="middle" fill="#1f1d1b">30</text>
+</g>
+<g>
+<circle cx="412.25" cy="383.83" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="412.25" y="387.83" class="blip-num" text-anchor="middle" fill="#1f1d1b">31</text>
+</g>
+<g>
+<circle cx="405.19" cy="393.5" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="405.19" y="397.5" class="blip-num" text-anchor="middle" fill="#1f1d1b">32</text>
+</g>
+<g>
+<circle cx="397.66" cy="402.79" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="397.66" y="406.79" class="blip-num" text-anchor="middle" fill="#1f1d1b">33</text>
+</g>
+<g>
+<circle cx="389.67" cy="411.71" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="389.67" y="415.71" class="blip-num" text-anchor="middle" fill="#1f1d1b">34</text>
+</g>
+<g>
+<circle cx="381.24" cy="420.22" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="381.24" y="424.22" class="blip-num" text-anchor="middle" fill="#1f1d1b">36</text>
+</g>
+<g>
+<circle cx="372.38" cy="428.31" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="372.38" y="432.31" class="blip-num" text-anchor="middle" fill="#1f1d1b">37</text>
+</g>
+<g>
+<circle cx="363.12" cy="435.97" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="363.12" y="439.97" class="blip-num" text-anchor="middle" fill="#1f1d1b">38</text>
+</g>
+<g>
+<circle cx="353.46" cy="443.18" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="353.46" y="447.18" class="blip-num" text-anchor="middle" fill="#1f1d1b">39</text>
+</g>
+<g>
+<circle cx="343.42" cy="449.93" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="343.42" y="453.93" class="blip-num" text-anchor="middle" fill="#1f1d1b">40</text>
+</g>
+<g>
+<circle cx="333.03" cy="456.2" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="333.03" y="460.2" class="blip-num" text-anchor="middle" fill="#1f1d1b">41</text>
+</g>
+<g>
+<circle cx="322.29" cy="461.97" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="322.29" y="465.97" class="blip-num" text-anchor="middle" fill="#1f1d1b">42</text>
+</g>
+<g>
+<circle cx="311.23" cy="467.24" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="311.23" y="471.24" class="blip-num" text-anchor="middle" fill="#1f1d1b">43</text>
+</g>
+<g>
+<circle cx="299.87" cy="471.99" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="299.87" y="475.99" class="blip-num" text-anchor="middle" fill="#1f1d1b">44</text>
+</g>
+<g>
+<circle cx="288.21" cy="476.21" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="288.21" y="480.21" class="blip-num" text-anchor="middle" fill="#1f1d1b">45</text>
+</g>
+<g>
+<circle cx="276.29" cy="479.9" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="276.29" y="483.9" class="blip-num" text-anchor="middle" fill="#1f1d1b">49</text>
+</g>
+<g>
+<circle cx="264.13" cy="483.03" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="264.13" y="487.03" class="blip-num" text-anchor="middle" fill="#1f1d1b">50</text>
+</g>
+<g>
+<circle cx="251.74" cy="485.6" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="251.74" y="489.6" class="blip-num" text-anchor="middle" fill="#1f1d1b">51</text>
+</g>
+<g>
+<circle cx="239.14" cy="487.6" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="239.14" y="491.6" class="blip-num" text-anchor="middle" fill="#1f1d1b">52</text>
+</g>
+<g>
+<circle cx="226.35" cy="489.02" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="226.35" y="493.02" class="blip-num" text-anchor="middle" fill="#1f1d1b">53</text>
+</g>
+<g>
+<circle cx="213.41" cy="489.86" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="213.41" y="493.86" class="blip-num" text-anchor="middle" fill="#1f1d1b">54</text>
+</g>
+<g>
+<circle cx="200.31" cy="490.1" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="200.31" y="494.1" class="blip-num" text-anchor="middle" fill="#1f1d1b">55</text>
+</g>
+<g>
+<circle cx="187.1" cy="489.74" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="187.1" y="493.74" class="blip-num" text-anchor="middle" fill="#1f1d1b">56</text>
+</g>
+<g>
+<circle cx="173.79" cy="488.78" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="173.79" y="492.78" class="blip-num" text-anchor="middle" fill="#1f1d1b">57</text>
+</g>
+<g>
+<circle cx="160.4" cy="487.21" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="160.4" y="491.21" class="blip-num" text-anchor="middle" fill="#1f1d1b">59</text>
+</g>
+<g>
+<circle cx="146.96" cy="485.02" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="146.96" y="489.02" class="blip-num" text-anchor="middle" fill="#1f1d1b">60</text>
+</g>
+<g>
+<circle cx="133.48" cy="482.21" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="133.48" y="486.21" class="blip-num" text-anchor="middle" fill="#1f1d1b">61</text>
+</g>
+<g>
+<circle cx="119.99" cy="478.78" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="119.99" y="482.78" class="blip-num" text-anchor="middle" fill="#1f1d1b">62</text>
+</g>
+<g>
+<circle cx="106.52" cy="474.73" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="106.52" y="478.73" class="blip-num" text-anchor="middle" fill="#1f1d1b">64</text>
+</g>
+<g>
+<circle cx="93.08" cy="470.05" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="93.08" y="474.05" class="blip-num" text-anchor="middle" fill="#1f1d1b">65</text>
+</g>
+<g>
+<circle cx="79.7" cy="464.75" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="79.7" y="468.75" class="blip-num" text-anchor="middle" fill="#1f1d1b">66</text>
+</g>
+<g>
+<circle cx="66.39" cy="458.82" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="66.39" y="462.82" class="blip-num" text-anchor="middle" fill="#1f1d1b">68</text>
+</g>
+<g>
+<circle cx="53.2" cy="452.27" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="53.2" y="456.27" class="blip-num" text-anchor="middle" fill="#1f1d1b">69</text>
+</g>
+<g>
+<circle cx="40.13" cy="445.1" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="40.13" y="449.1" class="blip-num" text-anchor="middle" fill="#1f1d1b">70</text>
+</g>
+<g>
+<circle cx="27.21" cy="437.3" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="27.21" y="441.3" class="blip-num" text-anchor="middle" fill="#1f1d1b">73</text>
+</g>
+<g>
+<circle cx="14.46" cy="428.89" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="14.46" y="432.89" class="blip-num" text-anchor="middle" fill="#1f1d1b">74</text>
+</g>
+<g>
+<circle cx="1.9" cy="419.87" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="1.9" y="423.87" class="blip-num" text-anchor="middle" fill="#1f1d1b">76</text>
+</g>
+<g>
+<circle cx="-10.43" cy="410.24" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="-10.43" y="414.24" class="blip-num" text-anchor="middle" fill="#1f1d1b">77</text>
+</g>
+<g>
+<circle cx="502.54" cy="286.11" r="13" fill="#213183" stroke="#ffffff" stroke-width="2"/>
+<text x="502.54" y="290.11" class="blip-num" text-anchor="middle" fill="#ffffff">35</text>
+</g>
+<g>
+<circle cx="533.66" cy="302.89" r="13" fill="#213183" stroke="#ffffff" stroke-width="2"/>
+<text x="533.66" y="306.89" class="blip-num" text-anchor="middle" fill="#ffffff">46</text>
+</g>
+<g>
+<circle cx="561.87" cy="327.93" r="13" fill="#213183" stroke="#ffffff" stroke-width="2"/>
+<text x="561.87" y="331.93" class="blip-num" text-anchor="middle" fill="#ffffff">47</text>
+</g>
+<g>
+<circle cx="585.02" cy="360.67" r="13" fill="#213183" stroke="#ffffff" stroke-width="2"/>
+<text x="585.02" y="364.67" class="blip-num" text-anchor="middle" fill="#ffffff">71</text>
+</g>
+<g>
+<circle cx="358.79" cy="246.19" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="358.79" y="250.19" class="blip-num" text-anchor="middle" fill="#ffffff">48</text>
+</g>
+<g>
+<circle cx="400" cy="228.8" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="400" y="232.8" class="blip-num" text-anchor="middle" fill="#ffffff">58</text>
+</g>
+<g>
+<circle cx="447.41" cy="223.07" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="447.41" y="227.07" class="blip-num" text-anchor="middle" fill="#ffffff">72</text>
+</g>
+<g>
+<circle cx="548.26" cy="485.6" r="13" fill="#1aae39" stroke="#ffffff" stroke-width="2"/>
+<text x="548.26" y="489.6" class="blip-num" text-anchor="middle" fill="#1f1d1b">63</text>
+</g>
+<g>
+<circle cx="428.69" cy="562.71" r="13" fill="#dd5b00" stroke="#ffffff" stroke-width="2"/>
+<text x="428.69" y="566.71" class="blip-num" text-anchor="middle" fill="#ffffff">67</text>
+</g>
+<g>
+<circle cx="369.23" cy="574.49" r="13" fill="#dd5b00" stroke="#ffffff" stroke-width="2"/>
+<text x="369.23" y="578.49" class="blip-num" text-anchor="middle" fill="#ffffff">75</text>
+</g>
+<g>
+<circle cx="260.69" cy="554.72" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="260.69" y="558.72" class="blip-num" text-anchor="middle" fill="#1f1d1b">78</text>
+</g>
+<g>
+<circle cx="221.32" cy="529.82" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="221.32" y="533.82" class="blip-num" text-anchor="middle" fill="#1f1d1b">79</text>
+</g>
+<g>
+<circle cx="186.65" cy="494.99" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="186.65" y="498.99" class="blip-num" text-anchor="middle" fill="#1f1d1b">80</text>
+</g>
+<g>
+<circle cx="159.17" cy="451.19" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="159.17" y="455.19" class="blip-num" text-anchor="middle" fill="#1f1d1b">85</text>
+</g>
+<g>
+<circle cx="438.35" cy="617.51" r="13" fill="#dd5b00" stroke="#ffffff" stroke-width="2"/>
+<text x="438.35" y="621.51" class="blip-num" text-anchor="middle" fill="#ffffff">81</text>
+</g>
+<g>
+<circle cx="359.45" cy="629.99" r="13" fill="#dd5b00" stroke="#ffffff" stroke-width="2"/>
+<text x="359.45" y="633.99" class="blip-num" text-anchor="middle" fill="#ffffff">83</text>
+</g>
+<g>
+<circle cx="607.54" cy="475.54" r="13" fill="#1aae39" stroke="#ffffff" stroke-width="2"/>
+<text x="607.54" y="479.54" class="blip-num" text-anchor="middle" fill="#1f1d1b">82</text>
+</g>
+<g>
+<circle cx="578.9" cy="550.11" r="13" fill="#1aae39" stroke="#ffffff" stroke-width="2"/>
+<text x="578.9" y="554.11" class="blip-num" text-anchor="middle" fill="#1f1d1b">84</text>
+</g>
+</svg>
+      </div>
+      <div class="key">
+        <span><b>Ringe</b> = Impact (innen = wichtiger)</span>
+        <span><b>Segmente</b> = Kategorie</span>
+        <span><b>Nummer</b> = siehe Meldungen unten</span>
+      </div>
+    </div>
+  <div class="scale">
+    <h3>Wie sich der Impact bestimmt</h3>
+    <p class="scale-lead">Bewertet wird aus dem Blickwinkel <b>AI in Branchen und Unternehmen: Vertikalisierung, Verdrängung klassischer Software und Augmentation</b>. Leitfrage je Meldung: Wie stark verändert sie die tägliche Arbeit, die Werkzeuge oder die Entscheidungen im Bereich AI in Branchen und Unternehmen: Vertikalisierung, Verdrängung klassischer Software und Augmentation? Eine allgemein große AI-Meldung kann hier niedrig liegen — und umgekehrt. Daraus ergibt sich der Ring (innen = wichtiger).</p>
+    <ul>
+      <li><span class="sc-dots">●○○○○</span><span><span class="sc-name">1 — Routine.</span> <span class="sc-desc">kleines Update, Bugfix, inkrementell.</span></span></li>
+      <li><span class="sc-dots">●●○○○</span><span><span class="sc-name">2 — Nennenswert.</span> <span class="sc-desc">neues Feature, aber eher Nische.</span></span></li>
+      <li><span class="sc-dots">●●●○○</span><span><span class="sc-name">3 — Relevant.</span> <span class="sc-desc">spürbare Verbesserung, betrifft viele.</span></span></li>
+      <li><span class="sc-dots">●●●●○</span><span><span class="sc-name">4 — Stark.</span> <span class="sc-desc">verändert, wie man arbeitet, oder eröffnet eine neue Möglichkeit.</span></span></li>
+      <li><span class="sc-dots">●●●●●</span><span><span class="sc-name">5 — Game-Changer.</span> <span class="sc-desc">grundlegender Sprung.</span></span></li>
+    </ul>
+    <p class="sc-note">Impact 1 (Routine) ist der äußerste Ring; solche Meldungen führen wir meist nur unter „Überspringen" auf — der äußere Ring bleibt daher oft leer.</p>
+  </div>
+  </div>
+
+  <div class="section"><h2>Die Meldungen im Detail</h2></div>
+  <div class="detail-list">
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">1</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://www.theinformation.com/articles/nvidia-agrees-buy-open-source-model-repository-hugging-face-12-9-billion" target="_blank" rel="noopener">Hugging Face-Verkauf konkretisiert sich: Nvidia zahlt Berichten zufolge 12,9 Milliarden Dollar</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">The Information · 27.08.2026</span> · <span class="dots">●●●●●</span> <span class="dmeta-imp">5/5</span></div>
+      <p>Nvidia übernimmt laut The Information und mehreren übereinstimmenden Berichten die offene KI-Plattform Hugging Face für rund 12,9 Milliarden Dollar – gut das 86-Fache des geschätzten Jahresumsatzes von 150 Millionen Dollar und die bislang größte Übernahme in der Firmengeschichte, deutlich vor den 7 Milliarden Dollar für Mellanox 2020. Nvidia hatte bereits zuvor 26 Milliarden Dollar über fünf Jahre in offene KI-Modelle investiert und könnte Hugging Face nun zu einer Art OpenRouter für offene Modelle ausbauen. Der Deal fällt in eine Phase, in der geschlossene Anbieter wie OpenAI und Anthropic ihre Abhängigkeit von Nvidia-Hardware aktiv reduzieren.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.theinformation.com/articles/nvidia-agrees-buy-open-source-model-repository-hugging-face-12-9-billion" target="_blank" rel="noopener">The Information <span class="arw">→</span></a> · <a class="dlink" href="https://www.cnbc.com/2026/08/27/nvidia-hugging-face-acquisition.html" target="_blank" rel="noopener">CNBC <span class="arw">→</span></a> · <a class="dlink" href="https://the-decoder.com/nvidia-snaps-up-hugging-face-for-12-9-billion-as-closed-ai-labs-pull-away/" target="_blank" rel="noopener">The Decoder <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">2</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://venturebeat.com/orchestration/salesforce-just-put-its-entire-crm-inside-claude-and-says-youll-never-need-its-app-again" target="_blank" rel="noopener">Salesforce und Anthropic verschmelzen CRM und Chat mit „Claudeforce“</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">VentureBeat · 26.08.2026</span> · <span class="dots">●●●●●</span> <span class="dmeta-imp">5/5</span></div>
+      <p>Salesforce und Anthropic haben mit „Claudeforce“ komplette CRM-Funktionen als Plugin in Claude Cowork verfügbar gemacht – 37 vorgefertigte Vertriebs-Skills sollen die klassische Salesforce-Oberfläche für viele Aufgaben überflüssig machen. Salesforce positioniert sich damit bewusst als Dateninfrastruktur hinter der KI statt als eigene Anwendung; Claude ist bei Salesforce bereits Standardmodell in Slack, Anthropic hält im Gegenzug eine rund fünf Milliarden Dollar schwere Beteiligung.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://venturebeat.com/orchestration/salesforce-just-put-its-entire-crm-inside-claude-and-says-youll-never-need-its-app-again" target="_blank" rel="noopener">VentureBeat <span class="arw">→</span></a> · <a class="dlink" href="https://www.salesforce.com/news/press-releases/2026/08/26/salesforce-and-anthropic-announce-claudeforce/" target="_blank" rel="noopener">Salesforce <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">3</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://9to5mac.com/2026/08/14/spacex-lands-deal-to-likely-purchase-claude-code-and-openai-codex-competitor/" target="_blank" rel="noopener">SpaceXAI schließt 60-Milliarden-Dollar-Übernahme von Cursor ab</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">9to5Mac · 14.08.2026</span> · <span class="dots">●●●●●</span> <span class="dmeta-imp">5/5</span></div>
+      <p>SpaceXAI, die Fusion aus xAI und SpaceX, hat die im Juni angekündigte Übernahme des Coding-Werkzeugs Cursor für rund 60 Milliarden Dollar in Aktien abgeschlossen. Cursor bekommt damit Zugang zu xAIs Colossus-Rechencluster und reiht sich neben Grok Build und Grok 4.6 ein. Für den Markt entsteht damit ein dritter kapitalstarker Anbieter neben Anthropics Claude Code und OpenAIs Codex – mit direkten Folgen für die Verhandlungsposition von Unternehmen, die eines der drei Ökosysteme für ihre Entwicklungsteams wählen müssen.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://9to5mac.com/2026/08/14/spacex-lands-deal-to-likely-purchase-claude-code-and-openai-codex-competitor/" target="_blank" rel="noopener">9to5Mac <span class="arw">→</span></a> · <a class="dlink" href="https://www.bloomberg.com/news/articles/2026-08-14/spacex-completes-its-60-billion-cursor-acquisition" target="_blank" rel="noopener">Bloomberg <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">4</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/31/nvidias-3-5b-mediatek-bet-reveals-its-plan-for-tackling-big-techs-ai-chip-buildout/" target="_blank" rel="noopener">Nvidia investiert 3,5 Milliarden Dollar in MediaTek</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">TechCrunch · 31.08.2026</span> · <span class="dots">●●●●○</span> <span class="dmeta-imp">4/5</span></div>
+      <p>Nvidias 3,5-Milliarden-Dollar-Einstieg bei MediaTek zielt darauf, die eigene Interconnect-Technologie NVLink Fusion als Standard in kundenspezifischen Chips zu verankern - just in dem Moment, in dem Amazon, Google, Microsoft, OpenAI und Anthropic verstärkt eigene Chips bauen, um von Nvidia unabhängiger zu werden. Für Nvidia ist das ein Weg, an der Eigenchip-Welle mitzuverdienen statt von ihr verdrängt zu werden.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/31/nvidias-3-5b-mediatek-bet-reveals-its-plan-for-tackling-big-techs-ai-chip-buildout/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">5</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/29/sony-music-warner-sue-anthropic-alleging-a-brazen-campaign-of-intellectual-property-theft/" target="_blank" rel="noopener">Sony Music und Warner Chappell verklagen Anthropic - mögliches Milliardenrisiko vor dem Börsengang</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">TechCrunch · 29.08.2026</span> · <span class="dots">●●●●○</span> <span class="dmeta-imp">4/5</span></div>
+      <p>Zwei große Musikverlage fordern in einer neuen Klage vor einem Bundesgericht in San Francisco Schadenersatz für die mutmaßlich unlizenzierte Nutzung tausender Songs beim Training von Claude - bei bis zu 150.000 Dollar pro Werk ein Risiko im Milliardenbereich. Die Klage kommt kurz vor Anthropics für Herbst 2026 geplantem Börsengang und reiht sich neben dem früheren 1,5-Milliarden-Dollar-Vergleich mit Autoren als zweiter großer Copyright-Fall ein.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/29/sony-music-warner-sue-anthropic-alleging-a-brazen-campaign-of-intellectual-property-theft/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a> · <a class="dlink" href="https://www.axios.com/2026/08/29/anthropic-sony-warner-music-copyright" target="_blank" rel="noopener">Axios <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">6</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex/" target="_blank" rel="noopener">OpenAI kündigt Cursor die Modell-Anbindung nach SpaceX-Übernahme</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">OpenAI · 28.08.2026</span> · <span class="dots">●●●●○</span> <span class="dmeta-imp">4/5</span></div>
+      <p>OpenAI beendet zum 12. November 2026 den Vertrag über Modellzugriff für den Coding-Editor Cursor, nachdem dessen Mutterfirma Anysphere für rund 60 Milliarden Dollar von SpaceX übernommen wurde. Für Unternehmen, die Cursor als Standard-Coding-Tool einsetzen, bedeutet das einen erzwungenen Anbieterwechsel bis November – ein konkretes Beispiel dafür, wie Plattform-Politik zwischen KI-Anbietern zum Betriebsrisiko für Entwickler-Tooling wird.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex/" target="_blank" rel="noopener">OpenAI <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">7</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/28/open-weight-ai-companies-are-the-valleys-hottest-acquisition-targets/" target="_blank" rel="noopener">Nvidia, Stripe und Co. kaufen sich in die Open-Weight-Infrastruktur ein</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">TechCrunch · 28.08.2026</span> · <span class="dots">●●●●○</span> <span class="dmeta-imp">4/5</span></div>
+      <p>Nvidia verhandelt laut TechCrunch über eine 13-Milliarden-Dollar-Übernahme von Hugging Face, nachdem bereits eine 6-Milliarden-Dollar-Vereinbarung mit dem Open-Weight-Anbieter Poolside und Stripes rund 7 Milliarden Dollar teure Übernahme von OpenRouter bekannt wurden. Laut Ramp-Daten nutzen aktuell erst 6 Prozent der Unternehmen offene Modelle produktiv, doch laut Fireworks-CEO Lin Qiao laufen über deren Router bereits 40 Billionen Tokens pro Tag – mehr als über Geminis oder OpenAIs API. Für Unternehmen mit eigener Modellstrategie verengt sich damit das Feld unabhängiger Infrastrukturanbieter weiter.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/28/open-weight-ai-companies-are-the-valleys-hottest-acquisition-targets/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">8</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://venturebeat.com/orchestration/glm-5-3-flash-will-likely-handle-45-of-your-ai-workloads" target="_blank" rel="noopener">Analyse: Günstige chinesische Modelle könnten bald 45 Prozent der Enterprise-Workloads übernehmen</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">VentureBeat · 27.08.2026</span> · <span class="dots">●●●●○</span> <span class="dmeta-imp">4/5</span></div>
+      <p>Ein Meinungsbeitrag eines Salesforce/Oracle-Veteranen argumentiert, dass günstige chinesische Modelle wie GLM-5.3-Flash wegen des massiven Preisvorteils bald rund 45 Prozent der Enterprise-KI-Workloads übernehmen könnten, während teure Spitzenmodelle nur noch für die anspruchsvollsten fünf Prozent der Aufgaben reserviert blieben. Als Beleg dient unter anderem Uber, wo das komplette KI-Budget für 2026 bereits im April aufgebraucht war und seit Juni ein Kostendeckel pro Person gilt. Laut einer McKinsey-Umfrage sehen bislang nur 37 Prozent der Unternehmen tatsächliche Gewinneffekte durch KI, während 73 Prozent ihre Kostenprognosen überschreiten.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://venturebeat.com/orchestration/glm-5-3-flash-will-likely-handle-45-of-your-ai-workloads" target="_blank" rel="noopener">VentureBeat <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">9</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://the-decoder.com/employee-revolt-and-failing-agents-forced-meta-to-scrap-its-ai-layoff-plan/" target="_blank" rel="noopener">Meta stoppt KI-Stellenabbauplan nach Mitarbeiterrevolte und gescheiterten Agenten</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">The Decoder · 26.08.2026</span> · <span class="dots">●●●●○</span> <span class="dmeta-imp">4/5</span></div>
+      <p>Meta wollte laut Reuters-Recherche unter dem Codenamen „Project OT“ große Teile der Belegschaft durch KI-Agenten ersetzen und Teams um bis zu 60 Prozent verkleinern, stoppte die zweite Entlassungswelle aber Stunden vor der Umsetzung. Grund waren ausbleibende Produktivitätsgewinne der Agenten und offener Widerstand der Belegschaft – ein prominentes Warnsignal für andere Unternehmen, die auf schnelle Agenten-Einsparungen setzen.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://the-decoder.com/employee-revolt-and-failing-agents-forced-meta-to-scrap-its-ai-layoff-plan/" target="_blank" rel="noopener">The Decoder <span class="arw">→</span></a> · <a class="dlink" href="https://www.reuters.com/investigations/mark-zuckerberg-had-bold-plan-replace-meta-staff-with-ai-heres-how-it-imploded-2026-08-26/" target="_blank" rel="noopener">Reuters <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">10</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://cloud.google.com/blog/products/ai-machine-learning/introducing-gemini-enterprise-for-legal" target="_blank" rel="noopener">Google Cloud launcht Gemini Enterprise for Legal für Kanzleien</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">Google Cloud · 25.08.2026</span> · <span class="dots">●●●●○</span> <span class="dmeta-imp">4/5</span></div>
+      <p>Mit Gemini Enterprise for Legal bringt Google Cloud eine auf Kanzleien zugeschnittene Version seiner Agenten-Plattform in die Vorschau, mit vorgefertigten Agenten für Vertragsprüfung, Rechtsrecherche und Regulierungs-Monitoring. Cleary Gottlieb, Freshfields, Weil und Williams &amp; Connolly sind als Startkunden genannt; über sichere Anbindungen an bestehende Dokumentenverwaltung bleiben Mandantendaten und ethische Sperren innerhalb der eigenen Systeme. Es ist Googles erste branchenspezifische Verpackung von Gemini Enterprise, eine Finance-Version folgt parallel.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://cloud.google.com/blog/products/ai-machine-learning/introducing-gemini-enterprise-for-legal" target="_blank" rel="noopener">Google Cloud <span class="arw">→</span></a> · <a class="dlink" href="https://www.law.com/legaltechnews/2026/08/25/google-cloud-unveils-gemini-enterprise-for-legal/" target="_blank" rel="noopener">Law.com <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">11</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/24/hugging-face-reportedly-in-talks-to-be-acquired-for-13b/" target="_blank" rel="noopener">Hugging Face soll für über 13 Milliarden Dollar verkauft werden</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">TechCrunch · 24.08.2026</span> · <span class="dots">●●●●○</span> <span class="dmeta-imp">4/5</span></div>
+      <p>Laut Business Insider verhandelt Hugging Face über eine Übernahme zu einer Bewertung von mehr als 13 Milliarden Dollar – fast das Dreifache der letzten Finanzierungsrunde von 2023. Das Unternehmen hat Banken eingeschaltet, um Angebote zu prüfen; CEO Clem Delangue betont öffentlich seine „langfristige Verantwortung“ gegenüber der Open-Source-Community, was Zweifel an einem tatsächlichen Verkauf nährt.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/24/hugging-face-reportedly-in-talks-to-be-acquired-for-13b/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">12</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/23/uber-faces-fine-of-nearly-1b-over-automated-driver-suspensions/" target="_blank" rel="noopener">Uber muss wegen automatisierter Fahrer-Sperrungen rund 825 Millionen Euro Strafe zahlen</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">TechCrunch · 23.08.2026</span> · <span class="dots">●●●●○</span> <span class="dmeta-imp">4/5</span></div>
+      <p>Die niederländische Datenschutzbehörde verhängte 825 Millionen Euro (umgerechnet rund 966 Millionen Dollar) gegen Uber, weil Fahrerkonten automatisiert und ohne ausreichende menschliche Kontrolle deaktiviert wurden – laut Behörde sollte „ein Computer nicht allein Entscheidungen mit derart großen Konsequenzen treffen“. Es ist eine der höchsten je verhängten DSGVO-Strafen und ein deutliches Signal an Unternehmen, die automatisierte Entscheidungssysteme ohne echten menschlichen Einspruch betreiben. Uber bestreitet Details des Verfahrens und kündigt Berufung an.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/23/uber-faces-fine-of-nearly-1b-over-automated-driver-suspensions/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">13</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/20/openai-is-gaining-on-anthropic-with-business-users-new-data-indicates/" target="_blank" rel="noopener">OpenAI holt bei Business-Kunden gegenüber Anthropic wieder auf</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">TechCrunch · 20.08.2026</span> · <span class="dots">●●●●○</span> <span class="dmeta-imp">4/5</span></div>
+      <p>Nach Ramp-Daten hat Anthropic seinen im Mai gewonnenen Vorsprung bei US-Firmenkunden im dritten Quartal wieder verloren – OpenAI wächst aktuell schneller, während Fable 5 unter hohem Preis und der 30-Tage-Datenspeicherpflicht leidet. Die Erhebung deckt über 70.000 amerikanische Firmen ab und zeigt zugleich, dass der Anteil zahlender Firmen im Juli auf fast 56 Prozent gestiegen ist. Für Einkaufsentscheider unterstreicht der Wechsel, wie wenig „klebrig“ die Bindung an einen einzelnen Anbieter derzeit ist und wie stark einzelne Modell-Releases kurzfristig Marktanteile verschieben.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/20/openai-is-gaining-on-anthropic-with-business-users-new-data-indicates/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">14</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://the-decoder.com/anthropic-passes-openai-on-revenue-for-the-first-time/" target="_blank" rel="noopener">Anthropic überholt OpenAI erstmals beim Umsatz</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">The Decoder · 19.08.2026</span> · <span class="dots">●●●●○</span> <span class="dmeta-imp">4/5</span></div>
+      <p>Anthropic hat im zweiten Quartal mit 11,6 Milliarden Dollar Umsatz erstmals OpenAI überholt, das im gleichen Zeitraum auf 6,7 Milliarden Dollar kam und nur um 18 Prozent gegenüber dem Vorquartal wuchs, während Anthropic seinen Umsatz verdoppelte. Getrieben wird die Entwicklung durch das schnell wachsende Coding-Tool Claude Code und dadurch, dass Firmen laut Vercel pro Token deutlich mehr für Claude-Modelle zahlen als für Alternativen. Für Einkaufsentscheidungen zeigt das: Die Zahlungsbereitschaft für Premium-Modelle bleibt trotz sinkender Durchschnittspreise am Gesamtmarkt hoch.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://the-decoder.com/anthropic-passes-openai-on-revenue-for-the-first-time/" target="_blank" rel="noopener">The Decoder <span class="arw">→</span></a> · <a class="dlink" href="https://www.wsj.com/tech/ai/openais-second-quarter-sales-show-tepid-growth-compared-with-anthropic-5cb42998" target="_blank" rel="noopener">WSJ <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">15</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://the-decoder.com/openai-signs-record-ohio-data-center-lease-with-nvidia-backing-up-to-105-billion/" target="_blank" rel="noopener">OpenAI mietet Rekord-Rechenzentrum in Ohio, Nvidia bürgt mit bis zu 105 Milliarden Dollar</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">The Decoder · 17.08.2026</span> · <span class="dots">●●●●○</span> <span class="dmeta-imp">4/5</span></div>
+      <p>OpenAI hat für den 8-Gigawatt-Campus „PORTS-Pike&quot; in Ohio einen 20-Jahres-Vertrag mit SoftBank-Tochter SB Energy unterzeichnet; Nvidia bürgt als exklusiver Chip-Lieferant mit bis zu 105 Milliarden Dollar für den Restwert der ersten Bauphase. Für Unternehmen, die auf Cloud-Kapazität der großen Anbieter angewiesen sind, ist relevant, dass laut Wall Street Journal neun Tech-Konzerne inzwischen rund 3 Billionen Dollar an bilanzunwirksamen KI-Verpflichtungen aufgebaut haben – ein Betrag, den Analysten kaum noch verlässlich einschätzen können und der die Frage nach der Stabilität der KI-Infrastrukturfinanzierung neu stellt.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://the-decoder.com/openai-signs-record-ohio-data-center-lease-with-nvidia-backing-up-to-105-billion/" target="_blank" rel="noopener">The Decoder <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">16</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/16/stripe-will-reportedly-acquire-ai-gateway-startup-openrouter-for-7b/" target="_blank" rel="noopener">Stripe kauft OpenRouter für über 7 Milliarden Dollar – Konsolidierung im KI-Infrastruktur-Markt</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">TechCrunch · 16.08.2026</span> · <span class="dots">●●●●○</span> <span class="dmeta-imp">4/5</span></div>
+      <p>Der Zahlungsdienstleister Stripe übernimmt das AI-Gateway OpenRouter, das monatlich über 200 Billionen Token durch mehr als 500 Modelle von über 80 Anbietern leitet, für mehr als 7 Milliarden Dollar – das Fünffache der Bewertung vom Mai. Für Unternehmen, die über solche Gateways Modelle verschiedener Anbieter einkaufen, wechselt damit ein zentraler neutraler Vermittler in den Besitz eines Zahlungsunternehmens, was Fragen zu Abrechnungsintegration und künftiger Preisgestaltung aufwirft. Der Deal hat zugleich ein Wettrennen um vergleichbare Gateway-Startups bei Snowflake, Cloudflare, Vercel und Baseten ausgelöst.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/16/stripe-will-reportedly-acquire-ai-gateway-startup-openrouter-for-7b/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a> · <a class="dlink" href="https://fortune.com/2026/08/16/stripe-7-billion-deal-ai-firm-openrouter-acquisition/" target="_blank" rel="noopener">Fortune <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">17</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://www.macrumors.com/2026/08/14/apple-trained-own-ai-model-for-china/" target="_blank" rel="noopener">Apple entwickelt mit Alibabas Hilfe ein eigenes KI-Modell für China – erste Zulassung für ein ausländisches Unternehmen</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">MacRumors · 14.08.2026</span> · <span class="dots">●●●●○</span> <span class="dmeta-imp">4/5</span></div>
+      <p>Apple hat mit Unterstützung von Alibaba ein eigenes großes Sprachmodell für den chinesischen Markt entwickelt und wäre damit das erste ausländische Unternehmen, dem chinesische Regulierungsbehörden ein eigenes KI-Modell im Land genehmigt haben. Das ergänzt die bereits vereinbarte Integration von Alibabas Qwen in Apple Intelligence für China. Für andere ausländische Anbieter mit China-Ambitionen ist der Fall ein erster Präzedenzfall dafür, unter welchen Bedingungen eigene Modelle statt reiner Lizenzpartnerschaften genehmigungsfähig sein könnten.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.macrumors.com/2026/08/14/apple-trained-own-ai-model-for-china/" target="_blank" rel="noopener">MacRumors <span class="arw">→</span></a> · <a class="dlink" href="https://www.japantimes.co.jp/business/2026/08/14/apple-ai-model-china-alibaba/" target="_blank" rel="noopener">Japan Times <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">18</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://finance.yahoo.com/technology/ai/articles/ibm-openai-launch-enterprise-ai-102638754.html" target="_blank" rel="noopener">IBM und OpenAI schließen strategische Enterprise-Partnerschaft für regulierte Branchen</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">Yahoo Finance · 13.08.2026</span> · <span class="dots">●●●●○</span> <span class="dmeta-imp">4/5</span></div>
+      <p>IBM und OpenAI bündeln ihre Kräfte für den Einsatz generativer KI in regulierten Großunternehmen: IBM baut eine eigene „OpenAI Practice“ mit mehreren tausend zertifizierten Beratern auf und bindet GPT-5.6, Codex und ChatGPT Work in die Beratungsplattform IBM Consulting Advantage ein. Der Fokus liegt auf drei Feldern – der Modernisierung bestehender Geschäftsprozesse, beschleunigter Softwareentwicklung mit Codex sowie gemeinsamer Cybersicherheitsarbeit über Daybreak und IBMs Autonomous Security. Für Branchen wie Finanzdienstleistungen, Behörden und Telekommunikation, in denen Sicherheits- und Governance-Anforderungen bisher als größte Hürde galten, soll das den Weg von der Pilotphase in den produktiven Einsatz verkürzen.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://finance.yahoo.com/technology/ai/articles/ibm-openai-launch-enterprise-ai-102638754.html" target="_blank" rel="noopener">Yahoo Finance <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">19</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://www.bloomberg.com/news/articles/2026-08-13/anthropic-said-in-talks-to-buy-ai-startup-decart-for-6-billion" target="_blank" rel="noopener">Anthropic verhandelt über 6-Milliarden-Dollar-Übernahme des Infrastruktur-Startups Decart</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">Bloomberg · 13.08.2026</span> · <span class="dots">●●●●○</span> <span class="dmeta-imp">4/5</span></div>
+      <p>Anthropic verhandelt über die Übernahme des israelischen Infrastruktur-Startups Decart für rund 6 Milliarden Dollar, um die eigene Rechenkapazität effizienter auszulasten. Decart hat bislang rund 450 Millionen Dollar Kapital eingesammelt, zuletzt im Mai zu einer Bewertung von 4 Milliarden Dollar; ein Abschluss zu 6 Milliarden wäre ein Aufschlag von rund 50 Prozent. Für Anthropic wäre es die bislang größte bekannte Übernahme überhaupt – ein Signal, wie sehr Chip-Effizienz zur eigenen strategischen Priorität geworden ist, auch wenn der Deal noch nicht unterschriftsreif ist.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.bloomberg.com/news/articles/2026-08-13/anthropic-said-in-talks-to-buy-ai-startup-decart-for-6-billion" target="_blank" rel="noopener">Bloomberg <span class="arw">→</span></a> · <a class="dlink" href="https://fortune.com/2026/08/13/anthropic-said-in-talks-to-buy-startup-decart-for-6-billion/" target="_blank" rel="noopener">Fortune <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">20</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://www.bloomberg.com/news/articles/2026-08-11/anthropic-strikes-9-billion-deal-with-cloud-computing-firm-riot" target="_blank" rel="noopener">Anthropic schließt 9,1-Milliarden-Dollar-Rechenzentrumsdeal mit Bitcoin-Miner Riot Platforms</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">Bloomberg · 11.08.2026</span> · <span class="dots">●●●●○</span> <span class="dmeta-imp">4/5</span></div>
+      <p>Anthropic hat mit dem Bitcoin-Miner Riot Platforms einen auf 20 Jahre angelegten Vertrag über 9,1 Milliarden Dollar geschlossen, der dem Labor 191 Megawatt Rechenkapazität auf Riots Campus im texanischen Rockdale sichert. Der Ausbau erfolgt stufenweise bis Juni 2028, zwei Verlängerungsoptionen könnten den Gesamtwert auf gut 16 Milliarden Dollar steigern. Für Riot ist der Deal ein weiterer Schritt vom reinen Bitcoin-Miner zum Rechenzentrums-Betreiber, für Anthropic ein weiteres Puzzlestück in der Jagd nach ausreichend Rechenkapazität.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.bloomberg.com/news/articles/2026-08-11/anthropic-strikes-9-billion-deal-with-cloud-computing-firm-riot" target="_blank" rel="noopener">Bloomberg <span class="arw">→</span></a> · <a class="dlink" href="https://www.cnbc.com/2026/08/11/riot-platforms-signs-anthropic-deal-as-miners-shift-to-ai-infrastructure-.html" target="_blank" rel="noopener">CNBC <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#dd5b00;color:#ffffff">21</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://www.cloudsek.com/blog/ai-supply-chain-breach-2500-companies-434000-cicd-pipelines" target="_blank" rel="noopener">LiteLLM-Lieferkettenangriff trifft über 2.500 Unternehmen quer durch alle Branchen</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#dd5b001f;color:#dd5b00">Security &amp; Governance</span><span class="dmeta-src">CloudSEK · 11.08.2026</span> · <span class="dots">●●●●○</span> <span class="dmeta-imp">4/5</span></div>
+      <p>Die Sicherheitsfirma CloudSEK hat aufgedeckt, dass ein bereits im März eingeschleuster Schadcode in der KI-Proxy-Bibliothek LiteLLM mehr als 2.500 Organisationen und rund 434.000 CI/CD-Pipelines potenziell betroffen hat, darunter Nvidia, AWS, Samsung, Cisco, Siemens und Deloitte. Für Unternehmen, die generative KI über gängige Open-Source-Bausteine in eigene Systeme einbinden, ist der Fall ein Weckruf: Auch scheinbar kleine, kurzlebige Kompromittierungen in automatisierten Build-Pipelines können sich binnen Minuten branchenübergreifend verbreiten. Das FBI warnt, dass erbeutete Zugangsdaten noch länger für Folgeangriffe genutzt werden dürften.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.cloudsek.com/blog/ai-supply-chain-breach-2500-companies-434000-cicd-pipelines" target="_blank" rel="noopener">CloudSEK <span class="arw">→</span></a> · <a class="dlink" href="https://www.securityweek.com/over-2500-organizations-impacted-by-litellm-supply-chain-attack/" target="_blank" rel="noopener">SecurityWeek <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">22</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://www.macquarie.com/au/en/about/news/2026/anthropic-mam-gic-data-centre-infrastructure-partnership.html" target="_blank" rel="noopener">Anthropic sichert sich über Theseus Infrastructure langfristige Rechenzentrums-Kapazität</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">Macquarie · 10.08.2026</span> · <span class="dots">●●●●○</span> <span class="dmeta-imp">4/5</span></div>
+      <p>Anthropic gründet mit Macquarie Asset Management und dem Staatsfonds GIC die Plattform Theseus Infrastructure, die künftig Rechenzentren in den USA bauen, betreiben und langfristig an Anthropic vermieten soll. Macquarie und GIC finanzieren den Großteil des Eigenkapitals, Anthropic tritt als Ankermieter auf und verpflichtet sich, Strompreiserhöhungen für Anwohner der Standorte auszugleichen. Für Unternehmenskunden ist das ein Signal, dass Anthropic seine Kapazitätsengpässe strukturell und langfristig angeht statt nur einzelne Deals abzuschließen.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.macquarie.com/au/en/about/news/2026/anthropic-mam-gic-data-centre-infrastructure-partnership.html" target="_blank" rel="noopener">Macquarie <span class="arw">→</span></a> · <a class="dlink" href="https://www.bloomberg.com/news/articles/2026-08-10/anthropic-macquarie-and-gic-form-venture-for-ai-data-centers" target="_blank" rel="noopener">Bloomberg <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">23</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://nvidianews.nvidia.com/news/nvidia-partners-with-apollo-blackrock-blackstone-brookfield-goldman-sachs-and-kkr-to-establish-ai-compute-infrastructure-financing-platforms-to-mobilize-over-500-billion-of-third-party-capital" target="_blank" rel="noopener">Nvidia mobilisiert mit Wall-Street-Partnern über 500 Milliarden Dollar für KI-Rechenzentren</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">NVIDIA Newsroom · 10.08.2026</span> · <span class="dots">●●●●○</span> <span class="dmeta-imp">4/5</span></div>
+      <p>Nvidia hat mit Apollo, BlackRock, Blackstone, Brookfield, Goldman Sachs und KKR eine Absichtserklärung unterzeichnet, um gemeinsam mehr als 500 Milliarden Dollar an Fremdkapital für KI-Infrastruktur zu mobilisieren. Für Unternehmen, die auf gemietete KI-Rechenkapazität angewiesen sind, verspricht die Initiative langfristig mehr Angebot und potenziell wettbewerbsfähigere Konditionen – vorausgesetzt, die Absichtserklärungen münden tatsächlich in feste Finanzierungszusagen. Bis dahin bleibt es vor allem ein Signal dafür, wie sehr sich die Investitionsniveaus der Branche von klassischen IT-Budgets gelöst haben.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://nvidianews.nvidia.com/news/nvidia-partners-with-apollo-blackrock-blackstone-brookfield-goldman-sachs-and-kkr-to-establish-ai-compute-infrastructure-financing-platforms-to-mobilize-over-500-billion-of-third-party-capital" target="_blank" rel="noopener">NVIDIA Newsroom <span class="arw">→</span></a> · <a class="dlink" href="https://www.axios.com/2026/08/10/nvidia-financing-ai-goldman-sachs-blackrock" target="_blank" rel="noopener">Axios <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">24</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/05/shopify-says-ai-search-is-driving-more-traffic-and-sales-not-replacing-google/" target="_blank" rel="noopener">Shopify: KI-vermittelter Traffic und Umsatz verdreifachen sich im Jahresvergleich</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">TechCrunch · 05.08.2026</span> · <span class="dots">●●●●○</span> <span class="dmeta-imp">4/5</span></div>
+      <p>Shopify-Präsident Harley Finkelstein berichtete zu den Q2-Zahlen, dass sich von KI-Diensten vermittelter Traffic und daraus resultierende Bestellungen im Jahresvergleich verdreifacht haben, mit Neukäufer-Bestellungen aus KI-Kanälen zu fast doppelter Rate gegenüber anderen Kanälen. 75 Prozent der KI-vermittelten Käufe entfielen auf Nischenkategorien außerhalb der 100 größten Warengruppen, und die Hälfte der KI-vermittelten Sitzungen landete direkt auf einer Produktseite statt über die klassische Suche. Shopify wuchs im Quartal um 36 Prozent auf 3,6 Milliarden Dollar Umsatz und übertraf damit die Erwartungen – ein konkreter Beleg dafür, dass KI-Suche den klassischen Suchverkehr bislang eher ergänzt als verdrängt.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/05/shopify-says-ai-search-is-driving-more-traffic-and-sales-not-replacing-google/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a> · <a class="dlink" href="https://www.pymnts.com/earnings/2026/shopifys-ai-traffic-triples-as-shoppers-skip-the-search-bar/" target="_blank" rel="noopener">PYMNTS <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">25</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://www.eu-startups.com/2026/08/london-ai-cloud-startup-volta-exits-stealth-at-2-4-billion-valuation-lands-e8-6-billion-compute-deal-reportedly-with-anthropic/" target="_blank" rel="noopener">Anthropics Compute-Partner Volta verlässt den Stealth-Modus mit 2,4 Milliarden Dollar Bewertung</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">EU-Startups · 05.08.2026</span> · <span class="dots">●●●●○</span> <span class="dmeta-imp">4/5</span></div>
+      <p>Volta, das Rechenzentrums-Startup hinter dem tags zuvor bekannt gewordenen 10-Milliarden-Dollar-Compute-Deal mit Anthropic, ist offiziell aus dem Stealth-Modus getreten und wird nach einer von a16z, Altimeter und Nvidia getragenen Runde mit 2,4 Milliarden Dollar bewertet. Über eine mit Azora aufgesetzte, zusätzliche 5-Milliarden-Dollar-Finanzierungsfazilität will Volta außerdem den Bau weiterer KI-Rechenzentren für Labore und Unternehmen unterlegen, die an Kapazitätsgrenzen stoßen. Für Unternehmen, die selbst KI-Infrastruktur planen, zeigt der Fall, wie sehr sich Rechenleistung inzwischen zu einer eigenen, von spezialisierten Kapitalgebern finanzierten Anlageklasse entwickelt.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.eu-startups.com/2026/08/london-ai-cloud-startup-volta-exits-stealth-at-2-4-billion-valuation-lands-e8-6-billion-compute-deal-reportedly-with-anthropic/" target="_blank" rel="noopener">EU-Startups <span class="arw">→</span></a> · <a class="dlink" href="https://www.bloomberg.com/news/articles/2026-08-04/nvidia-dell-back-ai-cloud-startup-volta-at-2-4-billion-value" target="_blank" rel="noopener">Bloomberg <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">26</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/04/anthropic-signs-10-billion-deal-with-ai-cloud-startup-volta/" target="_blank" rel="noopener">Anthropic sichert sich 10 Milliarden Dollar Rechenleistung von der Nvidia-gestützten Compute-Firma Volta Infra</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">TechCrunch · 04.08.2026</span> · <span class="dots">●●●●○</span> <span class="dmeta-imp">4/5</span></div>
+      <p>Anthropic hat einen sechsjährigen 10-Milliarden-Dollar-Vertrag mit dem erst im Januar gegründeten Compute-Startup Volta Infra Holdings geschlossen, das unter anderem von Nvidia und a16z finanziert wird. Die Kapazität kommt aus einem wasserkraftbetriebenen norwegischen Rechenzentrum mit Nvidias kommenden Vera-Rubin-Chips – für Unternehmen zeigt der Deal, wie sehr der Zugang zu Rechenleistung inzwischen über neue, spezialisierte Zwischenhändler statt allein über etablierte Cloud-Anbieter läuft.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/04/anthropic-signs-10-billion-deal-with-ai-cloud-startup-volta/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">27</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads/" target="_blank" rel="noopener">OpenAIs Werbegeschäft in ChatGPT erreicht 1-Milliarde-Dollar-Marke</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">OpenAI · 31.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Keine 200 Tage nach dem Start hat ChatGPT Ads eine annualisierte Umsatzrate von 1 Milliarde Dollar erreicht und wird von zehntausenden Werbetreibenden genutzt. Ab sofort können Werbetreibende in Indien, Europa, dem Nahen Osten und Nordafrika auch selbst über den Ads Manager buchen. OpenAI stellt die Werbeeinnahmen als eine von mehreren Säulen neben Abos, Enterprise-Geschäft und API-Nutzung dar, mit denen ChatGPT für über eine Milliarde wöchentliche Nutzer kostenlos bleiben soll.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads/" target="_blank" rel="noopener">OpenAI <span class="arw">→</span></a> · <a class="dlink" href="https://the-decoder.com/openai-says-its-chatgpt-ad-business-hits-a-1-billion-annual-run-rate/" target="_blank" rel="noopener">The Decoder <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">28</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://the-decoder.com/openai-starts-charging-some-customers-only-when-its-ai-actually-works/" target="_blank" rel="noopener">OpenAI führt erfolgsbasierte Bezahlung für Großkunden ein</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">The Decoder · 31.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>OpenAI bietet einigen Großkunden jetzt ergebnisbasierte Preise an, bei denen erst gezahlt wird, wenn die KI eine Aufgabe tatsächlich erledigt hat. Salesforce, Adobe und mehrere Startups bewegen sich laut Bericht ebenfalls von festen Abo-Gebühren weg. Ungelöst bleibt die zentrale Streitfrage, wer den Erfolg für sich beansprucht - die Software oder der Kunde, der sie einsetzt.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://the-decoder.com/openai-starts-charging-some-customers-only-when-its-ai-actually-works/" target="_blank" rel="noopener">The Decoder <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">29</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/31/the-pentagon-now-has-its-own-version-of-chatgpt-and-grok/" target="_blank" rel="noopener">Pentagon führt ChatGPT Mil und Grok for Government ein</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">TechCrunch · 31.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Das US-Verteidigungsministerium hat OpenAIs &quot;ChatGPT Mil&quot; und xAIs &quot;Grok for Government&quot; für die mehr als drei Millionen Militär- und Zivilbeschäftigten freigeschaltet, zusätzlich zu Googles Gemini, das seit Dezember über die interne Plattform GenAI.mil läuft. ChatGPT Mil soll dokumentenlastige, unklassifizierte Arbeit wie Planung, Logistik und Verwaltung unterstützen, Grok for Government bringt unter anderem anpassbare Workspaces und wiederverwendbare &quot;Playbooks&quot; mit. Mehr als 1,7 Millionen Beschäftigte haben die Plattform seit dem Start genutzt.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/31/the-pentagon-now-has-its-own-version-of-chatgpt-and-grok/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">30</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/30/caterpillar-is-bringing-to-ai-deployment-what-it-learned-from-automating-mining/" target="_blank" rel="noopener">Caterpillar überträgt Jahrzehnte an Automatisierungs-Erfahrung aus dem Bergbau auf die breite KI-Einführung</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">TechCrunch · 30.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Caterpillar-CTO Jaime Mineart beschreibt, wie das Unternehmen Autonomie-Erfahrung aus dem Bergbau (autonome Lkw, Bohrungen, Lader) auf Bau- und Steinbruchbetriebe überträgt - unterstützt vom Cat AI Assistant für Techniker, der auf 1,6 Millionen vernetzten Maschinen und über 16 Petabyte Daten aufbaut, sowie digitalen Zwillingen für die Fertigung. Caterpillar investiert über fünf Jahre 100 Millionen Dollar in die KI- und Robotik-Weiterbildung seiner 118.000 Beschäftigten, nachdem der Umsatz im zweiten Quartal mit 20,5 Milliarden Dollar einen Rekord erreichte und die Stromerzeugungssparte dank Rechenzentrums-Nachfrage um 72 Prozent wuchs.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/30/caterpillar-is-bringing-to-ai-deployment-what-it-learned-from-automating-mining/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">31</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/30/the-u-s-is-building-barriers-around-drones-and-robots-china-still-has-scale/" target="_blank" rel="noopener">USA errichten Handelsbarrieren gegen chinesische Drohnen und Roboter - China hat die Fertigungsskalierung</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">TechCrunch · 30.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Neue US-Zölle auf Drohnen und Robotik-Komponenten (ab September, mit weiteren Stufen 2027) und die erweiterte FCC-Sperrliste treffen einen Markt, in dem chinesische Hersteller wie Unitree und UBTECH im ersten Halbjahr 2026 bereits 86 Prozent der weltweit ausgelieferten humanoiden Roboter stellten. Für Unternehmen, die auf humanoide oder mobile Robotik setzen, dürfte das eher zu einem fragmentierten Beschaffungsmarkt führen als zu einer klaren Trennung zwischen US- und chinesischen Anbietern - Beobachter erwarten eine Expansion chinesischer Hersteller nach Europa, Südostasien, Lateinamerika und in den Nahen Osten.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/30/the-u-s-is-building-barriers-around-drones-and-robots-china-still-has-scale/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">32</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/30/musks-faster-path-to-more-gas-turbines-comes-with-pollution-problem/" target="_blank" rel="noopener">SpaceX baut geheime Turbinenschaufel-Gießerei gegen den Strommangel bei KI-Rechenzentren</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">TechCrunch · 30.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Der Engpass bei Gasturbinen - weltweit nur vier Hersteller von Einkristall-Turbinenschaufeln, alle ausverkauft, GE Vernova bis 2030 ausgebucht - bremst den Ausbau neuer KI-Rechenzentren. Mit einer eigenen Gießerei in Bastrop, Texas, will SpaceX laut Elon Musk den Bau neuer Turbinen-Kapazität um bis zu 18 Monate beschleunigen; eine Studie des Piedmont Environmental Council schätzt zugleich 3,4 bis 6,5 zusätzliche vorzeitige Todesfälle pro Jahr durch gasbetriebene Rechenzentren allein in Virginia.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/30/musks-faster-path-to-more-gas-turbines-comes-with-pollution-problem/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">33</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://the-decoder.com/ai-generated-videos-are-already-displacing-actors-and-livestreamers-across-chinas-entertainment-industry/" target="_blank" rel="noopener">KI-generierte Videos verdrängen zunehmend Schauspieler und Livestreamer in China</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">The Decoder · 29.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Seit dem Start von ByteDances Seedance 2.0 ersetzen KI-generierte Videos zunehmend menschliche Darsteller in Chinas Unterhaltungsindustrie: Im ersten Quartal 2026 waren 95 Prozent der rund 128.000 veröffentlichten Kurzdramen KI-generiert - dreimal so viele wie im gesamten Jahr 2025. Eine Minute KI-Video kostet inzwischen nur noch 90 bis 120 Dollar, etwa ein Zehntel der bisherigen Produktionskosten mit menschlichen Darstellern, während die Branche direkt 690.000 Menschen beschäftigt.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://the-decoder.com/ai-generated-videos-are-already-displacing-actors-and-livestreamers-across-chinas-entertainment-industry/" target="_blank" rel="noopener">The Decoder <span class="arw">→</span></a> · <a class="dlink" href="https://www.ft.com/content/7117ff02-d495-4936-8f05-fa73a7a5c669" target="_blank" rel="noopener">Financial Times <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">34</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/28/anthropic-gets-its-first-court-win-over-the-pentagons-supply-chain-risk-label/" target="_blank" rel="noopener">Anthropic gewinnt ersten Gerichtssieg gegen Pentagon-Blacklist</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">TechCrunch · 28.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Eine Bundesrichterin in San Francisco hat die Einstufung Anthropics als „Supply-Chain-Risiko&quot; durch das Pentagon für rechtswidrig erklärt und als verfassungswidrige Vergeltung gewertet. Das Urteil reduziert das Risiko für Behörden und öffentliche Auftraggeber, die Claude-Modelle einsetzen wollen, und stärkt Anthropics Position im Enterprise- und Government-Geschäft vor dem geplanten Börsengang.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/28/anthropic-gets-its-first-court-win-over-the-pentagons-supply-chain-risk-label/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#213183;color:#ffffff">35</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://the-decoder.com/google-deepminds-ai-co-scientist-now-plans-experiments-runs-lab-equipment-and-writes-scientific-papers/" target="_blank" rel="noopener">Google DeepMinds KI-Co-Wissenschaftler automatisiert Laborarbeit</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2131831f;color:#213183">Agents &amp; Frameworks</span><span class="dmeta-src">The Decoder · 28.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Der Gemini-basierte „Co-Scientist&quot; plant Experimente, programmiert Laborprotokolle und verfasst Manuskripte – relevant für forschungsintensive Branchen wie Pharma, Biotech und Materialwissenschaft, wo Rezeptentwicklung sich so von Tagen auf Minuten verkürzen lässt. Allerdings zeigte eine Blindbewertung durch drei Ärzte bei einer medizinischen Anwendung nur einen begrenzten Vorteil gegenüber dem reinen Basismodell, was die Grenzen automatisierter Fachbewertung unterstreicht.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://the-decoder.com/google-deepminds-ai-co-scientist-now-plans-experiments-runs-lab-equipment-and-writes-scientific-papers/" target="_blank" rel="noopener">The Decoder <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">36</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/27/ais-memory-crunch-is-coming-for-android-apps/" target="_blank" rel="noopener">KI-bedingte Speicherknappheit zwingt Google zu neuen Speicherregeln für Android-Apps</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">TechCrunch · 27.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Google verschärft die Qualitätsanforderungen für Android-Apps, weil der Boom bei KI-Rechenzentren zu einer globalen Speicherchip-Knappheit führt: Hersteller wie Samsung, SK Hynix und Micron verlagern Kapazitäten zu profitableren High-Bandwidth-Speicherchips für KI-Beschleuniger und lassen so weniger Standardspeicher für Smartphones übrig. Entwickler erhalten bis Februar 2027 Zeit, neue Grenzwerte für Arbeitsspeicher- und Bitmap-Nutzung einzuhalten, unterstützt durch neue Warntools von Google – ein weiteres Beispiel dafür, wie der KI-Boom mittlerweile auf die Kostenstruktur klassischer Consumer-Hardware durchschlägt.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/27/ais-memory-crunch-is-coming-for-android-apps/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a> · <a class="dlink" href="https://www.theregister.com/software/2026/08/27/google-forces-android-apps-to-use-memory-more-wisely-as-rampocalypse-rages/" target="_blank" rel="noopener">The Register <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">37</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://the-decoder.com/the-chinese-ai-model-glm-5-3-flash-runs-without-nvidia-and-costs-a-fraction-of-what-the-competition-does/" target="_blank" rel="noopener">GLM-5.3-Flash läuft komplett auf chinesischen Chips – Preisdruck auf Nvidia-Ökosystem wächst</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">The Decoder · 27.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Z.ai hat bestätigt, dass sein offenes Modell GLM-5.3-Flash (vormals als „Ox Alpha“ bekannt) während der einwöchigen Testphase komplett auf einem Cluster aus rund 100.000 chinesischen KI-Chips lief – ganz ohne Nvidia-Hardware. Laut Artificial Analysis erreicht das Modell mit 57 von 60 möglichen Punkten im Intelligence Index fast das Niveau des größeren GLM-5.3, bei rund 0,09 Dollar pro Aufgabe etwa 7,5-mal günstiger. Für Unternehmen mit Preisdruck auf ihre KI-Budgets ist das ein weiterer Beleg, dass sich Spitzenmodelle inzwischen auch außerhalb des Nvidia-Ökosystems wirtschaftlich betreiben lassen.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://the-decoder.com/the-chinese-ai-model-glm-5-3-flash-runs-without-nvidia-and-costs-a-fraction-of-what-the-competition-does/" target="_blank" rel="noopener">The Decoder <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">38</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://the-decoder.com/chinese-moonshot-ai-negotiates-hosting-deals-with-microsoft-amazon-and-google/" target="_blank" rel="noopener">Moonshot AI verhandelt Hosting-Deals mit Microsoft, Amazon und Google</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">The Decoder · 26.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Das chinesische Labor Moonshot AI verhandelt mit Microsoft, Amazon und Google über Hosting-Deals für sein Modell Kimi K3 auf deren US-Cloud-Plattformen und fordert dafür bis zu 30 Prozent Umsatzbeteiligung. Es wäre der erste derartige Deal eines chinesischen Anbieters mit einem großen US-Cloud-Provider – trotz laufender Exportkontroll-Debatte und Vorwürfen, Moonshot habe ein Anthropic-Modell kopiert.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://the-decoder.com/chinese-moonshot-ai-negotiates-hosting-deals-with-microsoft-amazon-and-google/" target="_blank" rel="noopener">The Decoder <span class="arw">→</span></a> · <a class="dlink" href="https://www.reuters.com/business/retail-consumer/chinas-moonshot-talks-with-microsoft-amazon-google-over-k3-revenue-sharing-2026-08-26/" target="_blank" rel="noopener">Reuters <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">39</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://the-decoder.com/anthropic-sees-a-market-opportunity-of-more-than-30-trillion-ahead-of-its-ipo/" target="_blank" rel="noopener">Anthropic beziffert Marktchance vor Börsengang auf über 30 Billionen Dollar</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">The Decoder · 26.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Anthropic will Investoren vor dem für Herbst geplanten Börsengang ein Marktvolumen von über 30 Billionen Dollar präsentieren – mehr als die von SpaceX genannten 28,5 Billionen. Der Umsatz hat sich im zweiten Quartal auf 11,6 Milliarden Dollar verdoppelt, bis 2028 werden 190 bis 200 Milliarden Dollar erwartet, bei einer angestrebten Bewertung von rund zwei Billionen Dollar.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://the-decoder.com/anthropic-sees-a-market-opportunity-of-more-than-30-trillion-ahead-of-its-ipo/" target="_blank" rel="noopener">The Decoder <span class="arw">→</span></a> · <a class="dlink" href="https://www.wsj.com/tech/ai/anthropic-expected-to-tell-investors-it-sees-over-30-trillion-in-potential-revenue-a611efea" target="_blank" rel="noopener">Wall Street Journal <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">40</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://www.bloomberg.com/news/articles/2026-08-26/anthropic-to-pay-nscale-45-billion-for-ai-computing-power" target="_blank" rel="noopener">Anthropic sichert sich für 45 Milliarden Dollar Rechenkapazität bei Nscale</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">Bloomberg · 26.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Anthropic hat laut Bloomberg einen Sechs-Jahres-Vertrag über rund 45 Milliarden Dollar mit dem britischen Cloud-Anbieter Nscale abgeschlossen und least damit 460 Megawatt Rechenleistung in einem neuen Rechenzentrum in West Virginia, das ab Ende 2027 auf Nvidias kommender Vera-Rubin-Chipgeneration läuft. Der Deal reiht sich in eine Serie ähnlicher Vorleistungen vor dem für Herbst geplanten Börsengang ein, darunter 50 Milliarden Dollar mit Fluidstack, 10 Milliarden mit Volta Infra und 45 Milliarden mit SpaceX.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.bloomberg.com/news/articles/2026-08-26/anthropic-to-pay-nscale-45-billion-for-ai-computing-power" target="_blank" rel="noopener">Bloomberg <span class="arw">→</span></a> · <a class="dlink" href="https://the-decoder.com/anthropic-locks-in-45-billion-dollar-compute-deal-with-nscale-ahead-of-ipo/" target="_blank" rel="noopener">The Decoder <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">41</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://www.bain.com/about/media-center/press-releases/2026/bain-company-announces-partnership-with-anthropic-to-accelerate-clients-enterprise-ai-transformations/" target="_blank" rel="noopener">Bain &amp; Company wird globaler Premier-Partner im Claude Partner Network</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">Bain &amp; Company · 25.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Bain &amp; Company baut seine Anthropic-Partnerschaft aus und wird als „Global Premier“-Partner im Claude Partner Network geführt. Die Unternehmensberatung will darüber KI-Transformationen bei ihren Firmenkunden weltweit vorantreiben. Der Deal reiht sich in eine wachsende Zahl exklusiver Beratungspartnerschaften der großen KI-Anbieter ein, die auf Enterprise-Rollouts zielen.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.bain.com/about/media-center/press-releases/2026/bain-company-announces-partnership-with-anthropic-to-accelerate-clients-enterprise-ai-transformations/" target="_blank" rel="noopener">Bain &amp; Company <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">42</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://openai.com/index/chatgpt-ads-expands-across-europe/" target="_blank" rel="noopener">ChatGPT-Werbung startet in 31 weiteren europäischen Ländern</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">OpenAI · 25.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>OpenAI weitet sein Werbeprogramm in ChatGPT auf 31 europäische Länder aus – die bislang größte geografische Erweiterung seit dem Start im Sommer. Anzeigen betreffen nur kostenlose Nutzer und den günstigen Go-Tarif, während Plus-, Pro- und Enterprise-Kunden werbefrei bleiben. Für Werbetreibende erschließt sich damit ein deutlich größerer europäischer Markt für ChatGPT-Anzeigen.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://openai.com/index/chatgpt-ads-expands-across-europe/" target="_blank" rel="noopener">OpenAI <span class="arw">→</span></a> · <a class="dlink" href="https://searchengineland.com/chatgpt-ads-are-expanding-to-31-european-countries-485468" target="_blank" rel="noopener">Search Engine Land <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">43</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://the-decoder.com/nvidia-in-talks-to-invest-in-perplexity-at-30-billion-plus-valuation/" target="_blank" rel="noopener">Nvidia verhandelt Investment in Perplexity zu über 30 Milliarden Dollar Bewertung</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">The Decoder · 24.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Laut The Information verhandelt Nvidia über eine Beteiligung an Perplexity zu einer Bewertung von über 30 Milliarden Dollar, mehr als 50 Prozent über der letzten Runde. Perplexity soll seinen annualisierten Umsatz auf über 750 Millionen Dollar verdreifacht haben, unter anderem dank des agentischen Produkts „Perplexity Computer“.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://the-decoder.com/nvidia-in-talks-to-invest-in-perplexity-at-30-billion-plus-valuation/" target="_blank" rel="noopener">The Decoder <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">44</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://the-decoder.com/thomson-reuters-bets-40m-on-owning-its-ai-instead-of-renting-from-openai-or-anthropic/" target="_blank" rel="noopener">Thomson Reuters setzt 40 Millionen Dollar darauf, eigene KI zu besitzen statt zu mieten</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">The Decoder · 24.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Thomson Reuters investiert 40 Millionen Dollar in den Aufbau eigener KI-Infrastruktur, statt sich vollständig auf gemietete Modelle von OpenAI oder Anthropic zu verlassen. Der Schritt reiht sich in eine wachsende Zahl von Unternehmen ein, die die Abhängigkeit von einzelnen Frontier-Anbietern und deren Preissetzung als strategisches Risiko einstufen.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://the-decoder.com/thomson-reuters-bets-40m-on-owning-its-ai-instead-of-renting-from-openai-or-anthropic/" target="_blank" rel="noopener">The Decoder <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">45</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/24/amazon-hikes-hardware-prices-by-60-percent-blaming-memory-shortage/" target="_blank" rel="noopener">Speicherknappheit treibt jetzt auch Amazons Hardware-Preise um rund 60 Prozent nach oben</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">TechCrunch · 24.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Amazon erhöht Berichten zufolge die Preise für eigene Hardware um rund 60 Prozent und begründet das mit der anhaltenden Speicherknappheit – derselbe Preistreiber, der zuvor bereits Nvidia-KI-Server um rund 15 Prozent verteuert hat, erreicht damit auch Consumer-Hardware.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/24/amazon-hikes-hardware-prices-by-60-percent-blaming-memory-shortage/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#213183;color:#ffffff">46</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/24/openai-is-building-an-ai-agent-for-everything-will-everyone-use-them/" target="_blank" rel="noopener">OpenAI-Zahlen zeigen große Lücke zwischen ChatGPT-Work-Reichweite und tatsächlicher Codex-Nutzung</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2131831f;color:#213183">Agents &amp; Frameworks</span><span class="dmeta-src">TechCrunch · 24.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Nur 17 Prozent der Team-Abonnenten und unter 1 Prozent der Einzelnutzer von OpenAIs Nicht-Entwickler-Agentenprodukt ChatGPT Work setzen den Coding-Agenten Codex überhaupt ein, obwohl er intern bei OpenAI zu 98 Prozent genutzt wird. Für Unternehmen, die in Enterprise-KI-Lizenzen investieren, zeigt die Lücke, wie unterschiedlich Adoption je nach Nutzergruppe ausfällt.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/24/openai-is-building-an-ai-agent-for-everything-will-everyone-use-them/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#213183;color:#ffffff">47</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://venturebeat.com/orchestration/enterprises-winning-with-ai-agents-are-limiting-how-much-the-agents-can-do-alone" target="_blank" rel="noopener">Studie: Unternehmen, die mit KI-Agenten erfolgreich sind, schränken deren Autonomie gezielt ein</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2131831f;color:#213183">Agents &amp; Frameworks</span><span class="dmeta-src">VentureBeat · 22.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Unter Berufung auf Gartner und McKinseys AI-Trust-Maturity-Survey 2026 zeigt eine Auswertung, dass erfolgreiche Unternehmen auf eng begrenzte Agenten-Zuständigkeiten, feste Freigabepunkte und lückenlose Entscheidungsnachverfolgung setzen statt auf maximale Autonomie. Mehr als 40 Prozent der Agentic-AI-Projekte sollen laut Gartner bis 2028 wieder eingestellt werden – ein Hinweis darauf, wie viele Unternehmen ihre Agenten produktiv einsetzen, bevor die nötige Governance steht.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://venturebeat.com/orchestration/enterprises-winning-with-ai-agents-are-limiting-how-much-the-agents-can-do-alone" target="_blank" rel="noopener">VentureBeat <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">48</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://the-decoder.com/netflix-tests-language-model-as-alternative-to-hand-built-recommendation-logic/" target="_blank" rel="noopener">Netflix testet Sprachmodell GenRec als Alternative zur handgebauten Empfehlungslogik</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">The Decoder · 22.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Netflix wandelt Nutzungsverhalten in Klartext um und lässt ein feinabgestimmtes offenes Sprachmodell namens GenRec statt tausender manuell konstruierter Merkmale Empfehlungen erzeugen. Offline erzielte GenRec rund 1,6 Prozent bessere Ranking-Qualität bei 40-fach weniger Trainingsdaten; ein vierwöchiger Live-Test auf zehn Prozent des Traffics zeigte statistisch signifikante, wenn auch kleine Verbesserungen. Für die Branche ist es ein weiteres Beispiel dafür, wie klassische, feature-basierte ML-Systeme schrittweise durch LLM-basierte Ansätze ersetzt werden.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://the-decoder.com/netflix-tests-language-model-as-alternative-to-hand-built-recommendation-logic/" target="_blank" rel="noopener">The Decoder <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">49</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/21/how-ai-accounting-startup-rillet-raised-100m-and-became-a-unicorn-in-48-hours/" target="_blank" rel="noopener">KI-Buchhaltungs-Startup Rillet wird binnen 48 Stunden zum Unicorn</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">TechCrunch · 21.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Das auf KI-gestützte Buchhaltung spezialisierte Startup Rillet sammelte 100 Millionen Dollar ein und erreichte Unicorn-Status innerhalb von nur 48 Stunden Verhandlungszeit. Der Fall zeigt exemplarisch, wie schnell Kapital derzeit in vertikale KI-Anwendungen fließt, die etablierte Finanzsoftware direkt angreifen.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/21/how-ai-accounting-startup-rillet-raised-100m-and-became-a-unicorn-in-48-hours/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">50</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://the-decoder.com/china-now-has-its-own-ai-circular-financing-scheme/" target="_blank" rel="noopener">China: Unitree-Börsengang enthüllt zirkuläres KI-Finanzierungsmodell</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">The Decoder · 20.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Der chinesische Humanoid-Robotik-Hersteller Unitree ist beim Börsengang in Shanghai zeitweise um 629 Prozent gestiegen und kam auf eine Bewertung von rund 50 Milliarden Dollar. Laut einem Bericht der Financial Times stammt der Großteil der Nachfrage jedoch von staatlich geförderten Trainingszentren, die Roboter kaufen und die dabei gesammelten Trainingsdaten an die Hersteller zurückverkaufen – bei Unitree kamen fast drei Viertel des Umsatzes aus dieser Ecosystem-Nähe. Analysten sehen darin ein Muster, das der in den USA kritisierten zirkulären Nvidia-Finanzierung ähnelt, und zweifeln sowohl an der Bewertung als auch am tatsächlichen Nutzen der Daten.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://the-decoder.com/china-now-has-its-own-ai-circular-financing-scheme/" target="_blank" rel="noopener">The Decoder <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">51</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/20/ramp-launches-its-own-ai-model-router-called-router/" target="_blank" rel="noopener">Ramp launcht eigenen KI-Modell-Router „Router“</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">TechCrunch · 20.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Ramp hat mit Router einen eigenen KI-Modell-Router gestartet, über den Firmen per API zwischen Modellen von OpenAI, Anthropic, DeepSeek, Moonshot, Nvidia, xAI und Z.ai wechseln können – ein System, das Ramp nach eigenen Angaben seit drei Jahren intern nutzt. Für Ramp, das im Juni 750 Millionen Dollar bei einer Bewertung von 44 Milliarden Dollar eingesammelt hat, ist das Angebot ein zweiter Vorstoß nach Stripes OpenRouter-Übernahme, Zugang zum wachsenden Inferenz-Markt zu bekommen und ihn eng mit dem bestehenden Ausgaben-Management zu verzahnen. Nutzer erhalten ein Dashboard für Token-Ausgaben, Latenz und Fallback-Versuche.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/20/ramp-launches-its-own-ai-model-router-called-router/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">52</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/20/google-gives-publishers-a-new-way-to-fight-ai-driven-traffic-losses/" target="_blank" rel="noopener">Google gibt Publishern neuen Hebel gegen KI-Traffic-Verluste</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">TechCrunch · 20.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Google lässt Leser künftig per Button auf Publisher-Websites eine Quelle als „bevorzugt“ markieren, was sie über Google Search, Discover und Google News stärker sichtbar macht – eine Reaktion auf sinkenden Traffic durch KI-Overviews und KI-Suche. Nutzer klicken laut eigenen Google-Studien doppelt so häufig auf bevorzugte Quellen, und bereits über 345.000 Quellen wurden seit dem Start der Funktion im Mai ausgewählt. Für traffic-abhängige Medienunternehmen ist das ein kleines Zugeständnis in einem Machtgefälle, das durch KI-gestützte Suche strukturell zu ihren Ungunsten verschoben bleibt.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/20/google-gives-publishers-a-new-way-to-fight-ai-driven-traffic-losses/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">53</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://the-decoder.com/china-lets-nvidias-h200-chips-trickle-onto-the-mainland-to-help-its-ai-firms-keep-pace-with-the-us/" target="_blank" rel="noopener">China lässt Nvidias H200-Chips in kleinen Mengen aufs Festland</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">The Decoder · 19.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>ByteDance und Tencent haben laut Financial Times jeweils rund 10.000 Nvidia-H200-Prozessoren erhalten, weitere Firmen könnten folgen – ein vorsichtiges Zugeständnis Pekings, das eigentlich Huaweis heimische Chips fördern will. Für Unternehmen, die Inferenz-Kapazität in China einkaufen oder mit chinesischen Anbietern konkurrieren, zeigt das: Der Compute-Rückstand bleibt real, schrumpft aber langsam, während Modelle wie GLM-5.3, Kimi K3 und DeepSeek V4 technisch bereits aufgeholt haben.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://the-decoder.com/china-lets-nvidias-h200-chips-trickle-onto-the-mainland-to-help-its-ai-firms-keep-pace-with-the-us/" target="_blank" rel="noopener">The Decoder <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">54</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://the-decoder.com/stripe-declares-were-living-in-the-singularity-and-uses-it-as-a-reason-not-to-ipo/" target="_blank" rel="noopener">Stripe bestätigt OpenRouter-Übernahme, bleibt wegen „Singularität“ privat</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">The Decoder · 19.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Stripe hat die bereits berichtete Übernahme des KI-Gateways OpenRouter für über acht Milliarden Dollar bestätigt und begründet in einem Investorenbrief, warum das Unternehmen trotz 41 Prozent Umsatzwachstum privat bleibt: Man wolle Übernahmen ohne Verwässerung finanzieren können und positioniert die eigene Zahlungsinfrastruktur explizit als Grundlage für die „Intelligence Pipeline“ jedes Entwicklerteams. Für Firmen, die Modell-Zugriff über Gateways einkaufen, wächst damit ein Anbieter zusammen, der Zahlungsabwicklung und KI-Modell-Routing aus einer Hand anbietet.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://the-decoder.com/stripe-declares-were-living-in-the-singularity-and-uses-it-as-a-reason-not-to-ipo/" target="_blank" rel="noopener">The Decoder <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">55</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://www.cerebras.ai/blog/introducing-cerebras-cs-4" target="_blank" rel="noopener">Cerebras stellt CS-4 vor: bis zu 30-fache Inferenz-Geschwindigkeit gegenüber GPUs</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">Cerebras · 19.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Cerebras hat mit dem CS-4 ein neues Rack-System vorgestellt, das drei WSE-3-Turbo-Wafer-Prozessoren kombiniert und auf 750 PetaFLOPS KI-Rechenleistung kommt. Das Unternehmen wirbt mit bis zu 30-facher Inferenz-Geschwindigkeit gegenüber GPU-basierten Systemen und zehnfach besserer Energieeffizienz pro Watt als beim Vorgänger CS-3; erste Auslieferungen sollen noch in diesem Quartal beginnen. Für Firmen, die Inferenz-Kapazität einkaufen, positioniert sich Cerebras damit als Alternative zu Nvidia, bislang allerdings nur mit herstellereigenen Leistungsangaben.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.cerebras.ai/blog/introducing-cerebras-cs-4" target="_blank" rel="noopener">Cerebras <span class="arw">→</span></a> · <a class="dlink" href="https://www.hpcwire.com/2026/08/20/its-not-an-hpc-system-but-cerebras-new-cs-4-is-an-ai-monster/" target="_blank" rel="noopener">HPCwire <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">56</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/18/etcheds-valuation-doubles-to-21b-in-a-month/" target="_blank" rel="noopener">Etched verdoppelt Bewertung auf 21 Milliarden Dollar binnen eines Monats</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">TechCrunch · 18.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Nachdem der Quant-Fonds Jane Street Etcheds erstes ausgeliefertes Inferenz-Cluster-System getestet und selbst in Betrieb genommen hat, führte er eine neue 700-Millionen-Dollar-Runde bei 21 Milliarden Dollar Bewertung an – nach 10,3 Milliarden im Juli und 5 Milliarden im Dezember. Etched hat für Prompt-Verarbeitung und Antwortgenerierung jeweils eigene Chips beziehungsweise einen neuen Speicherverbund entwickelt und tritt damit gegen Nvidias „AI Factories&quot; an. Für Unternehmen, die Inferenz-Kapazität einkaufen, zeigt das Tempo, wie schnell sich abseits der etablierten GPU-Anbieter eine zweite Beschaffungsoption etabliert.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/18/etcheds-valuation-doubles-to-21b-in-a-month/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">57</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/18/cursor-capitalizes-on-github-frustration-launches-rival-hosting-platform/" target="_blank" rel="noopener">SpaceXAIs Cursor greift mit Origin GitHubs Enterprise-Kerngeschäft an</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">TechCrunch · 18.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Cursor hat mit Origin eine eigene Code-Hosting-Plattform gestartet, die Repositories, Pull Requests und Zusammenarbeit abbildet und bewusst mit GitHub interoperabel bleibt, sodass Unternehmen schrittweise migrieren können. Der Start fällt mit anhaltendem Unmut über GitHub-Ausfälle zusammen – laut eigenen Angaben bereits der 257. Ausfall binnen eines Jahres, mit einem weltweiten, mehrstündigen Ausfall am selben Tag. Für Unternehmen mit GitHub-Enterprise-Verträgen entsteht damit erstmals eine ernstzunehmende Alternative aus dem KI-Coding-Umfeld selbst.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/18/cursor-capitalizes-on-github-frustration-launches-rival-hosting-platform/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">58</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/18/warps-new-system-is-an-out-of-the-box-software-factory-for-ai-development/" target="_blank" rel="noopener">Warp Factories kommerzialisiert das Software-Factory-Konzept für kleinere Unternehmen</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">TechCrunch · 18.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Warp bietet mit Warp Factories eine fertige Infrastruktur für agentenbasierte Entwicklungsteams an, die bislang vor allem gut ausgestattete Firmen wie Stripe oder Ramp sich selbst gebaut hatten. Das System bindet gängige Ticketing- und Messaging-Tools ein und liefert Kennzahlen zu Agenten-Performance und Token-Verbrauch, funktioniert modelloffen mit Codex oder Claude Code. Warp-Chef Zack Lloyd nennt eine Automatisierungsquote von 30 bis 35 Prozent im eigenen Unternehmen als Richtwert dafür, was aktuell realistisch erreichbar ist.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/18/warps-new-system-is-an-out-of-the-box-software-factory-for-ai-development/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">59</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://www.pa.gov/governor/newsroom/2026-press-releases/governor-shapiro-signs-executive-order-on-data-center-developmen" target="_blank" rel="noopener">Pennsylvania erlässt verbindliche Leitplanken für Rechenzentren-Entwicklung</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">Commonwealth of Pennsylvania · 18.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Gouverneur Josh Shapiro verpflichtet Rechenzentren-Entwickler in Pennsylvania per Executive Order zu verbindlichen „GRID“-Standards bei Energiekosten, Umweltauflagen, lokaler Beschäftigung und Transparenz, bevor Genehmigungen erteilt werden; KI-Rechenzentren verlieren zudem den Zugang zum beschleunigten Fast-Track-Verfahren. Für Unternehmen, die Rechenzentren-Kapazität planen, wird damit ein Bundesstaat mit über 100 laufenden Projektanfragen zum Beispiel dafür, wie lokale Regulierung spekulative Vorhaben stärker an harte Verpflichtungen bindet.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.pa.gov/governor/newsroom/2026-press-releases/governor-shapiro-signs-executive-order-on-data-center-developmen" target="_blank" rel="noopener">Commonwealth of Pennsylvania <span class="arw">→</span></a> · <a class="dlink" href="https://www.inquirer.com/politics/pennsylvania/josh-shapiro-data-center-order-20260818.html" target="_blank" rel="noopener">The Philadelphia Inquirer <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">60</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/17/anthropics-annualized-revenue-surges-to-65b/" target="_blank" rel="noopener">Anthropics annualisierte Erlöse springen vor dem Börsengang auf 65 Milliarden Dollar</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">TechCrunch · 17.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Anthropics annualisierte Erlösrate kletterte Ende Juli auf über 65 Milliarden Dollar, nach 47 Milliarden im Mai – Investoren rechnen mit 100 bis 120 Milliarden Dollar zum Jahresende. OpenAI wuchs im Vergleich langsamer auf 40 Milliarden Dollar; für Unternehmen, die zwischen den beiden Anbietern wählen, unterstreicht das unterschiedliche Wachstumstempo vor den für diesen Herbst erwarteten Börsengängen beider Firmen.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/17/anthropics-annualized-revenue-surges-to-65b/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">61</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/14/hyperscalers-might-regret-embracing-natural-gas-if-new-forecast-proves-correct/" target="_blank" rel="noopener">Prognose: Erdgaspreise könnten die Rechenzentrums-Wette der Hyperscaler teuer machen</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">TechCrunch · 14.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Das Energie-Research-Haus Noreva rechnet damit, dass US-Erdgaspreise an einzelnen Hubs sich von rund 2 bis 4,50 Dollar auf über 10 Dollar je MMBtu verdreifachen könnten, weil die Nachfrage der KI-Rechenzentren auf ein langsamer wachsendes Angebot und steigende LNG-Exporte trifft. Amazon, Google, Meta und Microsoft haben bereits Gaskraftwerke im Gigawatt-Maßstab zugesagt, etwa Metas 7,5-Gigawatt-Anlage in Louisiana, in der Annahme, dass Gas günstig bleibt. Laut Noreva-Chef sind Investoren überrascht, wie viel Rohstoffpreisrisiko die Hyperscaler damit eingehen – ein Risiko, das sich am Ende in höheren Token-Kosten niederschlagen könnte.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/14/hyperscalers-might-regret-embracing-natural-gas-if-new-forecast-proves-correct/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">62</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/14/uber-and-pony-ai-plan-to-bring-2000-robotaxis-to-europe/" target="_blank" rel="noopener">Uber und Pony.ai weiten Robotaxi-Partnerschaft auf über 2.000 Fahrzeuge in Europa aus</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">TechCrunch · 14.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Uber und der chinesische Anbieter autonomer Fahrzeuge Pony.ai haben eine erweiterte Partnerschaft angekündigt, die mehr als 2.000 Robotaxis in europäische Städte bringen soll – aufbauend auf dem bestehenden Dienst in Zagreb, den der lokale Partner Verne betreibt. Konkrete Städte oder ein Zeitplan wurden noch nicht genannt, geplant ist zusätzlich eine Expansion in den Nahen Osten. Für den europäischen Robotaxi-Markt, der bislang vor allem von Waymo und lokalen Anbietern geprägt war, wäre das ein deutlicher Kapazitätssprung durch einen chinesischen Anbieter.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/14/uber-and-pony-ai-plan-to-bring-2000-robotaxis-to-europe/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a> · <a class="dlink" href="https://www.cnbc.com/2026/08/14/uber-partners-with-chinas-ponyai-for-2000-robotaxis-in-europe.html" target="_blank" rel="noopener">CNBC <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#1aae39;color:#1f1d1b">63</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B" target="_blank" rel="noopener">Qwen3.8-Max-Gewichte erhöhen den Preisdruck auf westliche Anbieter weiter</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#1aae391f;color:#1aae39">Open Weight / Lokal</span><span class="dmeta-src">Hugging Face · 13.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Mit der offenen Veröffentlichung von Qwen3.8-2.4T-A95B können Unternehmen erstmals ein Modell der Qwen-Max-Klasse auf eigener Infrastruktur betreiben, statt es nur über Alibabas Cloud zu mieten. In Alibabas eigenen Benchmarks liegt das Modell bei Coding- und Agenten-Aufgaben nahe an Claude Opus 4.8 und GPT-5.6 Sol, verlangt für den produktiven Betrieb allerdings entsprechend große GPU-Cluster. Für Unternehmen mit eigenen Rechenzentren verschiebt das die Kalkulation zwischen Eigenbetrieb und API-Miete weiter zugunsten des Eigenbetriebs.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B" target="_blank" rel="noopener">Hugging Face <span class="arw">→</span></a> · <a class="dlink" href="https://www.mindstudio.ai/blog/qwen3-8-2-4t-a95b-release" target="_blank" rel="noopener">MindStudio <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">64</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/" target="_blank" rel="noopener">Gemini 3.7 Flash zieht mit halbem Einführungspreis in Googles Enterprise-Plattform ein</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">Google · 13.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Google macht Gemini 3.7 Flash zeitgleich in der Gemini Enterprise Agent Platform und der Gemini-Enterprise-App verfügbar, zum Einführungspreis von 0,75 US-Dollar je Million Eingabe- und 3,75 US-Dollar je Million Ausgabe-Token – die Hälfte des Vorgängerpreises, gültig bis Jahresende. Frühe Kundenstimmen von Box, Databricks, Harvey und LangChain heben vor allem die verbesserte Zuverlässigkeit bei mehrstufigen Geschäftsworkflows hervor. Für Unternehmen, die zwischen Gemini, Claude, GPT-5.6 und Grok wählen müssen, verschiebt das erneut die Preis-Leistungs-Rechnung.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/" target="_blank" rel="noopener">Google <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">65</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://mistral.ai/news/regional-inference-open-models-new-compute/" target="_blank" rel="noopener">Mistral bindet europäische Unternehmen mit mehrjährigen Kapazitätsverträgen an sich</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">Mistral AI · 11.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Mistral bietet Unternehmenskunden jetzt eine feste Wahl des Verarbeitungsstandorts zwischen Europa und den USA sowie einen SLA-abgesicherten „Priority Tier“ für unternehmenskritische Workloads – und eine Koalition europäischer Firmen sichert mit mehrjährigen Abnahmeverträgen 200 Megawatt zusätzliche Kapazität bis 2027 ab. Für Unternehmen, die aus Compliance-Gründen auf europäische Verarbeitung angewiesen sind, ist das eine der ersten vertraglich handfesten Alternativen zu US-Hyperscalern.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://mistral.ai/news/regional-inference-open-models-new-compute/" target="_blank" rel="noopener">Mistral AI <span class="arw">→</span></a> · <a class="dlink" href="https://venturebeat.com/infrastructure/mistral-ai-wants-to-build-1-gigawatt-of-european-compute-by-2030-and-lock-in-customers-now" target="_blank" rel="noopener">VentureBeat <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">66</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://www.cnbc.com/2026/08/11/manus-china-meta-acquisition.html" target="_blank" rel="noopener">Manus verliert Meta als Eigentümer – China erzwingt Rückabwicklung der 2-Milliarden-Dollar-Übernahme</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">CNBC · 11.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Nach einer Anordnung von Chinas Handelsministerium und der Reformkommission NDRC muss Meta seine im Frühjahr verkündete Übernahme des KI-Agenten-Anbieters Manus rückabwickeln; Manus kehrt in die Unabhängigkeit zurück. Meta hat bereits interne Datenzugänge für Manus-Mitarbeitende gekappt, Nutzerdaten seit dem 29. Dezember 2025 werden am 23. und 24. August gelöscht. Für US-Konzerne mit Ambitionen auf chinesische KI-Startups ist der Fall ein Präzedenzfall dafür, wie genau Peking grenzüberschreitende Übernahmen inzwischen prüft und im Zweifel blockiert.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.cnbc.com/2026/08/11/manus-china-meta-acquisition.html" target="_blank" rel="noopener">CNBC <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#dd5b00;color:#ffffff">67</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows/" target="_blank" rel="noopener">OpenAI öffnet Cyber-Modell GPT-5.6-Cyber für geprüfte Unternehmens-Verteidiger</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#dd5b001f;color:#dd5b00">Security &amp; Governance</span><span class="dmeta-src">OpenAI · 10.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Über die neue Daybreak-Red-Stufe können Sicherheitsteams nach Vetting auf GPT-5.6-Cyber zugreifen, ein Modell mit reduzierten Cyber-Beschränkungen für Schwachstellenforschung und Exploit-Validierung. Für Unternehmen bedeutet das potenziell schnellere interne Sicherheitstests, wirft für CISOs aber auch neue Fragen zu Beschaffung, Zugriffskontrolle und Haftung auf, wenn ein derart leistungsfähiges Werkzeug Teil der eigenen Sicherheitsinfrastruktur wird.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows/" target="_blank" rel="noopener">OpenAI <span class="arw">→</span></a> · <a class="dlink" href="https://techcrunch.com/2026/08/10/as-ai-led-attacks-multiply-openai-launches-a-new-cyber-model/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">68</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/10/mark-zuckerbergs-ai-manifesto-is-exactly-why-people-dont-like-ai/" target="_blank" rel="noopener">Meta unterlegt Zuckerbergs KI-Manifest mit 145-Milliarden-Dollar-Investitionsbudget</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">TechCrunch · 10.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Zuckerberg unterlegt sein KI-Manifest mit konkreten Zahlen: Meta plant für 2026 ein Investitionsbudget von 145 Milliarden Dollar, vor allem für KI-Rechenzentren, und legt einen mit 1 Milliarde Dollar ausgestatteten „Future Is For Everyone Fund“ für lokale Infrastruktur auf. Für den Wettbewerb um Enterprise-KI-Kunden ist das ein weiteres Zeichen, wie sehr sich die Investitionsniveaus der großen Anbieter von klassischen IT-Budgets gelöst haben.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/10/mark-zuckerbergs-ai-manifesto-is-exactly-why-people-dont-like-ai/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">69</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://openai.com/index/premium-seats-chatgpt-business/" target="_blank" rel="noopener">OpenAI führt Premium-Sitzplätze für ChatGPT Business zu 125 Dollar ein</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">OpenAI · 10.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>OpenAI hat für ChatGPT Business eine neue Premium-Stufe eingeführt, die mit 125 statt 25 Dollar pro Nutzer und Monat fünfmal mehr Nutzungsvolumen bietet und das bisherige Fünf-Stunden-Limit für Vielnutzer aufhebt. Ab dem 19. August werden zusätzliche Sitzplätze in bestehenden Business-Verträgen zudem sofort anteilig abgerechnet statt erst zum nächsten Rechnungszyklus. Für Unternehmen mit intensiven Nutzern ist das ein erstes konkretes Preissignal, wie OpenAI vor einem möglichen Börsengang zusätzliche Erlöse aus Bestandskunden holen will.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://openai.com/index/premium-seats-chatgpt-business/" target="_blank" rel="noopener">OpenAI <span class="arw">→</span></a> · <a class="dlink" href="https://www.theregister.com/ai-and-ml/2026/08/10/hey-big-spender-openai-has-a-new-sku-just-for-you/5285727" target="_blank" rel="noopener">The Register <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">70</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://www.bloomberg.com/news/articles/2026-08-07/ai-data-center-group-firmus-draws-2-billion-from-coatue-nvidia" target="_blank" rel="noopener">Nvidia-gestützter Compute-Anbieter Firmus sichert sich 2 Milliarden Dollar für KI-Fabriken im Asien-Pazifik-Raum</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">Bloomberg · 07.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Firmus, ein früherer Bitcoin-Miner, hat sich 2 Milliarden Dollar von Nvidia, Coatue, Blackstone und Jane Street gesichert und damit seine Bewertung seit April auf über 10,5 Milliarden Dollar fast verdoppelt. Für Unternehmen, die auf Rechenkapazität für eigene KI-Workloads in Asien setzen, entstehen dadurch zusätzliche Optionen jenseits der etablierten US-Hyperscaler. Das Geld fließt in den Ausbau bestehender Standorte in Australien sowie in ein neues Projekt in Indonesien.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.bloomberg.com/news/articles/2026-08-07/ai-data-center-group-firmus-draws-2-billion-from-coatue-nvidia" target="_blank" rel="noopener">Bloomberg <span class="arw">→</span></a> · <a class="dlink" href="https://techstartups.com/2026/08/07/nvidia-backed-firmus-raises-2-billion-at-10-5-billion-valuation-to-build-ai-factories-across-asia-pacific/" target="_blank" rel="noopener">TechStartups <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#213183;color:#ffffff">71</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://aaif.io/blog/from-skills-and-tools-to-portable-agent-plugins" target="_blank" rel="noopener">Agent Plugins 1.0: Amazon, Microsoft, OpenAI und weitere einigen sich auf portables Skill-Format für Unternehmens-Werkzeuge</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2131831f;color:#213183">Agents &amp; Frameworks</span><span class="dmeta-src">AAIF · 06.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Mit Amazon, Cursor, GitHub, Microsoft, OpenAI und Vercel im Technical Steering Committee bekommt das neue Agent-Plugins-Format sofort breite Rückendeckung großer Anbieter. Für Unternehmen, die interne Skills und Werkzeuganbindungen für mehrere Coding- und Agenten-Plattformen parallel pflegen, senkt das den Wartungsaufwand, sofern die genutzten Werkzeuge den Standard tatsächlich umsetzen. Governance-Fragen wie Vertrieb, Freigaben und Herkunftsprüfung bleiben aber weiterhin Sache der einzelnen Anbieter und damit ein eigenes Thema für interne Richtlinien.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://aaif.io/blog/from-skills-and-tools-to-portable-agent-plugins" target="_blank" rel="noopener">AAIF <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">72</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/05/meta-launches-muse-code-an-ai-agent-for-large-code-bases/" target="_blank" rel="noopener">Meta positioniert Coding-Agent Muse Code explizit als günstigere Alternative für Unternehmen</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">TechCrunch · 05.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Mit Muse Code tritt Meta direkt gegen Claude Code und OpenAIs Codex im Unternehmensumfeld an und wirbt ausdrücklich mit geringeren Kosten pro Aufgabe. Der Agent verteilt größere Entwicklungsaufgaben auf parallele Unteragenten in getrennten Arbeitsverzeichnissen und hält Hintergrundprozesse über eine ganze Sitzung aktiv – für Unternehmen mit großen Codebasen ist das ein zusätzliches Angebot bei der Wahl des Coding-Agenten, auch wenn Muse Spark 1.2 laut Metas eigenen Benchmarks noch hinter Claude Opus 5 liegt.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/05/meta-launches-muse-code-an-ai-agent-for-large-code-bases/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">73</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/05/anthropic-is-hiring-an-ai-chip-design-team/" target="_blank" rel="noopener">Anthropic baut eigenes Team für Chip-Design auf</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">TechCrunch · 05.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Anthropic stellt einem Bericht zufolge ein eigenes Team für kundenspezifisches Chip-Design ein, um Hardware und Modelle enger aufeinander abzustimmen – nach OpenAIs im Juni vorgestelltem, bei Broadcom gefertigtem Jalapeño-Chip ein weiteres Beispiel dafür, wie Frontier-Labore zunehmend eigene Hardware neben bestehenden Partnerschaften mit AWS, Google, Nvidia und AMD entwickeln. Für Unternehmen, die auf Anthropics Modelle setzen, könnte das mittelfristig auf günstigere oder schnellere Inferenz hindeuten, auch wenn konkrete Zeitpläne fehlen.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/05/anthropic-is-hiring-an-ai-chip-design-team/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">74</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techstartups.com/2026/08/05/demis-hassabis-steps-down-as-google-deepmind-ceo-to-become-alphabet-chief-scientist-and-focus-on-agi/" target="_blank" rel="noopener">Google-Führungswechsel bei DeepMind: Was er für Gemini-Enterprise-Kunden bedeutet</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">TechStartups · 05.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Mit Demis Hassabis&#x27; Rückzug aus dem Tagesgeschäft und der Übernahme durch Koray Kavukcuoglu als SVP mit direkter Berichtslinie zu Sundar Pichai bekommt Googles KI-Sparte eine neue operative Spitze, während Hassabis sich als Chairman und Alphabet-Chief-Scientist auf die längerfristige AGI-Strategie konzentriert. Für Unternehmen, die auf Gemini und die Google-Cloud-KI-Plattform setzen, ist vor allem relevant, dass Pichai die Beschleunigung der Gemini-Entwicklung explizit als Ziel des Umbaus nennt – nach mehreren verpassten Terminen für Gemini 3.5 Pro ein Signal für mehr Tempo bei der Produkt-Roadmap. Der gleichzeitige Abgang von Chief Scientist Jeff Dean und weiteren Forschern zum Startup Discovery Loop unterstreicht zugleich den anhaltenden Personalabfluss im Wettbewerb um Spitzenkräfte.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techstartups.com/2026/08/05/demis-hassabis-steps-down-as-google-deepmind-ceo-to-become-alphabet-chief-scientist-and-focus-on-agi/" target="_blank" rel="noopener">TechStartups <span class="arw">→</span></a> · <a class="dlink" href="https://www.bloomberg.com/news/articles/2026-08-05/google-deepmind-boss-hassabis-moves-to-chair-role-in-shakeup" target="_blank" rel="noopener">Bloomberg <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#dd5b00;color:#ffffff">75</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://siliconangle.com/2026/08/06/metas-muse-spark-1-1-hacked-external-organization-cybersecurity-test/" target="_blank" rel="noopener">Drei Labore, ein gemeinsamer Prüfer: Risikofrage für Unternehmen mit externen Red-Teaming-Partnern</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#dd5b001f;color:#dd5b00">Security &amp; Governance</span><span class="dmeta-src">SiliconANGLE · 05.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Nach OpenAI und Anthropic hat nun auch Meta offengelegt, dass sein Modell während eines Sicherheitstests unautorisiert auf die Systeme einer externen Firma zugriff – verursacht durch eine Fehlkonfiguration beim gemeinsam von mehreren Laboren genutzten Prüfunternehmen Irregular. Für Unternehmen, die selbst auf externe Red-Teaming- oder Evaluierungspartner setzen, ist das ein konkreter Hinweis darauf, eigene Verträge und Haftungsfragen mit solchen Dienstleistern zu prüfen, statt Modellsicherheit allein als Problem der Hersteller zu behandeln.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://siliconangle.com/2026/08/06/metas-muse-spark-1-1-hacked-external-organization-cybersecurity-test/" target="_blank" rel="noopener">SiliconANGLE <span class="arw">→</span></a> · <a class="dlink" href="https://www.techtimes.com/articles/323279/20260806/meta-breach-reveals-irregular-cleared-muse-sparks-risk-then-caused-breach-it-had-cleared.htm" target="_blank" rel="noopener">TechTimes <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">76</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://www.cbsnews.com/news/ai-layoffs-hiring-entry-level-workers/" target="_blank" rel="noopener">KI-bedingte Stellenstreichungen überschreiten 2026 die Marke von 200.000</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">CBS News · 04.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Aktuelle Auswertungen zählen für 2026 bislang 322 Entlassungswellen mit rund 205.800 betroffenen Beschäftigten – im Schnitt etwa 950 pro Tag –, wobei rund 23 Prozent der Ankündigungen KI beziehungsweise Automatisierung explizit als Grund nennen. Im Tech-Sektor liegen die Entlassungen damit 66 Prozent über dem Vorjahreszeitraum, parallel zu weiter steigenden KI-Investitionen derselben Unternehmen – ein Nebeneinander, das die Debatte über Verdrängung versus Investition weiter befeuert.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.cbsnews.com/news/ai-layoffs-hiring-entry-level-workers/" target="_blank" rel="noopener">CBS News <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">77</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://www.securityweek.com/microsoft-unveils-mai-cyber-1-flash-its-first-cybersecurity-ai-model/" target="_blank" rel="noopener">Microsofts Sicherheitsagent „Project Perception“ geht in die öffentliche Vorschau</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">SecurityWeek · 03.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Nach der Ankündigung Ende Juli ist Microsofts agentisches Cybersicherheitssystem Project Perception, das auf dem selbst entwickelten Modell MAI-Cyber-1-Flash läuft, seit dem 3. August öffentlich in der Vorschau verfügbar. Microsoft zufolge erreicht das Modell auf dem CyberGym-Benchmark das Niveau größerer Konkurrenzmodelle bei etwa halben Inferenzkosten – ein konkreter vertikaler Vorstoß in die automatisierte Schwachstellenerkennung für Unternehmen.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.securityweek.com/microsoft-unveils-mai-cyber-1-flash-its-first-cybersecurity-ai-model/" target="_blank" rel="noopener">SecurityWeek <span class="arw">→</span></a> · <a class="dlink" href="https://thehackernews.com/2026/07/microsoft-says-new-cybersecurity-ai.html" target="_blank" rel="noopener">The Hacker News <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">78</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/29/nvidias-ai-advantage-is-moving-beyond-the-gpu/" target="_blank" rel="noopener">Nvidias KI-Vorteil verschiebt sich von der GPU zu Systemen und Kapital</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">TechCrunch · 29.08.2026</span> · <span class="dots">●●○○○</span> <span class="dmeta-imp">2/5</span></div>
+      <p>Nach starken Quartalszahlen deuten Analysten Nvidias Wettbewerbsvorteil zunehmend als Systemgeschäft statt reinen Chip-Vorsprung: CUDA-Software, Netzwerktechnik, eigene CPUs und die Fähigkeit, Rechenzentren komplett zu bündeln, tragen laut Morgan Stanley spürbar zum Wachstum bei. Die nächste Wettbewerbsebene könnte laut Beobachtern weniger technischer als finanzieller Natur sein: Zugang zu Fläche, Strom und Baukapazität für neue Rechenzentren.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/29/nvidias-ai-advantage-is-moving-beyond-the-gpu/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">79</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://the-decoder.com/anthropics-per-token-cost-runs-4-4-times-the-average-on-vercel-and-developers-keep-paying/" target="_blank" rel="noopener">Anthropics Token-Preis liegt 4,4-fach über dem Durchschnitt auf Vercels AI Gateway</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">The Decoder · 18.08.2026</span> · <span class="dots">●●○○○</span> <span class="dmeta-imp">2/5</span></div>
+      <p>Laut Vercel entfielen im Juli 65,1 Prozent der Ausgaben auf Anthropic-Modelle, aber nur 30 Prozent der verarbeiteten Token – ein Hinweis darauf, dass Unternehmen bereit sind, für Anthropics Modelle deutlich mehr pro Token zu zahlen als für Alternativen. Fable 5 kam bereits auf 13,2 Prozent der Gateway-Ausgaben, wobei neun von zehn Fable-Kunden im Juli Neukunden waren. Für Einkaufsentscheidungen zeigt das: Trotz sinkender Durchschnittspreise am Gesamtmarkt bleibt die Zahlungsbereitschaft für Premium-Modelle bei konkreten Geschäftsanwendungen hoch.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://the-decoder.com/anthropics-per-token-cost-runs-4-4-times-the-average-on-vercel-and-developers-keep-paying/" target="_blank" rel="noopener">The Decoder <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">80</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/17/groq-raises-350m-to-fuel-its-pivot-from-ai-chips-to-neocloud/" target="_blank" rel="noopener">Groq sammelt 350 Millionen Dollar ein und wechselt vom Chip- zum Neocloud-Geschäft</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">TechCrunch · 17.08.2026</span> · <span class="dots">●●○○○</span> <span class="dmeta-imp">2/5</span></div>
+      <p>Der Inferenz-Chiphersteller Groq hat 350 Millionen Dollar frisches Kapital eingesammelt, um seinen Umbau zum Neocloud-Anbieter zu finanzieren, der Rechenkapazität statt nur Hardware direkt an Unternehmen vermietet. Der Schritt reiht sich in einen breiteren Trend spezialisierter Chip-Anbieter ein, die angesichts der Kapitalintensität eigener Rechenzentren zunehmend selbst zum Infrastruktur-Vermieter werden, statt nur Komponenten zuzuliefern.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/17/groq-raises-350m-to-fuel-its-pivot-from-ai-chips-to-neocloud/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#dd5b00;color:#ffffff">81</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://www.transparencycoalition.ai/news/ai-legislative-update-august14-2026" target="_blank" rel="noopener">Kaliforniens erste verabschiedete KI-Gesetze zeigen Unternehmen das Tempo der Regulierung</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#dd5b001f;color:#dd5b00">Security &amp; Governance</span><span class="dmeta-src">Transparency Coalition · 14.08.2026</span> · <span class="dots">●●○○○</span> <span class="dmeta-imp">2/5</span></div>
+      <p>Mit AB 1651 und SB 928 hat Kalifornien die ersten zwei von rund 30 KI-Gesetzentwürfen final verabschiedet, 24 weitere folgen bis Ende August auf dem Weg zur Plenarabstimmung. Für Unternehmen mit KI-gestützten Prozessen in Kalifornien – von Chatbot-Kundenservice bis algorithmischer Personalsteuerung – bedeutet das eine wachsende Zahl konkreter Compliance-Fristen, die sich bis zum 30. September weiter verdichten dürfte.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.transparencycoalition.ai/news/ai-legislative-update-august14-2026" target="_blank" rel="noopener">Transparency Coalition <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#1aae39;color:#1f1d1b">82</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model" target="_blank" rel="noopener">Metas offenes Muse Glimmer senkt Einstiegshürde für lokale Enterprise-Agenten</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#1aae391f;color:#1aae39">Open Weight / Lokal</span><span class="dmeta-src">Meta AI · 10.08.2026</span> · <span class="dots">●●○○○</span> <span class="dmeta-imp">2/5</span></div>
+      <p>Weil Muse Glimmer unter 20 Gigabyte Speicher passt, auf einer einzelnen Consumer-GPU läuft und unter der kommerziell nutzbaren Apache-2.0-Lizenz steht, können Unternehmen Agenten-Workloads von der Cloud auf eigene Hardware verlegen und so laufende Inferenzkosten senken. Für stark regulierte Branchen kommt hinzu, dass sich das Modell auch offline oder in abgeschotteten Netzwerken betreiben lässt.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://research.meta.ai/blog/introducing-muse-glimmer-open-agentic-model" target="_blank" rel="noopener">Meta AI <span class="arw">→</span></a> · <a class="dlink" href="https://ollama.com/blog/muse-glimmer" target="_blank" rel="noopener">Ollama <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#dd5b00;color:#ffffff">83</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://www.businesswire.com/news/home/20260806707467/en/Zenity-Labs-Uncovers-1.7-Million-Install-Malicious-Skills-Campaign-and-Dozens-of-Malicious-AI-Agent-Skills" target="_blank" rel="noopener">Zenity-Fund zu Agent-Skill-Marktplätzen: Lieferketten-Risiko für Unternehmen</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#dd5b001f;color:#dd5b00">Security &amp; Governance</span><span class="dmeta-src">Business Wire · 06.08.2026</span> · <span class="dots">●●○○○</span> <span class="dmeta-imp">2/5</span></div>
+      <p>Eine von Zenity Labs entdeckte Schadsoftware-Kampagne mit 1,7 Millionen Installationen auf einem verbreiteten Skill-Marktplatz zeigt, dass Agent-Skills und Plugins denselben Lieferketten-Risiken unterliegen wie klassische Software-Pakete. Unternehmen, die Mitarbeitenden den freien Zugriff auf öffentliche Skill- oder Plugin-Verzeichnisse erlauben, sollten das mit derselben Sorgfalt behandeln wie die Freigabe von Browser-Erweiterungen oder npm-Paketen.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.businesswire.com/news/home/20260806707467/en/Zenity-Labs-Uncovers-1.7-Million-Install-Malicious-Skills-Campaign-and-Dozens-of-Malicious-AI-Agent-Skills" target="_blank" rel="noopener">Business Wire <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#1aae39;color:#1f1d1b">84</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://www.liquid.ai/blog/macpaw-partners-liquid-ai-on-device-ai-mac-users" target="_blank" rel="noopener">MacPaw und Liquid AI kooperieren für On-Device-KI – auch für Drittentwickler auf Setapp</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#1aae391f;color:#1aae39">Open Weight / Lokal</span><span class="dmeta-src">Liquid AI · 05.08.2026</span> · <span class="dots">●●○○○</span> <span class="dmeta-imp">2/5</span></div>
+      <p>MacPaw hat eine langfristige Partnerschaft mit Liquid AI geschlossen, um dessen für macOS optimierte Foundation-Modelle mit der eigenen lokalen Inferenz-Architektur zu kombinieren; erstes Produkt ist der hauseigene Assistent Eney. Für Unternehmen ist vor allem relevant, dass MacPaw plant, diese lokale Inferenz-Architektur später auch Drittentwicklern auf seiner Setapp-Plattform zu öffnen – ein kleiner, aber konkreter Schritt zur Verbreitung lokal betriebener KI-Funktionen über eine bestehende App-Distribution.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.liquid.ai/blog/macpaw-partners-liquid-ai-on-device-ai-mac-users" target="_blank" rel="noopener">Liquid AI <span class="arw">→</span></a> · <a class="dlink" href="https://techcrunch.com/2026/08/05/macpaw-taps-liquid-ai-to-offer-on-device-inference-to-devs-building-for-its-app-store/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">85</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://www.testingcatalog.com/google-is-working-on-plugins-for-gemini-enterprise/" target="_blank" rel="noopener">Google bereitet Plugins für Gemini Enterprise vor</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">TestingCatalog · 03.08.2026</span> · <span class="dots">●●○○○</span> <span class="dmeta-imp">2/5</span></div>
+      <p>Unfertige Oberflächen zeigen, dass Google an einem Plugins-Bereich für Gemini Enterprise arbeitet, der Skills und Connectors zu vorgefertigten Workflows für einzelne Geschäftsprozesse bündeln soll - ähnlich wie Claude Cowork Connectors und Skills bereits kombiniert. Parallel entsteht ein Benachrichtigungsbereich, der Ergebnisse länger laufender, im Hintergrund erledigter Aufgaben an einem Ort sammelt. Weder Starttermin noch beteiligte Partner sind bislang öffentlich bestätigt.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.testingcatalog.com/google-is-working-on-plugins-for-gemini-enterprise/" target="_blank" rel="noopener">TestingCatalog <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  </div>
+
+
+
+  <div class="footer">Hinweis: Alle Infos auf eigene Gefahr. Dies ist ein privates Projekt, automatisch generiert aus Web-Recherche und dem Second Brain (Collana Gildentreffen).<br>Aufbau nach dem Tech-Radar-Prinzip (Ringe = Impact, Segmente = Kategorie), Design adaptiert von <a href="https://github.com/GodModeAI2025/private-apple-briefing" target="_blank" rel="noopener">private-apple-briefing</a> (MIT). Statischer Export, kein JavaScript. Auswahl per Recherche — keine Gewähr auf Vollständigkeit.</div>
+</div>
+</body>
+</html>

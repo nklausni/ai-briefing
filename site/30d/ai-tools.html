@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI-Radar — AI Tools — 3. August – 1. September 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue:#0075de;
+    --blue-active:#005bab;
+    --badge-bg:#f2f9ff;
+    --badge-text:#097fe8;
+    --white:#ffffff;
+    --wg10:#f6f5f4;
+    --wg20:#efedea;
+    --wg40:rgba(0,0,0,0.10);
+    --wg60:#a39e98;
+    --wg90:#615d59;
+    --ink:#31302e;
+    --wg100:rgba(0,0,0,0.95);
+    --radius:12px;
+    --radius-lg:16px;
+    --pad:24px;
+    --shadow-card:rgba(0,0,0,0.04) 0px 4px 18px, rgba(0,0,0,0.027) 0px 2.025px 7.84688px, rgba(0,0,0,0.02) 0px 0.8px 2.925px, rgba(0,0,0,0.01) 0px 0.175px 1.04062px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:var(--white);color:var(--wg100);
+    font-family:Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+    font-feature-settings:"lnum","locl";
+    -webkit-font-smoothing:antialiased;padding:48px clamp(16px,4vw,56px) 64px;line-height:1.5}
+  .sheet{max-width:1280px;margin:0 auto}
+  .impuls{display:none}
+  header.top{padding-bottom:20px;border-bottom:1px solid var(--wg40)}
+  .top h1{font-weight:700;font-size:clamp(30px,3.6vw,46px);color:var(--wg100);
+    letter-spacing:-0.03em;margin:0;line-height:1.04}
+  .subrow{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;
+    flex-wrap:wrap;margin-top:12px}
+  .subs{display:flex;flex-direction:column;gap:6px;min-width:0}
+  .sub{font-size:14px;font-weight:500;color:var(--wg90);line-height:1.43}
+  .meta-right{font-size:13px;color:var(--wg90);text-align:right;line-height:1.6;font-weight:500;flex:none}
+  .nav{margin:18px 0 0;font-size:13px;font-weight:500}
+  .nav a{color:var(--wg90);text-decoration:none;margin-right:14px;transition:color .2s ease}
+  .nav a:hover{color:var(--blue)}
+  .nav a.active{color:var(--wg100);font-weight:700}
+  .range-sw{font-weight:500}
+  .range-sw a{color:var(--wg90);text-decoration:none;margin-left:12px;transition:color .2s ease}
+  .range-sw a:first-child{margin-left:0}
+  .range-sw a:hover{color:var(--blue)}
+  .range-sw a.active{color:var(--wg100);font-weight:700}
+  .range-period{color:var(--wg60)}
+  .lede{font-size:clamp(17px,1.9vw,20px);color:var(--wg100);font-weight:500;max-width:70ch;
+    margin:24px 0 32px;line-height:1.5;letter-spacing:-0.0125em}
+  .board{margin:8px 0 0}
+  @media (min-width:960px){
+    .board{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);
+      gap:clamp(28px,3.5vw,56px);align-items:start}
+  }
+  .panel{background:var(--wg10);border:1px solid var(--wg40);border-radius:var(--radius-lg);
+    box-shadow:var(--shadow-card);padding:clamp(18px,3vw,32px);margin:0}
+  svg{width:100%;height:auto;display:block;overflow:visible}
+  .panel svg{max-width:600px;margin-left:auto;margin-right:auto}
+  .sector-label{font-family:Inter,Arial,sans-serif;font-weight:700;font-size:13px;letter-spacing:-0.01em}
+  .axis-label{font-family:Inter,Arial,sans-serif;font-size:10.5px;font-weight:600;fill:var(--wg90);letter-spacing:0}
+  .blip-num{font-family:Inter,Arial,sans-serif;font-weight:700;font-size:12px}
+  .key{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;margin:18px 0 0;
+    font-size:13px;color:var(--wg90);font-weight:500}
+  .key b{color:var(--wg100);font-weight:600}
+  .section{margin:48px 0 20px}
+  .section h2{font-weight:700;font-size:clamp(24px,3vw,32px);color:var(--wg100);margin:0;letter-spacing:-0.03em;line-height:1.05}
+  .scale{max-width:none;margin:0;background:var(--wg10);border:1px solid var(--wg40);
+    border-radius:var(--radius-lg);box-shadow:var(--shadow-card);padding:24px 26px}
+  .scale h3{font-weight:700;font-size:18px;color:var(--wg100);margin:0 0 8px;letter-spacing:-0.0125em}
+  .scale .scale-lead{font-size:14px;color:var(--wg90);margin:0 0 16px;line-height:1.5}
+  .scale ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+  .scale li{display:flex;gap:14px;align-items:baseline;font-size:14px;line-height:1.45}
+  .scale .sc-dots{letter-spacing:1px;color:var(--ink);flex:none;min-width:64px;font-weight:700}
+  .scale .sc-name{font-weight:600;color:var(--wg100)}
+  .scale .sc-desc{color:var(--wg90)}
+  .scale .sc-note{font-size:13px;color:var(--wg90);margin:15px 0 0;line-height:1.5}
+  .detail-list{display:flex;flex-direction:column}
+  @media (min-width:1200px){
+    .detail-list{display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(40px,4vw,72px)}
+    .detail-list .dcard:nth-child(2){border-top:none}
+    .dcard p{max-width:none}
+  }
+  .dcard{display:flex;gap:16px;padding:24px 0;border-top:1px solid var(--wg40)}
+  .dcard:first-child{border-top:none}
+  .dnum{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:14px;margin-top:2px}
+  .dbody{flex:1;min-width:0}
+  .dtitle{font-weight:700;font-size:clamp(19px,2.2vw,22px);line-height:1.27;letter-spacing:-0.0125em;color:var(--wg100);margin:0 0 9px}
+  .dtitle-link{color:inherit;text-decoration:none}
+  .dtitle-link:hover{color:var(--blue);text-decoration:underline}
+  .dmeta{font-size:13px;color:var(--wg90);font-weight:500;margin-bottom:13px;display:flex;align-items:center;flex-wrap:wrap;gap:8px}
+  .cat-badge{display:inline-flex;align-items:center;border-radius:9999px;padding:3px 10px;
+    font-size:12px;font-weight:600;letter-spacing:0.0125em;line-height:1.33}
+  .dmeta-src{color:var(--wg90)}
+  .dmeta-imp{color:var(--wg90);font-weight:600}
+  .dcard p{margin:0 0 14px;font-size:16px;line-height:1.55;color:var(--wg100);max-width:68ch}
+  .dsources{font-size:14px;color:var(--wg90);display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+  .dsources-k{font-weight:600;color:var(--wg90)}
+  .dots{letter-spacing:1px;color:var(--ink)}
+  .dlink{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--blue);
+    text-decoration:none;transition:color .2s ease}
+  .dlink .arw{transition:transform .2s ease}
+  .dlink:hover{text-decoration:underline;color:var(--blue-active)}
+  .dlink:hover .arw{transform:translateX(3px)}
+  .skip{margin-top:16px;background:var(--wg10);border:1px solid var(--wg40);border-radius:var(--radius-lg);
+    box-shadow:var(--shadow-card);padding:22px 26px}
+  .skip-lead{margin:0 0 16px;font-size:14px;color:var(--wg90);line-height:1.55}
+  .skip ul{margin:0;padding-left:20px}
+  .skip li{font-size:15px;line-height:1.6;color:var(--wg100);margin-bottom:11px}
+  .skip li::marker{color:var(--wg60)}
+  .skip li:last-child{margin-bottom:0}
+  .skip li b{font-weight:600;color:var(--wg100)}
+  .footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--wg40);font-size:13px;color:var(--wg90);line-height:1.6}
+  .footer a{color:var(--blue);text-decoration:none}
+  .footer a:hover{text-decoration:underline}
+  .ov-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:20px;margin-top:12px}
+  .ov-card{background:var(--white);border:1px solid var(--wg40);border-radius:var(--radius-lg);
+    box-shadow:var(--shadow-card);padding:22px 24px;display:flex;flex-direction:column;
+    transition:border-color .2s ease, box-shadow .2s ease}
+  .ov-card:hover{border-color:var(--wg60);box-shadow:rgba(0,0,0,.07) 0px 8px 24px}
+  .ov-card-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:8px}
+  .ov-card h3{margin:0;font-size:19px;font-weight:700;color:var(--wg100);letter-spacing:-0.0125em}
+  .ov-count{flex:none;font-size:12px;font-weight:600;color:var(--wg90);background:var(--wg10);
+    border:1px solid var(--wg40);border-radius:9999px;padding:2px 10px;white-space:nowrap}
+  .ov-card .ov-sub{font-size:13px;font-weight:500;color:var(--wg90);line-height:1.45;margin-bottom:14px;
+    display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .ov-list{list-style:none;margin:0 0 16px;padding:0;display:flex;flex-direction:column;gap:10px;flex:1}
+  .ov-list li{display:flex;gap:10px;align-items:baseline;font-size:14px;line-height:1.4}
+  .ov-dot{flex:none;width:9px;height:9px;border-radius:50%;margin-top:5px}
+  .ov-item-t{color:var(--wg100);font-weight:500;text-decoration:none}
+  a.ov-item-t:hover{color:var(--blue);text-decoration:underline}
+  .ov-item-d{color:var(--ink);letter-spacing:1px;font-size:11px;font-weight:700;white-space:nowrap;margin-left:auto;padding-left:8px}
+  .ov-link{align-self:flex-start;display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--blue);text-decoration:none;transition:color .2s ease}
+  .ov-link:hover{text-decoration:underline;color:var(--blue-active)}
+  .ov-empty{font-size:14px;color:var(--wg90);font-style:italic;flex:1}
+  .ov-group{margin:44px 0 0}
+  .ov-group h2{font-weight:700;font-size:clamp(19px,2.2vw,24px);color:var(--wg100);margin:0;letter-spacing:-0.02em}
+  .ov-group:first-of-type{margin-top:10px}
+  .repo-list{display:flex;flex-direction:column;margin-top:8px}
+  .repo{display:flex;gap:16px;padding:22px 0;border-top:1px solid var(--wg40)}
+  .repo:first-child{border-top:none}
+  .repo-rank{flex:none;width:30px;height:30px;border-radius:8px;display:grid;place-items:center;font-weight:700;font-size:14px;background:var(--wg10);border:1px solid var(--wg40);color:var(--wg90);margin-top:2px}
+  .repo-body{flex:1;min-width:0}
+  .repo-name{font-weight:700;font-size:clamp(18px,2.1vw,21px);margin:0 0 8px;letter-spacing:-0.0125em}
+  .repo-name a{color:var(--blue);text-decoration:none}
+  .repo-name a:hover{text-decoration:underline;color:var(--blue-active)}
+  .repo-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+  .repo-badge{display:inline-flex;align-items:center;gap:5px;border-radius:9999px;padding:3px 11px;font-size:12px;font-weight:600;color:var(--wg100);background:var(--wg10);border:1px solid var(--wg40)}
+  .repo-badge.area{background:#f2f9ff;border-color:#cfe6fb;color:var(--badge-text)}
+  .repo-badge.week{background:#eaf6ec;border-color:#cfe8d3;color:#1a7f37}
+  .repo-body p{margin:0 0 8px;font-size:16px;line-height:1.55;color:var(--wg100);max-width:68ch}
+  .repo-note{font-size:13px;color:var(--wg90)}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <header class="top">
+    <h1>AI-Radar · AI Tools</h1>
+    <div class="subrow">
+      <div class="subs">
+        <div class="sub">Briefing-Infografik · Stand der AI-Welt für AI Tools</div>
+        <div class="sub">Blickwinkel: IDEs, Assistenten und Plattformen für den täglichen Einsatz</div>
+      </div>
+      <div class="meta-right">
+        <nav class="range-sw"><a href="../ai-tools.html">Heute</a><a href="../7d/ai-tools.html">7 Tage</a><a href="../14d/ai-tools.html">14 Tage</a><a href="../30d/ai-tools.html" class="active">30 Tage</a></nav><div class="range-period">3. August – 1. September 2026</div>
+      </div>
+    </div>
+  </header>
+  <nav class="nav"><a href="index.html">Übersicht</a><a href="ai-news.html">AI News</a><a href="lokale-llms.html">Lokale LLMs</a><a href="agentic-engineering.html">Agentic Engineering / Vibe Coding</a><a href="ai-tools.html" class="active">AI Tools</a><a href="context-engineering.html">Context &amp; Prompt Engineering</a><a href="ai-security.html">AI Security &amp; Safety</a><a href="ai-governance.html">AI Governance &amp; Regulierung</a><a href="enterprise.html">Enterprise &amp; Vertikalisierung</a></nav>
+
+  <p class="lede">OpenClaw 2.0 senkt mit automatischer Ressourcenerkennung und neu gebautem Browser die Einstiegshürde für den Alltagseinsatz, während GitHub sein August-Sammelupdate für Copilot in VS Code veröffentlicht.</p>
+
+  <div class="board">
+    <div class="board-left">
+      <div class="panel">
+<svg viewBox="-70 -20 940 860" role="img" aria-label="AI-Radar">
+<circle cx="400" cy="400" r="320" fill="rgba(49,48,46,.012)" stroke="#e3e0dc" stroke-width="1"/>
+<circle cx="400" cy="400" r="256" fill="rgba(49,48,46,.022)" stroke="#e3e0dc" stroke-width="1"/>
+<circle cx="400" cy="400" r="198.4" fill="rgba(49,48,46,.038)" stroke="#e3e0dc" stroke-width="1"/>
+<circle cx="400" cy="400" r="144" fill="rgba(49,48,46,.055)" stroke="#e3e0dc" stroke-width="1"/>
+<circle cx="400" cy="400" r="83.2" fill="rgba(0,117,222,.06)" stroke="#e3e0dc" stroke-width="1"/>
+<line x1="400" y1="400" x2="80" y2="400" stroke="#e3e0dc" stroke-width="1"/>
+<line x1="400" y1="400" x2="240" y2="122.87" stroke="#e3e0dc" stroke-width="1"/>
+<line x1="400" y1="400" x2="560" y2="122.87" stroke="#e3e0dc" stroke-width="1"/>
+<line x1="400" y1="400" x2="720" y2="400" stroke="#e3e0dc" stroke-width="1"/>
+<line x1="400" y1="400" x2="560" y2="677.13" stroke="#e3e0dc" stroke-width="1"/>
+<line x1="400" y1="400" x2="240" y2="677.13" stroke="#e3e0dc" stroke-width="1"/>
+<circle cx="400" cy="400" r="3" fill="#0075de"/>
+<g>
+<rect x="318.5" y="330.21" width="92.8" height="16" rx="8" fill="#ffffff" opacity="0.94" stroke="#e3e0dc" stroke-width="1"/>
+<text x="364.9" y="342.21" class="axis-label" text-anchor="middle">Game-Changer</text>
+</g>
+<g>
+<rect x="310.5" y="277.55" width="48" height="16" rx="8" fill="#ffffff" opacity="0.94" stroke="#e3e0dc" stroke-width="1"/>
+<text x="334.5" y="289.55" class="axis-label" text-anchor="middle">Stark</text>
+</g>
+<g>
+<rect x="273.7" y="230.44" width="67.2" height="16" rx="8" fill="#ffffff" opacity="0.94" stroke="#e3e0dc" stroke-width="1"/>
+<text x="307.3" y="242.44" class="axis-label" text-anchor="middle">Relevant</text>
+</g>
+<g>
+<rect x="235.3" y="180.56" width="86.4" height="16" rx="8" fill="#ffffff" opacity="0.94" stroke="#e3e0dc" stroke-width="1"/>
+<text x="278.5" y="192.56" class="axis-label" text-anchor="middle">Nennenswert</text>
+</g>
+<g>
+<rect x="216.1" y="125.13" width="60.8" height="16" rx="8" fill="#ffffff" opacity="0.94" stroke="#e3e0dc" stroke-width="1"/>
+<text x="246.5" y="137.13" class="axis-label" text-anchor="middle">Routine</text>
+</g>
+<text x="96.89" y="229" class="sector-label" text-anchor="end" fill="#1f1d1b">Modelle</text>
+<text x="400" y="54" class="sector-label" text-anchor="middle" fill="#1f1d1b">Tools &amp; IDEs</text>
+<text x="703.11" y="229" class="sector-label" text-anchor="start" fill="#1f1d1b">Agents &amp; Frameworks</text>
+<text x="703.11" y="579" class="sector-label" text-anchor="start" fill="#1f1d1b">Open Weight / Lokal</text>
+<text x="400" y="754" class="sector-label" text-anchor="middle" fill="#1f1d1b">Security &amp; Governance</text>
+<text x="96.89" y="579" class="sector-label" text-anchor="end" fill="#1f1d1b">Business &amp; Markt</text>
+<g>
+<circle cx="400" cy="358.4" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="400" y="362.4" class="blip-num" text-anchor="middle" fill="#ffffff">1</text>
+</g>
+<g>
+<circle cx="400" cy="513.6" r="13" fill="#dd5b00" stroke="#ffffff" stroke-width="2"/>
+<text x="400" y="517.6" class="blip-num" text-anchor="middle" fill="#ffffff">2</text>
+</g>
+<g>
+<circle cx="377.81" cy="351.42" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="377.81" y="355.42" class="blip-num" text-anchor="middle" fill="#ffffff">3</text>
+</g>
+<g>
+<circle cx="378.16" cy="336.89" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="378.16" y="340.89" class="blip-num" text-anchor="middle" fill="#ffffff">5</text>
+</g>
+<g>
+<circle cx="381.1" cy="322.1" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="381.1" y="326.1" class="blip-num" text-anchor="middle" fill="#ffffff">6</text>
+</g>
+<g>
+<circle cx="386.69" cy="307.42" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="386.69" y="311.42" class="blip-num" text-anchor="middle" fill="#ffffff">7</text>
+</g>
+<g>
+<circle cx="394.91" cy="293.21" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="394.91" y="297.21" class="blip-num" text-anchor="middle" fill="#ffffff">8</text>
+</g>
+<g>
+<circle cx="405.72" cy="279.85" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="405.72" y="283.85" class="blip-num" text-anchor="middle" fill="#ffffff">9</text>
+</g>
+<g>
+<circle cx="419.02" cy="267.7" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="419.02" y="271.7" class="blip-num" text-anchor="middle" fill="#ffffff">10</text>
+</g>
+<g>
+<circle cx="434.67" cy="257.1" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="434.67" y="261.1" class="blip-num" text-anchor="middle" fill="#ffffff">11</text>
+</g>
+<g>
+<circle cx="452.47" cy="248.41" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="452.47" y="252.41" class="blip-num" text-anchor="middle" fill="#ffffff">12</text>
+</g>
+<g>
+<circle cx="472.2" cy="241.91" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="472.2" y="245.91" class="blip-num" text-anchor="middle" fill="#ffffff">13</text>
+</g>
+<g>
+<circle cx="498.38" cy="343.2" r="13" fill="#213183" stroke="#ffffff" stroke-width="2"/>
+<text x="498.38" y="347.2" class="blip-num" text-anchor="middle" fill="#ffffff">4</text>
+</g>
+<g>
+<circle cx="384.45" cy="370.25" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="384.45" y="374.25" class="blip-num" text-anchor="middle" fill="#ffffff">14</text>
+</g>
+<g>
+<circle cx="380.61" cy="358.8" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="380.61" y="362.8" class="blip-num" text-anchor="middle" fill="#ffffff">15</text>
+</g>
+<g>
+<circle cx="377.72" cy="346.99" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="377.72" y="350.99" class="blip-num" text-anchor="middle" fill="#ffffff">16</text>
+</g>
+<g>
+<circle cx="375.78" cy="334.89" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="375.78" y="338.89" class="blip-num" text-anchor="middle" fill="#ffffff">19</text>
+</g>
+<g>
+<circle cx="374.83" cy="322.55" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="374.83" y="326.55" class="blip-num" text-anchor="middle" fill="#ffffff">20</text>
+</g>
+<g>
+<circle cx="374.88" cy="310.03" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="374.88" y="314.03" class="blip-num" text-anchor="middle" fill="#ffffff">21</text>
+</g>
+<g>
+<circle cx="375.94" cy="297.41" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="375.94" y="301.41" class="blip-num" text-anchor="middle" fill="#ffffff">23</text>
+</g>
+<g>
+<circle cx="378.01" cy="284.73" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="378.01" y="288.73" class="blip-num" text-anchor="middle" fill="#ffffff">24</text>
+</g>
+<g>
+<circle cx="381.11" cy="272.08" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="381.11" y="276.08" class="blip-num" text-anchor="middle" fill="#ffffff">25</text>
+</g>
+<g>
+<circle cx="385.23" cy="259.49" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="385.23" y="263.49" class="blip-num" text-anchor="middle" fill="#ffffff">26</text>
+</g>
+<g>
+<circle cx="390.38" cy="247.05" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="390.38" y="251.05" class="blip-num" text-anchor="middle" fill="#ffffff">28</text>
+</g>
+<g>
+<circle cx="396.54" cy="234.82" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="396.54" y="238.82" class="blip-num" text-anchor="middle" fill="#ffffff">29</text>
+</g>
+<g>
+<circle cx="403.71" cy="222.85" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="403.71" y="226.85" class="blip-num" text-anchor="middle" fill="#ffffff">30</text>
+</g>
+<g>
+<circle cx="411.88" cy="211.22" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="411.88" y="215.22" class="blip-num" text-anchor="middle" fill="#ffffff">31</text>
+</g>
+<g>
+<circle cx="421.02" cy="199.98" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="421.02" y="203.98" class="blip-num" text-anchor="middle" fill="#ffffff">32</text>
+</g>
+<g>
+<circle cx="431.13" cy="189.2" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="431.13" y="193.2" class="blip-num" text-anchor="middle" fill="#ffffff">33</text>
+</g>
+<g>
+<circle cx="442.17" cy="178.93" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="442.17" y="182.93" class="blip-num" text-anchor="middle" fill="#ffffff">34</text>
+</g>
+<g>
+<circle cx="454.12" cy="169.24" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="454.12" y="173.24" class="blip-num" text-anchor="middle" fill="#ffffff">35</text>
+</g>
+<g>
+<circle cx="466.96" cy="160.18" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="466.96" y="164.18" class="blip-num" text-anchor="middle" fill="#ffffff">39</text>
+</g>
+<g>
+<circle cx="480.64" cy="151.81" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="480.64" y="155.81" class="blip-num" text-anchor="middle" fill="#ffffff">40</text>
+</g>
+<g>
+<circle cx="495.14" cy="144.19" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="495.14" y="148.19" class="blip-num" text-anchor="middle" fill="#ffffff">41</text>
+</g>
+<g>
+<circle cx="510.4" cy="137.36" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="510.4" y="141.36" class="blip-num" text-anchor="middle" fill="#ffffff">42</text>
+</g>
+<g>
+<circle cx="526.4" cy="131.39" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="526.4" y="135.39" class="blip-num" text-anchor="middle" fill="#ffffff">43</text>
+</g>
+<g>
+<circle cx="543.08" cy="126.31" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="543.08" y="130.31" class="blip-num" text-anchor="middle" fill="#ffffff">44</text>
+</g>
+<g>
+<circle cx="251.74" cy="485.6" r="13" fill="#ff64c8" stroke="#ffffff" stroke-width="2"/>
+<text x="251.74" y="489.6" class="blip-num" text-anchor="middle" fill="#1f1d1b">17</text>
+</g>
+<g>
+<circle cx="428.69" cy="562.71" r="13" fill="#dd5b00" stroke="#ffffff" stroke-width="2"/>
+<text x="428.69" y="566.71" class="blip-num" text-anchor="middle" fill="#ffffff">18</text>
+</g>
+<g>
+<circle cx="369.23" cy="574.49" r="13" fill="#dd5b00" stroke="#ffffff" stroke-width="2"/>
+<text x="369.23" y="578.49" class="blip-num" text-anchor="middle" fill="#ffffff">38</text>
+</g>
+<g>
+<circle cx="526.56" cy="293.8" r="13" fill="#213183" stroke="#ffffff" stroke-width="2"/>
+<text x="526.56" y="297.8" class="blip-num" text-anchor="middle" fill="#ffffff">22</text>
+</g>
+<g>
+<circle cx="566.5" cy="339.4" r="13" fill="#213183" stroke="#ffffff" stroke-width="2"/>
+<text x="566.5" y="343.4" class="blip-num" text-anchor="middle" fill="#ffffff">27</text>
+</g>
+<g>
+<circle cx="555.25" cy="456.51" r="13" fill="#1aae39" stroke="#ffffff" stroke-width="2"/>
+<text x="555.25" y="460.51" class="blip-num" text-anchor="middle" fill="#1f1d1b">36</text>
+</g>
+<g>
+<circle cx="535.73" cy="513.89" r="13" fill="#1aae39" stroke="#ffffff" stroke-width="2"/>
+<text x="535.73" y="517.89" class="blip-num" text-anchor="middle" fill="#1f1d1b">37</text>
+</g>
+<g>
+<circle cx="341.09" cy="281.7" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="341.09" y="285.7" class="blip-num" text-anchor="middle" fill="#ffffff">45</text>
+</g>
+<g>
+<circle cx="343.55" cy="266.62" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="343.55" y="270.62" class="blip-num" text-anchor="middle" fill="#ffffff">46</text>
+</g>
+<g>
+<circle cx="347.65" cy="251.45" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="347.65" y="255.45" class="blip-num" text-anchor="middle" fill="#ffffff">47</text>
+</g>
+<g>
+<circle cx="353.43" cy="236.32" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="353.43" y="240.32" class="blip-num" text-anchor="middle" fill="#ffffff">48</text>
+</g>
+<g>
+<circle cx="360.88" cy="221.39" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="360.88" y="225.39" class="blip-num" text-anchor="middle" fill="#ffffff">49</text>
+</g>
+<g>
+<circle cx="370.01" cy="206.79" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="370.01" y="210.79" class="blip-num" text-anchor="middle" fill="#ffffff">50</text>
+</g>
+<g>
+<circle cx="380.79" cy="192.7" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="380.79" y="196.7" class="blip-num" text-anchor="middle" fill="#ffffff">51</text>
+</g>
+<g>
+<circle cx="393.2" cy="179.24" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="393.2" y="183.24" class="blip-num" text-anchor="middle" fill="#ffffff">52</text>
+</g>
+<g>
+<circle cx="407.19" cy="166.57" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="407.19" y="170.57" class="blip-num" text-anchor="middle" fill="#ffffff">53</text>
+</g>
+<g>
+<circle cx="422.72" cy="154.84" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="422.72" y="158.84" class="blip-num" text-anchor="middle" fill="#ffffff">54</text>
+</g>
+<g>
+<circle cx="439.71" cy="144.18" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="439.71" y="148.18" class="blip-num" text-anchor="middle" fill="#ffffff">55</text>
+</g>
+<g>
+<circle cx="458.09" cy="134.73" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="458.09" y="138.73" class="blip-num" text-anchor="middle" fill="#ffffff">56</text>
+</g>
+<g>
+<circle cx="477.78" cy="126.63" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="477.78" y="130.63" class="blip-num" text-anchor="middle" fill="#ffffff">57</text>
+</g>
+<g>
+<circle cx="498.67" cy="119.98" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="498.67" y="123.98" class="blip-num" text-anchor="middle" fill="#ffffff">58</text>
+</g>
+<g>
+<circle cx="520.67" cy="114.92" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="520.67" y="118.92" class="blip-num" text-anchor="middle" fill="#ffffff">59</text>
+</g>
+<g>
+<circle cx="543.63" cy="111.54" r="13" fill="#2a9d99" stroke="#ffffff" stroke-width="2"/>
+<text x="543.63" y="115.54" class="blip-num" text-anchor="middle" fill="#ffffff">60</text>
+</g>
+</svg>
+      </div>
+      <div class="key">
+        <span><b>Ringe</b> = Impact (innen = wichtiger)</span>
+        <span><b>Segmente</b> = Kategorie</span>
+        <span><b>Nummer</b> = siehe Meldungen unten</span>
+      </div>
+    </div>
+  <div class="scale">
+    <h3>Wie sich der Impact bestimmt</h3>
+    <p class="scale-lead">Bewertet wird aus dem Blickwinkel <b>IDEs, Assistenten und Plattformen für den täglichen Einsatz</b>. Leitfrage je Meldung: Wie stark verändert sie die tägliche Arbeit, die Werkzeuge oder die Entscheidungen im Bereich IDEs, Assistenten und Plattformen für den täglichen Einsatz? Eine allgemein große AI-Meldung kann hier niedrig liegen — und umgekehrt. Daraus ergibt sich der Ring (innen = wichtiger).</p>
+    <ul>
+      <li><span class="sc-dots">●○○○○</span><span><span class="sc-name">1 — Routine.</span> <span class="sc-desc">kleines Update, Bugfix, inkrementell.</span></span></li>
+      <li><span class="sc-dots">●●○○○</span><span><span class="sc-name">2 — Nennenswert.</span> <span class="sc-desc">neues Feature, aber eher Nische.</span></span></li>
+      <li><span class="sc-dots">●●●○○</span><span><span class="sc-name">3 — Relevant.</span> <span class="sc-desc">spürbare Verbesserung, betrifft viele.</span></span></li>
+      <li><span class="sc-dots">●●●●○</span><span><span class="sc-name">4 — Stark.</span> <span class="sc-desc">verändert, wie man arbeitet, oder eröffnet eine neue Möglichkeit.</span></span></li>
+      <li><span class="sc-dots">●●●●●</span><span><span class="sc-name">5 — Game-Changer.</span> <span class="sc-desc">grundlegender Sprung.</span></span></li>
+    </ul>
+    <p class="sc-note">Impact 1 (Routine) ist der äußerste Ring; solche Meldungen führen wir meist nur unter „Überspringen" auf — der äußere Ring bleibt daher oft leer.</p>
+  </div>
+  </div>
+
+  <div class="section"><h2>Die Meldungen im Detail</h2></div>
+  <div class="detail-list">
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">1</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://www.darkreading.com/cyber-risk/ai-browsers-zero-click-agent-hijacking" target="_blank" rel="noopener">„PleaseFix“ trifft praktisch alle großen KI-Browser gleichzeitig</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">Dark Reading · 06.08.2026</span> · <span class="dots">●●●●●</span> <span class="dmeta-imp">5/5</span></div>
+      <p>Die von Zenity Labs auf der Black-Hat-Konferenz vorgestellte Schwachstellenklasse „PleaseFix“ betrifft mit Claude in Chrome, Gemini in Chrome, Perplexity Comet, ChatGPT Atlas und Copilot Edge praktisch jeden verbreiteten Browser-Agenten gleichzeitig. Weil die Agenten Inhalte aus E-Mails, Kalendereinladungen oder Webseiten verarbeiten, ohne verlässlich zwischen Anweisung und Daten zu unterscheiden, genügt teils ein einziges eingehendes Dokument für einen Übernahmeversuch, ganz ohne Klick der Nutzenden. OpenAI hat bereits reagiert und zieht seinen Atlas-Browser zurück, während laut den Forschern bei anderen Anbietern noch nicht alle Lücken geschlossen sind.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.darkreading.com/cyber-risk/ai-browsers-zero-click-agent-hijacking" target="_blank" rel="noopener">Dark Reading <span class="arw">→</span></a> · <a class="dlink" href="https://www.calcalistech.com/ctechnews/article/rjb11kkflmg" target="_blank" rel="noopener">Calcalist <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#dd5b00;color:#ffffff">2</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-warns-infostealer-malware-is-hijacking-claude-sessions-to-drain-usage/" target="_blank" rel="noopener">Anthropic warnt vor Infostealer-Malware, die aktive Claude-Sitzungen entführt</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#dd5b001f;color:#dd5b00">Security &amp; Governance</span><span class="dmeta-src">BleepingComputer · 30.08.2026</span> · <span class="dots">●●●●○</span> <span class="dmeta-imp">4/5</span></div>
+      <p>Wer Claude im Browser nutzt, sollte nach der Warnung von Anthropic prüfen, ob der eigene Rechner mit gängiger Infostealer-Malware (Vidar, LummaC2, StealC, RedLine, Acreed unter Windows, Atomic Stealer auf einigen Macs) infiziert ist: Sie stiehlt aktive Sitzungen und erlaubt Fremdzugriff ohne Passwort. Anthropic meldet betroffene Accounts ab, entfernt hinterlegte Zahlungsmethoden und erstattet unautorisierte Kosten - ein erneuter Login auf einem weiterhin infizierten Gerät macht die Sitzung aber sofort wieder angreifbar.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-warns-infostealer-malware-is-hijacking-claude-sessions-to-drain-usage/" target="_blank" rel="noopener">BleepingComputer <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">3</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://github.blog/changelog/2026-08-28-github-copilot-in-visual-studio-august-update-2" target="_blank" rel="noopener">GitHub Copilot in Visual Studio: August-Update mit einstellbarer Denktiefe und Git-Reviewer</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">GitHub Changelog · 28.08.2026</span> · <span class="dots">●●●●○</span> <span class="dmeta-imp">4/5</span></div>
+      <p>Visual Studio 2026 bekommt einstellbare Denkaufwand-Stufen (Low/Medium/High) je Modell, organisationsweite Custom Agents sowie eine bessere Modellverwaltung mit Anzeige von Kontextgröße und Kosten. Neu ist außerdem ein Git-Agent, der Commits vor dem Pull Request selbstständig gegenliest.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://github.blog/changelog/2026-08-28-github-copilot-in-visual-studio-august-update-2" target="_blank" rel="noopener">GitHub Changelog <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#213183;color:#ffffff">4</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://the-decoder.com/always-on-and-self-starting-ai-agents-might-be-openais-next-big-play/" target="_blank" rel="noopener">OpenAI testet dauerhaft aktive, selbststartende Codex-Agenten</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2131831f;color:#213183">Agents &amp; Frameworks</span><span class="dmeta-src">The Decoder · 28.08.2026</span> · <span class="dots">●●●●○</span> <span class="dmeta-imp">4/5</span></div>
+      <p>Aus öffentlich zugänglichem Code geht ein „Persistent Mode&quot; für Codex hervor, der eigenständig weiterarbeitet, eigene Folgeaufgaben erzeugt und Nutzer proaktiv kontaktiert, statt nach einer Sitzung zu stoppen. OpenAI bestätigte die Tests ohne Starttermin; beim Launch von GPT-5.6 Sol hatte das Unternehmen selbst vor Risiken durch gezielte Prompts gewarnt.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://the-decoder.com/always-on-and-self-starting-ai-agents-might-be-openais-next-big-play/" target="_blank" rel="noopener">The Decoder <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">5</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://claude.com/blog/cowork-built-in-browser" target="_blank" rel="noopener">Claude Cowork bekommt einen eigenen Browser im Seitenpanel der Desktop-App</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">Anthropic · 27.08.2026</span> · <span class="dots">●●●●○</span> <span class="dmeta-imp">4/5</span></div>
+      <p>Anthropic baut einen eigenen Browser direkt in Claude Cowork ein: Bei Aufgaben, die eine Website betreffen, öffnet sich ein Fenster im Seitenpanel, in dem Claude liest, klickt und Formulare ausfüllt – auch auf Portalen ohne Konnektor. Der Browser bleibt getrennt vom eigenen Profil, Logins lassen sich einzeln aus Chrome, Edge oder Firefox übernehmen, Banking- und E-Mail-Seiten sind ausgeschlossen. Der Rollout für Pro-, Max-, Team- und Enterprise-Pläne läuft diese Woche an; wer bereits die Claude-in-Chrome-Erweiterung nutzt, bleibt bei dieser als Standard.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://claude.com/blog/cowork-built-in-browser" target="_blank" rel="noopener">Anthropic <span class="arw">→</span></a> · <a class="dlink" href="https://the-decoder.com/claude-cowork-now-runs-its-own-browser-inside-the-desktop-app/" target="_blank" rel="noopener">The Decoder <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">6</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://venturebeat.com/orchestration/salesforce-just-put-its-entire-crm-inside-claude-and-says-youll-never-need-its-app-again" target="_blank" rel="noopener">Salesforce und Anthropic launchen „Claudeforce“ – CRM als Plugin in Claude Cowork</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">VentureBeat · 26.08.2026</span> · <span class="dots">●●●●○</span> <span class="dmeta-imp">4/5</span></div>
+      <p>Salesforce und Anthropic haben mit „Claudeforce“ ein Cowork-Plugin vorgestellt, das mit 37 vorgefertigten Vertriebs-Skills komplette CRM-Aufgaben direkt in Claude verfügbar macht. Verkäufer können Deals prüfen, Pipelines analysieren und Daten aktualisieren, ohne die Salesforce-Oberfläche zu öffnen; Pilotkunden nutzen das Plugin bereits, eine offene Beta folgt im September.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://venturebeat.com/orchestration/salesforce-just-put-its-entire-crm-inside-claude-and-says-youll-never-need-its-app-again" target="_blank" rel="noopener">VentureBeat <span class="arw">→</span></a> · <a class="dlink" href="https://www.salesforce.com/news/press-releases/2026/08/26/salesforce-and-anthropic-announce-claudeforce/" target="_blank" rel="noopener">Salesforce <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">7</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/25/claude-cowork-finally-remembers-what-you-told-the-app-in-chat/" target="_blank" rel="noopener">Claude merkt sich Themen jetzt einheitlich über Chat und Cowork hinweg</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">TechCrunch · 25.08.2026</span> · <span class="dots">●●●●○</span> <span class="dmeta-imp">4/5</span></div>
+      <p>Anthropic hat das Gedächtnis von Claude neu gebaut: Statt ganze Gespräche zusammenzufassen, legt Claude jetzt einzelne, editierbare Themen an, die sowohl im normalen Chat als auch im Aufgaben-Assistenten Cowork zur Verfügung stehen. Nutzer müssen ihre Präferenzen und Projektdetails damit nicht mehr in jedem Werkzeug erneut erklären. Sensible Themen wie Gesundheit oder politische Ansichten werden nur mit ausdrücklicher Erlaubnis gespeichert, mit sichtbarem Hinweis bei jeder Speicherung.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/25/claude-cowork-finally-remembers-what-you-told-the-app-in-chat/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a> · <a class="dlink" href="https://9to5mac.com/2026/08/25/anthropic-update-unifies-memory-feature-across-claude-cowork-and-chat/" target="_blank" rel="noopener">9to5Mac <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">8</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://9to5mac.com/2026/08/14/spacex-lands-deal-to-likely-purchase-claude-code-and-openai-codex-competitor/" target="_blank" rel="noopener">SpaceXAI übernimmt Cursor – was die 60-Milliarden-Dollar-Fusion für Nutzer bedeutet</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">9to5Mac · 14.08.2026</span> · <span class="dots">●●●●○</span> <span class="dmeta-imp">4/5</span></div>
+      <p>Mit dem Abschluss der 60-Milliarden-Dollar-Übernahme wird Cursor Teil von SpaceXAI und rückt neben Grok Build und Grok 4.6. Für Nutzer bedeutet das absehbar schnellere Modell-Iterationen dank Zugriff auf xAIs Colossus-Rechencluster, aber auch offene Fragen, wie unabhängig Cursor als Produkt neben der Grok-Marke bleibt. Der Deal folgt auf eine bereits im April geschlossene Kooperation im Umfang von 10 Milliarden Dollar.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://9to5mac.com/2026/08/14/spacex-lands-deal-to-likely-purchase-claude-code-and-openai-codex-competitor/" target="_blank" rel="noopener">9to5Mac <span class="arw">→</span></a> · <a class="dlink" href="https://www.bloomberg.com/news/articles/2026-08-14/spacex-completes-its-60-billion-cursor-acquisition" target="_blank" rel="noopener">Bloomberg <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">9</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://openai.com/index/previewing-ultrafast/" target="_blank" rel="noopener">OpenAI stellt „Ultrafast“-Modus für GPT-5.6 Sol vor – 14-fache Geschwindigkeit dank Cerebras</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">OpenAI · 13.08.2026</span> · <span class="dots">●●●●○</span> <span class="dmeta-imp">4/5</span></div>
+      <p>Ultrafast lässt GPT-5.6 Sol auf Cerebras&#x27; Wafer-Scale-Chips mit bis zu 750 Tokens pro Sekunde laufen, rund 14-mal schneller als der Standardmodus auf klassischen GPU-Clustern – bei unveränderter Modellqualität. Für Werkzeuge, die auf sofortige Antworten angewiesen sind, etwa Kundenservice oder Finanzmarktanalyse, entfällt damit der bisher übliche Kompromiss zwischen Geschwindigkeit und Modellstärke. Der Modus läuft vorerst nur in einer begrenzten Vorschau für ausgewählte OpenAI-Kunden.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://openai.com/index/previewing-ultrafast/" target="_blank" rel="noopener">OpenAI <span class="arw">→</span></a> · <a class="dlink" href="https://techcrunch.com/2026/08/13/openai-introduces-ultrafast-a-new-mode-that-makes-gpt-5-6-sol-work-at-14x-the-speed/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">10</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://venturebeat.com/security/aws-continuum-integrates-with-openai-codex-and-anthropic-claude-code-in-major-ai-security-push" target="_blank" rel="noopener">AWS integriert Sicherheits-Dienst Continuum in Claude Code, Codex und Kiro</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">VentureBeat · 10.08.2026</span> · <span class="dots">●●●●○</span> <span class="dmeta-imp">4/5</span></div>
+      <p>AWS hat auf der Black-Hat-Konferenz angekündigt, dass sein Sicherheits-Dienst Continuum künftig direkt in Claude Code, OpenAIs Codex und die eigene IDE Kiro integriert ist – unabhängig davon, mit welchem Modell ein Entwicklerteam arbeitet, greift dieselbe automatisierte Schwachstellenprüfung. Kunden zahlen einen Pauschalpreis, während AWS im Hintergrund je Prüfschritt das passende Modell auswählt und dessen Tokenkosten selbst trägt. Für den Alltag bedeutet das: Sicherheitsprüfung wird zum eingebauten Teil des Coding-Agenten statt eines separaten Werkzeugs.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://venturebeat.com/security/aws-continuum-integrates-with-openai-codex-and-anthropic-claude-code-in-major-ai-security-push" target="_blank" rel="noopener">VentureBeat <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">11</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://claude.com/blog/auto-mode-default-in-claude-code" target="_blank" rel="noopener">Claude Code: Auto-Modus wird ab 14. August Standard für Pro-, Max- und Team-Pläne</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">Anthropic/Claude Blog · 08.08.2026</span> · <span class="dots">●●●●○</span> <span class="dmeta-imp">4/5</span></div>
+      <p>Wer Claude Code über Pro, Max oder Team nutzt, bekommt ab dem 14. August den Auto-Modus als Standardeinstellung statt einer Freigabeabfrage vor jedem Befehl. Anthropic stützt den Wechsel auf eine Studie, laut der menschliche Nutzer beim Freigeben eines heimlich eingeschleusten gefährlichen Befehls nur in 13,6 Prozent der Fälle richtig reagierten, der automatische Prüfer aber in 89 Prozent der Fälle. Wer die alte, manuelle Freigabe bevorzugt, kann sie weiterhin per Einstellung aktivieren.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://claude.com/blog/auto-mode-default-in-claude-code" target="_blank" rel="noopener">Anthropic/Claude Blog <span class="arw">→</span></a> · <a class="dlink" href="https://the-decoder.com/anthropic-sets-claude-code-to-auto-mode-by-default-to-protect-developers-from-bad-approvals/" target="_blank" rel="noopener">The Decoder <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">12</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://aaif.io/blog/from-skills-and-tools-to-portable-agent-plugins" target="_blank" rel="noopener">Agent Plugins 1.0 macht Skills für Coding-Werkzeuge portabel: VS Code, Cursor, Copilot, Codex und Kiro kompatibel</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">AAIF · 06.08.2026</span> · <span class="dots">●●●●○</span> <span class="dmeta-imp">4/5</span></div>
+      <p>Wer heute eine Skill oder MCP-Anbindung für ein Werkzeug baut, kann sie mit dem neuen Agent-Plugins-Format ab sofort unverändert in VS Code, Cursor, GitHub Copilot, OpenAI Codex und AWS Kiro laden. Das Format regelt nur die Paketierung; wie eine Skill installiert, freigegeben und angezeigt wird, entscheidet weiterhin jedes Werkzeug selbst. Für den Alltag verspricht das vor allem weniger doppelte Pflegearbeit, wenn Teams mehrere Coding-Assistenten parallel einsetzen.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://aaif.io/blog/from-skills-and-tools-to-portable-agent-plugins" target="_blank" rel="noopener">AAIF <span class="arw">→</span></a> · <a class="dlink" href="https://kingy.ai/blog/openai-agent-plugins-open-standard/" target="_blank" rel="noopener">Kingy AI <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">13</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://cursor.com/changelog/google-workspace-plugins" target="_blank" rel="noopener">Cursor bekommt Google-Workspace-Anbindung: Agent kann E-Mails, Drive und Kalender bearbeiten</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">Cursor · 03.08.2026</span> · <span class="dots">●●●●○</span> <span class="dmeta-imp">4/5</span></div>
+      <p>Über neue Plugins kann Cursors Agent jetzt direkt auf Gmail, Google Drive, Kalender, Docs und Sheets zugreifen und dort auch schreibend tätig werden, statt sich auf die Codebasis zu beschränken. Für den Alltag heißt das: Wer Cursor nutzt, kann Recherche, Terminplanung und Dokumenten-Updates direkt aus dem Coding-Werkzeug heraus anstoßen – muss dafür aber auch die Freigaben für diese neuen Zugriffe bewusst verwalten.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://cursor.com/changelog/google-workspace-plugins" target="_blank" rel="noopener">Cursor <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">14</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://the-decoder.com/openclaw-2-0-brings-simplified-setup-a-rebuilt-browser-app-and-multiplayer-sessions/" target="_blank" rel="noopener">OpenClaw 2.0: vereinfachtes Setup und neu gebauter Browser für den Alltag</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">The Decoder · 31.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Für den täglichen Einsatz bringt OpenClaw 2.0 vor allem ein deutlich einfacheres Ersteinrichten: Die Software erkennt automatisch vorhandene Abos, API-Keys und lokale Modelle und übernimmt sie in die Konfiguration. Die neue Browser-App zeigt laufende Sessions in Echtzeit inklusive Bewertungen und Pull-Request-Fortschritt, ein Begleit-Thread erlaubt Rückfragen, ohne den Agenten zu unterbrechen.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://the-decoder.com/openclaw-2-0-brings-simplified-setup-a-rebuilt-browser-app-and-multiplayer-sessions/" target="_blank" rel="noopener">The Decoder <span class="arw">→</span></a> · <a class="dlink" href="https://docs.openclaw.ai/releases/2026.8.1" target="_blank" rel="noopener">OpenClaw Release Notes <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">15</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-is-cutting-claude-codes-current-weekly-limits-by-17-percent/" target="_blank" rel="noopener">Claude Codes Nutzungsgrenzen-„Erhöhung&quot; ist ab 14. September netto eine 17-Prozent-Kürzung</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">BleepingComputer · 30.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Anthropic hatte eine dauerhafte Erhöhung der wöchentlichen Claude-Code-Limits um 25 Prozent angekündigt, musste den Beitrag aber löschen: Weil die aktuell laufende temporäre 50-Prozent-Erhöhung zum selben Termin endet, sinken die Limits gegenüber heute netto um 17 Prozent. Für Teams, die ihre Nutzung an den bestehenden Grenzen ausrichten, lohnt sich ein Blick vor dem 14. September.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-is-cutting-claude-codes-current-weekly-limits-by-17-percent/" target="_blank" rel="noopener">BleepingComputer <span class="arw">→</span></a> · <a class="dlink" href="https://the-decoder.com/anthropics-claude-code-limit-change-is-a-raise-on-paper-but-a-cut-in-practice/" target="_blank" rel="noopener">The Decoder <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">16</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://www.marktechpost.com/2026/08/30/openclaw-releases-openclaw-2-0-guided-model-setup-575-ms-control-ui-startup-and-one-trust-boundary-per-gateway/" target="_blank" rel="noopener">OpenClaw 2.0: großer Versionssprung für die offene Agentenplattform</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">MarkTechPost · 30.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Mit Version 2.0 (16.000+ Pull Requests, 933 Mitwirkende) bekommt die offene Agentenplattform OpenClaw eine neu gebaute Steueroberfläche, einen Datei-Editor, ein Git-gestütztes Änderungs-Panel, ein Browser-Panel und ein Terminal - dazu wandert die Sitzungs- und Transkript-Verwaltung auf SQLite. Für alltägliche Nutzer relevant: Die geführte Ersteinrichtung prüft Zugangsdaten und Modelle jetzt vor dem Speichern, statt Fehler erst beim ersten Lauf aufzudecken.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.marktechpost.com/2026/08/30/openclaw-releases-openclaw-2-0-guided-model-setup-575-ms-control-ui-startup-and-one-trust-boundary-per-gateway/" target="_blank" rel="noopener">MarkTechPost <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#ff64c8;color:#1f1d1b">17</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://github.blog/changelog/2026-08-28-upcoming-changes-to-github-copilot-policies-and-billing" target="_blank" rel="noopener">GitHub kündigt Änderungen bei Copilot-Richtlinien und Abrechnung an</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#ff64c81f;color:#ff64c8">Business &amp; Markt</span><span class="dmeta-src">GitHub Changelog · 28.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Ab 1. September öffnet GitHub Neuanmeldungen für Copilot Business und Enterprise per Kreditkarte oder PayPal wieder, verlangt ab 1. Oktober aber Vorab-Zahlung pro Sitzplatz. Der Standard-Reviewaufwand bei Copilot Code Review wechselt am 28. September von „Lite&quot; auf „Balanced&quot;.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://github.blog/changelog/2026-08-28-upcoming-changes-to-github-copilot-policies-and-billing" target="_blank" rel="noopener">GitHub Changelog <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#dd5b00;color:#ffffff">18</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://thenewstack.io/jetbrains-told-everyone-to-patch-it-didnt-patch-itself/" target="_blank" rel="noopener">JetBrains&#x27; eigener Cloud-Dienst durch selbst ungepatchte TeamCity-Lücke kompromittiert</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#dd5b001f;color:#dd5b00">Security &amp; Governance</span><span class="dmeta-src">The New Stack · 28.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Angreifer nutzten die im Juli offengelegte kritische TeamCity-Lücke CVE-2026-63077 vom 8. bis 24. August gegen JetBrains&#x27; eigenen Cadence-Server aus – denselben Cloud-Compute-Dienst für PyCharm, den JetBrains selbst zu patchen vergessen hatte. Betroffene Nutzer sollen vorsorglich alle Zugangsdaten wie AWS-, GitHub-, npm- und Docker-Hub-Token rotieren.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://thenewstack.io/jetbrains-told-everyone-to-patch-it-didnt-patch-itself/" target="_blank" rel="noopener">The New Stack <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">19</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://thenewstack.io/replit-model-routing-default/" target="_blank" rel="noopener">Replit macht automatisches Modell-Routing zum Standard</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">The New Stack · 27.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Der neue „Auto Mode&quot; wählt künftig für alle Nutzer automatisch das passende Modell nach Qualität, Geschwindigkeit und Kosten. Core- und Pro-Kunden können weiterhin manuell umschalten, Enterprise-Admins die Auswahl auf freigegebene Modelle beschränken.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://thenewstack.io/replit-model-routing-default/" target="_blank" rel="noopener">The New Stack <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">20</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://www.testingcatalog.com/z-ai-launches-glm-5-3-flash-under-mit-license/" target="_blank" rel="noopener">Z.ai veröffentlicht GLM-5.3-Flash offiziell – zuvor anonym als „Ox Alpha“ auf OpenRouter</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">TestingCatalog · 26.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Z.ai hat sein Reasoning-Modell GLM-5.3-Flash offiziell veröffentlicht, nachdem es eine Woche unerkannt als kostenloses Mystery-Modell „Ox Alpha“ auf OpenRouter lief. Nutzer des GLM Coding Plan erhalten sofort Zugriff mit dreifachem Kontingent gegenüber der Vorgängerversion – bei laut Artificial Analysis nur leicht geringerer Leistung, aber deutlich günstigerem Preis als vergleichbare Modelle von OpenAI oder xAI.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.testingcatalog.com/z-ai-launches-glm-5-3-flash-under-mit-license/" target="_blank" rel="noopener">TestingCatalog <span class="arw">→</span></a> · <a class="dlink" href="https://venturebeat.com/orchestration/glm-5-3-flash-will-likely-handle-45-of-your-ai-workloads" target="_blank" rel="noopener">VentureBeat <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">21</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://www.latent.space/p/lovable-future-of-saas" target="_blank" rel="noopener">Lovable öffnet App-Funktionen über MCP-Server direkt für Agenten</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">Latent Space · 26.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Der KI-App-Baukasten Lovable öffnet die Funktionen veröffentlichter Apps über gehostete MCP-Server direkt für Agenten wie ChatGPT oder Claude – jede App bekommt damit zwei Schnittstellen, eine für Menschen und eine für Agenten. Zugangsdaten bleiben laut CTO Fabian Hedin serverseitig verschlüsselt, Apps erhalten nur kurzlebige Tokens, was das Modell auch sicherheitstechnisch handhabbar machen soll.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.latent.space/p/lovable-future-of-saas" target="_blank" rel="noopener">Latent Space <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#213183;color:#ffffff">22</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/24/instincts-powerful-ai-assistant-is-raising-privacy-and-security-concerns/" target="_blank" rel="noopener">Stealth-Assistent Instinct sorgt mit weitreichenden Nutzungsbedingungen für Kritik</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2131831f;color:#213183">Agents &amp; Frameworks</span><span class="dmeta-src">TechCrunch · 24.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Der noch in der Stealth-Phase befindliche persönliche Assistent Instinct (gegründet vom früheren Sierra-Forscher Noah Shinn, unterstützt von Kleiner Perkins und Conviction) bekommt in ersten Tests Zugriff auf E-Mails, Nachrichten, Kalender und Bildschirminhalte. Die Nutzungsbedingungen räumen dem Unternehmen ein unwiderrufliches Recht an den Daten ein und erlauben dem Assistenten, im Namen der Nutzer bindende Vereinbarungen zu treffen – ein Muster, das zeigt, wie weit persönliche Agenten inzwischen in den Alltag vordringen wollen, bevor die Sicherheitsfragen geklärt sind.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/24/instincts-powerful-ai-assistant-is-raising-privacy-and-security-concerns/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">23</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://openai.com/index/gpt-5-6-in-kiro/" target="_blank" rel="noopener">GPT-5.6 zieht in AWS&#x27; Coding-Agenten Kiro ein</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">OpenAI · 24.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Über eine Partnerschaft mit OpenAI stehen die GPT-5.6-Modelle Sol, Terra und Luna jetzt auch in AWS&#x27; spezifikationsgetriebenem Coding-Agenten Kiro zur Verfügung. Der strukturierte Anforderungs-Design-Aufgaben-Workflow von Kiro soll die Kosten für Terminal-Bench-2.1-Aufgaben um rund 82 Prozent senken.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://openai.com/index/gpt-5-6-in-kiro/" target="_blank" rel="noopener">OpenAI <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">24</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack/" target="_blank" rel="noopener">GitHub Copilot bekommt Agent-Sessions in Slack und Microsoft Teams</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">GitHub Blog · 21.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>GitHub bringt die agentische Copilot-Funktionalität als Public Preview direkt in Slack und Microsoft Teams: Mit „@GitHub“ lassen sich in Kanälen oder Threads Agent-Sessions starten, die Fehler untersuchen, Code ändern und Pull Requests öffnen, während das gesamte Team live mitverfolgen und eingreifen kann. Repo-Admins können für Copilot-erstellte Pull Requests zusätzlich eine verpflichtende Freigabe erzwingen, was die Reviewer-Disziplin bei diesem neuen Workflow zumindest technisch absichert.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack/" target="_blank" rel="noopener">GitHub Blog <span class="arw">→</span></a> · <a class="dlink" href="https://github.blog/changelog/2026-08-21-shared-agentic-work-with-github-copilot-in-microsoft-teams/" target="_blank" rel="noopener">GitHub Blog <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">25</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/20/ramp-launches-its-own-ai-model-router-called-router/" target="_blank" rel="noopener">Ramp launcht eigenen KI-Modell-Router „Router“</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">TechCrunch · 20.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Der Ausgabenmanagement-Anbieter Ramp hat mit Router einen eigenen KI-Modell-Router gestartet, über den Firmen per API zwischen Modellen von OpenAI, Anthropic, DeepSeek, Moonshot, Nvidia, xAI und Z.ai wechseln können – nach eigenen Angaben ein System, das Ramp seit drei Jahren intern nutzt. Bis Ende 2026 ist der Dienst kostenlos, danach fallen weiterhin nur die reinen Modellkosten an; dazu kommen ein Dashboard für Token-Ausgaben, Latenz und Fallback-Versuche sowie eine Opt-out-Datenspeicherung von einem Jahr. Für Ramp ist das Angebot ein zweiter Vorstoß nach Stripes OpenRouter-Übernahme, Zugang zum wachsenden Inferenz-Markt zu bekommen und ihn mit dem bestehenden Ausgaben-Management zu verzahnen.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/20/ramp-launches-its-own-ai-model-router-called-router/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">26</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/19/google-launches-new-study-tools-for-students-across-search-and-gemini/" target="_blank" rel="noopener">Google rüstet Suche und Gemini mit neuen KI-Lerntools aus</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">TechCrunch · 19.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Google integriert neue, auf Lernende zugeschnittene KI-Funktionen direkt in Google Search und Gemini, darunter geführte Erklärungen und Übungsformate statt reiner Ergebnislisten. Der Schritt reiht sich in eine Serie von Bildungsinitiativen der großen Anbieter ein und zielt auf Schüler und Studierende als eigene Nutzergruppe mit spezifischen Anforderungen an Nachvollziehbarkeit statt nur schnellen Antworten.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/19/google-launches-new-study-tools-for-students-across-search-and-gemini/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#213183;color:#ffffff">27</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://the-decoder.com/openai-fixes-codex-bug-that-deleted-real-user-files-without-permission/" target="_blank" rel="noopener">Codex-Sicherheitsupdate: kein versehentliches Löschen echter Dateien mehr</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2131831f;color:#213183">Agents &amp; Frameworks</span><span class="dmeta-src">The Decoder · 19.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Nach mehreren Berichten über eigenständig löschende Codex-Agenten hat OpenAI die Ursache behoben: ein fehlerhafter Aufräum-Befehl, der Systemvariablen für temporäre Ordner missbrauchte und dadurch reale Nutzerverzeichnisse traf. Codex prüft Löschziele nun vorab, der Vollzugriffsmodus lässt sich nicht mehr versehentlich aktivieren. Für den Alltagseinsatz bleibt die Empfehlung, grundsätzlich in einem Sandbox-Modus zu arbeiten statt Vollzugriff zu gewähren.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://the-decoder.com/openai-fixes-codex-bug-that-deleted-real-user-files-without-permission/" target="_blank" rel="noopener">The Decoder <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">28</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/18/cursor-capitalizes-on-github-frustration-launches-rival-hosting-platform/" target="_blank" rel="noopener">Cursor launcht Origin: eigenständige Alternative zu GitHub</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">TechCrunch · 18.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>SpaceXAIs Cursor bietet mit Origin nun eine eigene Plattform für Repositories, Pull Requests und Zusammenarbeit, die parallel zu GitHub genutzt werden kann und bestehende Repos einbindet. Der Start fällt bewusst in eine Phase anhaltender GitHub-Ausfälle – am selben Tag legte ein weltweiter Fehler mit rund 20 Prozent Fehlerquote den Dienst über Stunden lahm. Nutzer müssen nicht vollständig wechseln, können Origin aber schrittweise ausprobieren.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/18/cursor-capitalizes-on-github-frustration-launches-rival-hosting-platform/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">29</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://the-decoder.com/claude-code-gets-a-design-command-that-lets-developers-create-ui-mockups-right-in-the-terminal/" target="_blank" rel="noopener">Claude Code: neuer /design-Befehl erzeugt UI-Mockups im Terminal</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">The Decoder · 18.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Der neue, als früher Preview veröffentlichte /design-Befehl lässt Claude Code mehrere UI-Entwurfsvarianten passend zum bestehenden Codebase-Stil erzeugen, die sich auswählen, bearbeiten und anschließend umsetzen lassen. Die zugrunde liegende Editor- und Prompting-Technik stammt aus Claude Design und ist jetzt direkt in Claude Code integriert, ein Aufruf von „claude update“ reicht zum Ausprobieren.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://the-decoder.com/claude-code-gets-a-design-command-that-lets-developers-create-ui-mockups-right-in-the-terminal/" target="_blank" rel="noopener">The Decoder <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">30</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://github.blog/changelog/2026-08-14-grok-4-6-is-now-available-in-github-copilot/" target="_blank" rel="noopener">Grok 4.6 kommt in GitHub Copilot – auf acht Entwicklungsoberflächen gleichzeitig</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">GitHub Changelog · 14.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>GitHub macht xAIs Grok 4.6 als wählbares Modell in VS Code, Visual Studio, der Copilot-CLI, dem Cloud-Agenten, der Copilot-App, JetBrains-IDEs, Xcode und Eclipse verfügbar – für Pro-, Pro+-, Max-, Business- und Enterprise-Pläne, bei Business und Enterprise muss ein Administrator es erst freischalten. GitHub berichtet von besonders starken Ergebnissen bei lang laufenden Terminal-Coding-Aufgaben. Bemerkenswert ist das Timing: Cursor, Grok 4.6s andere Heimat, wurde am selben Tag vom selben Mutterkonzern SpaceXAI übernommen.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://github.blog/changelog/2026-08-14-grok-4-6-is-now-available-in-github-copilot/" target="_blank" rel="noopener">GitHub Changelog <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">31</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://www.techtimes.com/articles/324537/20260814/microsoft-copilot-rollout-starts-free-deep-research-retired-four-days.htm" target="_blank" rel="noopener">Microsoft dampft Copilot ein: Apps verschmelzen, Deep Research wird kostenpflichtig, Mico verschwindet aus der Sprachfunktion</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">Tech Times · 14.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Microsoft führt die separaten Copilot- und Microsoft-365-Copilot-Apps zusammen und streicht Copilot Podcasts sowie Group Chat; Deep Research wird für kostenlose Nutzer in vier Tagen abgeschaltet und wandert in ein 19,99-Dollar-Monatsabo. Die anthropomorphisierte Sprachpersona „Mico“ verschwindet aus Copilot Voice und taucht stattdessen in einem neuen Lernmodus namens „Learn Live“ wieder auf – ein deutliches Zurückrudern weniger als ein Jahr nach ihrer Einführung. Zusätzlich bestätigte Microsoft einen Bug, der Copilot-Zugänge im klassischen Outlook versehentlich deaktiviert hatte.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.techtimes.com/articles/324537/20260814/microsoft-copilot-rollout-starts-free-deep-research-retired-four-days.htm" target="_blank" rel="noopener">Tech Times <span class="arw">→</span></a> · <a class="dlink" href="https://www.theregister.com/ai-and-ml/2026/08/14/less-than-a-year-on-microsoft-tells-mico-to-pipe-down/5287793/" target="_blank" rel="noopener">The Register <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">32</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://finance.yahoo.com/technology/ai/articles/ibm-openai-launch-enterprise-ai-102638754.html" target="_blank" rel="noopener">IBM bindet Codex und ChatGPT Work in seine Beratungsplattform Consulting Advantage ein</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">Yahoo Finance · 13.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Mit der neuen IBM-OpenAI-Partnerschaft wandert Codex als Entwicklungswerkzeug direkt in IBMs Beratungsplattform Consulting Advantage, ergänzt um GPT-5.6 und ChatGPT Work für Kundenprojekte. Eine eigene „OpenAI Practice“ mit mehreren tausend zertifizierten Beratern soll Unternehmen beim Sprung von der Pilotphase in den produktiven Einsatz begleiten, mit besonderem Fokus auf regulierte Branchen. Für Teams, die IBM bereits als Umsetzungspartner nutzen, heißt das: OpenAIs Werkzeuge kommen künftig direkt mit Beratungskapazität im Paket.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://finance.yahoo.com/technology/ai/articles/ibm-openai-launch-enterprise-ai-102638754.html" target="_blank" rel="noopener">Yahoo Finance <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">33</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://github.blog/changelog/2026-08-13-gemini-3-7-flash-is-now-available-in-github-copilot/" target="_blank" rel="noopener">Gemini 3.7 Flash rollt in GitHub Copilot aus – viertes neues Modell binnen zwei Wochen</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">GitHub Changelog · 13.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>GitHub macht Googles neues Gemini 3.7 Flash für Copilot Pro-, Pro+-, Max-, Business- und Enterprise-Pläne verfügbar, wählbar in VS Code, Visual Studio, der Copilot-CLI, dem Cloud-Agenten, der Copilot-App, JetBrains, Xcode und Eclipse. Bei Business- und Enterprise-Plänen müssen Administratoren das Modell zunächst freischalten. Nach Grok 4.6, MAI-Code-1.1-Flash und Claude Opus 5 ist es bereits das vierte neue Modell, das GitHub Copilot binnen zwei Wochen aufnimmt – ein Tempo, das die Modellauswahl selbst zum Wettbewerbsfeld macht.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://github.blog/changelog/2026-08-13-gemini-3-7-flash-is-now-available-in-github-copilot/" target="_blank" rel="noopener">GitHub Changelog <span class="arw">→</span></a> · <a class="dlink" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/" target="_blank" rel="noopener">Google <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">34</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://www.digitaltrends.com/computing/everything-announced-at-made-by-google-2026-pixel-11-lineup-pixel-watch-5-and-pixel-tag/" target="_blank" rel="noopener">Google vertieft Gemini-Integration im Pixel 11 mit App-übergreifender Aufgaben-Automatisierung</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">Digital Trends · 12.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Mit der Pixel-11-Serie erweitert Google die Aufgaben-Automatisierung von Gemini auf mehr Apps: Nutzer können Bestellungen und Buchungen auslagern, und Gemini kann für erledigte Aufgaben inzwischen auch selbstständig Unternehmen anrufen. Das neue Diktier-Werkzeug Rambler soll dabei auch unstrukturierte, mit Füllwörtern durchsetzte Sprache zuverlässig in Text umwandeln. Für den Alltag bedeutet das ein Stück weniger manuelles Umschalten zwischen Apps für wiederkehrende Erledigungen.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.digitaltrends.com/computing/everything-announced-at-made-by-google-2026-pixel-11-lineup-pixel-watch-5-and-pixel-tag/" target="_blank" rel="noopener">Digital Trends <span class="arw">→</span></a> · <a class="dlink" href="https://techcrunch.com/2026/08/12/google-unveils-pixel-11-lineup-new-airtag-rival-and-gemini-features-at-made-by-google-2026/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">35</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://github.blog/changelog/2026-08-11-copilot-memory-and-ollama-in-github-copilot-for-jetbrains/" target="_blank" rel="noopener">GitHub Copilot für JetBrains bekommt persistentes Memory und lokalen Modellzugriff</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">GitHub Blog · 11.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>GitHub hat Copilot für JetBrains-IDEs um ein persistentes Memory über Agenten-Chats hinweg sowie um direkten Zugriff auf lokal über Ollama laufende Modelle erweitert. Enterprise-Kunden bekommen zusätzlich feinere Kontrollen für Plugins und MCP-Server. Für den täglichen Einsatz heißt das: weniger wiederholtes Erklären von Kontext und mehr Wahlfreiheit zwischen Cloud- und lokalem Modell.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://github.blog/changelog/2026-08-11-copilot-memory-and-ollama-in-github-copilot-for-jetbrains/" target="_blank" rel="noopener">GitHub Blog <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#1aae39;color:#1f1d1b">36</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://ollama.com/blog/muse-glimmer" target="_blank" rel="noopener">Ollama unterstützt Metas offenes Agenten-Modell Muse Glimmer bereits ab Erscheinungstag</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#1aae391f;color:#1aae39">Open Weight / Lokal</span><span class="dmeta-src">Ollama · 10.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Am Tag der Veröffentlichung von Metas offenem 30B-Agentenmodell Muse Glimmer liefert Ollama über seine MLX-Engine bereits erste Unterstützung für Apple-Silicon-Rechner nach; weitere Plattformen wie Nvidia und AMD sollen in den kommenden Tagen folgen. Für den täglichen Einsatz heißt das: Wer lokale KI-Werkzeuge nutzt, bekommt mit Glimmer eine ernstzunehmende Alternative zu Cloud-Agenten, ohne auf ein eigenes Integrations-Setup warten zu müssen.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://ollama.com/blog/muse-glimmer" target="_blank" rel="noopener">Ollama <span class="arw">→</span></a> · <a class="dlink" href="https://www.marktechpost.com/2026/08/10/meta-ai-releases-muse-glimmer/" target="_blank" rel="noopener">MarkTechPost <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#1aae39;color:#1f1d1b">37</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://www.marktechpost.com/2026/08/08/pokee-ai-releases-pokee-isaac-28b-a-10m-token-context-agentic-model-built-to-run-inside-the-customer-boundary/" target="_blank" rel="noopener">Pokee-Isaac 28B bringt 10-Millionen-Token-Kontextfenster auf eine einzelne GPU</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#1aae391f;color:#1aae39">Open Weight / Lokal</span><span class="dmeta-src">MarkTechPost · 08.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Pokee AI hat mit Pokee-Isaac 28B ein Modell veröffentlicht, das ein 10-Millionen-Token-Kontextfenster mitbringt und auf einer einzelnen Consumer-GPU laufen soll. Für Werkzeugbauer eröffnet das die Möglichkeit, große Datenmengen ohne separate Retrieval-Infrastruktur zu verarbeiten – allerdings ist das Modell neu am Markt, und die Leistungsangaben stammen bislang nur vom Hersteller selbst.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.marktechpost.com/2026/08/08/pokee-ai-releases-pokee-isaac-28b-a-10m-token-context-agentic-model-built-to-run-inside-the-customer-boundary/" target="_blank" rel="noopener">MarkTechPost <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#dd5b00;color:#ffffff">38</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://thehackernews.com/2026/08/new-css-attacks-can-break-webmail.html" target="_blank" rel="noopener">CSS-Lücke aus der Black Hat trifft auch Browser-Agenten wie Claude Cowork und OpenAI Atlas</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#dd5b001f;color:#dd5b00">Security &amp; Governance</span><span class="dmeta-src">The Hacker News · 08.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Auf der Black-Hat-Konferenz zeigte ein PortSwigger-Forscher, wie sich per CSS und HTML versteckte Inhalte in Webmail-Oberflächen schmuggeln lassen – mit direkten Folgen für KI-Browser-Assistenten. In einer Demonstration bewegte eine so versteckte Prompt-Injection Claude Cowork über den Gmail-Connector dazu, ein Slack-Token auszulesen; OpenAIs Atlas-Browser ließ sich über unsichtbaren CSS-Text zu verdeckten Aktionen verleiten. Wer solche Agenten mit Zugriff auf das eigene Postfach nutzt, sollte die Entwicklung im Blick behalten, da nicht alle betroffenen Lücken bereits geschlossen sind.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://thehackernews.com/2026/08/new-css-attacks-can-break-webmail.html" target="_blank" rel="noopener">The Hacker News <span class="arw">→</span></a> · <a class="dlink" href="https://portswigger.net/research/css-the-bomb-inside-your-inbox" target="_blank" rel="noopener">PortSwigger Research <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">39</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://www.businesswire.com/news/home/20260806707467/en/Zenity-Labs-Uncovers-1.7-Million-Install-Malicious-Skills-Campaign-and-Dozens-of-Malicious-AI-Agent-Skills" target="_blank" rel="noopener">Zenity findet Schadsoftware-Kampagne mit 1,7 Millionen Installationen in Agenten-Skill-Marktplatz</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">Business Wire · 06.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Eine Familie bösartiger Skills auf Vercels Marktplatz skills.sh lief den gesamten Juli über unter den meistgenutzten Einträgen und kam auf 1,7 Millionen Installationen, bevor Zenity Labs sie meldete. Wer Skills oder Plugins aus offenen Marktplätzen in den eigenen Alltag einbindet, bekommt damit einen konkreten Beleg dafür, dass dieselbe Vorsicht gilt wie bei Browser-Erweiterungen oder npm-Paketen – inklusive der Notwendigkeit, Herkunft und Berechtigungen vor der Installation zu prüfen.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.businesswire.com/news/home/20260806707467/en/Zenity-Labs-Uncovers-1.7-Million-Install-Malicious-Skills-Campaign-and-Dozens-of-Malicious-AI-Agent-Skills" target="_blank" rel="noopener">Business Wire <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">40</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt/" target="_blank" rel="noopener">ChatGPT: GPT-5.6 Luna wird Standardmodell für kostenlose Nutzer, neuer Denktiefe-Regler für Sol</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">OpenAI · 06.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Plus- und Pro-Nutzer bekommen ein überarbeitetes GPT-5.6 Sol mit direkteren Antworten und einem Schieberegler, der steuert, wie viel Denkzeit eine Antwort bekommt. Kostenlose Nutzer wechseln in dieser Woche auf GPT-5.6 Luna als Standardmodell, ab nächster Woche mit unbegrenzten Textchats und einem „Think“-Button für schwierigere Fragen. OpenAI berichtet von 62 bis 68 Prozent weniger Faktenfehlern bei Finanz-, Medizin- und Rechtsfragen gegenüber dem bisherigen Standardmodell.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://openai.com/index/improving-gpt-5-6-sol-in-chatgpt/" target="_blank" rel="noopener">OpenAI <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">41</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/05/meta-launches-muse-code-an-ai-agent-for-large-code-bases/" target="_blank" rel="noopener">Meta veröffentlicht Coding-Agent Muse Code in der Beta</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">TechCrunch · 05.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Mit Muse Code hat Meta einen per einzeiligem Installationsbefehl einsetzbaren Terminal-Coding-Agenten veröffentlicht, der laut eigenen Benchmarks bei Terminal- und Softwareentwicklungs-Aufgaben vor Grok 4.5 und Gemini 3.6 Flash liegt, aber noch hinter Claude Opus 5 in Claude Code. Wer mehrere Coding-Werkzeuge parallel nutzt, bekommt damit eine weitere, von Meta als besonders preisgünstig beworbene Option für den Alltag.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/05/meta-launches-muse-code-an-ai-agent-for-large-code-bases/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a> · <a class="dlink" href="https://9to5mac.com/2026/08/05/meta-launches-muse-code-ai-coding-agent-for-macos-and-linux/" target="_blank" rel="noopener">9to5Mac <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">42</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/05/hark-previews-its-browser-use-agent-for-completing-tasks/" target="_blank" rel="noopener">Hark öffnet Warteliste für Browser-Agent Handoff</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">TechCrunch · 05.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Handoff von Hark kann eigenständig auf realen Webseiten navigieren, für die es keine offizielle Schnittstelle gibt – etwa um bei DoorDash zu bestellen oder Termine bei OpenTable zu buchen. Das Startup wirbt mit einem nach eigenen Angaben führenden Ergebnis auf dem Online-Mind2Web-Benchmark bei deutlich geringeren Tokenkosten als Angebote von OpenAI, Anthropic oder Google; der Zugang läuft vorerst über eine Warteliste.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/05/hark-previews-its-browser-use-agent-for-completing-tasks/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a> · <a class="dlink" href="https://venturebeat.com/technology/ai-startup-hark-unveils-first-product-an-affordable-fast-computer-use-agent-hark-handoff" target="_blank" rel="noopener">VentureBeat <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">43</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://www.havoptic.com/tools/claude-code" target="_blank" rel="noopener">Claude Code: neue Fokus-Ansicht macht lange Agenten-Läufe übersichtlicher</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">Havoptic · 03.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Die neue Fokus-Ansicht in der VS-Code-Integration von Claude Code fasst einzelne Werkzeugaufrufe pro Runde in einer aufklappbaren Zusammenfassung zusammen, statt den kompletten Verlauf ungefiltert anzuzeigen. Für Nutzer, die Claude Code im Alltag für längere, mehrstufige Aufgaben einsetzen, verbessert das vor allem die Nachvollziehbarkeit, ohne dass sich am Verhalten des Agenten selbst etwas ändert.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.havoptic.com/tools/claude-code" target="_blank" rel="noopener">Havoptic <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">44</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://github.blog/changelog/2026-08-03-customize-the-reasoning-level-for-copilot-cloud-agent/" target="_blank" rel="noopener">GitHub Copilot führt einstellbare Denktiefe für den Cloud-Agenten ein</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">GitHub Changelog · 03.08.2026</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Nutzer von Copilots Cloud-Agent können jetzt selbst wählen, wie viel Rechenaufwand ein unterstütztes Modell vor einer Antwort investiert – mehr Denktiefe kostet mehr Token beziehungsweise Guthaben, liefert im Gegenzug aber bessere Ergebnisse bei komplexen Aufgaben. Die Einstellung steht auf Pro-, Pro+-, Business-, Enterprise- und Max-Plänen zur Verfügung.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://github.blog/changelog/2026-08-03-customize-the-reasoning-level-for-copilot-cloud-agent/" target="_blank" rel="noopener">GitHub Changelog <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">45</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://github.blog/changelog/2026-08-31-github-copilot-in-vs-code-august-2026-releases" target="_blank" rel="noopener">GitHub Copilot in VS Code: August-2026-Sammelupdate</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">GitHub Changelog · 31.08.2026</span> · <span class="dots">●●○○○</span> <span class="dmeta-imp">2/5</span></div>
+      <p>GitHub hat sein monatliches Sammel-Release für Copilot in VS Code veröffentlicht, das die wöchentlichen Einzel-Updates aus dem August bündelt. Details bleiben im Rahmen der laufenden Ausbaustufen bei Modellauswahl, Code-Review und Agentenfunktionen, ohne einen einzelnen großen Sprung.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://github.blog/changelog/2026-08-31-github-copilot-in-vs-code-august-2026-releases" target="_blank" rel="noopener">GitHub Changelog <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">46</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Claude-Code-Update bringt Live-Streaming für Subagenten und mehr Kostentransparenz</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">Claude Code Changelog (GitHub) · 28.08.2026</span> · <span class="dots">●●○○○</span> <span class="dmeta-imp">2/5</span></div>
+      <p>Version 2.1.251 von Claude Code zeigt Werkzeugaufrufe aktiver Vordergrund-Subagenten jetzt live im Remote-Control-Client, ergänzt `/cost` um eine Zeile zur Prompt-Cache-Trefferquote und erweitert die CLI um Befehle wie `attach`, `logs` und `respawn` für Hintergrund-Sessions. Daneben schließt das Update mehrere Pfad- und Symlink-Lücken in den Datei- und Plugin-Werkzeugen.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md" target="_blank" rel="noopener">Claude Code Changelog (GitHub) <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">47</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://the-decoder.com/googles-gemini-3-5-transcribe-turns-speech-to-text-in-85-languages-while-auto-correcting-your-verbal-stumbles/" target="_blank" rel="noopener">Google veröffentlicht Gemini 3.5 Transcribe – Sprache-zu-Text in 85 Sprachen mit automatischer Korrektur</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">The Decoder · 27.08.2026</span> · <span class="dots">●●○○○</span> <span class="dmeta-imp">2/5</span></div>
+      <p>Google hat mit Gemini 3.5 Transcribe ein neues Sprache-zu-Text-Modell vorgestellt, das über 85 Sprachen automatisch erkennt, Füllwörter entfernt und Versprecher selbstständig korrigiert. Die Fehlerquote liegt laut Google bei 4,0 Prozent im Streaming- und 2,6 Prozent im Aufnahme-Modus, bei 70 Prozent geringerer Latenz als der Vorgänger Chirp 3. Das Modell ist bereits in Gboard für Android und die Gemini-App für macOS integriert, Chrome-Unterstützung folgt in Kürze.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://the-decoder.com/googles-gemini-3-5-transcribe-turns-speech-to-text-in-85-languages-while-auto-correcting-your-verbal-stumbles/" target="_blank" rel="noopener">The Decoder <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">48</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://the-decoder.com/googles-gemini-omni-1-1-flash-makes-ai-video-generation-cheaper-and-more-flexible/" target="_blank" rel="noopener">Google aktualisiert Video-Modell Gemini Omni auf Version 1.1 Flash – günstiger und flexibler</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">The Decoder · 27.08.2026</span> · <span class="dots">●●○○○</span> <span class="dmeta-imp">2/5</span></div>
+      <p>Google hat sein Video-Modell Gemini Omni Flash auf Version 1.1 aktualisiert: Die Szenen-Verlängerung analysiert nun bis zu zehn Sekunden bestehenden Materials statt nur die letzte Sekunde, wodurch sich Clips in Zehn-Sekunden-Schritten auf bis zu 40 Sekunden erweitern lassen. Ein neuer 360p-Entwurfsmodus läuft bis zu 60 Prozent schneller und kostet nur ein Drittel des 720p-Preises, Upscaling auf 1080p oder 4K bleibt möglich.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://the-decoder.com/googles-gemini-omni-1-1-flash-makes-ai-video-generation-cheaper-and-more-flexible/" target="_blank" rel="noopener">The Decoder <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">49</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://9to5mac.com/2026/08/24/openai-restores-5-hour-codex-and-work-limits-for-chatgpt-plus-users/" target="_blank" rel="noopener">OpenAI reaktiviert Fünf-Stunden-Limit für Codex und ChatGPT Work</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">9to5Mac · 25.08.2026</span> · <span class="dots">●●○○○</span> <span class="dmeta-imp">2/5</span></div>
+      <p>Ab dem 25. August gilt für ChatGPT-Plus-Nutzer wieder ein Fünf-Stunden-Limit für Codex und ChatGPT Work, nachdem OpenAI es mehrere Wochen ausgesetzt hatte. Begründet wird der Schritt mit gleichmäßigerer Auslastung der Rechenkapazität und dem Schutz gelegentlicher Nutzer vor versehentlich aufgebrauchten Wochenkontingenten. Pro-Abonnenten sind von der Änderung nicht betroffen.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://9to5mac.com/2026/08/24/openai-restores-5-hour-codex-and-work-limits-for-chatgpt-plus-users/" target="_blank" rel="noopener">9to5Mac <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">50</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://the-decoder.com/alibabas-wan3-0-generates-ai-videos-up-to-30-seconds-long-from-text-images-and-documents/" target="_blank" rel="noopener">Alibaba veröffentlicht Video-Modell Wan3.0 für bis zu 30 Sekunden lange Clips</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">The Decoder · 24.08.2026</span> · <span class="dots">●●○○○</span> <span class="dmeta-imp">2/5</span></div>
+      <p>Alibabas neues Wan3.0 erzeugt aus Text, Bildern oder ganzen Dokumenten wie PDFs und PowerPoint-Dateien bis zu 30 Sekunden lange Videos in 1080p, für rund 6 Dollar pro Clip. Der Release fällt in eine Phase, in der Alibabas Quartalsgewinn wegen hoher KI-Investitionen um 75 Prozent eingebrochen ist.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://the-decoder.com/alibabas-wan3-0-generates-ai-videos-up-to-30-seconds-long-from-text-images-and-documents/" target="_blank" rel="noopener">The Decoder <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">51</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://venturebeat.com/orchestration/anthropics-new-claude-tag-update-lets-its-slack-agent-read-the-full-conversation-and-jump-in-unprompted" target="_blank" rel="noopener">Anthropics Claude Tag in Slack erkennt jetzt den ganzen Gesprächsverlauf</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">VentureBeat · 24.08.2026</span> · <span class="dots">●●○○○</span> <span class="dmeta-imp">2/5</span></div>
+      <p>Anthropic hat sein Slack-Werkzeug Claude Tag so überarbeitet, dass es den kompletten Kanalverlauf statt einzelner Nachrichten liest, was die Trefferquote beim unaufgeforderten Eingreifen um rund 30 Prozent verbessern soll. In einem Interview deutet Anthropics Enterprise-Produktchef zudem an, Claude künftig eigene Ziele selbstständig verfolgen zu lassen – ein Hinweis auf den Kurs hin zu proaktiveren statt nur reaktiven Assistenten.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://venturebeat.com/orchestration/anthropics-new-claude-tag-update-lets-its-slack-agent-read-the-full-conversation-and-jump-in-unprompted" target="_blank" rel="noopener">VentureBeat <span class="arw">→</span></a> · <a class="dlink" href="https://www.anthropic.com/news/introducing-claude-tag" target="_blank" rel="noopener">Anthropic <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">52</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://the-decoder.com/openais-gpt-image-2-can-now-generate-images-without-a-background/" target="_blank" rel="noopener">OpenAIs GPT-Image-2 kann jetzt Bilder mit transparentem Hintergrund erzeugen</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">The Decoder · 21.08.2026</span> · <span class="dots">●●○○○</span> <span class="dmeta-imp">2/5</span></div>
+      <p>Über einen neuen Preview-Parameter „background=transparent“ erzeugt GPT-Image-2 Bilder direkt mit Alphakanal statt über nachträgliches Freistellen. Das soll laut OpenAI besonders bei schwierigen Bereichen wie Glas oder feinen Fasern bessere Ergebnisse liefern und richtet sich vor allem an Produktfotos, Icons und Merchandise-Grafiken.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://the-decoder.com/openais-gpt-image-2-can-now-generate-images-without-a-background/" target="_blank" rel="noopener">The Decoder <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">53</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/20/meta-ais-new-mac-app-wants-you-to-talk-to-your-apps/" target="_blank" rel="noopener">Meta AI bringt Mac-App mit systemweitem Diktieren</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">TechCrunch · 20.08.2026</span> · <span class="dots">●●○○○</span> <span class="dmeta-imp">2/5</span></div>
+      <p>Meta hat eine neue Mac-App für Meta AI vorgestellt, die systemweites Diktieren über alle Anwendungen hinweg sowie kontextbasierte Antworten zum aktuellen Bildschirminhalt bietet, angetrieben vom hauseigenen Modell Muse Spark. Für Geschäftskunden lässt sich die App zusätzlich mit Instagram, Facebook, Meta-Werbekampagnen und Google Workspace verknüpfen, um Kennzahlen abzufragen oder Präsentationen und Dokumente zu erstellen. Meta reiht sich damit in eine wachsende Zahl an Diktier-Konkurrenten wie Wispr Flow oder Googles kürzlich aktualisierte Gemini-Mac-App ein.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/20/meta-ais-new-mac-app-wants-you-to-talk-to-your-apps/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">54</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://the-decoder.com/new-benchmark-ranks-search-apis-for-ai-agents-on-quality-cost-and-speed/" target="_blank" rel="noopener">Artificial Analysis vergleicht erstmals Such-APIs nach Qualität, Kosten und Tempo</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">The Decoder · 18.08.2026</span> · <span class="dots">●●○○○</span> <span class="dmeta-imp">2/5</span></div>
+      <p>Der neue „Search Index“ testet sieben Suchanbieter – darunter Parallel, Exa, Firecrawl, Tavily und Brave – mit demselben Modell in identischer Umgebung, sodass nur der Suchdienst variiert. Bessere Suchqualität senkt dabei auch die Gesamtkosten, weil weniger Nachfragen nötig sind; Parallel, Firecrawl und Parallel (Turbo) schneiden im Kosten-Leistungs-Verhältnis am besten ab. Für alle, die Such-Tools in eigene Workflows einbinden, ersetzt das erstmals reines Bauchgefühl durch Messwerte.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://the-decoder.com/new-benchmark-ranks-search-apis-for-ai-agents-on-quality-cost-and-speed/" target="_blank" rel="noopener">The Decoder <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">55</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://techcrunch.com/2026/08/16/stripe-will-reportedly-acquire-ai-gateway-startup-openrouter-for-7b/" target="_blank" rel="noopener">OpenRouter, das meistgenutzte Modell-Gateway für Entwickler, geht an Stripe</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">TechCrunch · 16.08.2026</span> · <span class="dots">●●○○○</span> <span class="dmeta-imp">2/5</span></div>
+      <p>OpenRouter erlaubt Entwicklern, über eine einzige, OpenAI-kompatible Schnittstelle mehr als 500 Modelle von über 80 Anbietern anzusprechen, inklusive Routing, Ausfallsicherung und Abrechnung – nach eigenen Angaben nutzen über 10 Millionen Entwickler den Dienst. Mit der Übernahme durch Stripe für über 7 Milliarden Dollar bleibt vorerst offen, ob sich an Preisen oder der bislang geschätzten anbieterneutralen Ausrichtung etwas ändert.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://techcrunch.com/2026/08/16/stripe-will-reportedly-acquire-ai-gateway-startup-openrouter-for-7b/" target="_blank" rel="noopener">TechCrunch <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">56</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://the-decoder.com/optima-tackles-ai-benchmarkings-biggest-flaw-by-letting-users-test-models-against-their-own-data/" target="_blank" rel="noopener">Artificial Analysis startet Optima: Modellvergleiche gegen eigene Unternehmensdaten statt nur Benchmarks</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">The Decoder · 16.08.2026</span> · <span class="dots">●●○○○</span> <span class="dmeta-imp">2/5</span></div>
+      <p>Mit Optima können Teams eigene Benchmarks aus ihren Daten und Workflows bauen, statt sich auf generische Leaderboards zu verlassen. Modelle lassen sich dabei nicht nur nach Qualität, sondern auch nach Kosten und Zeit pro Aufgabe vergleichen – gerade für agentenbasierte Anwendungen oft aussagekräftiger als reine Token-Preise.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://the-decoder.com/optima-tackles-ai-benchmarkings-biggest-flaw-by-letting-users-test-models-against-their-own-data/" target="_blank" rel="noopener">The Decoder <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">57</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://www.testingcatalog.com/google-may-retire-gems-in-october-forcing-migration-to-skills/" target="_blank" rel="noopener">Google erwägt laut Recherche Abschaltung der kostenlosen Gemini-Gems zugunsten bezahlter Skills</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">TestingCatalog · 09.08.2026</span> · <span class="dots">●●○○○</span> <span class="dmeta-imp">2/5</span></div>
+      <p>Ein Feature-Flag in der Gemini-Web-App deutet laut TestingCatalog auf eine Abschaltung der kostenlosen „Gems“ zum 20. Oktober hin, mit Migration zu kostenpflichtigen „Skills“ innerhalb von Gemini Spark. Skills sollen ein bezahltes AI-Pro- oder Ultra-Abo voraussetzen, auf Privatkonten beschränkt bleiben und in mehreren Regionen sowie für Enterprise- und Schulkonten gar nicht verfügbar sein. Google selbst hat sich dazu nicht geäußert – bis zu einer offiziellen Bestätigung bleibt das ein Gerücht, markiert aber einen Trend: kostenlose Assistenz-Funktionen wandern zunehmend hinter Bezahl-Agenten-Produkte.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.testingcatalog.com/google-may-retire-gems-in-october-forcing-migration-to-skills/" target="_blank" rel="noopener">TestingCatalog <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">58</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://www.testingcatalog.com/memoryplugin-launches-sync-app-for-coding-agents-on-macos/" target="_blank" rel="noopener">MemoryPlugin Sync bringt Coding-Agent-Verläufe auf den Mac</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">TestingCatalog · 05.08.2026</span> · <span class="dots">●●○○○</span> <span class="dmeta-imp">2/5</span></div>
+      <p>Die neue Mac-App von MemoryPlugin führt lokale Sitzungen von Claude Code, Codex und Cursor mit Web-Chatverläufen aus ChatGPT, Claude und Gemini zu einem gemeinsamen, durchsuchbaren Archiv zusammen, abrufbar aus über 21 Werkzeugen. Nur Prompts und Antworten verlassen das Gerät, Code und Terminal-Ausgaben bleiben lokal, und die Synchronisierung lässt sich pro Projekt einzeln steuern.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.testingcatalog.com/memoryplugin-launches-sync-app-for-coding-agents-on-macos/" target="_blank" rel="noopener">TestingCatalog <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">59</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://simonwillison.net/2026/Aug/5/raccoon-heist/" target="_blank" rel="noopener">Simon Willison baut ein komplettes Spiel in einem Zug mit Claude Fable 5</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">simonwillison.net · 05.08.2026</span> · <span class="dots">●●○○○</span> <span class="dmeta-imp">2/5</span></div>
+      <p>Simon Willison hat mit Claude Fable 5 in der Web-Version von Claude Code ein kleines, in sich geschlossenes Spiel praktisch in einem einzigen Durchgang fertiggestellt – auf Basis einer eigenen Spielidee von 2024. Für den Alltag ist das weniger eine Produktankündigung als ein handfester Datenpunkt dazu, wie weit sich abgeschlossene, kreative Coding-Aufgaben inzwischen ohne viele Zwischenschritte erledigen lassen.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://simonwillison.net/2026/Aug/5/raccoon-heist/" target="_blank" rel="noopener">simonwillison.net <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#2a9d99;color:#ffffff">60</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://simonwillison.net/2026/Aug/4/new-release-of-llm/" target="_blank" rel="noopener">Simon Willisons LLM-Werkzeug bekommt größtes Update seit dem Start: sichtbare Denkspuren, neue OpenAI-API</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2a9d991f;color:#2a9d99">Tools &amp; IDEs</span><span class="dmeta-src">simonwillison.net · 04.08.2026</span> · <span class="dots">●●○○○</span> <span class="dmeta-imp">2/5</span></div>
+      <p>Version 0.32 von Simon Willisons vielgenutztem „llm“-Kommandozeilenwerkzeug unterstützt jetzt sichtbare Reasoning-Spuren, OpenAIs neue Responses-API, serverseitig ausgeführte Werkzeuge und ein verbessertes Logging. Für Entwickler, die eigene Skripte und Automatisierungen auf Basis verschiedener Modelle bauen, ist das laut Willison selbst das bedeutendste Update seit dem ursprünglichen Start des Projekts.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://simonwillison.net/2026/Aug/4/new-release-of-llm/" target="_blank" rel="noopener">simonwillison.net <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  </div>
+
+
+
+  <div class="footer">Hinweis: Alle Infos auf eigene Gefahr. Dies ist ein privates Projekt, automatisch generiert aus Web-Recherche und dem Second Brain (Collana Gildentreffen).<br>Aufbau nach dem Tech-Radar-Prinzip (Ringe = Impact, Segmente = Kategorie), Design adaptiert von <a href="https://github.com/GodModeAI2025/private-apple-briefing" target="_blank" rel="noopener">private-apple-briefing</a> (MIT). Statischer Export, kein JavaScript. Auswahl per Recherche — keine Gewähr auf Vollständigkeit.</div>
+</div>
+</body>
+</html>
