@@ -19592,6 +19592,314 @@
     }
    ],
    "first_seen": "2026-09-01"
+  },
+  {
+   "topic_id": "ai-news",
+   "title": "Anthropic veröffentlicht Claude Fable 5.1 und Mythos 5.1",
+   "category": "modelle",
+   "impact": 5,
+   "date": "2026-09-01",
+   "summary": "Fable 5.1 ist allgemein verfügbar, Mythos 5.1 bleibt geprüften Cyber- und Life-Science-Organisationen vorbehalten. Anthropic meldet deutliche Zuwächse bei lang laufenden Coding- und Wissensaufgaben; günstigere Cache-Lesezugriffe sollen typische Kosten um rund 25 Prozent und stark agentische Workloads um bis zu 45 Prozent senken. Die regulären Preise bleiben bei 10 Dollar je Million Eingabe- und 50 Dollar je Million Ausgabe-Token.",
+   "sources": [
+    {
+     "label": "Anthropic",
+     "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1"
+    },
+    {
+     "label": "TechCrunch",
+     "url": "https://techcrunch.com/2026/09/01/anthropics-new-fable-release-is-cheaper-less-restrictive"
+    }
+   ],
+   "first_seen": "2026-09-02"
+  },
+  {
+   "topic_id": "ai-news",
+   "title": "GitSpawn betrifft mehrere verbreitete Coding-Agenten",
+   "category": "security",
+   "impact": 5,
+   "date": "2026-09-01",
+   "summary": "Manifold Security beschreibt acht Schwachstellen in sieben Coding-Agenten: Beim automatischen Erfassen des Repository-Kontexts können manipulierte Git-Einstellungen Code mit den Rechten des Entwicklers ausführen, teils noch vor einer Vertrauensabfrage und außerhalb der Sandbox. Vier Befunde waren bei Veröffentlichung ungepatcht, darunter Varianten in Claude Code, Hermes Agent, Qwen Code und Grok Build; Codex, Cursor, Goose und eine weitere Claude-Code-Variante waren bereits korrigiert.",
+   "sources": [
+    {
+     "label": "Manifold Security",
+     "url": "https://www.manifold.security/blog/ai-coding-agents-git-hijack"
+    }
+   ],
+   "first_seen": "2026-09-02"
+  },
+  {
+   "topic_id": "ai-news",
+   "title": "OpenAI verbindet ChatGPT for Healthcare mit Epic und öffentlichen Gesundheitsdaten",
+   "category": "business",
+   "impact": 4,
+   "date": "2026-09-01",
+   "summary": "Eine neue Epic-Integration bringt autorisierte Patientendaten in ChatGPT for Healthcare und kann auch direkt in unterstützte EHR-Oberflächen eingebettet werden. Ein zusätzlicher Plugin-Verbund erschließt neun offizielle Datenquellen wie PubMed, DailyMed und ClinicalTrials.gov; Rollenrechte, SSO und Audit-Protokolle bleiben Teil des verwalteten Arbeitsbereichs.",
+   "sources": [
+    {
+     "label": "OpenAI",
+     "url": "https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources/"
+    }
+   ],
+   "first_seen": "2026-09-02"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "GitSpawn: Kontext-Erfassung führt Git-Befehle vor der Vertrauensabfrage aus",
+   "category": "security",
+   "impact": 5,
+   "date": "2026-09-01",
+   "summary": "Mehrere Coding-Agenten rufen beim Start Git auf, ohne ausführbare Einstellungen aus der Repository-Konfiguration zu neutralisieren. Ein als vollständiger Ordner oder ZIP übergebenes Projekt kann dadurch Befehle außerhalb der Agenten-Sandbox auslösen; für Agenten-Workflows reicht eine Modell-Sandbox allein also nicht, auch die vorgelagerten Werkzeuge müssen gehärtet werden.",
+   "sources": [
+    {
+     "label": "Manifold Security",
+     "url": "https://www.manifold.security/blog/ai-coding-agents-git-hijack"
+    }
+   ],
+   "first_seen": "2026-09-02"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "GitHub Copilot kann Pull Requests als genehmigt markieren",
+   "category": "agents",
+   "impact": 4,
+   "date": "2026-09-01",
+   "summary": "In einer öffentlichen Vorschau kann Copilot eine Freigabe abgeben, die auf Wunsch auf die erforderliche Zahl von Reviews angerechnet wird. Die Funktion ist standardmäßig deaktiviert, lässt sich bis auf Repository- und Dateipfad-Ebene begrenzen und eine Freigabe verfällt nach neuen Commits wie bei menschlichen Reviewern.",
+   "sources": [
+    {
+     "label": "GitHub Changelog",
+     "url": "https://github.blog/changelog/2026-09-01-copilot-code-review-can-now-approve-pull-requests"
+    }
+   ],
+   "first_seen": "2026-09-02"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "Fable 5.1 zielt auf lange, unbeaufsichtigte Coding-Läufe",
+   "category": "agents",
+   "impact": 4,
+   "date": "2026-09-01",
+   "summary": "Anthropic positioniert Fable 5.1 als stärkeres Modell für lang laufende Coding- und Forschungsaufgaben und nennt deutliche Zugewinne auf Terminal-Bench 4.0 sowie CursorBench. Günstigere Cache-Lesezugriffe senken gerade bei kontext- und werkzeuglastigen Agenten die Kosten, ohne die Preise für reguläre Ein- und Ausgabe-Token zu verändern.",
+   "sources": [
+    {
+     "label": "Anthropic",
+     "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1"
+    }
+   ],
+   "first_seen": "2026-09-02"
+  },
+  {
+   "topic_id": "ai-tools",
+   "title": "Google Pics startet als KI-Bildeditor für Workspace",
+   "category": "tools",
+   "impact": 4,
+   "date": "2026-09-01",
+   "summary": "Google Pics wird als eigenständiges Werkzeug sowie in Docs und Slides ausgerollt, Drive soll folgen. Auf Basis von Nano Banana erzeugt und bearbeitet es Bilder per Textanweisung, kann einzelne Objekte isolieren, Text im Bild ändern oder übersetzen und unterstützt gemeinsames Bearbeiten.",
+   "sources": [
+    {
+     "label": "Google",
+     "url": "https://blog.google/products-and-platforms/products/workspace/google-pics/"
+    }
+   ],
+   "first_seen": "2026-09-02"
+  },
+  {
+   "topic_id": "ai-tools",
+   "title": "GitHub Copilot übernimmt auf Wunsch formelle Pull-Request-Freigaben",
+   "category": "tools",
+   "impact": 4,
+   "date": "2026-09-01",
+   "summary": "Copilot Reviews enthalten nun immer eine Einschätzung zur Freigabereife; Administratoren können zusätzlich echte Approvals erlauben, die Branch-Regeln erfüllen. Der Schalter ist standardmäßig aus und kann auf Unternehmen, Organisationen, Repositories und bestimmte Pfade begrenzt werden.",
+   "sources": [
+    {
+     "label": "GitHub Changelog",
+     "url": "https://github.blog/changelog/2026-09-01-copilot-code-review-can-now-approve-pull-requests"
+    }
+   ],
+   "first_seen": "2026-09-02"
+  },
+  {
+   "topic_id": "ai-tools",
+   "title": "Claude Fable 5.1 ist auf allen großen Plattformen verfügbar",
+   "category": "tools",
+   "impact": 3,
+   "date": "2026-09-01",
+   "summary": "Fable 5.1 steht über Claude, die API sowie AWS, Google Cloud und Microsoft Azure bereit. GitHub hat das Modell am selben Tag auch für Copilot allgemein verfügbar gemacht; für Business- und Enterprise-Konten bleibt eine administrative Freigabe nötig.",
+   "sources": [
+    {
+     "label": "Anthropic",
+     "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1"
+    },
+    {
+     "label": "GitHub Changelog",
+     "url": "https://github.blog/changelog/2026-09-01-claude-fable-5-1-generally-available-in-github-copilot"
+    }
+   ],
+   "first_seen": "2026-09-02"
+  },
+  {
+   "topic_id": "context-engineering",
+   "title": "Anthropic senkt Cache-Lesezugriffe für Fable 5.1 um 75 Prozent",
+   "category": "agents",
+   "impact": 4,
+   "date": "2026-09-01",
+   "summary": "Bereits verarbeiteter Kontext kostet bei Fable 5.1 nur noch 0,25 Dollar je Million Token. Anthropic beziffert die Gesamtersparnis gegenüber Fable 5 bei typischer Nutzung auf rund 25 Prozent und bei stark agentischen, kontextreichen Abläufen auf bis zu 45 Prozent; damit wird gepflegter, wiederverwendbarer Kontext wirtschaftlich wichtiger.",
+   "sources": [
+    {
+     "label": "Anthropic",
+     "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1"
+    }
+   ],
+   "first_seen": "2026-09-02"
+  },
+  {
+   "topic_id": "context-engineering",
+   "title": "GitSpawn macht die Kontext-Erfassung selbst zur Angriffsfläche",
+   "category": "security",
+   "impact": 4,
+   "date": "2026-09-01",
+   "summary": "Coding-Agenten sammeln Repository-Kontext teils schon vor der ersten Eingabe durch automatische Git-Aufrufe. Wenn dabei lokale Git-Konfiguration ungeprüft übernommen wird, kann ein fremdes Projekt Code außerhalb der Sandbox starten; Kontextaufnahme braucht deshalb dieselben Vertrauensgrenzen wie spätere Werkzeugaufrufe.",
+   "sources": [
+    {
+     "label": "Manifold Security",
+     "url": "https://www.manifold.security/blog/ai-coding-agents-git-hijack"
+    }
+   ],
+   "first_seen": "2026-09-02"
+  },
+  {
+   "topic_id": "ai-security",
+   "title": "GitSpawn ermöglicht Codeausführung über manipulierte Git-Konfiguration",
+   "category": "security",
+   "impact": 5,
+   "date": "2026-09-01",
+   "summary": "Die von Manifold Security dokumentierte Fehlerklasse nutzt aus, dass Coding-Agenten Git-Befehle zur Kontextsammlung starten und dabei ausführbare Repository-Einstellungen übernehmen. Angreifer können so bei als Ordner oder ZIP weitergegebenen Projekten Befehle mit Benutzerrechten, außerhalb der Sandbox und ohne sichtbare Freigabe ausführen; vier der acht gemeldeten Varianten waren am 1. September noch offen.",
+   "sources": [
+    {
+     "label": "Manifold Security",
+     "url": "https://www.manifold.security/blog/ai-coding-agents-git-hijack"
+    }
+   ],
+   "first_seen": "2026-09-02"
+  },
+  {
+   "topic_id": "ai-security",
+   "title": "AIR sammelt 50 Millionen Dollar für eine Kontrollschicht um Agenten-Werkzeuge ein",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-09-01",
+   "summary": "Das Sicherheitsunternehmen will laufende Agenten in Firmen erkennen und deren Skills, Plugins, MCP-Server sowie externe Abrufe fortlaufend prüfen und blockieren können. AIR berichtet, derzeit rund 27 Prozent der online gefundenen Erweiterungen auszufiltern; mehr als 20 Kunden nutzen die Plattform, besonders aus Finanz- und Pharmaunternehmen.",
+   "sources": [
+    {
+     "label": "TechCrunch",
+     "url": "https://techcrunch.com/2026/09/01/air-raises-50m-to-help-companies-vet-the-skills-and-add-ons-ai-agents-use"
+    }
+   ],
+   "first_seen": "2026-09-02"
+  },
+  {
+   "topic_id": "ai-security",
+   "title": "Fable 5.1 reduziert Fehlalarme seiner Cyber-Schutzfilter",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-09-01",
+   "summary": "Anthropic gibt an, dass die neuen Schutzmechanismen 60 Prozent weniger harmlose Cyber-Anfragen fälschlich blockieren. Fable 5.1 darf nun Software-Schwachstellen finden, aber keine Exploits entwickeln; der weitergehende Zugriff auf Mythos 5.1 bleibt geprüften Organisationen vorbehalten.",
+   "sources": [
+    {
+     "label": "Anthropic",
+     "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1"
+    }
+   ],
+   "first_seen": "2026-09-02"
+  },
+  {
+   "topic_id": "ai-governance",
+   "title": "Anthropic öffnet Watermark-Prüfung in einer privaten Vorschau",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-09-01",
+   "summary": "Anthropic hat seine Dokumentation am 1. September aktualisiert und stellt eine API zur Erkennung von Claude-Textwasserzeichen zunächst berechtigten Regulierern, Medien, Faktenprüfern, Forschern, Bildungseinrichtungen und betroffenen Unternehmen bereit. Das probabilistische Verfahren soll bei längeren Texten Claude-Beteiligung erkennen, kann aber weder menschliche Urheberschaft beweisen noch starke Überarbeitung zuverlässig überstehen.",
+   "sources": [
+    {
+     "label": "Anthropic",
+     "url": "https://www.anthropic.com/news/claude-text-watermark"
+    }
+   ],
+   "first_seen": "2026-09-02"
+  },
+  {
+   "topic_id": "ai-governance",
+   "title": "GitHub macht KI-Freigaben zu einer administrierbaren Repository-Regel",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-09-01",
+   "summary": "Unternehmen können festlegen, ob Copilot Pull Requests überhaupt genehmigen darf und für welche Repositories oder Dateipfade dies gilt. Weil eine solche Genehmigung auf erforderliche Reviews angerechnet werden kann, wird die Konfiguration Teil der Software-Governance statt nur eine Komfortfunktion.",
+   "sources": [
+    {
+     "label": "GitHub Changelog",
+     "url": "https://github.blog/changelog/2026-09-01-copilot-code-review-can-now-approve-pull-requests"
+    }
+   ],
+   "first_seen": "2026-09-02"
+  },
+  {
+   "topic_id": "ai-governance",
+   "title": "Fable 5.1 bringt Zero-Data-Retention vor der neuen Enterprise-Schutzarchitektur",
+   "category": "business",
+   "impact": 3,
+   "date": "2026-09-01",
+   "summary": "Berechtigte Unternehmenskunden können Fable 5.1 vorübergehend ohne Datenaufbewahrung nutzen. Später soll Enterprise Frontier Safeguards Missbrauchskontrollen in vollständig kundenseitig kontrollierter Cloud-Infrastruktur ausführen und so Überwachung mit vollständiger Datenhoheit verbinden.",
+   "sources": [
+    {
+     "label": "Anthropic",
+     "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1"
+    }
+   ],
+   "first_seen": "2026-09-02"
+  },
+  {
+   "topic_id": "enterprise",
+   "title": "ChatGPT for Healthcare erhält Epic-Anbindung und neun öffentliche Datenquellen",
+   "category": "business",
+   "impact": 4,
+   "date": "2026-09-01",
+   "summary": "OpenAI verbindet autorisierte Patientenkontexte aus Epic mit ChatGPT und ermöglicht unterstützten Einrichtungen eine Einbettung direkt in die elektronische Patientenakte. Der neue Healthcare-Public-Data-Verbund erschließt unter anderem PubMed, DailyMed, RxNorm und ClinicalTrials.gov unter bestehenden Rollen-, SSO- und Audit-Kontrollen.",
+   "sources": [
+    {
+     "label": "OpenAI",
+     "url": "https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources/"
+    }
+   ],
+   "first_seen": "2026-09-02"
+  },
+  {
+   "topic_id": "enterprise",
+   "title": "Google Pics rückt in das Kernpaket von Workspace",
+   "category": "business",
+   "impact": 3,
+   "date": "2026-09-01",
+   "summary": "Google rollt seinen generativen Bildeditor für AI-Pro- und Ultra-Abonnenten sowie die meisten Workspace-Geschäftskunden aus. Die Integration beginnt in Docs und Slides und greift damit direkt Canva und Adobe Express in bestehenden Büroabläufen an, statt ein isoliertes Kreativwerkzeug zu bleiben.",
+   "sources": [
+    {
+     "label": "Google",
+     "url": "https://blog.google/products-and-platforms/products/workspace/google-pics/"
+    }
+   ],
+   "first_seen": "2026-09-02"
+  },
+  {
+   "topic_id": "enterprise",
+   "title": "AIR setzt auf fortlaufende Kontrolle der Agenten-Lieferkette",
+   "category": "business",
+   "impact": 3,
+   "date": "2026-09-01",
+   "summary": "AIR kommt mit 50 Millionen Dollar aus zwei Seed-Runden aus dem Stealth-Modus und verkauft eine herstellerübergreifende Kontrollschicht für Agenten, Skills und MCP-Server. Das Produkt kombiniert Bestandsaufnahme, Laufzeitprüfung und eine Whitelist geprüfter Erweiterungen; die frühe Nachfrage kommt laut Unternehmen vor allem aus regulierten Branchen.",
+   "sources": [
+    {
+     "label": "TechCrunch",
+     "url": "https://techcrunch.com/2026/09/01/air-raises-50m-to-help-companies-vet-the-skills-and-add-ons-ai-agents-use"
+    }
+   ],
+   "first_seen": "2026-09-02"
   }
  ],
  "summaries": [
@@ -26414,6 +26722,64 @@
    "topic_id": "enterprise",
    "date": "2026-09-01",
    "summary": "Anthropic sichert sich Rechenleistung für 35 Milliarden Dollar, Microsoft und HUMAIN verbinden Copilot mit einer agentischen Enterprise-Oberfläche und einem lokalen KI-PC, und Nvidia investiert in MediaTek.",
+   "skip": []
+  },
+  {
+   "topic_id": "ai-news",
+   "date": "2026-09-02",
+   "summary": "Anthropic veröffentlicht Fable 5.1 mit besserer Leistung und geringeren Kosten, während eine verbreitete Git-Schwachstelle in mehreren Coding-Agenten teils noch ungepatcht ist.",
+   "skip": [
+    {
+     "reason": "An anderer Stelle vertieft",
+     "text": "Google Pics, Copilot-Freigaben, AIRs Agenten-Kontrollschicht und Anthropics aktualisierte Watermark-API werden in den jeweiligen Fachbereichen behandelt."
+    }
+   ]
+  },
+  {
+   "topic_id": "lokale-llms",
+   "date": "2026-09-02",
+   "summary": "Im Zeitraum gab es keine belastbar datierte neue Veröffentlichung offener Gewichte oder eines lokalen Laufzeitsystems.",
+   "skip": [
+    {
+     "reason": "Keine neue Veröffentlichung im Zeitraum",
+     "text": "Die Recherche bei Ollama, Hugging Face und den priorisierten Modellquellen ergab für den 01./02.09.2026 kein verifiziertes neues Open-Weight- oder On-Device-Release."
+    }
+   ]
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "date": "2026-09-02",
+   "summary": "GitSpawn zeigt eine systemische Lücke beim automatischen Repository-Kontext, GitHub lässt Copilot zugleich erstmals formell Pull Requests freigeben.",
+   "skip": []
+  },
+  {
+   "topic_id": "ai-tools",
+   "date": "2026-09-02",
+   "summary": "Google bringt mit Pics einen KI-zentrierten Bildeditor in Workspace, GitHub erweitert Copilot um formelle Freigaben und Anthropic rollt Fable 5.1 breit aus.",
+   "skip": []
+  },
+  {
+   "topic_id": "context-engineering",
+   "date": "2026-09-02",
+   "summary": "Fable 5.1 macht wiederverwendeten Kontext deutlich billiger; GitSpawn zeigt zugleich, dass bereits die automatische Kontextsammlung eine Sicherheitsgrenze ist.",
+   "skip": []
+  },
+  {
+   "topic_id": "ai-security",
+   "date": "2026-09-02",
+   "summary": "GitSpawn legt ungepatchte Codeausführung in mehreren Coding-Agenten offen, während AIR eine Laufzeit-Kontrollschicht für Skills, Plugins und MCP-Server finanziert.",
+   "skip": []
+  },
+  {
+   "topic_id": "ai-governance",
+   "date": "2026-09-02",
+   "summary": "Anthropic öffnet die Prüfung seiner Text-Wasserzeichen für ausgewählte Stellen und GitHub schafft feingranulare Regeln für KI-Freigaben in Pull Requests.",
+   "skip": []
+  },
+  {
+   "topic_id": "enterprise",
+   "date": "2026-09-02",
+   "summary": "OpenAI bindet ChatGPT an Epic und offizielle Gesundheitsdaten an, Google bringt generative Bildbearbeitung in Workspace und AIR adressiert die Agenten-Lieferkette.",
    "skip": []
   }
  ]
