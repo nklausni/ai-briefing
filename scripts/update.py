@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-update.py — recherchiert die News der vier Bereiche per Anthropic-API (web_search),
+update.py — recherchiert die News aller Bereiche per Anthropic-API (web_search),
 schreibt das Ergebnis in data/briefing.json und rendert anschließend die Seite neu.
 
-Damit ist das Update vollständig per Script/Cron aufrufbar — ohne Cowork.
+Die Bereiche werden parallel recherchiert; jeder Bereich hat mehrere Versuche.
+Scheitern alle, bleibt der vorherige Stand dieses Bereichs erhalten. Weil sich
+sein Inhalt dann nicht verändert, erkennt render.py den Bereich als unverändert
+und weist auf der Seite darauf hin, statt ihn als aktuell durchgehen zu lassen.
 
 Voraussetzungen:
     pip install anthropic
@@ -13,25 +16,43 @@ Voraussetzungen:
 Aufruf:
     python3 scripts/update.py                 # letzte 24 Stunden
     ZEITRAUM="letzte 7 Tage" python3 scripts/update.py
-    python3 scripts/update.py --dry-run       # ohne API: nur Pipeline/Render testen
+    python3 scripts/update.py --dry-run       # ohne API, schreibt in ein Temp-Verzeichnis
 
 Umgebungsvariablen:
     ANTHROPIC_API_KEY  Pflicht im Echtbetrieb.
     CLAUDE_MODEL       optional, sonst DEFAULT_MODEL unten.
     ZEITRAUM           optional, sonst "letzte 24 Stunden".
     MAX_SEARCHES       optional, Obergrenze Websuchen je Bereich (Default 6).
+    MAX_PARALLEL       optional, gleichzeitige Bereiche (Default 4).
+
+Exit-Code 1 nur, wenn KEIN Bereich aktualisiert werden konnte. Bei Teilausfall
+bleibt der Code 0, damit die erfolgreichen Bereiche veröffentlicht werden; der
+Ausfall steht dann in der Zusammenfassung am Ende und auf der Seite.
 """
 
-import os, re, sys, json, datetime, subprocess
+import os, re, sys, json, time, shutil, datetime, tempfile, subprocess
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data" / "briefing.json"
 RENDER = ROOT / "scripts" / "render.py"
 
-DEFAULT_MODEL = os.environ.get("CLAUDE_MODEL", "").strip() or "claude-sonnet-4-6"
+DEFAULT_MODEL = os.environ.get("CLAUDE_MODEL", "").strip() or "claude-sonnet-5"
 ZEITRAUM = os.environ.get("ZEITRAUM", "").strip() or "letzte 24 Stunden"
 MAX_SEARCHES = int(os.environ.get("MAX_SEARCHES", "").strip() or "6")
+MAX_PARALLEL = int(os.environ.get("MAX_PARALLEL", "").strip() or "4")
+
+WEB_SEARCH_TOOL = "web_search_20260209"
+MAX_TOKENS = 16000
+
+# Versuche je Bereich. True = mit Structured Outputs (das Schema erzwingt
+# gültiges JSON), False = freier Text als Rückfall. Der letzte Versuch fällt
+# absichtlich zurück: sollte das Schema mit dem web_search-Tool oder einem
+# älteren, per CLAUDE_MODEL gesetzten Modell nicht zusammengehen, liefert der
+# Bereich trotzdem Daten statt auszufallen.
+ATTEMPT_MODES = (True, True, False)
+RETRY_SLEEP = 4.0
 
 ALLOWED_CATS = {"modelle", "tools", "agents", "lokal", "security", "business"}
 MONTHS_DE = ("", "Januar", "Februar", "März", "April", "Mai", "Juni",
@@ -81,7 +102,42 @@ def period_label(start, end):
     return f"{start.day}. {MONTHS_DE[start.month]}–{end.day}. {MONTHS_DE[end.month]} {end.year}"
 
 
+def _obj(properties, required=None):
+    return {"type": "object", "additionalProperties": False,
+            "required": list(required or properties), "properties": properties}
+
+
+# Schema für Structured Outputs. Erzwingt serverseitig gültiges JSON in der
+# erwarteten Form; `enum` deckt zugleich die Wertebereiche ab, die clean_items
+# bisher nachträglich prüfen musste.
+TOPIC_SCHEMA = _obj({
+    "summary": {"type": "string"},
+    "items": {"type": "array", "items": _obj({
+        "title": {"type": "string"},
+        "category": {"type": "string", "enum": sorted(ALLOWED_CATS)},
+        "impact": {"type": "integer", "enum": [2, 3, 4, 5]},
+        "date": {"type": "string"},
+        "summary": {"type": "string"},
+        "sources": {"type": "array", "items": _obj({
+            "label": {"type": "string"},
+            "url": {"type": "string", "format": "uri"},
+        })},
+    })},
+    "skip": {"type": "array", "items": _obj({
+        "reason": {"type": "string"},
+        "text": {"type": "string"},
+    })},
+})
+
+
 def extract_json(text):
+    """JSON aus der Modell-Antwort lesen.
+
+    Mit Structured Outputs greift der erste Zweig (die Antwort *ist* das JSON).
+    Die Klammersuche bleibt für den Rückfall-Versuch ohne Schema und für den
+    Fall, dass web_search der letzten Runde noch einen erklärenden Satz
+    voranstellt.
+    """
     t = re.sub(r"```(?:json)?", "", text).strip()
     try:
         return json.loads(t)
@@ -141,18 +197,48 @@ Antworte am ENDE mit GENAU EINEM JSON-Objekt und NICHTS sonst (kein Markdown, ke
 Sortiere items nach impact absteigend."""
 
 
-def call_model(prompt):
+def make_client():
+    """Ein Client für alle Bereiche. Der Import liegt in der Funktion, damit
+    --dry-run ohne installiertes SDK läuft."""
     from anthropic import Anthropic
-    client = Anthropic()
-    tools = [{"type": "web_search_20250305", "name": "web_search", "max_uses": MAX_SEARCHES}]
+    return Anthropic()
+
+
+def call_model(client, prompt, structured=True):
+    tools = [{"type": WEB_SEARCH_TOOL, "name": "web_search", "max_uses": MAX_SEARCHES}]
     messages = [{"role": "user", "content": [{"type": "text", "text": prompt}]}]
-    kwargs = {"model": DEFAULT_MODEL, "max_tokens": 4000, "tools": tools, "messages": messages}
+    kwargs = {"model": DEFAULT_MODEL, "max_tokens": MAX_TOKENS,
+              "tools": tools, "messages": messages}
+    if structured:
+        kwargs["output_config"] = {"format": {"type": "json_schema",
+                                              "schema": TOPIC_SCHEMA}}
     resp = client.messages.create(**kwargs)
     while getattr(resp, "stop_reason", "") == "pause_turn":
         messages.append({"role": "assistant", "content": resp.content})
         kwargs["messages"] = messages
         resp = client.messages.create(**kwargs)
-    return "".join(getattr(b, "text", "") for b in resp.content if getattr(b, "type", "") == "text")
+    # Ein abgeschnittenes JSON würde sonst als Parse-Fehler auftauchen und die
+    # eigentliche Ursache verstecken.
+    if getattr(resp, "stop_reason", "") == "max_tokens":
+        raise ValueError(f"Antwort in max_tokens ({MAX_TOKENS}) gelaufen, JSON unvollständig")
+    return "".join(getattr(b, "text", "") for b in resp.content
+                   if getattr(b, "type", "") == "text")
+
+
+def research_topic(client, topic, period_text, window_start, window_end, today):
+    """Recherchiert einen Bereich mit mehreren Versuchen. Wirft die letzte
+    Ausnahme, wenn alle Versuche scheitern."""
+    prompt = build_prompt(topic, period_text, window_start, window_end, today)
+    last = None
+    for attempt, structured in enumerate(ATTEMPT_MODES, start=1):
+        try:
+            return extract_json(call_model(client, prompt, structured=structured))
+        except Exception as ex:
+            last = ex
+            if attempt < len(ATTEMPT_MODES):
+                print(f"[retry] {topic['id']}: Versuch {attempt} fehlgeschlagen ({ex})")
+                time.sleep(RETRY_SLEEP * attempt)
+    raise last
 
 
 def clean_items(items):
@@ -178,15 +264,10 @@ def clean_items(items):
             "sources": [{"label": str(s.get("label", "Quelle")), "url": s["url"]} for s in srcs],
         })
     out.sort(key=lambda x: -x["impact"])
-    for i, e in enumerate(out, 1):
-        e["n"] = i
-    for e in out:  # n nach vorne sortieren (Lesbarkeit der JSON)
-        e_keys = ["n", "title", "category", "impact", "date", "summary", "sources"]
-        for k in list(e.keys()):
-            if k not in e_keys:
-                e.pop(k)
-    return [{"n": e["n"], "title": e["title"], "category": e["category"], "impact": e["impact"],
-             "date": e["date"], "summary": e["summary"], "sources": e["sources"]} for e in out]
+    # n zuerst, damit die JSON-Datei lesbar bleibt.
+    return [{"n": i, "title": e["title"], "category": e["category"], "impact": e["impact"],
+             "date": e["date"], "summary": e["summary"], "sources": e["sources"]}
+            for i, e in enumerate(out, 1)]
 
 
 def dry_topic(topic):
@@ -198,41 +279,82 @@ def dry_topic(topic):
             "skip": [{"reason": "Probelauf", "text": "Echtlauf nutzt die Anthropic-API."}]}
 
 
+def apply_result(topic, data):
+    """Übernimmt ein Rechercheergebnis in das Topic-Dict.
+
+    Kein Datum je Bereich: welcher Bereich sich verändert hat, leitet
+    render.py aus dem Inhalt ab (history.data_dates). Das funktioniert auch
+    für die externe Aktualisierung, die dieses Script nicht benutzt.
+    """
+    topic["summary"] = str(data.get("summary", topic.get("summary", ""))).strip()
+    topic["items"] = clean_items(data.get("items", []))
+    topic["skip"] = [{"reason": str(s.get("reason", "Hinweis")), "text": str(s["text"])}
+                     for s in data.get("skip", [])
+                     if isinstance(s, dict) and s.get("text")]
+
+
+def dry_run_sandbox():
+    """Kopie von data/ in einem Temp-Verzeichnis, damit der Probelauf die
+    echten Daten nicht überschreibt. Gibt (Zielpfad, Env für render.py) zurück."""
+    tmp = Path(tempfile.mkdtemp(prefix="ai-briefing-dry-"))
+    shutil.copytree(DATA.parent, tmp / "data",
+                    ignore=shutil.ignore_patterns("*.bak", "*.bak.*"))
+    print(f"Probelauf: schreibt nach {tmp}; data/ und site/ bleiben unberührt.")
+    return tmp / "data" / "briefing.json", {**os.environ, "AI_BRIEFING_ROOT": str(tmp)}
+
+
 def main():
     dry = "--dry-run" in sys.argv
     briefing = json.loads(DATA.read_text(encoding="utf-8"))
+    out_data, render_env = (dry_run_sandbox() if dry else (DATA, None))
     today_date = datetime.date.today()
     start, end = resolve_period(ZEITRAUM, today_date)
     today = today_date.strftime("%d.%m.%Y")
+    today_iso = today_date.strftime("%Y-%m-%d")
 
+    # meta.generated ist das Datum des Laufs, topic.generated das Datum der
+    # Daten. Bei Teilausfall laufen die beiden auseinander, und genau daraus
+    # erzeugt der Renderer den Hinweis.
     briefing["meta"]["period"] = period_label(start, end)
-    briefing["meta"]["generated"] = today_date.strftime("%Y-%m-%d")
+    briefing["meta"]["generated"] = today_iso
 
-    for topic in briefing["topics"]:
+    topics = briefing["topics"]
+    client = None if dry else make_client()
+
+    def research(topic):
+        if dry:
+            return dry_topic(topic)
+        return research_topic(client, topic, briefing["meta"]["period"],
+                              start.strftime("%d.%m.%Y"), end.strftime("%d.%m.%Y"), today)
+
+    # submit statt map: so bleibt ein gescheiterter Bereich auf seinen eigenen
+    # Future beschränkt, statt beim Auspacken den ganzen Lauf abzubrechen.
+    with ThreadPoolExecutor(max_workers=max(1, MAX_PARALLEL)) as pool:
+        futures = [pool.submit(research, t) for t in topics]
+
+    failed = []
+    for topic, future in zip(topics, futures):
         try:
-            if dry:
-                data = dry_topic(topic)
-            else:
-                text = call_model(build_prompt(topic, briefing["meta"]["period"],
-                                               start.strftime("%d.%m.%Y"),
-                                               end.strftime("%d.%m.%Y"), today))
-                data = extract_json(text)
-            topic["summary"] = str(data.get("summary", topic.get("summary", ""))).strip()
-            topic["items"] = clean_items(data.get("items", []))
-            skip = []
-            for s in data.get("skip", []):
-                if isinstance(s, dict) and s.get("text"):
-                    skip.append({"reason": str(s.get("reason", "Hinweis")), "text": str(s["text"])})
-            topic["skip"] = skip
+            apply_result(topic, future.result())
             print(f"[ok]   {topic['id']}: {len(topic['items'])} Meldung(en)")
         except Exception as ex:
+            failed.append(topic["id"])
             print(f"[warn] {topic['id']}: {ex} — vorheriger Stand bleibt erhalten")
 
-    DATA.write_text(json.dumps(briefing, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"briefing.json aktualisiert (Zeitraum: {briefing['meta']['period']}).")
+    out_data.write_text(json.dumps(briefing, ensure_ascii=False, indent=2) + "\n",
+                        encoding="utf-8")
+    print(f"{out_data.name} aktualisiert (Zeitraum: {briefing['meta']['period']}).")
 
-    subprocess.run([sys.executable, str(RENDER)], check=True)
+    subprocess.run([sys.executable, str(RENDER)], check=True, env=render_env)
+
+    if failed:
+        print(f"ACHTUNG: {len(failed)} von {len(topics)} Bereichen nicht aktualisiert: "
+              f"{', '.join(failed)}")
+    if failed and len(failed) == len(topics):
+        print("Kein einziger Bereich konnte aktualisiert werden.")
+        return 1
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

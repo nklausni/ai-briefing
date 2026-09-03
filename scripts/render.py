@@ -4,8 +4,14 @@
 render.py — erzeugt das AI-Briefing als STATISCHE HTML-Seiten (ohne JavaScript).
 
 Liest eine einzige Datenquelle (data/briefing.json) und schreibt:
+  site/style.css            — gemeinsames Stylesheet aller Seiten
   site/index.html           — Übersicht aller Themenbereiche
   site/<topic-id>.html      — je Themenbereich ein Detail-Report mit Radar
+  site/{7d,14d,30d}/…       — dieselben Seiten für die Zeitraum-Ansichten
+
+Nebenbei wird der Pool (data/history.json) gepflegt: Ingest des aktuellen
+Briefings, Rotation alter Einträge ins Monatsarchiv und die Fingerprints, aus
+denen der Hinweis auf nicht aktualisierte Bereiche entsteht.
 
 Design, Radar-Mathematik und CSS folgen dem Tech-Radar-Prinzip und sind auf die
 AI-Themen sowie eine Mehrquellen-Darstellung angepasst. Keine Abhängigkeiten außer stdlib.
@@ -14,12 +20,14 @@ Aufruf:
     python3 scripts/render.py
 """
 
-import json, math, html as _html, datetime, re
+import json, math, os, html as _html, datetime, re
 from pathlib import Path
 
 import history as history_mod
 
-ROOT = Path(__file__).resolve().parent.parent
+# AI_BRIEFING_ROOT biegt Datenquelle und Ausgabe um (Probeläufe, Tests).
+ROOT = Path(os.environ.get("AI_BRIEFING_ROOT")
+            or Path(__file__).resolve().parent.parent)
 DATA = ROOT / "data" / "briefing.json"
 SITE = ROOT / "site"
 
@@ -318,7 +326,12 @@ CSS = """  :root{
   .repo-badge.area{background:#f2f9ff;border-color:#cfe6fb;color:var(--badge-text)}
   .repo-badge.week{background:#eaf6ec;border-color:#cfe8d3;color:#1a7f37}
   .repo-body p{margin:0 0 8px;font-size:16px;line-height:1.55;color:var(--wg100);max-width:68ch}
-  .repo-note{font-size:13px;color:var(--wg90)}"""
+  .repo-note{font-size:13px;color:var(--wg90)}
+  .stale{margin:0 0 20px;padding:12px 16px;border-radius:var(--radius);
+    background:#fff8e6;border:1px solid #e8c766;color:#6b4e00;font-size:14px}
+  .ov-stale{display:inline-block;margin:0 0 8px;font-size:12px;font-weight:500;
+    color:#6b4e00;background:#fff8e6;border:1px solid #e8c766;
+    border-radius:999px;padding:2px 10px}"""
 
 SCALE_BLOCK = """  <div class="scale">
     <h3>Wie sich der Impact bestimmt</h3>
@@ -340,6 +353,12 @@ RANGES = [
     ("14d", "14 Tage", 14),
     ("30d", "30 Tage", 30),
 ]
+
+
+def css_href(range_key):
+    """Pfad zum gemeinsamen Stylesheet. Die Zeitraum-Ansichten liegen eine
+    Ebene tiefer als die Heute-Ansicht."""
+    return "style.css" if range_key == "today" else "../style.css"
 
 
 def range_switcher_html(page, active_key, period=""):
@@ -370,15 +389,75 @@ GERMAN_MONTHS = (
 )
 
 
-def generated_date_text(value):
-    """Formatiert ein kanonisches ISO-Datum; ungültige Werte bleiben unsichtbar."""
+def format_iso_date(value):
+    """Kanonisches ISO-Datum als '2. September 2026'; ungültige Werte → ''."""
     if not isinstance(value, str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", value):
         return ""
     try:
         date = datetime.date.fromisoformat(value)
     except ValueError:
         return ""
-    return f"Zuletzt aktualisiert: {date.day}. {GERMAN_MONTHS[date.month - 1]} {date.year}"
+    return f"{date.day}. {GERMAN_MONTHS[date.month - 1]} {date.year}"
+
+
+def generated_date_text(value):
+    """Formatiert ein kanonisches ISO-Datum; ungültige Werte bleiben unsichtbar."""
+    text = format_iso_date(value)
+    return f"Zuletzt aktualisiert: {text}" if text else ""
+
+
+def is_stale(topic, meta):
+    """Sind die Meldungen dieses Bereichs älter als der letzte Lauf?
+
+    `meta.generated` ist das Datum des Laufs, `topic["_data_date"]` das Datum,
+    seit dem der Inhalt dieses Bereichs unverändert ist (history.data_dates).
+    Laufen die beiden auseinander, hat der Lauf für diesen Bereich nichts
+    Neues gebracht. Fehlt die Angabe, gilt der Bereich nicht als veraltet:
+    unbekannt ist nicht dasselbe wie alt.
+    """
+    data_date = topic.get("_data_date")
+    run_date = meta.get("generated")
+    if not format_iso_date(data_date) or not format_iso_date(run_date):
+        return False
+    return data_date < run_date
+
+
+def stale_days(topic, meta):
+    """Tage zwischen dem Stand der Daten und dem Lauf."""
+    return (datetime.date.fromisoformat(meta["generated"])
+            - datetime.date.fromisoformat(topic["_data_date"])).days
+
+
+def stale_age_text(topic, meta):
+    """Kurzfassung für Konsole und Hinweis. Ein Bereich ohne Meldungen kann
+    nicht 'unverändert' sein, deshalb zwei Formulierungen."""
+    days = stale_days(topic, meta)
+    unit = "Tag" if days == 1 else "Tage"
+    date = format_iso_date(topic["_data_date"])
+    if not topic.get("items"):
+        return f"ohne Meldungen seit dem {date} ({days} {unit})"
+    return f"seit dem {date} unverändert ({days} {unit})"
+
+
+def stale_notice_html(topic, meta, range_key):
+    """Hinweis über der Meldungsliste, wenn der Bereich nichts Neues hat.
+
+    Nur in der Heute-Ansicht: die Zeitraum-Ansichten speisen sich aus dem Pool
+    und zeigen ohnehin Meldungen mehrerer Tage, dort wäre der Hinweis irreführend.
+    """
+    if range_key != "today" or not is_stale(topic, meta):
+        return ""
+    days = stale_days(topic, meta)
+    unit = "Tag" if days == 1 else "Tagen"
+    date = esc(format_iso_date(topic["_data_date"]))
+    if not topic.get("items"):
+        lead = (f'Dieser Bereich hat seit dem {date} keine Meldungen bekommen '
+                f'(seit {days} {unit}).')
+    else:
+        lead = (f'Die Meldungen dieses Bereichs sind seit dem {date} unverändert '
+                f'(seit {days} {unit}).')
+    return (f'<div class="stale">{lead} Der letzte Lauf hat hier nichts Neues '
+            f'gefunden oder ist für diesen Bereich fehlgeschlagen.</div>')
 
 
 def footer_html(meta):
@@ -414,9 +493,7 @@ def build_topic_page(topic, meta, topics, range_key="today"):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-{CSS}
-</style>
+<link rel="stylesheet" href="{css_href(range_key)}">
 </head>
 <body>
 <div class="sheet">
@@ -435,7 +512,7 @@ def build_topic_page(topic, meta, topics, range_key="today"):
   {nav_html(topics, topic["id"])}
 
   <p class="lede">{esc(topic.get("summary", ""))}</p>
-
+  {stale_notice_html(topic, meta, range_key)}
   <div class="board">
     <div class="board-left">
       <div class="panel">
@@ -464,7 +541,7 @@ def build_topic_page(topic, meta, topics, range_key="today"):
 '''
 
 
-def ov_card(topic):
+def ov_card(topic, meta=None, range_key="today"):
     top = sorted(topic.get("items", []), key=lambda e: -int(e.get("impact", 0)))[:3]
     if top:
         def title_html(e):
@@ -483,11 +560,15 @@ def ov_card(topic):
         body = '<p class="ov-empty">In diesem Zeitraum keine eigenständigen Meldungen.</p>'
     count = len(topic.get("items", []))
     count_label = "Meldung" if count == 1 else "Meldungen"
+    badge = ""
+    if range_key == "today" and meta is not None and is_stale(topic, meta):
+        badge = (f'\n    <div class="ov-stale">Unverändert seit '
+                 f'{esc(format_iso_date(topic.get("_data_date")))}</div>')
     return f'''  <div class="ov-card">
     <div class="ov-card-head">
       <h3>{esc(topic["name"])}</h3>
       <span class="ov-count">{count} {count_label}</span>
-    </div>
+    </div>{badge}
     <div class="ov-sub">{esc(topic.get("angle",""))}</div>
     {body}
     <a class="ov-link" href="{topic["id"]}.html">Zum Feld-Report <span>→</span></a>
@@ -505,7 +586,7 @@ def build_overview(briefing, range_key="today"):
     blocks = []
     for g in order:
         grp = [t for t in topics if (t.get("group") or "Weitere") == g]
-        cards = "\n".join(ov_card(t) for t in grp)
+        cards = "\n".join(ov_card(t, meta, range_key) for t in grp)
         blocks.append(f'  <div class="ov-group"><h2>{esc(g)}</h2></div>\n  <div class="ov-grid">\n{cards}\n  </div>')
 
     body = "\n".join(blocks)
@@ -519,9 +600,7 @@ def build_overview(briefing, range_key="today"):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-{CSS}
-</style>
+<link rel="stylesheet" href="{css_href(range_key)}">
 </head>
 <body>
 <div class="sheet">
@@ -552,13 +631,23 @@ def build_overview(briefing, range_key="today"):
 
 def main():
     briefing = json.loads(DATA.read_text(encoding="utf-8"))
+    end_iso = history_mod.parse_date(briefing["meta"].get("generated")) \
+        or datetime.date.today().isoformat()
 
-    # Ingest: aktuelles Briefing in den kumulativen Pool mergen (idempotent)
+    # Ingest: aktuelles Briefing in den kumulativen Pool mergen (idempotent),
+    # dann alles ausrotieren, was jenseits der größten Ansicht liegt.
     hist = history_mod.load_history()
+    # Vor dem Ingest: welche Bereiche haben sich gegenüber dem letzten Lauf
+    # überhaupt verändert? Das Ergebnis hängt als _data_date am Topic.
+    dates = history_mod.data_dates(hist, briefing, end_iso)
+    for t in briefing["topics"]:
+        t["_data_date"] = dates.get(t["id"])
     history_mod.ingest(hist, briefing)
+    moved_items, moved_sums = history_mod.rotate(hist, end_iso)
     history_mod.save_history(hist)
 
     SITE.mkdir(exist_ok=True)
+    (SITE / "style.css").write_text(CSS + "\n", encoding="utf-8")
     dirs = [SITE] + [SITE / key for key, _, _ in RANGES[1:]]
     for d in dirs:
         d.mkdir(exist_ok=True)
@@ -577,8 +666,6 @@ def main():
             build_topic_page(t, briefing["meta"], topics), encoding="utf-8")
 
     # Zeitraum-Ansichten aus dem Pool
-    end_iso = history_mod.parse_date(briefing["meta"].get("generated")) \
-        or datetime.date.today().isoformat()
     for key, _, days in RANGES[1:]:
         rmeta = dict(briefing["meta"], period=history_mod.format_period(end_iso, days))
         rtopics = []
@@ -602,8 +689,14 @@ def main():
     n_hist = len(hist["items"])
     print(f"Fertig: 4 Ansichten (Heute/7d/14d/30d), {total} Meldungen heute, "
           f"{n_hist} im Pool.")
+    if moved_items or moved_sums:
+        print(f"Archiviert: {moved_items} Meldung(en), {moved_sums} Summary(s) "
+              f"älter als {history_mod.KEEP_DAYS} Tage.")
     for t in topics:
-        print(f"  [{t['id']}] {len(t.get('items', []))} Meldung(en) heute")
+        suffix = ""
+        if is_stale(t, briefing["meta"]):
+            suffix = f"  ({stale_age_text(t, briefing['meta'])})"
+        print(f"  [{t['id']}] {len(t.get('items', []))} Meldung(en) heute{suffix}")
 
 
 if __name__ == "__main__":

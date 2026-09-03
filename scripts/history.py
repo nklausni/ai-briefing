@@ -9,12 +9,22 @@ Pool gemerged (Ingest, idempotent). Aus dem Pool lassen sich Zeitraum-Ansichten
 """
 
 import datetime
+import hashlib
 import json
+import os
 import re
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+# AI_BRIEFING_ROOT biegt Datenquelle und Ausgabe um (Probeläufe, Tests).
+ROOT = Path(os.environ.get("AI_BRIEFING_ROOT")
+            or Path(__file__).resolve().parent.parent)
 HISTORY = ROOT / "data" / "history.json"
+ARCHIVE = ROOT / "data" / "archive"
+
+# Die größte Zeitraum-Ansicht umfasst 30 Tage. Alles, was älter ist, wird von
+# keiner Ansicht mehr gelesen und wandert ins Monatsarchiv. Der Puffer von fünf
+# Tagen hält Meldungen im Pool, deren Datum knapp vor dem Fenster liegt.
+KEEP_DAYS = 35
 
 MONTHS_DE = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli",
              "August", "September", "Oktober", "November", "Dezember"]
@@ -69,11 +79,13 @@ def load_history():
             h = json.loads(HISTORY.read_text(encoding="utf-8"))
             if isinstance(h, dict) and isinstance(h.get("items"), list) \
                     and isinstance(h.get("summaries"), list):
+                if not isinstance(h.get("fingerprints"), dict):
+                    h["fingerprints"] = {}   # Pools von vor diesem Feld
                 return h
             print("Warnung: history.json hat unerwartetes Format — wird neu aufgebaut.")
         except (json.JSONDecodeError, OSError):
             print("Warnung: history.json unlesbar — wird neu aufgebaut.")
-    return {"items": [], "summaries": []}
+    return {"items": [], "summaries": [], "fingerprints": {}}
 
 
 def save_history(history):
@@ -161,6 +173,116 @@ def ingest(history, briefing):
             "summary": topic.get("summary", ""), "skip": topic.get("skip") or [],
         })
     return history
+
+
+def fingerprint(topic):
+    """Inhalts-Fingerprint eines Bereichs über seine Meldungen.
+
+    Titel, Datum, Impact und Kategorie identifizieren eine Meldung fachlich;
+    die laufende Nummer und die Quellen bleiben außen vor, weil eine
+    Umnummerierung oder eine nachgetragene Quelle keine neue Recherche ist.
+    """
+    parts = sorted(
+        f'{e.get("title", "")}|{e.get("date", "")}|{e.get("impact", "")}|'
+        f'{e.get("category", "")}'
+        for e in topic.get("items", []))
+    return hashlib.sha1("\n".join(parts).encode("utf-8")).hexdigest()
+
+
+def data_dates(history, briefing, run_iso):
+    """Seit wann sind die Meldungen je Bereich unverändert?
+
+    Gibt {topic_id: ISO-Datum} zurück und schreibt den Stand in den Pool.
+    Ändert sich der Inhalt eines Bereichs, gilt der aktuelle Lauf als sein
+    Datum; bleibt er gleich, bleibt das gespeicherte Datum stehen.
+
+    Der Umweg über den Inhalt statt über ein Feld in briefing.json ist
+    Absicht: die tägliche Aktualisierung läuft außerhalb dieses Repos und
+    setzt kein Datum je Bereich. Ein Bereich, dessen Recherche ausfällt und
+    dessen alte Meldungen stehen bleiben, ist so trotzdem erkennbar.
+    """
+    marks = history.setdefault("fingerprints", {})
+    out = {}
+    for topic in briefing.get("topics", []):
+        tid = topic["id"]
+        fp = fingerprint(topic)
+        mark = marks.get(tid)
+        if isinstance(mark, dict) and mark.get("hash") == fp and mark.get("date"):
+            out[tid] = mark["date"]
+        else:
+            marks[tid] = {"hash": fp, "date": run_iso}
+            out[tid] = run_iso
+    return out
+
+
+def _archive_path(month, archive_dir):
+    return archive_dir / f"history-{month}.json"
+
+
+def _load_archive(path):
+    if not path.exists():
+        return {"items": [], "summaries": []}
+    try:
+        a = json.loads(path.read_text(encoding="utf-8"))
+        if isinstance(a, dict) and isinstance(a.get("items"), list) \
+                and isinstance(a.get("summaries"), list):
+            return a
+        print(f"Warnung: {path.name} hat unerwartetes Format — wird neu aufgebaut.")
+    except (json.JSONDecodeError, OSError):
+        print(f"Warnung: {path.name} unlesbar — wird neu aufgebaut.")
+    return {"items": [], "summaries": []}
+
+
+def rotate(history, end_iso, keep_days=KEEP_DAYS, archive_dir=None):
+    """Verschiebt Items und Summaries, die älter als `keep_days` sind, aus dem
+    Pool in Monatsdateien unter data/archive/.
+
+    Der Pool wird bei jedem Render vollständig gelesen und geschrieben und liegt
+    im Git; ohne Rotation wächst er unbegrenzt, obwohl keine Ansicht weiter als
+    30 Tage zurückreicht. Monatsdateien statt einer Sammeldatei, damit
+    abgeschlossene Monate im Git unverändert bleiben.
+
+    Idempotent: das Archiv wird beim Zusammenführen dedupliziert, damit eine
+    erneut aufgetauchte und erneut rotierte Meldung nicht doppelt landet.
+    Gibt (verschobene Items, verschobene Summaries) zurück.
+    """
+    # Abgeleitet aus HISTORY, nicht aus der Konstante: so folgt das Archiv einer
+    # umgebogenen History-Datei (Tests, Probeläufe) und schreibt nicht in data/.
+    archive_dir = (HISTORY.parent / ARCHIVE.name) if archive_dir is None else archive_dir
+    cutoff = (datetime.date.fromisoformat(end_iso)
+              - datetime.timedelta(days=keep_days - 1)).isoformat()
+
+    stale_items = [e for e in history["items"] if e["date"] < cutoff]
+    stale_sums = [s for s in history["summaries"] if s["date"] < cutoff]
+    if not stale_items and not stale_sums:
+        return 0, 0
+
+    by_month = {}
+    for e in stale_items:
+        by_month.setdefault(e["date"][:7], {"items": [], "summaries": []})["items"].append(e)
+    for s in stale_sums:
+        by_month.setdefault(s["date"][:7], {"items": [], "summaries": []})["summaries"].append(s)
+
+    archive_dir.mkdir(parents=True, exist_ok=True)
+    for month, batch in sorted(by_month.items()):
+        path = _archive_path(month, archive_dir)
+        arch = _load_archive(path)
+        for e in batch["items"]:
+            if not any(a["topic_id"] == e["topic_id"] and _same_item(a, e)
+                       for a in arch["items"]):
+                arch["items"].append(e)
+        for s in batch["summaries"]:
+            if not any(a["topic_id"] == s["topic_id"] and a["date"] == s["date"]
+                       for a in arch["summaries"]):
+                arch["summaries"].append(s)
+        arch["items"].sort(key=lambda e: (e["date"], e["topic_id"]))
+        arch["summaries"].sort(key=lambda s: (s["date"], s["topic_id"]))
+        path.write_text(json.dumps(arch, ensure_ascii=False, indent=1) + "\n",
+                        encoding="utf-8")
+
+    history["items"] = [e for e in history["items"] if e["date"] >= cutoff]
+    history["summaries"] = [s for s in history["summaries"] if s["date"] >= cutoff]
+    return len(stale_items), len(stale_sums)
 
 
 def items_for_range(history, topic_id, end_iso, days):

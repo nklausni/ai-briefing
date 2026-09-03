@@ -110,5 +110,130 @@ class TestRenderVariants(unittest.TestCase):
         self.assertEqual(len(h["items"]), 1)
 
 
+class TestSharedStylesheet(unittest.TestCase):
+    """Das CSS liegt in site/style.css statt 36-mal inline in den Seiten."""
+
+    def setUp(self):
+        self.tmp = Path(tempfile.mkdtemp())
+        (self.tmp / "data").mkdir()
+        (self.tmp / "data" / "briefing.json").write_text(
+            json.dumps(BRIEFING, ensure_ascii=False), encoding="utf-8")
+        self._orig = (render.DATA, render.SITE, history.HISTORY)
+        render.DATA = self.tmp / "data" / "briefing.json"
+        render.SITE = self.tmp / "site"
+        history.HISTORY = self.tmp / "data" / "history.json"
+        render.main()
+
+    def tearDown(self):
+        render.DATA, render.SITE, history.HISTORY = self._orig
+        shutil.rmtree(self.tmp, ignore_errors=True)
+
+    def test_stylesheet_written_once(self):
+        css = render.SITE / "style.css"
+        self.assertTrue(css.exists())
+        self.assertIn("--blue:#0075de", css.read_text(encoding="utf-8"))
+
+    def test_pages_link_stylesheet_with_correct_depth(self):
+        root = (render.SITE / "ai-news.html").read_text(encoding="utf-8")
+        self.assertIn('<link rel="stylesheet" href="style.css">', root)
+        for sub in ("7d", "14d", "30d"):
+            page = (render.SITE / sub / "index.html").read_text(encoding="utf-8")
+            self.assertIn('<link rel="stylesheet" href="../style.css">', page)
+
+    def test_no_inline_style_block_remains(self):
+        for sub in ("", "7d"):
+            for page in ("index.html", "ai-news.html"):
+                rendered = (render.SITE / sub / page).read_text(encoding="utf-8")
+                self.assertNotIn("<style>", rendered, f"{sub}/{page}")
+
+
+class TestStaleTopicMarking(unittest.TestCase):
+    """Ein Bereich, dessen Meldungen der Lauf nicht verändert hat, muss
+    sichtbar sein. Der Pool bringt dafür einen älteren Fingerprint mit,
+    der zum unveränderten Inhalt passt."""
+
+    def setUp(self):
+        self.tmp = Path(tempfile.mkdtemp())
+        (self.tmp / "data").mkdir()
+        (self.tmp / "data" / "briefing.json").write_text(
+            json.dumps(BRIEFING, ensure_ascii=False), encoding="utf-8")
+        self._orig = (render.DATA, render.SITE, history.HISTORY)
+        render.DATA = self.tmp / "data" / "briefing.json"
+        render.SITE = self.tmp / "site"
+        history.HISTORY = self.tmp / "data" / "history.json"
+        history.HISTORY.write_text(json.dumps({
+            "items": [], "summaries": [],
+            "fingerprints": {"ai-news": {
+                "hash": history.fingerprint(BRIEFING["topics"][0]),
+                "date": "2026-06-08",           # Lauf ist der 10.06.
+            }},
+        }), encoding="utf-8")
+        render.main()
+
+    def tearDown(self):
+        render.DATA, render.SITE, history.HISTORY = self._orig
+        shutil.rmtree(self.tmp, ignore_errors=True)
+
+    def test_notice_on_topic_page(self):
+        page = (render.SITE / "ai-news.html").read_text(encoding="utf-8")
+        self.assertIn("Die Meldungen dieses Bereichs sind seit dem 8. Juni 2026 "
+                      "unverändert (seit 2 Tagen).", page)
+
+    def test_badge_on_overview_card(self):
+        page = (render.SITE / "index.html").read_text(encoding="utf-8")
+        self.assertIn('<div class="ov-stale">Unverändert seit 8. Juni 2026</div>', page)
+
+    def test_item_count_stays_visible(self):
+        page = (render.SITE / "index.html").read_text(encoding="utf-8")
+        self.assertIn('<span class="ov-count">1 Meldung</span>', page)
+
+    def test_not_shown_in_range_views(self):
+        # Die Zeitraum-Ansichten zeigen Meldungen mehrerer Tage aus dem Pool;
+        # dort wäre der Hinweis irreführend.
+        for sub in ("7d", "14d", "30d"):
+            for page in ("index.html", "ai-news.html"):
+                rendered = (render.SITE / sub / page).read_text(encoding="utf-8")
+                self.assertNotIn("unverändert", rendered, f"{sub}/{page}")
+
+
+class TestStaleDetection(unittest.TestCase):
+    def test_stale_when_data_older_than_run(self):
+        self.assertTrue(render.is_stale({"_data_date": "2026-06-08"},
+                                        {"generated": "2026-06-10"}))
+
+    def test_not_stale_when_equal(self):
+        self.assertFalse(render.is_stale({"_data_date": "2026-06-10"},
+                                         {"generated": "2026-06-10"}))
+
+    def test_missing_data_date_is_not_stale(self):
+        # Unbekannt ist nicht dasselbe wie alt.
+        self.assertFalse(render.is_stale({}, {"generated": "2026-06-10"}))
+
+    def test_invalid_dates_are_not_stale(self):
+        self.assertFalse(render.is_stale({"_data_date": "08.06.2026"},
+                                         {"generated": "2026-06-10"}))
+        self.assertFalse(render.is_stale({"_data_date": "2026-06-08"}, {}))
+
+    def test_age_text_singular(self):
+        self.assertEqual(
+            render.stale_age_text({"_data_date": "2026-06-09", "items": [{}]},
+                                  {"generated": "2026-06-10"}),
+            "seit dem 9. Juni 2026 unverändert (1 Tag)")
+
+    def test_age_text_for_topic_without_items(self):
+        # "unverändert" passt nicht auf einen Bereich, der nie Meldungen hatte.
+        self.assertEqual(
+            render.stale_age_text({"_data_date": "2026-06-08", "items": []},
+                                  {"generated": "2026-06-10"}),
+            "ohne Meldungen seit dem 8. Juni 2026 (2 Tage)")
+
+    def test_notice_wording_for_topic_without_items(self):
+        html = render.stale_notice_html(
+            {"_data_date": "2026-06-08", "items": []},
+            {"generated": "2026-06-10"}, "today")
+        self.assertIn("keine Meldungen bekommen (seit 2 Tagen)", html)
+        self.assertNotIn("unverändert", html)
+
+
 if __name__ == "__main__":
     unittest.main()

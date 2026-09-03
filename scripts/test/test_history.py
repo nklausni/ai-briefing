@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+import json
+import shutil
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -154,7 +157,8 @@ class TestLoadSave(unittest.TestCase):
         old = history.HISTORY
         try:
             history.HISTORY = Path(tempfile.mkdtemp()) / "history.json"
-            self.assertEqual(history.load_history(), {"items": [], "summaries": []})
+            self.assertEqual(history.load_history(),
+                             {"items": [], "summaries": [], "fingerprints": {}})
         finally:
             history.HISTORY = old
 
@@ -163,7 +167,7 @@ class TestLoadSave(unittest.TestCase):
         old = history.HISTORY
         try:
             history.HISTORY = Path(tempfile.mkdtemp()) / "history.json"
-            h = {"items": [], "summaries": []}
+            h = {"items": [], "summaries": [], "fingerprints": {}}
             history.ingest(h, _briefing([_item()]))
             history.save_history(h)
             self.assertEqual(history.load_history(), h)
@@ -176,7 +180,8 @@ class TestLoadSave(unittest.TestCase):
         try:
             history.HISTORY = Path(tempfile.mkdtemp()) / "history.json"
             history.HISTORY.write_text("{kaputt", encoding="utf-8")
-            self.assertEqual(history.load_history(), {"items": [], "summaries": []})
+            self.assertEqual(history.load_history(),
+                             {"items": [], "summaries": [], "fingerprints": {}})
         finally:
             history.HISTORY = old
 
@@ -238,6 +243,120 @@ class TestFormatPeriod(unittest.TestCase):
     def test_cross_year(self):
         self.assertEqual(history.format_period("2026-01-03", 7),
                          "28. Dezember 2025 – 3. Januar 2026")
+
+
+def _pool_item(topic_id, title, date):
+    return {"topic_id": topic_id, "title": title, "category": "modelle", "impact": 3,
+            "date": date, "summary": "Text.",
+            "sources": [{"label": "Q", "url": f"https://example.com/{title}"}],
+            "first_seen": date}
+
+
+class TestDataDates(unittest.TestCase):
+    def _briefing_with(self, items):
+        return {"meta": {"generated": "2026-06-10"},
+                "topics": [{"id": "ai-news", "items": items}]}
+
+    def test_first_sight_gets_the_run_date(self):
+        h = {"items": [], "summaries": [], "fingerprints": {}}
+        d = history.data_dates(h, self._briefing_with([_item()]), "2026-06-10")
+        self.assertEqual(d["ai-news"], "2026-06-10")
+
+    def test_unchanged_content_keeps_the_old_date(self):
+        h = {"items": [], "summaries": [], "fingerprints": {}}
+        history.data_dates(h, self._briefing_with([_item()]), "2026-06-08")
+        d = history.data_dates(h, self._briefing_with([_item()]), "2026-06-10")
+        self.assertEqual(d["ai-news"], "2026-06-08")
+
+    def test_changed_content_moves_to_the_run_date(self):
+        h = {"items": [], "summaries": [], "fingerprints": {}}
+        history.data_dates(h, self._briefing_with([_item()]), "2026-06-08")
+        d = history.data_dates(h, self._briefing_with([_item(title="Neu")]),
+                               "2026-06-10")
+        self.assertEqual(d["ai-news"], "2026-06-10")
+
+    def test_renumbering_alone_is_not_a_change(self):
+        # n und Quellen gehen nicht in den Fingerprint ein: eine
+        # Umnummerierung ist keine neue Recherche.
+        h = {"items": [], "summaries": [], "fingerprints": {}}
+        history.data_dates(h, self._briefing_with([_item()]), "2026-06-08")
+        renumbered = _item()
+        renumbered["n"] = 7
+        renumbered["sources"] = [{"label": "Andere", "url": "https://other.com/x"}]
+        d = history.data_dates(h, self._briefing_with([renumbered]), "2026-06-10")
+        self.assertEqual(d["ai-news"], "2026-06-08")
+
+    def test_impact_change_is_a_change(self):
+        h = {"items": [], "summaries": [], "fingerprints": {}}
+        history.data_dates(h, self._briefing_with([_item(impact=3)]), "2026-06-08")
+        d = history.data_dates(h, self._briefing_with([_item(impact=5)]), "2026-06-10")
+        self.assertEqual(d["ai-news"], "2026-06-10")
+
+    def test_order_of_items_does_not_matter(self):
+        a, b = _item(title="A"), _item(title="B", url="https://example.com/b")
+        h = {"items": [], "summaries": [], "fingerprints": {}}
+        history.data_dates(h, self._briefing_with([a, b]), "2026-06-08")
+        d = history.data_dates(h, self._briefing_with([b, a]), "2026-06-10")
+        self.assertEqual(d["ai-news"], "2026-06-08")
+
+
+class TestRotate(unittest.TestCase):
+    def setUp(self):
+        self.tmp = Path(tempfile.mkdtemp())
+        self.archive = self.tmp / "archive"
+        self.history = {
+            "items": [_pool_item("ai-news", "alt", "2026-04-15"),
+                      _pool_item("ai-news", "auch-alt", "2026-05-02"),
+                      _pool_item("ai-tools", "neu", "2026-06-08")],
+            "summaries": [{"topic_id": "ai-news", "date": "2026-04-15",
+                           "summary": "Alt.", "skip": []},
+                          {"topic_id": "ai-news", "date": "2026-06-08",
+                           "summary": "Neu.", "skip": []}],
+        }
+
+    def tearDown(self):
+        shutil.rmtree(self.tmp, ignore_errors=True)
+
+    def rotate(self):
+        return history.rotate(self.history, "2026-06-10", keep_days=35,
+                              archive_dir=self.archive)
+
+    def test_moves_only_items_beyond_the_window(self):
+        moved_items, moved_sums = self.rotate()
+        self.assertEqual((moved_items, moved_sums), (2, 1))
+        self.assertEqual([e["title"] for e in self.history["items"]], ["neu"])
+        self.assertEqual([s["date"] for s in self.history["summaries"]], ["2026-06-08"])
+
+    def test_writes_one_file_per_month(self):
+        self.rotate()
+        self.assertEqual(sorted(p.name for p in self.archive.glob("*.json")),
+                         ["history-2026-04.json", "history-2026-05.json"])
+        april = json.loads((self.archive / "history-2026-04.json").read_text(encoding="utf-8"))
+        self.assertEqual([e["title"] for e in april["items"]], ["alt"])
+        self.assertEqual(len(april["summaries"]), 1)
+
+    def test_keeps_items_exactly_on_the_boundary(self):
+        # keep_days=35 mit Ende 10.06. → Grenze ist der 07.05.
+        self.history["items"] = [_pool_item("ai-news", "grenze", "2026-05-07"),
+                                 _pool_item("ai-news", "davor", "2026-05-06")]
+        self.history["summaries"] = []
+        moved_items, _ = self.rotate()
+        self.assertEqual(moved_items, 1)
+        self.assertEqual([e["title"] for e in self.history["items"]], ["grenze"])
+
+    def test_is_idempotent_and_does_not_duplicate_in_archive(self):
+        self.rotate()
+        # Dieselbe Meldung taucht erneut im Pool auf und wird erneut rotiert.
+        self.history["items"].append(_pool_item("ai-news", "alt", "2026-04-15"))
+        self.rotate()
+        april = json.loads((self.archive / "history-2026-04.json").read_text(encoding="utf-8"))
+        self.assertEqual(len(april["items"]), 1)
+
+    def test_noop_when_nothing_is_stale(self):
+        self.history["items"] = [_pool_item("ai-news", "neu", "2026-06-09")]
+        self.history["summaries"] = []
+        self.assertEqual(self.rotate(), (0, 0))
+        self.assertFalse(self.archive.exists(), "kein Archivordner ohne Inhalt")
 
 
 if __name__ == "__main__":
