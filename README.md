@@ -1,8 +1,6 @@
 # AI-Briefing
 
-Öffentliches, automatisch befülltes Briefing zu acht Themen — im Stil des
-[private-apple-briefing](https://github.com/GodModeAI2025/private-apple-briefing) (MIT),
-dessen Renderer/Design hier adaptiert wurden.
+Öffentliches, automatisch befülltes Briefing zu acht Themen.
 
 **Themen (Bereiche):**
 

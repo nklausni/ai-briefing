@@ -7,9 +7,8 @@ Liest eine einzige Datenquelle (data/briefing.json) und schreibt:
   site/index.html           — Übersicht aller Themenbereiche
   site/<topic-id>.html      — je Themenbereich ein Detail-Report mit Radar
 
-Design, Radar-Mathematik und CSS sind aus dem Projekt
-"GodModeAI2025/private-apple-briefing" (MIT) übernommen und auf die AI-Themen
-sowie eine Mehrquellen-Darstellung angepasst. Keine Abhängigkeiten außer stdlib.
+Design, Radar-Mathematik und CSS folgen dem Tech-Radar-Prinzip und sind auf die
+AI-Themen sowie eine Mehrquellen-Darstellung angepasst. Keine Abhängigkeiten außer stdlib.
 
 Aufruf:
     python3 scripts/render.py
@@ -386,9 +385,7 @@ def footer_html(meta):
     updated = generated_date_text(meta.get("generated"))
     updated_line = f'<br><span class="footer-updated">{esc(updated)}</span>' if updated else ""
     return (f'<div class="footer">{esc(meta.get("disclaimer", ""))}<br>'
-            f'Aufbau nach dem Tech-Radar-Prinzip (Ringe = Impact, Segmente = Kategorie), '
-            f'Design adaptiert von <a href="https://github.com/GodModeAI2025/private-apple-briefing" '
-            f'target="_blank" rel="noopener">private-apple-briefing</a> (MIT). '
+            f'Aufbau nach dem Tech-Radar-Prinzip (Ringe = Impact, Segmente = Kategorie). '
             f'Statischer Export, kein JavaScript. Auswahl per Recherche — keine Gewähr auf Vollständigkeit.'
             f'{updated_line}</div>')
 
