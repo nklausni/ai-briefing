@@ -8893,6 +8893,51 @@
     }
    ],
    "first_seen": "2026-09-07"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "GitHub Copilot erprobt Multi-Modell-Orchestrierung für Coding-Agenten",
+   "category": "agents",
+   "impact": 4,
+   "date": "2026-09-04",
+   "summary": "Project HydraFusion ist eine Research Preview in GitHub Copilot: Zur Laufzeit wählt das System zwischen einem einzelnen Modell, einer Eskalationskette und einem Draft-Review-Workflow mit einer unabhängigen Modellfamilie. Für Engineering-Teams ist der Ansatz relevant, weil Qualitätsprüfung und Modellwahl in den Agentenlauf verlagert werden statt manuell zwischen Modellen umzuschalten.",
+   "sources": [
+    {
+     "label": "GitHub Blog",
+     "url": "https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/"
+    }
+   ],
+   "first_seen": "2026-09-07"
+  },
+  {
+   "topic_id": "ai-tools",
+   "title": "GitHub Copilot bündelt Modellwahl und Qualitätsprüfung in HydraFusion",
+   "category": "tools",
+   "impact": 4,
+   "date": "2026-09-04",
+   "summary": "HydraFusion lässt sich in Copilot wie ein einzelnes Modell auswählen, plant intern aber die Ausführung: Ein günstigeres Modell kann direkt antworten oder zunächst einen Entwurf liefern, der bei Bedarf an ein stärkeres Modell eskaliert oder von einer anderen Modellfamilie geprüft wird. GitHub berichtet aus Offline-Evaluierungen auf drei Coding-Benchmarks über bessere Qualität bei niedrigeren geschätzten Kosten; die Werte stammen vom Anbieter und sind als Research Preview einzuordnen.",
+   "sources": [
+    {
+     "label": "GitHub Blog",
+     "url": "https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/"
+    }
+   ],
+   "first_seen": "2026-09-07"
+  },
+  {
+   "topic_id": "context-engineering",
+   "title": "HydraFusion macht Modellrouting und Kritik zum Teil des Agentenlaufs",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-09-04",
+   "summary": "Die Research Preview bewertet für Coding-Aufgaben Fähigkeiten wie Reasoning, Codegenerierung, Debugging und Tool-Nutzung und wählt daraus ein Ausführungsmuster. Der Critique-Modus trennt dabei Entwurf und Review auf unterschiedliche Modellfamilien; das zeigt eine praktische Richtung für Agenten-Design, bei der nicht nur Prompt und Kontext, sondern auch die Abfolge der Modellaufrufe gezielt gesteuert wird.",
+   "sources": [
+    {
+     "label": "GitHub Blog",
+     "url": "https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/"
+    }
+   ],
+   "first_seen": "2026-09-07"
   }
  ],
  "summaries": [
@@ -11781,30 +11826,20 @@
   {
    "topic_id": "agentic-engineering",
    "date": "2026-09-07",
-   "summary": "OpenAI veröffentlicht interne Nutzungsdaten, nach denen Coding-Agenten in der Forschung zunehmend parallel und für längere Aufgaben eingesetzt werden. Die Ergebnisse unterstreichen, dass Steuerung und Prüfung dieser Arbeitsläufe wichtiger werden.",
+   "summary": "GitHub erprobt mit HydraFusion die automatische Orchestrierung mehrerer Modellfamilien für Coding-Aufgaben. OpenAI veröffentlicht zugleich interne Nutzungsdaten, nach denen Coding-Agenten in der Forschung zunehmend parallel und für längere Aufgaben eingesetzt werden.",
    "skip": []
   },
   {
    "topic_id": "ai-tools",
    "date": "2026-09-07",
-   "summary": "Für Alltagswerkzeuge gab es im Zeitraum keine belastbar datierte, eigenständige Veröffentlichung mit ausreichender Relevanz für das Briefing.",
-   "skip": [
-    {
-     "reason": "Keine neue eigenständige Entwicklung im Zeitraum",
-     "text": "Bei den priorisierten Tool- und IDE-Quellen fand sich für den 06./07.09.2026 kein verifiziertes Release mit eigenständiger Relevanz."
-    }
-   ]
+   "summary": "GitHub startet mit HydraFusion eine Research Preview für automatische Multi-Modell-Auswahl in Copilot. Sie kombiniert Modellwahl, Eskalation und unabhängige Kritik in einem auswählbaren Laufzeitmodus.",
+   "skip": []
   },
   {
    "topic_id": "context-engineering",
    "date": "2026-09-07",
-   "summary": "Für Kontext- und Prompt Engineering fand sich im Zeitraum keine belastbar datierte, eigenständige Entwicklung.",
-   "skip": [
-    {
-     "reason": "Keine neue eigenständige Entwicklung im Zeitraum",
-     "text": "Die Recherche ergab für den 06./07.09.2026 keine verifizierte Veröffentlichung zu Kontextsteuerung, Token-Effizienz oder Agent-Memory mit ausreichender Eigenständigkeit."
-    }
-   ]
+   "summary": "GitHub erprobt mit HydraFusion eine Laufzeitentscheidung darüber, wann ein einzelnes Modell genügt, wann eskaliert wird und wann ein unabhängiger Review-Schritt sinnvoll ist.",
+   "skip": []
   },
   {
    "topic_id": "ai-security",
@@ -11840,16 +11875,16 @@
    "date": "2026-09-04"
   },
   "agentic-engineering": {
-   "hash": "cdca939a5acaee9447fe6522d7b39781df2fc170",
+   "hash": "50b6caf68e68cc3f6f78cf4212ee4dc313bf02f6",
    "date": "2026-09-07"
   },
   "ai-tools": {
-   "hash": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
-   "date": "2026-09-05"
+   "hash": "dd06461397942f5a20f97169d11ac859e14b2d60",
+   "date": "2026-09-07"
   },
   "context-engineering": {
-   "hash": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
-   "date": "2026-09-06"
+   "hash": "2b5e0034c857eb85fcd30ed85ae3c0a4ed4c9bfd",
+   "date": "2026-09-07"
   },
   "ai-security": {
    "hash": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
