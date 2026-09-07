@@ -40,6 +40,14 @@ SOURCES = (
     ("ai.meta.com", "Meta AI"),
     ("mistral.ai", "Mistral"),
     ("x.ai", "xAI"),
+    ("reuters.com", "Reuters AI"),
+    ("technologyreview.com", "MIT Technology Review"),
+    ("cohere.com", "Cohere"),
+    ("qwenlm.github.io", "Qwen"),
+    ("aws.amazon.com", "AWS Machine Learning"),
+    ("deepmind.google", "Google DeepMind"),
+    ("research.google", "Google Research"),
+    ("nist.gov", "NIST AI"),
 )
 
 VALID_STATUS = {"checked", "unavailable"}

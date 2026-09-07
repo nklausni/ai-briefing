@@ -28,6 +28,22 @@ class TestResearchAuditValidation(unittest.TestCase):
             ],
         }
 
+    def test_expected_source_set_includes_expanded_coverage(self):
+        domains = {domain for domain, _ in validator.SOURCES}
+        self.assertEqual(len(domains), 38)
+        self.assertTrue(
+            {
+                "reuters.com",
+                "technologyreview.com",
+                "cohere.com",
+                "qwenlm.github.io",
+                "aws.amazon.com",
+                "deepmind.google",
+                "research.google",
+                "nist.gov",
+            }.issubset(domains)
+        )
+
     def test_valid_complete_audit(self):
         self.assertEqual(validator.validate(self.valid_audit(), "2026-09-07"), [])
 

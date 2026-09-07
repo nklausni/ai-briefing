@@ -132,7 +132,7 @@ Bereich aktualisiert werden konnte.
 Jeder Cron-Lauf erzeugt zusätzlich `data/research-audit/YYYY-MM-DD.json`. Das Protokoll
 enthält für jede priorisierte Quelle die tatsächlich geprüfte URL, den Status und ein
 kurzes Ergebnis. `scripts/validate_research_audit.py` akzeptiert den Lauf nur, wenn alle
-30 festgelegten Quellen genau einmal dokumentiert sind und jede URL zur angegebenen
+38 festgelegten Quellen genau einmal dokumentiert sind und jede URL zur angegebenen
 Quelle gehört. Ein fehlendes oder unvollständiges Protokoll blockiert Commit und
 Veröffentlichung. Das Protokoll ist bewusst versioniert, damit später nachvollziehbar
 bleibt, welche Quellen vor der Aussage „keine Meldung“ geprüft wurden.
