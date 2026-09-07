@@ -483,6 +483,7 @@ def build_topic_page(topic, meta, topics, range_key="today"):
 {skip_items}
     </ul>
   </div>''') if skip else ""
+    stale_notice = stale_notice_html(topic, meta, range_key)
 
     return f'''<!DOCTYPE html>
 <html lang="de">
@@ -512,7 +513,7 @@ def build_topic_page(topic, meta, topics, range_key="today"):
   {nav_html(topics, topic["id"])}
 
   <p class="lede">{esc(topic.get("summary", ""))}</p>
-  {stale_notice_html(topic, meta, range_key)}
+{stale_notice}
   <div class="board">
     <div class="board-left">
       <div class="panel">
