@@ -25,10 +25,12 @@ AI Briefing/
 ├── data/
 │   ├── briefing.json       ← Datenquelle des Tages (Inhalt aller Bereiche)
 │   ├── history.json        ← Pool der letzten 35 Tage (Ingest/Dedup je Render)
-│   └── archive/            ← ausrotierte Monate (history-JJJJ-MM.json)
+│   ├── archive/            ← ausrotierte Monate (history-JJJJ-MM.json)
+│   └── research-audit/     ← tägliche, prüfbare Quellenprotokolle
 ├── scripts/
 │   ├── history.py          ← Pool: Ingest/Dedup, Rotation, Zeitraum-Filter
 │   ├── render.py           ← Generator: merged briefing.json in den Pool → schreibt site/
+│   ├── validate_research_audit.py ← prüft die vollständige Quellenabdeckung
 │   ├── update.py           ← optionaler Standalone-Weg zur Recherche (siehe unten)
 │   └── test/               ← Unit-Tests (nur Standardbibliothek)
 └── site/                   ← generierte statische Seiten (kein JavaScript)
@@ -124,6 +126,22 @@ jedem Bereich drei Versuche und erzwingt das Antwortformat über Structured Outp
 letzte Versuch fällt bewusst auf freien Text zurück. Ein Bereich, der alle Versuche
 verbraucht, behält seinen vorherigen Stand. Exit-Code 1 gibt es nur, wenn kein einziger
 Bereich aktualisiert werden konnte.
+
+### Quellenprotokoll
+
+Jeder Cron-Lauf erzeugt zusätzlich `data/research-audit/YYYY-MM-DD.json`. Das Protokoll
+enthält für jede priorisierte Quelle die tatsächlich geprüfte URL, den Status und ein
+kurzes Ergebnis. `scripts/validate_research_audit.py` akzeptiert den Lauf nur, wenn alle
+30 festgelegten Quellen genau einmal dokumentiert sind und jede URL zur angegebenen
+Quelle gehört. Ein fehlendes oder unvollständiges Protokoll blockiert Commit und
+Veröffentlichung. Das Protokoll ist bewusst versioniert, damit später nachvollziehbar
+bleibt, welche Quellen vor der Aussage „keine Meldung“ geprüft wurden.
+
+Beispiel:
+
+```bash
+python3 scripts/validate_research_audit.py data/research-audit/2026-09-07.json 2026-09-07
+```
 
 ### Wenn ein Bereich nicht aktualisiert wird
 
