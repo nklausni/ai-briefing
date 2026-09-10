@@ -2,8 +2,8 @@
   "meta": {
     "title": "AI-Briefing",
     "subtitle": "Multi-Briefing · Privates AI-Briefing",
-    "period": "8.–9. September 2026",
-    "generated": "2026-09-09",
+    "period": "9.–10. September 2026",
+    "generated": "2026-09-10",
     "intro": "Pro Themenbereich die wichtigsten Meldungen des Zeitraums, jeweils mit eigenem Detail-Report (inkl. Radar). Die farbigen Punkte zeigen die Themen-Kategorie, die ●-Skala den Impact.",
     "disclaimer": "Hinweis: Alle Infos auf eigene Gefahr. Dies ist ein privates Projekt, automatisch generiert aus Web-Recherche.",
     "host": "Niko Klausnitzer"
@@ -73,19 +73,19 @@
       "name": "AI News",
       "group": "Überblick",
       "angle": "Allgemeine AI-Industrie: Modell-Releases, Plattformen, Regulierung und Markt",
-      "summary": "Google DeepMind veröffentlicht AlphaGenome Atlas mit Vorhersagen für 9 Milliarden DNA-Varianten.",
+      "summary": "OpenAI erweitert GPT-6 Astra für den Arbeitseinsatz um Enterprise-Plugins und kontrollierbaren Zugriff auf Unternehmenssysteme.",
       "items": [
         {
           "n": 1,
-          "title": "Google DeepMind veröffentlicht AlphaGenome Atlas",
-          "category": "modelle",
-          "impact": 3,
-          "date": "08.09.2026",
-          "summary": "Google DeepMind stellt AlphaGenome Atlas als frei zugängliche Forschungsplattform mit vorab berechneten Vorhersagen für die molekularen Effekte von 9 Milliarden möglichen Einzelbasenvarianten vor. Ergänzend bündelt der neue AVI-Score Vorhersagen aus AlphaGenome und AlphaMissense, damit Forschende Varianten priorisieren und zugleich deren potenzielle molekulare Wirkung einordnen können. Die Angaben sind Forschungsergebnisse und nicht für klinische Entscheidungen validiert.",
+          "title": "OpenAI ergänzt GPT-6 Astra um Enterprise-Plugins und Zugriffskontrollen",
+          "category": "business",
+          "impact": 4,
+          "date": "09.09.2026",
+          "summary": "OpenAI positioniert GPT-6 Astra nun für ChatGPT Work, Codex und API-Nutzung in Unternehmen. Neu dokumentiert sind Desktop-Plugins für Oracle Analytics, Power BI, Navan und Avalara sowie Admin-Kontrollen für freigegebene Websites und Desktop-Apps, Uploads, Downloads und Browserverlauf. Das ist eine substanzielle Erweiterung des gestern berichteten Modellrollouts in Richtung bestehender Unternehmensanwendungen.",
           "sources": [
             {
-              "label": "Google DeepMind",
-              "url": "https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/"
+              "label": "OpenAI",
+              "url": "https://openai.com/index/gpt-6-astra-next-generation-work/"
             }
           ]
         }
@@ -97,12 +97,12 @@
       "name": "Lokale LLMs",
       "group": "Überblick",
       "angle": "On-Device- und Open-Weight-Modelle: lokal lauffähig, datenschutz- und kostenrelevant",
-      "summary": "Für diesen Bereich fand sich im Zeitraum 08./09.09.2026 keine belastbar datierte, eigenständige Entwicklung mit ausreichender Relevanz.",
+      "summary": "Für diesen Bereich fand sich im Zeitraum 09./10.09.2026 keine belastbar datierte, eigenständige Entwicklung mit ausreichender Relevanz.",
       "items": [],
       "skip": [
         {
           "reason": "Keine neue eigenständige Entwicklung im Zeitraum",
-          "text": "Die vollständige Quellenprüfung ergab keine verifizierte neue Veröffentlichung mit ausreichender Eigenständigkeit für diesen Bereich."
+          "text": "Die vollständige Quellenprüfung ergab kein verifiziertes neues Open-Weight-, On-Device- oder lokales Laufzeit-Release."
         }
       ]
     },
@@ -111,33 +111,19 @@
       "name": "Agentic Engineering / Vibe Coding",
       "group": "Praxis",
       "angle": "Coding-Agenten, Workflows, Reviewer-Disziplin und Agent-Governance",
-      "summary": "GitHub macht GPT-6 Astra in Copilot allgemein verfügbar und ergänzt die JetBrains-Integration um zentral verwaltete Sandbox-Regeln.",
+      "summary": "Mistral beschreibt einen strukturierten, menschlich überprüften Agentenworkflow zur Modernisierung eines großen Fortran-Systems.",
       "items": [
         {
           "n": 1,
-          "title": "GPT-6 Astra ist allgemein in GitHub Copilot verfügbar",
+          "title": "Mistral setzt bei Legacy-Migration auf Agententeams mit Human Review",
           "category": "agents",
-          "impact": 3,
-          "date": "08.09.2026",
-          "summary": "GitHub stellt GPT-6 Astra schrittweise für Copilot Pro+, Max, Business und Enterprise bereit. Das Modell kann in Editor, CLI, Coding Agent, App und weiteren Copilot-Oberflächen ausgewählt werden; Organisationen können den Zugriff über Modellrichtlinien steuern. Für Teams ist das ein breiterer, administrierbarer Zugang zu einem bereits angekündigten Modell, nicht dessen neuer Modellstart.",
+          "impact": 4,
+          "date": "09.09.2026",
+          "summary": "Mistral berichtet über die Migration von 40.000 Zeilen Fortran 77 eines europäischen Energiebetreibers nach C++. Statt vollautonomer Übersetzung nutzte das Team einen Ablauf aus Planung, Implementierung, Tests und Code-Review mit menschlichen Freigaben; ein Parity-Harness verglich dabei numerische Zwischen- und Endergebnisse. Der Fall liefert ein konkretes Muster für lange Coding-Agentenläufe: erst prüfbare Referenzen und Dokumentation schaffen, dann begrenzte Module bearbeiten.",
           "sources": [
             {
-              "label": "GitHub Blog",
-              "url": "https://github.blog/changelog/2026-09-08-gpt-6-astra-is-generally-available-in-github-copilot/"
-            }
-          ]
-        },
-        {
-          "n": 2,
-          "title": "Copilot für JetBrains erhält zentral verwaltete Sandbox-Regeln",
-          "category": "security",
-          "impact": 3,
-          "date": "08.09.2026",
-          "summary": "GitHub ergänzt Copilot in JetBrains-IDs in einer Public Preview um zentral steuerbare Sandbox-Vorgaben. Administratoren können unter anderem Aktivierung, Datei- und Netzwerkzugriff, Proxy, Entwicklerwerkzeuge und macOS-Keychain regeln; verwaltete Vorgaben übersteuern lokale Einstellungen. Das schafft eine konkrete Kontrollschicht für agentische Entwicklungsumgebungen.",
-          "sources": [
-            {
-              "label": "GitHub Blog",
-              "url": "https://github.blog/changelog/2026-09-08-enterprise-managed-sandbox-in-copilot-for-jetbrains/"
+              "label": "Mistral",
+              "url": "https://mistral.ai/news/legacy-code-modernization/"
             }
           ]
         }
@@ -149,33 +135,19 @@
       "name": "AI Tools",
       "group": "Praxis",
       "angle": "IDEs, Assistenten und Plattformen für den täglichen Einsatz",
-      "summary": "GitHub erweitert Copilot mit GPT-6 Astra und mit administrierbaren Sandbox- sowie Kontextfunktionen für JetBrains.",
+      "summary": "ChatGPT Desktop erhält Enterprise-Plugins für ausgewählte Geschäftsanwendungen; die Nutzung von GPT-6 Astra lässt sich dabei administrativ begrenzen.",
       "items": [
         {
           "n": 1,
-          "title": "GPT-6 Astra erreicht die GitHub-Copilot-Oberflächen",
+          "title": "ChatGPT Desktop startet Enterprise-Plugins für Geschäftsanwendungen",
           "category": "tools",
           "impact": 3,
-          "date": "08.09.2026",
-          "summary": "GitHub rollt GPT-6 Astra für Copilot Pro+, Max, Business und Enterprise aus. Der Modellwähler deckt unter anderem VS Code, Visual Studio, Copilot CLI, Coding Agent, GitHub-App und JetBrains ab; der Rollout erfolgt schrittweise und bleibt für Organisationen per Richtlinie steuerbar.",
+          "date": "09.09.2026",
+          "summary": "OpenAI führt für ChatGPT Desktop Plugins von Oracle Analytics, Power BI, Navan und Avalara ein, die auf Browser-Use-Funktionen aufbauen. Parallel können Unternehmen die Nutzung von GPT-6 Astra auf zugelassene Websites und Desktop-Anwendungen beschränken sowie Uploads, Downloads und Browserverlauf steuern.",
           "sources": [
             {
-              "label": "GitHub Blog",
-              "url": "https://github.blog/changelog/2026-09-08-gpt-6-astra-is-generally-available-in-github-copilot/"
-            }
-          ]
-        },
-        {
-          "n": 2,
-          "title": "JetBrains-Copilot verbindet CLI-Sitzungen mit IDE-Kontext",
-          "category": "tools",
-          "impact": 3,
-          "date": "08.09.2026",
-          "summary": "Die JetBrains-Erweiterung verbindet Copilot-CLI-Sitzungen per /ide mit Auswahl, Diagnosen und Dateireferenzen aus der IDE. Zusätzlich lassen sich globale Dateien und Ordner als Chat-Kontext hinterlegen; die neuen Sandbox-Richtlinien und Diagnosen adressieren zugleich den kontrollierten Einsatz in Organisationen.",
-          "sources": [
-            {
-              "label": "GitHub Blog",
-              "url": "https://github.blog/changelog/2026-09-08-enterprise-managed-sandbox-in-copilot-for-jetbrains/"
+              "label": "OpenAI",
+              "url": "https://openai.com/index/gpt-6-astra-next-generation-work/"
             }
           ]
         }
@@ -187,43 +159,33 @@
       "name": "Context & Prompt Engineering",
       "group": "Praxis",
       "angle": "Kontextsteuerung, Prompting und Agent-Design: was im Kontextfenster landet, entscheidet über Qualität und Kosten",
-      "summary": "GitHub ergänzt Copilot für JetBrains um globalen Projektkontext und eine Brücke zwischen Terminal-Agent und IDE.",
-      "items": [
+      "summary": "Für Kontext- und Prompt Engineering fand sich im Zeitraum keine belastbar datierte, eigenständige Entwicklung mit ausreichender Relevanz.",
+      "items": [],
+      "skip": [
         {
-          "n": 1,
-          "title": "Copilot für JetBrains erhält globalen Projektkontext",
-          "category": "agents",
-          "impact": 3,
-          "date": "08.09.2026",
-          "summary": "In der JetBrains-Integration können Teams globale Dateien und Ordner zum Chat-Kontext hinzufügen, um wiederkehrende Projektinformationen nicht pro Anfrage neu zusammenzustellen. Über /ide kann Copilot CLI außerdem Auswahlen, Diagnosen und Dateireferenzen der IDE nutzen. Das ist ein konkretes Produktupdate für konsistenten Kontext in terminal- und IDE-übergreifenden Agentenläufen.",
-          "sources": [
-            {
-              "label": "GitHub Blog",
-              "url": "https://github.blog/changelog/2026-09-08-enterprise-managed-sandbox-in-copilot-for-jetbrains/"
-            }
-          ]
+          "reason": "Keine neue eigenständige Entwicklung im Zeitraum",
+          "text": "Die vollständige Quellenprüfung ergab keine verifizierte Veröffentlichung zu Kontextsteuerung, Prompting, Token-Effizienz oder Agent-Memory mit ausreichender Eigenständigkeit."
         }
-      ],
-      "skip": []
+      ]
     },
     {
       "id": "ai-security",
       "name": "AI Security & Safety",
       "group": "Sicherheit & Recht",
       "angle": "Sicherheit von AI-Systemen und -Agenten: Angriffsflächen, Schutzmechanismen und automatisierte Schwachstellensuche",
-      "summary": "GitHub führt für Copilot in JetBrains zentral verwaltete Sandbox-Vorgaben ein, die Rechte des Agenten am Entwicklungsrechner begrenzen können.",
+      "summary": "OpenAI dokumentiert für GPT-6 Astra neue technische und organisatorische Grenzen für Computer-Use in Unternehmensumgebungen.",
       "items": [
         {
           "n": 1,
-          "title": "Enterprise-Sandbox-Regeln für Copilot in JetBrains",
+          "title": "OpenAI ergänzt Astra um Freigaben und automatisierte Tool-Call-Prüfung",
           "category": "security",
-          "impact": 3,
-          "date": "08.09.2026",
-          "summary": "GitHub bringt administrierbare Sandbox-Policies für Copilot in JetBrains in die Public Preview. Sie können Datei- und Netzwerkzugriff, Proxy, Entwicklerwerkzeuge und macOS-Keychain kontrollieren; verwaltete Einschränkungen haben Vorrang vor lokalen Nutzeroptionen. Das reduziert nicht jede Agenten- oder Prompt-Injection-Gefahr, schafft aber eine durchsetzbare Rechtegrenze im IDE-Client.",
+          "impact": 4,
+          "date": "09.09.2026",
+          "summary": "Für ChatGPT Work und Codex nennt OpenAI Confirmation Policies für folgenreiche Aktionen sowie eine automatisierte Prüfung potenziell unsicherer oder nicht autorisierter Tool-Aufrufe. Ergänzend können Organisationen Websites, Desktop-Apps sowie Datenbewegungen einschränken. Diese Kontrollen ersetzen keine Anwendungssicherheit, schaffen aber konkrete Durchsetzungs- und Freigabepunkte für Computer-Use.",
           "sources": [
             {
-              "label": "GitHub Blog",
-              "url": "https://github.blog/changelog/2026-09-08-enterprise-managed-sandbox-in-copilot-for-jetbrains/"
+              "label": "OpenAI",
+              "url": "https://openai.com/index/gpt-6-astra-next-generation-work/"
             }
           ]
         }
@@ -235,19 +197,19 @@
       "name": "AI Governance & Regulierung",
       "group": "Sicherheit & Recht",
       "angle": "Regeln, Recht, Lizenzen und Budgets für AI im Unternehmen: was Compliance und Kostensteuerung verlangen",
-      "summary": "GitHub macht die Rechte von Copilot-Agenten in JetBrains durch zentral verwaltete Sandbox-Policies und lokale Diagnosen überprüfbarer.",
+      "summary": "OpenAI macht die Einführung von GPT-6 Astra in Unternehmen über stufenweise Rechte, Freigaben und administrative Grenzen steuerbar.",
       "items": [
         {
           "n": 1,
-          "title": "GitHub ergänzt Copilot um überprüfbare Enterprise-Sandbox-Policies",
+          "title": "Astra erhält administrative Grenzen für Unternehmenszugriffe",
           "category": "security",
-          "impact": 3,
-          "date": "08.09.2026",
-          "summary": "Copilot für JetBrains erhält zentral konfigurierbare Sandbox-Einstellungen; Organisationen können damit technische Zugriffsgrenzen vorgeben, die lokale Einstellungen übersteuern. Neue Policy-Diagnosen zeigen auf dem Gerät, ob die Vorgaben erkannt und durchgesetzt werden. Damit wird Agenten-Governance von einer Richtlinie zu einer überprüfbaren Client-Konfiguration.",
+          "impact": 4,
+          "date": "09.09.2026",
+          "summary": "OpenAI ergänzt den Einsatz von GPT-6 Astra in ChatGPT Work und Codex um Admin-Kontrollen für zugelassene Websites und Desktop-Anwendungen, Datenübertragungen und Browserverlauf. Confirmation Policies und automatisierte Prüfung von Tool-Aufrufen erlauben einen schrittweisen Rollout statt eines uneingeschränkten Agentenzugriffs. Das konkretisiert Governance als konfigurierbare Betriebsgrenze.",
           "sources": [
             {
-              "label": "GitHub Blog",
-              "url": "https://github.blog/changelog/2026-09-08-enterprise-managed-sandbox-in-copilot-for-jetbrains/"
+              "label": "OpenAI",
+              "url": "https://openai.com/index/gpt-6-astra-next-generation-work/"
             }
           ]
         }
@@ -259,33 +221,33 @@
       "name": "Enterprise & Vertikalisierung",
       "group": "Markt & Branchen",
       "angle": "AI in Branchen und Unternehmen: Vertikalisierung, Verdrängung klassischer Software und Augmentation",
-      "summary": "GitHub erweitert Copilot für Unternehmen mit GPT-6 Astra und zentralen Sandbox-Richtlinien für JetBrains.",
+      "summary": "OpenAI erweitert Astra um Unternehmensintegrationen und Zugriffskontrollen; Mistral zeigt einen überprüfbaren Agentenprozess für die Modernisierung alter Kernsoftware.",
       "items": [
         {
           "n": 1,
-          "title": "GPT-6 Astra wird für GitHub-Copilot-Unternehmenspläne ausgerollt",
+          "title": "OpenAI verbindet GPT-6 Astra mit Enterprise-Plugins und Administrationsgrenzen",
           "category": "business",
-          "impact": 3,
-          "date": "08.09.2026",
-          "summary": "GitHub macht GPT-6 Astra für Copilot Business und Enterprise sowie für Pro+- und Max-Nutzer verfügbar. Administratoren können das Modell über die Copilot-Modellrichtlinie steuern; die Bereitstellung erfolgt schrittweise über Entwicklungsumgebungen, CLI und Coding Agent.",
+          "impact": 4,
+          "date": "09.09.2026",
+          "summary": "OpenAI stellt GPT-6 Astra für ChatGPT Work, Codex und API heraus und ergänzt ChatGPT Desktop um Plugins für Oracle Analytics, Power BI, Navan und Avalara. Unternehmen können den Zugriff zudem auf genehmigte Websites und Desktop-Anwendungen begrenzen sowie Datenbewegungen und Browserverlauf steuern.",
           "sources": [
             {
-              "label": "GitHub Blog",
-              "url": "https://github.blog/changelog/2026-09-08-gpt-6-astra-is-generally-available-in-github-copilot/"
+              "label": "OpenAI",
+              "url": "https://openai.com/index/gpt-6-astra-next-generation-work/"
             }
           ]
         },
         {
           "n": 2,
-          "title": "GitHub zentralisiert Copilot-Sandbox-Regeln in JetBrains",
-          "category": "security",
-          "impact": 3,
-          "date": "08.09.2026",
-          "summary": "Unternehmen können für Copilot in JetBrains in einer Public Preview Sandbox-Verhalten und Zugriffe auf Dateisystem, Netzwerk, Proxy und Entwicklerwerkzeuge zentral regeln. Die Durchsetzung lokaler Richtlinien lässt sich über neue Diagnosefunktionen prüfen, was die Einführung von Coding-Agenten in verwalteten Umgebungen erleichtert.",
+          "title": "Mistral zeigt agentengestützte Modernisierung von 40.000 Zeilen Fortran",
+          "category": "business",
+          "impact": 4,
+          "date": "09.09.2026",
+          "summary": "Mistral beschreibt die Umstellung eines physikintensiven Reservoirsimulators eines europäischen Energiebetreibers von Fortran 77 auf C++. Das Projekt kombiniert über hundert Dokumentationsagenten mit einem human-in-the-loop Ablauf für Planung, Implementierung, Tests und Review; ein numerischer Parity-Harness dient als Freigabekriterium. Für Unternehmen ist das ein belastbarer Ansatz, Agentenarbeit an nachweisbare Qualitätsgrenzen zu koppeln.",
           "sources": [
             {
-              "label": "GitHub Blog",
-              "url": "https://github.blog/changelog/2026-09-08-enterprise-managed-sandbox-in-copilot-for-jetbrains/"
+              "label": "Mistral",
+              "url": "https://mistral.ai/news/legacy-code-modernization/"
             }
           ]
         }
