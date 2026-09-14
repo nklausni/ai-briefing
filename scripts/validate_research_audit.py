@@ -40,6 +40,8 @@ SOURCES = (
     ("ai.meta.com", "Meta AI"),
     ("mistral.ai", "Mistral"),
     ("x.ai", "xAI"),
+    ("openclaw.ai", "OpenClaw Blog"),
+    ("shopify.engineering", "Shopify Engineering"),
     ("reuters.com", "Reuters AI"),
     ("technologyreview.com", "MIT Technology Review"),
     ("cohere.com", "Cohere"),
