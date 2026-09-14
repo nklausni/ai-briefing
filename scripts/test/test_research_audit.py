@@ -30,9 +30,10 @@ class TestResearchAuditValidation(unittest.TestCase):
 
     def test_expected_source_set_includes_expanded_coverage(self):
         domains = {domain for domain, _ in validator.SOURCES}
-        self.assertEqual(len(domains), 40)
+        self.assertEqual(len(domains), 41)
         self.assertTrue(
             {
+                "openrouter.ai",
                 "openclaw.ai",
                 "shopify.engineering",
                 "reuters.com",

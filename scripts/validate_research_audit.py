@@ -17,6 +17,7 @@ SOURCES = (
     ("venturebeat.com", "VentureBeat"),
     ("anthropic.com", "Anthropic"),
     ("openai.com", "OpenAI"),
+    ("openrouter.ai", "OpenRouter Blog"),
     ("blog.google", "Google AI Blog"),
     ("microsoft.ai", "Microsoft AI"),
     ("arxiv.org", "arXiv"),
