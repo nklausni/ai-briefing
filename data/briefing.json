@@ -2,8 +2,8 @@
   "meta": {
     "title": "AI-Briefing",
     "subtitle": "Multi-Briefing · Privates AI-Briefing",
-    "period": "13.–14. September 2026",
-    "generated": "2026-09-14",
+    "period": "14.–15. September 2026",
+    "generated": "2026-09-15",
     "intro": "Pro Themenbereich die wichtigsten Meldungen des Zeitraums, jeweils mit eigenem Detail-Report (inkl. Radar). Die farbigen Punkte zeigen die Themen-Kategorie, die ●-Skala den Impact.",
     "disclaimer": "Hinweis: Alle Infos auf eigene Gefahr. Dies ist ein privates Projekt, automatisch generiert aus Web-Recherche.",
     "host": "Niko Klausnitzer"
@@ -73,23 +73,41 @@
       "name": "AI News",
       "group": "Überblick",
       "angle": "Allgemeine AI-Industrie: Modell-Releases, Plattformen, Regulierung und Markt",
-      "summary": "Die Initiative führender AI-Labore für ein langsameres Wachstum der Modellfähigkeiten stößt auf offenen Widerstand aus Washington und Peking.",
+      "summary": "Apple bringt Siri AI in den Massenmarkt, während Microsoft konkrete Verhaltensgrenzen für die nächste Generation eigener Modelle zur Diskussion stellt.",
       "items": [
         {
           "n": 1,
-          "title": "Sicherheitsinitiative der AI-Labore stößt auf Widerstand aus Washington und Peking",
-          "category": "business",
+          "title": "Apple veröffentlicht iOS 27 und macOS 27 mit Siri AI",
+          "category": "tools",
           "impact": 4,
           "date": "2026-09-14",
-          "summary": "Die am Wochenende von Anthropic-Chef Dario Amodei angestoßene Initiative für ein langsameres Wachstum der Modellfähigkeiten trifft auf politischen Widerstand: US-Präsident Donald Trump weist die Warnungen als überzogen zurück und priorisiert den Vorsprung der USA. Chinas staatsnahe Global Times bezeichnet den Vorschlag wegen geforderter Chipkontrollen und Maßnahmen gegen Modelldestillation als „Cold-War-Playbook“. Damit wird sichtbar, wie schwer gemeinsame Sicherheitsgrenzen ohne belastbare internationale Kontrolle durchsetzbar sind.",
+          "summary": "Apple liefert seine großen Betriebssystemupdates aus und startet Siri AI zunächst als englischsprachige Beta. Der Assistent nutzt persönlichen Kontext, Bildschirminhalte, Webwissen und systemweite App-Aktionen; damit wird ein tief in Betriebssystem und Anwendungen integrierter AI-Assistent für unterstützte Geräte praktisch verfügbar.",
           "sources": [
             {
-              "label": "Reuters – Reaktion aus den USA",
-              "url": "https://www.reuters.com/world/europe/trump-says-very-negative-forces-raising-exaggerated-concerns-over-ai-2026-09-13/"
+              "label": "Apple Newsroom",
+              "url": "https://apple.com/newsroom/2026/09/major-updates-for-apples-software-platforms-are-now-available"
             },
             {
-              "label": "Reuters – Reaktion aus China",
-              "url": "https://www.reuters.com/world/china/china-state-newspaper-blasts-anthropics-calls-slow-ai-cold-war-tactic-2026-09-14/"
+              "label": "Ars Technica",
+              "url": "https://arstechnica.com/apple/2026/09/apple-releases-ios-27-macos-golden-gate-27-with-siri-ai-and-liquid-glass-refinements/"
+            }
+          ]
+        },
+        {
+          "n": 2,
+          "title": "Microsoft legt ersten Verhaltenskodex für eigene MAI-Modelle vor",
+          "category": "security",
+          "impact": 3,
+          "date": "2026-09-14",
+          "summary": "Microsoft AI veröffentlicht einen Entwurf, nach dem seine Modelle menschlicher Kontrolle untergeordnet bleiben, Abschaltung und Korrektur nicht widerstehen und weder ihren Auftrag eigenmächtig ausweiten noch Aufsicht umgehen sollen. Der Entwurf ist sechs Wochen öffentlich kommentierbar; aktuelle Modelle sind noch nicht darauf trainiert und der Evaluationsrahmen ist noch im Aufbau.",
+          "sources": [
+            {
+              "label": "Microsoft AI",
+              "url": "https://microsoft.ai/news/mai-code-of-conduct/"
+            },
+            {
+              "label": "Computerworld",
+              "url": "https://www.computerworld.com/article/4221862/microsofts-ai-code-of-conduct-aims-to-curb-ai-behavior.html"
             }
           ]
         }
@@ -101,107 +119,169 @@
       "name": "Lokale LLMs",
       "group": "Überblick",
       "angle": "On-Device- und Open-Weight-Modelle: lokal lauffähig, datenschutz- und kostenrelevant",
-      "summary": "Für lokale LLMs fand sich im Zeitraum keine belastbar datierte, eigenständige Entwicklung mit ausreichender Relevanz.",
-      "items": [],
-      "skip": [
+      "summary": "Apple liefert mit AFM 3 einen hybriden lokalen und cloudgestützten Modellstack direkt über seine neuen Betriebssysteme aus.",
+      "items": [
         {
-          "reason": "Keine neue eigenständige Entwicklung im Zeitraum",
-          "text": "Für lokale LLMs fand sich im Zeitraum keine belastbar datierte, eigenständige Entwicklung mit ausreichender Relevanz."
+          "n": 1,
+          "title": "Apple bringt AFM-3-Modelle mit iOS 27 und macOS 27 auf unterstützte Geräte",
+          "category": "lokal",
+          "impact": 4,
+          "date": "2026-09-14",
+          "summary": "Siri AI und weitere Apple-Intelligence-Funktionen stützen sich auf Apples AFM-3-Familie. Lokal arbeiten ein 3-Milliarden-Parameter-Modell und eine sparse 20-Milliarden-Variante, die je Anfrage nur ein bis vier Milliarden Parameter aktiviert; leistungsfähigere Aufgaben können an Apples Cloud-Modelle gehen. Das ist ein relevanter hybrider On-Device-/Cloud-Ansatz, auch wenn Siri AI zunächst nur als englische Beta startet.",
+          "sources": [
+            {
+              "label": "Apple Newsroom",
+              "url": "https://apple.com/newsroom/2026/09/major-updates-for-apples-software-platforms-are-now-available"
+            },
+            {
+              "label": "Ars Technica",
+              "url": "https://arstechnica.com/apple/2026/09/apple-releases-ios-27-macos-golden-gate-27-with-siri-ai-and-liquid-glass-refinements/"
+            }
+          ]
         }
-      ]
+      ],
+      "skip": []
     },
     {
       "id": "agentic-engineering",
       "name": "Agentic Engineering / Vibe Coding",
       "group": "Praxis",
       "angle": "Coding-Agenten, Workflows, Reviewer-Disziplin und Agent-Governance",
-      "summary": "Für Agentic Engineering fand sich im Zeitraum keine belastbar datierte, eigenständige Entwicklung mit ausreichender Relevanz.",
-      "items": [],
-      "skip": [
+      "summary": "Copilot macht die automatische Modellwahl über drei Kosten- und Qualitätsprofile steuerbar und verankert Routing damit direkt im Coding-Workflow.",
+      "items": [
         {
-          "reason": "Keine neue eigenständige Entwicklung im Zeitraum",
-          "text": "Für Agentic Engineering fand sich im Zeitraum keine belastbar datierte, eigenständige Entwicklung mit ausreichender Relevanz."
+          "n": 1,
+          "title": "GitHub Copilot lässt Kosten, Qualität und Latenz der automatischen Modellwahl gewichten",
+          "category": "agents",
+          "impact": 3,
+          "date": "2026-09-14",
+          "summary": "Copilot Auto erhält die Stufen Efficiency, Balance und Intelligence. Für jeden Prompt wählt Copilot weiterhin selbst ein Modell, berücksichtigt dabei aber die gewählte Priorität; selbst im Intelligence-Modus können einfache Aufgaben an kleinere Modelle gehen. Die Funktion rollt für VS Code, Copilot CLI und die Copilot-App aus und macht Modellrouting zu einer expliziten Workflow-Entscheidung.",
+          "sources": [
+            {
+              "label": "GitHub Changelog",
+              "url": "https://github.blog/changelog/2026-09-14-configure-cost-and-quality-in-copilot-auto-model-selection/"
+            }
+          ]
         }
-      ]
+      ],
+      "skip": []
     },
     {
       "id": "ai-tools",
       "name": "AI Tools",
       "group": "Praxis",
       "angle": "IDEs, Assistenten und Plattformen für den täglichen Einsatz",
-      "summary": "Für AI Tools fand sich im Zeitraum keine belastbar datierte, eigenständige Entwicklung mit ausreichender Relevanz.",
-      "items": [],
-      "skip": [
+      "summary": "Apple integriert AI tief in seine Betriebssysteme; GitHub ergänzt Copilot um steuerbares automatisches Modellrouting.",
+      "items": [
         {
-          "reason": "Keine neue eigenständige Entwicklung im Zeitraum",
-          "text": "Für AI Tools fand sich im Zeitraum keine belastbar datierte, eigenständige Entwicklung mit ausreichender Relevanz."
+          "n": 1,
+          "title": "Apple liefert Siri AI und promptbasierte Automationen mit seinen Betriebssystemupdates aus",
+          "category": "tools",
+          "impact": 4,
+          "date": "2026-09-14",
+          "summary": "iOS 27 und macOS 27 bringen Siri AI, promptbasierte Kurzbefehle und Safari-Erweiterungen sowie neue Bildfunktionen auf unterstützte Geräte. Siri kann persönlichen Kontext und Bildschirminhalte einbeziehen und über Apps hinweg handeln; für Nutzer entsteht damit eine systemweite Alternative zu separat geöffneten Chat- und Agentenwerkzeugen.",
+          "sources": [
+            {
+              "label": "Apple Newsroom",
+              "url": "https://apple.com/newsroom/2026/09/major-updates-for-apples-software-platforms-are-now-available"
+            },
+            {
+              "label": "Ars Technica",
+              "url": "https://arstechnica.com/apple/2026/09/apple-releases-ios-27-macos-golden-gate-27-with-siri-ai-and-liquid-glass-refinements/"
+            }
+          ]
+        },
+        {
+          "n": 2,
+          "title": "Copilot Auto erhält Profile für Effizienz, Balance und Intelligenz",
+          "category": "tools",
+          "impact": 3,
+          "date": "2026-09-14",
+          "summary": "GitHub erweitert die automatische Modellwahl in Copilot um drei Profile, die Kosten, Qualität und Antwortzeit unterschiedlich gewichten. Das schafft eine einfache Steuerung für tägliche Nutzung, ersetzt aber keine Kostentransparenz: Abgerechnet wird weiterhin nach dem tatsächlich ausgewählten Modell.",
+          "sources": [
+            {
+              "label": "GitHub Changelog",
+              "url": "https://github.blog/changelog/2026-09-14-configure-cost-and-quality-in-copilot-auto-model-selection/"
+            }
+          ]
         }
-      ]
+      ],
+      "skip": []
     },
     {
       "id": "context-engineering",
       "name": "Context & Prompt Engineering",
       "group": "Praxis",
       "angle": "Kontextsteuerung, Prompting und Agent-Design: was im Kontextfenster landet, entscheidet über Qualität und Kosten",
-      "summary": "Für Context & Prompt Engineering fand sich im Zeitraum keine belastbar datierte, eigenständige Entwicklung mit ausreichender Relevanz.",
-      "items": [],
-      "skip": [
+      "summary": "GitHub macht promptweises Modellrouting nach Aufgabenkomplexität, Kosten, Latenz und Qualitätsziel zu einem sichtbaren Teil des Kontextdesigns.",
+      "items": [
         {
-          "reason": "Keine neue eigenständige Entwicklung im Zeitraum",
-          "text": "Für Context & Prompt Engineering fand sich im Zeitraum keine belastbar datierte, eigenständige Entwicklung mit ausreichender Relevanz."
+          "n": 1,
+          "title": "Copilot bewertet jeden Prompt neu für die automatische Modellwahl",
+          "category": "agents",
+          "impact": 3,
+          "date": "2026-09-14",
+          "summary": "GitHubs Auto-Modus entscheidet pro Prompt, welches verfügbare Modell zur Aufgabe und zum gewählten Zielprofil passt. Die Trennung zwischen Efficiency, Balance und Intelligence macht deutlich, dass Kontext und Aufgabenkomplexität nicht pauschal ein großes Modell erfordern, sondern als Routing-Signal für Kosten, Latenz und Qualität dienen können.",
+          "sources": [
+            {
+              "label": "GitHub Changelog",
+              "url": "https://github.blog/changelog/2026-09-14-configure-cost-and-quality-in-copilot-auto-model-selection/"
+            }
+          ]
         }
-      ]
+      ],
+      "skip": []
     },
     {
       "id": "ai-security",
       "name": "AI Security & Safety",
       "group": "Sicherheit & Recht",
       "angle": "Sicherheit von AI-Systemen und -Agenten: Angriffsflächen, Schutzmechanismen und automatisierte Schwachstellensuche",
-      "summary": "Für AI Security & Safety fand sich im Zeitraum keine belastbar datierte, eigenständige Entwicklung mit ausreichender Relevanz.",
-      "items": [],
-      "skip": [
+      "summary": "Microsoft formuliert konkrete Grenzen gegen Kontrollverlust, kann deren technische Wirksamkeit für aktuelle Modelle aber noch nicht belegen.",
+      "items": [
         {
-          "reason": "Keine neue eigenständige Entwicklung im Zeitraum",
-          "text": "Für AI Security & Safety fand sich im Zeitraum keine belastbar datierte, eigenständige Entwicklung mit ausreichender Relevanz."
+          "n": 1,
+          "title": "Microsoft definiert absolute Grenzen gegen Aufsichtsumgehung und schädliche Autonomie",
+          "category": "security",
+          "impact": 3,
+          "date": "2026-09-14",
+          "summary": "Der Entwurf für MAI-Modelle untersagt unter anderem, menschliche Aufsicht durch Täuschung, Kollusion oder selbstverstärkende Mechanismen zu umgehen. Modelle sollen weder ihren eigenen Aufgabenbereich erweitern noch Abschaltung oder Korrektur widerstehen. Weil aktuelle Modelle noch nicht nach dem Kodex trainiert sind und die Evaluation erst entsteht, ist dies zunächst eine überprüfbare Absichtserklärung, noch kein nachgewiesener Schutz.",
+          "sources": [
+            {
+              "label": "Microsoft AI",
+              "url": "https://microsoft.ai/news/mai-code-of-conduct/"
+            },
+            {
+              "label": "Computerworld",
+              "url": "https://www.computerworld.com/article/4221862/microsofts-ai-code-of-conduct-aims-to-curb-ai-behavior.html"
+            }
+          ]
         }
-      ]
+      ],
+      "skip": []
     },
     {
       "id": "ai-governance",
       "name": "AI Governance & Regulierung",
       "group": "Sicherheit & Recht",
       "angle": "Regeln, Recht, Lizenzen und Budgets für AI im Unternehmen: was Compliance und Kostensteuerung verlangen",
-      "summary": "Der Vorschlag für gemeinsame Sicherheitsgrenzen spaltet Politik und Branche: Washington und Peking stellen geopolitischen Wettbewerb in den Vordergrund, während Cohere offene, evidenzbasierte Regeln statt Laborkoordination fordert.",
+      "summary": "Microsoft dokumentiert Grenzen für eigene Modelle, doch unabhängige Prüfbarkeit und konkrete Messverfahren bleiben offen.",
       "items": [
         {
           "n": 1,
-          "title": "Sicherheitsinitiative der AI-Labore stößt auf Widerstand aus Washington und Peking",
-          "category": "business",
-          "impact": 4,
+          "title": "Microsoft öffnet seinen MAI-Verhaltenskodex für sechs Wochen zur Konsultation",
+          "category": "security",
+          "impact": 3,
           "date": "2026-09-14",
-          "summary": "US-Präsident Donald Trump weist Forderungen nach einer Verlangsamung der AI-Entwicklung zurück und stellt den strategischen Vorsprung gegenüber China in den Mittelpunkt. Zugleich wertet Chinas staatsnahe Global Times den von Anthropic vorgeschlagenen Rahmen als Versuch, Chinas Entwicklung über Chipkontrollen und regulatorische Vorgaben auszubremsen. Für Governance verschiebt sich die Kernfrage damit von freiwilligen Laborstandards zu überprüfbarer internationaler Koordination.",
+          "summary": "Microsoft stellt seinen Humanist AI Code of Conduct öffentlich zur Diskussion und will ihn später als Trainings- und Evaluationsgrundlage für MAI-Modelle verwenden. Unabhängige Einordnung kritisiert, dass messbare Schwellen, externe Verifikation und der Evaluationsrahmen noch fehlen; Governance-relevant ist daher vor allem die ausdrücklich dokumentierte Priorität menschlicher Kontrolle vor maximaler Autonomie.",
           "sources": [
             {
-              "label": "Reuters – Reaktion aus den USA",
-              "url": "https://www.reuters.com/world/europe/trump-says-very-negative-forces-raising-exaggerated-concerns-over-ai-2026-09-13/"
+              "label": "Microsoft AI",
+              "url": "https://microsoft.ai/news/mai-code-of-conduct/"
             },
             {
-              "label": "Reuters – Reaktion aus China",
-              "url": "https://www.reuters.com/world/china/china-state-newspaper-blasts-anthropics-calls-slow-ai-cold-war-tactic-2026-09-14/"
-            }
-          ]
-        },
-        {
-          "n": 2,
-          "title": "Cohere fordert offene, evidenzbasierte Regeln statt Branchen-Selbstkoordination",
-          "category": "business",
-          "impact": 3,
-          "date": "2026-09-13",
-          "summary": "Cohere-CEO Aidan Gomez kritisiert den Vorschlag, wenige führende AI-Labore über eine kartellrechtliche Ausnahme gemeinsame Grenzen für Entwicklungsgeschwindigkeit und Standards setzen zu lassen. Er fordert stattdessen einen öffentlich entwickelten Risikorahmen, verpflichtende Transparenz sowie unabhängige, nach Evidenz und Risiko abgestufte Tests.",
-          "sources": [
-            {
-              "label": "Cohere",
-              "url": "https://cohere.com/blog/who-gets-to-define-the-rules-for-ai"
+              "label": "Computerworld",
+              "url": "https://www.computerworld.com/article/4221862/microsofts-ai-code-of-conduct-aims-to-curb-ai-behavior.html"
             }
           ]
         }
@@ -213,27 +293,23 @@
       "name": "Enterprise & Vertikalisierung",
       "group": "Markt & Branchen",
       "angle": "AI in Branchen und Unternehmen: Vertikalisierung, Verdrängung klassischer Software und Augmentation",
-      "summary": "Anthropic verbindet gemeldete operative Profitabilität mit konkreteren Vorbereitungen für einen möglichen Börsengang an der Nasdaq.",
+      "summary": "Superhuman integriert Fathoms Meetingwissen als zusätzlichen Kontext in seine verbundene Suite aus Apps und Agenten.",
       "items": [
         {
           "n": 1,
-          "title": "Anthropic meldet zweites profitables Quartal und wählt Nasdaq für möglichen Börsengang",
+          "title": "Superhuman übernimmt Fathom und führt Meeting-Kontext in seine Agentenplattform",
           "category": "business",
           "impact": 3,
-          "date": "2026-09-13",
-          "summary": "Anthropic hat laut einem Bericht der Financial Times seinen Anteilseignern für das zweite Quartal in Folge ein positives bereinigtes operatives Ergebnis in Aussicht gestellt; Reuters konnte die Angaben nicht unabhängig bestätigen. Separat berichten Reuters und CNBC, dass Anthropic Nasdaq für einen möglichen Börsengang ausgewählt hat. Die Kombination aus gemeldeter Profitabilität und konkreter Börsenvorbereitung macht die wirtschaftliche Reife führender Modellanbieter sichtbarer, bleibt aber teilweise auf Medienberichte gestützt.",
+          "date": "2026-09-14",
+          "summary": "Superhuman kauft den AI-Meetingassistenten Fathom und will Gesprächsprotokolle, Zusammenfassungen und Aufgaben mit E-Mail, Dokumenten, Datenbanken und seinen Agenten verbinden. Der bestehende Fathom-Dienst läuft zunächst unverändert weiter; ein Connector zu Superhuman Go ist bereits verfügbar. Strategisch wird Meetingwissen damit vom isolierten Notizarchiv zum Kontext für nachgelagerte Agentenaktionen.",
           "sources": [
             {
-              "label": "Reuters – Profitabilitätsbericht",
-              "url": "https://www.reuters.com/business/retail-consumer/anthropic-tells-investors-it-will-be-profitable-second-straight-quarter-ft-2026-09-13/"
+              "label": "Fathom",
+              "url": "https://www.fathom.ai/superhuman"
             },
             {
-              "label": "Reuters – Nasdaq-Auswahl",
-              "url": "https://www.reuters.com/business/anthropic-selects-nasdaq-ipo-business-insider-reports-2026-09-13/"
-            },
-            {
-              "label": "CNBC",
-              "url": "https://www.cnbc.com/2026/09/14/anthropic-walks-tightrope-to-nasdaq-pushing-slowdown-and-pursuing-ipo.html"
+              "label": "TechCrunch",
+              "url": "https://techcrunch.com/2026/09/14/superhuman-acquires-yc-backed-notetaker-fathom-as-productivity-platforms-push-for-agentic-work/"
             }
           ]
         }

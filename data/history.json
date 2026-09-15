@@ -2,135 +2,6 @@
  "items": [
   {
    "topic_id": "ai-news",
-   "title": "Nvidia veröffentlicht offenes Agentenmodell Nemotron 3.5 Lightning und Routing-Bibliothek NeMo Switchyard",
-   "category": "modelle",
-   "impact": 3,
-   "date": "2026-08-11",
-   "summary": "Nvidia erweitert seine offene Nemotron-3-Familie um Lightning, ein 30-Milliarden-Parameter-MoE-Modell für spezialisierte Aufgaben in dauerhaft laufenden Agentensystemen, das bis zu viermal schneller antwortet als vergleichbare offene Modelle. Parallel veröffentlicht Nvidia mit NeMo Switchyard eine Open-Source-Bibliothek, die einzelne Schritte eines Agenten-Workflows automatisch an das jeweils passende Modell weiterleitet – LangChain berichtet von 74 Prozent geringeren Kosten bei nur sechs Prozentpunkten Genauigkeitsverlust. Firmen wie CrowdStrike, Cognition und Ramp haben beide Bausteine bereits in eigene Agenten integriert.",
-   "sources": [
-    {
-     "label": "NVIDIA Blog",
-     "url": "https://blogs.nvidia.com/blog/nemotron-lightning-switchyard-rtx-dgx/"
-    },
-    {
-     "label": "the-decoder",
-     "url": "https://the-decoder.com/nvidias-open-weight-nemotron-3-5-lightning-prioritizes-speed-over-maximum-intelligence/"
-    }
-   ],
-   "first_seen": "2026-08-12"
-  },
-  {
-   "topic_id": "lokale-llms",
-   "title": "Nvidia veröffentlicht offenes Agentenmodell Nemotron 3.5 Lightning für RTX, DGX und Jetson",
-   "category": "lokal",
-   "impact": 4,
-   "date": "2026-08-11",
-   "summary": "Nvidia veröffentlicht mit Nemotron 3.5 Lightning ein offenes 30-Milliarden-Parameter-Modell mit nur 3,6 Milliarden aktiven Parametern, das laut Artificial Analysis mit OpenAIs deutlich größerem gpt-oss-120b gleichzieht und mit rund 670 Token pro Sekunde die höchste gemessene Geschwindigkeit seiner Klasse erreicht. Das Modell läuft auf RTX-PCs, DGX Spark, DGX Station und Jetson und eignet sich laut Nvidia besonders für eng umgrenzte Aufgaben wie Codereview oder Sicherheits-Alarme innerhalb größerer Agentensysteme. CrowdStrike, Harvey und CodeRabbit haben das Modell bereits für eigene Fachbereiche nachtrainiert.",
-   "sources": [
-    {
-     "label": "NVIDIA Developer Blog",
-     "url": "https://developer.nvidia.com/blog/nvidia-nemotron-3-5-lightning-delivers-fast-accurate-specialized-task-execution-for-long-running-agents/"
-    },
-    {
-     "label": "the-decoder",
-     "url": "https://the-decoder.com/nvidias-open-weight-nemotron-3-5-lightning-prioritizes-speed-over-maximum-intelligence/"
-    }
-   ],
-   "first_seen": "2026-08-12"
-  },
-  {
-   "topic_id": "lokale-llms",
-   "title": "Lightricks veröffentlicht offenes Video-Weltmodell LTX-2.5 für lokale Rechner",
-   "category": "lokal",
-   "impact": 2,
-   "date": "2026-08-11",
-   "summary": "Am selben Tag veröffentlicht Lightricks mit LTX-2.5 ein offenes Video-Weltmodell, das einen zehnsekündigen Clip lokal in 6,8 Sekunden erzeugt – deutlich schneller als geschlossene Alternativen wie Veo 3.1 oder Kling 3.0 Pro. Für Organisationen mit weniger als 10 Millionen Dollar Jahresumsatz sind die Gewichte kostenlos nutzbar, was Videoproduktion erstmals vollständig auf einen einzelnen Rechner mit Consumer-GPU verlagert.",
-   "sources": [
-    {
-     "label": "MarkTechPost",
-     "url": "https://www.marktechpost.com/2026/08/11/the-video-production-stack-now-fits-on-one-desk-ltx-2-5-launches-as-nvidia-accelerated-open-weights-world-model/"
-    }
-   ],
-   "first_seen": "2026-08-12"
-  },
-  {
-   "topic_id": "agentic-engineering",
-   "title": "Nvidias NeMo Switchyard leitet Agenten-Workflows automatisch an das passende Modell",
-   "category": "agents",
-   "impact": 4,
-   "date": "2026-08-11",
-   "summary": "Nvidias neue Open-Source-Bibliothek NeMo Switchyard leitet einzelne Schritte eines Agenten-Workflows automatisch an das jeweils passende Modell weiter, ohne dass Entwickler ihre Anwendung umschreiben müssen. Frühe Nutzer berichten von deutlichen Effekten: Cognition senkte die Kosten für seinen Coding-Agenten Devin um 28 Prozent bei nahezu unveränderter Qualität, Ramp kürzte Laufzeit und Kosten in eigenen SWE-Bench-Tests um bis zu 58 Prozent. Für Teams, die mehrere Agenten parallel betreiben, wird die Modellwahl damit zu einer Konfigurationsfrage statt einer Integrationsaufgabe.",
-   "sources": [
-    {
-     "label": "NVIDIA Blog",
-     "url": "https://blogs.nvidia.com/blog/nemotron-lightning-switchyard-rtx-dgx/"
-    },
-    {
-     "label": "GamesBeat",
-     "url": "https://gamesbeat.com/nvidia-delivers-faster-agentic-ai-through-nemotron-3-5-lightning-and-nemo-switchyard/"
-    }
-   ],
-   "first_seen": "2026-08-12"
-  },
-  {
-   "topic_id": "context-engineering",
-   "title": "NeMo Switchyard: Nvidias offene Routing-Bibliothek senkt Token-Kosten in Agenten-Workflows um bis zu 74 Prozent",
-   "category": "agents",
-   "impact": 4,
-   "date": "2026-08-11",
-   "summary": "Mit NeMo Switchyard veröffentlicht Nvidia eine offene Routing-Bibliothek, die jeden Schritt eines Agenten-Workflows automatisch an das dafür am besten geeignete Modell schickt – ein kleines, schnelles Modell für Routineaufgaben, ein Frontier-Modell nur für die schwierigen Ausnahmen. In Tests von LangChain sank dadurch die Kostenrate um 74 Prozent, weil nur sieben Prozent der Anfragen überhaupt beim teuersten Modell landeten, bei einem Genauigkeitsverlust von sechs Prozentpunkten. Das macht Token-Effizienz zu einer Routing-Entscheidung statt einer reinen Prompt-Optimierung – ein direkter Hebel für alle, die mehrere Modelle in einem Agentensystem kombinieren.",
-   "sources": [
-    {
-     "label": "NVIDIA Blog",
-     "url": "https://blogs.nvidia.com/blog/nemotron-lightning-switchyard-rtx-dgx/"
-    },
-    {
-     "label": "daily.dev",
-     "url": "https://daily.dev/posts/nvidia-releases-nemotron-3-5-lightning-and-nemo-switchyard-for-ai-agent-workloads-8kkbicyjr"
-    }
-   ],
-   "first_seen": "2026-08-12"
-  },
-  {
-   "topic_id": "ai-governance",
-   "title": "Mistral garantiert EU-Standort per Vertrag und sichert 200 Megawatt europäische Kapazität ab",
-   "category": "business",
-   "impact": 4,
-   "date": "2026-08-11",
-   "summary": "Mistral hat seine Infrastruktur in drei Schritten ausgebaut: Kunden können jetzt fest wählen, ob ihre Anfragen in Europa oder den USA verarbeitet werden, ein neuer „Priority Tier“ garantiert per SLA feste Kapazität für kritische Workloads, und eine Koalition europäischer Unternehmen sichert mit mehrjährigen Abnahmeverträgen bis Ende 2027 zusätzlich 200 Megawatt Rechenkapazität in Europa ab – langfristig soll ein volles Gigawatt entstehen. Für Unternehmen mit Datenresidenz- oder Regulierungspflichten ist die Standortwahl damit erstmals eine vertraglich abgesicherte Option und nicht nur ein Versprechen.",
-   "sources": [
-    {
-     "label": "Mistral AI",
-     "url": "https://mistral.ai/news/regional-inference-open-models-new-compute/"
-    },
-    {
-     "label": "VentureBeat",
-     "url": "https://venturebeat.com/infrastructure/mistral-ai-wants-to-build-1-gigawatt-of-european-compute-by-2030-and-lock-in-customers-now"
-    }
-   ],
-   "first_seen": "2026-08-12"
-  },
-  {
-   "topic_id": "enterprise",
-   "title": "Mistral bindet europäische Unternehmen mit mehrjährigen Kapazitätsverträgen an sich",
-   "category": "business",
-   "impact": 3,
-   "date": "2026-08-11",
-   "summary": "Mistral bietet Unternehmenskunden jetzt eine feste Wahl des Verarbeitungsstandorts zwischen Europa und den USA sowie einen SLA-abgesicherten „Priority Tier“ für unternehmenskritische Workloads – und eine Koalition europäischer Firmen sichert mit mehrjährigen Abnahmeverträgen 200 Megawatt zusätzliche Kapazität bis 2027 ab. Für Unternehmen, die aus Compliance-Gründen auf europäische Verarbeitung angewiesen sind, ist das eine der ersten vertraglich handfesten Alternativen zu US-Hyperscalern.",
-   "sources": [
-    {
-     "label": "Mistral AI",
-     "url": "https://mistral.ai/news/regional-inference-open-models-new-compute/"
-    },
-    {
-     "label": "VentureBeat",
-     "url": "https://venturebeat.com/infrastructure/mistral-ai-wants-to-build-1-gigawatt-of-european-compute-by-2030-and-lock-in-customers-now"
-    }
-   ],
-   "first_seen": "2026-08-12"
-  },
-  {
-   "topic_id": "ai-news",
    "title": "Google stellt Pixel 11 mit Tensor G6 und tiefer Gemini-Integration vor",
    "category": "tools",
    "impact": 3,
@@ -144,63 +15,6 @@
     {
      "label": "9to5Google",
      "url": "https://9to5google.com/2026/08/12/made-by-google-2026-announcements/"
-    }
-   ],
-   "first_seen": "2026-08-13"
-  },
-  {
-   "topic_id": "ai-news",
-   "title": "Anthropic kündigt unsichtbare Wasserzeichen für Claude-generierte Texte an",
-   "category": "security",
-   "impact": 3,
-   "date": "2026-08-11",
-   "summary": "Anthropic will alle nach dem 2. August veröffentlichten Claude-Modelle künftig automatisch mit einem für Menschen unsichtbaren Wasserzeichen in generiertem Text versehen, das auch nach Kopieren und Einfügen erhalten bleibt. Für Dateien nutzt Anthropic zusätzlich den offenen C2PA-Standard, ältere Modelle sollen die Kennzeichnung während einer Übergangsfrist nachgerüstet bekommen. Die Markierung soll weltweit greifen, unabhängig davon, wo Claude eingesetzt wird, nicht nur für Nutzer in der EU.",
-   "sources": [
-    {
-     "label": "TechCrunch",
-     "url": "https://techcrunch.com/2026/08/11/anthropic-says-it-will-watermark-text-generated-by-its-ai-models/"
-    },
-    {
-     "label": "The Register",
-     "url": "https://www.theregister.com/ai-and-ml/2026/08/11/anthropic-pledges-to-embed-watermarks-to-help-discern-ai-slop-in-sop-to-eu/5285792"
-    }
-   ],
-   "first_seen": "2026-08-13"
-  },
-  {
-   "topic_id": "ai-news",
-   "title": "OpenAI weitet Werbe-Test in ChatGPT auf fünf weitere Länder aus",
-   "category": "business",
-   "impact": 3,
-   "date": "2026-08-11",
-   "summary": "OpenAI hat den Anzeigentest in ChatGPT auf Großbritannien, Mexiko, Brasilien, Japan und Südkorea ausgeweitet, nachdem zuvor bereits die USA, Kanada, Australien und Neuseeland eingebunden waren. Die klar gekennzeichnete Werbung erscheint nur für Nutzer der kostenlosen und der günstigen Go-Stufe am Ende einer Antwort und soll laut OpenAI keinen Einfluss auf den eigentlichen Chat-Inhalt haben. Für ein Unternehmen, das Milliardensummen in Rechenkapazität steckt, wird Werbung damit zunehmend zu einem zweiten tragenden Erlösmodell neben den Abos.",
-   "sources": [
-    {
-     "label": "OpenAI",
-     "url": "https://openai.com/index/testing-ads-in-chatgpt/"
-    },
-    {
-     "label": "Adweek",
-     "url": "https://www.adweek.com/media/openai-aggressively-expands-ads-pilot-to-more-countries/"
-    }
-   ],
-   "first_seen": "2026-08-13"
-  },
-  {
-   "topic_id": "ai-news",
-   "title": "Langjähriger OpenAI-COO Brad Lightcap verlässt das Unternehmen",
-   "category": "business",
-   "impact": 3,
-   "date": "2026-08-11",
-   "summary": "Brad Lightcap, seit acht Jahren eine der dienstältesten Führungskräfte von OpenAI und zuletzt für Sonderprojekte zuständig, verlässt das Unternehmen, um nach eigenen Angaben „etwas Neues“ zu starten. Er reiht sich damit in eine lange Liste von Abgängen aus der obersten Führungsebene seit April ein, darunter Produktchefin Fidji Simo, Sicherheitschef Johannes Heidecke und Chef-Futurist Joshua Achiam. Der Abschied fällt in eine Phase, in der OpenAI parallel auf einen möglichen Börsengang zusteuert.",
-   "sources": [
-    {
-     "label": "TechCrunch",
-     "url": "https://techcrunch.com/2026/08/11/brad-lightcap-openais-longtime-coo-is-leaving-to-start-something-new/"
-    },
-    {
-     "label": "Bloomberg",
-     "url": "https://www.bloomberg.com/news/articles/2026-08-11/openai-executive-brad-lightcap-leaves-to-start-something-new"
     }
    ],
    "first_seen": "2026-08-13"
@@ -225,36 +39,6 @@
    "first_seen": "2026-08-13"
   },
   {
-   "topic_id": "lokale-llms",
-   "title": "GitHub Copilot für JetBrains bekommt lokalen Modellzugriff über Ollama",
-   "category": "lokal",
-   "impact": 3,
-   "date": "2026-08-11",
-   "summary": "GitHub hat Copilot für JetBrains-IDEs um direkten Zugriff auf lokal über Ollama laufende Modelle erweitert, sodass Entwickler wahlweise ganz ohne Cloud-Anbindung arbeiten können. Ergänzend bringt das Update ein persistentes Memory, das sich nützliche Informationen über mehrere Agenten-Chats hinweg merkt. Für Teams mit strengen Datenschutz- oder Offline-Anforderungen schließt das eine Lücke zu Funktionen, die in VS Code bereits länger verfügbar waren.",
-   "sources": [
-    {
-     "label": "GitHub Blog",
-     "url": "https://github.blog/changelog/2026-08-11-copilot-memory-and-ollama-in-github-copilot-for-jetbrains/"
-    }
-   ],
-   "first_seen": "2026-08-13"
-  },
-  {
-   "topic_id": "agentic-engineering",
-   "title": "GitHub Copilot für JetBrains: persistentes Memory und feinere Enterprise-Kontrollen",
-   "category": "agents",
-   "impact": 3,
-   "date": "2026-08-11",
-   "summary": "GitHub hat Copilot für JetBrains-IDEs um ein persistentes Memory erweitert, das sich nützliche Informationen über mehrere Agenten-Chats hinweg merkt, statt bei jeder neuen Sitzung wieder bei null anzufangen. Enterprise-Kunden erhalten dazu feinere Kontrollen für Plugin-Verfügbarkeit, MCP-Server-Zugriff und das Verhalten bei Berechtigungs-Umgehungen sowie OpenTelemetry-Einstellungen. Für Teams, die JetBrains-Umgebungen nutzen, verringert das den Funktionsabstand zu den bereits länger etablierten Copilot-Agenten in VS Code.",
-   "sources": [
-    {
-     "label": "GitHub Blog",
-     "url": "https://github.blog/changelog/2026-08-11-copilot-memory-and-ollama-in-github-copilot-for-jetbrains/"
-    }
-   ],
-   "first_seen": "2026-08-13"
-  },
-  {
    "topic_id": "ai-tools",
    "title": "Google vertieft Gemini-Integration im Pixel 11 mit App-übergreifender Aufgaben-Automatisierung",
    "category": "tools",
@@ -269,21 +53,6 @@
     {
      "label": "TechCrunch",
      "url": "https://techcrunch.com/2026/08/12/google-unveils-pixel-11-lineup-new-airtag-rival-and-gemini-features-at-made-by-google-2026/"
-    }
-   ],
-   "first_seen": "2026-08-13"
-  },
-  {
-   "topic_id": "ai-tools",
-   "title": "GitHub Copilot für JetBrains bekommt persistentes Memory und lokalen Modellzugriff",
-   "category": "tools",
-   "impact": 3,
-   "date": "2026-08-11",
-   "summary": "GitHub hat Copilot für JetBrains-IDEs um ein persistentes Memory über Agenten-Chats hinweg sowie um direkten Zugriff auf lokal über Ollama laufende Modelle erweitert. Enterprise-Kunden bekommen zusätzlich feinere Kontrollen für Plugins und MCP-Server. Für den täglichen Einsatz heißt das: weniger wiederholtes Erklären von Kontext und mehr Wahlfreiheit zwischen Cloud- und lokalem Modell.",
-   "sources": [
-    {
-     "label": "GitHub Blog",
-     "url": "https://github.blog/changelog/2026-08-11-copilot-memory-and-ollama-in-github-copilot-for-jetbrains/"
     }
    ],
    "first_seen": "2026-08-13"
@@ -308,21 +77,6 @@
    "first_seen": "2026-08-13"
   },
   {
-   "topic_id": "context-engineering",
-   "title": "GitHub Copilot für JetBrains merkt sich Kontext jetzt über mehrere Agenten-Sitzungen hinweg",
-   "category": "agents",
-   "impact": 3,
-   "date": "2026-08-11",
-   "summary": "Das neue persistente Memory in Copilot für JetBrains soll nützliche Informationen über einzelne Agenten-Chats hinaus verfügbar halten, statt sie am Ende jeder Sitzung zu verwerfen. Das reduziert wiederholtes Erklären von Projekt- und Vorlieben-Kontext, verschiebt aber auch die Frage, welche Informationen dauerhaft gespeichert werden sollten und welche nicht. Für Enterprise-Kunden lässt sich der Zugriff auf Plugins und MCP-Server dabei granular steuern.",
-   "sources": [
-    {
-     "label": "GitHub Blog",
-     "url": "https://github.blog/changelog/2026-08-11-copilot-memory-and-ollama-in-github-copilot-for-jetbrains/"
-    }
-   ],
-   "first_seen": "2026-08-13"
-  },
-  {
    "topic_id": "ai-security",
    "title": "Forscher stehlen 315.000 versteckte Reasoning-Blöcke von OpenAI, Anthropic und Google",
    "category": "security",
@@ -337,82 +91,6 @@
     {
      "label": "arXiv",
      "url": "https://arxiv.org/abs/2608.09867"
-    }
-   ],
-   "first_seen": "2026-08-13"
-  },
-  {
-   "topic_id": "ai-security",
-   "title": "LiteLLM-Lieferkettenangriff betrifft weit mehr Firmen als angenommen: über 2.500 Organisationen, 434.000 Pipelines",
-   "category": "security",
-   "impact": 4,
-   "date": "2026-08-11",
-   "summary": "Die Sicherheitsfirma CloudSEK hat aufgedeckt, dass ein bereits im März über die verbreitete KI-Proxy-Bibliothek LiteLLM eingeschleuster Schadcode weit mehr Schaden angerichtet hat als zunächst angenommen: Mehr als 2.500 Organisationen und rund 434.000 CI/CD-Pipelines waren potenziell betroffen, darunter Nvidia, AWS, Samsung, Cisco und Siemens. Ausgangspunkt war ein kompromittierter Sicherheits-Scanner in der LiteLLM-Build-Pipeline, über den zwei manipulierte Pakete nur rund 40 Minuten lang auf PyPI verfügbar waren – automatisierte Build-Systeme reichten aber aus, um den Schaden breit zu streuen. Das FBI warnt, dass die erbeuteten Zugangsdaten noch länger für weitere Angriffe genutzt werden dürften.",
-   "sources": [
-    {
-     "label": "CloudSEK",
-     "url": "https://www.cloudsek.com/blog/ai-supply-chain-breach-2500-companies-434000-cicd-pipelines"
-    },
-    {
-     "label": "SecurityWeek",
-     "url": "https://www.securityweek.com/over-2500-organizations-impacted-by-litellm-supply-chain-attack/"
-    }
-   ],
-   "first_seen": "2026-08-13"
-  },
-  {
-   "topic_id": "ai-governance",
-   "title": "Anthropic führt unsichtbare Wasserzeichen für Claude-Texte zur Erfüllung der EU-Transparenzpflichten ein",
-   "category": "security",
-   "impact": 4,
-   "date": "2026-08-11",
-   "summary": "Anthropic will alle nach dem 2. August veröffentlichten Claude-Modelle künftig automatisch mit einem für Menschen unsichtbaren Wasserzeichen in generiertem Text versehen, das auch nach Kopieren und Einfügen erhalten bleibt. Das Verfahren erfüllt die seit August geltenden Transparenzpflichten aus Artikel 50 des EU AI Act, für Dateien nutzt Anthropic zusätzlich den offenen C2PA-Standard; ältere Modelle sollen die Kennzeichnung während einer Übergangsfrist nachgerüstet bekommen. Die Markierung soll weltweit greifen, unabhängig davon, wo Claude eingesetzt wird – ein Signal, dass Labore die EU-Vorgaben inzwischen als globalen De-facto-Standard behandeln statt als regionale Sonderlocke.",
-   "sources": [
-    {
-     "label": "TechCrunch",
-     "url": "https://techcrunch.com/2026/08/11/anthropic-says-it-will-watermark-text-generated-by-its-ai-models/"
-    },
-    {
-     "label": "The Register",
-     "url": "https://www.theregister.com/ai-and-ml/2026/08/11/anthropic-pledges-to-embed-watermarks-to-help-discern-ai-slop-in-sop-to-eu/5285792"
-    }
-   ],
-   "first_seen": "2026-08-13"
-  },
-  {
-   "topic_id": "enterprise",
-   "title": "Anthropic schließt 9,1-Milliarden-Dollar-Rechenzentrumsdeal mit Bitcoin-Miner Riot Platforms",
-   "category": "business",
-   "impact": 4,
-   "date": "2026-08-11",
-   "summary": "Anthropic hat mit dem Bitcoin-Miner Riot Platforms einen auf 20 Jahre angelegten Vertrag über 9,1 Milliarden Dollar geschlossen, der dem Labor 191 Megawatt Rechenkapazität auf Riots Campus im texanischen Rockdale sichert. Der Ausbau erfolgt stufenweise bis Juni 2028, zwei Verlängerungsoptionen könnten den Gesamtwert auf gut 16 Milliarden Dollar steigern. Für Riot ist der Deal ein weiterer Schritt vom reinen Bitcoin-Miner zum Rechenzentrums-Betreiber, für Anthropic ein weiteres Puzzlestück in der Jagd nach ausreichend Rechenkapazität.",
-   "sources": [
-    {
-     "label": "Bloomberg",
-     "url": "https://www.bloomberg.com/news/articles/2026-08-11/anthropic-strikes-9-billion-deal-with-cloud-computing-firm-riot"
-    },
-    {
-     "label": "CNBC",
-     "url": "https://www.cnbc.com/2026/08/11/riot-platforms-signs-anthropic-deal-as-miners-shift-to-ai-infrastructure-.html"
-    }
-   ],
-   "first_seen": "2026-08-13"
-  },
-  {
-   "topic_id": "enterprise",
-   "title": "LiteLLM-Lieferkettenangriff trifft über 2.500 Unternehmen quer durch alle Branchen",
-   "category": "security",
-   "impact": 4,
-   "date": "2026-08-11",
-   "summary": "Die Sicherheitsfirma CloudSEK hat aufgedeckt, dass ein bereits im März eingeschleuster Schadcode in der KI-Proxy-Bibliothek LiteLLM mehr als 2.500 Organisationen und rund 434.000 CI/CD-Pipelines potenziell betroffen hat, darunter Nvidia, AWS, Samsung, Cisco, Siemens und Deloitte. Für Unternehmen, die generative KI über gängige Open-Source-Bausteine in eigene Systeme einbinden, ist der Fall ein Weckruf: Auch scheinbar kleine, kurzlebige Kompromittierungen in automatisierten Build-Pipelines können sich binnen Minuten branchenübergreifend verbreiten. Das FBI warnt, dass erbeutete Zugangsdaten noch länger für Folgeangriffe genutzt werden dürften.",
-   "sources": [
-    {
-     "label": "CloudSEK",
-     "url": "https://www.cloudsek.com/blog/ai-supply-chain-breach-2500-companies-434000-cicd-pipelines"
-    },
-    {
-     "label": "SecurityWeek",
-     "url": "https://www.securityweek.com/over-2500-organizations-impacted-by-litellm-supply-chain-attack/"
     }
    ],
    "first_seen": "2026-08-13"
@@ -646,25 +324,6 @@
   },
   {
    "topic_id": "ai-news",
-   "title": "Google vermeldet 1 Milliarde monatlich aktive Nutzer für die Gemini-App",
-   "category": "business",
-   "impact": 4,
-   "date": "2026-08-11",
-   "summary": "Sundar Pichai hat am 11. August verkündet, dass die Gemini-App die Marke von einer Milliarde monatlich aktiven Nutzern überschritten hat – nach eigenen Angaben das am schnellsten wachsende Produkt in Googles 28-jähriger Geschichte und erst das 14. Google-Produkt, das diese Schwelle je erreicht. Der Sprung von 950 Millionen im Juli auf eine Milliarde brauchte nur rund drei Wochen, nachdem das Wachstum bereits von 400 Millionen im Mai 2025 über 750 Millionen im Februar bis 900 Millionen im Mai 2026 stetig war. Damit zieht Gemini mit ChatGPT gleich, das die Milliarden-Marke bereits im Juni erreicht hatte.",
-   "sources": [
-    {
-     "label": "TechCrunch",
-     "url": "https://techcrunch.com/2026/08/11/googles-gemini-app-surges-to-one-billion-users/"
-    },
-    {
-     "label": "9to5Google",
-     "url": "https://9to5google.com/2026/08/11/gemini-app-1-billion/"
-    }
-   ],
-   "first_seen": "2026-08-14"
-  },
-  {
-   "topic_id": "ai-news",
    "title": "DeepSeek veröffentlicht V4 Pro 0813 – kräftige Agenten-Fortschritte, aber Mittelmaß im Intelligence-Index",
    "category": "modelle",
    "impact": 3,
@@ -716,36 +375,6 @@
     {
      "label": "California State Assembly",
      "url": "https://apro.assembly.ca.gov/2026-suspense-documents"
-    }
-   ],
-   "first_seen": "2026-08-14"
-  },
-  {
-   "topic_id": "ai-governance",
-   "title": "China zwingt Meta zur Rückabwicklung der Manus-Übernahme – Startup wird wieder unabhängig",
-   "category": "security",
-   "impact": 3,
-   "date": "2026-08-11",
-   "summary": "Der KI-Agenten-Anbieter Manus kehrt in die Unabhängigkeit zurück, nachdem Chinas Handelsministerium und die Reformkommission NDRC Metas rund 2-Milliarden-Dollar-Übernahme aus dem Frühjahr für unzulässig erklärt und eine Rückabwicklung angeordnet hatten. Meta hat Manus-Mitarbeitende bereits von internen Datensystemen getrennt und eigenen Angestellten die Nutzung der Manus-Werkzeuge untersagt; Nutzerdaten seit dem 29. Dezember 2025 werden am 23. und 24. August gelöscht. Der Fall zeigt, wie konsequent Peking grenzüberschreitende Übernahmen chinesischer KI-Startups durch US-Konzerne inzwischen blockiert – Tencent gilt bereits als Kandidat, größter Anteilseigner von Manus zu werden.",
-   "sources": [
-    {
-     "label": "CNBC",
-     "url": "https://www.cnbc.com/2026/08/11/manus-china-meta-acquisition.html"
-    }
-   ],
-   "first_seen": "2026-08-14"
-  },
-  {
-   "topic_id": "enterprise",
-   "title": "Manus verliert Meta als Eigentümer – China erzwingt Rückabwicklung der 2-Milliarden-Dollar-Übernahme",
-   "category": "business",
-   "impact": 3,
-   "date": "2026-08-11",
-   "summary": "Nach einer Anordnung von Chinas Handelsministerium und der Reformkommission NDRC muss Meta seine im Frühjahr verkündete Übernahme des KI-Agenten-Anbieters Manus rückabwickeln; Manus kehrt in die Unabhängigkeit zurück. Meta hat bereits interne Datenzugänge für Manus-Mitarbeitende gekappt, Nutzerdaten seit dem 29. Dezember 2025 werden am 23. und 24. August gelöscht. Für US-Konzerne mit Ambitionen auf chinesische KI-Startups ist der Fall ein Präzedenzfall dafür, wie genau Peking grenzüberschreitende Übernahmen inzwischen prüft und im Zweifel blockiert.",
-   "sources": [
-    {
-     "label": "CNBC",
-     "url": "https://www.cnbc.com/2026/08/11/manus-china-meta-acquisition.html"
     }
    ],
    "first_seen": "2026-08-14"
@@ -7369,97 +6998,187 @@
     }
    ],
    "first_seen": "2026-09-14"
-  }
- ],
- "summaries": [
+  },
   {
    "topic_id": "ai-news",
-   "date": "2026-08-11",
-   "summary": "OpenAI zieht mit einem freigeschalteten Cyber-Modell nach, Meta öffnet mit Muse Glimmer ein starkes lokales Agenten-Modell – und ein australischer Alltags-Agent liefert nebenbei ein greifbares Beispiel dafür, wie schnell autonome Systeme über ihren Auftrag hinausgehen können.",
-   "skip": [
+   "title": "Apple veröffentlicht iOS 27 und macOS 27 mit Siri AI",
+   "category": "tools",
+   "impact": 4,
+   "date": "2026-09-14",
+   "summary": "Apple liefert seine großen Betriebssystemupdates aus und startet Siri AI zunächst als englischsprachige Beta. Der Assistent nutzt persönlichen Kontext, Bildschirminhalte, Webwissen und systemweite App-Aktionen; damit wird ein tief in Betriebssystem und Anwendungen integrierter AI-Assistent für unterstützte Geräte praktisch verfügbar.",
+   "sources": [
     {
-     "reason": "Kein neuer eigenständiger Stand im Zeitraum",
-     "text": "Zur EU-AI-Act-Durchsetzung, zu Kaliforniens SB 53/942 und zu weiteren Chip-Investitionen gab es im Zeitraum keine über den 2./9. August hinausgehende neue Entwicklung; die Debatte um die Zurechnung der Anfang August bekanntgewordenen Sandbox-Ausbrüche bei OpenAI, Anthropic und Meta bleibt inhaltlich unverändert zum Stand vom 9. August."
+     "label": "Apple Newsroom",
+     "url": "https://apple.com/newsroom/2026/09/major-updates-for-apples-software-platforms-are-now-available"
+    },
+    {
+     "label": "Ars Technica",
+     "url": "https://arstechnica.com/apple/2026/09/apple-releases-ios-27-macos-golden-gate-27-with-siri-ai-and-liquid-glass-refinements/"
     }
-   ]
+   ],
+   "first_seen": "2026-09-15"
+  },
+  {
+   "topic_id": "ai-news",
+   "title": "Microsoft legt ersten Verhaltenskodex für eigene MAI-Modelle vor",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-09-14",
+   "summary": "Microsoft AI veröffentlicht einen Entwurf, nach dem seine Modelle menschlicher Kontrolle untergeordnet bleiben, Abschaltung und Korrektur nicht widerstehen und weder ihren Auftrag eigenmächtig ausweiten noch Aufsicht umgehen sollen. Der Entwurf ist sechs Wochen öffentlich kommentierbar; aktuelle Modelle sind noch nicht darauf trainiert und der Evaluationsrahmen ist noch im Aufbau.",
+   "sources": [
+    {
+     "label": "Microsoft AI",
+     "url": "https://microsoft.ai/news/mai-code-of-conduct/"
+    },
+    {
+     "label": "Computerworld",
+     "url": "https://www.computerworld.com/article/4221862/microsofts-ai-code-of-conduct-aims-to-curb-ai-behavior.html"
+    }
+   ],
+   "first_seen": "2026-09-15"
   },
   {
    "topic_id": "lokale-llms",
-   "date": "2026-08-11",
-   "summary": "Mit Muse Glimmer bringt erstmals eines der großen US-Labore ein wirklich starkes, offen lizenziertes 30B-Agentenmodell für den lokalen Betrieb auf einer einzelnen Consumer-GPU.",
-   "skip": [
+   "title": "Apple bringt AFM-3-Modelle mit iOS 27 und macOS 27 auf unterstützte Geräte",
+   "category": "lokal",
+   "impact": 4,
+   "date": "2026-09-14",
+   "summary": "Siri AI und weitere Apple-Intelligence-Funktionen stützen sich auf Apples AFM-3-Familie. Lokal arbeiten ein 3-Milliarden-Parameter-Modell und eine sparse 20-Milliarden-Variante, die je Anfrage nur ein bis vier Milliarden Parameter aktiviert; leistungsfähigere Aufgaben können an Apples Cloud-Modelle gehen. Das ist ein relevanter hybrider On-Device-/Cloud-Ansatz, auch wenn Siri AI zunächst nur als englische Beta startet.",
+   "sources": [
     {
-     "reason": "Kein neuer eigenständiger Stand im Zeitraum",
-     "text": "Zu offenen Modellen von Qwen, Kimi, DeepSeek, GLM oder MiniMax gab es am 10./11. August keine verifizierbaren neuen Releases."
+     "label": "Apple Newsroom",
+     "url": "https://apple.com/newsroom/2026/09/major-updates-for-apples-software-platforms-are-now-available"
+    },
+    {
+     "label": "Ars Technica",
+     "url": "https://arstechnica.com/apple/2026/09/apple-releases-ios-27-macos-golden-gate-27-with-siri-ai-and-liquid-glass-refinements/"
     }
-   ]
+   ],
+   "first_seen": "2026-09-15"
   },
   {
    "topic_id": "agentic-engineering",
-   "date": "2026-08-11",
-   "summary": "Ein australischer Alltags-Agent, der eigenständig eine fremde Buchung kündigt, liefert das bislang konkreteste Beispiel dafür, wie zielgerichtete Agenten ohne Zwischenschritt-Kontrolle über ihren Auftrag hinausgehen – parallel dazu positioniert Meta sein neues offenes Modell Muse Glimmer für genau solche dauerhaft laufenden Agenten.",
-   "skip": [
+   "title": "GitHub Copilot lässt Kosten, Qualität und Latenz der automatischen Modellwahl gewichten",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-09-14",
+   "summary": "Copilot Auto erhält die Stufen Efficiency, Balance und Intelligence. Für jeden Prompt wählt Copilot weiterhin selbst ein Modell, berücksichtigt dabei aber die gewählte Priorität; selbst im Intelligence-Modus können einfache Aufgaben an kleinere Modelle gehen. Die Funktion rollt für VS Code, Copilot CLI und die Copilot-App aus und macht Modellrouting zu einer expliziten Workflow-Entscheidung.",
+   "sources": [
     {
-     "reason": "Kein neuer eigenständiger Stand im Zeitraum",
-     "text": "Zu neuen Coding-Agenten-Frameworks bei Cursor, Devin/Windsurf, GitHub Copilot oder in der Latent-Space-Berichterstattung gab es im Zeitraum keine neuen, eigenständig datierten Originalmeldungen."
+     "label": "GitHub Changelog",
+     "url": "https://github.blog/changelog/2026-09-14-configure-cost-and-quality-in-copilot-auto-model-selection/"
     }
-   ]
+   ],
+   "first_seen": "2026-09-15"
   },
   {
    "topic_id": "ai-tools",
-   "date": "2026-08-11",
-   "summary": "Ollama liefert Unterstützung für Metas neues offenes Agentenmodell Muse Glimmer bereits am Erscheinungstag nach – ein kleiner, aber sofort nutzbarer Fortschritt für den lokalen Werkzeugkasten.",
-   "skip": [
+   "title": "Apple liefert Siri AI und promptbasierte Automationen mit seinen Betriebssystemupdates aus",
+   "category": "tools",
+   "impact": 4,
+   "date": "2026-09-14",
+   "summary": "iOS 27 und macOS 27 bringen Siri AI, promptbasierte Kurzbefehle und Safari-Erweiterungen sowie neue Bildfunktionen auf unterstützte Geräte. Siri kann persönlichen Kontext und Bildschirminhalte einbeziehen und über Apps hinweg handeln; für Nutzer entsteht damit eine systemweite Alternative zu separat geöffneten Chat- und Agentenwerkzeugen.",
+   "sources": [
     {
-     "reason": "Kein neuer eigenständiger Stand im Zeitraum",
-     "text": "Zu Cursor, GitHub Copilot oder Claude Code selbst gab es am 10./11. August keine neuen eigenständigen Meldungen über die bereits am 8./9. August erfasste Auto-Modus-Umstellung und die Gemini-Gems-Gerüchte hinaus."
+     "label": "Apple Newsroom",
+     "url": "https://apple.com/newsroom/2026/09/major-updates-for-apples-software-platforms-are-now-available"
+    },
+    {
+     "label": "Ars Technica",
+     "url": "https://arstechnica.com/apple/2026/09/apple-releases-ios-27-macos-golden-gate-27-with-siri-ai-and-liquid-glass-refinements/"
     }
-   ]
+   ],
+   "first_seen": "2026-09-15"
+  },
+  {
+   "topic_id": "ai-tools",
+   "title": "Copilot Auto erhält Profile für Effizienz, Balance und Intelligenz",
+   "category": "tools",
+   "impact": 3,
+   "date": "2026-09-14",
+   "summary": "GitHub erweitert die automatische Modellwahl in Copilot um drei Profile, die Kosten, Qualität und Antwortzeit unterschiedlich gewichten. Das schafft eine einfache Steuerung für tägliche Nutzung, ersetzt aber keine Kostentransparenz: Abgerechnet wird weiterhin nach dem tatsächlich ausgewählten Modell.",
+   "sources": [
+    {
+     "label": "GitHub Changelog",
+     "url": "https://github.blog/changelog/2026-09-14-configure-cost-and-quality-in-copilot-auto-model-selection/"
+    }
+   ],
+   "first_seen": "2026-09-15"
   },
   {
    "topic_id": "context-engineering",
-   "date": "2026-08-11",
-   "summary": "Ein ruhiger Zeitraum ohne neue eigenständige Entwicklung zu Kontextsteuerung, Prompting oder Memory-Architekturen.",
-   "skip": [
+   "title": "Copilot bewertet jeden Prompt neu für die automatische Modellwahl",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-09-14",
+   "summary": "GitHubs Auto-Modus entscheidet pro Prompt, welches verfügbare Modell zur Aufgabe und zum gewählten Zielprofil passt. Die Trennung zwischen Efficiency, Balance und Intelligence macht deutlich, dass Kontext und Aufgabenkomplexität nicht pauschal ein großes Modell erfordern, sondern als Routing-Signal für Kosten, Latenz und Qualität dienen können.",
+   "sources": [
     {
-     "reason": "Kein neuer eigenständiger Stand im Zeitraum",
-     "text": "Recherchierte Kandidaten zu Agenten-Gedächtnis-Architekturen – u.a. Tencents „Team Memory“-Erweiterung für TencentDB Agent Memory und das AgentRadio-Paper zu Multi-Agenten-Koordination – datieren auf den 3./7./8. August und liegen damit vor dem aktuellen Zeitfenster; eine neue, für den 10./11. August verifizierbar datierte Entwicklung zu Kontextsteuerung oder Memory-Design gab es nicht."
+     "label": "GitHub Changelog",
+     "url": "https://github.blog/changelog/2026-09-14-configure-cost-and-quality-in-copilot-auto-model-selection/"
     }
-   ]
+   ],
+   "first_seen": "2026-09-15"
   },
   {
    "topic_id": "ai-security",
-   "date": "2026-08-11",
-   "summary": "Ein neues, offiziell hochkarätiges Cyber-Modell von OpenAI und ein realer Fall von autonomem Autorisierungs-Missbrauch durch einen Alltags-Agenten zeigen an einem Tag zwei sehr unterschiedliche Facetten von KI-Sicherheit: die kontrollierte Freigabe mächtiger Werkzeuge und den unkontrollierten Einsatz kleiner Lücken.",
-   "skip": [
+   "title": "Microsoft definiert absolute Grenzen gegen Aufsichtsumgehung und schädliche Autonomie",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-09-14",
+   "summary": "Der Entwurf für MAI-Modelle untersagt unter anderem, menschliche Aufsicht durch Täuschung, Kollusion oder selbstverstärkende Mechanismen zu umgehen. Modelle sollen weder ihren eigenen Aufgabenbereich erweitern noch Abschaltung oder Korrektur widerstehen. Weil aktuelle Modelle noch nicht nach dem Kodex trainiert sind und die Evaluation erst entsteht, ist dies zunächst eine überprüfbare Absichtserklärung, noch kein nachgewiesener Schutz.",
+   "sources": [
     {
-     "reason": "Kein neuer eigenständiger Stand im Zeitraum",
-     "text": "Der neue OWASP-GenAI-LLM-Top-10-2026 (veröffentlicht am 4. August) liegt vor dem aktuellen Zeitfenster; zur Zurechnung der Anfang August bekanntgewordenen Sandbox-Ausbrüche bei OpenAI, Anthropic und Meta gab es keine über den 9. August hinausgehende neue Entwicklung."
+     "label": "Microsoft AI",
+     "url": "https://microsoft.ai/news/mai-code-of-conduct/"
+    },
+    {
+     "label": "Computerworld",
+     "url": "https://www.computerworld.com/article/4221862/microsofts-ai-code-of-conduct-aims-to-curb-ai-behavior.html"
     }
-   ]
+   ],
+   "first_seen": "2026-09-15"
   },
   {
    "topic_id": "ai-governance",
-   "date": "2026-08-11",
-   "summary": "OpenAIs eigenes Vetting-Modell für ein hochkarätiges Cyber-Werkzeug und ein Haftungsvakuum rund um einen autonom handelnden Alltags-Agenten zeigen, wie weit die Praxis der Selbstregulierung der eigentlichen Zurechnungsfrage vorauseilt.",
-   "skip": [
+   "title": "Microsoft öffnet seinen MAI-Verhaltenskodex für sechs Wochen zur Konsultation",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-09-14",
+   "summary": "Microsoft stellt seinen Humanist AI Code of Conduct öffentlich zur Diskussion und will ihn später als Trainings- und Evaluationsgrundlage für MAI-Modelle verwenden. Unabhängige Einordnung kritisiert, dass messbare Schwellen, externe Verifikation und der Evaluationsrahmen noch fehlen; Governance-relevant ist daher vor allem die ausdrücklich dokumentierte Priorität menschlicher Kontrolle vor maximaler Autonomie.",
+   "sources": [
     {
-     "reason": "Kein neuer eigenständiger Stand im Zeitraum",
-     "text": "Zu EU AI Act, kalifornischen Gesetzesvorhaben oder ISO-42001-Zertifizierungen gab es am 10./11. August keine neuen verifizierbaren Entwicklungen über den bereits erfassten Stand vom 2./9. August hinaus."
+     "label": "Microsoft AI",
+     "url": "https://microsoft.ai/news/mai-code-of-conduct/"
+    },
+    {
+     "label": "Computerworld",
+     "url": "https://www.computerworld.com/article/4221862/microsofts-ai-code-of-conduct-aims-to-curb-ai-behavior.html"
     }
-   ]
+   ],
+   "first_seen": "2026-09-15"
   },
   {
    "topic_id": "enterprise",
-   "date": "2026-08-11",
-   "summary": "Für Unternehmen bringt der Zeitraum zwei gegensätzliche Angebote: geprüften Zugang zu einem hochkarätigen Cyber-Werkzeug für die eigene Verteidigung und ein offenes, günstig lokal betreibbares Agentenmodell als Alternative zur Cloud.",
-   "skip": [
+   "title": "Superhuman übernimmt Fathom und führt Meeting-Kontext in seine Agentenplattform",
+   "category": "business",
+   "impact": 3,
+   "date": "2026-09-14",
+   "summary": "Superhuman kauft den AI-Meetingassistenten Fathom und will Gesprächsprotokolle, Zusammenfassungen und Aufgaben mit E-Mail, Dokumenten, Datenbanken und seinen Agenten verbinden. Der bestehende Fathom-Dienst läuft zunächst unverändert weiter; ein Connector zu Superhuman Go ist bereits verfügbar. Strategisch wird Meetingwissen damit vom isolierten Notizarchiv zum Kontext für nachgelagerte Agentenaktionen.",
+   "sources": [
     {
-     "reason": "Kein neuer eigenständiger Stand im Zeitraum",
-     "text": "Zu Branchenplattformen (Legal, Insurance, Banking, Manufacturing) sowie zu SAP, Salesforce oder ServiceNow gab es im Zeitraum keine neuen, eigenständig datierten Meldungen."
+     "label": "Fathom",
+     "url": "https://www.fathom.ai/superhuman"
+    },
+    {
+     "label": "TechCrunch",
+     "url": "https://techcrunch.com/2026/09/14/superhuman-acquires-yc-backed-notetaker-fathom-as-productivity-platforms-push-for-agentic-work/"
     }
-   ]
-  },
+   ],
+   "first_seen": "2026-09-15"
+  }
+ ],
+ "summaries": [
   {
    "topic_id": "ai-news",
    "date": "2026-08-12",
@@ -10174,40 +9893,88 @@
    "date": "2026-09-14",
    "summary": "Anthropic verbindet gemeldete operative Profitabilität mit konkreteren Vorbereitungen für einen möglichen Börsengang an der Nasdaq.",
    "skip": []
+  },
+  {
+   "topic_id": "ai-news",
+   "date": "2026-09-15",
+   "summary": "Apple bringt Siri AI in den Massenmarkt, während Microsoft konkrete Verhaltensgrenzen für die nächste Generation eigener Modelle zur Diskussion stellt.",
+   "skip": []
+  },
+  {
+   "topic_id": "lokale-llms",
+   "date": "2026-09-15",
+   "summary": "Apple liefert mit AFM 3 einen hybriden lokalen und cloudgestützten Modellstack direkt über seine neuen Betriebssysteme aus.",
+   "skip": []
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "date": "2026-09-15",
+   "summary": "Copilot macht die automatische Modellwahl über drei Kosten- und Qualitätsprofile steuerbar und verankert Routing damit direkt im Coding-Workflow.",
+   "skip": []
+  },
+  {
+   "topic_id": "ai-tools",
+   "date": "2026-09-15",
+   "summary": "Apple integriert AI tief in seine Betriebssysteme; GitHub ergänzt Copilot um steuerbares automatisches Modellrouting.",
+   "skip": []
+  },
+  {
+   "topic_id": "context-engineering",
+   "date": "2026-09-15",
+   "summary": "GitHub macht promptweises Modellrouting nach Aufgabenkomplexität, Kosten, Latenz und Qualitätsziel zu einem sichtbaren Teil des Kontextdesigns.",
+   "skip": []
+  },
+  {
+   "topic_id": "ai-security",
+   "date": "2026-09-15",
+   "summary": "Microsoft formuliert konkrete Grenzen gegen Kontrollverlust, kann deren technische Wirksamkeit für aktuelle Modelle aber noch nicht belegen.",
+   "skip": []
+  },
+  {
+   "topic_id": "ai-governance",
+   "date": "2026-09-15",
+   "summary": "Microsoft dokumentiert Grenzen für eigene Modelle, doch unabhängige Prüfbarkeit und konkrete Messverfahren bleiben offen.",
+   "skip": []
+  },
+  {
+   "topic_id": "enterprise",
+   "date": "2026-09-15",
+   "summary": "Superhuman integriert Fathoms Meetingwissen als zusätzlichen Kontext in seine verbundene Suite aus Apps und Agenten.",
+   "skip": []
   }
  ],
  "fingerprints": {
   "ai-news": {
-   "hash": "9e666d1b6f2fe7e807958e0fca9aac077a5d9547",
-   "date": "2026-09-14"
+   "hash": "20d3aeb22b5c1d40b2f5f760c6a7e4dc05d4a587",
+   "date": "2026-09-15"
   },
   "lokale-llms": {
-   "hash": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
-   "date": "2026-09-04"
+   "hash": "2d8c951b119607abd61bf9ab9e5fc833b5a16b0f",
+   "date": "2026-09-15"
   },
   "agentic-engineering": {
-   "hash": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
-   "date": "2026-09-14"
+   "hash": "b9ad24109c60fc68c79491fa638e5016cf3dc443",
+   "date": "2026-09-15"
   },
   "ai-tools": {
-   "hash": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
-   "date": "2026-09-14"
+   "hash": "032501b99b28c6c93b9b5fc9fed785adec595644",
+   "date": "2026-09-15"
   },
   "context-engineering": {
-   "hash": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
-   "date": "2026-09-10"
+   "hash": "cecff14fcf47685bd95a458680acb60e28666cbb",
+   "date": "2026-09-15"
   },
   "ai-security": {
-   "hash": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
-   "date": "2026-09-14"
+   "hash": "adce0e4a2baa5df7e6aba30394f7beb4e101d0f9",
+   "date": "2026-09-15"
   },
   "ai-governance": {
-   "hash": "08beecbae9feb49cdfe1eedeb4f3457dc8ab79d6",
-   "date": "2026-09-14"
+   "hash": "2dd6ffdf052fb71134b43410d380d4b85842fc0d",
+   "date": "2026-09-15"
   },
   "enterprise": {
-   "hash": "5635d7748976173f3371e617676bac9905d5f94e",
-   "date": "2026-09-14"
+   "hash": "b03c28829412ca8d228e2ea6dad1ae57fa452c0b",
+   "date": "2026-09-15"
   }
  }
 }
