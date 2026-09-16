@@ -2,101 +2,6 @@
  "items": [
   {
    "topic_id": "ai-news",
-   "title": "Google stellt Pixel 11 mit Tensor G6 und tiefer Gemini-Integration vor",
-   "category": "tools",
-   "impact": 3,
-   "date": "2026-08-12",
-   "summary": "Google hat mit der Pixel-11-Serie und der Watch 5 seine neue Hardware-Generation vorgestellt, deren Tensor-G6-Chip laut Google bis zu 3,5-mal schneller und effizienter für KI-Aufgaben direkt auf dem Gerät ist. Neue Gemini-Funktionen wie das Diktier-Werkzeug Rambler oder App-übergreifende Buchungen laufen dabei teilweise ganz ohne Internetverbindung. Für Google ist das Gerät ein Schaufenster dafür, wie viel der bisher cloudbasierten Gemini-Intelligenz sich inzwischen auf ein Telefon verlagern lässt.",
-   "sources": [
-    {
-     "label": "TechCrunch",
-     "url": "https://techcrunch.com/2026/08/12/google-unveils-pixel-11-lineup-new-airtag-rival-and-gemini-features-at-made-by-google-2026/"
-    },
-    {
-     "label": "9to5Google",
-     "url": "https://9to5google.com/2026/08/12/made-by-google-2026-announcements/"
-    }
-   ],
-   "first_seen": "2026-08-13"
-  },
-  {
-   "topic_id": "lokale-llms",
-   "title": "Google bringt mit Tensor G6 und Gemini Nano mehr On-Device-KI in den Pixel 11",
-   "category": "lokal",
-   "impact": 3,
-   "date": "2026-08-12",
-   "summary": "Der neue Tensor-G6-Chip in der Pixel-11-Serie verarbeitet KI-Aufgaben laut Google bis zu 3,5-mal schneller und mit ebenso viel weniger Energieverbrauch als der Vorgänger, unterstützt durch 50 Prozent mehr TPU-Rechenleistung und das aktuelle Gemini-Nano-Modell. Einige Gemini-Funktionen laufen dadurch vollständig offline, etwa das Diktier-Werkzeug Rambler oder die Übersetzung von Videos und Sprachnachrichten. Auf der Pixel Watch 5 lässt sich Gemini zudem direkt vom Handgelenk aus für Aufgaben wie das Starten eines Workouts nutzen.",
-   "sources": [
-    {
-     "label": "TechCrunch",
-     "url": "https://techcrunch.com/2026/08/12/pixel-11-has-few-hardware-changes-and-more-gemini/"
-    },
-    {
-     "label": "9to5Google",
-     "url": "https://9to5google.com/2026/08/12/made-by-google-2026-announcements/"
-    }
-   ],
-   "first_seen": "2026-08-13"
-  },
-  {
-   "topic_id": "ai-tools",
-   "title": "Google vertieft Gemini-Integration im Pixel 11 mit App-übergreifender Aufgaben-Automatisierung",
-   "category": "tools",
-   "impact": 3,
-   "date": "2026-08-12",
-   "summary": "Mit der Pixel-11-Serie erweitert Google die Aufgaben-Automatisierung von Gemini auf mehr Apps: Nutzer können Bestellungen und Buchungen auslagern, und Gemini kann für erledigte Aufgaben inzwischen auch selbstständig Unternehmen anrufen. Das neue Diktier-Werkzeug Rambler soll dabei auch unstrukturierte, mit Füllwörtern durchsetzte Sprache zuverlässig in Text umwandeln. Für den Alltag bedeutet das ein Stück weniger manuelles Umschalten zwischen Apps für wiederkehrende Erledigungen.",
-   "sources": [
-    {
-     "label": "Digital Trends",
-     "url": "https://www.digitaltrends.com/computing/everything-announced-at-made-by-google-2026-pixel-11-lineup-pixel-watch-5-and-pixel-tag/"
-    },
-    {
-     "label": "TechCrunch",
-     "url": "https://techcrunch.com/2026/08/12/google-unveils-pixel-11-lineup-new-airtag-rival-and-gemini-features-at-made-by-google-2026/"
-    }
-   ],
-   "first_seen": "2026-08-13"
-  },
-  {
-   "topic_id": "context-engineering",
-   "title": "Studie zeigt: Verschlüsselte Reasoning-Traces waren bei OpenAI, Anthropic und Google anbieterweit austauschbar",
-   "category": "security",
-   "impact": 4,
-   "date": "2026-08-12",
-   "summary": "Eine neue Untersuchung liefert eine seltene Innenansicht davon, wie die großen Anbieter ihre Chain-of-Thought-Reasoning-Blöcke technisch verpacken: verschlüsselt, aber bislang ohne Bindung an eine bestimmte Sitzung, einen Nutzer oder ein konkretes Modell derselben Familie. Wer eigene Agenten baut und Sitzungs-Transkripte protokolliert, archiviert oder für Trainingszwecke weiterverwendet, bekommt damit einen konkreten Grund, auch verschlüsselt wirkende Reasoning-Ausgaben nicht unreflektiert zu speichern oder weiterzugeben. Die inzwischen ausgerollten Gegenmaßnahmen der Anbieter ändern daran wenig, solange ältere fremde Transkripte weiter im Umlauf sind.",
-   "sources": [
-    {
-     "label": "The Hacker News",
-     "url": "https://thehackernews.com/2026/08/openai-anthropic-google-api-flaw-let.html"
-    },
-    {
-     "label": "arXiv",
-     "url": "https://arxiv.org/abs/2608.09867"
-    }
-   ],
-   "first_seen": "2026-08-13"
-  },
-  {
-   "topic_id": "ai-security",
-   "title": "Forscher stehlen 315.000 versteckte Reasoning-Blöcke von OpenAI, Anthropic und Google",
-   "category": "security",
-   "impact": 5,
-   "date": "2026-08-12",
-   "summary": "Ein Forschungsteam hat eine grundlegende Schwachstelle in der Art gefunden, wie OpenAI, Anthropic und Google die verschlüsselten Denkschritte (Reasoning-Traces) ihrer Modelle zwischen API-Aufrufen weiterreichen: Die verschlüsselten Blöcke waren bei jedem Anbieter mit einem einzigen, geteilten Schlüssel versehen und ließen sich deshalb in schwächere, weniger stark abgesicherte Modelle derselben Familie einspeisen, die den Inhalt dann im Klartext ausgaben. Aus 6.708 öffentlich zugänglichen Agenten-Transkripten auf GitHub und Hugging Face rekonstruierten die Forscher so 315.320 versteckte Denkblöcke, darunter 367 personenbezogene Datenfragmente sowie einzelne Passwörter und aktive API-Schlüssel. Alle drei Anbieter haben nach der verantwortungsvollen Offenlegung serverseitige Gegenmaßnahmen eingespielt, die den ursprünglichen Angriffsweg inzwischen unterbinden.",
-   "sources": [
-    {
-     "label": "The Hacker News",
-     "url": "https://thehackernews.com/2026/08/openai-anthropic-google-api-flaw-let.html"
-    },
-    {
-     "label": "arXiv",
-     "url": "https://arxiv.org/abs/2608.09867"
-    }
-   ],
-   "first_seen": "2026-08-13"
-  },
-  {
-   "topic_id": "ai-news",
    "title": "Alibaba veröffentlicht Qwen3.8-2.4T-A95B – erstmals ein offenes Modell der Qwen-Max-Klasse",
    "category": "modelle",
    "impact": 4,
@@ -318,44 +223,6 @@
     {
      "label": "MindStudio",
      "url": "https://www.mindstudio.ai/blog/qwen3-8-2-4t-a95b-release"
-    }
-   ],
-   "first_seen": "2026-08-14"
-  },
-  {
-   "topic_id": "ai-news",
-   "title": "DeepSeek veröffentlicht V4 Pro 0813 – kräftige Agenten-Fortschritte, aber Mittelmaß im Intelligence-Index",
-   "category": "modelle",
-   "impact": 3,
-   "date": "2026-08-12",
-   "summary": "DeepSeek hat die im April gezeigte Vorschau von V4 Pro durch eine reguläre GA-Version ersetzt und meldet deutliche Sprünge bei Agenten- und Coding-Benchmarks: DeepSWE steigt von 12,8 auf 62,7 Punkte, CyberGym von 52,7 auf 83,3, Terminal-Bench 2.1 von 72,1 auf 87,9 – nahe an Fable-5-Niveau, aber zu etwa einem Sechzigstel des Preises (0,44 Dollar je Million Input-, 0,87 Dollar je Million Output-Token). Im breiter angelegten Artificial-Analysis-Intelligence-Index erreicht das Modell dagegen nur 53 Punkte und bleibt damit hinter den Spitzenmodellen zurück – ein gemischtes Signal für Chinas offene Modelle zwischen Nischen-Stärke und echter Generalisten-Konkurrenz.",
-   "sources": [
-    {
-     "label": "South China Morning Post",
-     "url": "https://www.scmp.com/tech/big-tech/article/3363895/deepseeks-updated-v4-pro-ai-model-struggles-benchmarks-shines-cybersecurity"
-    },
-    {
-     "label": "OpenRouter",
-     "url": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813"
-    }
-   ],
-   "first_seen": "2026-08-14"
-  },
-  {
-   "topic_id": "lokale-llms",
-   "title": "DeepSeek V4 Pro 0813: GA-Release mit großen Agenten-Sprüngen zu Bruchteilkosten",
-   "category": "lokal",
-   "impact": 4,
-   "date": "2026-08-12",
-   "summary": "DeepSeek hat V4 Pro 0813 als reguläre General-Availability-Version veröffentlicht: 1,6 Billionen Parameter, rund 49 Milliarden aktiv, 1 Million Token Kontext und bis zu 384.000 Token Ausgabe. Gegenüber der April-Vorschau springen agentische Benchmarks kräftig – DeepSWE von 12,8 auf 62,7, Terminal-Bench 2.1 von 72,1 auf 87,9 – bei einem API-Preis von 0,44 Dollar je Million Input- und 0,87 Dollar je Million Output-Token, etwa einem Sechzigstel dessen, was Fable 5 kostet. Im allgemeinen Intelligence-Index bleibt das Modell mit 53 Punkten aber deutlich hinter der Spitze zurück; DeepSeek kündigte zudem eine noch unbezifferte Preiserhöhung an.",
-   "sources": [
-    {
-     "label": "South China Morning Post",
-     "url": "https://www.scmp.com/tech/big-tech/article/3363895/deepseeks-updated-v4-pro-ai-model-struggles-benchmarks-shines-cybersecurity"
-    },
-    {
-     "label": "OpenRouter",
-     "url": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813"
     }
    ],
    "first_seen": "2026-08-14"
@@ -7176,117 +7043,283 @@
     }
    ],
    "first_seen": "2026-09-15"
-  }
- ],
- "summaries": [
+  },
   {
    "topic_id": "ai-news",
-   "date": "2026-08-12",
-   "summary": "Anthropic lässt sich seine künftigen Rechenzentren von Finanzinvestoren bauen, Zuckerberg untermauert sein KI-Manifest mit einem Investitionsbudget von 145 Milliarden Dollar, und Nvidia liefert mit einem offenen Agentenmodell samt Routing-Bibliothek gleich zwei neue Bausteine für günstigere Agenten-Workflows.",
-   "skip": [
+   "title": "Google startet Gemini 3.8 Live und Live Extended Thinking",
+   "category": "modelle",
+   "impact": 4,
+   "date": "2026-09-15",
+   "summary": "Google veröffentlicht zwei native Audio-Modelle für flüssige Sprachdialoge, visuelle Echtzeitkontexte und parallele Werkzeugaufrufe. Die Extended-Thinking-Variante kann mehrstufige Aufgaben bearbeiten und dabei weiter sprechen; der Rollout beginnt in API, AI Studio, Search und ausgewählten Enterprise-Produkten.",
+   "sources": [
     {
-     "reason": "Andernorts eingeordnet",
-     "text": "Mistrals Infrastruktur-Ausbau in Europa (Regional Endpoints, Priority Tier, 200-Megawatt-Koalition, 11. August) wird unter Governance und Enterprise geführt, da der Blickwinkel dort passender ist."
+     "label": "Google",
+     "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/"
     },
     {
-     "reason": "Unzureichend verifiziert",
-     "text": "Zu AI/Rs Governance-Plattform „AI/Cockpit One“ (10. August) liegt nur die eigene Pressemitteilung ohne unabhängige Einordnung vor; zum als „August-Umstellung“ kolportierten GitHub-Copilot-Modell Project Polaris gibt es weiterhin keine offizielle Bestätigung von Microsoft oder GitHub für ein konkretes Datum im Zeitraum – die kursierenden Artikel gehen auf die Build-Ankündigung vom 2. Juni zurück."
+     "label": "Google DeepMind Model Card",
+     "url": "https://deepmind.google/models/model-cards/gemini-3-8-audio/"
     }
-   ]
+   ],
+   "first_seen": "2026-09-16"
+  },
+  {
+   "topic_id": "ai-news",
+   "title": "OpenAI, Anthropic und Google sprechen über gemeinsame AI-Sicherheitsstandards",
+   "category": "security",
+   "impact": 4,
+   "date": "2026-09-15",
+   "summary": "OpenAI bestätigte laufende Gespräche mit Anthropic und Google DeepMind über gemeinsame Sicherheitsmaßnahmen. Diskutiert werden Branchenstandards und unabhängige Prüfungen; konkrete gemeinsame Regeln oder ein fertiges Gremium sind noch nicht veröffentlicht.",
+   "sources": [
+    {
+     "label": "CNBC",
+     "url": "https://www.cnbc.com/2026/09/15/open-ai-google-anthropic-safety.html"
+    },
+    {
+     "label": "TechCrunch",
+     "url": "https://techcrunch.com/2026/09/15/openai-anthropic-google-have-been-in-talks-on-ai-safety-for-weeks/"
+    },
+    {
+     "label": "OpenAI",
+     "url": "https://openai.com/index/ai-policy-window/"
+    }
+   ],
+   "first_seen": "2026-09-16"
   },
   {
    "topic_id": "lokale-llms",
-   "date": "2026-08-12",
-   "summary": "Nvidia liefert mit dem offenen Nemotron 3.5 Lightning und dem Video-Weltmodell LTX-2.5 gleich zwei neue, lokal lauffähige Modelle – beide laufen auf Consumer- oder Workstation-Hardware statt in der Cloud.",
-   "skip": [
+   "title": "Mozilla misst nur noch 4,4 Monate Abstand zwischen offenen und geschlossenen Spitzenmodellen",
+   "category": "lokal",
+   "impact": 4,
+   "date": "2026-09-15",
+   "summary": "Der State-of-Open-Source-AI-Bericht beziffert den gemessenen Fähigkeitsabstand auf rund 4,4 Monate. Ars ordnet ein, dass offene Modelle Routineaufgaben deutlich günstiger übernehmen können, während geschlossene Modelle vor allem bei langen, komplexen Aufgaben sowie durch Support und Compliance-Pakete Vorteile behalten.",
+   "sources": [
     {
-     "reason": "Kein neuer eigenständiger Stand im Zeitraum",
-     "text": "Zu neuen Modellen aus China (Qwen, Kimi, DeepSeek, GLM, MiniMax) gab es am 10./11. August keine verifizierbaren neuen Releases; Qwen3.8-Max (3. August) und Kimi K3 sind bereits in früheren Ausgaben erfasst."
+     "label": "Mozilla State of Open Source AI",
+     "url": "https://stateofopensource.ai/"
+    },
+    {
+     "label": "Ars Technica",
+     "url": "https://arstechnica.com/ai/2026/09/exclusive-open-chinese-models-close-gap-with-silicon-valleys-frontier-ai-models/"
     }
-   ]
+   ],
+   "first_seen": "2026-09-16"
+  },
+  {
+   "topic_id": "lokale-llms",
+   "title": "Salesforce baut Koa auf NVIDIAs offenem Nemotron-Modell",
+   "category": "lokal",
+   "impact": 3,
+   "date": "2026-09-15",
+   "summary": "Salesforce post-trainiert Nemotron 3 Super mit synthetischen CRM-Szenarien und kontrolliert Gewichte sowie Inferenz innerhalb der eigenen Infrastruktur. Koa ist zunächst ein gehosteter Pilot und kein allgemeiner Download, zeigt aber, wie Open-Weight-Basismodelle für abgeschottete Unternehmensumgebungen spezialisiert werden.",
+   "sources": [
+    {
+     "label": "Salesforce",
+     "url": "https://www.salesforce.com/news/press-releases/2026/09/15/koa-reasoning-model/"
+    },
+    {
+     "label": "TechCrunch",
+     "url": "https://techcrunch.com/2026/09/15/salesforce-and-nvidias-new-reasoning-model-is-everything-the-ai-labs-should-fear/"
+    }
+   ],
+   "first_seen": "2026-09-16"
   },
   {
    "topic_id": "agentic-engineering",
-   "date": "2026-08-12",
-   "summary": "Nvidias neue Routing-Bibliothek NeMo Switchyard verspricht spürbar günstigere Agenten-Workflows, während AWS mit Continuum erstmals automatisierte Sicherheitsprüfung direkt in Claude Code und Codex einbettet.",
-   "skip": [
+   "title": "Meta lässt Coding-Agenten WhatsApp Business über MCP einrichten",
+   "category": "agents",
+   "impact": 4,
+   "date": "2026-09-15",
+   "summary": "Der neue WhatsApp Business Tools MCP verbindet Claude, Cursor, Codex und ChatGPT mit Konten, Telefonnummern, Vorlagen, Webhooks und Testnachrichten. Zustandsänderungen erfordern eine authentifizierte Person, Aufrufe werden protokolliert; der gestaffelte Rollout ist zunächst für Entwicklung und Tests gedacht.",
+   "sources": [
     {
-     "reason": "Unzureichend verifiziert",
-     "text": "Zum als „August-Umstellung“ kolportierten GitHub-Copilot-Modell Project Polaris gibt es keine offizielle Bestätigung von Microsoft oder GitHub für ein konkretes Datum im Zeitraum; die kursierenden Artikel gehen auf die Build-Ankündigung vom 2. Juni zurück."
+     "label": "Meta for Developers",
+     "url": "https://developers.facebook.com/blog/post/2026/09/15/meta-business-messaging-mcp-ai-agent/"
+    },
+    {
+     "label": "The New Stack",
+     "url": "https://thenewstack.io/meta-mcp-whatsapp-business-claude/"
     }
-   ]
+   ],
+   "first_seen": "2026-09-16"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "Koa soll Agentforce durch mehrstufige CRM-Workflows führen",
+   "category": "agents",
+   "impact": 4,
+   "date": "2026-09-15",
+   "summary": "Salesforce und NVIDIA haben Nemotron 3 Super für Werkzeugnutzung und Entscheidungen in Vertriebs- und Serviceprozessen post-trainiert. Koa läuft bereits intern und bei ausgewählten Pilotkunden; die allgemeine Verfügbarkeit in US-Regionen ist für Winter 2026 angekündigt.",
+   "sources": [
+    {
+     "label": "Salesforce",
+     "url": "https://www.salesforce.com/news/press-releases/2026/09/15/koa-reasoning-model/"
+    },
+    {
+     "label": "TechCrunch",
+     "url": "https://techcrunch.com/2026/09/15/salesforce-and-nvidias-new-reasoning-model-is-everything-the-ai-labs-should-fear/"
+    }
+   ],
+   "first_seen": "2026-09-16"
   },
   {
    "topic_id": "ai-tools",
-   "date": "2026-08-12",
-   "summary": "AWS bettet seinen Sicherheits-Dienst Continuum jetzt direkt in drei der meistgenutzten Coding-Werkzeuge ein – Claude Code, Codex und die eigene IDE Kiro.",
-   "skip": [
+   "title": "Gemini 3.8 Live führt Werkzeuge aus, ohne den Sprachdialog zu unterbrechen",
+   "category": "tools",
+   "impact": 4,
+   "date": "2026-09-15",
+   "summary": "Gemini 3.8 Live kann während eines laufenden Gesprächs API- und Tool-Aufrufe im Hintergrund ausführen, visuelle Eingaben einbeziehen und zwischen 97 Sprachen wechseln. Die Extended-Thinking-Version zielt auf komplexere Abläufe mit fortlaufender Statusrückmeldung.",
+   "sources": [
     {
-     "reason": "Bereits erfasst",
-     "text": "Googles mögliche Abschaffung der kostenlosen Gemini-Gems zugunsten bezahlter Skills (Umstellung angeblich ab 20. Oktober) wurde bereits am 9. August mit denselben Details erfasst; keine wesentliche neue Entwicklung seitdem."
+     "label": "Google",
+     "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/"
     },
     {
-     "reason": "Unzureichend verifiziert",
-     "text": "Zum als „August-Umstellung“ kolportierten GitHub-Copilot-Modell Project Polaris fehlt weiterhin eine offizielle Bestätigung von Microsoft oder GitHub für ein konkretes Datum im Zeitraum."
+     "label": "Google DeepMind Model Card",
+     "url": "https://deepmind.google/models/model-cards/gemini-3-8-audio/"
     }
-   ]
+   ],
+   "first_seen": "2026-09-16"
+  },
+  {
+   "topic_id": "ai-tools",
+   "title": "WhatsApp Business Tools MCP bündelt Setup, Tests und Fehlersuche",
+   "category": "tools",
+   "impact": 3,
+   "date": "2026-09-15",
+   "summary": "Entwickler können Konten und Nummern registrieren, Vorlagen verwalten, Webhooks konfigurieren und Testnachrichten senden, ohne zwischen mehreren Meta-Oberflächen zu wechseln. Meta weist darauf hin, dass die Funktion schrittweise ausgerollt wird und noch nicht für Produktionsversand im großen Maßstab gedacht ist.",
+   "sources": [
+    {
+     "label": "Meta for Developers",
+     "url": "https://developers.facebook.com/blog/post/2026/09/15/meta-business-messaging-mcp-ai-agent/"
+    },
+    {
+     "label": "The New Stack",
+     "url": "https://thenewstack.io/meta-mcp-whatsapp-business-claude/"
+    }
+   ],
+   "first_seen": "2026-09-16"
   },
   {
    "topic_id": "context-engineering",
-   "date": "2026-08-12",
-   "summary": "Nvidias neue Routing-Bibliothek NeMo Switchyard macht das Verteilen einzelner Arbeitsschritte auf mehrere Modelle zu einer Konfigurationsfrage – und liefert erstmals belastbare Zahlen dafür, wie viel Token-Effizienz dabei möglich ist.",
-   "skip": [
+   "title": "Retrieve-for-Train kompiliert Suchstrategien in einen kleinen Diffusions-Retriever",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-09-15",
+   "summary": "Google Research trainiert zunächst per Reinforcement Learning vielfältige, datenbanknahe Unterabfragen und destilliert das Verhalten anschließend in ein 53,9-Millionen-Parameter-Modell. Laut Google erzeugt es Ergebnis-Sets in einem parallelen Durchlauf und arbeitet in den Tests 12- bis 20-mal schneller als autoregressive Ansätze.",
+   "sources": [
     {
-     "reason": "Kein neuer eigenständiger Stand im Zeitraum",
-     "text": "Recherchierte Kandidaten zu hierarchischen Speicher-Architekturen (Hot/Warm/Cold-Memory-Layer) und weiteren Agenten-Gedächtnis-Papers datieren nicht eindeutig auf den 10./11. August; eine neue, für diesen Zeitraum verifizierbar datierte Entwicklung über NeMo Switchyard hinaus gab es nicht."
+     "label": "Google Research",
+     "url": "https://research.google/blog/bypassing-inference-bottlenecks-accelerating-complex-ai-search-with-retrieve-for-train/"
     }
-   ]
+   ],
+   "first_seen": "2026-09-16"
   },
   {
    "topic_id": "ai-security",
-   "date": "2026-08-12",
-   "summary": "AWS bettet seinen Sicherheits-Dienst Continuum direkt in die drei meistgenutzten Coding-Agenten ein und macht automatisierte Schwachstellenprüfung damit zum Standardbestandteil von KI-gestützter Softwareentwicklung.",
-   "skip": [
+   "title": "Metas WhatsApp-MCP hält Tokens aus dem Promptverlauf heraus",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-09-15",
+   "summary": "Die Schnittstelle nutzt Facebook Login for Business mit begrenzten Scopes, prüft Adminrechte und Vertragsstatus, protokolliert jeden Aufruf und bindet schreibende Aktionen an eine authentifizierte Person. Damit liegen zentrale Kontrollen außerhalb des Modells statt nur in dessen Instruktionen.",
+   "sources": [
     {
-     "reason": "Nicht KI-spezifisch",
-     "text": "Die aktuell von Ransomware-Gruppen ausgenutzte Microsoft-SharePoint-Sicherheitslücke betrifft klassische Server-Software, keine KI-Systeme oder -Agenten."
+     "label": "Meta for Developers",
+     "url": "https://developers.facebook.com/blog/post/2026/09/15/meta-business-messaging-mcp-ai-agent/"
     },
     {
-     "reason": "Kein neuer eigenständiger Stand im Zeitraum",
-     "text": "Zu Prompt-Injection oder automatisierter Schwachstellensuche durch KI-Modelle gab es am 10./11. August sonst keine neue, eigenständig datierte Entwicklung über den bereits am 9. August erfassten Stand hinaus; von Embrace The Red liegt kein neuer Beitrag im Zeitraum vor."
+     "label": "The New Stack",
+     "url": "https://thenewstack.io/meta-mcp-whatsapp-business-claude/"
     }
-   ]
+   ],
+   "first_seen": "2026-09-16"
+  },
+  {
+   "topic_id": "ai-security",
+   "title": "Frontier-Labore prüfen branchenweite Standards und unabhängige Verifikation",
+   "category": "security",
+   "impact": 4,
+   "date": "2026-09-15",
+   "summary": "OpenAI bestätigte Gespräche mit Anthropic und Google über koordinierte Sicherheitsmaßnahmen. OpenAI unterstützt zudem unabhängige Prüfstellen, doch Umfang, Durchsetzung und Teilnahmebedingungen einer gemeinsamen Lösung sind noch offen.",
+   "sources": [
+    {
+     "label": "CNBC",
+     "url": "https://www.cnbc.com/2026/09/15/open-ai-google-anthropic-safety.html"
+    },
+    {
+     "label": "TechCrunch",
+     "url": "https://techcrunch.com/2026/09/15/openai-anthropic-google-have-been-in-talks-on-ai-safety-for-weeks/"
+    },
+    {
+     "label": "OpenAI",
+     "url": "https://openai.com/index/ai-policy-window/"
+    }
+   ],
+   "first_seen": "2026-09-16"
   },
   {
    "topic_id": "ai-governance",
-   "date": "2026-08-12",
-   "summary": "Mistral macht mit garantierten EU-Standorten und einer verbindlichen Kapazitätszusage europäischer Unternehmen ernst mit dem Versprechen souveräner KI-Infrastruktur – ein handfestes Gegenstück zu Zuckerbergs eher abstraktem Vorschlag, KI-Trainingsstände künftig vorab mit Regierungen zu teilen.",
-   "skip": [
+   "title": "OpenAI bestätigt Sicherheitsgespräche mit Anthropic und Google DeepMind",
+   "category": "security",
+   "impact": 4,
+   "date": "2026-09-15",
+   "summary": "Die Gespräche laufen laut OpenAI seit Googles Vorschlag für ein US-geführtes Standardisierungsgremium. OpenAI beschreibt freiwillige Branchenstandards ausdrücklich als Ergänzung zu verbindlichen staatlichen Schutzregeln; ein belastbares gemeinsames Regelwerk wurde noch nicht vorgelegt.",
+   "sources": [
     {
-     "reason": "Kein neuer eigenständiger Stand im Zeitraum",
-     "text": "Zur EU-AI-Act-Transparenzpflicht (seit 2. August in Kraft) und zu kalifornischen Gesetzesvorhaben gab es am 10./11. August keine neue Entwicklung."
+     "label": "CNBC",
+     "url": "https://www.cnbc.com/2026/09/15/open-ai-google-anthropic-safety.html"
     },
     {
-     "reason": "Unzureichend verifiziert",
-     "text": "AI/Rs Governance-Plattform „AI/Cockpit One“ (10. August) bleibt eine Eigen-Pressemitteilung ohne Kundennennung oder unabhängige Einordnung."
+     "label": "TechCrunch",
+     "url": "https://techcrunch.com/2026/09/15/openai-anthropic-google-have-been-in-talks-on-ai-safety-for-weeks/"
+    },
+    {
+     "label": "OpenAI",
+     "url": "https://openai.com/index/ai-policy-window/"
     }
-   ]
+   ],
+   "first_seen": "2026-09-16"
   },
   {
    "topic_id": "enterprise",
-   "date": "2026-08-12",
-   "summary": "Drei große Infrastruktur-Ansagen prägen den Blick auf Unternehmens-KI: Anthropic lässt sich seine Rechenzentren künftig von Finanzinvestoren bauen, Mistral bindet europäische Firmen mit mehrjährigen Kapazitätsverträgen, und Meta unterlegt sein KI-Manifest mit einem Investitionsbudget von 145 Milliarden Dollar.",
-   "skip": [
+   "title": "Salesforce positioniert Koa als kontrollierbare Alternative für CRM-Agenten",
+   "category": "business",
+   "impact": 4,
+   "date": "2026-09-15",
+   "summary": "Koa wurde laut Salesforce ohne Kundendaten auf synthetischen Szenarien aus mehr als 14 Branchen post-trainiert. Gewichte und Inferenz bleiben in Salesforces Infrastruktur; Pilotkunden testen das Modell bereits, während herstellerseitige Benchmark-Angaben noch unabhängig bestätigt werden müssen.",
+   "sources": [
     {
-     "reason": "Kein neuer eigenständiger Stand im Zeitraum",
-     "text": "Zu Branchenplattformen (Legal, Insurance, Banking, Manufacturing) sowie zu SAP, Salesforce oder ServiceNow gab es im Zeitraum keine neuen, eigenständig datierten Meldungen."
+     "label": "Salesforce",
+     "url": "https://www.salesforce.com/news/press-releases/2026/09/15/koa-reasoning-model/"
     },
     {
-     "reason": "Unzureichend verifiziert",
-     "text": "AI/Rs Governance-Plattform „AI/Cockpit One“ (10. August) bleibt eine Eigen-Pressemitteilung ohne Kundennennung oder unabhängige Einordnung."
+     "label": "TechCrunch",
+     "url": "https://techcrunch.com/2026/09/15/salesforce-and-nvidias-new-reasoning-model-is-everything-the-ai-labs-should-fear/"
     }
-   ]
+   ],
+   "first_seen": "2026-09-16"
   },
+  {
+   "topic_id": "enterprise",
+   "title": "Gemini 3.8 Live startet für Entwickler und als Enterprise-Preview",
+   "category": "business",
+   "impact": 4,
+   "date": "2026-09-15",
+   "summary": "Google stellt beide Live-Modelle über Gemini API und AI Studio bereit. Gemini Enterprise erhält zunächst eine private Vorschau; die Kombination aus Sprachdialog, visueller Erdung und asynchronen Werkzeugaufrufen zielt auf Kundenservice und andere Echtzeitprozesse.",
+   "sources": [
+    {
+     "label": "Google",
+     "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/"
+    },
+    {
+     "label": "Google DeepMind Model Card",
+     "url": "https://deepmind.google/models/model-cards/gemini-3-8-audio/"
+    }
+   ],
+   "first_seen": "2026-09-16"
+  }
+ ],
+ "summaries": [
   {
    "topic_id": "ai-news",
    "date": "2026-08-13",
@@ -9941,40 +9974,88 @@
    "date": "2026-09-15",
    "summary": "Superhuman integriert Fathoms Meetingwissen als zusätzlichen Kontext in seine verbundene Suite aus Apps und Agenten.",
    "skip": []
+  },
+  {
+   "topic_id": "ai-news",
+   "date": "2026-09-16",
+   "summary": "Google bringt reasoningfähige Echtzeit-Sprachmodelle in API und Produkte; zugleich bestätigen drei führende Labore laufende Gespräche über gemeinsame Sicherheitsstandards.",
+   "skip": []
+  },
+  {
+   "topic_id": "lokale-llms",
+   "date": "2026-09-16",
+   "summary": "Mozillas neue Auswertung beziffert den Vorsprung geschlossener Frontier-Modelle nur noch auf wenige Monate und stärkt den wirtschaftlichen Fall für Open Weights.",
+   "skip": []
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "date": "2026-09-16",
+   "summary": "Meta macht WhatsApp-Business-Konfiguration agentisch; Salesforce setzt für mehrstufige CRM-Arbeit auf ein spezialisiertes Reasoning-Modell.",
+   "skip": []
+  },
+  {
+   "topic_id": "ai-tools",
+   "date": "2026-09-16",
+   "summary": "Gemini erhält einen neuen Echtzeit-Sprachstack, während Meta die technische Einrichtung von WhatsApp Business per Agenten-Chat zugänglich macht.",
+   "skip": []
+  },
+  {
+   "topic_id": "context-engineering",
+   "date": "2026-09-16",
+   "summary": "Google verlagert aufwendige Suchauffächerung aus der Inferenz in ein kompaktes, spezialisiertes Modell.",
+   "skip": []
+  },
+  {
+   "topic_id": "ai-security",
+   "date": "2026-09-16",
+   "summary": "Neue Agenten-Schnittstellen setzen auf externe Zugriffskontrollen; parallel beraten Frontier-Labore über gemeinsame Sicherheitsprüfungen.",
+   "skip": []
+  },
+  {
+   "topic_id": "ai-governance",
+   "date": "2026-09-16",
+   "summary": "Die drei größten westlichen Frontier-Labore suchen einen gemeinsamen Sicherheitsrahmen, ohne staatliche Regeln ersetzen zu wollen.",
+   "skip": []
+  },
+  {
+   "topic_id": "enterprise",
+   "date": "2026-09-16",
+   "summary": "Salesforce baut ein eigenes CRM-Reasoning-Modell innerhalb seiner Trust Boundary; Google bringt reasoningfähige Sprachagenten in den Enterprise-Stack.",
+   "skip": []
   }
  ],
  "fingerprints": {
   "ai-news": {
-   "hash": "20d3aeb22b5c1d40b2f5f760c6a7e4dc05d4a587",
-   "date": "2026-09-15"
+   "hash": "310e1b569b2ee934390358324cfcde1a9531390f",
+   "date": "2026-09-16"
   },
   "lokale-llms": {
-   "hash": "2d8c951b119607abd61bf9ab9e5fc833b5a16b0f",
-   "date": "2026-09-15"
+   "hash": "b5c14c9c5c13468e791be09d2cd4e2e305897233",
+   "date": "2026-09-16"
   },
   "agentic-engineering": {
-   "hash": "b9ad24109c60fc68c79491fa638e5016cf3dc443",
-   "date": "2026-09-15"
+   "hash": "3cd808a67fe670646f04ce076fa8468f98212c96",
+   "date": "2026-09-16"
   },
   "ai-tools": {
-   "hash": "032501b99b28c6c93b9b5fc9fed785adec595644",
-   "date": "2026-09-15"
+   "hash": "36c15752dd89ee474cd3754a8fd7f2ab1512c119",
+   "date": "2026-09-16"
   },
   "context-engineering": {
-   "hash": "cecff14fcf47685bd95a458680acb60e28666cbb",
-   "date": "2026-09-15"
+   "hash": "4d3ecb7d80d365df67338860fbedbceefdfc2bf8",
+   "date": "2026-09-16"
   },
   "ai-security": {
-   "hash": "adce0e4a2baa5df7e6aba30394f7beb4e101d0f9",
-   "date": "2026-09-15"
+   "hash": "f53525397ead4050ba87f73acd451a5fe40e9192",
+   "date": "2026-09-16"
   },
   "ai-governance": {
-   "hash": "2dd6ffdf052fb71134b43410d380d4b85842fc0d",
-   "date": "2026-09-15"
+   "hash": "f64597f4944296ca183c053ca18a85e31c23a8a9",
+   "date": "2026-09-16"
   },
   "enterprise": {
-   "hash": "b03c28829412ca8d228e2ea6dad1ae57fa452c0b",
-   "date": "2026-09-15"
+   "hash": "7bfbe8015d0595abcdcd886ccc80a5b0d857a487",
+   "date": "2026-09-16"
   }
  }
 }
