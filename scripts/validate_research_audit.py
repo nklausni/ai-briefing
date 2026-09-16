@@ -26,6 +26,7 @@ SOURCES = (
     ("huggingface.co", "Hugging Face"),
     ("techcrunch.com", "TechCrunch"),
     ("theverge.com", "The Verge"),
+    ("heise.de", "heise online"),
     ("arstechnica.com", "Ars Technica"),
     ("computerworld.com", "Computerworld"),
     ("cnbc.com", "CNBC"),
