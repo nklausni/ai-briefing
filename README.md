@@ -114,6 +114,24 @@ Impact-Skala: 2 Nennenswert · 3 Relevant · 4 Stark · 5 Game-Changer.
 
 ## Tägliche Aktualisierung
 
+### Recherche mit Subagenten
+
+Der Hermes-Job folgt `docs/briefing-orchestrator.md`. Der Planner
+`scripts/research_pipeline.py` verteilt die aktuelle Pflichtliste automatisch auf
+Pakete mit maximal neun Quellen plus eine offene Entdeckungssuche über alle Themen.
+Maximal drei Aufträge werden gleichzeitig registriert. Jeder Recherche-Agent besitzt
+ein eigenes Suchbudget und speichert abgeschlossene Quellen sofort; nach einem Abbruch
+können nur offene Quellen einmal gezielt nachbearbeitet werden.
+
+Die Recherchefenster richten sich pro Quelle nach dem letzten erfolgreichen Check mit
+zeitlicher Überlappung. Ausgefallene Tage verkürzen das Fenster nicht. Zwischenstände
+und Belege liegen außerhalb des Git-Repositories unter `/opt/data/ai-briefing-research/`.
+Nur der Hauptagent bearbeitet das Briefing und veröffentlicht es. Die Prüfungen vor der
+Veröffentlichung verlangen vollständige Quellenabdeckung, eine abgeschlossene offene
+Suche, eine Auswahlentscheidung zu jedem Kandidaten und belegte URLs. Der
+`verify-publication`-Befehl bestätigt den Remote-Commit und den erfolgreichen Pages-Build;
+ein technisches Hermes-`ok` allein ist keine Veröffentlichungsbestätigung.
+
 **Aktiver Weg (ohne zusätzlichen Recherche-API-Key):** Ein Hermes-Cronjob
 (`ai-briefing-daily`, täglich um 08:00 Uhr Europe/Berlin) recherchiert die Meldungen
 der letzten 24 Stunden mit den Hermes-Web-Tools. Er aktualisiert ausschließlich
