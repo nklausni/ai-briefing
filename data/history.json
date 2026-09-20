@@ -2,123 +2,6 @@
  "items": [
   {
    "topic_id": "ai-news",
-   "title": "Stripe übernimmt AI-Gateway OpenRouter für über 7 Milliarden Dollar",
-   "category": "business",
-   "impact": 4,
-   "date": "2026-08-16",
-   "summary": "Laut Bloomberg hat Stripe den Kauf von OpenRouter besiegelt, das Entwicklern über eine einzige, OpenAI-kompatible Schnittstelle Zugriff auf mehr als 500 Modelle von über 80 Anbietern gibt und monatlich über 200 Billionen Token vermittelt. Die Bewertung von über 7 Milliarden Dollar liegt mehr als das Fünffache über der 1,3-Milliarden-Bewertung aus der Series-B-Runde vom Mai. Der Deal hat bei Snowflake, Cloudflare, Vercel und Baseten bereits ein Wettrennen um vergleichbare Gateway-Startups ausgelöst.",
-   "sources": [
-    {
-     "label": "TechCrunch",
-     "url": "https://techcrunch.com/2026/08/16/stripe-will-reportedly-acquire-ai-gateway-startup-openrouter-for-7b/"
-    },
-    {
-     "label": "Fortune",
-     "url": "https://fortune.com/2026/08/16/stripe-7-billion-deal-ai-firm-openrouter-acquisition/"
-    }
-   ],
-   "first_seen": "2026-08-17"
-  },
-  {
-   "topic_id": "ai-news",
-   "title": "Anthropic-Chef Amodei: KI-Backlash ist vor allem eine Vertrauenskrise",
-   "category": "business",
-   "impact": 2,
-   "date": "2026-08-16",
-   "summary": "Auf den Vorwurf des Investors Gavin Baker, seine Warnungen vor KI-Risiken hätten den öffentlichen Gegenwind gegen die Branche mit angefacht, entgegnete Anthropic-CEO Dario Amodei auf X, seine öffentlichen Aussagen seien stets ausgewogen zwischen Risiken und Nutzen gewesen. Den eigentlichen Vertrauensverlust der Öffentlichkeit gegenüber Unternehmen, Regierungen und der Tech-Branche insgesamt sieht er als Ursache – die treffendste Kritik an Anthropic sei, bislang zu wenig von den versprochenen Vorteilen geliefert zu haben, nicht die eigene Warnkommunikation.",
-   "sources": [
-    {
-     "label": "TechCrunch",
-     "url": "https://techcrunch.com/2026/08/16/anthropic-ceo-says-ai-backlash-is-fundamentally-a-crisis-of-trust/"
-    }
-   ],
-   "first_seen": "2026-08-17"
-  },
-  {
-   "topic_id": "ai-tools",
-   "title": "OpenRouter, das meistgenutzte Modell-Gateway für Entwickler, geht an Stripe",
-   "category": "tools",
-   "impact": 2,
-   "date": "2026-08-16",
-   "summary": "OpenRouter erlaubt Entwicklern, über eine einzige, OpenAI-kompatible Schnittstelle mehr als 500 Modelle von über 80 Anbietern anzusprechen, inklusive Routing, Ausfallsicherung und Abrechnung – nach eigenen Angaben nutzen über 10 Millionen Entwickler den Dienst. Mit der Übernahme durch Stripe für über 7 Milliarden Dollar bleibt vorerst offen, ob sich an Preisen oder der bislang geschätzten anbieterneutralen Ausrichtung etwas ändert.",
-   "sources": [
-    {
-     "label": "TechCrunch",
-     "url": "https://techcrunch.com/2026/08/16/stripe-will-reportedly-acquire-ai-gateway-startup-openrouter-for-7b/"
-    }
-   ],
-   "first_seen": "2026-08-17"
-  },
-  {
-   "topic_id": "context-engineering",
-   "title": "Nachgebaute Reasoning-Trace-Lücke: Kontext aus einer Sitzung lässt sich in eine andere übertragen",
-   "category": "security",
-   "impact": 3,
-   "date": "2026-08-16",
-   "summary": "Die Recherche von Johann Rehberger (Embrace The Red) zeigt, dass Anbieter offenbar denselben Verschlüsselungsschlüssel über Nutzer, Sitzungen und Modelle hinweg verwenden, wodurch sich der verschlüsselte Reasoning-Inhalt aus dem Kontext einer Sitzung abgreifen und in einer anderen Sitzung wieder auslesen lässt. Für Entwickler, die Sitzungsdateien mit Reasoning-Trace-Feldern speichern, weiterreichen oder in Support-Tickets teilen, bedeutet das ein bislang unterschätztes Leck-Risiko im eigenen Kontextmanagement.",
-   "sources": [
-    {
-     "label": "Embrace The Red",
-     "url": "https://embracethered.com/blog/posts/2026/recovering-encrypted-llm-thoughts/"
-    }
-   ],
-   "first_seen": "2026-08-17"
-  },
-  {
-   "topic_id": "ai-security",
-   "title": "Sicherheitsforscher reproduziert Rekonstruktion verschlüsselter Reasoning-Traces – inklusive Passwort-Extraktion",
-   "category": "security",
-   "impact": 4,
-   "date": "2026-08-16",
-   "summary": "Johann Rehberger (Embrace The Red) hat eine kürzlich veröffentlichte Angriffstechnik nachgebaut, mit der sich verschlüsselte Reasoning-Blöcke von OpenAI-Modellen über Konten, Sitzungen und sogar Modelle hinweg wiederherstellen lassen. Er spielte einen abgefangenen, verschlüsselten Denkverlauf von GPT-5.6 Sol in das schwächere GPT-5.6 Luna ein und brachte es mit einem einfachen Jailbreak-Prompt dazu, den Inhalt wortnah preiszugeben – inklusive eines darin enthaltenen Passworts. Sein Fazit: Verschlüsselte Reasoning-Blobs in geteilten Sitzungsdateien sind keine harmlosen Datenblöcke, sondern können sensible Informationen offenlegen.",
-   "sources": [
-    {
-     "label": "Embrace The Red",
-     "url": "https://embracethered.com/blog/posts/2026/recovering-encrypted-llm-thoughts/"
-    },
-    {
-     "label": "arXiv (Originalpaper)",
-     "url": "https://arxiv.org/pdf/2608.09867"
-    }
-   ],
-   "first_seen": "2026-08-17"
-  },
-  {
-   "topic_id": "ai-governance",
-   "title": "Anthropic-Chef Amodei weist Vorwurf zurück, seine Risikowarnungen befeuerten den KI-Backlash",
-   "category": "security",
-   "impact": 2,
-   "date": "2026-08-16",
-   "summary": "Amodei wies auf X die Vorstellung zurück, Regulierung führe zwangsläufig zu einer Konzentration von Marktmacht bei wenigen großen Anbietern, und betonte, Anthropic gestalte seine eigenen Politikvorschläge bewusst so, dass sie kleinere Wettbewerber begünstigen statt die eigene Marktposition abzusichern. Den öffentlichen Vertrauensverlust gegenüber der Tech-Branche insgesamt sieht er als eigentliche Ursache des KI-Backlashs, nicht seine eigenen Warnungen vor KI-Risiken.",
-   "sources": [
-    {
-     "label": "TechCrunch",
-     "url": "https://techcrunch.com/2026/08/16/anthropic-ceo-says-ai-backlash-is-fundamentally-a-crisis-of-trust/"
-    }
-   ],
-   "first_seen": "2026-08-17"
-  },
-  {
-   "topic_id": "enterprise",
-   "title": "Stripe kauft OpenRouter für über 7 Milliarden Dollar – Konsolidierung im KI-Infrastruktur-Markt",
-   "category": "business",
-   "impact": 4,
-   "date": "2026-08-16",
-   "summary": "Der Zahlungsdienstleister Stripe übernimmt das AI-Gateway OpenRouter, das monatlich über 200 Billionen Token durch mehr als 500 Modelle von über 80 Anbietern leitet, für mehr als 7 Milliarden Dollar – das Fünffache der Bewertung vom Mai. Für Unternehmen, die über solche Gateways Modelle verschiedener Anbieter einkaufen, wechselt damit ein zentraler neutraler Vermittler in den Besitz eines Zahlungsunternehmens, was Fragen zu Abrechnungsintegration und künftiger Preisgestaltung aufwirft. Der Deal hat zugleich ein Wettrennen um vergleichbare Gateway-Startups bei Snowflake, Cloudflare, Vercel und Baseten ausgelöst.",
-   "sources": [
-    {
-     "label": "TechCrunch",
-     "url": "https://techcrunch.com/2026/08/16/stripe-will-reportedly-acquire-ai-gateway-startup-openrouter-for-7b/"
-    },
-    {
-     "label": "Fortune",
-     "url": "https://fortune.com/2026/08/16/stripe-7-billion-deal-ai-firm-openrouter-acquisition/"
-    }
-   ],
-   "first_seen": "2026-08-17"
-  },
-  {
-   "topic_id": "ai-news",
    "title": "OpenAI mietet Rekord-Rechenzentrum in Ohio, Nvidia bürgt mit bis zu 105 Milliarden Dollar",
    "category": "business",
    "impact": 4,
@@ -181,85 +64,6 @@
     {
      "label": "OpenAI",
      "url": "https://openai.com/index/the-defenders-window/"
-    }
-   ],
-   "first_seen": "2026-08-18"
-  },
-  {
-   "topic_id": "ai-tools",
-   "title": "Artificial Analysis startet Optima: Modellvergleiche gegen eigene Unternehmensdaten statt nur Benchmarks",
-   "category": "tools",
-   "impact": 2,
-   "date": "2026-08-16",
-   "summary": "Mit Optima können Teams eigene Benchmarks aus ihren Daten und Workflows bauen, statt sich auf generische Leaderboards zu verlassen. Modelle lassen sich dabei nicht nur nach Qualität, sondern auch nach Kosten und Zeit pro Aufgabe vergleichen – gerade für agentenbasierte Anwendungen oft aussagekräftiger als reine Token-Preise.",
-   "sources": [
-    {
-     "label": "The Decoder",
-     "url": "https://the-decoder.com/optima-tackles-ai-benchmarkings-biggest-flaw-by-letting-users-test-models-against-their-own-data/"
-    }
-   ],
-   "first_seen": "2026-08-18"
-  },
-  {
-   "topic_id": "ai-security",
-   "title": "Anthropics biologischer Sicherheitsfilter war fast ein Jahr lang abgeschaltet – 133 Millionen ungefilterte Chats",
-   "category": "security",
-   "impact": 4,
-   "date": "2026-08-16",
-   "summary": "Ein eigener Sicherheitsbericht von Anthropic zeigt, dass die Klassifizierer, die den Missbrauch der Modelle für chemische und biologische Waffen verhindern sollen, von Mai 2025 bis April 2026 inaktiv waren – betroffen war der gesamte Verkehr von rund 50.000 externen Feedback-Vertragskräften mit etwa 133 Millionen Interaktionen. Die Betroffenen waren nur von externen Dienstleistern geprüft worden, deren Screening laut Anthropic oft unzureichend war; das Unternehmen fand nach eigenen Angaben keine Hinweise auf tatsächlichen Missbrauch, hat die Anforderungen an Vertragspartner aber verschärft. Besonderes Gewicht bekommt der Vorfall dadurch, dass Anthropic-Chef Amodei KI-gestützte biologische Waffen wiederholt als größere Gefahr als Cyberangriffe bezeichnet hat.",
-   "sources": [
-    {
-     "label": "The Decoder",
-     "url": "https://the-decoder.com/anthropics-bio-weapons-filter-was-down-for-nearly-a-year-exposing-133-million-requests/"
-    },
-    {
-     "label": "Anthropic Redacted Risk Report",
-     "url": "https://www-cdn.anthropic.com/f61d49fa5596956a5dec75fea0e973bf6a6a8378/Redacted%20Risk%20Report%20August%202026%20.pdf"
-    }
-   ],
-   "first_seen": "2026-08-18"
-  },
-  {
-   "topic_id": "ai-security",
-   "title": "OpenAI löst „Preparedness\"-Team für katastrophale KI-Risiken auf",
-   "category": "security",
-   "impact": 4,
-   "date": "2026-08-16",
-   "summary": "OpenAI hat sein „Preparedness\"-Team, das die Modelle des Unternehmens auf schwere oder katastrophale Risiken prüfte, Ende Juli aufgelöst; die Arbeit an biologischen und Cyber-Risiken wanderte laut Financial Times in bestehende Teams. Der frühere Teamleiter kümmert sich künftig um Risiken durch „rekursiv selbstverbessernde\" KI, während mehrere Sicherheitsmitarbeitende das Unternehmen zuletzt verlassen haben, darunter die Chief Ethics Officer. Intern wächst laut Bericht ein Unbehagen darüber, ob OpenAI nach dem autonomen Hugging-Face-Zwischenfall genug für die Sicherheit tut – manche Mitarbeitende hofften öffentlich, das Unternehmen werde den Vorfall als Warnschuss ernst nehmen.",
-   "sources": [
-    {
-     "label": "The Decoder",
-     "url": "https://the-decoder.com/openai-dissolved-the-team-built-to-catch-catastrophic-ai-risks-reassigning-its-work-to-other-groups/"
-    }
-   ],
-   "first_seen": "2026-08-18"
-  },
-  {
-   "topic_id": "ai-governance",
-   "title": "OpenAI löst „Preparedness\"-Team für katastrophale KI-Risiken auf",
-   "category": "security",
-   "impact": 4,
-   "date": "2026-08-16",
-   "summary": "OpenAI hat das Team, das speziell schwere oder katastrophale Risiken der eigenen Modelle prüfte, Ende Juli aufgelöst und dessen Arbeit an Bio- und Cyber-Risiken auf bestehende Teams verteilt. Mehrere Sicherheitsmitarbeitende haben das Unternehmen zuletzt verlassen, und intern wächst laut Financial Times ein Unbehagen darüber, ob die Sicherheitsvorkehrungen mit dem Tempo der Modellentwicklung mithalten – ein Präzedenzfall für die Frage, wie verbindlich freiwillige Selbstverpflichtungen der Labore tatsächlich sind.",
-   "sources": [
-    {
-     "label": "The Decoder",
-     "url": "https://the-decoder.com/openai-dissolved-the-team-built-to-catch-catastrophic-ai-risks-reassigning-its-work-to-other-groups/"
-    }
-   ],
-   "first_seen": "2026-08-18"
-  },
-  {
-   "topic_id": "ai-governance",
-   "title": "Anthropics biologischer Sicherheitsfilter war fast ein Jahr lang abgeschaltet",
-   "category": "security",
-   "impact": 3,
-   "date": "2026-08-16",
-   "summary": "Nach eigenen Angaben liefen die Klassifizierer gegen den Missbrauch für chemische und biologische Waffen von Mai 2025 bis April 2026 ohne Wirkung, betroffen waren rund 133 Millionen Interaktionen externer Feedback-Vertragskräfte, deren Screening laut Anthropic oft unzureichend war. Anthropic fand keine Hinweise auf tatsächlichen Missbrauch und hat die Vertragsanforderungen verschärft – der Vorfall zeigt aber, dass selbst bei einem Unternehmen, das biologische KI-Risiken besonders betont, die praktische Umsetzung eigener Schutzversprechen Lücken haben kann.",
-   "sources": [
-    {
-     "label": "The Decoder",
-     "url": "https://the-decoder.com/anthropics-bio-weapons-filter-was-down-for-nearly-a-year-exposing-133-million-requests/"
     }
    ],
    "first_seen": "2026-08-18"
@@ -7661,105 +7465,519 @@
     }
    ],
    "first_seen": "2026-09-19"
-  }
- ],
- "summaries": [
+  },
   {
    "topic_id": "ai-news",
-   "date": "2026-08-16",
-   "summary": "Google antwortet mit Gemini 3.7 Flash auf den Preis- und Tempowettbewerb bei Coding-Agenten, während Anthropic mit einer Wasserzeichen-Erkennungs-API und Kaliforniens Gesetzgeber mit einem ersten Bündel verabschiedeter KI-Gesetze die Regulierungsseite vorantreiben.",
-   "skip": [
+   "title": "Qwen3.8-Omni-Flash verbindet Audio, Video und Agentenwerkzeuge",
+   "category": "modelle",
+   "impact": 4,
+   "date": "2026-09-19",
+   "summary": "Qwen3.8-Omni-Flash verarbeitet Audio und Video gemeinsam, bietet laut Qwen ein Kontextfenster von einer Million Token und kann Werkzeuge für Video- und Übersetzungsaufgaben nutzen. Ergänzend veröffentlichte Qwen offene Multimodal-Plugins für mehrere Agenten-Harnesses; Benchmarkvergleiche mit Gemini stammen vom Anbieter.",
+   "sources": [
     {
-     "reason": "Kein neuer eigenständiger Stand im Zeitraum",
-     "text": "Gemini crossing 1 Milliarde monatlich aktiver Nutzer, Grok 4.6 und GLM-5.3 sind bereits in den Vortagen erfasst; für den 15./16. August ließ sich keine eigenständig neue Meldung dieser Größenordnung verifizieren."
-    },
-    {
-     "reason": "Ursprungsdatum liegt vor dem Zeitraum",
-     "text": "Der tl;dv-Datenleck-Fund (181.874 offene Meeting-Datensätze über eine fehlende Firestore-Zugriffsregel) wurde bereits am 4. August veröffentlicht und in der Presse behandelt, außerhalb des Zeitraums."
+     "label": "The Decoder",
+     "url": "https://the-decoder.com/qwen3-8-omni-flash-undercuts-gemini-flash-pricing-while-matching-its-multimodal-benchmarks/"
     }
-   ]
+   ],
+   "first_seen": "2026-09-20"
+  },
+  {
+   "topic_id": "ai-news",
+   "title": "TypeSafe AI veröffentlicht Jev für schnelle, kalibrierte Klassifikationsentscheidungen",
+   "category": "modelle",
+   "impact": 4,
+   "date": "2026-09-18",
+   "summary": "TypeSafe AI hat Jev veröffentlicht, ein Transformer-Modell, das keine freien Texte erzeugt, sondern für vorab definierte Ausgänge Wahrscheinlichkeiten liefert. TechCrunch nennt erste Entwicklervergleiche mit deutlichen Geschwindigkeits- und Kostenvorteilen, weist aber auch darauf hin, dass Architektur und belastbare unabhängige Benchmarks noch offen sind; die Leistungsangaben sind daher vorläufig.",
+   "sources": [
+    {
+     "label": "TechCrunch",
+     "url": "https://techcrunch.com/2026/09/18/a-new-kind-of-ai-model-from-a-chatgpt-inventor-is-thrilling-developers/"
+    }
+   ],
+   "first_seen": "2026-09-20"
+  },
+  {
+   "topic_id": "ai-news",
+   "title": "FAA plant begrenzten Start eines KI-Systems zur Steuerung von Verkehrsflüssen",
+   "category": "business",
+   "impact": 4,
+   "date": "2026-09-18",
+   "summary": "Die US-Luftfahrtbehörde FAA will SMART zunächst im Luftraum um Washington, D.C. einsetzen. Das System soll Verkehrsflüsse und Konflikte aus Flugplänen, Wetter, Kapazitäten und Luftraumlage prognostizieren und alternative Routen über bestehende Systeme empfehlen; es ändert laut FAA vorerst keine Verfahren der Lotsen. SMART ist Teil eines 875-Millionen-Dollar-Vertrags über zwölf Jahre, doch Modelltypen, Expansionskriterien und Verantwortlichkeit bei Fehlprognosen bleiben offen.",
+   "sources": [
+    {
+     "label": "Ars Technica",
+     "url": "https://arstechnica.com/ai/2026/09/faa-tees-up-875m-ai-tool-to-help-manage-air-traffic-congestion/"
+    }
+   ],
+   "first_seen": "2026-09-20"
+  },
+  {
+   "topic_id": "ai-news",
+   "title": "AI-Neocloud Nscale beantragt Börsengang trotz Milliardenverlust",
+   "category": "business",
+   "impact": 4,
+   "date": "2026-09-18",
+   "summary": "Der auf KI-Infrastruktur spezialisierte Cloudanbieter Nscale hat einen Börsengang an der NYSE unter dem Kürzel NSCL beantragt. Laut dem von CNBC ausgewerteten Prospekt erzielte das Unternehmen im ersten Halbjahr 2026 140,6 Millionen Dollar Umsatz, 1.252 Prozent mehr als im Vorjahr, bei einem Nettoverlust von 1,02 Milliarden Dollar. Nscale vermietet Nvidia-GPUs und zählt OpenAI, Anthropic und Microsoft zu seinen Kunden; die Zahlen stammen aus der IPO-Anmeldung und sind noch kein Beleg für ein tragfähiges Geschäftsmodell.",
+   "sources": [
+    {
+     "label": "CNBC",
+     "url": "https://www.cnbc.com/2026/09/18/nscale-ai-cloud-provider-ipo-nscl.html"
+    }
+   ],
+   "first_seen": "2026-09-20"
   },
   {
    "topic_id": "lokale-llms",
-   "date": "2026-08-16",
-   "summary": "Ein ruhiger Zeitraum für offene und On-Device-Modelle: Nach Alibabas Qwen3.8-27B und Metas Muse Glimmer in den Vortagen ließ sich kein eigenständig neues, verifiziertes Open-Weight-Release für den 15./16. August finden.",
-   "skip": [
+   "title": "Qwen3.8-Omni-Flash verbindet Audio, Video und Agentenwerkzeuge",
+   "category": "modelle",
+   "impact": 4,
+   "date": "2026-09-19",
+   "summary": "Qwen3.8-Omni-Flash verarbeitet Audio und Video gemeinsam, bietet laut Qwen ein Kontextfenster von einer Million Token und kann Werkzeuge für Video- und Übersetzungsaufgaben nutzen. Ergänzend veröffentlichte Qwen offene Multimodal-Plugins für mehrere Agenten-Harnesses; Benchmarkvergleiche mit Gemini stammen vom Anbieter.",
+   "sources": [
     {
-     "reason": "Kein neuer eigenständiger Stand im Zeitraum",
-     "text": "Die zuletzt großen offenen Modelle – Alibabas Qwen3.8-27B (14. August) und Z.ais GLM-5.3, dessen offene Gewichte weiterhin zurückgehalten werden – sind bereits erfasst; für 15./16. August fand sich kein neues verifiziertes lokales Modell-Release."
+     "label": "The Decoder",
+     "url": "https://the-decoder.com/qwen3-8-omni-flash-undercuts-gemini-flash-pricing-while-matching-its-multimodal-benchmarks/"
     }
-   ]
+   ],
+   "first_seen": "2026-09-20"
+  },
+  {
+   "topic_id": "lokale-llms",
+   "title": "Vergleich ordnet elf Open-Source-Agenten-Harnesses für lokale Modelle ein",
+   "category": "lokal",
+   "impact": 3,
+   "date": "2026-09-18",
+   "summary": "MarkTechPost vergleicht elf Agenten-Harnesses nach Lizenz, dokumentierten lokalen Laufzeiten, Wartung und Sicherheitskontrollen. Als wiederkehrende Betriebsanforderung nennt der Guide mindestens 64.000 Kontexttokens für Coding-Agenten; OpenCode dokumentiert mehrere lokale Backends, während Pi bewusst minimal ist, aber eine externe Sandbox benötigt. Es handelt sich um eine redaktionelle Einordnung, nicht um einen kontrollierten Benchmark.",
+   "sources": [
+    {
+     "label": "MarkTechPost",
+     "url": "https://www.marktechpost.com/2026/09/18/best-open-source-agent-harnesses-for-local-llms-in-2026/"
+    }
+   ],
+   "first_seen": "2026-09-20"
   },
   {
    "topic_id": "agentic-engineering",
-   "date": "2026-08-16",
-   "summary": "Googles Gemini 3.7 Flash verspricht disziplinierteres Agenten-Verhalten mit weniger Nachbesserungsschleifen, während Kaliforniens Gesetzgeber mit ersten verabschiedeten KI-Vorlagen den regulatorischen Rahmen für Agenten-Einsatz absteckt.",
-   "skip": [
+   "title": "Unity veröffentlicht offizielle Plugins für Claude Code und Codex",
+   "category": "agents",
+   "impact": 4,
+   "date": "2026-09-19",
+   "summary": "Unity liefert eigene, von Engine-Teams gepflegte Skills für Claude Code und OpenAI Codex. Die Plugins unterstützen Unity 6+, binden CLI- beziehungsweise Editor-Werkzeuge ein und sollen veraltete Drittanbieter-Anleitungen im Agentenkontext ersetzen; die Codex-Ausgabe startet mit 31, die Claude-Ausgabe mit 29 Skills.",
+   "sources": [
     {
-     "reason": "Andernorts eingeordnet",
-     "text": "Die Gemini-3.7-Flash-Integration in GitHub Copilot wird unter AI Tools geführt, da dort der Werkzeug-Blickwinkel passender ist."
+     "label": "The Decoder",
+     "url": "https://the-decoder.com/unity-launches-official-plugins-for-claude-code-and-openai-codex-to-stop-ai-agents-from-using-outdated-tutorials/"
     }
-   ]
+   ],
+   "first_seen": "2026-09-20"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "Dream-RSI optimiert die Suchstrategie von Forschungsagenten aus alten Läufen",
+   "category": "agents",
+   "impact": 4,
+   "date": "2026-09-19",
+   "summary": "Google-, DeepMind- und Universitätsforscher stellen Dream-RSI vor: Gespeicherte Suchbäume dienen als Replay-Simulator, in dem alternative Explorationsstrategien ohne erneute Modell- oder Evaluatorläufe getestet werden. Die Ergebnisse zeigen in mehreren Algorithmus-, Optimierungs- und GPU-Kernel-Aufgaben Effizienzgewinne; vollständiger Code und Reproduktionsskripte sind laut Projektseite noch nicht veröffentlicht.",
+   "sources": [
+    {
+     "label": "The Decoder",
+     "url": "https://the-decoder.com/google-deepminds-dream-rsi-helps-ai-agents-improve-by-dreaming-about-past-attempts/"
+    }
+   ],
+   "first_seen": "2026-09-20"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "AI-System entwirft FPGA-Inferenzbeschleuniger in weniger als zwei Wochen",
+   "category": "agents",
+   "impact": 4,
+   "date": "2026-09-18",
+   "summary": "Architect Labs ließ ein eigenes AI-System aus einer menschlich geschriebenen Spezifikation RTL, Verifikation, Firmware und Kernel für den Redwood-Beschleuniger erzeugen. Das System läuft als FPGA-Prototyp; die behaupteten Vorteile gegenüber Nvidia beruhen jedoch auf Projektionen für noch nicht gefertigten 8-nm-Silizium. Tapeout und Post-Silicon-Validierung stehen aus.",
+   "sources": [
+    {
+     "label": "VentureBeat",
+     "url": "https://venturebeat.com/infrastructure/an-ai-system-designed-an-inference-chip-in-two-weeks-now-architect-labs-has-to-prove-it-in-silicon"
+    }
+   ],
+   "first_seen": "2026-09-20"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "Praxisbericht: Agentische Entwicklung verschiebt den Engpass von Codeerzeugung zu isolierter Verifikation",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-09-19",
+   "summary": "The New Stack beschreibt einen von Lauren Tan veröffentlichten Workflow, der nach ihrer eigenen Angabe rund 2.000 produktive Pull Requests pro Monat ermöglicht. Der zentrale technische Punkt ist nicht die unbestätigte Rekordzahl, sondern eine Verifikationsschleife, in der jeder Agent die Anwendung selbst startet, strukturiert prüft und iteriert. Für verteilte Systeme fordert der Beitrag reale Abhängigkeiten, Isolation hunderter paralleler Änderungen und in Sekunden bereitstehende Delta-Umgebungen. Einschränkung: Der Artikel ist Sponsorinhalt des Anbieters Signadot und die 2.000-PR-Zahl ist eine Eigenangabe.",
+   "sources": [
+    {
+     "label": "The New Stack",
+     "url": "https://thenewstack.io/agentic-verification-distributed-systems/"
+    }
+   ],
+   "first_seen": "2026-09-20"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "Offene Agent Skills sollen Hugging-Face-Modelle produktionsreif auf SageMaker ausrollen",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-09-18",
+   "summary": "AWS beschreibt sechs quelloffene Hugging-Face-Skills, mit denen Coding-Agenten wie Kiro oder Claude Code SageMaker-Endpunkte planen, Container auswählen, Autoscaling und CloudWatch-Alarme einrichten, einen Smoke-Test ausführen und den Rückbau verifizieren. Der Ansatz hält schnell veraltendes Deployment-Wissen in editierbaren Skill-Dateien statt im Modellwissen; AWS weist zugleich darauf hin, dass produktive Installationen zusätzliche VPC-, KMS- und Least-Privilege-Konfiguration benötigen.",
+   "sources": [
+    {
+     "label": "AWS",
+     "url": "https://aws.amazon.com/blogs/machine-learning/deploy-hugging-face-models-on-amazon-sagemaker-ai-with-coding-agents/"
+    }
+   ],
+   "first_seen": "2026-09-20"
   },
   {
    "topic_id": "ai-tools",
-   "date": "2026-08-16",
-   "summary": "Gemini 3.7 Flash rollt zeitgleich in Googles eigenen Produkten und in GitHub Copilot aus und reiht sich damit als viertes großes Modell binnen zwei Wochen in Copilots Modellauswahl ein.",
-   "skip": [
+   "title": "SpaceXAI aktualisiert Grok Voice Transcribe auf Version 2.0",
+   "category": "tools",
+   "impact": 3,
+   "date": "2026-09-19",
+   "summary": "SpaceXAI rollt Grok Voice Transcribe 2.0 in bestehende API-Integrationen aus und will es zum Standard machen. Laut Anbieter verdoppelt das Modell die Genauigkeit gegenüber Version 1.0 bei unveränderten Preisen; TestingCatalog nennt Batch-, Datei-, URL- und Streaming-Eingaben sowie automatische Sprachwechsel. Die Genauigkeitswerte sind Anbieterangaben.",
+   "sources": [
     {
-     "reason": "Kein neuer eigenständiger Stand im Zeitraum",
-     "text": "Microsofts Copilot-Umbau (Apps verschmelzen, Deep Research kostenpflichtig) wurde bereits am 14. August erfasst; für 15./16. August kein eigenständiger neuer Sachstand."
+     "label": "TestingCatalog",
+     "url": "https://www.testingcatalog.com/spacexai-says-grok-voice-transcribe-2-doubles-accuracy/"
     }
-   ]
+   ],
+   "first_seen": "2026-09-20"
+  },
+  {
+   "topic_id": "ai-tools",
+   "title": "Qwen3.8-Omni-Flash verbindet Audio, Video und Agentenwerkzeuge",
+   "category": "modelle",
+   "impact": 4,
+   "date": "2026-09-19",
+   "summary": "Qwen3.8-Omni-Flash verarbeitet Audio und Video gemeinsam, bietet laut Qwen ein Kontextfenster von einer Million Token und kann Werkzeuge für Video- und Übersetzungsaufgaben nutzen. Ergänzend veröffentlichte Qwen offene Multimodal-Plugins für mehrere Agenten-Harnesses; Benchmarkvergleiche mit Gemini stammen vom Anbieter.",
+   "sources": [
+    {
+     "label": "The Decoder",
+     "url": "https://the-decoder.com/qwen3-8-omni-flash-undercuts-gemini-flash-pricing-while-matching-its-multimodal-benchmarks/"
+    }
+   ],
+   "first_seen": "2026-09-20"
+  },
+  {
+   "topic_id": "ai-tools",
+   "title": "Unity veröffentlicht offizielle Plugins für Claude Code und Codex",
+   "category": "agents",
+   "impact": 4,
+   "date": "2026-09-19",
+   "summary": "Unity liefert eigene, von Engine-Teams gepflegte Skills für Claude Code und OpenAI Codex. Die Plugins unterstützen Unity 6+, binden CLI- beziehungsweise Editor-Werkzeuge ein und sollen veraltete Drittanbieter-Anleitungen im Agentenkontext ersetzen; die Codex-Ausgabe startet mit 31, die Claude-Ausgabe mit 29 Skills.",
+   "sources": [
+    {
+     "label": "The Decoder",
+     "url": "https://the-decoder.com/unity-launches-official-plugins-for-claude-code-and-openai-codex-to-stop-ai-agents-from-using-outdated-tutorials/"
+    }
+   ],
+   "first_seen": "2026-09-20"
+  },
+  {
+   "topic_id": "ai-tools",
+   "title": "TypeSafe AI veröffentlicht Jev für schnelle, kalibrierte Klassifikationsentscheidungen",
+   "category": "modelle",
+   "impact": 4,
+   "date": "2026-09-18",
+   "summary": "TypeSafe AI hat Jev veröffentlicht, ein Transformer-Modell, das keine freien Texte erzeugt, sondern für vorab definierte Ausgänge Wahrscheinlichkeiten liefert. TechCrunch nennt erste Entwicklervergleiche mit deutlichen Geschwindigkeits- und Kostenvorteilen, weist aber auch darauf hin, dass Architektur und belastbare unabhängige Benchmarks noch offen sind; die Leistungsangaben sind daher vorläufig.",
+   "sources": [
+    {
+     "label": "TechCrunch",
+     "url": "https://techcrunch.com/2026/09/18/a-new-kind-of-ai-model-from-a-chatgpt-inventor-is-thrilling-developers/"
+    }
+   ],
+   "first_seen": "2026-09-20"
+  },
+  {
+   "topic_id": "ai-tools",
+   "title": "GitHub Copilot schaltet sechs ältere Modelle am 19. Oktober ab",
+   "category": "tools",
+   "impact": 3,
+   "date": "2026-09-18",
+   "summary": "GitHub entfernt am 19. Oktober 2026 Gemini 3.7 Flash, GPT-5.5, GPT-5.4, GPT-5.4 mini, GPT-5 mini und Grok 4.5 aus allen Copilot-Oberflächen. Als Nachfolger nennt GitHub Gemini 3.8 Flash, GPT-5.6 Sol beziehungsweise Luna und Grok 4.6. Teams mit fest verdrahteten Modellnamen müssen Workflows und Integrationen umstellen; bei Business- und Enterprise-Konten sind Alternativen nur dann automatisch aktiv, wenn globale oder modellspezifische Richtlinien sie nicht sperren.",
+   "sources": [
+    {
+     "label": "GitHub",
+     "url": "https://github.blog/changelog/2026-09-18-upcoming-deprecation-of-selected-github-copilot-models-in-mid-october/"
+    }
+   ],
+   "first_seen": "2026-09-20"
   },
   {
    "topic_id": "context-engineering",
-   "date": "2026-08-16",
-   "summary": "Kein eigenständig neuer Kontext-Engineering-Aspekt im Zeitraum – Gemini 3.7 Flashs verbesserte Planungsdisziplin hängt eng am Modell-Release und wird dort geführt.",
-   "skip": [
+   "title": "Qwen3.8-Omni-Flash verbindet Audio, Video und Agentenwerkzeuge",
+   "category": "modelle",
+   "impact": 4,
+   "date": "2026-09-19",
+   "summary": "Qwen3.8-Omni-Flash verarbeitet Audio und Video gemeinsam, bietet laut Qwen ein Kontextfenster von einer Million Token und kann Werkzeuge für Video- und Übersetzungsaufgaben nutzen. Ergänzend veröffentlichte Qwen offene Multimodal-Plugins für mehrere Agenten-Harnesses; Benchmarkvergleiche mit Gemini stammen vom Anbieter.",
+   "sources": [
     {
-     "reason": "Andernorts eingeordnet",
-     "text": "Gemini 3.7 Flashs mehrstufige Planung und disziplinierteres Werkzeugverhalten sind Teil des Modell-Releases und werden unter Agentic Engineering geführt, da dort der Workflow-Blickwinkel passender ist."
+     "label": "The Decoder",
+     "url": "https://the-decoder.com/qwen3-8-omni-flash-undercuts-gemini-flash-pricing-while-matching-its-multimodal-benchmarks/"
     }
-   ]
+   ],
+   "first_seen": "2026-09-20"
+  },
+  {
+   "topic_id": "context-engineering",
+   "title": "Dream-RSI optimiert die Suchstrategie von Forschungsagenten aus alten Läufen",
+   "category": "agents",
+   "impact": 4,
+   "date": "2026-09-19",
+   "summary": "Google-, DeepMind- und Universitätsforscher stellen Dream-RSI vor: Gespeicherte Suchbäume dienen als Replay-Simulator, in dem alternative Explorationsstrategien ohne erneute Modell- oder Evaluatorläufe getestet werden. Die Ergebnisse zeigen in mehreren Algorithmus-, Optimierungs- und GPU-Kernel-Aufgaben Effizienzgewinne; vollständiger Code und Reproduktionsskripte sind laut Projektseite noch nicht veröffentlicht.",
+   "sources": [
+    {
+     "label": "The Decoder",
+     "url": "https://the-decoder.com/google-deepminds-dream-rsi-helps-ai-agents-improve-by-dreaming-about-past-attempts/"
+    }
+   ],
+   "first_seen": "2026-09-20"
+  },
+  {
+   "topic_id": "context-engineering",
+   "title": "Vergleich ordnet elf Open-Source-Agenten-Harnesses für lokale Modelle ein",
+   "category": "lokal",
+   "impact": 3,
+   "date": "2026-09-18",
+   "summary": "MarkTechPost vergleicht elf Agenten-Harnesses nach Lizenz, dokumentierten lokalen Laufzeiten, Wartung und Sicherheitskontrollen. Als wiederkehrende Betriebsanforderung nennt der Guide mindestens 64.000 Kontexttokens für Coding-Agenten; OpenCode dokumentiert mehrere lokale Backends, während Pi bewusst minimal ist, aber eine externe Sandbox benötigt. Es handelt sich um eine redaktionelle Einordnung, nicht um einen kontrollierten Benchmark.",
+   "sources": [
+    {
+     "label": "MarkTechPost",
+     "url": "https://www.marktechpost.com/2026/09/18/best-open-source-agent-harnesses-for-local-llms-in-2026/"
+    }
+   ],
+   "first_seen": "2026-09-20"
+  },
+  {
+   "topic_id": "context-engineering",
+   "title": "Praxisbericht: Agentische Entwicklung verschiebt den Engpass von Codeerzeugung zu isolierter Verifikation",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-09-19",
+   "summary": "The New Stack beschreibt einen von Lauren Tan veröffentlichten Workflow, der nach ihrer eigenen Angabe rund 2.000 produktive Pull Requests pro Monat ermöglicht. Der zentrale technische Punkt ist nicht die unbestätigte Rekordzahl, sondern eine Verifikationsschleife, in der jeder Agent die Anwendung selbst startet, strukturiert prüft und iteriert. Für verteilte Systeme fordert der Beitrag reale Abhängigkeiten, Isolation hunderter paralleler Änderungen und in Sekunden bereitstehende Delta-Umgebungen. Einschränkung: Der Artikel ist Sponsorinhalt des Anbieters Signadot und die 2.000-PR-Zahl ist eine Eigenangabe.",
+   "sources": [
+    {
+     "label": "The New Stack",
+     "url": "https://thenewstack.io/agentic-verification-distributed-systems/"
+    }
+   ],
+   "first_seen": "2026-09-20"
+  },
+  {
+   "topic_id": "context-engineering",
+   "title": "Offene Agent Skills sollen Hugging-Face-Modelle produktionsreif auf SageMaker ausrollen",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-09-18",
+   "summary": "AWS beschreibt sechs quelloffene Hugging-Face-Skills, mit denen Coding-Agenten wie Kiro oder Claude Code SageMaker-Endpunkte planen, Container auswählen, Autoscaling und CloudWatch-Alarme einrichten, einen Smoke-Test ausführen und den Rückbau verifizieren. Der Ansatz hält schnell veraltendes Deployment-Wissen in editierbaren Skill-Dateien statt im Modellwissen; AWS weist zugleich darauf hin, dass produktive Installationen zusätzliche VPC-, KMS- und Least-Privilege-Konfiguration benötigen.",
+   "sources": [
+    {
+     "label": "AWS",
+     "url": "https://aws.amazon.com/blogs/machine-learning/deploy-hugging-face-models-on-amazon-sagemaker-ai-with-coding-agents/"
+    }
+   ],
+   "first_seen": "2026-09-20"
   },
   {
    "topic_id": "ai-security",
-   "date": "2026-08-16",
-   "summary": "Ein vergleichsweise ruhiger Zeitraum bei AI Security: Der einzige größere neu diskutierte Vorfall, eine seit Januar offene Firestore-Zugriffslücke beim KI-Notiztool tl;dv, wurde bereits Anfang August veröffentlicht und liegt außerhalb des Zeitraums.",
-   "skip": [
+   "title": "RoboHarm zeigt schwache Sicherheitsverweigerungen bei robotischen Agenten",
+   "category": "security",
+   "impact": 4,
+   "date": "2026-09-19",
+   "summary": "RoboHarm testete GPT-6 Astra, Claude Fable 5.1 und MolmoAct2 in fünf gefährlichen Robotikaufgaben mit je 20 Durchläufen. Laut The Decoder verweigerte Astra nur zwei von 100 Versuchen aus Sicherheitsgründen und erledigte 60 gefährliche Aufgaben; Fable verweigerte die Baby-Doll-Aufgabe, aber keine der vier übrigen Kategorien. Das veröffentlichte Repository enthält Protokoll und Werkzeuge, jedoch keine Roh-Rollouts und weist auf Replikationslücken hin.",
+   "sources": [
     {
-     "reason": "Ursprungsdatum liegt vor dem Zeitraum",
-     "text": "Der tl;dv-Fund (181.874 offene Meeting-Datensätze, 84.312 Nutzer, live beitretbare Calls über eine fehlende Firestore-Mandantentrennung) wurde am 4. August vom Sicherheitsforscher BobDaHacker veröffentlicht und von Dark Reading aufgegriffen – außerhalb des Zeitraums, trotz weiterhin ungefixter Lücke."
-    },
-    {
-     "reason": "Andernorts eingeordnet",
-     "text": "Anthropics Wasserzeichen-Erkennungs-API ist primär eine Governance-/Transparenz-Meldung und wird unter AI News und AI Governance geführt."
+     "label": "The Decoder",
+     "url": "https://the-decoder.com/gpt-6-astra-and-claude-fable-turn-robot-arms-into-slapstick-killer-robots-in-new-safety-benchmark/"
     }
-   ]
+   ],
+   "first_seen": "2026-09-20"
+  },
+  {
+   "topic_id": "ai-security",
+   "title": "OpenClaw führt atomare Updates mit automatischem Rollback ein",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-09-18",
+   "summary": "OpenClaw reagiert auf verbreitete Update-Ausfälle rund um Version 2.0 mit einer atomaren Aktualisierungsreihenfolge: Das bestehende Gateway bleibt während der Vorbereitung aktiv, ein fehlgeschlagenes Update rollt auf die letzte funktionierende Konfiguration zurück, und ein arbeitsfähiger Agent soll für Diagnose und Reparatur erhalten bleiben. Zusätzlich wurde eine vereinfachte Fehler-Meldefunktion für Updates eingeführt. Die Änderung adressiert Verfügbarkeit und Wiederherstellbarkeit, ersetzt aber wegen der sehr vielen möglichen Konfigurationen keine breite Praxiserprobung.",
+   "sources": [
+    {
+     "label": "OpenClaw",
+     "url": "https://openclaw.ai/blog/shipping-openclaw-updates-that-dont-break"
+    }
+   ],
+   "first_seen": "2026-09-20"
+  },
+  {
+   "topic_id": "ai-security",
+   "title": "FAA plant begrenzten Start eines KI-Systems zur Steuerung von Verkehrsflüssen",
+   "category": "business",
+   "impact": 4,
+   "date": "2026-09-18",
+   "summary": "Die US-Luftfahrtbehörde FAA will SMART zunächst im Luftraum um Washington, D.C. einsetzen. Das System soll Verkehrsflüsse und Konflikte aus Flugplänen, Wetter, Kapazitäten und Luftraumlage prognostizieren und alternative Routen über bestehende Systeme empfehlen; es ändert laut FAA vorerst keine Verfahren der Lotsen. SMART ist Teil eines 875-Millionen-Dollar-Vertrags über zwölf Jahre, doch Modelltypen, Expansionskriterien und Verantwortlichkeit bei Fehlprognosen bleiben offen.",
+   "sources": [
+    {
+     "label": "Ars Technica",
+     "url": "https://arstechnica.com/ai/2026/09/faa-tees-up-875m-ai-tool-to-help-manage-air-traffic-congestion/"
+    }
+   ],
+   "first_seen": "2026-09-20"
   },
   {
    "topic_id": "ai-governance",
-   "date": "2026-08-16",
-   "summary": "Anthropic macht seine Anfang August ausgerollten Wasserzeichen erstmals über eine offene API extern überprüfbar, während Kaliforniens Gesetzgeber nach der Suspense-Anhörung zwei erste KI-Gesetze final verabschiedet und 24 weitere auf den Weg zur Plenarabstimmung bringt.",
-   "skip": [
+   "title": "OpenAI legt australischen Jugend-Sicherheitsplan mit sechs Säulen vor",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-09-18",
+   "summary": "OpenAI veröffentlicht für Australien einen Jugend-Sicherheitsplan mit sechs Säulen, darunter AI-Kompetenz, altersgerechte Schutzmechanismen, datensparsame Altersprüfung, Krisenhilfe und Elternkontrollen. Das Dokument ist eine Roadmap und politische Positionierung; konkrete Produktmaßnahmen umfassen die seit August ausgerollte Standarderfahrung für erkannte 13- bis 17-Jährige in Australien.",
+   "sources": [
     {
-     "reason": "Kein neuer eigenständiger Stand im Zeitraum",
-     "text": "Der Wahlkampf-Gegensatz zwischen den Gouverneurskandidaten Becerra (mehr KI-Regulierung) und Hilton (Deregulierung nach DOGE-Vorbild) ist Wahlkampf-Positionierung ohne neuen gesetzgeberischen Fakt und wird nicht gesondert aufgenommen."
+     "label": "OpenAI",
+     "url": "https://openai.com/index/australian-youth-safety-blueprint/"
     }
-   ]
+   ],
+   "first_seen": "2026-09-20"
+  },
+  {
+   "topic_id": "ai-governance",
+   "title": "Gerichtsakten zeigen interne Warnungen vor einem wirtschaftlichen „Doom Loop“ für Web-Inhalte",
+   "category": "business",
+   "impact": 4,
+   "date": "2026-09-18",
+   "summary": "Neu entsiegelte Unterlagen im Verfahren der New York Times gegen OpenAI und Microsoft zitieren einen Microsoft-Mitarbeiter und ein internes Dokument mit scharfen Warnungen: KI-Antwortprodukte könnten Publisher wirtschaftlich schwächen und damit langfristig auch die Datenbasis der Modelle beschädigen. Microsoft betont, die besonders drastischen Aussagen seien die persönliche, bewusst konträre Sicht eines Mitarbeiters und keine Rechtsposition des Unternehmens; die Vorwürfe sind Teil eines laufenden Rechtsstreits.",
+   "sources": [
+    {
+     "label": "The Verge",
+     "url": "https://www.theverge.com/ai-artificial-intelligence/997633/openai-microsoft-chatgpt-ai-new-york-times-doom-loop-theft-google-zero"
+    }
+   ],
+   "first_seen": "2026-09-20"
+  },
+  {
+   "topic_id": "ai-governance",
+   "title": "FAA plant begrenzten Start eines KI-Systems zur Steuerung von Verkehrsflüssen",
+   "category": "business",
+   "impact": 4,
+   "date": "2026-09-18",
+   "summary": "Die US-Luftfahrtbehörde FAA will SMART zunächst im Luftraum um Washington, D.C. einsetzen. Das System soll Verkehrsflüsse und Konflikte aus Flugplänen, Wetter, Kapazitäten und Luftraumlage prognostizieren und alternative Routen über bestehende Systeme empfehlen; es ändert laut FAA vorerst keine Verfahren der Lotsen. SMART ist Teil eines 875-Millionen-Dollar-Vertrags über zwölf Jahre, doch Modelltypen, Expansionskriterien und Verantwortlichkeit bei Fehlprognosen bleiben offen.",
+   "sources": [
+    {
+     "label": "Ars Technica",
+     "url": "https://arstechnica.com/ai/2026/09/faa-tees-up-875m-ai-tool-to-help-manage-air-traffic-congestion/"
+    }
+   ],
+   "first_seen": "2026-09-20"
+  },
+  {
+   "topic_id": "ai-governance",
+   "title": "Pew-Umfrage: In 34 von 37 Ländern wird durch KI eher Jobverlust als Jobwachstum erwartet",
+   "category": "business",
+   "impact": 3,
+   "date": "2026-09-18",
+   "summary": "Computerworld berichtet über eine Pew-Erhebung in 37 Ländern: In 34 Ländern überwiegt die Erwartung, dass KI in den kommenden 20 Jahren Arbeitsplätze abbaut. In den USA erwarten 71 Prozent weniger und 5 Prozent mehr Jobs. Die Primärquelle nennt 42.151 Befragte in 36 Ländern plus gesonderte repräsentative US-Befragungen; es handelt sich um Erwartungen der Bevölkerung, nicht um eine Prognose tatsächlicher Beschäftigungseffekte.",
+   "sources": [
+    {
+     "label": "Computerworld",
+     "url": "https://www.computerworld.com/article/4223962/more-and-more-people-believe-that-ai-will-take-away-jobs-rather-than-create-new-ones.html"
+    }
+   ],
+   "first_seen": "2026-09-20"
   },
   {
    "topic_id": "enterprise",
-   "date": "2026-08-16",
-   "summary": "Googles Gemini 3.7 Flash zieht mit hälftigem Einführungspreis direkt in die Gemini-Enterprise-Plattform ein und verschärft den Preiswettbewerb um Unternehmenskunden, während Kaliforniens erste verabschiedete KI-Gesetze zeigen, wie schnell regulatorische Fakten für Unternehmens-IT entstehen.",
-   "skip": [
+   "title": "AI-System entwirft FPGA-Inferenzbeschleuniger in weniger als zwei Wochen",
+   "category": "agents",
+   "impact": 4,
+   "date": "2026-09-18",
+   "summary": "Architect Labs ließ ein eigenes AI-System aus einer menschlich geschriebenen Spezifikation RTL, Verifikation, Firmware und Kernel für den Redwood-Beschleuniger erzeugen. Das System läuft als FPGA-Prototyp; die behaupteten Vorteile gegenüber Nvidia beruhen jedoch auf Projektionen für noch nicht gefertigten 8-nm-Silizium. Tapeout und Post-Silicon-Validierung stehen aus.",
+   "sources": [
     {
-     "reason": "Kein neuer eigenständiger Stand im Zeitraum",
-     "text": "SpaceXAI/Cursor, Apples China-Modell und die Erdgaspreis-Prognose für Rechenzentren sind bereits am 14. August erfasst; für 15./16. August kein eigenständig neuer Enterprise-Sachstand."
+     "label": "VentureBeat",
+     "url": "https://venturebeat.com/infrastructure/an-ai-system-designed-an-inference-chip-in-two-weeks-now-architect-labs-has-to-prove-it-in-silicon"
     }
-   ]
+   ],
+   "first_seen": "2026-09-20"
   },
+  {
+   "topic_id": "enterprise",
+   "title": "FAA plant begrenzten Start eines KI-Systems zur Steuerung von Verkehrsflüssen",
+   "category": "business",
+   "impact": 4,
+   "date": "2026-09-18",
+   "summary": "Die US-Luftfahrtbehörde FAA will SMART zunächst im Luftraum um Washington, D.C. einsetzen. Das System soll Verkehrsflüsse und Konflikte aus Flugplänen, Wetter, Kapazitäten und Luftraumlage prognostizieren und alternative Routen über bestehende Systeme empfehlen; es ändert laut FAA vorerst keine Verfahren der Lotsen. SMART ist Teil eines 875-Millionen-Dollar-Vertrags über zwölf Jahre, doch Modelltypen, Expansionskriterien und Verantwortlichkeit bei Fehlprognosen bleiben offen.",
+   "sources": [
+    {
+     "label": "Ars Technica",
+     "url": "https://arstechnica.com/ai/2026/09/faa-tees-up-875m-ai-tool-to-help-manage-air-traffic-congestion/"
+    }
+   ],
+   "first_seen": "2026-09-20"
+  },
+  {
+   "topic_id": "enterprise",
+   "title": "Pew-Umfrage: In 34 von 37 Ländern wird durch KI eher Jobverlust als Jobwachstum erwartet",
+   "category": "business",
+   "impact": 3,
+   "date": "2026-09-18",
+   "summary": "Computerworld berichtet über eine Pew-Erhebung in 37 Ländern: In 34 Ländern überwiegt die Erwartung, dass KI in den kommenden 20 Jahren Arbeitsplätze abbaut. In den USA erwarten 71 Prozent weniger und 5 Prozent mehr Jobs. Die Primärquelle nennt 42.151 Befragte in 36 Ländern plus gesonderte repräsentative US-Befragungen; es handelt sich um Erwartungen der Bevölkerung, nicht um eine Prognose tatsächlicher Beschäftigungseffekte.",
+   "sources": [
+    {
+     "label": "Computerworld",
+     "url": "https://www.computerworld.com/article/4223962/more-and-more-people-believe-that-ai-will-take-away-jobs-rather-than-create-new-ones.html"
+    }
+   ],
+   "first_seen": "2026-09-20"
+  },
+  {
+   "topic_id": "enterprise",
+   "title": "AI-Neocloud Nscale beantragt Börsengang trotz Milliardenverlust",
+   "category": "business",
+   "impact": 4,
+   "date": "2026-09-18",
+   "summary": "Der auf KI-Infrastruktur spezialisierte Cloudanbieter Nscale hat einen Börsengang an der NYSE unter dem Kürzel NSCL beantragt. Laut dem von CNBC ausgewerteten Prospekt erzielte das Unternehmen im ersten Halbjahr 2026 140,6 Millionen Dollar Umsatz, 1.252 Prozent mehr als im Vorjahr, bei einem Nettoverlust von 1,02 Milliarden Dollar. Nscale vermietet Nvidia-GPUs und zählt OpenAI, Anthropic und Microsoft zu seinen Kunden; die Zahlen stammen aus der IPO-Anmeldung und sind noch kein Beleg für ein tragfähiges Geschäftsmodell.",
+   "sources": [
+    {
+     "label": "CNBC",
+     "url": "https://www.cnbc.com/2026/09/18/nscale-ai-cloud-provider-ipo-nscl.html"
+    }
+   ],
+   "first_seen": "2026-09-20"
+  },
+  {
+   "topic_id": "enterprise",
+   "title": "AWS startet GPU-bewusstes Inference Gateway für SageMaker HyperPod",
+   "category": "tools",
+   "impact": 4,
+   "date": "2026-09-18",
+   "summary": "AWS hat das SageMaker HyperPod Inference Gateway als EKS-Add-on für Kubernetes-native, GPU-bewusste Anfrageverteilung veröffentlicht. Es berücksichtigt unter anderem KV-Cache-Auslastung, Warteschlangen, geladene LoRA-Adapter und Prefix-Cache-Treffer und stellt eine OpenAI-kompatible Schnittstelle bereit. In AWS-eigenen Tests sanken hohe TTFT-Perzentile je nach Lastszenario deutlich; der angekündigte globale, clusterübergreifende Router ist hingegen noch nicht verfügbar.",
+   "sources": [
+    {
+     "label": "AWS",
+     "url": "https://aws.amazon.com/blogs/machine-learning/introducing-amazon-sagemaker-hyperpod-inference-gateway/"
+    }
+   ],
+   "first_seen": "2026-09-20"
+  },
+  {
+   "topic_id": "enterprise",
+   "title": "Offene Agent Skills sollen Hugging-Face-Modelle produktionsreif auf SageMaker ausrollen",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-09-18",
+   "summary": "AWS beschreibt sechs quelloffene Hugging-Face-Skills, mit denen Coding-Agenten wie Kiro oder Claude Code SageMaker-Endpunkte planen, Container auswählen, Autoscaling und CloudWatch-Alarme einrichten, einen Smoke-Test ausführen und den Rückbau verifizieren. Der Ansatz hält schnell veraltendes Deployment-Wissen in editierbaren Skill-Dateien statt im Modellwissen; AWS weist zugleich darauf hin, dass produktive Installationen zusätzliche VPC-, KMS- und Least-Privilege-Konfiguration benötigen.",
+   "sources": [
+    {
+     "label": "AWS",
+     "url": "https://aws.amazon.com/blogs/machine-learning/deploy-hugging-face-models-on-amazon-sagemaker-ai-with-coding-agents/"
+    }
+   ],
+   "first_seen": "2026-09-20"
+  }
+ ],
+ "summaries": [
   {
    "topic_id": "ai-news",
    "date": "2026-08-17",
@@ -10195,40 +10413,88 @@
    "date": "2026-09-19",
    "summary": "Anthropic verbindet KI mit realen Biolaboren und beschleunigt Biomolekülmodelle; OpenAI und AWS vertikalisieren Rechtsarbeit und Agentenbetrieb.",
    "skip": []
+  },
+  {
+   "topic_id": "ai-news",
+   "date": "2026-09-20",
+   "summary": "Qwen und TypeSafe AI erweitern die Modelllandschaft, während die FAA KI in den Verkehrsfluss bringt und Nscale trotz Milliardenverlust an die Börse will.",
+   "skip": []
+  },
+  {
+   "topic_id": "lokale-llms",
+   "date": "2026-09-20",
+   "summary": "Qwen verbindet Multimodalität und Werkzeuge; ein neuer Praxisvergleich ordnet elf offene Agenten-Harnesses für lokale Modelle ein.",
+   "skip": []
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "date": "2026-09-20",
+   "summary": "Offizielle Unity-Plugins, lernende Suchstrategien und verifikationsorientierte Workflows verschieben Agentenentwicklung von der Codeerzeugung zum belastbaren Betrieb.",
+   "skip": []
+  },
+  {
+   "topic_id": "ai-tools",
+   "date": "2026-09-20",
+   "summary": "Neue Sprach-, Multimodal- und Entscheidungsmodelle treffen auf offizielle Unity-Plugins; GitHub kündigt zugleich sechs Copilot-Modelle ab.",
+   "skip": []
+  },
+  {
+   "topic_id": "context-engineering",
+   "date": "2026-09-20",
+   "summary": "Millionen-Token-Kontext, Replay alter Suchbäume und versionierte Skills zeigen, wie Agentenkontext systematischer und wartbarer wird.",
+   "skip": []
+  },
+  {
+   "topic_id": "ai-security",
+   "date": "2026-09-20",
+   "summary": "RoboHarm zeigt schwache Verweigerungen bei Robotikagenten; OpenClaw stärkt Rollbacks, während der FAA-Einsatz neue operative Kontrollfragen schafft.",
+   "skip": []
+  },
+  {
+   "topic_id": "ai-governance",
+   "date": "2026-09-20",
+   "summary": "Jugendschutz, Publisher-Ökonomie, Luftfahrtaufsicht und globale Jobängste machen deutlich, dass KI-Governance zunehmend konkrete Institutionen und Folgen betrifft.",
+   "skip": []
+  },
+  {
+   "topic_id": "enterprise",
+   "date": "2026-09-20",
+   "summary": "KI erreicht Chipdesign, Luftverkehr und produktive Inferenzinfrastruktur; parallel zeigt Nscales IPO-Antrag die Kapitalintensität des Marktes.",
+   "skip": []
   }
  ],
  "fingerprints": {
   "ai-news": {
-   "hash": "298cb9c52b3cd8bae041de4e1dfb06518a819ab6",
-   "date": "2026-09-19"
+   "hash": "87b9156b86a6ecabb4bdbf5f50ac77df72d0f5e4",
+   "date": "2026-09-20"
   },
   "lokale-llms": {
-   "hash": "983a21ded1a018c8ab8b6a356d82837b3f18ca1e",
-   "date": "2026-09-19"
+   "hash": "c7b7fe09c80d36aa484340c1ca71f32134f484b9",
+   "date": "2026-09-20"
   },
   "agentic-engineering": {
-   "hash": "96a788b9e9444c15ea53b819f1bfab0438f89eb6",
-   "date": "2026-09-19"
+   "hash": "e1c41e7c581adbbe4ab7c84a4908ae9054920b5f",
+   "date": "2026-09-20"
   },
   "ai-tools": {
-   "hash": "d91128070cf5725705a37160c002a1009c20e4ad",
-   "date": "2026-09-19"
+   "hash": "7bd68b5980a27dd4f0dcf2651e77011194c31ff9",
+   "date": "2026-09-20"
   },
   "context-engineering": {
-   "hash": "0275bd38ef7d0a761404cafe9ec2974efb28a3ee",
-   "date": "2026-09-19"
+   "hash": "ac29795d5aaecafc1bda5db0a55d00524bc30dde",
+   "date": "2026-09-20"
   },
   "ai-security": {
-   "hash": "9c7b5f81ef855fb098af030a3340fae8e9fb0e42",
-   "date": "2026-09-19"
+   "hash": "8abaafaaabd9cab0f9829ef73074e34ef9e9dd07",
+   "date": "2026-09-20"
   },
   "ai-governance": {
-   "hash": "9c7bb6e91869b885d55c00fa53beef03fddcfc65",
-   "date": "2026-09-19"
+   "hash": "67499492f996e0cfc42340cb44670722a0819bd0",
+   "date": "2026-09-20"
   },
   "enterprise": {
-   "hash": "a201ac9a2382b153b900ce4e2ed061e040b095a5",
-   "date": "2026-09-19"
+   "hash": "913d7c1153a3a836925000aca0c94235a9bfe8c5",
+   "date": "2026-09-20"
   }
  }
 }
