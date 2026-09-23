@@ -2,8 +2,8 @@
   "meta": {
     "title": "AI-Briefing",
     "subtitle": "Multi-Briefing · Privates AI-Briefing",
-    "period": "21.–22. September 2026",
-    "generated": "2026-09-22",
+    "period": "21.–23. September 2026",
+    "generated": "2026-09-23",
     "intro": "Pro Themenbereich die wichtigsten Meldungen des Zeitraums, jeweils mit eigenem Detail-Report (inkl. Radar). Die farbigen Punkte zeigen die Themen-Kategorie, die ●-Skala den Impact.",
     "disclaimer": "Hinweis: Alle Infos auf eigene Gefahr. Dies ist ein privates Projekt, automatisch generiert aus Web-Recherche.",
     "host": "Niko Klausnitzer"
@@ -73,78 +73,82 @@
       "name": "AI News",
       "group": "Überblick",
       "angle": "Allgemeine AI-Industrie: Modell-Releases, Plattformen, Regulierung und Markt",
-      "summary": "Offene Omnimodalität, Grok 4.7 und UN-Agentenwarnungen treffen auf neue Chip-, Infrastruktur- und Sicherheitsdiplomatie.",
+      "summary": "GPT-6 und Claude konkurrieren über Effizienz; zugleich zeigt autonome Malware, wie schnell Agentenfähigkeiten in reale Risiken wandern.",
       "items": [
         {
-          "title": "Xiaomi veröffentlicht MiMo-V2.6 Pro und Flash als offene omnimodale Modelle",
-          "category": "lokal",
-          "impact": 4,
-          "date": "2026-09-21",
-          "summary": "Xiaomi hat MiMo-V2.6 Pro und Flash als offen verfügbare, nativ omnimodale Modelle für Coding, visuelle Aufgaben und Computersteuerung veröffentlicht. TestingCatalog nennt bis zu eine Million Token Kontext und verweist auf veröffentlichte Trainingsumgebungen sowie RL-Code; die Leistungsangaben stammen überwiegend vom Anbieter und benötigen unabhängige Bestätigung.",
+          "title": "CLOSEDQUORUM nutzt ein LLM-Quorum als autonome Malware-Steuerung",
+          "category": "security",
+          "impact": 5,
+          "date": "2026-09-22",
+          "summary": "CLOSEDQUORUM lässt bis zu vier kommerzielle LLMs über die nächste Aktion eines Windows-Implantats abstimmen und führt die Mehrheitsentscheidung aus. Talos bezeichnet es als ersten öffentlich dokumentierten Fall dieser Architektur, hat aber keinen Einsatz in freier Wildbahn bestätigt; die gefundene öffentliche Binärdatei enthielt Platzhalter-Schlüssel.",
           "sources": [
             {
-              "label": "TestingCatalog",
-              "url": "https://www.testingcatalog.com/xiaomi-open-sources-mimo-v2-6-pro-and-flash-models/"
+              "label": "Cisco Talos",
+              "url": "https://blog.talosintelligence.com/the-closed-quorum-inside-the-first-reported-autonomous-ai-c2-implant/"
             }
           ],
           "n": 1
         },
         {
-          "title": "Grok 4.7 zielt auf längere Coding-Aufgaben – bei hohem Tokenverbrauch",
-          "category": "agents",
+          "title": "GPT-6 Sol und Luna halbieren API-Preise und verbessern das Prompt-Caching",
+          "category": "modelle",
           "impact": 4,
-          "date": "2026-09-21",
-          "summary": "SpaceXAI hat Grok 4.7 mit größerem Basismodell, längerem Reinforcement Learning und stärkerer Selbstprüfung für lang laufende Coding- und Wissensaufgaben veröffentlicht. Artificial Analysis misst deutliche Agentenfortschritte, aber auch rund 81.000 Ausgabetoken je Intelligence-Index-Aufgabe in der xhigh-Variante. Der API-Einstiegspreis bleibt laut Anbieter bei 2 Dollar pro Million Eingabe- und 6 Dollar pro Million Ausgabetoken.",
+          "date": "2026-09-22",
+          "summary": "OpenAI bringt Sol für komplexe professionelle und Coding-Aufgaben sowie Luna für günstige Massenverarbeitung. Die Listenpreise sinken gegenüber den GPT-5.6-Aktionspreisen auf 2/10 Dollar beziehungsweise 0,10/0,50 Dollar je Million Ein-/Ausgabetoken. Artificial Analysis misst ungefähr halbierte Aufgabenkosten bei weitgehend stabilem Gesamtindex; die Ergebnisse gelten für dessen Benchmark-Setup.",
           "sources": [
             {
-              "label": "xAI",
-              "url": "https://x.ai/news/grok-4-7"
+              "label": "OpenAI",
+              "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/"
             },
             {
               "label": "Artificial Analysis",
-              "url": "https://artificialanalysis.ai/articles/benchmarking-grok-4-7"
+              "url": "https://artificialanalysis.ai/articles/gpt-6-sol-and-luna-push-the-cost-efficiency-frontier"
             }
           ],
           "n": 2
         },
         {
-          "title": "UN-Wissenschaftspanel warnt vor Kontrollverlust bei autonomen KI-Agenten",
-          "category": "security",
+          "title": "Claude Opus 5.5 senkt Preise und führt den Artificial-Analysis-Index an",
+          "category": "modelle",
           "impact": 4,
-          "date": "2026-09-21",
-          "summary": "Das unabhängige UN-Wissenschaftspanel hält menschliche Kontrolle über zunehmend autonome KI-Agenten nicht für garantiert und verweist auf reale Grenzüberschreitungen sowie auf Risiken durch Agenteninteraktionen. Der vorläufige Bericht enthält noch keine Empfehlungen und nennt Luftfahrt, Kerntechnik und Cybersicherheit nur als mögliche Vorbilder.",
+          "date": "2026-09-22",
+          "summary": "Anthropic veröffentlicht Opus 5.5 für lange Agenten- und Coding-Aufgaben zu 4/20 Dollar je Million Ein-/Ausgabetoken und mit günstigeren Cache-Lesezugriffen. Artificial Analysis bewertet es mit 58 Punkten als bislang stärkstes Modell im eigenen Index, misst aber rund 1,6-mal so viele Ausgabetoken; Hersteller- und Benchmarkangaben sind daher getrennt zu lesen.",
           "sources": [
             {
-              "label": "The Decoder",
-              "url": "https://the-decoder.com/un-science-panel-says-there-is-no-assurance-humans-will-keep-control-over-ai-agents/"
+              "label": "Anthropic",
+              "url": "https://www.anthropic.com/claude-opus-5-5"
+            },
+            {
+              "label": "Artificial Analysis",
+              "url": "https://artificialanalysis.ai/articles/claude-opus-5-5"
             }
           ],
           "n": 3
         },
         {
-          "title": "Alibaba stellt Zhenwu V900 vor und plant mehr als 20 Gigawatt Rechenzentrumskapazität",
-          "category": "business",
-          "impact": 4,
+          "title": "Reuters/Ipsos: Drei Viertel der US-Befragten verlangen mehr KI-Sicherheitsvorsorge",
+          "category": "security",
+          "impact": 3,
           "date": "2026-09-22",
-          "summary": "Alibaba kündigte den KI-Chip Zhenwu V900 für Massenproduktion und kommerziellen Start im ersten Quartal 2027 an und beansprucht die dreifache Leistung des Vorgängers. Parallel soll Alibaba Clouds globale Rechenzentrumskapazität bis 2032 auf mehr als 20 Gigawatt wachsen; Qwen 4 befindet sich nach Unternehmensangaben im Training. Die Leistungsangabe ist eine nicht unabhängig validierte Herstellerangabe.",
+          "summary": "In einer Reuters/Ipsos-Onlineumfrage unter 1.277 US-Erwachsenen sorgen sich 73 Prozent, KI-Unternehmen täten nicht genug gegen schwere gesellschaftliche Schäden. 55 Prozent bewerten eine Verlangsamung der KI-Entwicklung positiv, 13 Prozent negativ; 73 Prozent priorisieren sichere Entwicklung vor globaler US-Führung. Die Fehlertoleranz beträgt drei Prozentpunkte.",
           "sources": [
             {
-              "label": "CNBC",
-              "url": "https://www.cnbc.com/2026/09/22/alibaba-ai-alibabacloud-zhenwu-v900-.html"
+              "label": "Reuters",
+              "url": "https://www.reuters.com/world/three-out-four-americans-say-ai-firms-not-doing-enough-prevent-disaster-2026-09-22/"
             }
           ],
           "n": 4
         },
         {
-          "title": "USA schlagen China Meldemechanismus für schwere KI-Sicherheitsvorfälle vor",
-          "category": "security",
+          "title": "Snorkel AI sammelt 350 Millionen Dollar für komplexe Trainingsdaten ein",
+          "category": "business",
           "impact": 3,
-          "date": "2026-09-20",
-          "summary": "US-Finanzminister Scott Bessent hat in Gesprächen mit Chinas Vizepremier He Lifeng einen bilateralen KI-Dialog und einen Meldemechanismus für KI-Vorfälle auf nationalem Sicherheitsniveau vorgeschlagen. Der Vorschlag soll Trump und Xi beim anstehenden Gipfel vorgelegt werden; Chinas Reaktion blieb laut Reuters unklar. Es handelt sich daher noch nicht um eine vereinbarte oder formalisierte Regelung.",
+          "date": "2026-09-22",
+          "summary": "Snorkel AI hat eine Series E über 350 Millionen US-Dollar abgeschlossen und seine Bewertung auf 3,5 Milliarden Dollar nahezu verdreifacht. Das Unternehmen nennt einen annualisierten Umsatzlauf von 375 Millionen Dollar; Wachstumstreiber seien komplette Datensätze und RL-Umgebungen statt reiner Labeling-Software. Die Umsatzangabe ist eine Selbstauskunft des Unternehmens.",
           "sources": [
             {
-              "label": "Reuters",
-              "url": "https://www.reuters.com/business/finance/us-treasurys-bessent-chinas-he-launch-talks-ai-trade-critical-minerals-2026-09-20/"
+              "label": "TechCrunch",
+              "url": "https://techcrunch.com/2026/09/22/snorkel-ai-triples-valuation-to-3-5b-as-demand-for-ai-training-data-booms/"
             }
           ],
           "n": 5
@@ -157,63 +161,35 @@
       "name": "Lokale LLMs",
       "group": "Überblick",
       "angle": "On-Device- und Open-Weight-Modelle: lokal lauffähig, datenschutz- und kostenrelevant",
-      "summary": "MiMo-V2.6, Kev und schnellere Tokenizer erweitern den offenen Stack; zugleich verschiebt sich dessen Nutzungsschwerpunkt weiter nach China.",
+      "summary": "Transformers rückt an llama.cpp heran, während Hugging Face die dauerhafte Pflege des lokalen MLX-Servers oMLX finanziert.",
       "items": [
         {
-          "title": "Xiaomi veröffentlicht MiMo-V2.6 Pro und Flash als offene omnimodale Modelle",
+          "title": "Transformers führt llama.cpp-Quantisierungen direkt aus",
           "category": "lokal",
           "impact": 4,
-          "date": "2026-09-21",
-          "summary": "Xiaomi hat MiMo-V2.6 Pro und Flash als offen verfügbare, nativ omnimodale Modelle für Coding, visuelle Aufgaben und Computersteuerung veröffentlicht. TestingCatalog nennt bis zu eine Million Token Kontext und verweist auf veröffentlichte Trainingsumgebungen sowie RL-Code; die Leistungsangaben stammen überwiegend vom Anbieter und benötigen unabhängige Bestätigung.",
+          "date": "2026-09-22",
+          "summary": "Hugging Face ergänzt Transformers um effiziente GGUF-Ausführung über ggml-Kernels. Quantisierte Modelle lassen sich mit der vertrauten from_pretrained-API laden; der erste Schwerpunkt liegt auf Apple Silicon und Qwen3.5. Damit rücken das Transformers-Ökosystem und die lokale llama.cpp-Welt technisch enger zusammen.",
           "sources": [
             {
-              "label": "TestingCatalog",
-              "url": "https://www.testingcatalog.com/xiaomi-open-sources-mimo-v2-6-pro-and-flash-models/"
+              "label": "Hugging Face",
+              "url": "https://huggingface.co/blog/transformers-llama-cpp-quants"
             }
           ],
           "n": 1
         },
         {
-          "title": "Kev trifft begrenzte Agentenentscheidungen ohne Textgenerierung",
+          "title": "Hugging Face finanziert die Weiterentwicklung des lokalen MLX-Servers oMLX",
           "category": "lokal",
           "impact": 3,
-          "date": "2026-09-21",
-          "summary": "Die neue offene Kev-Modellfamilie auf Basis von Qwen 3.5 verarbeitet Zustand, Fragen und vorgegebene Kandidaten in einem einzigen Forward-Pass und gibt Wahrscheinlichkeiten statt generiertem Text aus. Veröffentlicht wurden Varianten mit 0,8, 4 und 9 Milliarden Parametern samt Gewichten, Trainingscode und Evaluation; die berichteten Geschwindigkeits- und Genauigkeitswerte stammen vom Entwickler und sind nicht kontrolliert mit generativen Baselines verglichen.",
-          "sources": [
-            {
-              "label": "The New Stack",
-              "url": "https://thenewstack.io/kev-skips-text-generation/"
-            }
-          ],
-          "n": 2
-        },
-        {
-          "title": "Hugging Face beschleunigt tokenizers v1 bei kompatibler Ausgabe um das 3- bis 30-Fache",
-          "category": "lokal",
-          "impact": 3,
-          "date": "2026-09-21",
-          "summary": "Der Release Candidate von tokenizers v1 soll auf einem Apple M4 Max je nach Modellfamilie ein-Thread-Encoding drei- bis 30-mal schneller als v0.23 ausführen und über acht Worker 76 Prozent lineare Skalierung erreichen. Token-IDs, API, Vokabular und Merge-Ränge sollen kompatibel bleiben; die Beschleunigung kommt unter anderem durch Bitstream-Splitting statt Regex, weniger Allokationen und Batch-Verarbeitung. Es handelt sich noch nicht um die finale Version 1.0.0.",
+          "date": "2026-09-22",
+          "summary": "Jun Kim, Maintainer des lokalen MLX-Servers oMLX, wechselt zu Hugging Face und soll das Projekt künftig hauptberuflich weiterentwickeln. oMLX bleibt unter Apache 2.0; Hugging Face nennt Stabilität, schnellere Entwicklung und einen rascheren Übergang von Transformers-Modelldefinitionen zu MLX-Implementierungen als Ziele.",
           "sources": [
             {
               "label": "Hugging Face",
-              "url": "https://huggingface.co/blog/tokenizers-v1"
+              "url": "https://huggingface.co/blog/omlx"
             }
           ],
-          "n": 3
-        },
-        {
-          "title": "Interconnects sieht chinesische Open-Weight-Modelle bei Nutzung und Agentenfähigkeit vorn",
-          "category": "lokal",
-          "impact": 3,
-          "date": "2026-09-21",
-          "summary": "Nathan Lambert argumentiert in einer für den US-Kongress vorbereiteten Bestandsaufnahme, chinesische Open-Weight-Modelle hätten bei kommerzieller Nutzbarkeit und agentischem Coding einen Sprung gemacht. Er verweist auf 3,2 Milliarden Downloads – etwa doppelt so viele wie bei US-Modellen – und einen Vorsprung chinesischer Modelle in gängigen Fähigkeitsbenchmarks, während der Abstand bei offenen Wissenschaftsaufgaben größer bleibe. Die Auswahl und Interpretation der Kennzahlen stammt vom Autor.",
-          "sources": [
-            {
-              "label": "Interconnects",
-              "url": "https://www.interconnects.ai/p/the-current-balance-of-power-in-open"
-            }
-          ],
-          "n": 4
+          "n": 2
         }
       ],
       "skip": []
@@ -223,81 +199,91 @@
       "name": "Agentic Engineering / Vibe Coding",
       "group": "Praxis",
       "angle": "Coding-Agenten, Workflows, Reviewer-Disziplin und Agent-Governance",
-      "summary": "Grok 4.7, Strands Harness und Kev zeigen drei Wege zu längeren, offeneren und effizienteren Agenten – abgesichert durch neue Runtime-Muster.",
+      "summary": "Kontextkomprimierung, überprüfbare Migrationen, Skill-Evaluation und Telemetrie machen Agentenarbeit messbarer und kontrollierbarer.",
       "items": [
         {
-          "title": "Grok 4.7 zielt auf längere Coding-Aufgaben – bei hohem Tokenverbrauch",
+          "title": "CliffCompaction halbiert Kontextkosten lang laufender Coding-Agenten",
           "category": "agents",
           "impact": 4,
-          "date": "2026-09-21",
-          "summary": "SpaceXAI hat Grok 4.7 mit größerem Basismodell, längerem Reinforcement Learning und stärkerer Selbstprüfung für lang laufende Coding- und Wissensaufgaben veröffentlicht. Artificial Analysis misst deutliche Agentenfortschritte, aber auch rund 81.000 Ausgabetoken je Intelligence-Index-Aufgabe in der xhigh-Variante. Der API-Einstiegspreis bleibt laut Anbieter bei 2 Dollar pro Million Eingabe- und 6 Dollar pro Million Ausgabetoken.",
+          "date": "2026-09-22",
+          "summary": "Die Autoren stellen eine verlustarme Kontextkomprimierung vor, die nur Inhalte kürzt oder entfernt, sie aber nie umformuliert. Laut Preprint sinken die Kosten bei begrenztem Kontext um bis zu 50 Prozent, ohne dass die Leistung auf Terminal-Bench fällt; durch wiederholtes Arbeiten nur auf Originalinhalt soll sich über sehr lange Sitzungen kein Kompaktierungsdrift aufbauen. Die Ergebnisse sind Preprint-Angaben und noch nicht unabhängig validiert.",
           "sources": [
             {
-              "label": "xAI",
-              "url": "https://x.ai/news/grok-4-7"
-            },
-            {
-              "label": "Artificial Analysis",
-              "url": "https://artificialanalysis.ai/articles/benchmarking-grok-4-7"
+              "label": "arXiv",
+              "url": "https://arxiv.org/abs/2609.26779"
             }
           ],
           "n": 1
         },
         {
-          "title": "AWS veröffentlicht Strands Harness als offenen Agenten-Unterbau",
+          "title": "Shopify migriert mit Helix kontrolliert von React Native zu Swift und Kotlin",
           "category": "agents",
           "impact": 4,
           "date": "2026-09-21",
-          "summary": "AWS hat Strands Harness als Open-Source-Agenten veröffentlicht, der Datei-, Shell- und Webwerkzeuge mit Kontextverwaltung, Speicher, persistenten Sitzungen, Prompt-Caching und Delegation bündelt. Standardmäßig nutzt er Amazon Bedrock, kann laut AWS aber auch Anthropic, OpenAI, Google oder lokale Ollama-Modelle verwenden; der Artikel grenzt Hersteller-Benchmarkangaben ausdrücklich von unabhängiger Validierung ab.",
+          "summary": "Shopifys internes Helix zerlegt App-Migrationen in kleine Checkpoints und lässt jeden Schritt vier Gates passieren: Verhaltenstests, visuellen Vergleich, zwei isolierte adversariale Code-Reviews und standardmäßig menschliche Freigabe. Feedback wird für spätere Checkpoints gespeichert; autonome und parallele Läufe bleiben an dieselben Gates gebunden. Der Bericht ist eine Anbieter-Fallstudie ohne unabhängige Produktivitätsmessung.",
           "sources": [
             {
-              "label": "The New Stack",
-              "url": "https://thenewstack.io/aws-strands-harness-agent/"
+              "label": "Shopify Engineering",
+              "url": "https://shopify.engineering/helix"
             }
           ],
           "n": 2
         },
         {
-          "title": "Kev trifft begrenzte Agentenentscheidungen ohne Textgenerierung",
-          "category": "lokal",
-          "impact": 3,
-          "date": "2026-09-21",
-          "summary": "Die neue offene Kev-Modellfamilie auf Basis von Qwen 3.5 verarbeitet Zustand, Fragen und vorgegebene Kandidaten in einem einzigen Forward-Pass und gibt Wahrscheinlichkeiten statt generiertem Text aus. Veröffentlicht wurden Varianten mit 0,8, 4 und 9 Milliarden Parametern samt Gewichten, Trainingscode und Evaluation; die berichteten Geschwindigkeits- und Genauigkeitswerte stammen vom Entwickler und sind nicht kontrolliert mit generativen Baselines verglichen.",
+          "title": "GitHub Copilot exportiert Agentenspuren per OpenTelemetry",
+          "category": "agents",
+          "impact": 4,
+          "date": "2026-09-22",
+          "summary": "Die GitHub-Copilot-App unterstützt nun unternehmensweit verwaltete OpenTelemetry-Konfiguration. Administratoren können Modellaufrufe, Werkzeugnutzung und den Ablauf von Agentensitzungen an bestehende Monitoring-Systeme senden und unerwartetes Verhalten schrittweise untersuchen. Prompt- und Antwortinhalte sind standardmäßig ausgeschlossen; ihre Erfassung muss bewusst konfiguriert werden.",
           "sources": [
             {
-              "label": "The New Stack",
-              "url": "https://thenewstack.io/kev-skips-text-generation/"
+              "label": "GitHub",
+              "url": "https://github.blog/changelog/2026-09-22-opentelemetry-in-the-github-copilot-app"
             }
           ],
           "n": 3
         },
         {
-          "title": "Benchling isoliert mandantenfähige Agenten-Codeausführung bis zur DNS-Ebene",
-          "category": "security",
+          "title": "SoL-Pi reduziert den Tokenverkehr von Coding-Agenten um bis zu 49 Prozent",
+          "category": "agents",
           "impact": 3,
           "date": "2026-09-21",
-          "summary": "Benchling beschreibt eine Defense-in-Depth-Architektur für von KI-Agenten erzeugten wissenschaftlichen Code: AgentCore Code Interpreter im VPC-Modus wird mit kontoweiter Trennung, Route-53-DNS-Firewall, VPC-Endpunktregeln und pro Auftrag ausgestellten STS-Zugangsdaten kombiniert. Benchling meldet mehr als 600 Ausführungssitzungen pro Tag über mehr als 250 Mandanten pro Woche sowie bislang keine Sicherheitsvorfälle; diese Betriebszahlen sind Selbstauskünfte aus einer gemeinsamen Anbieter-Fallstudie.",
+          "summary": "Ein Team von NVIDIA, NTU und MIT ergänzt den offenen Pi-Coding-Agenten um vier Effizienzmechanismen. Auf EdgeBench blieb die Leistung laut Beitrag nahe am Ausgangssystem, während Tokenverkehr und API-Kosten deutlich sanken; die Übertragung auf ein zweites Modell bezeichnet das Team selbst als vorläufig. Der Code ist MIT-lizenziert verfügbar.",
           "sources": [
             {
-              "label": "AWS Machine Learning",
-              "url": "https://aws.amazon.com/blogs/machine-learning/how-benchling-secured-multi-tenant-ai-agents-with-amazon-bedrock-agentcore/"
+              "label": "MarkTechPost",
+              "url": "https://www.marktechpost.com/2026/09/21/nvidia-researchers-have-released-sol-pi/"
             }
           ],
           "n": 4
         },
         {
-          "title": "SemiAnalysis trennt agentische Inferenz in Prefill, Midfill, Decode und Speicherbewegung",
+          "title": "AWS ergänzt Agenten-Skills um getrennte Routing- und Ausführungsevaluation",
           "category": "agents",
           "impact": 3,
-          "date": "2026-09-21",
-          "summary": "Eine neue technische Analyse beschreibt die Abbildung von Mixture-of-Experts-Modellen auf Inferenzhardware und trennt Prefill, Midfill und Decode als unterschiedliche Betriebsregime. Für agentische Abläufe mit wiederholten Werkzeug- und Nutzereingaben hebt sie Midfill sowie die Bewegung großer KV-Zustände hervor und argumentiert, dass aktiver Datenfluss, Speicherhierarchie und Timing aussagekräftiger sind als die Gesamtparameterzahl allein.",
+          "date": "2026-09-22",
+          "summary": "Strands Evals und Amazon Bedrock AgentCore Evaluations erhalten skill-spezifische Prüfungen: „Skill Selection Accuracy“ bewertet, ob ein Agent den passenden Skill gewählt hat, und „Skill Instruction Following“, ob er dessen Schritte befolgt hat. Strands ergänzt den deterministischen Check „Skill Invoked“. Die Auswertung kann auf aufgezeichneten Trajektorien beziehungsweise OpenTelemetry-Traces laufen und soll Routing- von Ausführungsfehlern trennen; judge-basierte Schwellen müssen laut AWS je Einsatz kalibriert werden.",
           "sources": [
             {
-              "label": "SemiAnalysis",
-              "url": "https://newsletter.semianalysis.com/p/computation-and-data-movement-for"
+              "label": "AWS",
+              "url": "https://aws.amazon.com/blogs/machine-learning/evaluate-skill-equipped-agents-with-strands-evals-and-amazon-bedrock-agentcore/"
             }
           ],
           "n": 5
+        },
+        {
+          "title": "Copilot für JetBrains automatisiert risikoarme Tool-Freigaben",
+          "category": "security",
+          "impact": 3,
+          "date": "2026-09-22",
+          "summary": "Copilot für JetBrains 1.18.0 führt in einer Public Preview risikobasierte, assistierte Tool-Freigaben ein: niedrig eingestufte Aufrufe werden automatisch genehmigt, höheres Risiko bleibt beim Menschen. Zusätzlich kann Copilot Gespräche samt Dateiänderungen zu einer früheren Nachricht zurückrollen, organisationsweite Skills und Anweisungen übernehmen sowie MCP-Werkzeuge dauerhaft einzeln steuern. Die Risikoklassifizierung selbst beschreibt GitHub in der Meldung nicht näher.",
+          "sources": [
+            {
+              "label": "GitHub",
+              "url": "https://github.blog/changelog/2026-09-22-new-features-and-improvements-in-copilot-for-jetbrains"
+            }
+          ],
+          "n": 6
         }
       ],
       "skip": []
@@ -307,82 +293,82 @@
       "name": "AI Tools",
       "group": "Praxis",
       "angle": "IDEs, Assistenten und Plattformen für den täglichen Einsatz",
-      "summary": "Google verankert Gemini im Notebook, Grok 4.7 erreicht Coding-Workflows, und Netzbetreiber testen Liveübersetzung ohne Spezial-App.",
+      "summary": "JetBrains bündelt den Agentenstack, OpenRouter senkt Batchkosten, und neue Frontier-Modelle verschärfen den Preiswettbewerb.",
       "items": [
         {
-          "title": "Googlebook integriert Gemini als On-Device-Schicht ins Betriebssystem",
-          "category": "tools",
+          "title": "JetBrains bündelt Agentenentwicklung, Teamkoordination und Governance in Air",
+          "category": "agents",
           "impact": 4,
-          "date": "2026-09-21",
-          "summary": "Googlebook integriert Gemini direkt ins Notebook-Betriebssystem: Magic Pointer arbeitet kontextbezogen auf Bildschirminhalten, Rambler strukturiert Spracheingaben, Nutzer können Widgets per Beschreibung erstellen und Gemini Spark erledigt Aufgaben im Hintergrund. Vorbestellungen starten ab 899 US-Dollar, die Auslieferung in sieben Ländern ist für Anfang Oktober angekündigt; Google beschreibt die lokale Aktivierung als datenschutzorientiert, nennt aber im Beitrag keine vollständige technische Datenschutzanalyse.",
+          "date": "2026-09-22",
+          "summary": "JetBrains führt seine Agentenprodukte unter JetBrains Air zusammen: Agentensteuerung und Verifikation in den IDEs, Team-Workflows sowie Richtlinien, Auditierbarkeit und Kostenkontrolle über Air Governance. Der Hersteller betont ein Multi-Vendor-System; einzelne Bausteine sind bereits verfügbar, andere folgen schrittweise.",
           "sources": [
             {
-              "label": "Google",
-              "url": "https://blog.google/products-and-platforms/devices/googlebook/googlebook-built-in-intelligence/"
+              "label": "JetBrains",
+              "url": "https://blog.jetbrains.com/blog/2026/09/22/introducing-jetbrains-air/"
             }
           ],
           "n": 1
         },
         {
-          "title": "Grok 4.7 zielt auf längere Coding-Aufgaben – bei hohem Tokenverbrauch",
-          "category": "agents",
+          "title": "GPT-6 Sol und Luna halbieren API-Preise und verbessern das Prompt-Caching",
+          "category": "modelle",
           "impact": 4,
-          "date": "2026-09-21",
-          "summary": "SpaceXAI hat Grok 4.7 mit größerem Basismodell, längerem Reinforcement Learning und stärkerer Selbstprüfung für lang laufende Coding- und Wissensaufgaben veröffentlicht. Artificial Analysis misst deutliche Agentenfortschritte, aber auch rund 81.000 Ausgabetoken je Intelligence-Index-Aufgabe in der xhigh-Variante. Der API-Einstiegspreis bleibt laut Anbieter bei 2 Dollar pro Million Eingabe- und 6 Dollar pro Million Ausgabetoken.",
+          "date": "2026-09-22",
+          "summary": "OpenAI bringt Sol für komplexe professionelle und Coding-Aufgaben sowie Luna für günstige Massenverarbeitung. Die Listenpreise sinken gegenüber den GPT-5.6-Aktionspreisen auf 2/10 Dollar beziehungsweise 0,10/0,50 Dollar je Million Ein-/Ausgabetoken. Artificial Analysis misst ungefähr halbierte Aufgabenkosten bei weitgehend stabilem Gesamtindex; die Ergebnisse gelten für dessen Benchmark-Setup.",
           "sources": [
             {
-              "label": "xAI",
-              "url": "https://x.ai/news/grok-4-7"
+              "label": "OpenAI",
+              "url": "https://openai.com/index/introducing-gpt-6-sol-and-luna/"
             },
             {
               "label": "Artificial Analysis",
-              "url": "https://artificialanalysis.ai/articles/benchmarking-grok-4-7"
+              "url": "https://artificialanalysis.ai/articles/gpt-6-sol-and-luna-push-the-cost-efficiency-frontier"
             }
           ],
           "n": 2
         },
         {
-          "title": "Vodafone und Ericsson testen KI-Liveübersetzung direkt im Mobilfunknetz",
-          "category": "tools",
-          "impact": 3,
+          "title": "Claude Opus 5.5 senkt Preise und führt den Artificial-Analysis-Index an",
+          "category": "modelle",
+          "impact": 4,
           "date": "2026-09-22",
-          "summary": "Vodafone und Ericsson haben in einem realitätsnahen Testnetz netzseitige Liveübersetzung für Telefonate sowie einen KI-Geräuschfilter erprobt. Die Übersetzung zwischen Deutsch, Englisch, Spanisch, Italienisch und Französisch benötigt laut Vodafone weder Spezialgerät noch App und soll nur nach ausdrücklicher Aktivierung laufen. Bislang ist es ein Konzeptnachweis ohne Termin oder Preis für Endkunden.",
+          "summary": "Anthropic veröffentlicht Opus 5.5 für lange Agenten- und Coding-Aufgaben zu 4/20 Dollar je Million Ein-/Ausgabetoken und mit günstigeren Cache-Lesezugriffen. Artificial Analysis bewertet es mit 58 Punkten als bislang stärkstes Modell im eigenen Index, misst aber rund 1,6-mal so viele Ausgabetoken; Hersteller- und Benchmarkangaben sind daher getrennt zu lesen.",
           "sources": [
             {
-              "label": "heise online",
-              "url": "https://www.heise.de/news/Vodafone-und-Ericsson-testen-KI-Live-Uebersetzung-direkt-im-Mobilfunknetz-11460502.html"
+              "label": "Anthropic",
+              "url": "https://www.anthropic.com/claude-opus-5-5"
+            },
+            {
+              "label": "Artificial Analysis",
+              "url": "https://artificialanalysis.ai/articles/claude-opus-5-5"
             }
           ],
           "n": 3
         },
         {
-          "title": "Hugging Face beschleunigt tokenizers v1 bei kompatibler Ausgabe um das 3- bis 30-Fache",
-          "category": "lokal",
+          "title": "OpenRouter startet Batch-API für asynchrone Inferenz auf mehr als 70 Modellen",
+          "category": "tools",
           "impact": 3,
-          "date": "2026-09-21",
-          "summary": "Der Release Candidate von tokenizers v1 soll auf einem Apple M4 Max je nach Modellfamilie ein-Thread-Encoding drei- bis 30-mal schneller als v0.23 ausführen und über acht Worker 76 Prozent lineare Skalierung erreichen. Token-IDs, API, Vokabular und Merge-Ränge sollen kompatibel bleiben; die Beschleunigung kommt unter anderem durch Bitstream-Splitting statt Regex, weniger Allokationen und Batch-Verarbeitung. Es handelt sich noch nicht um die finale Version 1.0.0.",
+          "date": "2026-09-22",
+          "summary": "OpenRouter bündelt nicht zeitkritische Anfragen in einem asynchronen Batch-Endpunkt. Anbieter erhalten ein 24-Stunden-Fenster und gewähren typischerweise rund 50 Prozent Tokenrabatt; im zweiwöchigen Beta-Test lag der Median laut OpenRouter bei sieben Minuten und 90 Prozent der Batches waren binnen einer Stunde fertig. Eingaben und Ergebnisse werden bis zu 30 Tage gespeichert oder bis zur Löschung.",
           "sources": [
             {
-              "label": "Hugging Face",
-              "url": "https://huggingface.co/blog/tokenizers-v1"
+              "label": "OpenRouter",
+              "url": "https://openrouter.ai/blog/announcements/batch-api/"
             }
           ],
           "n": 4
         },
         {
-          "title": "Amazon sperrt Metas Einkaufsagenten Muse aus",
-          "category": "business",
+          "title": "Copilot für JetBrains automatisiert risikoarme Tool-Freigaben",
+          "category": "security",
           "impact": 3,
-          "date": "2026-09-21",
-          "summary": "Amazon blockiert Metas Muse beim automatisierten Einkauf und beruft sich auf seine Nutzungsbedingungen. Nach Berichten identifizierte sich Muse beim Zugriff nicht; Amazon äußerte außerdem Datenschutz- und Sicherheitsbedenken. Der Konflikt zeigt, dass agentisches Shopping nicht nur technisch, sondern auch durch Plattformregeln und die Kontrolle über Kundenschnittstelle und Werbung begrenzt wird.",
+          "date": "2026-09-22",
+          "summary": "Copilot für JetBrains 1.18.0 führt in einer Public Preview risikobasierte, assistierte Tool-Freigaben ein: niedrig eingestufte Aufrufe werden automatisch genehmigt, höheres Risiko bleibt beim Menschen. Zusätzlich kann Copilot Gespräche samt Dateiänderungen zu einer früheren Nachricht zurückrollen, organisationsweite Skills und Anweisungen übernehmen sowie MCP-Werkzeuge dauerhaft einzeln steuern. Die Risikoklassifizierung selbst beschreibt GitHub in der Meldung nicht näher.",
           "sources": [
             {
-              "label": "TechCrunch",
-              "url": "https://techcrunch.com/2026/09/21/metas-ai-agent-has-been-blocked-from-using-amazon-com/"
-            },
-            {
-              "label": "The Verge",
-              "url": "https://www.theverge.com/tech/998078/amazon-blocks-meta-muse-ai-agent-shopping"
+              "label": "GitHub",
+              "url": "https://github.blog/changelog/2026-09-22-new-features-and-improvements-in-copilot-for-jetbrains"
             }
           ],
           "n": 5
@@ -395,63 +381,77 @@
       "name": "Context & Prompt Engineering",
       "group": "Praxis",
       "angle": "Kontextsteuerung, Prompting und Agent-Design: was im Kontextfenster landet, entscheidet über Qualität und Kosten",
-      "summary": "Midfill und KV-Bewegung, vorkonfigurierte Harnesses, Prefill-only-Entscheidungen und schnellere Tokenisierung rücken Systemkontext statt Promptkosmetik in den Fokus.",
+      "summary": "Explizites Caching, verlustarme Komprimierung, Telemetrie und spezialisierte Entscheidungsmodelle verschieben Kontextarbeit in den Systembetrieb.",
       "items": [
         {
-          "title": "SemiAnalysis trennt agentische Inferenz in Prefill, Midfill, Decode und Speicherbewegung",
+          "title": "OpenAI macht Prompt-Caching für Langläufer-Agenten mess- und steuerbar",
           "category": "agents",
-          "impact": 3,
-          "date": "2026-09-21",
-          "summary": "Eine neue technische Analyse beschreibt die Abbildung von Mixture-of-Experts-Modellen auf Inferenzhardware und trennt Prefill, Midfill und Decode als unterschiedliche Betriebsregime. Für agentische Abläufe mit wiederholten Werkzeug- und Nutzereingaben hebt sie Midfill sowie die Bewegung großer KV-Zustände hervor und argumentiert, dass aktiver Datenfluss, Speicherhierarchie und Timing aussagekräftiger sind als die Gesamtparameterzahl allein.",
+          "impact": 4,
+          "date": "2026-09-22",
+          "summary": "Für GPT-6 führt OpenAI ein Prompt-Caching-Dashboard, Diagnosewerkzeuge, explizite Cache-Grenzen und Prewarming ein. Entwickler können außerdem Reasoning-Aufwand und verfügbare Tools verändern, ohne den wiederverwendbaren Kontext zwangsläufig zu entwerten; Nutzerberichte zu Kostensenkungen im Artikel sind Fallbeispiele, keine allgemeine Garantie.",
           "sources": [
             {
-              "label": "SemiAnalysis",
-              "url": "https://newsletter.semianalysis.com/p/computation-and-data-movement-for"
+              "label": "OpenAI",
+              "url": "https://openai.com/index/better-prompt-caching-for-gpt-6/"
             }
           ],
           "n": 1
         },
         {
-          "title": "AWS veröffentlicht Strands Harness als offenen Agenten-Unterbau",
+          "title": "CliffCompaction halbiert Kontextkosten lang laufender Coding-Agenten",
           "category": "agents",
           "impact": 4,
-          "date": "2026-09-21",
-          "summary": "AWS hat Strands Harness als Open-Source-Agenten veröffentlicht, der Datei-, Shell- und Webwerkzeuge mit Kontextverwaltung, Speicher, persistenten Sitzungen, Prompt-Caching und Delegation bündelt. Standardmäßig nutzt er Amazon Bedrock, kann laut AWS aber auch Anthropic, OpenAI, Google oder lokale Ollama-Modelle verwenden; der Artikel grenzt Hersteller-Benchmarkangaben ausdrücklich von unabhängiger Validierung ab.",
+          "date": "2026-09-22",
+          "summary": "Die Autoren stellen eine verlustarme Kontextkomprimierung vor, die nur Inhalte kürzt oder entfernt, sie aber nie umformuliert. Laut Preprint sinken die Kosten bei begrenztem Kontext um bis zu 50 Prozent, ohne dass die Leistung auf Terminal-Bench fällt; durch wiederholtes Arbeiten nur auf Originalinhalt soll sich über sehr lange Sitzungen kein Kompaktierungsdrift aufbauen. Die Ergebnisse sind Preprint-Angaben und noch nicht unabhängig validiert.",
           "sources": [
             {
-              "label": "The New Stack",
-              "url": "https://thenewstack.io/aws-strands-harness-agent/"
+              "label": "arXiv",
+              "url": "https://arxiv.org/abs/2609.26779"
             }
           ],
           "n": 2
         },
         {
-          "title": "Kev trifft begrenzte Agentenentscheidungen ohne Textgenerierung",
-          "category": "lokal",
-          "impact": 3,
-          "date": "2026-09-21",
-          "summary": "Die neue offene Kev-Modellfamilie auf Basis von Qwen 3.5 verarbeitet Zustand, Fragen und vorgegebene Kandidaten in einem einzigen Forward-Pass und gibt Wahrscheinlichkeiten statt generiertem Text aus. Veröffentlicht wurden Varianten mit 0,8, 4 und 9 Milliarden Parametern samt Gewichten, Trainingscode und Evaluation; die berichteten Geschwindigkeits- und Genauigkeitswerte stammen vom Entwickler und sind nicht kontrolliert mit generativen Baselines verglichen.",
+          "title": "GitHub Copilot exportiert Agentenspuren per OpenTelemetry",
+          "category": "agents",
+          "impact": 4,
+          "date": "2026-09-22",
+          "summary": "Die GitHub-Copilot-App unterstützt nun unternehmensweit verwaltete OpenTelemetry-Konfiguration. Administratoren können Modellaufrufe, Werkzeugnutzung und den Ablauf von Agentensitzungen an bestehende Monitoring-Systeme senden und unerwartetes Verhalten schrittweise untersuchen. Prompt- und Antwortinhalte sind standardmäßig ausgeschlossen; ihre Erfassung muss bewusst konfiguriert werden.",
           "sources": [
             {
-              "label": "The New Stack",
-              "url": "https://thenewstack.io/kev-skips-text-generation/"
+              "label": "GitHub",
+              "url": "https://github.blog/changelog/2026-09-22-opentelemetry-in-the-github-copilot-app"
             }
           ],
           "n": 3
         },
         {
-          "title": "Hugging Face beschleunigt tokenizers v1 bei kompatibler Ausgabe um das 3- bis 30-Fache",
-          "category": "lokal",
+          "title": "OpenClaw öffnet eine gemeinsame Schnittstelle für schnelle Entscheidungsmodelle",
+          "category": "agents",
           "impact": 3,
-          "date": "2026-09-21",
-          "summary": "Der Release Candidate von tokenizers v1 soll auf einem Apple M4 Max je nach Modellfamilie ein-Thread-Encoding drei- bis 30-mal schneller als v0.23 ausführen und über acht Worker 76 Prozent lineare Skalierung erreichen. Token-IDs, API, Vokabular und Merge-Ränge sollen kompatibel bleiben; die Beschleunigung kommt unter anderem durch Bitstream-Splitting statt Regex, weniger Allokationen und Batch-Verarbeitung. Es handelt sich noch nicht um die finale Version 1.0.0.",
+          "date": "2026-09-22",
+          "summary": "OpenClaw integriert eine optionale, providerunabhängige Decision-Model-Schnittstelle für typisierte Entscheidungen wie Toolauswahl, Kontextkompression oder Modellrouting. Adapter für das gehostete Jev und einen lokalen Kev-Server sind vorgesehen; Providerpakete und konkrete Einsatzfälle sind teils noch nicht veröffentlicht, weshalb OpenClaw die Funktion ausdrücklich als Experiment statt fertige Standardfunktion beschreibt.",
           "sources": [
             {
-              "label": "Hugging Face",
-              "url": "https://huggingface.co/blog/tokenizers-v1"
+              "label": "OpenClaw",
+              "url": "https://openclaw.ai/blog/decision-models-in-openclaw"
             }
           ],
           "n": 4
+        },
+        {
+          "title": "AWS ergänzt Agenten-Skills um getrennte Routing- und Ausführungsevaluation",
+          "category": "agents",
+          "impact": 3,
+          "date": "2026-09-22",
+          "summary": "Strands Evals und Amazon Bedrock AgentCore Evaluations erhalten skill-spezifische Prüfungen: „Skill Selection Accuracy“ bewertet, ob ein Agent den passenden Skill gewählt hat, und „Skill Instruction Following“, ob er dessen Schritte befolgt hat. Strands ergänzt den deterministischen Check „Skill Invoked“. Die Auswertung kann auf aufgezeichneten Trajektorien beziehungsweise OpenTelemetry-Traces laufen und soll Routing- von Ausführungsfehlern trennen; judge-basierte Schwellen müssen laut AWS je Einsatz kalibriert werden.",
+          "sources": [
+            {
+              "label": "AWS",
+              "url": "https://aws.amazon.com/blogs/machine-learning/evaluate-skill-equipped-agents-with-strands-evals-and-amazon-bedrock-agentcore/"
+            }
+          ],
+          "n": 5
         }
       ],
       "skip": []
@@ -461,71 +461,91 @@
       "name": "AI Security & Safety",
       "group": "Sicherheit & Recht",
       "angle": "Sicherheit von AI-Systemen und -Agenten: Angriffsflächen, Schutzmechanismen und automatisierte Schwachstellensuche",
-      "summary": "Ein Muse-Zero-Day, UN-Warnungen und eine staatliche Klage zeigen Risiken von privilegierten Agenten; Benchling demonstriert mehrschichtige Isolation.",
+      "summary": "Autonome Malware und Agentenlücken treffen auf tiefere Audits, Angriffspfad-Analyse und risikobasierte Tool-Freigaben.",
       "items": [
         {
-          "title": "Lokale Zero-Day-Lücke kann Metas hoch privilegierten Muse-Agenten kapern",
+          "title": "CLOSEDQUORUM nutzt ein LLM-Quorum als autonome Malware-Steuerung",
           "category": "security",
-          "impact": 4,
-          "date": "2026-09-21",
-          "summary": "Der Sicherheitsforscher Patrick Wardle hat für die macOS-App von Meta Muse einen lokalen Zero-Day mit Proof of Concept offengelegt. Ein bereits lokal laufender, unprivilegierter Prozess kann demnach einen undokumentierten Transkriptions-Endpunkt auf einen Angreifer-Server umbiegen, dadurch Spracheingaben und Authentisierungsmaterial abgreifen und die weitreichenden Berechtigungen des Agenten missbrauchen. Es ist kein Angriff aus der Ferne auf einen sauberen Mac; Voraussetzung ist lokale Codeausführung, die Wirkung entspricht aber einer Privilegienausweitung über den Agenten.",
+          "impact": 5,
+          "date": "2026-09-22",
+          "summary": "CLOSEDQUORUM lässt bis zu vier kommerzielle LLMs über die nächste Aktion eines Windows-Implantats abstimmen und führt die Mehrheitsentscheidung aus. Talos bezeichnet es als ersten öffentlich dokumentierten Fall dieser Architektur, hat aber keinen Einsatz in freier Wildbahn bestätigt; die gefundene öffentliche Binärdatei enthielt Platzhalter-Schlüssel.",
           "sources": [
             {
-              "label": "Ars Technica",
-              "url": "https://arstechnica.com/security/2026/09/muse-metas-extraordinarily-privileged-ai-assistant-has-a-serious-0-day/"
-            },
-            {
-              "label": "The Register",
-              "url": "https://www.theregister.com/ai-and-ml/2026/09/21/meta-muse-ai-app-flaw-lets-local-malware-redirect-dictation-traffic/5297980"
+              "label": "Cisco Talos",
+              "url": "https://blog.talosintelligence.com/the-closed-quorum-inside-the-first-reported-autonomous-ai-c2-implant/"
             }
           ],
           "n": 1
         },
         {
-          "title": "UN-Wissenschaftspanel warnt vor Kontrollverlust bei autonomen KI-Agenten",
+          "title": "Meta schließt lokale Rechteausweitung in Muse für macOS",
           "category": "security",
           "impact": 4,
-          "date": "2026-09-21",
-          "summary": "Das unabhängige UN-Wissenschaftspanel hält menschliche Kontrolle über zunehmend autonome KI-Agenten nicht für garantiert und verweist auf reale Grenzüberschreitungen sowie auf Risiken durch Agenteninteraktionen. Der vorläufige Bericht enthält noch keine Empfehlungen und nennt Luftfahrt, Kerntechnik und Cybersicherheit nur als mögliche Vorbilder.",
+          "date": "2026-09-22",
+          "summary": "Meta hat eine Zero-Day-Lücke in seiner Muse-App für macOS per Hotfix geschlossen. Lokal laufender Schadcode konnte einen undokumentierten Endpunkt umleiten und die weitreichenden Rechte des Agenten nutzen, unter anderem zum Aufnehmen von Bildern und Schreiben von Dateien. Meta betont, dass bereits lokaler Codezugriff nötig war, weshalb das praktische Risiko geringer sei als bei einem Remote-Exploit.",
           "sources": [
             {
-              "label": "The Decoder",
-              "url": "https://the-decoder.com/un-science-panel-says-there-is-no-assurance-humans-will-keep-control-over-ai-agents/"
+              "label": "The Verge",
+              "url": "https://www.theverge.com/tech/998679/meta-muse-patch-zero-day-exploit-ai-agent"
             }
           ],
           "n": 2
         },
         {
-          "title": "Benchling isoliert mandantenfähige Agenten-Codeausführung bis zur DNS-Ebene",
+          "title": "Trail of Bits findet 23 bestätigte Schwachstellen in OpenClaw",
           "category": "security",
-          "impact": 3,
+          "impact": 4,
           "date": "2026-09-21",
-          "summary": "Benchling beschreibt eine Defense-in-Depth-Architektur für von KI-Agenten erzeugten wissenschaftlichen Code: AgentCore Code Interpreter im VPC-Modus wird mit kontoweiter Trennung, Route-53-DNS-Firewall, VPC-Endpunktregeln und pro Auftrag ausgestellten STS-Zugangsdaten kombiniert. Benchling meldet mehr als 600 Ausführungssitzungen pro Tag über mehr als 250 Mandanten pro Woche sowie bislang keine Sicherheitsvorfälle; diese Betriebszahlen sind Selbstauskünfte aus einer gemeinsamen Anbieter-Fallstudie.",
+          "summary": "Ein von OpenAIs Patch-the-Planet-Initiative unterstütztes Trail-of-Bits-Audit meldete 24 bewertete Hinweise, davon 23 bestätigte Schwachstellen: zwei hoch, 16 mittel und sechs niedrig, keine kritisch. OpenClaw zufolge sind alle umsetzbaren Probleme behoben und in den stabilen Versionen 2026.8.1 sowie 2026.7.33 LTS ausgeliefert; wiederkehrende Ursachen waren verlorene Berechtigungen und Prüfungen, die nicht an die tatsächlich genutzte Ressource gebunden waren.",
           "sources": [
             {
-              "label": "AWS Machine Learning",
-              "url": "https://aws.amazon.com/blogs/machine-learning/how-benchling-secured-multi-tenant-ai-agents-with-amazon-bedrock-agentcore/"
+              "label": "OpenClaw",
+              "url": "https://openclaw.ai/blog/openclaw-trail-of-bits-engagement-recap"
             }
           ],
           "n": 3
         },
         {
-          "title": "British Columbia verklagt OpenAI wegen unterlassener Warnung vor Schulangriff",
+          "title": "OpenAI fordert tiefen Zugang für unabhängige Sicherheitsprüfungen",
           "category": "security",
-          "impact": 3,
+          "impact": 4,
           "date": "2026-09-22",
-          "summary": "Die Provinz British Columbia hat OpenAI in Kalifornien verklagt. Sie wirft dem Unternehmen vor, Strafverfolger trotz vorheriger Bedrohungshinweise auf der Plattform nicht informiert zu haben; die Klage richtet sich laut heise auch gegen Sam Altman persönlich. Dass OpenAI haftet oder die Warnung rechtlich hätte melden müssen, ist damit nicht festgestellt, sondern Gegenstand des Verfahrens.",
+          "summary": "OpenAI schlägt Prinzipien für unabhängige Drittprüfungen von Frontier-Modellen vor. Labore sollen Prüfern tiefen Zugang zu Training, Evaluation und Betrieb ermöglichen, zugleich aber sensible Informationen schützen; Unabhängigkeit, wissenschaftliche Strenge, Sicherheit und klare Verantwortlichkeiten werden als Mindestbedingungen genannt. Der Beitrag ist eine freiwillige Selbstverpflichtung und kein verbindlicher Standard.",
           "sources": [
             {
-              "label": "heise online",
-              "url": "https://www.heise.de/news/Von-Gefahr-vor-Amoklauf-an-Schule-gewusst-Kanadische-Provinz-klagt-gegen-OpenAI-11460881.html"
-            },
-            {
-              "label": "Government of British Columbia",
-              "url": "https://news.gov.bc.ca/releases/2026AG0067-001105"
+              "label": "OpenAI",
+              "url": "https://openai.com/index/priorities-principles-third-party-assessments/"
             }
           ],
           "n": 4
+        },
+        {
+          "title": "Splunk lässt KI-Agenten Angriffspfade statt einzelner Alarme priorisieren",
+          "category": "security",
+          "impact": 3,
+          "date": "2026-09-22",
+          "summary": "Splunk erweitert seine SOC-Plattform um spezialisierte Agenten für Detection Engineering, Threat Hunting, Reaktion und Governance. Exposure Analytics verbindet Telemetrie und Netzwerkkontext über die Cisco Data Fabric, um Schwachstellen nach tatsächlichen Angriffspfaden und Kritikalität zu priorisieren; Entscheidungen verbleiben vorerst beim Menschen.",
+          "sources": [
+            {
+              "label": "heise online",
+              "url": "https://www.heise.de/news/Splunk-laesst-KI-Agenten-Angriffswege-statt-Alarme-jagen-11460947.html"
+            }
+          ],
+          "n": 5
+        },
+        {
+          "title": "Copilot für JetBrains automatisiert risikoarme Tool-Freigaben",
+          "category": "security",
+          "impact": 3,
+          "date": "2026-09-22",
+          "summary": "Copilot für JetBrains 1.18.0 führt in einer Public Preview risikobasierte, assistierte Tool-Freigaben ein: niedrig eingestufte Aufrufe werden automatisch genehmigt, höheres Risiko bleibt beim Menschen. Zusätzlich kann Copilot Gespräche samt Dateiänderungen zu einer früheren Nachricht zurückrollen, organisationsweite Skills und Anweisungen übernehmen sowie MCP-Werkzeuge dauerhaft einzeln steuern. Die Risikoklassifizierung selbst beschreibt GitHub in der Meldung nicht näher.",
+          "sources": [
+            {
+              "label": "GitHub",
+              "url": "https://github.blog/changelog/2026-09-22-new-features-and-improvements-in-copilot-for-jetbrains"
+            }
+          ],
+          "n": 6
         }
       ],
       "skip": []
@@ -535,99 +555,77 @@
       "name": "AI Governance & Regulierung",
       "group": "Sicherheit & Recht",
       "angle": "Regeln, Recht, Lizenzen und Budgets für AI im Unternehmen: was Compliance und Kostensteuerung verlangen",
-      "summary": "Globale Frontier-Standards, ein US-chinesischer Vorfallkanal und harte Infrastrukturauflagen machen Governance technisch und operativ konkret.",
+      "summary": "Drittprüfungen, öffentliche Sicherheitsforderungen und staatliche Strategiepläne konkretisieren die Governance von Frontier-KI.",
       "items": [
         {
-          "title": "OpenAI fordert globale technische Standards für Frontier-KI und rekursive Selbstverbesserung",
+          "title": "OpenAI fordert tiefen Zugang für unabhängige Sicherheitsprüfungen",
           "category": "security",
           "impact": 4,
-          "date": "2026-09-21",
-          "summary": "OpenAI schlägt einen von den USA angestoßenen internationalen Prozess für gemeinsame Mess-, Evaluations- und Vorfallmelde-Standards bei Frontier-KI und rekursiver Selbstverbesserung vor. Die technischen Standards sollen laut Beitrag weder Lizenzen noch verpflichtende Vorabfreigaben sein; nationale Regierungen würden selbst über rechtliche Übernahme entscheiden.",
+          "date": "2026-09-22",
+          "summary": "OpenAI schlägt Prinzipien für unabhängige Drittprüfungen von Frontier-Modellen vor. Labore sollen Prüfern tiefen Zugang zu Training, Evaluation und Betrieb ermöglichen, zugleich aber sensible Informationen schützen; Unabhängigkeit, wissenschaftliche Strenge, Sicherheit und klare Verantwortlichkeiten werden als Mindestbedingungen genannt. Der Beitrag ist eine freiwillige Selbstverpflichtung und kein verbindlicher Standard.",
           "sources": [
             {
               "label": "OpenAI",
-              "url": "https://openai.com/index/building-standards-next-phase-ai/"
+              "url": "https://openai.com/index/priorities-principles-third-party-assessments/"
             }
           ],
           "n": 1
         },
         {
-          "title": "USA schlagen China Meldemechanismus für schwere KI-Sicherheitsvorfälle vor",
+          "title": "Reuters/Ipsos: Drei Viertel der US-Befragten verlangen mehr KI-Sicherheitsvorsorge",
           "category": "security",
           "impact": 3,
-          "date": "2026-09-20",
-          "summary": "US-Finanzminister Scott Bessent hat in Gesprächen mit Chinas Vizepremier He Lifeng einen bilateralen KI-Dialog und einen Meldemechanismus für KI-Vorfälle auf nationalem Sicherheitsniveau vorgeschlagen. Der Vorschlag soll Trump und Xi beim anstehenden Gipfel vorgelegt werden; Chinas Reaktion blieb laut Reuters unklar. Es handelt sich daher noch nicht um eine vereinbarte oder formalisierte Regelung.",
+          "date": "2026-09-22",
+          "summary": "In einer Reuters/Ipsos-Onlineumfrage unter 1.277 US-Erwachsenen sorgen sich 73 Prozent, KI-Unternehmen täten nicht genug gegen schwere gesellschaftliche Schäden. 55 Prozent bewerten eine Verlangsamung der KI-Entwicklung positiv, 13 Prozent negativ; 73 Prozent priorisieren sichere Entwicklung vor globaler US-Führung. Die Fehlertoleranz beträgt drei Prozentpunkte.",
           "sources": [
             {
               "label": "Reuters",
-              "url": "https://www.reuters.com/business/finance/us-treasurys-bessent-chinas-he-launch-talks-ai-trade-critical-minerals-2026-09-20/"
+              "url": "https://www.reuters.com/world/three-out-four-americans-say-ai-firms-not-doing-enough-prevent-disaster-2026-09-22/"
             }
           ],
           "n": 2
         },
         {
-          "title": "Texas stoppt zusätzliche Rechenzentrumsgenehmigungen bis zum Netzanschluss-Audit",
+          "title": "Spanien legt Zwölfmonatsplan für staatlich gerahmte KI-Einführung vor",
           "category": "security",
-          "impact": 4,
+          "impact": 3,
           "date": "2026-09-21",
-          "summary": "Texas’ Gouverneur Greg Abbott ordnete nach einem bereits bestehenden Moratorium für neue Netzanschlüsse auch eine Pause bei umweltbezogenen Rechenzentrumsgenehmigungen an, bis ERCOT die Anschlusswarteliste geprüft hat. CNBC zufolge könnten damit fast 50 Gigawatt der geplanten US-Rechenzentrumskapazität betroffen sein; diese Schätzung stammt von BloombergNEF.",
+          "summary": "Spaniens Ministerpräsident Pedro Sánchez lehnt eine reine Selbstregulierung der KI-Branche ab und kündigt einen Zwölfmonatsplan an. Dieser umfasst eine geplante KI-Gigafactory, Modelle des Barcelona Supercomputing Centre für Klima, Gesundheit und Energie sowie Umwelt-, Energie- und Datenautonomieanforderungen für Rechenzentren. Konkrete Rechtsinstrumente und Budgets nennt der Reuters-Bericht noch nicht.",
           "sources": [
             {
-              "label": "CNBC",
-              "url": "https://www.cnbc.com/2026/09/21/texas-governor-abbott-ai-data-center-permits.html"
+              "label": "Reuters",
+              "url": "https://www.reuters.com/world/spanish-pm-sanchez-says-ai-industry-cannot-be-self-regulated-2026-09-21/"
             }
           ],
           "n": 3
         },
         {
-          "title": "Kalifornien verpflichtet KI-Rechenzentren stärker zu Netz- und Wasserkosten",
+          "title": "RAND empfiehlt den USA eine Optionenstrategie für den Weg zur Superintelligenz",
           "category": "security",
           "impact": 3,
           "date": "2026-09-21",
-          "summary": "Gouverneur Gavin Newsom hat sieben Gesetze unterzeichnet, die unter anderem eine eigene Stromtarifklasse für Rechenzentren vorsehen und Betreiber an lokalen Netz- sowie Wasserinfrastruktur-Upgrades beteiligen. Geplante Standorte müssen lokalen Behörden Wasserbedarf, Energieeffizienz und Dürreplanung offenlegen; für beschleunigte Genehmigungen gelten Verbrauchsanforderungen.",
+          "summary": "Import AI fasst eine RAND-Strategie zusammen, die wegen großer Unsicherheit keine einzelne Endstrategie festschreibt, sondern vier Fähigkeiten parallel aufbauen will: ein Human-AI-Ökosystem, eine KI-Sicherheitsarchitektur einschließlich Compute-Transparenz und Verifikation, modernisierte Sicherheitsinstitutionen sowie Krisen- und Anpassungsfähigkeit in Staat, Wirtschaft und Bevölkerung. Das ist eine Strategieempfehlung, keine beschlossene US-Politik.",
           "sources": [
             {
-              "label": "The Verge",
-              "url": "https://www.theverge.com/ai-artificial-intelligence/998453/california-ai-data-center-bills"
+              "label": "Import AI",
+              "url": "https://importai.substack.com/p/import-ai-473-the-uss-superintelligence"
             }
           ],
           "n": 4
         },
         {
-          "title": "British Columbia verklagt OpenAI wegen unterlassener Warnung vor Schulangriff",
+          "title": "OpenAI richtet unabhängige Mathematik-Beratergruppe ein",
           "category": "security",
           "impact": 3,
-          "date": "2026-09-22",
-          "summary": "Die Provinz British Columbia hat OpenAI in Kalifornien verklagt. Sie wirft dem Unternehmen vor, Strafverfolger trotz vorheriger Bedrohungshinweise auf der Plattform nicht informiert zu haben; die Klage richtet sich laut heise auch gegen Sam Altman persönlich. Dass OpenAI haftet oder die Warnung rechtlich hätte melden müssen, ist damit nicht festgestellt, sondern Gegenstand des Verfahrens.",
+          "date": "2026-09-21",
+          "summary": "Nach Kritik an Veröffentlichung und Einordnung KI-generierter Mathematikresultate arbeitet OpenAI mit einer unbezahlten, formal unabhängigen Beratergruppe. Sie soll Bedeutung, Veröffentlichung und wissenschaftliche Standards neuer Ergebnisse beurteilen und darf öffentlich widersprechen; das interne Forschungstempo fällt ausdrücklich nicht in ihr Mandat.",
           "sources": [
             {
-              "label": "heise online",
-              "url": "https://www.heise.de/news/Von-Gefahr-vor-Amoklauf-an-Schule-gewusst-Kanadische-Provinz-klagt-gegen-OpenAI-11460881.html"
-            },
-            {
-              "label": "Government of British Columbia",
-              "url": "https://news.gov.bc.ca/releases/2026AG0067-001105"
+              "label": "OpenAI",
+              "url": "https://openai.com/index/advisory-group-on-mathematics-and-ai/"
             }
           ],
           "n": 5
-        },
-        {
-          "title": "Amazon sperrt Metas Einkaufsagenten Muse aus",
-          "category": "business",
-          "impact": 3,
-          "date": "2026-09-21",
-          "summary": "Amazon blockiert Metas Muse beim automatisierten Einkauf und beruft sich auf seine Nutzungsbedingungen. Nach Berichten identifizierte sich Muse beim Zugriff nicht; Amazon äußerte außerdem Datenschutz- und Sicherheitsbedenken. Der Konflikt zeigt, dass agentisches Shopping nicht nur technisch, sondern auch durch Plattformregeln und die Kontrolle über Kundenschnittstelle und Werbung begrenzt wird.",
-          "sources": [
-            {
-              "label": "TechCrunch",
-              "url": "https://techcrunch.com/2026/09/21/metas-ai-agent-has-been-blocked-from-using-amazon-com/"
-            },
-            {
-              "label": "The Verge",
-              "url": "https://www.theverge.com/tech/998078/amazon-blocks-meta-muse-ai-agent-shopping"
-            }
-          ],
-          "n": 6
         }
       ],
       "skip": []
@@ -637,92 +635,88 @@
       "name": "Enterprise & Vertikalisierung",
       "group": "Markt & Branchen",
       "angle": "AI in Branchen und Unternehmen: Vertikalisierung, Verdrängung klassischer Software und Augmentation",
-      "summary": "Alibaba skaliert Chip- und Rechenzentrumskapazität, während On-Device-KI, Netzdienste und Agentenplattformen in reale Betriebsmodelle drängen.",
+      "summary": "KI verändert Nachwuchsrekrutierung, Kundensupport, App-Migration und den Markt für Trainingsdaten und Consumer-Agenten.",
       "items": [
         {
-          "title": "Alibaba stellt Zhenwu V900 vor und plant mehr als 20 Gigawatt Rechenzentrumskapazität",
+          "title": "KI verändert Einstiegsrekrutierung und verschiebt Firmen zur „Diamant“-Belegschaft",
           "category": "business",
           "impact": 4,
-          "date": "2026-09-22",
-          "summary": "Alibaba kündigte den KI-Chip Zhenwu V900 für Massenproduktion und kommerziellen Start im ersten Quartal 2027 an und beansprucht die dreifache Leistung des Vorgängers. Parallel soll Alibaba Clouds globale Rechenzentrumskapazität bis 2032 auf mehr als 20 Gigawatt wachsen; Qwen 4 befindet sich nach Unternehmensangaben im Training. Die Leistungsangabe ist eine nicht unabhängig validierte Herstellerangabe.",
+          "date": "2026-09-23",
+          "summary": "CNBC berichtet anhand einer britischen Befragung von 1.500 Unternehmensleitern, dass 51 Prozent KI als Einfluss auf ihre Einstellungspraxis nennen; 19 Prozent hätten Einstiegsrekrutierung reduziert, davon 42 Prozent wegen KI-Einführung. Der Artikel warnt zugleich vor einer ausgedünnten Nachwuchspipeline, weil genau diese Rollen bislang Training und Aufstieg ermöglichten. Die Zahlen stammen aus dem Open-University-Business-Barometer und belegen eine Befragung, keine allgemeine Kausalität für den Arbeitsmarkt.",
           "sources": [
             {
               "label": "CNBC",
-              "url": "https://www.cnbc.com/2026/09/22/alibaba-ai-alibabacloud-zhenwu-v900-.html"
+              "url": "https://www.cnbc.com/2026/09/23/ai-workplace-graduate-entry-level-junior-hiring.html"
             }
           ],
           "n": 1
         },
         {
-          "title": "Googlebook integriert Gemini als On-Device-Schicht ins Betriebssystem",
-          "category": "tools",
-          "impact": 4,
-          "date": "2026-09-21",
-          "summary": "Googlebook integriert Gemini direkt ins Notebook-Betriebssystem: Magic Pointer arbeitet kontextbezogen auf Bildschirminhalten, Rambler strukturiert Spracheingaben, Nutzer können Widgets per Beschreibung erstellen und Gemini Spark erledigt Aufgaben im Hintergrund. Vorbestellungen starten ab 899 US-Dollar, die Auslieferung in sieben Ländern ist für Anfang Oktober angekündigt; Google beschreibt die lokale Aktivierung als datenschutzorientiert, nennt aber im Beitrag keine vollständige technische Datenschutzanalyse.",
+          "title": "SpaceXAI automatisiert den eigenen Kundensupport mit Grok Bot",
+          "category": "agents",
+          "impact": 3,
+          "date": "2026-09-22",
+          "summary": "SpaceXAI berichtet, Grok Bot habe bei 175 Prozent mehr Supporttickets zusätzliches Personal vermieden und löse einfache Fälle für 0,20 bis 0,30 Dollar. Der Agent untersucht Tickets vorab, greift auf Ticketing, Fehlertracking und Observability zu, reproduziert Bugs und darf nach gestufter Freigabe direkt antworten oder Rückerstattungen auslösen. Die Leistungs- und Kostenzahlen sind nicht unabhängig geprüfte Selbstauskünfte.",
           "sources": [
             {
-              "label": "Google",
-              "url": "https://blog.google/products-and-platforms/devices/googlebook/googlebook-built-in-intelligence/"
+              "label": "xAI",
+              "url": "https://x.ai/news/grok-bot-customer-support"
             }
           ],
           "n": 2
         },
         {
-          "title": "Texas stoppt zusätzliche Rechenzentrumsgenehmigungen bis zum Netzanschluss-Audit",
-          "category": "security",
+          "title": "Shopify migriert mit Helix kontrolliert von React Native zu Swift und Kotlin",
+          "category": "agents",
           "impact": 4,
           "date": "2026-09-21",
-          "summary": "Texas’ Gouverneur Greg Abbott ordnete nach einem bereits bestehenden Moratorium für neue Netzanschlüsse auch eine Pause bei umweltbezogenen Rechenzentrumsgenehmigungen an, bis ERCOT die Anschlusswarteliste geprüft hat. CNBC zufolge könnten damit fast 50 Gigawatt der geplanten US-Rechenzentrumskapazität betroffen sein; diese Schätzung stammt von BloombergNEF.",
+          "summary": "Shopifys internes Helix zerlegt App-Migrationen in kleine Checkpoints und lässt jeden Schritt vier Gates passieren: Verhaltenstests, visuellen Vergleich, zwei isolierte adversariale Code-Reviews und standardmäßig menschliche Freigabe. Feedback wird für spätere Checkpoints gespeichert; autonome und parallele Läufe bleiben an dieselben Gates gebunden. Der Bericht ist eine Anbieter-Fallstudie ohne unabhängige Produktivitätsmessung.",
           "sources": [
             {
-              "label": "CNBC",
-              "url": "https://www.cnbc.com/2026/09/21/texas-governor-abbott-ai-data-center-permits.html"
+              "label": "Shopify Engineering",
+              "url": "https://shopify.engineering/helix"
             }
           ],
           "n": 3
         },
         {
-          "title": "Vodafone und Ericsson testen KI-Liveübersetzung direkt im Mobilfunknetz",
-          "category": "tools",
+          "title": "Snorkel AI sammelt 350 Millionen Dollar für komplexe Trainingsdaten ein",
+          "category": "business",
           "impact": 3,
           "date": "2026-09-22",
-          "summary": "Vodafone und Ericsson haben in einem realitätsnahen Testnetz netzseitige Liveübersetzung für Telefonate sowie einen KI-Geräuschfilter erprobt. Die Übersetzung zwischen Deutsch, Englisch, Spanisch, Italienisch und Französisch benötigt laut Vodafone weder Spezialgerät noch App und soll nur nach ausdrücklicher Aktivierung laufen. Bislang ist es ein Konzeptnachweis ohne Termin oder Preis für Endkunden.",
+          "summary": "Snorkel AI hat eine Series E über 350 Millionen US-Dollar abgeschlossen und seine Bewertung auf 3,5 Milliarden Dollar nahezu verdreifacht. Das Unternehmen nennt einen annualisierten Umsatzlauf von 375 Millionen Dollar; Wachstumstreiber seien komplette Datensätze und RL-Umgebungen statt reiner Labeling-Software. Die Umsatzangabe ist eine Selbstauskunft des Unternehmens.",
           "sources": [
             {
-              "label": "heise online",
-              "url": "https://www.heise.de/news/Vodafone-und-Ericsson-testen-KI-Live-Uebersetzung-direkt-im-Mobilfunknetz-11460502.html"
+              "label": "TechCrunch",
+              "url": "https://techcrunch.com/2026/09/22/snorkel-ai-triples-valuation-to-3-5b-as-demand-for-ai-training-data-booms/"
             }
           ],
           "n": 4
         },
         {
-          "title": "Amazon sperrt Metas Einkaufsagenten Muse aus",
+          "title": "Meta Muse erreicht laut Apptopia 2,8 Millionen Downloads in zwölf Tagen",
           "category": "business",
           "impact": 3,
-          "date": "2026-09-21",
-          "summary": "Amazon blockiert Metas Muse beim automatisierten Einkauf und beruft sich auf seine Nutzungsbedingungen. Nach Berichten identifizierte sich Muse beim Zugriff nicht; Amazon äußerte außerdem Datenschutz- und Sicherheitsbedenken. Der Konflikt zeigt, dass agentisches Shopping nicht nur technisch, sondern auch durch Plattformregeln und die Kontrolle über Kundenschnittstelle und Werbung begrenzt wird.",
+          "date": "2026-09-22",
+          "summary": "Reuters berichtet, Metas Agent Muse habe laut Apptopia in den ersten zwölf Tagen 2,8 Millionen Downloads erreicht; in einem vergleichbaren Zuschnitt seien es 1,8 Millionen gegenüber 1,3 Millionen bei ChatGPT gewesen. Analysten sehen Monetarisierungschancen, während Amazons Blockade wegen fehlender Autorisierung und Transparenz operative Grenzen zeigt. Downloadzahlen und Analystenschätzungen belegen noch keine nachhaltige Nutzung oder Umsätze.",
           "sources": [
             {
-              "label": "TechCrunch",
-              "url": "https://techcrunch.com/2026/09/21/metas-ai-agent-has-been-blocked-from-using-amazon-com/"
-            },
-            {
-              "label": "The Verge",
-              "url": "https://www.theverge.com/tech/998078/amazon-blocks-meta-muse-ai-agent-shopping"
+              "label": "Reuters",
+              "url": "https://www.reuters.com/business/wall-street-expects-metas-ai-agent-shape-into-new-revenue-engine-2026-09-22/"
             }
           ],
           "n": 5
         },
         {
-          "title": "Benchling isoliert mandantenfähige Agenten-Codeausführung bis zur DNS-Ebene",
-          "category": "security",
-          "impact": 3,
-          "date": "2026-09-21",
-          "summary": "Benchling beschreibt eine Defense-in-Depth-Architektur für von KI-Agenten erzeugten wissenschaftlichen Code: AgentCore Code Interpreter im VPC-Modus wird mit kontoweiter Trennung, Route-53-DNS-Firewall, VPC-Endpunktregeln und pro Auftrag ausgestellten STS-Zugangsdaten kombiniert. Benchling meldet mehr als 600 Ausführungssitzungen pro Tag über mehr als 250 Mandanten pro Woche sowie bislang keine Sicherheitsvorfälle; diese Betriebszahlen sind Selbstauskünfte aus einer gemeinsamen Anbieter-Fallstudie.",
+          "title": "JetBrains bündelt Agentenentwicklung, Teamkoordination und Governance in Air",
+          "category": "agents",
+          "impact": 4,
+          "date": "2026-09-22",
+          "summary": "JetBrains führt seine Agentenprodukte unter JetBrains Air zusammen: Agentensteuerung und Verifikation in den IDEs, Team-Workflows sowie Richtlinien, Auditierbarkeit und Kostenkontrolle über Air Governance. Der Hersteller betont ein Multi-Vendor-System; einzelne Bausteine sind bereits verfügbar, andere folgen schrittweise.",
           "sources": [
             {
-              "label": "AWS Machine Learning",
-              "url": "https://aws.amazon.com/blogs/machine-learning/how-benchling-secured-multi-tenant-ai-agents-with-amazon-bedrock-agentcore/"
+              "label": "JetBrains",
+              "url": "https://blog.jetbrains.com/blog/2026/09/22/introducing-jetbrains-air/"
             }
           ],
           "n": 6

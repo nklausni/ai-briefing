@@ -4804,6 +4804,335 @@
     }
    ],
    "first_seen": "2026-08-20"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "OpenAI behebt Codex-Bug, der eigenständig echte Nutzerdateien löschte",
+   "category": "agents",
+   "impact": 4,
+   "date": "2026-08-19",
+   "summary": "Mehrere Nutzer hatten gemeldet, dass GPT-5.6 Sol in Codex eigenständig Dateien löschte: Ein für temporäre Arbeitsdateien gedachter Aufräum-Befehl nutzte Systemvariablen wie $HOME für Temp-Ordner, ein fehlerhafter Löschbefehl traf am Ende das echte Home-Verzeichnis. OpenAI lässt Codex Löschziele jetzt vorab prüfen, legt grundsätzlich frische temporäre Ordner an und unterbindet die Zweckentfremdung von Systemvariablen; riskante Löschbefehle werden zusätzlich durch strengere Prüfungen abgefangen. Der Vollzugriffsmodus lässt sich außerdem nicht mehr versehentlich auslösen – OpenAI empfiehlt weiterhin, grundsätzlich einen der Sandbox-Modi zu nutzen.",
+   "sources": [
+    {
+     "label": "The Decoder",
+     "url": "https://the-decoder.com/openai-fixes-codex-bug-that-deleted-real-user-files-without-permission/"
+    }
+   ],
+   "first_seen": "2026-08-20"
+  },
+  {
+   "topic_id": "ai-governance",
+   "title": "Guidelight-Bewertung: Kein KI-Labor erfüllt eigene Sicherheitsstandards vollständig",
+   "category": "security",
+   "impact": 4,
+   "date": "2026-08-19",
+   "summary": "Die von früheren OpenAI-Sicherheitsverantwortlichen gegründete Non-Profit Guidelight hat erstmals systematisch geprüft, ob Anthropic, OpenAI, Google, xAI und Meta sechs grundlegende Kontrollmaßnahmen für ihre eigenen KI-Systeme einhalten – etwa Protokollierung, Freigabeprüfungen und Notabschaltungen. Anthropic und OpenAI schneiden mit C+ am besten ab, Google folgt mit D+, xAI und Meta liegen mit D− und F deutlich zurück. Für die Debatte um freiwillige Selbstverpflichtungen ist relevant, dass ausgerechnet Prävention und Eindämmung – also die Bereiche mit dem größten Schadenspotenzial – bei allen Laboren am schwächsten ausfallen.",
+   "sources": [
+    {
+     "label": "The Decoder",
+     "url": "https://the-decoder.com/ai-labs-are-failing-to-keep-their-own-systems-in-check/"
+    },
+    {
+     "label": "Guidelight",
+     "url": "https://guidelight.ai/blog/control-assessment-august-2026"
+    }
+   ],
+   "first_seen": "2026-08-20"
+  },
+  {
+   "topic_id": "ai-governance",
+   "title": "OpenAI und Anthropic tragen Wettstreit um Datenschutz-Standards öffentlich aus",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-08-19",
+   "summary": "OpenAI hat mit „Private Safety Processing“ eine neue, datensparsame Methode vorgestellt, um Missbrauch über mehrere Sitzungen zu erkennen, und positioniert das explizit als Gegenentwurf zu Anthropics im Juli eingeführter 30-Tage-Speicherfrist für Fable- und künftige Mythos-Modelle. Anthropic verteidigt seine Praxis mit kontrolliertem Zugriff durch wenige geprüfte Mitarbeitende und fälschungssicherer Protokollierung jeder Prüfung, räumt aber ein, dass die Regelung bei einigen Enterprise-Kunden auf Kritik gestoßen ist. Für Unternehmen, die zwischen den Anbietern wählen, wird Datenschutz-Architektur damit zu einem eigenständigen Wettbewerbsfaktor neben Preis und Leistung.",
+   "sources": [
+    {
+     "label": "OpenAI",
+     "url": "https://openai.com/index/offering-zero-data-retention-for-frontier-models/"
+    },
+    {
+     "label": "TechCrunch",
+     "url": "https://techcrunch.com/2026/08/19/openai-seeks-to-one-up-anthropic-with-new-customer-privacy-protections/"
+    }
+   ],
+   "first_seen": "2026-08-20"
+  },
+  {
+   "topic_id": "ai-news",
+   "title": "Anthropic überholt OpenAI erstmals beim Umsatz",
+   "category": "business",
+   "impact": 4,
+   "date": "2026-08-19",
+   "summary": "Anthropic hat im zweiten Quartal mit 11,6 Milliarden Dollar Umsatz erstmals OpenAI überholt, das im gleichen Zeitraum auf 6,7 Milliarden Dollar kam und nur um 18 Prozent gegenüber dem Vorquartal wuchs, während Anthropic seinen Umsatz verdoppelte. Getrieben wird die Entwicklung durch das schnell wachsende Coding-Tool Claude Code und dadurch, dass Firmen laut Vercel pro Token deutlich mehr für Claude-Modelle zahlen als für Alternativen. Für OpenAI, das ebenfalls einen Börsengang vorbereitet, dürfte das den Druck erhöhen, das Umsatzwachstum zu beschleunigen.",
+   "sources": [
+    {
+     "label": "The Decoder",
+     "url": "https://the-decoder.com/anthropic-passes-openai-on-revenue-for-the-first-time/"
+    },
+    {
+     "label": "WSJ",
+     "url": "https://www.wsj.com/tech/ai/openais-second-quarter-sales-show-tepid-growth-compared-with-anthropic-5cb42998"
+    }
+   ],
+   "first_seen": "2026-08-20"
+  },
+  {
+   "topic_id": "ai-news",
+   "title": "OpenAI kontert Anthropics Datenspeicherung mit „Private Safety Processing“",
+   "category": "security",
+   "impact": 4,
+   "date": "2026-08-19",
+   "summary": "OpenAI stellt ausgewählten Kunden eine neue Überwachungstechnik vor, die Missbrauch über mehrere Sitzungen hinweg erkennen soll, ohne dabei Kundendaten dauerhaft zu speichern – eine bewusste Abgrenzung zu Anthropics im Juli eingeführter 30-Tage-Speicherfrist für Fable- und künftige Mythos-Modelle. Ein Agent prüft Eingaben und Ausgaben mehrerer Gespräche automatisiert und schickt bei Verdacht nur ein eng gefasstes Signal an OpenAI, woraufhin das Unternehmen über weitere Schritte entscheidet. Der Vorstoß fällt in eine Phase, in der beide Anbieter verstärkt um Enterprise-Kunden mit hohen Datenschutzanforderungen konkurrieren – Anthropics Politik hatte zuvor bei einigen Firmen für Unmut gesorgt.",
+   "sources": [
+    {
+     "label": "OpenAI",
+     "url": "https://openai.com/index/offering-zero-data-retention-for-frontier-models/"
+    },
+    {
+     "label": "TechCrunch",
+     "url": "https://techcrunch.com/2026/08/19/openai-seeks-to-one-up-anthropic-with-new-customer-privacy-protections/"
+    }
+   ],
+   "first_seen": "2026-08-20"
+  },
+  {
+   "topic_id": "ai-news",
+   "title": "China lässt Nvidias H200-Chips in kleinen Mengen aufs Festland",
+   "category": "business",
+   "impact": 3,
+   "date": "2026-08-19",
+   "summary": "Laut Financial Times haben ByteDance und Tencent jeweils rund 10.000 Nvidia-H200-Prozessoren erhalten, weitere Firmen könnten folgen – ein vorsichtiges Zugeständnis Pekings, das eigentlich Huaweis heimische Chips fördern will. Der H200 liegt technisch mindestens zwei Generationen hinter Nvidias stärksten, für China gesperrten Chips zurück, jeder Kauf braucht zudem die Freigabe der Planungsbehörde NDRC. Chinesische Labore wie Moonshot, Alibaba, DeepSeek und Z.ai holen bei den Modellen selbst zunehmend auf, hinken aber weiterhin deutlich bei der verfügbaren Rechenkapazität hinterher.",
+   "sources": [
+    {
+     "label": "The Decoder",
+     "url": "https://the-decoder.com/china-lets-nvidias-h200-chips-trickle-onto-the-mainland-to-help-its-ai-firms-keep-pace-with-the-us/"
+    }
+   ],
+   "first_seen": "2026-08-20"
+  },
+  {
+   "topic_id": "ai-news",
+   "title": "GLM-5.3 geht live und verkürzt den Abstand zu Claude Opus 5 bei Agenten-Aufgaben",
+   "category": "modelle",
+   "impact": 3,
+   "date": "2026-08-19",
+   "summary": "Z.ais GLM-5.3 ist jetzt über die API verfügbar und erreicht mit 60 Punkten im Artificial Analysis Intelligence Index den Spitzenwert unter offenen Modellen, gleichauf mit Kimi K3. Beim Agenten-Benchmark GDPval-AA v2 springt der Elo-Wert von 1.524 auf 1.770 und landet damit auf Platz zwei, nur hinter Claude Opus 5. Die offenen Gewichte lässt Z.ai weiterhin auf sich warten – nach eigenen Angaben, weil das Modell so gut Sicherheitslücken findet, dass zunächst nur ausgewählte Security-Partner vollen Zugriff erhalten.",
+   "sources": [
+    {
+     "label": "The Decoder",
+     "url": "https://the-decoder.com/glm-5-3-tops-the-open-model-rankings-and-undercuts-rivals-on-price-but-its-release-is-delayed/"
+    },
+    {
+     "label": "Artificial Analysis",
+     "url": "https://x.com/ArtificialAnlys/status/2089830890709135426"
+    }
+   ],
+   "first_seen": "2026-08-20"
+  },
+  {
+   "topic_id": "ai-news",
+   "title": "Stripe bestätigt Acht-Milliarden-Dollar-Übernahme von OpenRouter, erklärt „Singularität“ zum Grund gegen Börsengang",
+   "category": "business",
+   "impact": 3,
+   "date": "2026-08-19",
+   "summary": "In einem Investorenbrief bezeichnet Stripe den 1. Januar als Beginn der „Singularität“ und begründet damit, warum das Unternehmen trotz 41 Prozent Umsatzwachstum im ersten Halbjahr privat bleiben will – als Privatunternehmen könne man Übernahmen ohne Verwässerung finanzieren. Zugleich bestätigt Stripe die bereits im August berichtete Übernahme des KI-Gateways OpenRouter für über acht Milliarden Dollar, dessen Token-Durchsatz wöchentlich um neun Prozent wächst. Der Fall zeigt exemplarisch, wie großzügig der Begriff „Singularität“ inzwischen auch für handfeste Geschäftsentscheidungen genutzt wird – zuletzt hatten auch Hassabis, Altman und Musk ähnlich große Worte gewählt.",
+   "sources": [
+    {
+     "label": "The Decoder",
+     "url": "https://the-decoder.com/stripe-declares-were-living-in-the-singularity-and-uses-it-as-a-reason-not-to-ipo/"
+    }
+   ],
+   "first_seen": "2026-08-20"
+  },
+  {
+   "topic_id": "ai-news",
+   "title": "Cerebras stellt CS-4 vor: bis zu 30-fache Inferenz-Geschwindigkeit gegenüber GPUs",
+   "category": "business",
+   "impact": 3,
+   "date": "2026-08-19",
+   "summary": "Cerebras hat mit dem CS-4 ein neues Rack-System vorgestellt, das drei WSE-3-Turbo-Wafer-Prozessoren kombiniert und auf 750 PetaFLOPS KI-Rechenleistung kommt. Das Unternehmen wirbt mit bis zu 30-facher Inferenz-Geschwindigkeit gegenüber GPU-basierten Systemen und zehnfach besserer Energieeffizienz pro Watt als beim Vorgänger CS-3; erste Auslieferungen sollen noch in diesem Quartal beginnen. Für Firmen, die Inferenz-Kapazität einkaufen, positioniert sich Cerebras damit als Alternative zu Nvidia, bislang allerdings nur mit herstellereigenen Leistungsangaben.",
+   "sources": [
+    {
+     "label": "Cerebras",
+     "url": "https://www.cerebras.ai/blog/introducing-cerebras-cs-4"
+    },
+    {
+     "label": "HPCwire",
+     "url": "https://www.hpcwire.com/2026/08/20/its-not-an-hpc-system-but-cerebras-new-cs-4-is-an-ai-monster/"
+    }
+   ],
+   "first_seen": "2026-08-21"
+  },
+  {
+   "topic_id": "ai-security",
+   "title": "KI-generierte Exploits gegen Industriesteuerungen: gemeinsame Warnung von NSA, CISA und FBI",
+   "category": "security",
+   "impact": 5,
+   "date": "2026-08-19",
+   "summary": "NSA, CISA, FBI und weitere US-Behörden warnen in einer gemeinsamen Empfehlung, dass Angreifer KI nutzen, um Exploit-Skripte gegen Siemens-S7-Steuerungen (PLCs) zu bauen – betroffen sind unter anderem Energie-, Wasser-, Chemie- und Fertigungsbetriebe. KI senkt laut den Behörden deutlich die technische Hürde und die benötigte Zeit für solche Angriffe und erlaubt es, schnell auf neue Angriffsvektoren umzusteigen. In Simulationen des britischen AI Safety Institute konnten Modelle bislang zwar keine Steuerungssysteme selbst hacken, scheiterten aber nicht an den Geräten selbst, sondern blieben schon an vorgeschalteten IT-Systemen hängen.",
+   "sources": [
+    {
+     "label": "The Decoder",
+     "url": "https://the-decoder.com/attackers-are-using-ai-to-build-exploits-for-industrial-control-systems-u-s-agencies-warn/"
+    },
+    {
+     "label": "CISA",
+     "url": "https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-231a"
+    }
+   ],
+   "first_seen": "2026-08-20"
+  },
+  {
+   "topic_id": "ai-security",
+   "title": "Guidelight-Bewertung: Kein KI-Labor erfüllt eigene Sicherheitsstandards vollständig",
+   "category": "security",
+   "impact": 4,
+   "date": "2026-08-19",
+   "summary": "Die von früheren OpenAI-Sicherheitsverantwortlichen gegründete Non-Profit-Organisation Guidelight hat erstmals Anthropic, OpenAI, Google, xAI und Meta anhand sechs grundlegender Kontrollmaßnahmen bewertet – etwa Protokollierung interner KI-Aktivität, Freigabeprüfungen für riskante Aktionen und Notabschaltungen. Anthropic und OpenAI führen mit einer Note von C+, Google folgt mit D+ und einer Roadmap, xAI (D−) und Meta (F) liegen deutlich zurück. Am besten gelingt allen Firmen das Erkennen von Fehlverhalten, am schlechtesten Prävention und Eindämmung.",
+   "sources": [
+    {
+     "label": "The Decoder",
+     "url": "https://the-decoder.com/ai-labs-are-failing-to-keep-their-own-systems-in-check/"
+    },
+    {
+     "label": "Guidelight",
+     "url": "https://guidelight.ai/blog/control-assessment-august-2026"
+    }
+   ],
+   "first_seen": "2026-08-20"
+  },
+  {
+   "topic_id": "ai-security",
+   "title": "OpenAI behebt Codex-Bug, der echte Nutzerdateien löschte",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-08-19",
+   "summary": "Ein fehlerhafter Aufräum-Befehl ließ GPT-5.6 Sol in Codex reale Nutzerdateien statt temporärer Arbeitsdateien löschen, weil er Systemvariablen wie $HOME missbrauchte. OpenAI prüft Löschziele nun vorab, verhindert die Zweckentfremdung von Systemvariablen und blockiert das versehentliche Auslösen des Vollzugriffsmodus. Der Vorfall unterstreicht, wie riskant weitreichende Dateisystem-Rechte für autonome Coding-Agenten bleiben, solange Sicherheitsprüfungen nicht standardmäßig greifen.",
+   "sources": [
+    {
+     "label": "The Decoder",
+     "url": "https://the-decoder.com/openai-fixes-codex-bug-that-deleted-real-user-files-without-permission/"
+    }
+   ],
+   "first_seen": "2026-08-20"
+  },
+  {
+   "topic_id": "ai-tools",
+   "title": "Google rüstet Suche und Gemini mit neuen KI-Lerntools aus",
+   "category": "tools",
+   "impact": 3,
+   "date": "2026-08-19",
+   "summary": "Google integriert neue, auf Lernende zugeschnittene KI-Funktionen direkt in Google Search und Gemini, darunter geführte Erklärungen und Übungsformate statt reiner Ergebnislisten. Der Schritt reiht sich in eine Serie von Bildungsinitiativen der großen Anbieter ein und zielt auf Schüler und Studierende als eigene Nutzergruppe mit spezifischen Anforderungen an Nachvollziehbarkeit statt nur schnellen Antworten.",
+   "sources": [
+    {
+     "label": "TechCrunch",
+     "url": "https://techcrunch.com/2026/08/19/google-launches-new-study-tools-for-students-across-search-and-gemini/"
+    }
+   ],
+   "first_seen": "2026-08-20"
+  },
+  {
+   "topic_id": "ai-tools",
+   "title": "Codex-Sicherheitsupdate: kein versehentliches Löschen echter Dateien mehr",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-08-19",
+   "summary": "Nach mehreren Berichten über eigenständig löschende Codex-Agenten hat OpenAI die Ursache behoben: ein fehlerhafter Aufräum-Befehl, der Systemvariablen für temporäre Ordner missbrauchte und dadurch reale Nutzerverzeichnisse traf. Codex prüft Löschziele nun vorab, der Vollzugriffsmodus lässt sich nicht mehr versehentlich aktivieren. Für den Alltagseinsatz bleibt die Empfehlung, grundsätzlich in einem Sandbox-Modus zu arbeiten statt Vollzugriff zu gewähren.",
+   "sources": [
+    {
+     "label": "The Decoder",
+     "url": "https://the-decoder.com/openai-fixes-codex-bug-that-deleted-real-user-files-without-permission/"
+    }
+   ],
+   "first_seen": "2026-08-20"
+  },
+  {
+   "topic_id": "enterprise",
+   "title": "Anthropic überholt OpenAI erstmals beim Umsatz",
+   "category": "business",
+   "impact": 4,
+   "date": "2026-08-19",
+   "summary": "Anthropic hat im zweiten Quartal mit 11,6 Milliarden Dollar Umsatz erstmals OpenAI überholt, das im gleichen Zeitraum auf 6,7 Milliarden Dollar kam und nur um 18 Prozent gegenüber dem Vorquartal wuchs, während Anthropic seinen Umsatz verdoppelte. Getrieben wird die Entwicklung durch das schnell wachsende Coding-Tool Claude Code und dadurch, dass Firmen laut Vercel pro Token deutlich mehr für Claude-Modelle zahlen als für Alternativen. Für Einkaufsentscheidungen zeigt das: Die Zahlungsbereitschaft für Premium-Modelle bleibt trotz sinkender Durchschnittspreise am Gesamtmarkt hoch.",
+   "sources": [
+    {
+     "label": "The Decoder",
+     "url": "https://the-decoder.com/anthropic-passes-openai-on-revenue-for-the-first-time/"
+    },
+    {
+     "label": "WSJ",
+     "url": "https://www.wsj.com/tech/ai/openais-second-quarter-sales-show-tepid-growth-compared-with-anthropic-5cb42998"
+    }
+   ],
+   "first_seen": "2026-08-20"
+  },
+  {
+   "topic_id": "enterprise",
+   "title": "China lässt Nvidias H200-Chips in kleinen Mengen aufs Festland",
+   "category": "business",
+   "impact": 3,
+   "date": "2026-08-19",
+   "summary": "ByteDance und Tencent haben laut Financial Times jeweils rund 10.000 Nvidia-H200-Prozessoren erhalten, weitere Firmen könnten folgen – ein vorsichtiges Zugeständnis Pekings, das eigentlich Huaweis heimische Chips fördern will. Für Unternehmen, die Inferenz-Kapazität in China einkaufen oder mit chinesischen Anbietern konkurrieren, zeigt das: Der Compute-Rückstand bleibt real, schrumpft aber langsam, während Modelle wie GLM-5.3, Kimi K3 und DeepSeek V4 technisch bereits aufgeholt haben.",
+   "sources": [
+    {
+     "label": "The Decoder",
+     "url": "https://the-decoder.com/china-lets-nvidias-h200-chips-trickle-onto-the-mainland-to-help-its-ai-firms-keep-pace-with-the-us/"
+    }
+   ],
+   "first_seen": "2026-08-20"
+  },
+  {
+   "topic_id": "enterprise",
+   "title": "Stripe bestätigt OpenRouter-Übernahme, bleibt wegen „Singularität“ privat",
+   "category": "business",
+   "impact": 3,
+   "date": "2026-08-19",
+   "summary": "Stripe hat die bereits berichtete Übernahme des KI-Gateways OpenRouter für über acht Milliarden Dollar bestätigt und begründet in einem Investorenbrief, warum das Unternehmen trotz 41 Prozent Umsatzwachstum privat bleibt: Man wolle Übernahmen ohne Verwässerung finanzieren können und positioniert die eigene Zahlungsinfrastruktur explizit als Grundlage für die „Intelligence Pipeline“ jedes Entwicklerteams. Für Firmen, die Modell-Zugriff über Gateways einkaufen, wächst damit ein Anbieter zusammen, der Zahlungsabwicklung und KI-Modell-Routing aus einer Hand anbietet.",
+   "sources": [
+    {
+     "label": "The Decoder",
+     "url": "https://the-decoder.com/stripe-declares-were-living-in-the-singularity-and-uses-it-as-a-reason-not-to-ipo/"
+    }
+   ],
+   "first_seen": "2026-08-20"
+  },
+  {
+   "topic_id": "enterprise",
+   "title": "Cerebras stellt CS-4 vor: bis zu 30-fache Inferenz-Geschwindigkeit gegenüber GPUs",
+   "category": "business",
+   "impact": 3,
+   "date": "2026-08-19",
+   "summary": "Cerebras hat mit dem CS-4 ein neues Rack-System vorgestellt, das drei WSE-3-Turbo-Wafer-Prozessoren kombiniert und auf 750 PetaFLOPS KI-Rechenleistung kommt. Das Unternehmen wirbt mit bis zu 30-facher Inferenz-Geschwindigkeit gegenüber GPU-basierten Systemen und zehnfach besserer Energieeffizienz pro Watt als beim Vorgänger CS-3; erste Auslieferungen sollen noch in diesem Quartal beginnen. Für Firmen, die Inferenz-Kapazität einkaufen, positioniert sich Cerebras damit als Alternative zu Nvidia, bislang allerdings nur mit herstellereigenen Leistungsangaben.",
+   "sources": [
+    {
+     "label": "Cerebras",
+     "url": "https://www.cerebras.ai/blog/introducing-cerebras-cs-4"
+    },
+    {
+     "label": "HPCwire",
+     "url": "https://www.hpcwire.com/2026/08/20/its-not-an-hpc-system-but-cerebras-new-cs-4-is-an-ai-monster/"
+    }
+   ],
+   "first_seen": "2026-08-21"
+  },
+  {
+   "topic_id": "lokale-llms",
+   "title": "GLM-5.3: API live, offene Gewichte wegen Sicherheitsbedenken weiter verzögert",
+   "category": "lokal",
+   "impact": 4,
+   "date": "2026-08-19",
+   "summary": "Z.ais GLM-5.3 erreicht im Artificial Analysis Intelligence Index mit 60 Punkten Gleichstand mit Kimi K3 an der Spitze der offenen Modelle und schließt beim Agenten-Benchmark GDPval-AA v2 einen Großteil des Abstands zu Claude Opus 5. Mit 0,68 Dollar pro Aufgabe liegt es zwar über dem Vorgänger GLM-5.2, aber weiterhin günstiger als Kimi K3. Wer auf die offenen Gewichte wartet, muss sich laut Z.ai weitere rund zwei Wochen gedulden: Das Unternehmen will zunächst Sicherheitskontrollen verstärken, weil GLM-5.3 selbst ungewöhnlich gut Schwachstellen aufspürt.",
+   "sources": [
+    {
+     "label": "The Decoder",
+     "url": "https://the-decoder.com/glm-5-3-tops-the-open-model-rankings-and-undercuts-rivals-on-price-but-its-release-is-delayed/"
+    },
+    {
+     "label": "Artificial Analysis",
+     "url": "https://x.com/ArtificialAnlys/status/2089830890709135426"
+    }
+   ],
+   "first_seen": "2026-08-20"
   }
  ],
  "summaries": [
@@ -6428,6 +6757,98 @@
     {
      "reason": "Kein neuer eigenständiger Stand im Zeitraum",
      "text": "Die zuletzt großen offenen Modelle – Alibabas Qwen3.8-27B (14. August) und Z.ais GLM-5.3, dessen offene Gewichte weiterhin zurückgehalten werden – sind bereits erfasst; für 15.–18. August fand sich trotz gezielter Prüfung von Ollama, Hugging Face, Interconnects und den einschlägigen Labor-Blogs kein neues verifiziertes lokales Modell-Release."
+    }
+   ]
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "date": "2026-08-19",
+   "summary": "Warp bringt mit Warp Factories eine fertige Infrastruktur für agentenbasierte „Software-Factories“ auf den Markt, während SpaceXAIs Cursor mit der Git-Hosting-Plattform Origin bewusst „agent-native“ Workflows verspricht und Anthropic einen ersten Vorgeschmack auf agentisches UI-Design direkt im Terminal liefert.",
+   "skip": [
+    {
+     "reason": "Andernorts eingeordnet",
+     "text": "OpenAIs Pausierung des Astra-Trainings wegen möglicher kritischer Cyber-Fähigkeiten wird aus dem Sicherheits-/Governance-Blickwinkel unter AI Security und AI Governance geführt, da dort der Risikoaspekt im Vordergrund steht. Die Penn-State-Studie zu verlorenen Nutzerregeln bei Kontext-Kompression wird unter Context Engineering geführt."
+    }
+   ]
+  },
+  {
+   "topic_id": "ai-governance",
+   "date": "2026-08-19",
+   "summary": "OpenAI dokumentiert öffentlich, wie es wegen möglicher kritischer Cyber-Fähigkeiten seines kommenden Modells Astra die eigene Skalierung bremst, während eine Kartellprüfung gegen Andreessen Horowitz und ein offener Schlagabtausch um Anthropic-Chef Amodei zeigen, wie umkämpft die Regeln für Marktmacht und Selbstregulierung in der Branche gerade sind.",
+   "skip": [
+    {
+     "reason": "Kein neuer eigenständiger Stand im Zeitraum",
+     "text": "Zu den kalifornischen KI-Gesetzentwürfen und Anthropics Wasserzeichen-Kritik fand sich für 18.–19. August keine neue eigenständige Entwicklung; die zum 2. August in Kraft getretene California AI Transparency Act ist bereits an früherer Stelle erfasst."
+    }
+   ]
+  },
+  {
+   "topic_id": "ai-news",
+   "date": "2026-08-19",
+   "summary": "OpenAI bremst die eigene Modell-Entwicklung, nachdem interne Tests beim kommenden Modell Astra kritische Cyber-Fähigkeiten nicht ausschließen konnten, während SpaceXAIs Cursor mit der Plattform Origin während GitHub-Ausfällen einen Angriff auf dessen Kerngeschäft startet und eine öffentliche X-Debatte um Anthropic-Chef Amodei die Frage nach Machtkonzentration durch KI-Regulierung neu entfacht.",
+   "skip": [
+    {
+     "reason": "Andernorts eingeordnet",
+     "text": "Die Kartellprüfung der US-Justizbehörde gegen Andreessen Horowitz wegen Vorstands-Doppelmandaten bei konkurrierenden KI-Firmen wird aus dem Regulierungs-Blickwinkel unter AI Governance geführt. Die Compaction-Studie zu verlorenen Nutzerregeln bei Kontext-Kompression wird unter Context Engineering und AI Security geführt."
+    },
+    {
+     "reason": "Zu inkrementell für eine eigene Meldung",
+     "text": "OpenAIs Bildungspartnerschaft mit CodeAI (18. August) ist ein Begleitprogramm zum ChatGPT-for-Teens-Start ohne eigenständigen Nachrichtenwert. Perplexitys Nutzerzuwachs durch ein Gratisangebot in Indien (18. August) und Anthropics 4,4-fach über dem Durchschnitt liegender Token-Preis auf Vercels AI Gateway (18. August) sind Detailmeldungen ohne neuen strukturellen Fakt für den Gesamtmarkt."
+    }
+   ]
+  },
+  {
+   "topic_id": "ai-security",
+   "date": "2026-08-19",
+   "summary": "OpenAI pausiert nach dem Hugging-Face-Vorfall und ersten Warnzeichen bei seinem kommenden Modell Astra das Reinforcement-Learning-Training und baut Monitoring sowie Sandboxing grundlegend aus, während eine Penn-State-Studie zeigt, dass Kontext-Kompression genau jene Sicherheitsregeln zuerst verwirft, die unautorisierte Agenten-Aktionen verhindern sollen.",
+   "skip": [
+    {
+     "reason": "Kein neuer eigenständiger Stand im Zeitraum",
+     "text": "Zur bereits erfassten xAI/Grok-Klage und Anthropics Bio-Sicherheitsfilter-Panne fand sich für 18.–19. August keine neue eigenständige Entwicklung."
+    }
+   ]
+  },
+  {
+   "topic_id": "ai-tools",
+   "date": "2026-08-19",
+   "summary": "SpaceXAIs Cursor stellt mit Origin eine eigene Git-Hosting-Plattform gegen GitHub, Anthropic bringt UI-Mockups direkt ins Claude-Code-Terminal und Artificial Analysis liefert mit dem Search Index erstmals einen belastbaren Vergleich von Such-APIs für Alltagswerkzeuge.",
+   "skip": [
+    {
+     "reason": "Andernorts eingeordnet",
+     "text": "Warp Factories wird primär unter Agentic Engineering geführt, da dort der Workflow-Automatisierungs-Blickwinkel stärker im Vordergrund steht als der reine Werkzeug-Aspekt."
+    }
+   ]
+  },
+  {
+   "topic_id": "context-engineering",
+   "date": "2026-08-19",
+   "summary": "Eine Penn-State-Studie zeigt, dass Kontext-Kompression heute im Schnitt vier von fünf Nutzerregeln verwirft – ein Befund, der die bisherige Faustregel „ausgelagertes Memory statt endloser Kontext“ um eine wichtige Einschränkung ergänzt.",
+   "skip": [
+    {
+     "reason": "Andernorts eingeordnet",
+     "text": "Warp Factories und Claude Codes neuer /design-Befehl betreffen Agenten-Workflows und Werkzeuge, nicht primär die Kontextsteuerung, und werden unter Agentic Engineering und AI Tools geführt."
+    }
+   ]
+  },
+  {
+   "topic_id": "enterprise",
+   "date": "2026-08-19",
+   "summary": "Inferenz-Hardware wird zum eigenen Geschäftsfeld: Etched verdoppelt seine Bewertung binnen eines Monats, während SpaceXAIs Cursor mit der Plattform Origin GitHubs Kerngeschäft angreift und Warp Factories zeigt, wie Infrastruktur-Anbieter das „Software-Factory“-Konzept für Unternehmen kommerzialisieren.",
+   "skip": [
+    {
+     "reason": "Andernorts eingeordnet",
+     "text": "Die DOJ-Kartellprüfung gegen Andreessen Horowitz wird aus dem Regulierungs-Blickwinkel unter AI Governance geführt, da dort der Rechtsaspekt im Vordergrund steht."
+    }
+   ]
+  },
+  {
+   "topic_id": "lokale-llms",
+   "date": "2026-08-19",
+   "summary": "Ein weiterhin ruhiger Zeitraum für offene und On-Device-Modelle: Auch für den 18.–19. August ließ sich nach Alibabas Qwen3.8-27B und Z.ais GLM-5.3 kein neues, eigenständig verifiziertes Open-Weight-Release finden.",
+   "skip": [
+    {
+     "reason": "Kein neuer eigenständiger Stand im Zeitraum",
+     "text": "Die zuletzt großen offenen Modelle – Alibabas Qwen3.8-27B und Z.ais GLM-5.3 – sind bereits erfasst; für 18.–19. August fand sich trotz gezielter Prüfung von Ollama, Hugging Face, Interconnects und den einschlägigen Labor-Blogs kein neues verifiziertes lokales Modell-Release. Nathan Lamberts Interconnects-Beitrag zu Nvidias Förderung eigener Modell-Trainings (17. August, außerhalb des Zeitraums) betrifft Compute-Strategie, kein konkretes Modell-Release."
     }
    ]
   }
