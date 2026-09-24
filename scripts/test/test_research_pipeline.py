@@ -84,12 +84,11 @@ class PipelineTests(unittest.TestCase):
         running = [t["id"] for t in p.read(self.run / "manifest.json")["tasks"] if t.get("state") == "running"]
         self.assertEqual(running, ["sources-02", "sources-03", "discovery"])
 
-    def test_dispatch_ready_reserves_three_independent_delegations_at_once(self):
+    def test_dispatch_ready_reserves_three_parallel_batch_tasks_at_once(self):
         ready = p.dispatch_ready(self.run)
         self.assertEqual(ready["status"], "dispatched")
-        self.assertEqual([item["task_id"] for item in ready["delegations"]],
-                         ["discovery", "sources-01", "sources-02"])
-        self.assertTrue(all(len(item["tasks"]) == 1 for item in ready["delegations"]))
+        self.assertEqual(ready["batch"]["task_ids"], ["discovery", "sources-01", "sources-02"])
+        self.assertEqual(len(ready["batch"]["tasks"]), 3)
         self.assertEqual(p.dispatch_ready(self.run)["status"], "capacity_full")
         running = [t for t in p.read(self.run / "manifest.json")["tasks"]
                    if t.get("state") == "running"]
@@ -98,15 +97,14 @@ class PipelineTests(unittest.TestCase):
     def test_dispatch_ready_refills_only_free_slots_on_resume(self):
         p.dispatch(self.run, "discovery")
         ready = p.dispatch_ready(self.run)
-        self.assertEqual([item["task_id"] for item in ready["delegations"]],
-                         ["sources-01", "sources-02"])
+        self.assertEqual(ready["batch"]["task_ids"], ["sources-01", "sources-02"])
 
     def test_new_handoff_commands_are_available_from_cli(self):
         with patch.object(sys, "argv", ["research_pipeline.py", "dispatch-ready", "--run-dir", str(self.run)]), \
              patch("sys.stdout", new_callable=io.StringIO) as output:
             self.assertEqual(p.main(), 0)
         ready = json.loads(output.getvalue())
-        self.assertEqual(len(ready["delegations"]), 3)
+        self.assertEqual(len(ready["batch"]["tasks"]), 3)
 
         source_task = self.manifest["tasks"][0]
         for source in source_task["sources"]:
@@ -144,6 +142,52 @@ class PipelineTests(unittest.TestCase):
         retry = p.task_for(self.run, "sources-01-retry")[1]
         self.assertNotIn(first, [s["domain"] for s in retry["sources"]])
         self.assertEqual(retry["state"], "running")
+
+    def test_complete_batch_refills_all_three_cron_slots_in_one_step(self):
+        first = p.dispatch_ready(self.run)["batch"]
+        for task_id in first["task_ids"]:
+            task = p.task_for(self.run, task_id)[1]
+            if task["kind"] == "discovery":
+                p.record(self.run, task_id, {"topics_checked": list(p.TOPICS), "result": "All topics searched", "candidates": []})
+            else:
+                for source in task["sources"]:
+                    p.record(self.run, task_id, self.entry(source["domain"]))
+
+        handoff = p.complete_batch_and_dispatch(self.run, first["task_ids"])
+        self.assertEqual(handoff["status"], "dispatched")
+        self.assertEqual(handoff["batch"]["task_ids"], ["sources-03", "sources-04", "sources-05"])
+        self.assertEqual(len(handoff["batch"]["tasks"]), 3)
+        with self.assertRaisesRegex(ValueError, "must match all running"):
+            p.complete_batch_and_dispatch(self.run, first["task_ids"])
+
+    def test_complete_batch_prioritizes_bounded_retry(self):
+        first = p.dispatch_ready(self.run)["batch"]
+        p.record(self.run, "discovery", {"topics_checked": list(p.TOPICS), "result": "All topics searched", "candidates": []})
+        for source in p.task_for(self.run, "sources-02")[1]["sources"]:
+            p.record(self.run, "sources-02", self.entry(source["domain"]))
+        source_one = p.task_for(self.run, "sources-01")[1]["sources"]
+        p.record(self.run, "sources-01", self.entry(source_one[0]["domain"]))
+
+        handoff = p.complete_batch_and_dispatch(self.run, first["task_ids"])
+        self.assertEqual(handoff["batch"]["task_ids"], ["sources-01-retry", "sources-03", "sources-04"])
+        retry = p.task_for(self.run, "sources-01-retry")[1]
+        self.assertEqual(len(retry["sources"]), len(source_one) - 1)
+
+    def test_complete_batch_command_is_available_from_cli(self):
+        batch = p.dispatch_ready(self.run)["batch"]
+        for task_id in batch["task_ids"]:
+            task = p.task_for(self.run, task_id)[1]
+            if task["kind"] == "discovery":
+                p.record(self.run, task_id, {"topics_checked": list(p.TOPICS), "result": "All topics searched", "candidates": []})
+            else:
+                for source in task["sources"]:
+                    p.record(self.run, task_id, self.entry(source["domain"]))
+        argv = ["research_pipeline.py", "complete-batch-and-dispatch", "--run-dir", str(self.run),
+                "--tasks", *batch["task_ids"]]
+        with patch.object(sys, "argv", argv), patch("sys.stdout", new_callable=io.StringIO) as output:
+            self.assertEqual(p.main(), 0)
+        self.assertEqual(json.loads(output.getvalue())["batch"]["task_ids"],
+                         ["sources-03", "sources-04", "sources-05"])
 
     def test_dispatch_next_prioritizes_bounded_retry_over_new_packets(self):
         for _ in range(3):

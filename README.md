@@ -122,9 +122,10 @@ Pakete mit maximal neun Quellen plus eine offene Entdeckungssuche über alle The
 Er nutzt die Laufzeiten abgeschlossener Pakete der letzten 14 Tage, um langsame
 Quellen möglichst gleichmäßig zu verteilen; ohne brauchbare Historie bleibt die
 Reihenfolge unverändert. `dispatch-ready` reserviert bis zu drei Plätze in einem
-Schritt; separate Hermes-Delegationen melden jeden Abschluss einzeln zurück.
-`complete-and-dispatch` gibt den fertigen Platz frei und reserviert sofort den
-nächsten Auftrag. Die offene Suche startet früh. Jeder Recherche-Agent
+Schritt. Da Hermes Cron-Delegationen synchron ausführt, laufen diese Aufgaben
+innerhalb **eines** Delegations-Batches parallel. `complete-batch-and-dispatch`
+schließt die Runde ab und reserviert die nächste in einem Schritt. Die offene
+Suche startet früh. Jeder Recherche-Agent
 besitzt ein eigenes Suchbudget und speichert abgeschlossene Quellen sofort; nach
 einem Abbruch können nur offene Quellen einmal gezielt nachbearbeitet werden.
 

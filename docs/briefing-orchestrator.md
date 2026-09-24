@@ -29,7 +29,7 @@ abgeschlossene Vortage vorhanden sind, mischt es historisch langsamere Quellen a
 die Pakete. `tasks` zeigt die offenen Aufträge. Lies außerdem
 `docs/briefing-research-worker.md`, um die Ergebnisse prüfen zu können.
 
-## 2. Recherche mit ständig belegten Agentenplätzen ausführen
+## 2. Recherche in parallelen Cron-Batches ausführen
 
 Es dürfen **maximal drei Agenten gleichzeitig** recherchieren. Reserviere die freien
 Plätze mit **einem** Aufruf:
@@ -38,41 +38,35 @@ Plätze mit **einem** Aufruf:
 python3 scripts/research_pipeline.py dispatch-ready --run-dir "$RUN"
 ```
 
-Die Antwort enthält `delegations` mit je einem `task_id` und einem `tasks`-Array
-mit **genau einem** Auftrag. Starte für **jedes** Element einen **eigenen**
-`delegate_task(tasks=ELEMENT.tasks)`-Aufruf, möglichst alle Aufrufe im selben
-Assistant-Turn. Übergib dem Tool nur `tasks`; `task_id` dient dir zur Zuordnung
-der Rückmeldung. Warte nicht auf die erste Antwort, bevor du die übrigen
-freien Plätze startest. **Fasse diese Einzelaufrufe nicht zu einem gemeinsamen
-`delegate_task` mit mehreren Aufgaben zusammen:** Hermes liefert bei einem
-Mehrfach-Aufruf die Abschlussmeldung erst nach dem letzten Kind.
+Die Antwort enthält `batch.task_ids` und `batch.tasks`. Starte **alle** Aufgaben
+dieses Batches mit **einem** `delegate_task(tasks=ANTWORT.batch.tasks)`-Aufruf.
+Übergib nur `tasks` an Hermes; behalte die `task_ids` für den Abschlussbefehl.
+Im Cron-Kontext führt Hermes einen Delegationsaufruf synchron aus, aber die
+Kinder **innerhalb desselben Aufrufs parallel**. Getrennte Aufrufe würden hier
+nacheinander laufen und freie Plätze trotz Reservierung ungenutzt lassen.
 
-Ein erfolgreicher Start ist noch kein fertiges Rechercheergebnis. Top-Level-
-Delegationen laufen im Hintergrund und melden sich einzeln zurück. Verfolge sie
-bei Bedarf über `delegate_task(action="list")`. Sobald **ein einzelner** Agent
-nachweislich beendet ist – auch bei Fehler oder unvollständigem Ergebnis – führe
-genau einmal aus:
+Warte auf das tatsächliche Ergebnis des ganzen Batches; eine Startbestätigung
+ist kein Rechercheergebnis. Erst wenn alle Kinder des Aufrufs beendet sind,
+führe genau einmal aus:
 
 ```sh
-python3 scripts/research_pipeline.py complete-and-dispatch --run-dir "$RUN" --task AUFTRAG
+python3 scripts/research_pipeline.py complete-batch-and-dispatch --run-dir "$RUN" --tasks ID1 ID2 ID3
 ```
 
-Dieser eine Schritt gibt den Platz frei, erzeugt bei fehlenden Quellen höchstens
-einen begrenzten Retry und reserviert den nächsten offenen Auftrag atomar.
-Enthält die Antwort `delegation`, starte sofort einen neuen
-`delegate_task(tasks=ANTWORT.delegation.tasks)`-Aufruf. So wird kein weiterer
-Agentenabschluss abgewartet, bevor ein freier Platz wieder arbeitet.
-Wird der Start eines reservierten Auftrags abgewiesen, wende denselben
-Abschlussschritt auf diesen nicht gestarteten Auftrag an; ein belegter Platz
-darf nicht als `running` hängen bleiben.
+Ersetze `ID1 ID2 ID3` durch **alle** Werte aus `batch.task_ids` in beliebiger
+Reihenfolge; ein kleinerer letzter Batch hat entsprechend weniger IDs. Der
+Befehl gibt alle bestätigten Aufträge zusammen frei, erzeugt bei fehlenden
+Quellen höchstens einen begrenzten Retry und reserviert die nächste Runde
+atomar. Enthält die Antwort wieder `batch`, starte sofort einen neuen
+`delegate_task(tasks=ANTWORT.batch.tasks)`-Aufruf. Wird der Start eines Batches
+abgewiesen, schließe die reservierten IDs ebenfalls mit diesem Befehl ab; sie
+dürfen nicht als `running` hängen bleiben.
 
-Bei `waiting_for_running` warte auf die nächste individuelle Abschlussmeldung;
-bei `no_pending_tasks` und ohne laufende Agenten gehe zu Schritt 3. Bei
-`incomplete` stoppe und melde die fehlenden Quellen oder Themen. `assemble`
-verweigert laufende oder unvollständige Recherche ohnehin. Beende den Hauptlauf
-nicht, solange noch Recherche-Agenten laufen. Bei Wiederaufnahme vergleiche die
-registrierten laufenden Aufträge mit `delegate_task(action="list")`, bevor du
-einen verwaisten Auftrag als beendet meldest.
+Bei `no_pending_tasks` gehe zu Schritt 3. Bei `incomplete` stoppe und melde
+die fehlenden Quellen oder Themen. `assemble` verweigert laufende oder
+unvollständige Recherche ohnehin. Bei Wiederaufnahme vergleiche registrierte
+laufende Aufträge mit der tatsächlichen Hermes-Agentenliste und den
+Checkpoints, bevor du einen verwaisten Auftrag als beendet meldest.
 
 Bearbeite alle Quellenpakete und den zusätzlichen Auftrag `discovery`. Subagenten
 schreiben jeweils eigene Dateien und atomare Quellen-Checkpoints; nur du bearbeitest

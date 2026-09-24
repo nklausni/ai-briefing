@@ -342,10 +342,16 @@ def next_pending(run, manifest):
 
 
 def single_delegation(run, task):
-    """One Hermes call per task gives each child its own completion signal."""
+    """Payload for one child; useful outside synchronous cron batches."""
     payload = task_payload(run, task)
     return {"task_id": task["id"], "tasks": [{key: payload[key]
             for key in ("goal", "context", "output_schema")}]}
+
+
+def batch_delegation(run, tasks):
+    """A single Hermes call fans out in parallel even in synchronous cron runs."""
+    return {"task_ids": [task["id"] for task in tasks],
+            "tasks": [single_delegation(run, task)["tasks"][0] for task in tasks]}
 
 
 def queue_status(run, manifest):
@@ -372,28 +378,32 @@ def dispatch_ready(run):
         if selected:
             write(Path(run) / "manifest.json", manifest)
     if selected:
-        return {"status": "dispatched", "delegations": [single_delegation(run, task) for task in selected]}
-    return {"status": "capacity_full" if capacity == 0 else queue_status(run, manifest), "delegations": []}
+        return {"status": "dispatched", "batch": batch_delegation(run, selected)}
+    return {"status": "capacity_full" if capacity == 0 else queue_status(run, manifest), "batch": None}
+
+
+def finish_task(run, manifest, task_id):
+    task = next((item for item in manifest["tasks"] if item["id"] == task_id), None)
+    require(task is not None, "Unknown task")
+    require(task.get("state") == "running", "Task was not running")
+    pending = missing(run, task)
+    task["state"] = "partial" if pending else "complete"
+    task["finished_at"] = stamp()
+    if pending and task["attempt"] == 1:
+        retry_id = task_id + "-retry"
+        require(not any(item["id"] == retry_id for item in manifest["tasks"]), "Recovery task already exists")
+        recovered = {**task, "id": retry_id, "attempt": 2, "retry_of": task_id, "state": "pending"}
+        if task["kind"] == "sources":
+            recovered["sources"] = [source for source in task["sources"] if source["domain"] in pending]
+        manifest["tasks"].append(recovered)
+    return {"task_id": task_id, "state": task["state"], "pending": pending}
 
 
 def complete_and_dispatch(run, task_id):
     """Release one confirmed-finished child and reserve its replacement together."""
     with locked(run):
         manifest = read(Path(run) / "manifest.json")
-        task = next((item for item in manifest["tasks"] if item["id"] == task_id), None)
-        require(task is not None, "Unknown task")
-        require(task.get("state") == "running", "Task was not running")
-        pending = missing(run, task)
-        task["state"] = "partial" if pending else "complete"
-        task["finished_at"] = stamp()
-        completed = {"task_id": task_id, "state": task["state"], "pending": pending}
-        if pending and task["attempt"] == 1:
-            retry_id = task_id + "-retry"
-            require(not any(item["id"] == retry_id for item in manifest["tasks"]), "Recovery task already exists")
-            recovered = {**task, "id": retry_id, "attempt": 2, "retry_of": task_id, "state": "pending"}
-            if task["kind"] == "sources":
-                recovered["sources"] = [source for source in task["sources"] if source["domain"] in pending]
-            manifest["tasks"].append(recovered)
+        completed = finish_task(run, manifest, task_id)
         next_task = next_pending(run, manifest)
         if next_task is not None:
             next_task["state"] = "running"
@@ -402,6 +412,28 @@ def complete_and_dispatch(run, task_id):
     return {"completed": completed,
             "status": "dispatched" if next_task is not None else queue_status(run, manifest),
             "delegation": single_delegation(run, next_task) if next_task is not None else None}
+
+
+def complete_batch_and_dispatch(run, task_ids):
+    """Finish one synchronous Hermes batch and reserve its next parallel wave."""
+    require(task_ids and len(task_ids) == len(set(task_ids)), "Specify distinct batch task IDs")
+    with locked(run):
+        manifest = read(Path(run) / "manifest.json")
+        running = {task["id"] for task in manifest["tasks"] if task.get("state") == "running"}
+        require(set(task_ids) == running, "Batch task IDs must match all running tasks")
+        completed = [finish_task(run, manifest, task_id) for task_id in task_ids]
+        selected = []
+        for _ in range(MAX_PARALLEL):
+            task = next_pending(run, manifest)
+            if task is None:
+                break
+            task["state"] = "running"
+            task["dispatched_at"] = stamp()
+            selected.append(task)
+        write(Path(run) / "manifest.json", manifest)
+    return {"completed": completed,
+            "status": "dispatched" if selected else queue_status(run, manifest),
+            "batch": batch_delegation(run, selected) if selected else None}
 
 
 def release(run, task_id):
@@ -594,11 +626,12 @@ def verify_publication(run):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("action", choices=["prepare", "tasks", "dispatch", "dispatch-next", "dispatch-ready", "release", "complete-and-dispatch", "reserve-search", "record", "retry", "assemble", "add-evidence", "check-editor", "verify-publication", "status", "timings"])
+    parser.add_argument("action", choices=["prepare", "tasks", "dispatch", "dispatch-next", "dispatch-ready", "release", "complete-and-dispatch", "complete-batch-and-dispatch", "reserve-search", "record", "retry", "assemble", "add-evidence", "check-editor", "verify-publication", "status", "timings"])
     parser.add_argument("--run-dir", type=Path, required=True)
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--date", default=datetime.now(ZoneInfo("Europe/Berlin")).date().isoformat())
     parser.add_argument("--task")
+    parser.add_argument("--tasks", nargs="+")
     parser.add_argument("--query")
     parser.add_argument("--input", type=Path)
     args = parser.parse_args()
@@ -612,6 +645,7 @@ def main():
         elif args.action == "dispatch-ready": result = dispatch_ready(args.run_dir)
         elif args.action == "release": result = release(args.run_dir, args.task)
         elif args.action == "complete-and-dispatch": result = complete_and_dispatch(args.run_dir, args.task)
+        elif args.action == "complete-batch-and-dispatch": result = complete_batch_and_dispatch(args.run_dir, args.tasks)
         elif args.action == "reserve-search": result = reserve(args.run_dir, args.task, args.query)
         elif args.action == "record": result = record(args.run_dir, args.task, read(args.input))
         elif args.action == "retry": result = retry(args.run_dir, args.task)
