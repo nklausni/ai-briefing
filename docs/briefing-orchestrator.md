@@ -24,24 +24,31 @@ Existiert für diesen Tag bereits `publication.json`, verwende für eine ausdrü
 beauftragte weitere Tagesaktualisierung ein neues RUN mit Uhrzeit-Suffix. So werden
 neue Meldungen recherchiert statt alte Checkpoints nochmals zu veröffentlichen.
 
-`prepare` ist wiederaufnehmbar. `tasks` zeigt die offenen Aufträge. Reserviere jeden
-zu startenden Auftrag mit `python3 scripts/research_pipeline.py dispatch --run-dir "$RUN"
---task AUFTRAG` (als einen Befehl). Dessen Ausgabe enthält vollständig vorbereitete
-`goal`, `context` und `output_schema` für `delegate_task`. Jeder Auftrag kennt seine
-Quellen, Recherchefenster, Dateien, Belegregeln und sein eigenes Suchbudget. Lies außerdem
+`prepare` ist wiederaufnehmbar. Es verteilt alle Pflichtquellen genau einmal; soweit
+abgeschlossene Vortage vorhanden sind, mischt es historisch langsamere Quellen auf
+die Pakete. `tasks` zeigt die offenen Aufträge. Lies außerdem
 `docs/briefing-research-worker.md`, um die Ergebnisse prüfen zu können.
 
-## 2. Recherche in Wellen ausführen
+## 2. Recherche mit ständig belegten Agentenplätzen ausführen
 
-Starte die Aufträge mit `delegate_task` in Wellen von **maximal drei Agenten**.
-Starte die nächste Welle erst, wenn die vorherigen Agenten beendet sind. Hermes startet
-Top-Level-Delegationen asynchron: warte auf die vollständigen Ergebnisse und prüfe bei
-Bedarf `delegate_task(action="list")`. Eine Bestätigung des Starts ist kein Ergebnis.
-Beende den Hauptlauf nicht, solange noch Recherche-Agenten laufen.
+Es dürfen **maximal drei Agenten gleichzeitig** recherchieren. Hole jeden freien
+Platz mit `python3 scripts/research_pipeline.py dispatch-next --run-dir "$RUN"`.
+Ein erfolgreicher Aufruf reserviert genau einen Auftrag und liefert dessen `task_id`,
+`goal`, `context` und `output_schema`. Übergib nur die letzten drei Felder an
+`delegate_task`, merke dir `task_id` für `release` und starte den Agenten sofort.
+Wiederhole `dispatch-next`, bis `capacity_full`, `waiting_for_running`
+oder `no_pending_tasks` zurückkommt. Der Planner priorisiert einen nötigen Retry,
+startet die offene Themensuche früh und verteilt danach die Quellenpakete.
+
+Hermes startet Top-Level-Delegationen asynchron. Verfolge die tatsächlichen
+Ergebnisse über `delegate_task(action="list")` und warte auf den **nächsten
+einzelnen** abgeschlossenen Agenten, nicht auf die gesamte Startgruppe. Eine
+Bestätigung des Starts ist kein Ergebnis. Beende den Hauptlauf nicht, solange
+noch Recherche-Agenten laufen.
 
 Nach bestätigtem Ende jedes Subagenten führe `python3 scripts/research_pipeline.py release
 --run-dir "$RUN" --task AUFTRAG` aus. Auch ein fehlgeschlagener Start wird so freigegeben.
-`dispatch` verweigert einen vierten gleichzeitig registrierten Auftrag; `assemble`
+`dispatch-next` verweigert einen vierten gleichzeitig registrierten Auftrag; `assemble`
 verweigert die Zusammenführung, solange ein Auftrag als laufend registriert ist.
 Bei Wiederaufnahme vergleiche registrierte laufende Aufträge mit der tatsächlichen
 Hermes-Agentenliste, bevor du verwaiste Aufträge freigibst.
@@ -57,7 +64,11 @@ genau einen Wiederherstellungsauftrag nur für noch offene Quellen. Vergewissere
 vorher, dass der ursprüngliche Agent beendet ist. Bereits abgeschlossene Quellen bleiben
 erhalten. Nach einer erfolglosen Wiederherstellung bleibt der Lauf unvollständig und wird
 als solcher gemeldet. Grenzen werden nicht durch endlose neue Agenten zurückgesetzt.
-Reserviere auch den Wiederherstellungsauftrag über `dispatch`, bevor du ihn startest.
+Erzeuge den Retry direkt nach `release` des unvollständigen Auftrags. Rufe dann
+`dispatch-next` auf, um den freien Platz sofort neu zu belegen; dieser reserviert
+den Retry bevorzugt. Wiederhole das nach **jedem** Agentenabschluss, bis alle
+Aufträge beendet sind. Auch `waiting_for_running` heißt: weiter auf laufende
+Agenten warten. Erst bei `no_pending_tasks` und ohne laufende Agenten zu Schritt 3.
 
 ## 3. Quellenabdeckung und Belege zusammenführen
 
@@ -121,6 +132,11 @@ GitHub-Pages-Workflow für genau diesen Commit und HTTP 200 der Seite. Er erzeug
 danach `RUN/publication.json`. Bei laufendem Pages-Workflow warte kurz und prüfe erneut;
 bei Fehler bleibt die Veröffentlichung unbestätigt. Fehlt diese Bestätigung, ist der Lauf nicht als
 veröffentlicht zu melden, auch wenn Hermes seinen technischen Lauf als `ok` speichert.
+
+Rufe anschließend `python3 scripts/research_pipeline.py timings --run-dir "$RUN"`
+auf. Der Bericht trennt Recherche, Schlussredaktion und Publikationsprüfung und
+zeigt die Laufzeit jedes Quellenpakets. Nutze ihn zur späteren Optimierung;
+verändere dafür weder die Quellenabdeckung noch die Belegregeln.
 
 Antworte kurz auf Deutsch: wichtigste Änderungen, Link und relevante Quellenlücken.
 Bei Fehlern sage ausdrücklich, dass kein neues verifiziertes Briefing veröffentlicht

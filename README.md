@@ -119,9 +119,12 @@ Impact-Skala: 2 Nennenswert · 3 Relevant · 4 Stark · 5 Game-Changer.
 Der Hermes-Job folgt `docs/briefing-orchestrator.md`. Der Planner
 `scripts/research_pipeline.py` verteilt die aktuelle Pflichtliste automatisch auf
 Pakete mit maximal neun Quellen plus eine offene Entdeckungssuche über alle Themen.
-Maximal drei Aufträge werden gleichzeitig registriert. Jeder Recherche-Agent besitzt
-ein eigenes Suchbudget und speichert abgeschlossene Quellen sofort; nach einem Abbruch
-können nur offene Quellen einmal gezielt nachbearbeitet werden.
+Er nutzt die Laufzeiten abgeschlossener Pakete der letzten 14 Tage, um langsame
+Quellen möglichst gleichmäßig zu verteilen; ohne brauchbare Historie bleibt die
+Reihenfolge unverändert. `dispatch-next` belegt bis zu drei Rechercheplätze laufend
+neu, sobald ein Agent endet, und startet die offene Suche früh. Jeder Recherche-Agent
+besitzt ein eigenes Suchbudget und speichert abgeschlossene Quellen sofort; nach
+einem Abbruch können nur offene Quellen einmal gezielt nachbearbeitet werden.
 
 Die Recherchefenster richten sich pro Quelle nach dem letzten erfolgreichen Check mit
 zeitlicher Überlappung. Ausgefallene Tage verkürzen das Fenster nicht. Zwischenstände
@@ -130,7 +133,9 @@ Nur der Hauptagent bearbeitet das Briefing und veröffentlicht es. Die Prüfunge
 Veröffentlichung verlangen vollständige Quellenabdeckung, eine abgeschlossene offene
 Suche, eine Auswahlentscheidung zu jedem Kandidaten und belegte URLs. Der
 `verify-publication`-Befehl bestätigt den Remote-Commit und den erfolgreichen Pages-Build;
-ein technisches Hermes-`ok` allein ist keine Veröffentlichungsbestätigung.
+ein technisches Hermes-`ok` allein ist keine Veröffentlichungsbestätigung. Der
+read-only-Befehl `research_pipeline.py timings --run-dir RUN` trennt Recherche,
+Schlussredaktion und Publikationsprüfung für den Laufzeitvergleich.
 
 **Aktiver Weg (ohne zusätzlichen Recherche-API-Key):** Ein Hermes-Cronjob
 (`ai-briefing-daily`, täglich um 08:00 Uhr Europe/Berlin) recherchiert die Meldungen

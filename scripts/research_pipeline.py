@@ -12,9 +12,11 @@ from datetime import date, datetime, timedelta
 import fcntl
 import hashlib
 import json
+import math
 import os
 from pathlib import Path
 import re
+from statistics import median
 import tempfile
 import subprocess
 from urllib.request import Request, urlopen
@@ -127,6 +129,70 @@ def source_windows(root, day, sources):
     }
 
 
+def historical_source_weights(root, run, day, sources):
+    """Estimate source workload from completed packets in recent daily runs.
+
+    Old runs don't have per-source timers, so each source gets its packet's
+    elapsed time divided by its source count. A median across days limits the
+    effect of a single slow site or delayed agent release. Missing history
+    never removes a source from the next run.
+    """
+    domains = {domain for domain, _ in sources}
+    samples = {domain: [] for domain in domains}
+    seen_dates = set()
+    manifests = []
+    for path in run.parent.glob("*/manifest.json"):
+        try:
+            prior = read(path)
+            if not isinstance(prior, dict):
+                continue
+            prior_day = date.fromisoformat(prior["date"])
+        except (OSError, ValueError, KeyError, TypeError):
+            continue
+        if prior.get("root") != str(root) or not day - timedelta(days=14) <= prior_day < day:
+            continue
+        manifests.append((prior_day, path, prior))
+    for prior_day, _, prior in sorted(manifests, key=lambda item: (item[0], str(item[1])), reverse=True):
+        if prior_day in seen_dates:
+            continue
+        seen_dates.add(prior_day)
+        for task in prior.get("tasks", []):
+            if task.get("kind") != "sources" or task.get("attempt") != 1 or task.get("state") != "complete":
+                continue
+            assigned = task.get("sources", [])
+            if not assigned:
+                continue
+            try:
+                elapsed = (datetime.fromisoformat(task["finished_at"]) - datetime.fromisoformat(task["dispatched_at"])).total_seconds()
+            except (KeyError, TypeError, ValueError):
+                continue
+            if not 0 < elapsed <= 7200:
+                continue
+            weight = elapsed / len(assigned)
+            for source in assigned:
+                domain = source.get("domain") if isinstance(source, dict) else None
+                if domain in domains:
+                    samples[domain].append(weight)
+    return {domain: median(values) for domain, values in samples.items() if values}
+
+
+def source_packets(specs, weights):
+    """Keep every source once, distributing historically slow sources evenly."""
+    if not weights:
+        return [specs[i:i + PACKET_SIZE] for i in range(0, len(specs), PACKET_SIZE)]
+    packet_count = math.ceil(len(specs) / PACKET_SIZE)
+    packets = [[] for _ in range(packet_count)]
+    totals = [0.0] * packet_count
+    fallback = median(weights.values())
+    ordered = sorted(enumerate(specs), key=lambda pair: (-weights.get(pair[1]["domain"], fallback), pair[0]))
+    for index, spec in ordered:
+        slot = min((i for i in range(packet_count) if len(packets[i]) < PACKET_SIZE),
+                   key=lambda i: (totals[i], len(packets[i]), i))
+        packets[slot].append((index, spec))
+        totals[slot] += weights.get(spec["domain"], fallback)
+    return [[spec for _, spec in sorted(packet)] for packet in packets]
+
+
 def prepare(root, run, day, sources=None):
     root, run = Path(root).resolve(), Path(run).resolve()
     sources = list(SOURCES if sources is None else sources)
@@ -142,9 +208,11 @@ def prepare(root, run, day, sources=None):
             return old
         windows = source_windows(root, date.fromisoformat(day), sources)
         specs = [{"domain": d, "name": n, "url": URL_OVERRIDES.get(d, f"https://{d}/"), "since": windows[d]} for d, n in sources]
-        tasks = [{"id": f"sources-{i // PACKET_SIZE + 1:02}", "kind": "sources", "sources": specs[i:i+PACKET_SIZE], "attempt": 1} for i in range(0, len(specs), PACKET_SIZE)]
+        weights = historical_source_weights(root, run, date.fromisoformat(day), sources)
+        packets = source_packets(specs, weights)
+        tasks = [{"id": f"sources-{i + 1:02}", "kind": "sources", "sources": packet, "attempt": 1} for i, packet in enumerate(packets)]
         tasks.append({"id": "discovery", "kind": "discovery", "topics": list(TOPICS), "since": min(windows.values()), "attempt": 1})
-        manifest = {"schema_version": 1, "date": day, "root": str(root), "registry": sources, "created_at": stamp(), "max_parallel": MAX_PARALLEL, "search_budget_per_task": SEARCH_BUDGET, "tasks": tasks}
+        manifest = {"schema_version": 1, "date": day, "root": str(root), "registry": sources, "created_at": stamp(), "max_parallel": MAX_PARALLEL, "search_budget_per_task": SEARCH_BUDGET, "historical_weights_used": len(weights), "tasks": tasks}
         write(run / "manifest.json", manifest)
         if (root / "data/briefing.json").exists():
             write(run / "briefing-before.json", read(root / "data/briefing.json"))
@@ -247,6 +315,26 @@ def dispatch(run, task_id):
     return task_payload(run, task)
 
 
+def dispatch_next(run):
+    """Atomically fill one free research slot, prioritizing retry and discovery."""
+    with locked(run):
+        manifest = read(Path(run) / "manifest.json")
+        running = sum(task.get("state") == "running" for task in manifest["tasks"])
+        if running >= MAX_PARALLEL:
+            return {"status": "capacity_full", "running": running}
+        pending = [task for task in manifest["tasks"]
+                   if task.get("state", "pending") == "pending" and missing(run, task)]
+        if not pending:
+            return {"status": "waiting_for_running" if running else "no_pending_tasks", "running": running}
+        task = min(pending, key=lambda item: (0 if item.get("attempt", 1) > 1 else
+                                             1 if item["kind"] == "discovery" else 2,
+                                             manifest["tasks"].index(item)))
+        task["state"] = "running"
+        task["dispatched_at"] = stamp()
+        write(Path(run) / "manifest.json", manifest)
+    return {"task_id": task["id"], **task_payload(run, task)}
+
+
 def release(run, task_id):
     with locked(run):
         manifest, task = task_for(run, task_id)
@@ -308,8 +396,10 @@ def assemble(run):
             candidates[addition["id"]]["evidence"].extend(addition["evidence"])
     write(run / "candidates.json", list(candidates.values()))
     write(Path(manifest["root"]) / "data/research-audit" / (manifest["date"] + ".json"), audit)
-    result = {"status": "research_complete", "sources": len(entries), "unavailable": [e["domain"] for e in entries if e["status"] == "unavailable"], "candidates": len(candidates), "discovery_complete": True}
-    write(run / "research-status.json", result)
+    status_path = run / "research-status.json"
+    prior_status = read(status_path) if status_path.exists() else {}
+    result = {"status": "research_complete", "sources": len(entries), "unavailable": [e["domain"] for e in entries if e["status"] == "unavailable"], "candidates": len(candidates), "discovery_complete": True, "completed_at": prior_status.get("completed_at") or stamp()}
+    write(status_path, result)
     return result
 
 
@@ -357,9 +447,48 @@ def check_editor(run):
             require(2 <= item.get("impact", 0) <= 5, "Invalid impact")
             require(date.fromisoformat(item.get("date", "")) <= date.fromisoformat(manifest["date"]), "Briefing item has a future date")
     require(all(c["url"] in new_urls for c in selected), "Selected candidate is missing from the briefing")
-    result = {"status": "ready_to_publish", "date": manifest["date"], "candidates_reviewed": len(decisions), "selected": len(selected), "briefing_sha256": fingerprint(briefing)}
-    write(run / "editor-status.json", result)
+    status_path = run / "editor-status.json"
+    prior_status = read(status_path) if status_path.exists() else {}
+    briefing_sha256 = fingerprint(briefing)
+    decisions_sha256 = fingerprint(decisions)
+    same_editorial = (prior_status.get("briefing_sha256") == briefing_sha256
+                      and prior_status.get("decisions_sha256") == decisions_sha256)
+    checked_at = prior_status.get("checked_at") if same_editorial else None
+    result = {"status": "ready_to_publish", "date": manifest["date"], "candidates_reviewed": len(decisions), "selected": len(selected), "briefing_sha256": briefing_sha256, "decisions_sha256": decisions_sha256, "checked_at": checked_at or stamp()}
+    write(status_path, result)
     return result
+
+
+def elapsed_minutes(start, end):
+    if not start or not end:
+        return None
+    try:
+        return round((datetime.fromisoformat(end) - datetime.fromisoformat(start)).total_seconds() / 60, 2)
+    except (TypeError, ValueError):
+        return None
+
+
+def timings(run):
+    """Read-only phase and task timings for comparing daily runs."""
+    run = Path(run)
+    manifest = read(run / "manifest.json")
+    research = read(run / "research-status.json") if (run / "research-status.json").exists() else {}
+    editor = read(run / "editor-status.json") if (run / "editor-status.json").exists() else {}
+    publication = read(run / "publication.json") if (run / "publication.json").exists() else {}
+    starts = [task["dispatched_at"] for task in manifest["tasks"] if task.get("dispatched_at")]
+    searches = sum(len(read(path)) for path in (run / "searches").glob("*.json"))
+    return {
+        "date": manifest["date"],
+        "sources": len(manifest["registry"]),
+        "searches": searches,
+        "historical_weights_used": manifest.get("historical_weights_used", 0),
+        "research_minutes": elapsed_minutes(min(starts) if starts else None, research.get("completed_at")),
+        "editorial_minutes": elapsed_minutes(research.get("completed_at"), editor.get("checked_at")),
+        "publication_minutes": elapsed_minutes(editor.get("checked_at"), publication.get("verified_at")),
+        "tasks": [{"id": task["id"], "state": task.get("state", "pending"),
+                   "minutes": elapsed_minutes(task.get("dispatched_at"), task.get("finished_at"))}
+                  for task in manifest["tasks"]],
+    }
 
 
 def verify_publication(run):
@@ -396,7 +525,7 @@ def verify_publication(run):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("action", choices=["prepare", "tasks", "dispatch", "release", "reserve-search", "record", "retry", "assemble", "add-evidence", "check-editor", "verify-publication", "status"])
+    parser.add_argument("action", choices=["prepare", "tasks", "dispatch", "dispatch-next", "release", "reserve-search", "record", "retry", "assemble", "add-evidence", "check-editor", "verify-publication", "status", "timings"])
     parser.add_argument("--run-dir", type=Path, required=True)
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--date", default=datetime.now(ZoneInfo("Europe/Berlin")).date().isoformat())
@@ -410,6 +539,7 @@ def main():
             manifest = read(args.run_dir / "manifest.json")
             result = [{"id": t["id"], "kind": t["kind"], "state": t.get("state", "pending"), "pending": missing(args.run_dir, t)} for t in manifest["tasks"] if missing(args.run_dir, t)]
         elif args.action == "dispatch": result = dispatch(args.run_dir, args.task)
+        elif args.action == "dispatch-next": result = dispatch_next(args.run_dir)
         elif args.action == "release": result = release(args.run_dir, args.task)
         elif args.action == "reserve-search": result = reserve(args.run_dir, args.task, args.query)
         elif args.action == "record": result = record(args.run_dir, args.task, read(args.input))
@@ -418,6 +548,7 @@ def main():
         elif args.action == "add-evidence": result = add_evidence(args.run_dir, read(args.input))
         elif args.action == "check-editor": result = check_editor(args.run_dir)
         elif args.action == "verify-publication": result = verify_publication(args.run_dir)
+        elif args.action == "timings": result = timings(args.run_dir)
         else:
             manifest = read(args.run_dir / "manifest.json")
             result = {"tasks": [{"id": t["id"], "attempt": t["attempt"], "pending": missing(args.run_dir, t)} for t in manifest["tasks"]], "publication_verified": (args.run_dir / "publication.json").exists()}

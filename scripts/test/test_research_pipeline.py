@@ -68,6 +68,66 @@ class PipelineTests(unittest.TestCase):
         p.release(self.run, "sources-01")
         p.dispatch(self.run, "sources-04")
 
+    def test_dispatch_next_refills_one_free_slot_without_waiting_for_a_wave(self):
+        first = [p.dispatch_next(self.run)["task_id"] for _ in range(3)]
+        self.assertEqual(first, ["discovery", "sources-01", "sources-02"])
+        self.assertEqual(p.dispatch_next(self.run)["status"], "capacity_full")
+
+        source_task = self.manifest["tasks"][0]
+        for source in source_task["sources"]:
+            p.record(self.run, source_task["id"], self.entry(source["domain"]))
+        p.release(self.run, source_task["id"])
+
+        # Discovery and sources-02 are still running. The free slot must be
+        # reused immediately, rather than waiting for the whole first wave.
+        self.assertEqual(p.dispatch_next(self.run)["task_id"], "sources-03")
+        running = [t["id"] for t in p.read(self.run / "manifest.json")["tasks"] if t.get("state") == "running"]
+        self.assertEqual(running, ["sources-02", "sources-03", "discovery"])
+
+    def test_dispatch_next_prioritizes_bounded_retry_over_new_packets(self):
+        for _ in range(3):
+            p.dispatch_next(self.run)
+        p.release(self.run, "sources-01")
+        p.retry(self.run, "sources-01")
+        self.assertEqual(p.dispatch_next(self.run)["task_id"], "sources-01-retry")
+        self.assertEqual(p.read(self.run / "manifest.json")["tasks"][-1]["attempt"], 2)
+
+    def test_preparation_balances_packets_using_completed_historical_runs(self):
+        sources = [(f"source-{i:02}.example", str(i)) for i in range(18)]
+        prior = self.run.parent / "2026-09-18"
+        p.write(prior / "manifest.json", {
+            "date": "2026-09-18", "root": str(self.root.resolve()),
+            "tasks": [
+                {"id": "sources-01", "kind": "sources", "attempt": 1, "state": "complete",
+                 "sources": [{"domain": domain} for domain, _ in sources[:9]],
+                 "dispatched_at": "2026-09-18T08:00:00+02:00", "finished_at": "2026-09-18T09:30:00+02:00"},
+                {"id": "sources-02", "kind": "sources", "attempt": 1, "state": "complete",
+                 "sources": [{"domain": domain} for domain, _ in sources[9:]],
+                 "dispatched_at": "2026-09-18T08:00:00+02:00", "finished_at": "2026-09-18T08:09:00+02:00"},
+            ],
+        })
+        manifest = p.prepare(self.root, self.run.parent / "2026-09-20", "2026-09-20", sources)
+        packets = [task for task in manifest["tasks"] if task["kind"] == "sources"]
+        self.assertEqual(len(packets), 2)
+        self.assertTrue(all(len(task["sources"]) <= 9 for task in packets))
+        self.assertTrue(all(any(s["domain"] in {d for d, _ in sources[:9]} for s in task["sources"]) for task in packets))
+        self.assertEqual({s["domain"] for task in packets for s in task["sources"]}, {d for d, _ in sources})
+
+    def test_timing_report_keeps_first_research_and_editorial_checkpoints(self):
+        self.fill()
+        research = p.assemble(self.run)
+        self.assertEqual(p.assemble(self.run)["completed_at"], research["completed_at"])
+        p.write(self.run / "editor-decisions.json", [])
+        self.briefing["meta"]["generated"] = "2026-09-19"
+        p.write(self.root / "data/briefing.json", self.briefing)
+        editor = p.check_editor(self.run)
+        self.assertEqual(p.check_editor(self.run)["checked_at"], editor["checked_at"])
+        report = p.timings(self.run)
+        self.assertEqual(report["date"], "2026-09-19")
+        self.assertEqual(report["sources"], len(p.SOURCES))
+        self.assertEqual(report["searches"], 0)
+        self.assertIn("editorial_minutes", report)
+
     def test_editor_can_add_independent_evidence_without_changing_worker_data(self):
         self.fill(self.candidate())
         p.assemble(self.run)
