@@ -31,44 +31,54 @@ die Pakete. `tasks` zeigt die offenen Aufträge. Lies außerdem
 
 ## 2. Recherche mit ständig belegten Agentenplätzen ausführen
 
-Es dürfen **maximal drei Agenten gleichzeitig** recherchieren. Hole jeden freien
-Platz mit `python3 scripts/research_pipeline.py dispatch-next --run-dir "$RUN"`.
-Ein erfolgreicher Aufruf reserviert genau einen Auftrag und liefert dessen `task_id`,
-`goal`, `context` und `output_schema`. Übergib nur die letzten drei Felder an
-`delegate_task`, merke dir `task_id` für `release` und starte den Agenten sofort.
-Wiederhole `dispatch-next`, bis `capacity_full`, `waiting_for_running`
-oder `no_pending_tasks` zurückkommt. Der Planner priorisiert einen nötigen Retry,
-startet die offene Themensuche früh und verteilt danach die Quellenpakete.
+Es dürfen **maximal drei Agenten gleichzeitig** recherchieren. Reserviere die freien
+Plätze mit **einem** Aufruf:
 
-Hermes startet Top-Level-Delegationen asynchron. Verfolge die tatsächlichen
-Ergebnisse über `delegate_task(action="list")` und warte auf den **nächsten
-einzelnen** abgeschlossenen Agenten, nicht auf die gesamte Startgruppe. Eine
-Bestätigung des Starts ist kein Ergebnis. Beende den Hauptlauf nicht, solange
-noch Recherche-Agenten laufen.
+```sh
+python3 scripts/research_pipeline.py dispatch-ready --run-dir "$RUN"
+```
 
-Nach bestätigtem Ende jedes Subagenten führe `python3 scripts/research_pipeline.py release
---run-dir "$RUN" --task AUFTRAG` aus. Auch ein fehlgeschlagener Start wird so freigegeben.
-`dispatch-next` verweigert einen vierten gleichzeitig registrierten Auftrag; `assemble`
-verweigert die Zusammenführung, solange ein Auftrag als laufend registriert ist.
-Bei Wiederaufnahme vergleiche registrierte laufende Aufträge mit der tatsächlichen
-Hermes-Agentenliste, bevor du verwaiste Aufträge freigibst.
+Die Antwort enthält `delegations` mit je einem `task_id` und einem `tasks`-Array
+mit **genau einem** Auftrag. Starte für **jedes** Element einen **eigenen**
+`delegate_task(tasks=ELEMENT.tasks)`-Aufruf, möglichst alle Aufrufe im selben
+Assistant-Turn. Übergib dem Tool nur `tasks`; `task_id` dient dir zur Zuordnung
+der Rückmeldung. Warte nicht auf die erste Antwort, bevor du die übrigen
+freien Plätze startest. **Fasse diese Einzelaufrufe nicht zu einem gemeinsamen
+`delegate_task` mit mehreren Aufgaben zusammen:** Hermes liefert bei einem
+Mehrfach-Aufruf die Abschlussmeldung erst nach dem letzten Kind.
+
+Ein erfolgreicher Start ist noch kein fertiges Rechercheergebnis. Top-Level-
+Delegationen laufen im Hintergrund und melden sich einzeln zurück. Verfolge sie
+bei Bedarf über `delegate_task(action="list")`. Sobald **ein einzelner** Agent
+nachweislich beendet ist – auch bei Fehler oder unvollständigem Ergebnis – führe
+genau einmal aus:
+
+```sh
+python3 scripts/research_pipeline.py complete-and-dispatch --run-dir "$RUN" --task AUFTRAG
+```
+
+Dieser eine Schritt gibt den Platz frei, erzeugt bei fehlenden Quellen höchstens
+einen begrenzten Retry und reserviert den nächsten offenen Auftrag atomar.
+Enthält die Antwort `delegation`, starte sofort einen neuen
+`delegate_task(tasks=ANTWORT.delegation.tasks)`-Aufruf. So wird kein weiterer
+Agentenabschluss abgewartet, bevor ein freier Platz wieder arbeitet.
+Wird der Start eines reservierten Auftrags abgewiesen, wende denselben
+Abschlussschritt auf diesen nicht gestarteten Auftrag an; ein belegter Platz
+darf nicht als `running` hängen bleiben.
+
+Bei `waiting_for_running` warte auf die nächste individuelle Abschlussmeldung;
+bei `no_pending_tasks` und ohne laufende Agenten gehe zu Schritt 3. Bei
+`incomplete` stoppe und melde die fehlenden Quellen oder Themen. `assemble`
+verweigert laufende oder unvollständige Recherche ohnehin. Beende den Hauptlauf
+nicht, solange noch Recherche-Agenten laufen. Bei Wiederaufnahme vergleiche die
+registrierten laufenden Aufträge mit `delegate_task(action="list")`, bevor du
+einen verwaisten Auftrag als beendet meldest.
 
 Bearbeite alle Quellenpakete und den zusätzlichen Auftrag `discovery`. Subagenten
-schreiben jeweils eigene Dateien und atomare Quellen-Checkpoints; nur du bearbeitest das
-Briefing. Arbeite keine ausgefallenen großen Pakete selbst durch: für ein beendetes
-unvollständiges Paket erzeugt
-
-`python3 scripts/research_pipeline.py retry --run-dir "$RUN" --task AUFTRAG`
-
-genau einen Wiederherstellungsauftrag nur für noch offene Quellen. Vergewissere dich
-vorher, dass der ursprüngliche Agent beendet ist. Bereits abgeschlossene Quellen bleiben
-erhalten. Nach einer erfolglosen Wiederherstellung bleibt der Lauf unvollständig und wird
-als solcher gemeldet. Grenzen werden nicht durch endlose neue Agenten zurückgesetzt.
-Erzeuge den Retry direkt nach `release` des unvollständigen Auftrags. Rufe dann
-`dispatch-next` auf, um den freien Platz sofort neu zu belegen; dieser reserviert
-den Retry bevorzugt. Wiederhole das nach **jedem** Agentenabschluss, bis alle
-Aufträge beendet sind. Auch `waiting_for_running` heißt: weiter auf laufende
-Agenten warten. Erst bei `no_pending_tasks` und ohne laufende Agenten zu Schritt 3.
+schreiben jeweils eigene Dateien und atomare Quellen-Checkpoints; nur du bearbeitest
+das Briefing. Bereits abgeschlossene Quellen bleiben bei einem Retry erhalten.
+Nach einer erfolglosen Wiederherstellung bleibt der Lauf unvollständig; Grenzen
+werden nicht durch endlose neue Agenten zurückgesetzt.
 
 ## 3. Quellenabdeckung und Belege zusammenführen
 

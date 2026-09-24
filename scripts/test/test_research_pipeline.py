@@ -84,6 +84,67 @@ class PipelineTests(unittest.TestCase):
         running = [t["id"] for t in p.read(self.run / "manifest.json")["tasks"] if t.get("state") == "running"]
         self.assertEqual(running, ["sources-02", "sources-03", "discovery"])
 
+    def test_dispatch_ready_reserves_three_independent_delegations_at_once(self):
+        ready = p.dispatch_ready(self.run)
+        self.assertEqual(ready["status"], "dispatched")
+        self.assertEqual([item["task_id"] for item in ready["delegations"]],
+                         ["discovery", "sources-01", "sources-02"])
+        self.assertTrue(all(len(item["tasks"]) == 1 for item in ready["delegations"]))
+        self.assertEqual(p.dispatch_ready(self.run)["status"], "capacity_full")
+        running = [t for t in p.read(self.run / "manifest.json")["tasks"]
+                   if t.get("state") == "running"]
+        self.assertEqual(len(running), 3)
+
+    def test_dispatch_ready_refills_only_free_slots_on_resume(self):
+        p.dispatch(self.run, "discovery")
+        ready = p.dispatch_ready(self.run)
+        self.assertEqual([item["task_id"] for item in ready["delegations"]],
+                         ["sources-01", "sources-02"])
+
+    def test_new_handoff_commands_are_available_from_cli(self):
+        with patch.object(sys, "argv", ["research_pipeline.py", "dispatch-ready", "--run-dir", str(self.run)]), \
+             patch("sys.stdout", new_callable=io.StringIO) as output:
+            self.assertEqual(p.main(), 0)
+        ready = json.loads(output.getvalue())
+        self.assertEqual(len(ready["delegations"]), 3)
+
+        source_task = self.manifest["tasks"][0]
+        for source in source_task["sources"]:
+            p.record(self.run, source_task["id"], self.entry(source["domain"]))
+        with patch.object(sys, "argv", ["research_pipeline.py", "complete-and-dispatch", "--run-dir", str(self.run), "--task", source_task["id"]]), \
+             patch("sys.stdout", new_callable=io.StringIO) as output:
+            self.assertEqual(p.main(), 0)
+        self.assertEqual(json.loads(output.getvalue())["delegation"]["task_id"], "sources-03")
+
+    def test_complete_and_dispatch_refills_a_single_finished_slot(self):
+        p.dispatch_ready(self.run)
+        source_task = self.manifest["tasks"][0]
+        for source in source_task["sources"]:
+            p.record(self.run, source_task["id"], self.entry(source["domain"]))
+
+        handoff = p.complete_and_dispatch(self.run, source_task["id"])
+        self.assertEqual(handoff["completed"], {"task_id": "sources-01", "state": "complete", "pending": []})
+        self.assertEqual(handoff["delegation"]["task_id"], "sources-03")
+        self.assertEqual(len(handoff["delegation"]["tasks"]), 1)
+        running = [t["id"] for t in p.read(self.run / "manifest.json")["tasks"]
+                   if t.get("state") == "running"]
+        self.assertEqual(running, ["sources-02", "sources-03", "discovery"])
+        with self.assertRaisesRegex(ValueError, "not running"):
+            p.complete_and_dispatch(self.run, source_task["id"])
+
+    def test_complete_and_dispatch_prioritizes_only_missing_source_retry(self):
+        p.dispatch_ready(self.run)
+        source_task = self.manifest["tasks"][0]
+        first = source_task["sources"][0]["domain"]
+        p.record(self.run, source_task["id"], self.entry(first))
+
+        handoff = p.complete_and_dispatch(self.run, source_task["id"])
+        self.assertEqual(handoff["completed"]["state"], "partial")
+        self.assertEqual(handoff["delegation"]["task_id"], "sources-01-retry")
+        retry = p.task_for(self.run, "sources-01-retry")[1]
+        self.assertNotIn(first, [s["domain"] for s in retry["sources"]])
+        self.assertEqual(retry["state"], "running")
+
     def test_dispatch_next_prioritizes_bounded_retry_over_new_packets(self):
         for _ in range(3):
             p.dispatch_next(self.run)

@@ -121,8 +121,10 @@ Der Hermes-Job folgt `docs/briefing-orchestrator.md`. Der Planner
 Pakete mit maximal neun Quellen plus eine offene Entdeckungssuche über alle Themen.
 Er nutzt die Laufzeiten abgeschlossener Pakete der letzten 14 Tage, um langsame
 Quellen möglichst gleichmäßig zu verteilen; ohne brauchbare Historie bleibt die
-Reihenfolge unverändert. `dispatch-next` belegt bis zu drei Rechercheplätze laufend
-neu, sobald ein Agent endet, und startet die offene Suche früh. Jeder Recherche-Agent
+Reihenfolge unverändert. `dispatch-ready` reserviert bis zu drei Plätze in einem
+Schritt; separate Hermes-Delegationen melden jeden Abschluss einzeln zurück.
+`complete-and-dispatch` gibt den fertigen Platz frei und reserviert sofort den
+nächsten Auftrag. Die offene Suche startet früh. Jeder Recherche-Agent
 besitzt ein eigenes Suchbudget und speichert abgeschlossene Quellen sofort; nach
 einem Abbruch können nur offene Quellen einmal gezielt nachbearbeitet werden.
 

@@ -322,17 +322,86 @@ def dispatch_next(run):
         running = sum(task.get("state") == "running" for task in manifest["tasks"])
         if running >= MAX_PARALLEL:
             return {"status": "capacity_full", "running": running}
-        pending = [task for task in manifest["tasks"]
-                   if task.get("state", "pending") == "pending" and missing(run, task)]
-        if not pending:
+        task = next_pending(run, manifest)
+        if task is None:
             return {"status": "waiting_for_running" if running else "no_pending_tasks", "running": running}
-        task = min(pending, key=lambda item: (0 if item.get("attempt", 1) > 1 else
-                                             1 if item["kind"] == "discovery" else 2,
-                                             manifest["tasks"].index(item)))
         task["state"] = "running"
         task["dispatched_at"] = stamp()
         write(Path(run) / "manifest.json", manifest)
     return {"task_id": task["id"], **task_payload(run, task)}
+
+
+def next_pending(run, manifest):
+    pending = [task for task in manifest["tasks"]
+               if task.get("state", "pending") == "pending" and missing(run, task)]
+    if not pending:
+        return None
+    return min(pending, key=lambda item: (0 if item.get("attempt", 1) > 1 else
+                                          1 if item["kind"] == "discovery" else 2,
+                                          manifest["tasks"].index(item)))
+
+
+def single_delegation(run, task):
+    """One Hermes call per task gives each child its own completion signal."""
+    payload = task_payload(run, task)
+    return {"task_id": task["id"], "tasks": [{key: payload[key]
+            for key in ("goal", "context", "output_schema")}]}
+
+
+def queue_status(run, manifest):
+    if any(task.get("state") == "running" for task in manifest["tasks"]):
+        return "waiting_for_running"
+    if any(missing(run, task) for task in manifest["tasks"]):
+        return "incomplete"
+    return "no_pending_tasks"
+
+
+def dispatch_ready(run):
+    """Reserve every free slot in one CLI call, avoiding a serial first spawn."""
+    with locked(run):
+        manifest = read(Path(run) / "manifest.json")
+        capacity = MAX_PARALLEL - sum(task.get("state") == "running" for task in manifest["tasks"])
+        selected = []
+        for _ in range(capacity):
+            task = next_pending(run, manifest)
+            if task is None:
+                break
+            task["state"] = "running"
+            task["dispatched_at"] = stamp()
+            selected.append(task)
+        if selected:
+            write(Path(run) / "manifest.json", manifest)
+    if selected:
+        return {"status": "dispatched", "delegations": [single_delegation(run, task) for task in selected]}
+    return {"status": "capacity_full" if capacity == 0 else queue_status(run, manifest), "delegations": []}
+
+
+def complete_and_dispatch(run, task_id):
+    """Release one confirmed-finished child and reserve its replacement together."""
+    with locked(run):
+        manifest = read(Path(run) / "manifest.json")
+        task = next((item for item in manifest["tasks"] if item["id"] == task_id), None)
+        require(task is not None, "Unknown task")
+        require(task.get("state") == "running", "Task was not running")
+        pending = missing(run, task)
+        task["state"] = "partial" if pending else "complete"
+        task["finished_at"] = stamp()
+        completed = {"task_id": task_id, "state": task["state"], "pending": pending}
+        if pending and task["attempt"] == 1:
+            retry_id = task_id + "-retry"
+            require(not any(item["id"] == retry_id for item in manifest["tasks"]), "Recovery task already exists")
+            recovered = {**task, "id": retry_id, "attempt": 2, "retry_of": task_id, "state": "pending"}
+            if task["kind"] == "sources":
+                recovered["sources"] = [source for source in task["sources"] if source["domain"] in pending]
+            manifest["tasks"].append(recovered)
+        next_task = next_pending(run, manifest)
+        if next_task is not None:
+            next_task["state"] = "running"
+            next_task["dispatched_at"] = stamp()
+        write(Path(run) / "manifest.json", manifest)
+    return {"completed": completed,
+            "status": "dispatched" if next_task is not None else queue_status(run, manifest),
+            "delegation": single_delegation(run, next_task) if next_task is not None else None}
 
 
 def release(run, task_id):
@@ -525,7 +594,7 @@ def verify_publication(run):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("action", choices=["prepare", "tasks", "dispatch", "dispatch-next", "release", "reserve-search", "record", "retry", "assemble", "add-evidence", "check-editor", "verify-publication", "status", "timings"])
+    parser.add_argument("action", choices=["prepare", "tasks", "dispatch", "dispatch-next", "dispatch-ready", "release", "complete-and-dispatch", "reserve-search", "record", "retry", "assemble", "add-evidence", "check-editor", "verify-publication", "status", "timings"])
     parser.add_argument("--run-dir", type=Path, required=True)
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--date", default=datetime.now(ZoneInfo("Europe/Berlin")).date().isoformat())
@@ -540,7 +609,9 @@ def main():
             result = [{"id": t["id"], "kind": t["kind"], "state": t.get("state", "pending"), "pending": missing(args.run_dir, t)} for t in manifest["tasks"] if missing(args.run_dir, t)]
         elif args.action == "dispatch": result = dispatch(args.run_dir, args.task)
         elif args.action == "dispatch-next": result = dispatch_next(args.run_dir)
+        elif args.action == "dispatch-ready": result = dispatch_ready(args.run_dir)
         elif args.action == "release": result = release(args.run_dir, args.task)
+        elif args.action == "complete-and-dispatch": result = complete_and_dispatch(args.run_dir, args.task)
         elif args.action == "reserve-search": result = reserve(args.run_dir, args.task, args.query)
         elif args.action == "record": result = record(args.run_dir, args.task, read(args.input))
         elif args.action == "retry": result = retry(args.run_dir, args.task)
