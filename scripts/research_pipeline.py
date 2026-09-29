@@ -23,7 +23,7 @@ from urllib.request import Request, urlopen
 from urllib.parse import urlparse
 from zoneinfo import ZoneInfo
 
-from validate_research_audit import SOURCES, validate
+from validate_research_audit import LEGACY_SOURCES, REGISTRY_VERSION, SOURCES, domain_matches, validate
 
 TOPICS = (
     "AI News", "Lokale LLMs", "Agentic Engineering / Vibe Coding", "AI Tools",
@@ -230,6 +230,22 @@ def checkpoint_path(run, domain):
     return Path(run) / "sources" / (hashlib.sha256(domain.encode()).hexdigest()[:24] + ".json")
 
 
+def registry_for_manifest(manifest):
+    registry = [tuple(source) for source in manifest["registry"]]
+    if registry == list(SOURCES):
+        return REGISTRY_VERSION, registry
+    if len(registry) == len(LEGACY_SOURCES) and set(registry) == set(LEGACY_SOURCES):
+        return 1, registry
+    raise ValueError("Source registry changed during run")
+
+
+def reject_retired_source_candidates(candidates):
+    for candidate in candidates:
+        urls = [candidate["url"]] + [item["url"] for item in candidate["evidence"]]
+        require(not any(domain_matches(url, "reuters.com") for url in urls),
+                "Reuters is excluded from new briefing research")
+
+
 def reserve(run, task_id, query):
     _, task = task_for(run, task_id)
     require(isinstance(query, str) and bool(query.strip()), "Empty query")
@@ -267,20 +283,26 @@ def validate_candidates(candidates, day, since):
 
 def record(run, task_id, entry):
     manifest, task = task_for(run, task_id)
+    registry_version, _ = registry_for_manifest(manifest)
     if task["kind"] == "discovery":
         require(set(entry.get("topics_checked", [])) == set(TOPICS), "Discovery must cover all eight topics")
         require(bool(str(entry.get("result", "")).strip()), "Discovery needs a result, including when empty")
         candidates = validate_candidates(entry.get("candidates"), manifest["date"], task["since"])
+        if registry_version == REGISTRY_VERSION:
+            reject_retired_source_candidates(candidates)
         value = {**entry, "candidates": candidates, "task_id": task_id, "completed_at": stamp()}
         destination = Path(run) / "discovery.json"
     else:
         source = next((s for s in task["sources"] if s["domain"] == entry.get("domain")), None)
         require(source is not None, "Source does not belong to this task")
-        probe = {"schema_version": 1, "date": manifest["date"], "sources": [entry]}
+        probe = {"schema_version": 1, "registry_version": registry_version,
+                 "date": manifest["date"], "sources": [entry]}
         errors = [e for e in validate(probe, manifest["date"]) if not e.startswith("fehlende Quellen:")]
         require(not errors, "; ".join(errors))
         require(http_url(entry.get("checked_url")), "Source needs an HTTP(S) URL")
         candidates = validate_candidates(entry.get("candidates"), manifest["date"], source["since"])
+        if registry_version == REGISTRY_VERSION:
+            reject_retired_source_candidates(candidates)
         require(entry["status"] != "unavailable" or not candidates, "Unavailable source cannot supply verified candidates")
         value = {**entry, "name": source["name"], "candidates": candidates, "since": source["since"], "task_id": task_id, "completed_at": stamp()}
         destination = checkpoint_path(run, source["domain"])
@@ -466,21 +488,28 @@ def retry(run, task_id):
 def assemble(run):
     run = Path(run)
     manifest = read(run / "manifest.json")
+    registry_version, sources = registry_for_manifest(manifest)
     require(not any(t.get("state") == "running" for t in manifest["tasks"]), "Research agents still running")
-    require(manifest["registry"] == [list(s) for s in SOURCES], "Source registry changed during run")
-    absent = [d for d, _ in SOURCES if not checkpoint_path(run, d).exists()]
+    absent = [d for d, _ in sources if not checkpoint_path(run, d).exists()]
     require(not absent, "Missing source checkpoints: " + ", ".join(absent))
     require((run / "discovery.json").exists(), "Missing discovery research")
-    entries = [read(checkpoint_path(run, d)) for d, _ in SOURCES]
+    entries = [read(checkpoint_path(run, d)) for d, _ in sources]
     source_specs = {s["domain"]: s for t in manifest["tasks"] if t["kind"] == "sources" for s in t["sources"]}
-    for (domain, _), entry in zip(SOURCES, entries):
+    for (domain, _), entry in zip(sources, entries):
         require(entry.get("domain") == domain, "Checkpoint source ownership changed")
         validate_candidates(entry.get("candidates"), manifest["date"], source_specs[domain]["since"])
+        if registry_version == REGISTRY_VERSION:
+            reject_retired_source_candidates(entry["candidates"])
     discovery = read(run / "discovery.json")
     require(set(discovery.get("topics_checked", [])) == set(TOPICS), "Incomplete discovery topics")
     discovery_task = next(t for t in manifest["tasks"] if t["id"] == "discovery")
     validate_candidates(discovery.get("candidates"), manifest["date"], discovery_task["since"])
-    audit = {"schema_version": 1, "date": manifest["date"], "sources": [{k: e[k] for k in ["domain", "name", "status", "checked_url", "result"]} for e in entries]}
+    if registry_version == REGISTRY_VERSION:
+        reject_retired_source_candidates(discovery["candidates"])
+    audit = {"schema_version": 1, "date": manifest["date"],
+             "sources": [{k: e[k] for k in ["domain", "name", "status", "checked_url", "result"]} for e in entries]}
+    if registry_version == REGISTRY_VERSION:
+        audit["registry_version"] = registry_version
     require(not validate(audit, manifest["date"]), "Invalid source audit")
     candidates = {}
     for entry in entries + [discovery]:
@@ -495,6 +524,8 @@ def assemble(run):
         for addition in read(run / "editor-evidence.json"):
             require(addition["id"] in candidates, "Editor evidence references an unknown candidate")
             candidates[addition["id"]]["evidence"].extend(addition["evidence"])
+    if registry_version == REGISTRY_VERSION:
+        reject_retired_source_candidates(candidates.values())
     write(run / "candidates.json", list(candidates.values()))
     write(Path(manifest["root"]) / "data/research-audit" / (manifest["date"] + ".json"), audit)
     status_path = run / "research-status.json"
@@ -512,6 +543,8 @@ def add_evidence(run, addition):
     manifest = read(run / "manifest.json")
     updated = {**candidate, "evidence": candidate["evidence"] + addition.get("evidence", [])}
     validate_candidates([updated], manifest["date"], candidate["published_at"])
+    if registry_for_manifest(manifest)[0] == REGISTRY_VERSION:
+        reject_retired_source_candidates([updated])
     path = run / "editor-evidence.json"
     additions = read(path) if path.exists() else []
     additions.append(addition)
@@ -523,6 +556,7 @@ def check_editor(run):
     run = Path(run)
     assemble(run)
     manifest = read(run / "manifest.json")
+    registry_version, _ = registry_for_manifest(manifest)
     candidates = {c["id"]: c for c in read(run / "candidates.json")}
     decisions = read(run / "editor-decisions.json")
     require(isinstance(decisions, list), "Editorial decisions must be a list")
@@ -544,6 +578,12 @@ def check_editor(run):
             new_urls.update(urls)
             if item_fingerprint(item) in old_items:
                 continue
+            if registry_version == REGISTRY_VERSION:
+                require(not any(domain_matches(url, "reuters.com") for url in urls if isinstance(url, str)),
+                        "Reuters is excluded from new briefing items")
+                require(not any("reuters" in str(source.get("label", "")).lower()
+                                for source in item.get("sources", [])),
+                        "Reuters is excluded from new briefing items")
             require(urls and urls <= evidence_urls, "New briefing item contains an unverified source URL")
             require(2 <= item.get("impact", 0) <= 5, "Invalid impact")
             require(date.fromisoformat(item.get("date", "")) <= date.fromisoformat(manifest["date"]), "Briefing item has a future date")

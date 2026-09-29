@@ -44,7 +44,6 @@ SOURCES = (
     ("x.ai", "xAI"),
     ("openclaw.ai", "OpenClaw Blog"),
     ("shopify.engineering", "Shopify Engineering"),
-    ("reuters.com", "Reuters AI"),
     ("technologyreview.com", "MIT Technology Review"),
     ("cohere.com", "Cohere"),
     ("qwenlm.github.io", "Qwen"),
@@ -53,6 +52,10 @@ SOURCES = (
     ("research.google", "Google Research"),
     ("nist.gov", "NIST AI"),
 )
+REGISTRY_VERSION = 2
+# Published v1 audits are immutable and still need their original source set.
+LEGACY_SOURCES = SOURCES + (("reuters.com", "Reuters AI"),)
+SOURCE_REGISTRIES = {1: LEGACY_SOURCES, REGISTRY_VERSION: SOURCES}
 
 VALID_STATUS = {"checked", "unavailable"}
 
@@ -75,7 +78,12 @@ def validate(audit: dict, expected_date: str | None = None) -> list[str]:
     if not isinstance(entries, list):
         return errors + ["sources muss eine Liste sein"]
 
-    expected = {domain: name for domain, name in SOURCES}
+    registry_version = audit.get("registry_version", 1)
+    registry = SOURCE_REGISTRIES.get(registry_version)
+    if registry is None:
+        errors.append("registry_version muss 1 oder 2 sein")
+        registry = SOURCES
+    expected = {domain: name for domain, name in registry}
     seen: set[str] = set()
     for entry in entries:
         if not isinstance(entry, dict):
@@ -121,7 +129,8 @@ def main() -> int:
         print("Quellenprotokoll ungültig:", file=sys.stderr)
         print("\n".join(f"- {error}" for error in errors), file=sys.stderr)
         return 1
-    print(f"Quellenprotokoll gültig: {len(SOURCES)}/{len(SOURCES)} Quellen")
+    source_count = len(SOURCE_REGISTRIES[audit.get("registry_version", 1)])
+    print(f"Quellenprotokoll gültig: {source_count}/{source_count} Quellen")
     return 0
 
 

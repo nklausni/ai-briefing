@@ -158,15 +158,16 @@ Bereich aktualisiert werden konnte.
 Jeder Cron-Lauf erzeugt zusätzlich `data/research-audit/YYYY-MM-DD.json`. Das Protokoll
 enthält für jede priorisierte Quelle die tatsächlich geprüfte URL, den Status und ein
 kurzes Ergebnis. `scripts/validate_research_audit.py` akzeptiert den Lauf nur, wenn alle
-42 festgelegten Quellen genau einmal dokumentiert sind und jede URL zur angegebenen
+41 festgelegten Quellen genau einmal dokumentiert sind und jede URL zur angegebenen
 Quelle gehört. Ein fehlendes oder unvollständiges Protokoll blockiert Commit und
-Veröffentlichung. Das Protokoll ist bewusst versioniert, damit später nachvollziehbar
-bleibt, welche Quellen vor der Aussage „keine Meldung“ geprüft wurden.
+Veröffentlichung. Die Quellenliste ist versioniert: Die bisherigen 42-Quellen-Audits
+bleiben unverändert und prüfbar; ab Quellenlisten-Version 2 wird Reuters nicht mehr recherchiert
+oder als Beleg für neue Meldungen verwendet.
 
-Beispiel:
+Beispiel für einen historischen Audit mit 42 Quellen:
 
 ```bash
-python3 scripts/validate_research_audit.py data/research-audit/2026-09-07.json 2026-09-07
+python3 scripts/validate_research_audit.py data/research-audit/2026-09-29.json 2026-09-29
 ```
 
 ### Wenn ein Bereich nicht aktualisiert wird

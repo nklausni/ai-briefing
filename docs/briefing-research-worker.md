@@ -6,6 +6,12 @@ oder Themen. Lies nur die dir zugeteilten Quellen; `discovery` recherchiert offe
 über Auswahl und Veröffentlichung. Die Arbeitsdateien liegen ausschließlich in
 `run_dir/worker-ID/`. Verwende deine tatsächliche Assignment-ID statt `ID`.
 
+Reuters ist bewusst aus den aktiven Quellen entfernt. Suche Reuters auch bei
+`discovery` nicht gezielt und verwende weder Reuters-Originale noch syndizierte
+Reuters-Texte als Kandidaten oder Belege für neue Meldungen. Eine Entwicklung darf
+über andere, selbst geprüfte Primärquellen oder unabhängige Berichte aufgenommen
+werden. Historische Briefing-Einträge bleiben unverändert.
+
 ## Recherche und Suchbudget
 
 1. Lies `root/data/history.json` zur Deduplizierung. Das Zeitfenster jeder Quelle

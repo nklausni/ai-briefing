@@ -15,6 +15,7 @@ class TestResearchAuditValidation(unittest.TestCase):
     def valid_audit(self):
         return {
             "schema_version": 1,
+            "registry_version": validator.REGISTRY_VERSION,
             "date": "2026-09-07",
             "sources": [
                 {
@@ -30,14 +31,14 @@ class TestResearchAuditValidation(unittest.TestCase):
 
     def test_expected_source_set_includes_expanded_coverage(self):
         domains = {domain for domain, _ in validator.SOURCES}
-        self.assertGreaterEqual(len(domains), 42)
+        self.assertEqual(len(domains), 41)
+        self.assertNotIn("reuters.com", domains)
         self.assertTrue(
             {
                 "openrouter.ai",
                 "heise.de",
                 "openclaw.ai",
                 "shopify.engineering",
-                "reuters.com",
                 "technologyreview.com",
                 "cohere.com",
                 "qwenlm.github.io",
@@ -50,6 +51,25 @@ class TestResearchAuditValidation(unittest.TestCase):
 
     def test_valid_complete_audit(self):
         self.assertEqual(validator.validate(self.valid_audit(), "2026-09-07"), [])
+
+    def test_legacy_audit_with_reuters_remains_valid(self):
+        audit = self.valid_audit()
+        del audit["registry_version"]
+        audit["sources"].append({
+            "domain": "reuters.com", "name": "Reuters AI", "status": "checked",
+            "checked_url": "https://www.reuters.com/technology/",
+            "result": "Historischer Reuters-Check.",
+        })
+        self.assertEqual(validator.validate(audit, "2026-09-07"), [])
+
+    def test_reuters_is_not_allowed_in_current_audit(self):
+        audit = self.valid_audit()
+        audit["sources"].append({
+            "domain": "reuters.com", "name": "Reuters AI", "status": "checked",
+            "checked_url": "https://www.reuters.com/technology/",
+            "result": "Should not be requested.",
+        })
+        self.assertIn("unerwartete Quelle: 'reuters.com'", validator.validate(audit, "2026-09-07"))
 
     def test_missing_source_fails(self):
         audit = self.valid_audit()

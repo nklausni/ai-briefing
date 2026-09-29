@@ -37,7 +37,7 @@ class PipelineTests(unittest.TestCase):
                     p.record(self.run, task["id"], self.entry(source["domain"], [candidate] if candidate and source["domain"] == "simonwillison.net" else []))
 
     def test_growing_registry_assigns_every_source_exactly_once(self):
-        for count in [1, 42, 63, 101]:
+        for count in [1, 41, 63, 101]:
             sources = [(f"source-{i}.example", str(i)) for i in range(count)]
             manifest = p.prepare(self.root, self.run / str(count), "2026-09-19", sources)
             packets = [t for t in manifest["tasks"] if t["kind"] == "sources"]
@@ -55,6 +55,42 @@ class PipelineTests(unittest.TestCase):
         self.assertEqual(p.reserve(self.run, "sources-02", "first")['remaining'], 34)
         with self.assertRaisesRegex(ValueError, "Duplicate"):
             p.reserve(self.run, "sources-02", "first")
+
+    def test_reuters_is_not_assigned_or_accepted_by_discovery(self):
+        self.assertNotIn("reuters.com", {source["domain"] for task in self.manifest["tasks"]
+                                          if task["kind"] == "sources" for source in task["sources"]})
+        candidate = self.candidate()
+        candidate["url"] = "https://www.reuters.com/technology/article"
+        candidate["evidence"][0]["url"] = candidate["url"]
+        with self.assertRaisesRegex(ValueError, "Reuters is excluded"):
+            p.record(self.run, "discovery", {"topics_checked": list(p.TOPICS),
+                                              "result": "Open discovery", "candidates": [candidate]})
+        self.assertFalse((self.run / "discovery.json").exists())
+
+    def test_reuters_cannot_be_added_as_new_editorial_source(self):
+        self.fill()
+        p.write(self.run / "editor-decisions.json", [])
+        self.briefing["meta"]["generated"] = "2026-09-19"
+        self.briefing["topics"][0]["items"] = [{
+            "title": "New item", "date": "2026-09-19", "impact": 3,
+            "sources": [{"url": "https://www.reuters.com/technology/article"}],
+        }]
+        p.write(self.root / "data/briefing.json", self.briefing)
+        with self.assertRaisesRegex(ValueError, "Reuters is excluded"):
+            p.check_editor(self.run)
+
+    def test_reuters_cannot_be_added_as_editorial_evidence(self):
+        self.fill(self.candidate())
+        p.assemble(self.run)
+        candidate = p.read(self.run / "candidates.json")[0]
+        addition = {"id": candidate["id"], "evidence": [{
+            "url": "https://www.reuters.com/technology/article",
+            "excerpt": "A purported Reuters excerpt long enough to validate.",
+            "method": "web_extract", "retrieved_at": "2026-09-19T08:05:00+02:00",
+        }]}
+        with self.assertRaisesRegex(ValueError, "Reuters is excluded"):
+            p.add_evidence(self.run, addition)
+        self.assertFalse((self.run / "editor-evidence.json").exists())
 
     def test_fourth_concurrent_dispatch_and_early_assembly_are_blocked(self):
         for task in ["sources-01", "sources-02", "sources-03"]:

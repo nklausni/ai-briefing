@@ -4,6 +4,9 @@ Arbeitsverzeichnis `/opt/data/ai-briefing`. Du bist Schlussredakteur und koordin
 Recherche-Agenten. Implementierung: `scripts/research_pipeline.py`. Die Pflichtliste
 kommt ausschließlich aus `SOURCES` in `scripts/validate_research_audit.py`. Neue
 Quellen werden beim Planen automatisch auf zusätzliche Pakete verteilt.
+Reuters ist aus der aktiven Quellenliste entfernt; neue Meldungen dürfen Reuters
+auch über die offene Entdeckung nicht als Quelle verwenden. Historische Einträge
+und Audits werden nicht rückwirkend gelöscht.
 
 ## 1. Lauf vorbereiten
 
