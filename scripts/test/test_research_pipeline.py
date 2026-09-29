@@ -45,7 +45,7 @@ class PipelineTests(unittest.TestCase):
             assigned = [s["domain"] for t in packets for s in t["sources"]]
             self.assertEqual(assigned, [d for d, _ in sources])
             self.assertEqual(manifest["tasks"][-1]["kind"], "discovery")
-            self.assertEqual(manifest["max_parallel"], 3)
+            self.assertEqual(manifest["max_parallel"], 10)
 
     def test_search_budgets_are_per_task_and_stop_before_hermes_limit(self):
         for i in range(35):
@@ -92,10 +92,11 @@ class PipelineTests(unittest.TestCase):
             p.add_evidence(self.run, addition)
         self.assertFalse((self.run / "editor-evidence.json").exists())
 
+    @patch.object(p, "MAX_PARALLEL", 3)
     def test_fourth_concurrent_dispatch_and_early_assembly_are_blocked(self):
         for task in ["sources-01", "sources-02", "sources-03"]:
             p.dispatch(self.run, task)
-        with self.assertRaisesRegex(ValueError, "Three"):
+        with self.assertRaisesRegex(ValueError, "delegation capacity"):
             p.dispatch(self.run, "sources-04")
         with self.assertRaisesRegex(ValueError, "still running"):
             p.assemble(self.run)
@@ -104,6 +105,7 @@ class PipelineTests(unittest.TestCase):
         p.release(self.run, "sources-01")
         p.dispatch(self.run, "sources-04")
 
+    @patch.object(p, "MAX_PARALLEL", 3)
     def test_dispatch_next_refills_one_free_slot_without_waiting_for_a_wave(self):
         first = [p.dispatch_next(self.run)["task_id"] for _ in range(3)]
         self.assertEqual(first, ["discovery", "sources-01", "sources-02"])
@@ -120,21 +122,42 @@ class PipelineTests(unittest.TestCase):
         running = [t["id"] for t in p.read(self.run / "manifest.json")["tasks"] if t.get("state") == "running"]
         self.assertEqual(running, ["sources-02", "sources-03", "discovery"])
 
-    def test_dispatch_ready_reserves_three_parallel_batch_tasks_at_once(self):
+    def test_dispatch_ready_reserves_all_six_research_tasks_at_once(self):
         ready = p.dispatch_ready(self.run)
         self.assertEqual(ready["status"], "dispatched")
-        self.assertEqual(ready["batch"]["task_ids"], ["discovery", "sources-01", "sources-02"])
-        self.assertEqual(len(ready["batch"]["tasks"]), 3)
-        self.assertEqual(p.dispatch_ready(self.run)["status"], "capacity_full")
+        self.assertEqual(ready["batch"]["task_ids"],
+                         ["discovery", "sources-01", "sources-02", "sources-03", "sources-04", "sources-05"])
+        self.assertEqual(len(ready["batch"]["tasks"]), 6)
+        self.assertEqual(p.dispatch_ready(self.run)["status"], "waiting_for_running")
         running = [t for t in p.read(self.run / "manifest.json")["tasks"]
                    if t.get("state") == "running"]
-        self.assertEqual(len(running), 3)
+        self.assertEqual(len(running), 6)
 
+    def test_six_task_batch_completes_without_a_second_research_wave(self):
+        batch = p.dispatch_ready(self.run)["batch"]
+        self.assertEqual(len(batch["task_ids"]), 6)
+        self.fill()
+        result = p.complete_batch_and_dispatch(self.run, batch["task_ids"])
+        self.assertEqual(result["status"], "no_pending_tasks")
+        self.assertIsNone(result["batch"])
+        self.assertEqual(len(result["completed"]), 6)
+
+    def test_additional_tasks_use_remaining_hermes_capacity(self):
+        sources = [(f"source-{i}.example", str(i)) for i in range(101)]
+        run = self.run / "large"
+        manifest = p.prepare(self.root, run, "2026-09-19", sources)
+        self.assertEqual(len(manifest["tasks"]), 13)
+        batch = p.dispatch_ready(run)["batch"]
+        self.assertEqual(len(batch["task_ids"]), 10)
+        self.assertEqual(p.dispatch_ready(run)["status"], "capacity_full")
+
+    @patch.object(p, "MAX_PARALLEL", 3)
     def test_dispatch_ready_refills_only_free_slots_on_resume(self):
         p.dispatch(self.run, "discovery")
         ready = p.dispatch_ready(self.run)
         self.assertEqual(ready["batch"]["task_ids"], ["sources-01", "sources-02"])
 
+    @patch.object(p, "MAX_PARALLEL", 3)
     def test_new_handoff_commands_are_available_from_cli(self):
         with patch.object(sys, "argv", ["research_pipeline.py", "dispatch-ready", "--run-dir", str(self.run)]), \
              patch("sys.stdout", new_callable=io.StringIO) as output:
@@ -150,6 +173,7 @@ class PipelineTests(unittest.TestCase):
             self.assertEqual(p.main(), 0)
         self.assertEqual(json.loads(output.getvalue())["delegation"]["task_id"], "sources-03")
 
+    @patch.object(p, "MAX_PARALLEL", 3)
     def test_complete_and_dispatch_refills_a_single_finished_slot(self):
         p.dispatch_ready(self.run)
         source_task = self.manifest["tasks"][0]
@@ -179,6 +203,7 @@ class PipelineTests(unittest.TestCase):
         self.assertNotIn(first, [s["domain"] for s in retry["sources"]])
         self.assertEqual(retry["state"], "running")
 
+    @patch.object(p, "MAX_PARALLEL", 3)
     def test_complete_batch_refills_all_three_cron_slots_in_one_step(self):
         first = p.dispatch_ready(self.run)["batch"]
         for task_id in first["task_ids"]:
@@ -196,6 +221,7 @@ class PipelineTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "must match all running"):
             p.complete_batch_and_dispatch(self.run, first["task_ids"])
 
+    @patch.object(p, "MAX_PARALLEL", 3)
     def test_complete_batch_prioritizes_bounded_retry(self):
         first = p.dispatch_ready(self.run)["batch"]
         p.record(self.run, "discovery", {"topics_checked": list(p.TOPICS), "result": "All topics searched", "candidates": []})
@@ -209,6 +235,7 @@ class PipelineTests(unittest.TestCase):
         retry = p.task_for(self.run, "sources-01-retry")[1]
         self.assertEqual(len(retry["sources"]), len(source_one) - 1)
 
+    @patch.object(p, "MAX_PARALLEL", 3)
     def test_complete_batch_command_is_available_from_cli(self):
         batch = p.dispatch_ready(self.run)["batch"]
         for task_id in batch["task_ids"]:
@@ -225,6 +252,7 @@ class PipelineTests(unittest.TestCase):
         self.assertEqual(json.loads(output.getvalue())["batch"]["task_ids"],
                          ["sources-03", "sources-04", "sources-05"])
 
+    @patch.object(p, "MAX_PARALLEL", 3)
     def test_dispatch_next_prioritizes_bounded_retry_over_new_packets(self):
         for _ in range(3):
             p.dispatch_next(self.run)

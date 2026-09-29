@@ -34,8 +34,10 @@ die Pakete. `tasks` zeigt die offenen Aufträge. Lies außerdem
 
 ## 2. Recherche in parallelen Cron-Batches ausführen
 
-Es dürfen **maximal drei Agenten gleichzeitig** recherchieren. Reserviere die freien
-Plätze mit **einem** Aufruf:
+Nutze die aktuell in Hermes konfigurierte Delegationsgrenze von **zehn
+gleichzeitigen Kind-Agenten**; setze für das Briefing keine niedrigere Grenze.
+Die derzeit sechs Recherche-Aufträge sollen in **einem** Batch starten.
+Reserviere alle verfügbaren Plätze mit **einem** Aufruf:
 
 ```sh
 python3 scripts/research_pipeline.py dispatch-ready --run-dir "$RUN"
@@ -53,10 +55,10 @@ ist kein Rechercheergebnis. Erst wenn alle Kinder des Aufrufs beendet sind,
 führe genau einmal aus:
 
 ```sh
-python3 scripts/research_pipeline.py complete-batch-and-dispatch --run-dir "$RUN" --tasks ID1 ID2 ID3
+python3 scripts/research_pipeline.py complete-batch-and-dispatch --run-dir "$RUN" --tasks ID1 ID2 ID3 ...
 ```
 
-Ersetze `ID1 ID2 ID3` durch **alle** Werte aus `batch.task_ids` in beliebiger
+Ersetze `ID1 ID2 ID3 ...` durch **alle** Werte aus `batch.task_ids` in beliebiger
 Reihenfolge; ein kleinerer letzter Batch hat entsprechend weniger IDs. Der
 Befehl gibt alle bestätigten Aufträge zusammen frei, erzeugt bei fehlenden
 Quellen höchstens einen begrenzten Retry und reserviert die nächste Runde

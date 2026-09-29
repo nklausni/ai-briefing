@@ -31,7 +31,9 @@ TOPICS = (
 )
 PACKET_SIZE = 9
 SEARCH_BUDGET = 35
-MAX_PARALLEL = 3
+# Match the active Hermes delegation.max_concurrent_children limit. This lets
+# every current research packet run in one batch without an additional cap.
+MAX_PARALLEL = 10
 URL_OVERRIDES = {
     "anthropic.com": "https://www.anthropic.com/news",
     "openai.com": "https://openai.com/news/",
@@ -329,7 +331,7 @@ def dispatch(run, task_id):
     with locked(run):
         manifest, task = task_for(run, task_id)
         require(task.get("state", "pending") == "pending", "Task already dispatched; inspect its subagent")
-        require(sum(t.get("state") == "running" for t in manifest["tasks"]) < MAX_PARALLEL, "Three tasks already running; wait for completion")
+        require(sum(t.get("state") == "running" for t in manifest["tasks"]) < MAX_PARALLEL, "Hermes delegation capacity reached; wait for completion")
         require(bool(missing(run, task)), "Task already complete")
         task["state"] = "running"
         task["dispatched_at"] = stamp()
