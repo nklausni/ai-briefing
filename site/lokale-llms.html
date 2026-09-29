@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI-Radar — Lokale LLMs — 24.–28. September 2026</title>
+<title>AI-Radar — Lokale LLMs — 28.–29. September 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -19,13 +19,13 @@
         <div class="sub">Blickwinkel: On-Device- und Open-Weight-Modelle: lokal lauffähig, datenschutz- und kostenrelevant</div>
       </div>
       <div class="meta-right">
-        <nav class="range-sw"><a href="lokale-llms.html" class="active">Heute</a><a href="7d/lokale-llms.html">7 Tage</a><a href="14d/lokale-llms.html">14 Tage</a><a href="30d/lokale-llms.html">30 Tage</a></nav><div class="range-period">24.–28. September 2026</div>
+        <nav class="range-sw"><a href="lokale-llms.html" class="active">Heute</a><a href="7d/lokale-llms.html">7 Tage</a><a href="14d/lokale-llms.html">14 Tage</a><a href="30d/lokale-llms.html">30 Tage</a></nav><div class="range-period">28.–29. September 2026</div>
       </div>
     </div>
   </header>
   <nav class="nav"><a href="index.html">Übersicht</a><a href="ai-news.html">AI News</a><a href="lokale-llms.html" class="active">Lokale LLMs</a><a href="agentic-engineering.html">Agentic Engineering / Vibe Coding</a><a href="ai-tools.html">AI Tools</a><a href="context-engineering.html">Context &amp; Prompt Engineering</a><a href="ai-security.html">AI Security &amp; Safety</a><a href="ai-governance.html">AI Governance &amp; Regulierung</a><a href="enterprise.html">Enterprise &amp; Vertikalisierung</a></nav>
 
-  <p class="lede">NaiveAI öffnet ein sehr großes MoE-Modell; ein llama.cpp-Fork optimiert Drafting, aber nicht nachweislich die gesamte Inferenz.</p>
+  <p class="lede">H Company veröffentlicht zwei Holo4-Agentenmodelle mit GGUF-Gewichten und unterschiedlichen Lizenzgrenzen.</p>
 
   <div class="board">
     <div class="board-left">
@@ -70,28 +70,8 @@
 <text x="400" y="754" class="sector-label" text-anchor="middle" fill="#1f1d1b">Security &amp; Governance</text>
 <text x="96.89" y="579" class="sector-label" text-anchor="end" fill="#1f1d1b">Business &amp; Markt</text>
 <g>
-<circle cx="548.26" cy="485.6" r="13" fill="#1aae39" stroke="#ffffff" stroke-width="2"/>
-<text x="548.26" y="489.6" class="blip-num" text-anchor="middle" fill="#1f1d1b">1</text>
-</g>
-<g>
-<circle cx="598.79" cy="435.05" r="13" fill="#1aae39" stroke="#ffffff" stroke-width="2"/>
-<text x="598.79" y="439.05" class="blip-num" text-anchor="middle" fill="#1f1d1b">2</text>
-</g>
-<g>
-<circle cx="601.59" cy="473.37" r="13" fill="#1aae39" stroke="#ffffff" stroke-width="2"/>
-<text x="601.59" y="477.37" class="blip-num" text-anchor="middle" fill="#1f1d1b">3</text>
-</g>
-<g>
-<circle cx="596.76" cy="513.6" r="13" fill="#1aae39" stroke="#ffffff" stroke-width="2"/>
-<text x="596.76" y="517.6" class="blip-num" text-anchor="middle" fill="#1f1d1b">4</text>
-</g>
-<g>
-<circle cx="583.75" cy="554.19" r="13" fill="#1aae39" stroke="#ffffff" stroke-width="2"/>
-<text x="583.75" y="558.19" class="blip-num" text-anchor="middle" fill="#1f1d1b">5</text>
-</g>
-<g>
-<circle cx="562.33" cy="593.46" r="13" fill="#1aae39" stroke="#ffffff" stroke-width="2"/>
-<text x="562.33" y="597.46" class="blip-num" text-anchor="middle" fill="#1f1d1b">6</text>
+<circle cx="498.38" cy="456.8" r="13" fill="#1aae39" stroke="#ffffff" stroke-width="2"/>
+<text x="498.38" y="460.8" class="blip-num" text-anchor="middle" fill="#1f1d1b">1</text>
 </g>
 </svg>
       </div>
@@ -120,62 +100,17 @@
   <div class="dcard">
     <span class="dnum" style="background:#1aae39;color:#1f1d1b">1</span>
     <div class="dbody">
-      <h3 class="dtitle"><a class="dtitle-link" href="https://huggingface.co/NaiveAI/Naive-N0.5-Flash" target="_blank" rel="noopener">NaiveAI veröffentlicht offenes 309B-MoE Naive-N0.5-Flash mit nativem 1M-Kontext</a></h3>
-      <div class="dmeta"><span class="cat-badge" style="background:#1aae391f;color:#1aae39">Open Weight / Lokal</span><span class="dmeta-src">huggingface.co · 2026-09-27</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
-      <p>NaiveAI hat Naive-N0.5-Flash als MIT-lizenziertes Modell mit 309 Mrd. Gesamt- und 15,5 Mrd. aktiven Parametern veröffentlicht. Laut Modellkarte nutzt es 39 Sliding-Window- und neun Sparse-Attention-Schichten für ein natives Kontextfenster von einer Million Token. Der FP8-Checkpoint benötigt laut Anbieter ungefähr 315 GB GPU-Speicher plus zusätzlichen Inferenzspeicher; nicht für gewöhnliche Heim-GPUs geeignet. Leistungsangaben sind Herstellerwerte.</p>
-      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://huggingface.co/NaiveAI/Naive-N0.5-Flash" target="_blank" rel="noopener">huggingface.co <span class="arw">→</span></a></div>
-    </div>
-  </div>
-  <div class="dcard">
-    <span class="dnum" style="background:#1aae39;color:#1f1d1b">2</span>
-    <div class="dbody">
-      <h3 class="dtitle"><a class="dtitle-link" href="https://jadidbourbaki.github.io/blog/prompt-lookup-llama-cpp/" target="_blank" rel="noopener">llama.cpp-Prototyp beschleunigt Prompt-Lookup-Drafting in eigenem Benchmark</a></h3>
-      <div class="dmeta"><span class="cat-badge" style="background:#1aae391f;color:#1aae39">Open Weight / Lokal</span><span class="dmeta-src">jadidbourbaki.github.io · 2026-09-26</span> · <span class="dots">●●○○○</span> <span class="dmeta-imp">2/5</span></div>
-      <p>Ein Entwickler beschreibt am 26. September Optimierungen am N-Gramm-Cache für Prompt-Lookup-Decoding in llama.cpp. Auf einem M4 Pro fällt nach seinen Benchmarks die Drafting-Latenz im großen Testfall gegenüber der Basis um bis zu 42-fach; Code und Messverfahren sind verlinkt. Es handelt sich um Fork-PRs und einen Drafting-Mikrobenchmark, nicht um einen bereits im Hauptprojekt ausgelieferten 42-fachen End-to-End-Inferenzgewinn.</p>
-      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://jadidbourbaki.github.io/blog/prompt-lookup-llama-cpp/" target="_blank" rel="noopener">jadidbourbaki.github.io <span class="arw">→</span></a></div>
-    </div>
-  </div>
-  <div class="dcard">
-    <span class="dnum" style="background:#1aae39;color:#1f1d1b">3</span>
-    <div class="dbody">
-      <h3 class="dtitle"><a class="dtitle-link" href="https://huggingface.co/blog/cetusian/surogate-speech" target="_blank" rel="noopener">Surogate veröffentlicht kleine rumänische Sprachmodelle mit nichtkommerzieller Lizenz</a></h3>
-      <div class="dmeta"><span class="cat-badge" style="background:#1aae391f;color:#1aae39">Open Weight / Lokal</span><span class="dmeta-src">huggingface.co · 2026-09-25</span> · <span class="dots">●●○○○</span> <span class="dmeta-imp">2/5</span></div>
-      <p>Surogate stellt rumänische Spracherkennungsmodelle mit 116 Millionen Parametern und ein Text-zu-Sprache-Modell mit 357 Millionen Parametern bereit; laut Projekt läuft letzteres auf einer CPU. Die Gewichte sind CC-BY-NC-4.0-lizenziert, Anbieterbenchmarks sind nicht unabhängig geprüft.</p>
-      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://huggingface.co/blog/cetusian/surogate-speech" target="_blank" rel="noopener">huggingface.co <span class="arw">→</span></a></div>
-    </div>
-  </div>
-  <div class="dcard">
-    <span class="dnum" style="background:#1aae39;color:#1f1d1b">4</span>
-    <div class="dbody">
-      <h3 class="dtitle"><a class="dtitle-link" href="https://www.marktechpost.com/2026/09/25/aikido-security-releases-altar-1-an-open-weight-security-model-pruned-from-glm-5-3-to-328-gb/" target="_blank" rel="noopener">Aikido veröffentlicht komprimiertes Open-Weight-Sicherheitsmodell Altar-1</a></h3>
-      <div class="dmeta"><span class="cat-badge" style="background:#1aae391f;color:#1aae39">Open Weight / Lokal</span><span class="dmeta-src">www.marktechpost.com · 2026-09-25</span> · <span class="dots">●●○○○</span> <span class="dmeta-imp">2/5</span></div>
-      <p>Aikido stellt Altar-1 als komprimiertes offenes Sicherheitsmodell für kundeneigene Infrastruktur vor. Laut Bericht belegt es 328 GB und benötigt vier H200-GPUs; Leistungswerte sind Anbieterangaben, nicht unabhängig geprüft.</p>
-      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.marktechpost.com/2026/09/25/aikido-security-releases-altar-1-an-open-weight-security-model-pruned-from-glm-5-3-to-328-gb/" target="_blank" rel="noopener">www.marktechpost.com <span class="arw">→</span></a></div>
-    </div>
-  </div>
-  <div class="dcard">
-    <span class="dnum" style="background:#1aae39;color:#1f1d1b">5</span>
-    <div class="dbody">
-      <h3 class="dtitle"><a class="dtitle-link" href="https://huggingface.co/blog/nepyope/bringing-humanoids-to-lerobot" target="_blank" rel="noopener">LeRobot beschreibt offene Steuerung für humanoide Roboter</a></h3>
-      <div class="dmeta"><span class="cat-badge" style="background:#1aae391f;color:#1aae39">Open Weight / Lokal</span><span class="dmeta-src">huggingface.co · 2026-09-25</span> · <span class="dots">●●○○○</span> <span class="dmeta-imp">2/5</span></div>
-      <p>Ein Community-Beitrag auf Hugging Face erklärt die LeRobot-Integration für Unitree G1: Eine π0.5-Policy erzeugt SONIC-Bewegungstokens aus Sprache, Kamerabild und Roboterzustand; ein schneller Controller setzt sie in 29 Freiheitsgrade um. Demonstrierter Workflow, keine generelle Aussage über autonome Robustheit.</p>
-      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://huggingface.co/blog/nepyope/bringing-humanoids-to-lerobot" target="_blank" rel="noopener">huggingface.co <span class="arw">→</span></a></div>
-    </div>
-  </div>
-  <div class="dcard">
-    <span class="dnum" style="background:#1aae39;color:#1f1d1b">6</span>
-    <div class="dbody">
-      <h3 class="dtitle"><a class="dtitle-link" href="https://www.marktechpost.com/2026/09/24/bottlecap-ai-releases-thinkingcap-qwen3-8-27b-37-2-fewer-thinking-tokens-at-a-0-86pp-accuracy-cost/" target="_blank" rel="noopener">ThinkingCap-Qwen3.8-27B verkürzt Reasoning-Traces bei geringem Genauigkeitsverlust</a></h3>
-      <div class="dmeta"><span class="cat-badge" style="background:#1aae391f;color:#1aae39">Open Weight / Lokal</span><span class="dmeta-src">www.marktechpost.com · 2026-09-24</span> · <span class="dots">●●○○○</span> <span class="dmeta-imp">2/5</span></div>
-      <p>BottleCap meldet für ein Qwen3.8-27B-Finetuning im eigenen Test 37,2 Prozent weniger Denktokens bei 0,86 Prozentpunkten geringerer Genauigkeit. Die Gewichte sind zugangsbeschränkt; kein unabhängig reproduzierter Benchmark.</p>
-      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.marktechpost.com/2026/09/24/bottlecap-ai-releases-thinkingcap-qwen3-8-27b-37-2-fewer-thinking-tokens-at-a-0-86pp-accuracy-cost/" target="_blank" rel="noopener">www.marktechpost.com <span class="arw">→</span></a></div>
+      <h3 class="dtitle"><a class="dtitle-link" href="https://hcompany.ai/newsroom/holo4" target="_blank" rel="noopener">H Company veröffentlicht Holo4-Agentenmodelle mit lokalen GGUF-Varianten</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#1aae391f;color:#1aae39">Open Weight / Lokal</span><span class="dmeta-src">hcompany.ai · 2026-09-28</span> · <span class="dots">●●●●○</span> <span class="dmeta-imp">4/5</span></div>
+      <p>H Company stellt Holo4-27B und Holo4-35B-A3B für Software- und GUI-Aufgaben mit herunterladbaren GGUF-Gewichten vor. Die 27B-Gewichte sind nichtkommerziell (CC BY-NC 4.0), die 35B-A3B-Gewichte Apache 2.0; Benchmarkwerte sind Anbieterangaben.</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://hcompany.ai/newsroom/holo4" target="_blank" rel="noopener">hcompany.ai <span class="arw">→</span></a></div>
     </div>
   </div>
   </div>
 
 
 
-  <div class="footer">Hinweis: Alle Infos auf eigene Gefahr. Dies ist ein privates Projekt, automatisch generiert aus Web-Recherche.<br>Aufbau nach dem Tech-Radar-Prinzip (Ringe = Impact, Segmente = Kategorie). Statischer Export, kein JavaScript. Auswahl per Recherche — keine Gewähr auf Vollständigkeit.<br><span class="footer-updated">Zuletzt aktualisiert: 28. September 2026</span></div>
+  <div class="footer">Hinweis: Alle Infos auf eigene Gefahr. Dies ist ein privates Projekt, automatisch generiert aus Web-Recherche.<br>Aufbau nach dem Tech-Radar-Prinzip (Ringe = Impact, Segmente = Kategorie). Statischer Export, kein JavaScript. Auswahl per Recherche — keine Gewähr auf Vollständigkeit.<br><span class="footer-updated">Zuletzt aktualisiert: 29. September 2026</span></div>
 </div>
 </body>
 </html>
