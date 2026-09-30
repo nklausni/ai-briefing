@@ -1,0 +1,294 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-30",
+  "sources": [
+    {
+      "domain": "simonwillison.net",
+      "name": "Simon Willison",
+      "status": "checked",
+      "checked_url": "https://simonwillison.net/",
+      "result": "Startseite, datierte Beiträge und DevDay-Liveblog gelesen; Sonnet 5.5 bereits in History. Neue Entwicklerfunktionen vom 29.09. belegt; Leistungswerte sind Präsentationsangaben."
+    },
+    {
+      "domain": "testingcatalog.com",
+      "name": "TestingCatalog",
+      "status": "checked",
+      "checked_url": "https://testingcatalog.com/",
+      "result": "Startseite, RSS, reservierte Suche und Originalartikel gelesen. Manus 2.0/Cue und Muse Small Business sind neue Kandidaten; Sonnet 5.5 und Eleven v4 bereits in history.json, Muse-Screen-/Voice-Leak vom 27.09. außerhalb Fenster."
+    },
+    {
+      "domain": "the-decoder.com",
+      "name": "The Decoder",
+      "status": "checked",
+      "checked_url": "https://the-decoder.com/",
+      "result": "Startseite, RSS, reservierte Suche und Originalberichte geprüft. Neue AISI-Simulationsauswertung, Codex/API-Updates und AMD-Übernahmeankündigung verifiziert, letztere zusätzlich AMD und Ars. Sonnet-/ElevenLabs-/Astra-Pause-Meldungen dedupliziert. IPO-Bericht wegen Reuters-Anteilen nicht als Kandidat genutzt."
+    },
+    {
+      "domain": "marktechpost.com",
+      "name": "MarkTechPost",
+      "status": "checked",
+      "checked_url": "https://marktechpost.com/",
+      "result": "Startseite und Suche sowie Originalartikel zu d1, RRSI, Qwen Audio, RSA Agent ID und Ember-1 geprüft. d1 und RRSI mit Primärdokumentation/Repository, Qwen mit Modellseite gegengeprüft. Sonnet/Holo4/OpenShell dedupliziert. Ember-1 trotz Bericht vom 28.09. nicht neu: Herstelleroriginal vom 23.09. RSA-Vorfallangaben nicht unabhängig bestätigt und daher kein Sicherheitsvorfallkandidat; Awards nicht priorisiert."
+    },
+    {
+      "domain": "venturebeat.com",
+      "name": "VentureBeat",
+      "status": "checked",
+      "checked_url": "https://venturebeat.com/",
+      "result": "Startseite und Originalberichte sowie OpenAI-Primärquellen gelesen; drei neue DevDay-Entwicklungen vom 29.09. belegt. Meta-Enterprise und Nvidia-Safety bereits Historie. Direkte HTTP-Zugriffe auf VentureBeat liefern 429, web_extract funktioniert; RSS lieferte veralteten Stand 2023 und wurde nicht als aktuelle Übersicht gewertet."
+    },
+    {
+      "domain": "anthropic.com",
+      "name": "Anthropic",
+      "status": "checked",
+      "checked_url": "https://www.anthropic.com/news",
+      "result": "Newsroom und Original-FRT-Analyse vom 29.09. gelesen. Sonnet 5.5 dedupliziert. Cyberfähigkeiten mit unabhängiger CAISI/NIST-Bewertung vom 17.09. und GIGAZINE-Bericht vom 30.09. gegengeprüft; letztere bestätigen nicht unabhängig alle einzelnen Labortests."
+    },
+    {
+      "domain": "openai.com",
+      "name": "OpenAI",
+      "status": "checked",
+      "checked_url": "https://openai.com/news/",
+      "result": "Nachrichtenübersicht, datierte Suche, DevDay-Recap, Dots-Original und Sicherheitsdesign, GPT-6.1-Sol-Original und Entwicklerdocs geprüft; direkte HTTP-403 über web_extract überwunden. Sechs Kandidaten mit Originalen und bei Modell-/Sicherheitsclaims unabhängigen Belegen. Australien und Frontier-Training vom 28.09. bereits in history.json. Lenfest nur als stark verkürzter Seitenextrakt abrufbar und ohne belastbare Detailaussage nicht aufgenommen. Weitere DevDay-Einzelpunkte sind im Recap dokumentiert, nicht als vollständig separat verifizierte Kandidaten ausgegeben."
+    },
+    {
+      "domain": "openrouter.ai",
+      "name": "OpenRouter Blog",
+      "status": "checked",
+      "checked_url": "https://openrouter.ai/blog/",
+      "result": "Blogübersicht, reservierte Suche und vier Originalbeiträge gelesen: drei neue Evaluations-Tutorials vom 30.09. und Image-to-Video-Vergleich vom 29.09. Keine neue Ori-Eval-Produkteinführung; Ori Eval bereits im August vorgestellt."
+    },
+    {
+      "domain": "blog.google",
+      "name": "Google AI Blog",
+      "status": "checked",
+      "checked_url": "https://blog.google/innovation-and-ai/",
+      "result": "Übersicht Innovation & AI sowie datierte Suche 28.–30.09.2026 geprüft; zwei Originalmeldungen gelesen. Community-Beispiele zu Gemini 3.8 Flash sind kein neuer Modellstart."
+    },
+    {
+      "domain": "microsoft.ai",
+      "name": "Microsoft AI",
+      "status": "checked",
+      "checked_url": "https://microsoft.ai/news/",
+      "result": "Zwei Suchen sowie news/blog über web_extract geprüft. Direkte HTTP-Abrufe von Übersicht, Feed und Artikel liefern 403; web_extract erschließt die Blogliste und Code-of-Conduct-Original vom 14.09.2026 (außerhalb Fenster). Keine verifizierte Veröffentlichung 28.–30.09.2026 gefunden. Einschränkung: news-Liste ist teilweise älter als blog-Liste, Extraktor liefert beim Original nur begrenzten Text; keine Vollständigkeitsgarantie."
+    },
+    {
+      "domain": "arxiv.org",
+      "name": "arXiv",
+      "status": "checked",
+      "checked_url": "https://arxiv.org/list/cs.AI/recent",
+      "result": "cs.AI/recent und datierte Suche geprüft. Drei Preprints mit Submission 29.09.2026 anhand Abstract und vollständiger HTML-Fassung gelesen; kein Peer-Review oder unabhängige Replikation behauptet. Thematische Auswahl, kein vollständiges Review sämtlicher Einreichungen."
+    },
+    {
+      "domain": "llm-stats.com",
+      "name": "LLM Stats",
+      "status": "checked",
+      "checked_url": "https://llm-stats.com/",
+      "result": "Leaderboard und /ai-news direkt abgerufen; der Newsfeed enthält Aggregationen, GPT-6.1 Sol (29.09.) separat bei VentureBeat belegt und Sonnet 5.5 bereits Historie. Harness-Paper 2609.35873 direkt geprüft: eingereicht 26.09.2026, trotz Feed-Datum 30.09. außerhalb Fenster. Keine zusätzliche eigenständige belegte Meldung."
+    },
+    {
+      "domain": "ollama.com",
+      "name": "Ollama",
+      "status": "checked",
+      "checked_url": "https://ollama.com/blog",
+      "result": "Blogübersicht, Originalankündigung vom 29.09. und Tev1-Modellseite gelesen. Neues lokales Decision-API-Release; Latenzwerte ausschließlich Herstellerdemo."
+    },
+    {
+      "domain": "huggingface.co",
+      "name": "Hugging Face",
+      "status": "checked",
+      "checked_url": "https://huggingface.co/blog",
+      "result": "Blogübersicht, beide Team-/Enterprise-Originalbeiträge vom 29.09. gelesen; Holo4 vom 28.09. dedupliziert. Keine pauschale unabhängige Benchmark- oder Sicherheitsgarantie. ProvenanceGuard ist ein neuer Praxisbericht zu bereits älterer Forschung, nicht neu datiertes Paper."
+    },
+    {
+      "domain": "techcrunch.com",
+      "name": "TechCrunch",
+      "status": "checked",
+      "checked_url": "https://techcrunch.com/category/artificial-intelligence/",
+      "result": "KI-Übersicht, reservierte Suche und fünf aktuelle Originalberichte gelesen, Veröffentlichungstage verifiziert und history.json dedupliziert. Neue GPT-6.1-Sol-, Dots-, Marketplace-/Login- und Muse-Small-Business-Meldungen; Australien-Vorfall und Sonnet bereits bekannt."
+    },
+    {
+      "domain": "theverge.com",
+      "name": "The Verge",
+      "status": "checked",
+      "checked_url": "https://www.theverge.com/ai-artificial-intelligence",
+      "result": "KI-Übersicht und Originalartikel zu Dots sowie Executive Order gelesen. Dots-Launch durch Willisons Vor-Ort-Liveblog gegengeprüft; separate Governance-Meldung wird bei CNBC erfasst."
+    },
+    {
+      "domain": "heise.de",
+      "name": "heise online",
+      "status": "checked",
+      "checked_url": "https://www.heise.de/thema/Kuenstliche-Intelligenz",
+      "result": "Themenübersicht und datierte Originalartikel geprüft; drei belegte neue Kandidaten mit Primärgegenprüfung. Okta-Allianz hat Originaldatum 22.09. und bleibt außerhalb Fenster. Anthropic-IPO-Zahlen beruhen tragend auf Reuters und wurden ausgeschlossen. Sonnet, Nvidia-Safety und Mistral-Hub sind bereits Historie."
+    },
+    {
+      "domain": "arstechnica.com",
+      "name": "Ars Technica",
+      "status": "checked",
+      "checked_url": "https://arstechnica.com/ai/",
+      "result": "KI-Übersicht, RSS, reservierte Suche und Artikel gelesen. Neue World-Labs-Übernahmeankündigung und Florida-Antrag; AMD-Ankündigung sowie unabhängiger Decoder-Bericht als zusätzliche Belege. Australien-Vorfall/Astra-Verschiebung bereits in history; IPO-Finanzzahlen mit Reuters-Ursprung ausgeschlossen."
+    },
+    {
+      "domain": "computerworld.com",
+      "name": "Computerworld",
+      "status": "checked",
+      "checked_url": "https://computerworld.com/",
+      "result": "Startseite und datierte Suche geprüft. Manus 2.0 als neue Meldung mit Hersteller-Original verifiziert; Drive Projects ist ein aktueller How-to zu einer bestehenden Funktion, kein nachgewiesener Launch. Meta-Enterprise-Bericht wiederholt historische Meldung, Meinungsartikel liefern keinen neuen Produktstart."
+    },
+    {
+      "domain": "cnbc.com",
+      "name": "CNBC",
+      "status": "checked",
+      "checked_url": "https://cnbc.com/",
+      "result": "Startseite, Zeitfenster-Suche und Originalbericht vom 29.09. gelesen; Executive-Order-Bericht unabhängig mit The Verge gegengeprüft. Frühere Astra-/Khanna-/Samsung-Meldungen sind in History enthalten."
+    },
+    {
+      "domain": "github.blog",
+      "name": "GitHub Blog",
+      "status": "checked",
+      "checked_url": "https://github.blog/changelog/",
+      "result": "Changelog und datierte Suche für 28.–30.09. geprüft. GPT-6.1 Sol ist neu; Sonnet-5.5-Verfügbarkeit vom 28.09. bereits in history.json. Übrige Änderungen betreffen Runner und Repository-Metadaten, keine neue KI-Meldung."
+    },
+    {
+      "domain": "thenewstack.io",
+      "name": "The New Stack",
+      "status": "checked",
+      "checked_url": "https://thenewstack.io/",
+      "result": "Übersicht und datierte Suche sowie Originalartikel zu Pro-Tarifen, Sonnet-Cyber-Fallbacks, Simple Jev, MCP-Feldrechten, Retrieval und Dots gelesen. Drei eigenständige Kandidaten; Dots dient als unabhängiger OpenAI-Beleg. Cloudflare/Meta/NVIDIA bereits in history.json; Retrieval ist gesponserte Webinar-Werbung, MCP/GraphQL ein Vendor-Gastkommentar ohne neuen Release."
+    },
+    {
+      "domain": "semianalysis.com",
+      "name": "SemiAnalysis",
+      "status": "checked",
+      "checked_url": "https://semianalysis.com/",
+      "result": "Hauptseite, Newsletter-Archiv, vollständiger RSS-Feed und Originalartikel geprüft. Neuester datierter Beitrag vom 28.09. (Sparse Savings / GLM-5.3) ist bereits in History vom 29.09. enthalten. Keine zusätzliche eigenständige Meldung im Zeitraum bis 30.09. gefunden."
+    },
+    {
+      "domain": "embracethered.com",
+      "name": "Embrace The Red",
+      "status": "checked",
+      "checked_url": "https://embracethered.com/",
+      "result": "Archiv und RSS direkt abgerufen; jüngster Beitrag 26.08.2026. Datumsbezogene Suche ergab nur ältere Beiträge; keine neue Meldung vom 28.–30.09.2026."
+    },
+    {
+      "domain": "importai.substack.com",
+      "name": "Import AI",
+      "status": "checked",
+      "checked_url": "https://importai.substack.com/archive",
+      "result": "Archiv und vollständige Ausgabe 474 vom 28.09. gelesen. Kernthemen: spekulative Platonic-mindspace-These, Robotik-Posttraining, Project Suncatcher, GLM-Infrastruktur und Periodic Neon. Die überprüften Primärbeiträge zu GLM (17.09.) und Periodic Neon (15.09.) liegen vor dem Fenster; Suncatcher ist bereits am 24.09. in history.json. Kein verifizierter neuer Produkt-/Forschungsstart im Fenster; philosophische Thesen und Tech-Tales-Fiktion nicht als Nachrichten übernommen. Volltexte und URLs im Worker-Cache."
+    },
+    {
+      "domain": "interconnects.ai",
+      "name": "Interconnects",
+      "status": "checked",
+      "checked_url": "https://interconnects.ai/feed",
+      "result": "RSS-Feed (lastBuildDate 30.09.2026) und gezielte Suche geprüft. Neuester Feed-Artikel vom 22.09.2026; keine neue Veröffentlichung im Zeitfenster 28.–30.09.2026."
+    },
+    {
+      "domain": "latentspace.com",
+      "name": "Latent Space",
+      "status": "checked",
+      "checked_url": "https://latentspace.com/",
+      "result": "Assignment-Domain latentspace.com ist Richard Müllers Kunstseite, nicht der KI-Podcast. Identifier unverändert erhalten; tatsächliche Quelle latent.space separat durch reservierte Suche, Startseite, RSS und Originale geprüft. Neuer Interview-Kandidat vom 29.09.; Mods/Projects werden ausdrücklich nicht als erstmalige heutige Releases ausgegeben. DevDay-Roundup vom 30.09. dient Zusatzbeleg; keine Registeränderung."
+    },
+    {
+      "domain": "chinatalk.media",
+      "name": "ChinaTalk",
+      "status": "checked",
+      "checked_url": "https://chinatalk.media/feed",
+      "result": "Startseite, RSS und zwei reservierte Suchanfragen geprüft. Einziger Feedbeitrag im Fenster: Xizus vom 29.09., satirischer Paid-Beitrag mit kurzem frei zugänglichem Text, keine verifizierte KI-Entwicklung. ModelTalk stammt vom 15.09. und ist ausgeschlossen."
+    },
+    {
+      "domain": "artificialanalysis.ai",
+      "name": "Artificial Analysis",
+      "status": "checked",
+      "checked_url": "https://artificialanalysis.ai/",
+      "result": "Startseite, datierte Suche und neue Artikel geprüft. Drei neue Entwicklungen im Fenster; Sonnet-5.5-Analyse vom 28.09. als Duplikat ausgeschlossen. Cyber-Index-Veröffentlichungsdatum im Original ist 28.09., während Startseiten-Changelog abweichend 25.09. nennt; datiertes Original und unabhängiger Bericht stimmen auf 28.09. überein."
+    },
+    {
+      "domain": "ai.meta.com",
+      "name": "Meta AI",
+      "status": "checked",
+      "checked_url": "https://ai.meta.com/blog/",
+      "result": "Blogübersicht per web_extract und direktem Abruf sowie zwei Suchstrategien geprüft. Sichtbare jüngste Blogbeiträge Juli 2026; kein datierter Beitrag 28.–30.09.2026 gefunden. Meta Enterprise Platform ist bereits in history.json enthalten und wird nicht wiederholt."
+    },
+    {
+      "domain": "mistral.ai",
+      "name": "Mistral",
+      "status": "checked",
+      "checked_url": "https://mistral.ai/news/",
+      "result": "Übersicht, RSS und Original Hallo, Deutschland! vom 28.09.2026 gelesen. Münchner Hub bereits in history.json vom 29.09.2026, daher dedupliziert; kein weiterer Beitrag im Fenster."
+    },
+    {
+      "domain": "x.ai",
+      "name": "xAI",
+      "status": "checked",
+      "checked_url": "https://x.ai/news/",
+      "result": "Nachrichtenübersicht über web_extract nach direktem HTTP-403 geprüft; Team Bots vom 28.09. als einziges Original im Zeitfenster gelesen, aber bereits identisch in history.json. Kunden-Support vom 22.09. und Voice Transcribe vom 18.09. außerhalb des Fensters. Keine zusätzliche neue Meldung."
+    },
+    {
+      "domain": "openclaw.ai",
+      "name": "OpenClaw Blog",
+      "status": "checked",
+      "checked_url": "https://openclaw.ai/blog/",
+      "result": "Leere datierte Suche durch erfolgreichen Abruf der Blogübersicht und des neuen Originals ergänzt. Red Hat bestätigt das gemeinsame Control-Plane-Projekt. Sicherheitsmerkmale als Architekturziele, nicht als belegte Schutzwirkung dargestellt."
+    },
+    {
+      "domain": "shopify.engineering",
+      "name": "Shopify Engineering",
+      "status": "checked",
+      "checked_url": "https://shopify.engineering/",
+      "result": "Startseite und /latest direkt geprüft; jüngster Beitrag Helix vom 21.09.2026. Zwei gezielte Suchen bestätigen keine neue Veröffentlichung im Fenster 28.–30.09.2026."
+    },
+    {
+      "domain": "technologyreview.com",
+      "name": "MIT Technology Review",
+      "status": "checked",
+      "checked_url": "https://technologyreview.com/",
+      "result": "Startseite und Suche geprüft; Original zur Agentenhaftung vom 28.09.2026 vollständig direkt gelesen. Unabhängiger METR-Regulationsleitfaden als Gegenprüfung gelesen: RAISE/Illinois gelten erst 2027, Auditpflicht Illinois ab 2028. Bereits historische Meldung zur Biologie-Entdeckung ausgeschlossen, Download-Digest nicht als neue Primärmeldung genutzt. Keine pauschale Darstellung sämtlicher Gesetze als schon wirksam."
+    },
+    {
+      "domain": "cohere.com",
+      "name": "Cohere",
+      "status": "checked",
+      "checked_url": "https://cohere.com/blog",
+      "result": "Blogübersicht und zwei reservierte Suchanfragen geprüft: neuester gelisteter Beitrag Compass Cloud vom 25.09.2026 liegt vor dem Fenster 28.–30.09.; keine neue verifizierte Meldung. Optionaler Feed /feed liefert 404, Blog erreichbar."
+    },
+    {
+      "domain": "qwenlm.github.io",
+      "name": "Qwen",
+      "status": "checked",
+      "checked_url": "https://qwenlm.github.io/",
+      "result": "Archiv-Startseite und zwei unterschiedliche Suchen geprüft: neuester sichtbarer Blogeintrag 23.09.2025, keine datierte Meldung 28.–30.09.2026. Das Archiv verweist auf qwen.ai/blog; dieses liefert direkt nur eine JavaScript-Hülle, web_extract kann keine Inhalte extrahieren. Aussage beschränkt sich auf verifizierbares Archiv, keine Behauptung über vollständige aktuelle Qwen-Veröffentlichungen."
+    },
+    {
+      "domain": "aws.amazon.com",
+      "name": "AWS Machine Learning",
+      "status": "checked",
+      "checked_url": "https://aws.amazon.com/blogs/machine-learning/",
+      "result": "Blogübersicht einschließlich Seite 2 und datierte Suche 28.–30.09.2026 geprüft. Vier Modell-/Region-Ankündigungen und zwei vLLM-Omni-Tutorials im Original gelesen. Sonnet 5.5 auf AWS ist bereits in history.json und wurde nicht erneut nominiert; weitere Prompt-/Kunden-Tutorials unterhalb der Auswahlpriorität."
+    },
+    {
+      "domain": "deepmind.google",
+      "name": "Google DeepMind",
+      "status": "checked",
+      "checked_url": "https://deepmind.google/discover/blog/",
+      "result": "Nachrichtenübersicht, datumsbezogene und breitere Suche sowie Originale geprüft: Private-AI-Memory 23.09.2026 und Gemini 3.8 Flash 02.09.2026 außerhalb Fenster. Gemmaverse/Living Models ohne verifizierbares Veröffentlichungsdatum, daher nicht aufgenommen. Kein verifiziert datierter neuer Kandidat 28.–30.09.2026."
+    },
+    {
+      "domain": "research.google",
+      "name": "Google Research",
+      "status": "checked",
+      "checked_url": "https://research.google/blog/",
+      "result": "Blogübersicht und datierte Suche geprüft; ein neuer Forschungsbeitrag vom 29.09. im Fenster."
+    },
+    {
+      "domain": "nist.gov",
+      "name": "NIST AI",
+      "status": "checked",
+      "checked_url": "https://www.nist.gov/artificial-intelligence",
+      "result": "KI-Themenseite, Nachrichtenübersicht und zwei reservierte Suchanfragen geprüft. Neue Fachpublikation vom 28.09. mit standardisiertem AI-ready Zellmessdatensatz verifiziert; keine neue allgemeine Frontier-/Governance-Ankündigung gefunden."
+    }
+  ],
+  "registry_version": 2
+}
