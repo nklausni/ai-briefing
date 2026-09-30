@@ -14,7 +14,10 @@ werden. Historische Briefing-Einträge bleiben unverändert.
 
 ## Recherche und Suchbudget
 
-1. Lies `root/data/history.json` zur Deduplizierung. Das Zeitfenster jeder Quelle
+1. Nutze `python3 ROOT/scripts/editor_context.py history --run-dir RUN --query 'BEGRIFF'`
+   für passende Historien-Einträge zur Deduplizierung; paginiere bei weiteren Treffern.
+   Die vollständige Historie bleibt in `root/data/history.json` erhalten.
+   Das Zeitfenster jeder Quelle
    steht unter `since` bis zum Assignment-Datum einschließlich. Es enthält
    Nachholtage nach fehlgeschlagenen Läufen; beschränke es nicht auf gestern.
 2. Prüfe die Nachrichtenübersicht, gegebenenfalls den RSS-/Atom-Feed, und suche
@@ -36,6 +39,9 @@ werden. Historische Briefing-Einträge bleiben unverändert.
 5. Ein Feed dient der Entdeckung und liefert Datum und Links; lese für die Aufnahme
    den Originalartikel, falls der Feed die tragenden Aussagen nicht selbst enthält.
    Cache tatsächlich abgerufene Inhalte unter deinem Arbeitsordner mit URL und Zeit.
+   Speichere JSON-Caches mit `url`, `retrieved_at` und `text`, damit der Schlussredakteur
+   Textfenster daraus laden kann. Lies Aussagen und Datumsstellen in gezielten
+   Ausschnitten; ganze Cache-Dateien werden nicht als Terminalausgabe wiederholt.
    Ein Abruffehler beendet nur den betreffenden Abruf. Nutze einen anderen sinnvollen
    Zugangsweg. Keine identischen erfolglosen Wiederholungen. Nach erschöpften sinnvollen
    Wegen erhält die Quelle `unavailable` mit Ursache. Budget-/Agentenabbruch ist dagegen

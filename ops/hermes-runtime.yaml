@@ -1,0 +1,9 @@
+# Merge these keys into /opt/data/config.yaml; preserve all other settings.
+# These persistent Hermes DEFAULT-profile settings also apply to its other jobs.
+# Network/terminal-specific deadlines and per-agent search budgets stay unchanged.
+delegation:
+  max_concurrent_children: 10
+timeouts:
+  tools:
+    sequential_call: 1800
+    concurrent_batch: 1800

@@ -10,8 +10,8 @@ und Audits werden nicht rückwirkend gelöscht.
 
 ## 1. Lauf vorbereiten
 
-Ermittle das Datum in `Europe/Berlin`. Prüfe Git-Status, führe `git pull --ff-only origin
-main` aus und lies README, `data/briefing.json` und `data/history.json`. Erhalte vorhandene
+Ermittle das Datum in `Europe/Berlin`. Prüfe Git-Status und führe `git pull --ff-only origin
+main` aus. Erhalte vorhandene
 uncommittete Änderungen; stage später ausschließlich freigegebene Daten/Generatorausgaben.
 Bei Konflikt oder fremden Änderungen an den zu bearbeitenden Daten stoppe mit konkreter
 Fehlermeldung. Arbeitsunterlagen/Skripte werden vom Briefing-Job nicht bearbeitet.
@@ -21,7 +21,15 @@ Verwende `RUN=/opt/data/ai-briefing-research/YYYY-MM-DD`:
 ```sh
 python3 scripts/research_pipeline.py prepare --run-dir "$RUN"
 python3 scripts/research_pipeline.py tasks --run-dir "$RUN"
+python3 scripts/editor_context.py overview --run-dir "$RUN"
 ```
+
+`overview` liefert Metadaten und die acht Themen-IDs. Die vollständigen Daten und
+Volltexte bleiben in den Dateien; lies gezielte Datensätze über `editor_context.py`.
+Nutze kompakte Kommandoausgaben statt kompletter Historien-, Kandidaten-, Cache-
+oder Skript-Dumps. Bei einem konkreten Implementierungsfehler lies nur die betroffene
+Funktion. Jeder Kontextabruf ist auf 12.000 Zeichen begrenzt; `next_offset` zeigt
+die Fortsetzung. Bei gekürzten Feldern lade den betreffenden Datensatz gezielt nach.
 
 Existiert für diesen Tag bereits `publication.json`, verwende für eine ausdrücklich
 beauftragte weitere Tagesaktualisierung ein neues RUN mit Uhrzeit-Suffix. So werden
@@ -51,7 +59,9 @@ Kinder **innerhalb desselben Aufrufs parallel**. Getrennte Aufrufe würden hier
 nacheinander laufen und freie Plätze trotz Reservierung ungenutzt lassen.
 
 Warte auf das tatsächliche Ergebnis des ganzen Batches; eine Startbestätigung
-ist kein Rechercheergebnis. Erst wenn alle Kinder des Aufrufs beendet sind,
+ist kein Rechercheergebnis. Während dieses Wartens bleibt die Schlussredaktion
+ausgesetzt; die Worker besitzen ihre Quellen und Belegdateien.
+Erst wenn alle Kinder des Aufrufs beendet sind,
 führe genau einmal aus:
 
 ```sh
@@ -73,6 +83,15 @@ unvollständige Recherche ohnehin. Bei Wiederaufnahme vergleiche registrierte
 laufende Aufträge mit der tatsächlichen Hermes-Agentenliste und den
 Checkpoints, bevor du einen verwaisten Auftrag als beendet meldest.
 
+Ein `delegate_task`-Tool-Timeout ist **kein** Beleg für das Ende seiner Kinder.
+Prüfe mit `delegate_task(action="list")` und gegebenenfalls `action="status"`
+die tatsächlich zu diesem Batch gehörenden Agenten. Beende oder wiederhole einen
+Auftrag erst, wenn seine Kinder terminal sind. Ein echter Ablauf der 30-Minuten-
+Werkzeugfrist wird als unvollständiger Lauf gemeldet; noch laufende zugehörige Kinder
+werden kontrolliert mit `action="stop"` beendet, Checkpoints bleiben erhalten.
+Starte bei Timeout weder einen zweiten identischen Batch noch Ersatzrecherche im
+Hauptagenten. Der persistente Runtime-Check ist in `ops/hermes-runtime.md` beschrieben.
+
 Bearbeite alle Quellenpakete und den zusätzlichen Auftrag `discovery`. Subagenten
 schreiben jeweils eigene Dateien und atomare Quellen-Checkpoints; nur du bearbeitest
 das Briefing. Bereits abgeschlossene Quellen bleiben bei einem Retry erhalten.
@@ -87,17 +106,51 @@ python3 scripts/research_pipeline.py assemble --run-dir "$RUN"
 
 Exit-Code 0 ist erforderlich. Dieser Schritt erzwingt die vollständige aktuelle
 Pflichtliste und die abgeschlossene offene Suche, erzeugt das Tagesaudit und führt
-`RUN/candidates.json` mit den belegten Kandidaten zusammen. Lies alle Kandidaten samt
-Belegen; die kurzen Subagenten-Abschlussnachrichten reichen nicht als Grundlage.
+`RUN/candidates.json` mit den belegten Kandidaten zusammen. Lies alle Kandidaten
+paginiert, beginnend mit:
+
+```sh
+python3 scripts/editor_context.py candidates --run-dir "$RUN" --offset 0
+```
+
+Lade die nächste Seite ausschließlich mit dem ausgegebenen `next_offset`, bis dieser
+`null` ist. Kein Kandidat wird wegen der Kontextgrenze verworfen. Die kurzen
+Subagenten-Abschlussnachrichten reichen nicht als Grundlage.
 Nenne nicht erreichbare Quellen als Einschränkung. `checked` bedeutet geprüft, nicht
 zwingend eine neue Meldung. Ein technischer Abbruch zählt nicht als erfolgreiche Prüfung.
 
 ## 4. Schlussredaktion und Gegenprüfung
 
-Vergleiche alle Kandidaten mit `data/history.json` und miteinander. Bewerte sachlich,
-verifiziere Originaldatum und tragende Aussagen, und prüfe bei besonders wichtigen oder
-widersprüchlichen Meldungen zusätzliche unabhängige Originalbelege. Nutze dafür zuerst
-die gelieferten Volltexte. Für eigene `web_search`-Nachprüfungen bleibe bei höchstens
+Bewerte jeden Kandidaten in der kompakten Übersicht. Für mögliche Aufnahmen,
+Duplikate oder offene Aussagen prüfe die gezielten Belegdetails mit:
+
+```sh
+python3 scripts/editor_context.py candidate --run-dir "$RUN" --id KANDIDAT_ID
+```
+
+Auch dessen Belegliste ist paginiert: bis `next_offset=null` fortsetzen. Die automatisch
+gezeigten Historien-Treffer sind URL-/Titel-Treffer, keine abschließende semantische
+Deduplizierung. Für inhaltlich verwandte Altmeldungen nutze `history --query 'BEGRIFF'`
+und dessen Seiten. Bei `summary_truncated` lies nur das Summary-Feld dieses Kandidaten
+aus `candidates.json`, nicht die ganze Datei.
+
+Verifiziere Originaldatum und tragende Aussagen anhand der Originalbelege. Bei einer
+offenen Frage lies das passende Textfenster statt den ganzen Artikel:
+
+```sh
+python3 scripts/editor_context.py evidence --run-dir "$RUN" --id KANDIDAT_ID --evidence-index 0 --query 'ORIGINALBEGRIFF'
+```
+
+`source=cached_article` nutzt den gespeicherten Volltext. `source=stored_excerpt`
+ist nur die dokumentierte Originaltextstelle; fehlt dort der nötige Beleg, öffne
+gezielt diese eine Original-URL. Weitere Textfenster sind über `--offset` verfügbar;
+die vollständigen Daten bleiben unverändert. Neue Abrufe speichere in
+`RUN/editor-cache/` als JSON mit `url` und `text`. Bereits passende Cache-Belege
+werden wiederverwendet. Ein vollständiger zweiter Review aller Kandidaten ist kein
+Routine-Schritt: zusätzlicher Recherchebedarf betrifft konkrete offene Aussagen.
+
+Bewerte sachlich und prüfe bei besonders wichtigen oder widersprüchlichen Meldungen
+zusätzliche unabhängige Originalbelege. Für eigene `web_search`-Nachprüfungen bleibe bei höchstens
 20 Aufrufen; umfangreichere offene Fragen werden transparent als unbestätigt zurückgestellt.
 Herstellerbehauptungen müssen als solche erkennbar sein.
 

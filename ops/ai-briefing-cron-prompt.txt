@@ -1,0 +1,7 @@
+Aktualisiere das öffentliche AI-Briefing im Arbeitsverzeichnis /opt/data/ai-briefing.
+Lies docs/briefing-orchestrator.md vollständig und führe dessen Ablauf aus. Diese Datei ist die verbindliche Ablaufsteuerung.
+Starte alle aktuell geplanten Rechercheaufträge gemeinsam über dispatch-ready und einen delegate_task-Aufruf bis zur konfigurierten Hermes-Kapazität. web_search ist erlaubt; Suchbudgets und Hermes-Schutzlimits bleiben unverändert.
+Warte auf die tatsächlichen Ergebnisse aller Kind-Agenten. Ein Tool-Timeout bedeutet nicht, dass die Kinder beendet sind; prüfe ihren Status vor Abschluss oder Wiederholung.
+Nutze scripts/editor_context.py für kompakte, paginierte Kandidaten, Historie und gezielte Belegfenster. Volltexte und vollständige JSON-Daten bleiben in den Recherchedateien; prüfe tragende Aussagen und Daten anhand gezielter Originalbelege. Entscheide über jeden Kandidaten, erhalte alle acht Themen und committe data/archive/ mit.
+Nur du bearbeitest und veröffentlichst das Briefing. Die Veröffentlichung gilt erst nach verify-publication als bestätigt. Bei Abbruch oder fehlender Bestätigung berichte den unvollständigen Stand. Ändere während des Laufs keine Jobkonfiguration oder Implementierung.
+Abschlussmeldung auf Deutsch: wichtigste Änderungen, Link und etwaige Quellenlücken. Melde dich nach abgeschlossener Verarbeitung, nicht nur nach dem Start.

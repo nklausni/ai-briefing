@@ -192,6 +192,13 @@ unterscheidbar.
 
 ## Veröffentlichung
 
+Der Hermes-Cron-Laufzeitvertrag und seine Deployment-Abnahme stehen in
+[`ops/hermes-runtime.md`](ops/hermes-runtime.md). Der versionierte Cron-Prompt,
+zehn Delegationsplätze und persistente 30-Minuten-Tool-Fristen werden mit
+`scripts/check_hermes_runtime.py` auf dem VPS geprüft. Die Schlussredaktion nutzt
+`scripts/editor_context.py` für paginierte Kandidaten und gezielte Originalbelege;
+vollständige Recherche-Dateien und die bestehenden Qualitätsprüfungen bleiben erhalten.
+
 Der Workflow `.github/workflows/pages.yml` veröffentlicht bei Änderungen unter `site/`
 die statische Seite über GitHub Pages. Lokal genügt das Öffnen von `site/index.html` im
 Browser.
