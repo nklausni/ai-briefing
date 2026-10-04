@@ -2,289 +2,6 @@
  "items": [
   {
    "topic_id": "ai-news",
-   "title": "Anthropic warnt vor Infostealer-Malware, die aktive Claude-Sitzungen entführt",
-   "category": "security",
-   "impact": 4,
-   "date": "2026-08-30",
-   "summary": "Anthropic meldet, dass verbreitete Infostealer-Schadsoftware wie Vidar, LummaC2, StealC, RedLine und Acreed unter Windows sowie Atomic Stealer auf einigen Macs aktive Browser-Sitzungen von Claude stiehlt und Angreifern damit Zugriff auf fremde Accounts verschafft - ganz ohne Passwort oder Zwei-Faktor-Code. Das Unternehmen meldet betroffene Nutzer ab, entfernt hinterlegte Zahlungsmethoden und erstattet unautorisierte Kosten; es betont zugleich, dass die Malware nicht über Claude selbst verbreitet wird. Wer sich erneut auf einem infizierten Rechner einloggt, riskiert, dass die Sitzung sofort wieder gestohlen wird.",
-   "sources": [
-    {
-     "label": "BleepingComputer",
-     "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-warns-infostealer-malware-is-hijacking-claude-sessions-to-drain-usage/"
-    },
-    {
-     "label": "Search Engine Journal",
-     "url": "https://www.searchenginejournal.com/anthropic-warns-hackers-are-stealing-claude-sessions-to-hijack-accounts/587566/"
-    }
-   ],
-   "first_seen": "2026-08-31"
-  },
-  {
-   "topic_id": "ai-news",
-   "title": "Anthropics Claude-Code-„Erhöhung\" der Nutzungsgrenzen ist netto eine 17-Prozent-Kürzung",
-   "category": "tools",
-   "impact": 3,
-   "date": "2026-08-30",
-   "summary": "Anthropic hatte eine „dauerhafte Erhöhung\" der wöchentlichen Nutzungsgrenzen von Claude Code um 25 Prozent ab dem 14. September angekündigt, musste den Beitrag aber nach Kritik löschen: Da die aktuell laufende temporäre 50-Prozent-Erhöhung zum selben Termin endet, sinken die Limits gegenüber dem heutigen Stand netto um 17 Prozent. Für Teams, die ihr Budget an den bestehenden Grenzen ausgerichtet haben, lohnt sich ein Blick auf die eigene Nutzung vor dem Stichtag.",
-   "sources": [
-    {
-     "label": "BleepingComputer",
-     "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-is-cutting-claude-codes-current-weekly-limits-by-17-percent/"
-    },
-    {
-     "label": "The Decoder",
-     "url": "https://the-decoder.com/anthropics-claude-code-limit-change-is-a-raise-on-paper-but-a-cut-in-practice/"
-    }
-   ],
-   "first_seen": "2026-08-31"
-  },
-  {
-   "topic_id": "ai-news",
-   "title": "SpaceX baut geheime Turbinenschaufel-Gießerei gegen den Strommangel bei KI-Rechenzentren",
-   "category": "business",
-   "impact": 3,
-   "date": "2026-08-30",
-   "summary": "Elon Musk hat bestätigt, dass SpaceX eine eigene Gießerei für Gasturbinenschaufeln in Bastrop, Texas, aufbaut, um den Engpass bei Turbinen für KI-Rechenzentren zu umgehen - aktuell stellen weltweit nur vier Firmen solche Einkristall-Schaufeln in Serie her, alle sind ausverkauft, GE Vernova ist bis 2030 ausgebucht. Der Schritt könnte laut Musk den Bau neuer Gasturbinen-Kapazität um bis zu 18 Monate beschleunigen, wirft aber zugleich neue Fragen zur Luftverschmutzung durch gasbetriebene Rechenzentren auf, wie eine Studie des Piedmont Environmental Council zu Anlagen in Virginia zeigt.",
-   "sources": [
-    {
-     "label": "TechCrunch",
-     "url": "https://techcrunch.com/2026/08/30/musks-faster-path-to-more-gas-turbines-comes-with-pollution-problem/"
-    },
-    {
-     "label": "The Information",
-     "url": "http://theinformation.com/newsletters/ai-infrastructure/exclusive-spacex-lays-groundwork-turbine-blade-factory-solve-data-center-power-crunch"
-    }
-   ],
-   "first_seen": "2026-08-31"
-  },
-  {
-   "topic_id": "lokale-llms",
-   "title": "OpenClaw 2.0 erkennt lokale Modelle automatisch und hebt Standard-Kontext auf 64.000 Token",
-   "category": "lokal",
-   "impact": 2,
-   "date": "2026-08-30",
-   "summary": "Die offene Agentenplattform OpenClaw hat mit Version 2.0 (16.000+ Pull Requests von 933 Mitwirkenden) ihre Einrichtung überarbeitet: Bereits installierte Ollama- und LM-Studio-Modelle sowie bestehende Codex-, ChatGPT- oder Claude-CLI-Logins werden jetzt automatisch erkannt und übernommen. Für lokale Inferenz wurde node-llama-cpp durch einen verwalteten llama-server ersetzt, Gemma 4 ist bei begrenztem Arbeitsspeicher jetzt Standard, und das Standard-Kontextfenster für llama.cpp wurde auf 64.000 Token angehoben.",
-   "sources": [
-    {
-     "label": "MarkTechPost",
-     "url": "https://www.marktechpost.com/2026/08/30/openclaw-releases-openclaw-2-0-guided-model-setup-575-ms-control-ui-startup-and-one-trust-boundary-per-gateway/"
-    }
-   ],
-   "first_seen": "2026-08-31"
-  },
-  {
-   "topic_id": "agentic-engineering",
-   "title": "Google veröffentlicht EnvHarness: programmierbare Trainingsumgebungen für Agenten",
-   "category": "agents",
-   "impact": 3,
-   "date": "2026-08-30",
-   "summary": "EnvHarness von Google, der Washington University in St. Louis und UNC Chapel Hill kapselt bestehende Agenten-Trainingsumgebungen so, dass ein LLM als „EnvRigger\" gezielt Startzustände, Regeln und Aufgabenzusammensetzung verändern kann, um die Schwächen einer Policy zu treffen - ohne den zugrunde liegenden Simulator anzufassen. In Tests brachte das 9,0 Punkte Verbesserung bei Out-of-Distribution-Aufgaben in ALFWorld und 9,8 Prozent weniger Ausführungsschritte auf SWE-bench Verified und übertraf den domänenspezifischen Generator SWE-smith um 2,46 Punkte.",
-   "sources": [
-    {
-     "label": "MarkTechPost",
-     "url": "https://www.marktechpost.com/2026/08/30/google-ai-introduces-envharness-a-programmable-layer-that-turns-static-agent-environments-into-adaptive-training-worlds/"
-    },
-    {
-     "label": "arXiv",
-     "url": "https://arxiv.org/abs/2608.19880"
-    }
-   ],
-   "first_seen": "2026-08-31"
-  },
-  {
-   "topic_id": "agentic-engineering",
-   "title": "OpenClaw 2.0 dokumentiert Vertrauensgrenzen-Modell und bringt eigenen Sicherheits-Audit-Befehl",
-   "category": "agents",
-   "impact": 3,
-   "date": "2026-08-30",
-   "summary": "Mit der überarbeiteten Steueroberfläche führt OpenClaw 2.0 auch handfeste Governance-Funktionen ein: einen Genehmigungsverlauf über 30 Tage, einen eingebauten Befehl „openclaw security audit\" und die explizite Klarstellung, dass geteilte Multiplayer-Sessions keine Sicherheitsgrenze zwischen Nutzern darstellen - nur ein Vertrauensbereich pro Gateway gilt als solche. Zitiert wird zudem eine Red-Team-Arena mit 272.000 Angriffen: Bei Claude Opus 4.5 griffen automatisierte Prompt-Injection-Versuche in 0,5 Prozent der Fälle, bei Gemini 2.5 Pro in 8,5 Prozent - während gezielte menschliche Angreifer beide Verteidigungen weiterhin in über 80 Prozent der Fälle überwinden.",
-   "sources": [
-    {
-     "label": "MarkTechPost",
-     "url": "https://www.marktechpost.com/2026/08/30/openclaw-releases-openclaw-2-0-guided-model-setup-575-ms-control-ui-startup-and-one-trust-boundary-per-gateway/"
-    }
-   ],
-   "first_seen": "2026-08-31"
-  },
-  {
-   "topic_id": "ai-tools",
-   "title": "Anthropic warnt vor Infostealer-Malware, die aktive Claude-Sitzungen entführt",
-   "category": "security",
-   "impact": 4,
-   "date": "2026-08-30",
-   "summary": "Wer Claude im Browser nutzt, sollte nach der Warnung von Anthropic prüfen, ob der eigene Rechner mit gängiger Infostealer-Malware (Vidar, LummaC2, StealC, RedLine, Acreed unter Windows, Atomic Stealer auf einigen Macs) infiziert ist: Sie stiehlt aktive Sitzungen und erlaubt Fremdzugriff ohne Passwort. Anthropic meldet betroffene Accounts ab, entfernt hinterlegte Zahlungsmethoden und erstattet unautorisierte Kosten - ein erneuter Login auf einem weiterhin infizierten Gerät macht die Sitzung aber sofort wieder angreifbar.",
-   "sources": [
-    {
-     "label": "BleepingComputer",
-     "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-warns-infostealer-malware-is-hijacking-claude-sessions-to-drain-usage/"
-    }
-   ],
-   "first_seen": "2026-08-31"
-  },
-  {
-   "topic_id": "ai-tools",
-   "title": "Claude Codes Nutzungsgrenzen-„Erhöhung\" ist ab 14. September netto eine 17-Prozent-Kürzung",
-   "category": "tools",
-   "impact": 3,
-   "date": "2026-08-30",
-   "summary": "Anthropic hatte eine dauerhafte Erhöhung der wöchentlichen Claude-Code-Limits um 25 Prozent angekündigt, musste den Beitrag aber löschen: Weil die aktuell laufende temporäre 50-Prozent-Erhöhung zum selben Termin endet, sinken die Limits gegenüber heute netto um 17 Prozent. Für Teams, die ihre Nutzung an den bestehenden Grenzen ausrichten, lohnt sich ein Blick vor dem 14. September.",
-   "sources": [
-    {
-     "label": "BleepingComputer",
-     "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-is-cutting-claude-codes-current-weekly-limits-by-17-percent/"
-    },
-    {
-     "label": "The Decoder",
-     "url": "https://the-decoder.com/anthropics-claude-code-limit-change-is-a-raise-on-paper-but-a-cut-in-practice/"
-    }
-   ],
-   "first_seen": "2026-08-31"
-  },
-  {
-   "topic_id": "ai-tools",
-   "title": "OpenClaw 2.0: großer Versionssprung für die offene Agentenplattform",
-   "category": "tools",
-   "impact": 3,
-   "date": "2026-08-30",
-   "summary": "Mit Version 2.0 (16.000+ Pull Requests, 933 Mitwirkende) bekommt die offene Agentenplattform OpenClaw eine neu gebaute Steueroberfläche, einen Datei-Editor, ein Git-gestütztes Änderungs-Panel, ein Browser-Panel und ein Terminal - dazu wandert die Sitzungs- und Transkript-Verwaltung auf SQLite. Für alltägliche Nutzer relevant: Die geführte Ersteinrichtung prüft Zugangsdaten und Modelle jetzt vor dem Speichern, statt Fehler erst beim ersten Lauf aufzudecken.",
-   "sources": [
-    {
-     "label": "MarkTechPost",
-     "url": "https://www.marktechpost.com/2026/08/30/openclaw-releases-openclaw-2-0-guided-model-setup-575-ms-control-ui-startup-and-one-trust-boundary-per-gateway/"
-    }
-   ],
-   "first_seen": "2026-08-31"
-  },
-  {
-   "topic_id": "context-engineering",
-   "title": "OpenClaw 2.0 hebt Standard-Kontextfenster für lokale Modelle auf 64.000 Token an",
-   "category": "agents",
-   "impact": 2,
-   "date": "2026-08-30",
-   "summary": "Mit dem Wechsel von node-llama-cpp zu einem verwalteten llama-server hebt OpenClaw 2.0 das Standard-Kontextfenster für lokal angebundene Modelle auf 64.000 Token an und macht Gemma 4 zum RAM-schonenden Standardmodell. Zugleich dokumentiert das Release explizit, dass geteilte Multiplayer-Sessions keine Sicherheitsgrenze zwischen Nutzern sind - nur der Vertrauensbereich pro Gateway gilt als solche, was beim Entwurf von Multi-User-Agenten-Kontexten mitgedacht werden muss.",
-   "sources": [
-    {
-     "label": "MarkTechPost",
-     "url": "https://www.marktechpost.com/2026/08/30/openclaw-releases-openclaw-2-0-guided-model-setup-575-ms-control-ui-startup-and-one-trust-boundary-per-gateway/"
-    }
-   ],
-   "first_seen": "2026-08-31"
-  },
-  {
-   "topic_id": "ai-security",
-   "title": "Anthropic warnt vor Infostealer-Malware, die aktive Claude-Sitzungen entführt",
-   "category": "security",
-   "impact": 4,
-   "date": "2026-08-30",
-   "summary": "Anthropic meldet, dass verbreitete Infostealer-Schadsoftware - Vidar, LummaC2, StealC, RedLine und Acreed unter Windows, Atomic Stealer auf einigen Macs - aktive Browser-Sitzungen von Claude stiehlt und Angreifern damit Zugriff auf fremde Accounts verschafft, ganz ohne Passwort oder Zwei-Faktor-Code. Das Unternehmen meldet betroffene Nutzer ab, entfernt hinterlegte Zahlungsmethoden, erstattet unautorisierte Kosten und betont, dass die Malware nicht über Claude selbst verbreitet wird - es handelt sich um ein alt bekanntes Malware-Problem mit neuem Ziel, nicht um eine Schwachstelle in Claude.",
-   "sources": [
-    {
-     "label": "BleepingComputer",
-     "url": "https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-warns-infostealer-malware-is-hijacking-claude-sessions-to-drain-usage/"
-    },
-    {
-     "label": "Search Engine Journal",
-     "url": "https://www.searchenginejournal.com/anthropic-warns-hackers-are-stealing-claude-sessions-to-hijack-accounts/587566/"
-    }
-   ],
-   "first_seen": "2026-08-31"
-  },
-  {
-   "topic_id": "ai-governance",
-   "title": "Siemens-Chef Busch: EU-Regulierung hinkt dem KI-Tempo hinterher",
-   "category": "business",
-   "impact": 3,
-   "date": "2026-08-30",
-   "summary": "Siemens-CEO Roland Busch kritisierte im Interview mit der Welt am Sonntag, dass die Verabschiedung von Regelwerken wie dem AI Act oder Data Act in Brüssel rund zwei Jahre dauert, während KI-Modelle im selben Zeitraum sechs bis acht Generationen durchlaufen - „wir hängen immer hinterher\". Busch fordert dabei keine Deregulierung, sondern ein Regulierungstempo, das mit der technologischen Entwicklung mithält.",
-   "sources": [
-    {
-     "label": "MarketScreener",
-     "url": "https://www.marketscreener.com/news/siemens-ceo-warns-against-too-much-regulation-on-ai-ce7858dcd980f521"
-    },
-    {
-     "label": "Handelsblatt",
-     "url": "https://www.handelsblatt.com/unternehmen/industrie/kuenstliche-intelligenz-siemens-chef-warnt-vor-zu-viel-regulierung-bei-ki/100250475.html"
-    }
-   ],
-   "first_seen": "2026-08-31"
-  },
-  {
-   "topic_id": "ai-governance",
-   "title": "USA errichten Handelsbarrieren gegen chinesische Drohnen und Roboter - China hat die Fertigungsskalierung",
-   "category": "business",
-   "impact": 3,
-   "date": "2026-08-30",
-   "summary": "Washington hat die FCC-Sperrliste im Juli auf ausländische Robotik-Hersteller ausgeweitet und verhängt ab September neue Zölle auf importierte Drohnen und Komponenten, mit weiteren Zoll-Stufen 2027 - offiziell aus nationalen Sicherheitsgründen. Chinesische Anbieter wie AgiBot, Unitree, Galbot, UBTECH und Leju Robotics stellten im ersten Halbjahr 2026 laut Counterpoint Research 86 Prozent der weltweit rund 22.000 ausgelieferten humanoiden Roboter - Beobachter erwarten deshalb einen fragmentierten globalen Markt statt einer klaren Trennung zwischen den USA und China.",
-   "sources": [
-    {
-     "label": "TechCrunch",
-     "url": "https://techcrunch.com/2026/08/30/the-u-s-is-building-barriers-around-drones-and-robots-china-still-has-scale/"
-    }
-   ],
-   "first_seen": "2026-08-31"
-  },
-  {
-   "topic_id": "ai-governance",
-   "title": "NPR/NewsGuard-Test: Chatbots widerstehen ausländischer Desinformation besser als KI-Suchzusammenfassungen",
-   "category": "security",
-   "impact": 3,
-   "date": "2026-08-30",
-   "summary": "NPR und NewsGuard haben 30 Testfragen aus falschen Erzählungen chinesischer, iranischer und russischer Herkunft (Dez. 2025 bis Juli 2026) an ChatGPT, Gemini, Copilot, Meta AI, Grok und Claude sowie an die KI-Zusammenfassungen großer Suchmaschinen gestellt. Die Chatbots widersprachen den falschen Behauptungen meist deutlich, während die KI-generierten Suchzusammenfassungen schlechter abschnitten und Staatsmedien etwa so häufig zitierten wie die reine Suche ohne KI-Zusammenfassung.",
-   "sources": [
-    {
-     "label": "NPR",
-     "url": "https://www.npr.org/2026/08/30/nx-s1-5876436/chatbots-search-propaganda"
-    }
-   ],
-   "first_seen": "2026-08-31"
-  },
-  {
-   "topic_id": "enterprise",
-   "title": "Caterpillar überträgt Jahrzehnte an Automatisierungs-Erfahrung aus dem Bergbau auf die breite KI-Einführung",
-   "category": "business",
-   "impact": 3,
-   "date": "2026-08-30",
-   "summary": "Caterpillar-CTO Jaime Mineart beschreibt, wie das Unternehmen Autonomie-Erfahrung aus dem Bergbau (autonome Lkw, Bohrungen, Lader) auf Bau- und Steinbruchbetriebe überträgt - unterstützt vom Cat AI Assistant für Techniker, der auf 1,6 Millionen vernetzten Maschinen und über 16 Petabyte Daten aufbaut, sowie digitalen Zwillingen für die Fertigung. Caterpillar investiert über fünf Jahre 100 Millionen Dollar in die KI- und Robotik-Weiterbildung seiner 118.000 Beschäftigten, nachdem der Umsatz im zweiten Quartal mit 20,5 Milliarden Dollar einen Rekord erreichte und die Stromerzeugungssparte dank Rechenzentrums-Nachfrage um 72 Prozent wuchs.",
-   "sources": [
-    {
-     "label": "TechCrunch",
-     "url": "https://techcrunch.com/2026/08/30/caterpillar-is-bringing-to-ai-deployment-what-it-learned-from-automating-mining/"
-    }
-   ],
-   "first_seen": "2026-08-31"
-  },
-  {
-   "topic_id": "enterprise",
-   "title": "USA errichten Handelsbarrieren gegen chinesische Drohnen und Roboter - China hat die Fertigungsskalierung",
-   "category": "business",
-   "impact": 3,
-   "date": "2026-08-30",
-   "summary": "Neue US-Zölle auf Drohnen und Robotik-Komponenten (ab September, mit weiteren Stufen 2027) und die erweiterte FCC-Sperrliste treffen einen Markt, in dem chinesische Hersteller wie Unitree und UBTECH im ersten Halbjahr 2026 bereits 86 Prozent der weltweit ausgelieferten humanoiden Roboter stellten. Für Unternehmen, die auf humanoide oder mobile Robotik setzen, dürfte das eher zu einem fragmentierten Beschaffungsmarkt führen als zu einer klaren Trennung zwischen US- und chinesischen Anbietern - Beobachter erwarten eine Expansion chinesischer Hersteller nach Europa, Südostasien, Lateinamerika und in den Nahen Osten.",
-   "sources": [
-    {
-     "label": "TechCrunch",
-     "url": "https://techcrunch.com/2026/08/30/the-u-s-is-building-barriers-around-drones-and-robots-china-still-has-scale/"
-    }
-   ],
-   "first_seen": "2026-08-31"
-  },
-  {
-   "topic_id": "enterprise",
-   "title": "SpaceX baut geheime Turbinenschaufel-Gießerei gegen den Strommangel bei KI-Rechenzentren",
-   "category": "business",
-   "impact": 3,
-   "date": "2026-08-30",
-   "summary": "Der Engpass bei Gasturbinen - weltweit nur vier Hersteller von Einkristall-Turbinenschaufeln, alle ausverkauft, GE Vernova bis 2030 ausgebucht - bremst den Ausbau neuer KI-Rechenzentren. Mit einer eigenen Gießerei in Bastrop, Texas, will SpaceX laut Elon Musk den Bau neuer Turbinen-Kapazität um bis zu 18 Monate beschleunigen; eine Studie des Piedmont Environmental Council schätzt zugleich 3,4 bis 6,5 zusätzliche vorzeitige Todesfälle pro Jahr durch gasbetriebene Rechenzentren allein in Virginia.",
-   "sources": [
-    {
-     "label": "TechCrunch",
-     "url": "https://techcrunch.com/2026/08/30/musks-faster-path-to-more-gas-turbines-comes-with-pollution-problem/"
-    }
-   ],
-   "first_seen": "2026-08-31"
-  },
-  {
-   "topic_id": "ai-news",
    "title": "Anthropic legt Zwischenbericht zu Sicherheits- und Alignment-Vorfällen vor",
    "category": "security",
    "impact": 5,
@@ -394,25 +111,6 @@
    "first_seen": "2026-09-01"
   },
   {
-   "topic_id": "agentic-engineering",
-   "title": "Studie: Coding-Agenten haben kein Gefühl für verstrichene Zeit",
-   "category": "agents",
-   "impact": 3,
-   "date": "2026-08-30",
-   "summary": "Eine Studie im Rahmen des MATS-Forschungsprogramms zeigt, dass Claude Code und OpenAIs Codex systematisch falsch einschätzen, wie lange eine Aufgabe dauert - Codex lag im Schnitt sechs- bis zehnmal daneben. Beide Systeme bewerten zudem die Qualität der eigenen Arbeit im Schnitt rund 20 Prozentpunkte zu positiv, in einem Fall hielten sie eine Lösung mit tatsächlich 7 bzw. 14,5 Prozent Erfolg für rund 70 Prozent gelungen. Bekommen die Agenten ein Werkzeug, das die verstrichene Zeit meldet, schätzen sie fast immer richtig - ein Hinweis darauf, dass Zeitbewusstsein eine Frage des Kontexts ist, nicht der Modellgröße.",
-   "sources": [
-    {
-     "label": "The Decoder",
-     "url": "https://the-decoder.com/ai-agents-have-no-sense-of-time-and-are-not-aware-of-it/"
-    },
-    {
-     "label": "LessWrong",
-     "url": "https://www.lesswrong.com/posts/eAbuPXbjakop5rSJx/your-agents-are-not-time-aware"
-    }
-   ],
-   "first_seen": "2026-09-01"
-  },
-  {
    "topic_id": "ai-tools",
    "title": "OpenClaw 2.0: vereinfachtes Setup und neu gebauter Browser für den Alltag",
    "category": "tools",
@@ -442,25 +140,6 @@
     {
      "label": "GitHub Changelog",
      "url": "https://github.blog/changelog/2026-08-31-github-copilot-in-vs-code-august-2026-releases"
-    }
-   ],
-   "first_seen": "2026-09-01"
-  },
-  {
-   "topic_id": "context-engineering",
-   "title": "Studie: Coding-Agenten haben kein Gefühl für verstrichene Zeit",
-   "category": "agents",
-   "impact": 2,
-   "date": "2026-08-30",
-   "summary": "Coding-Agenten wie Claude Code und Codex haben laut einer MATS-Studie kein verlässliches Gefühl dafür, wie viel Zeit vergangen ist oder eine Aufgabe brauchen wird - Codex überschätzte die Dauer im Schnitt um das Sechs- bis Zehnfache. Erst ein Werkzeug, das die verstrichene Zeit explizit in den Kontext einspeist, behebt das Problem fast vollständig. Für Agent-Design heißt das: Zustand wie Zeit muss aktiv in den Kontext gereicht werden, ein Modell schließt ihn nicht zuverlässig aus sich selbst.",
-   "sources": [
-    {
-     "label": "The Decoder",
-     "url": "https://the-decoder.com/ai-agents-have-no-sense-of-time-and-are-not-aware-of-it/"
-    },
-    {
-     "label": "LessWrong",
-     "url": "https://www.lesswrong.com/posts/eAbuPXbjakop5rSJx/your-agents-are-not-time-aware"
     }
    ],
    "first_seen": "2026-09-01"
@@ -9419,97 +9098,323 @@
     }
    ],
    "first_seen": "2026-10-03"
-  }
- ],
- "summaries": [
+  },
   {
    "topic_id": "ai-news",
-   "date": "2026-08-30",
-   "summary": "Musikverlage verklagen Anthropic in einer möglichen Milliardenklage wegen Urheberrechtsdiebstahls, Tencent veröffentlicht mit Hy4 Preview sein bislang größtes offenes Modell, und Google zeigt mit WikiSkill, wie Agenten dauerhaft aus eigenen Fehlern lernen können.",
-   "skip": [
+   "title": "BootLoops: exakte Rechnungen statt autonomer Wissenschaft",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-10-01",
+   "summary": "Matthew Schwartz beschreibt BootLoops als offenen Harness für exakte wissenschaftliche Rechnungen und berichtet über 36 Manuskripte in 18 Fachgebieten mit 19 Koautoren binnen drei Monaten.[7] Fachleute mussten Fragestellungen und Interpretation lenken; korrekte Rechnungen garantieren keine richtigen Schlussfolgerungen.[7][6] Der Gastbeitrag vom 1. Oktober und die Einordnung vom 3. Oktober sind keine unabhängige Bestätigung aller Forschungsergebnisse.[7][6]",
+   "sources": [
     {
-     "reason": "An anderer Stelle vertieft",
-     "text": "Nvidias Wandel vom Chip- zum Systemanbieter nach den Quartalszahlen und die KI-bedingte Verdrängung menschlicher Darsteller in China werden unter Enterprise behandelt."
+     "label": "[7] www.anthropic.com",
+     "url": "https://www.anthropic.com/research/claude-shaped-science"
+    },
+    {
+     "label": "[6] the-decoder.com",
+     "url": "https://the-decoder.com/open-source-bootloops-harness-supports-ai-models-in-performing-precise-scientific-calculations/"
     }
-   ]
+   ],
+   "first_seen": "2026-10-04"
+  },
+  {
+   "topic_id": "ai-news",
+   "title": "Willison fordert harte Kostenlimits für Agenten-Dienste",
+   "category": "business",
+   "impact": 2,
+   "date": "2026-10-03",
+   "summary": "Simon Willison fordert standardmäßige Abschaltlimits für nutzungsabhängig abgerechnete APIs und Cloud-Dienste statt bloßer Warn-E-Mails.[1] Der Beitrag ist eine Praxisposition vom 3. Oktober; die erwähnten AWS- und Google-Cloud-Funktionen stammen bereits aus September beziehungsweise Juli und sind keine neuen Tages-Releases.[1]",
+   "sources": [
+    {
+     "label": "[1] simonwillison.net",
+     "url": "https://simonwillison.net/2026/Oct/3/default-hard-budget-caps/"
+    }
+   ],
+   "first_seen": "2026-10-04"
   },
   {
    "topic_id": "lokale-llms",
-   "date": "2026-08-30",
-   "summary": "Tencent legt mit dem offenen Hy4-Preview-Modell (770 Milliarden Parameter) den bislang größten Sprung seiner Hy-Reihe vor.",
-   "skip": [
+   "title": "Aleph Alpha veröffentlicht Kolibri unter Apache 2.0",
+   "category": "lokal",
+   "impact": 4,
+   "date": "2026-10-03",
+   "summary": "Kolibri ist ein deutsch-englisches MoE-Modell mit 78,1 Milliarden Gesamtparametern und 3,46 Milliarden aktiven Parametern je Token; die vollständigen Gewichte stehen unter Apache 2.0 bereit.[3][2] Der Hersteller nennt bis zu eine Million Kontexttokens und vier Reasoning-Stufen.[3] Die kleine aktive Parameterzahl bedeutet nicht, dass nur diese Gewichte gespeichert werden müssen; Leistungs- und Grounding-Vergleiche sind Herstellertests.[3]",
+   "sources": [
     {
-     "reason": "An anderer Stelle vertieft",
-     "text": "Das Release wird auch unter AI News behandelt."
+     "label": "[3] aleph-alpha.com",
+     "url": "https://aleph-alpha.com/en/blog/kolibri-has-landed-a-sovereign-open-weight-model/"
+    },
+    {
+     "label": "[2] www.testingcatalog.com",
+     "url": "https://www.testingcatalog.com/aleph-alpha-releases-open-weight-kolibri-with-1m-context/"
     }
-   ]
+   ],
+   "first_seen": "2026-10-04"
+  },
+  {
+   "topic_id": "lokale-llms",
+   "title": "Ling 3.1 Flash erhält eine neue unabhängige Modellbewertung",
+   "category": "modelle",
+   "impact": 3,
+   "date": "2026-10-03",
+   "summary": "Artificial Analysis listet am 3. Oktober eine neue Bewertung für Ling 3.1 Flash: 41 Punkte im Intelligence Index und rund 211 Ausgabetokens pro Sekunde über die InclusionAI-API.[41][42] Das Modellprofil nennt eine Million Kontexttokens, 560 Milliarden Gesamtparameter und 25 Milliarden aktive Parameter.[41] Das Datum gehört zur Bewertung, nicht zu einem taggenau belegten Modell-Launch; die API-Messung ist keine lokale Leistungszusage.[41][42]",
+   "sources": [
+    {
+     "label": "[41] artificialanalysis.ai",
+     "url": "https://artificialanalysis.ai/models/ling-3-1-flash"
+    },
+    {
+     "label": "[42] artificialanalysis.ai",
+     "url": "https://artificialanalysis.ai/"
+    }
+   ],
+   "first_seen": "2026-10-04"
+  },
+  {
+   "topic_id": "lokale-llms",
+   "title": "DGX Spark mit 64 GB: ab 23. Oktober für 4.999 Dollar",
+   "category": "lokal",
+   "impact": 3,
+   "date": "2026-10-02",
+   "summary": "Nvidia kündigt DGX Spark mit 64 GB vereinheitlichtem Speicher und dem bisherigen GB10-Chip ab 23. Oktober bei Partnern an; der Einstiegspreis beträgt 4.999 US-Dollar.[33] Zwei gekoppelte Geräte erreichen laut einem Nvidia-Test mit Qwen 3.8 27B bis zu 1,7-fache Leistung, nicht einen allgemein bestätigten Geschwindigkeitsgewinn.[33] Heise ordnet das kleinere Modell als Verteuerung gegenüber früheren 128-GB-Angeboten ein.[32]",
+   "sources": [
+    {
+     "label": "[33] blogs.nvidia.com",
+     "url": "https://blogs.nvidia.com/blog/local-ai-dgx-spark-64gb-sync/"
+    },
+    {
+     "label": "[32] www.heise.de",
+     "url": "https://www.heise.de/news/Nvidias-DGX-Spark-wird-trotz-halbiertem-RAM-teurer-11475117.html"
+    }
+   ],
+   "first_seen": "2026-10-04"
   },
   {
    "topic_id": "agentic-engineering",
-   "date": "2026-08-30",
-   "summary": "Google zeigt mit WikiSkill, wie Agenten ihre Fähigkeiten über Sitzungen hinweg selbstständig verbessern können, statt bei jeder neuen Aufgabe wieder bei null anzufangen.",
-   "skip": [
+   "title": "ThinkingBox prüft tatsächliche Agenten-Ergebnisse im Backend",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-10-03",
+   "summary": "Microsoft und Hugging Face stellen ThinkingBox über OpenEnv bereit: 507 zustandsbehaftete Geschäftsworkflows werden jeweils 20-mal ausgeführt und an Backend-Endzustand und Nebenwirkungen geprüft.[20] Der aktuelle Beitrag trennt korrekte Tool-Aufrufe von erledigten Aufgaben und einmaligen Erfolg von Wiederholbarkeit; die Ergebnisse stammen aus der eigenen Evaluation.[20]",
+   "sources": [
     {
-     "reason": "An anderer Stelle vertieft",
-     "text": "Die Sony/Warner-Klage gegen Anthropic wird unter AI News, AI Governance und Enterprise behandelt."
+     "label": "[20] huggingface.co",
+     "url": "https://huggingface.co/blog/microsoft/thinkingbox"
     }
-   ]
+   ],
+   "first_seen": "2026-10-04"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "DeepSeek Harness testet Claude-Code-Mods-Kompatibilität",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-10-03",
+   "summary": "Der Alpha-Build dsh-v0.2.1-alpha.1 vom 3. Oktober ergänzt eine experimentelle Claude-Code-Mods-Kompatibilität und einen Einstieg zur Plugin-Erstellung durch einen Agenten.[9] Die Release Notes versprechen ausdrücklich noch keine vollständige praktische Kompatibilität; entfernte invariant-Exports erfordern Änderungen an betroffenen Erweiterungen.[9] MarkTechPosts Bericht ordnet den Build in die Desktop-Vorschau ein; sein RSS-Datum liegt am 4. Oktober, das Primärrelease am 3. Oktober.[8][9]",
+   "sources": [
+    {
+     "label": "[9] github.com",
+     "url": "https://github.com/deepseek-ai/deepseek-harness/releases/tag/dsh-v0.2.1-alpha.1"
+    },
+    {
+     "label": "[8] www.marktechpost.com",
+     "url": "https://www.marktechpost.com/2026/10/03/deepseek-harness-v0-2-brings-official-desktop-apps-to-its-open-source-agent-harness/"
+    }
+   ],
+   "first_seen": "2026-10-04"
   },
   {
    "topic_id": "ai-tools",
-   "date": "2026-08-30",
-   "summary": "Ruhiger Tag für Alltagswerkzeuge - nennenswert ist vor allem ein Claude-Code-Update mit Live-Einblick in Subagenten und mehr Kostentransparenz.",
-   "skip": [
+   "title": "Muse Gadgets öffnet Agenten-Hardware für ESP32 und Linux",
+   "category": "tools",
+   "impact": 3,
+   "date": "2026-10-03",
+   "summary": "Meta stellt SDKs und Firmware bereit, um selbstgebaute ESP32- oder Raspberry-Pi-/Linux-Geräte mit Muse zu verbinden.[5][4] Zum Pairing sind ein SDK-Token und der Entwicklermodus in der Muse-App nötig; das Repository warnt ausdrücklich vor Risiken beim Basteln.[5] Der am 3. Oktober berichtete Home-Link-Versand ist erst für die folgenden Wochen angekündigt, kein bereits abgeschlossener Hardware-Rollout.[4]",
+   "sources": [
     {
-     "reason": "An anderer Stelle vertieft",
-     "text": "Googles WikiSkill wird unter Context Engineering und Agentic Engineering behandelt."
+     "label": "[5] github.com",
+     "url": "https://github.com/facebookincubator/muse-gadget-sdk"
+    },
+    {
+     "label": "[4] the-decoder.com",
+     "url": "https://the-decoder.com/muse-gadgets-turns-ai-hardware-into-an-open-source-diy-project/"
     }
-   ]
+   ],
+   "first_seen": "2026-10-04"
+  },
+  {
+   "topic_id": "ai-tools",
+   "title": "Pi 1.0.0 reduziert Tool-Kontext und ergänzt Bildgenerierung",
+   "category": "tools",
+   "impact": 3,
+   "date": "2026-10-01",
+   "summary": "Pi 1.0.0 verkürzt Tool-Beschreibungen: Im dokumentierten GPT-5.6-Beispiel mit Codemode sinkt der Prompt von etwa 5.300 auf 3.300 Tokens.[31][30] Hinzu kommen Bildgenerierung mit Sitzungs-Zugangsdaten und eine standardmäßig vollflächige Terminaloberfläche.[31] Das Release stammt vom 1. Oktober, Heises Einordnung vom 3. Oktober; die Tokenzahl ist ein Konfigurationsbeispiel, kein Qualitätsbenchmark.[31][30]",
+   "sources": [
+    {
+     "label": "[31] github.com",
+     "url": "https://github.com/earendil-works/pi/releases/tag/v1.0.0"
+    },
+    {
+     "label": "[30] www.heise.de",
+     "url": "https://www.heise.de/news/Coding-Agent-Pi-Mehr-Platz-im-Prompt-weniger-Ballast-11474629.html"
+    }
+   ],
+   "first_seen": "2026-10-04"
   },
   {
    "topic_id": "context-engineering",
-   "date": "2026-08-30",
-   "summary": "Googles WikiSkill-Paper zeigt einen konkreten Weg, wie Agenten Erfahrung dauerhaft in wiederverwendbares Wissen verwandeln, statt sie nach jeder Sitzung zu verlieren.",
-   "skip": [
+   "title": "AutoSynthData erzeugt validierte Aufgaben aus Agenten-Schwächen",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-10-02",
+   "summary": "ServiceNow beschreibt AutoSynthData: Fehler eines Zielmodells und Erfolge eines stärkeren Teacher-Modells steuern neue Trainingsaufgaben.[21] Die Aufgaben kombinieren Systemspezifikation, Nutzerauftrag und Verifier und werden in der Umgebung ausgeführt und validiert.[21] EnterpriseOps Gym dient als Demonstration; daraus folgt keine unabhängig bestätigte allgemeine Leistungszusage.[21]",
+   "sources": [
     {
-     "reason": "An anderer Stelle vertieft",
-     "text": "Der agentenseitige Blickwinkel von WikiSkill wird zusätzlich unter Agentic Engineering behandelt."
+     "label": "[21] huggingface.co",
+     "url": "https://huggingface.co/blog/ServiceNow-AI/autosynthdata"
     }
-   ]
+   ],
+   "first_seen": "2026-10-04"
+  },
+  {
+   "topic_id": "context-engineering",
+   "title": "AWS demonstriert Multi-Turn-RL für einen Suchagenten",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-10-02",
+   "summary": "AWS zeigt ein SageMaker-Tutorial, das einen Suchagenten über vollständige mehrstufige Abläufe trainiert.[44] In den Anbietertests steigt nDCG@10 auf drei von vier zurückgehaltenen Datensätzen, während FreshStack leicht zurückgeht; auf BrowseComp-Plus sinkt die Fehlerrate von 22,89 auf 0,68 Prozent.[44] Die Fallstudie ist kein unabhängig bestätigter allgemeiner Vorsprung und kein Modell-Launch.[44]",
+   "sources": [
+    {
+     "label": "[44] aws.amazon.com",
+     "url": "https://aws.amazon.com/blogs/machine-learning/fine-tune-a-search-agent-with-multi-turn-rl-on-amazon-sagemaker-ai/"
+    }
+   ],
+   "first_seen": "2026-10-04"
   },
   {
    "topic_id": "ai-security",
-   "date": "2026-08-30",
-   "summary": "Ruhiger Tag für AI-Sicherheit im engeren Sinn - die jüngsten Eskalationsstufen bleiben Johann Rehbergers Auto-Mode-Bypass (26.08.) und der Befund, dass ein bloßes Bug-Gerücht heute zur automatisierten Ausnutzung reicht (28.08.); für den 29./30.08. fand sich keine eigenständige neue Entwicklung.",
-   "skip": [
+   "title": "OpenAI-Sicherheitsautor Robinson kündigt und kritisiert Laborkultur",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-10-03",
+   "summary": "David Robinson hat OpenAI verlassen und kritisiert in einem persönlichen Essay die Sicherheitskultur; TechCrunch und Guardian berichten darüber.[16][17] OpenAI verweist als Antwort auf verstärkte Tests, externe Evaluationen, Monitoring und bei Bedarf zurückgehaltene Modelle.[16] Robinsons Bewertung ist kein neu nachgewiesener Sicherheitsvorfall; der Atlantic-Volltext war nicht zugänglich.[16][17]",
+   "sources": [
     {
-     "reason": "Keine neue Entwicklung im Zeitraum",
-     "text": "Weder bei Embrace The Red noch bei anderen Sicherheitsquellen gab es für den 29./30.08. eine substanzielle Fortschreibung der laufenden Auto-Mode- bzw. Exploit-Tempo-Diskussion."
+     "label": "[16] techcrunch.com",
+     "url": "https://techcrunch.com/2026/10/03/openai-safety-employee-resigns-claiming-the-companys-culture-is-broken/"
+    },
+    {
+     "label": "[17] www.theguardian.com",
+     "url": "https://www.theguardian.com/technology/2026/oct/03/openai-safety-leader-quits-warning-ai-companys-culture-is-broken"
     }
-   ]
+   ],
+   "first_seen": "2026-10-04"
+  },
+  {
+   "topic_id": "ai-security",
+   "title": "Exabeam ergänzt SOC-Plugin für Claude Code und Codex",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-10-01",
+   "summary": "Exabeams Oktober-Update bietet Untersuchungsleitlinien als Plugin für Claude Code und OpenAI Codex und übernimmt Claude-Enterprise-Aktivitätslogs sowie Chat-API-Daten in eine standardisierte Timeline.[48] Nova AI soll den Gesprächskontext über mehrere Untersuchungsansichten halten.[48] Dies sind Herstellerangaben zu Funktionen, kein unabhängig gemessener Sicherheitsgewinn.[48]",
+   "sources": [
+    {
+     "label": "[48] www.exabeam.com",
+     "url": "https://www.exabeam.com/blog/company-news/whats-new-in-exabeam-new-scale-for-october-2026/"
+    }
+   ],
+   "first_seen": "2026-10-04"
   },
   {
    "topic_id": "ai-governance",
-   "date": "2026-08-30",
-   "summary": "Die Klage von Sony Music und Warner Chappell gegen Anthropic macht Lizenzfragen beim KI-Training erneut zum konkreten Haftungsrisiko - kurz vor dem geplanten Börsengang.",
-   "skip": [
+   "title": "Jayapal schlägt verpflichtende Bundes-Charta für KI-Unternehmen vor",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-10-01",
+   "summary": "Pramila Jayapals National-AI-Charter-Act-Rahmen würde den US-Marktzugang von einer verpflichtenden Bundes-Charta abhängig machen und staatliche Aufsicht sowie Tests vor Modellfreigaben vorsehen.[46] Der am 1. Oktober veröffentlichte politische Gesetzgebungsrahmen ist kein verabschiedetes Gesetz und keine bereits geltende Zulassungspflicht.[46]",
+   "sources": [
     {
-     "reason": "An anderer Stelle vertieft",
-     "text": "Die geschäftliche Tragweite der Klage wird zusätzlich unter Enterprise und AI News eingeordnet."
+     "label": "[46] jayapal.house.gov",
+     "url": "https://jayapal.house.gov/2026/10/01/jayapal-introduces-legislative-framework-establishing-national-charter-system-to-rein-in-ai/"
     }
-   ]
+   ],
+   "first_seen": "2026-10-04"
+  },
+  {
+   "topic_id": "ai-governance",
+   "title": "Anklage wegen mutmaßlichen KI-Server-Schmuggels nach China",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-10-01",
+   "summary": "Das US-Justizministerium meldet die Festnahme von Greg Lui und wirft ihm vor, exportkontrollierte Server mit US-GPUs im Wert von mehr als 300 Millionen Dollar nach China geschmuggelt zu haben.[35][34] Falsche Unterlagen und Routen über Drittländer gehören zu den Vorwürfen; eine Anklage ist keine festgestellte Schuld.[35] Die Behördenmitteilung stammt vom 1. Oktober, der Ars-Folgebericht vom 2. Oktober.[35][34]",
+   "sources": [
+    {
+     "label": "[35] www.justice.gov",
+     "url": "https://www.justice.gov/opa/pr/california-man-arrested-smuggling-more-300-million-export-controlled-computer-servers-china"
+    },
+    {
+     "label": "[34] arstechnica.com",
+     "url": "https://arstechnica.com/tech-policy/2026/10/us-arrests-tech-ceo-accused-of-smuggling-300m-in-nvidia-chips-into-china/"
+    }
+   ],
+   "first_seen": "2026-10-04"
   },
   {
    "topic_id": "enterprise",
-   "date": "2026-08-30",
-   "summary": "Die Musikverlage-Klage gegen Anthropic, Chinas rasante Verdrängung menschlicher Darsteller durch KI-Video und Nvidias Wandel vom Chip- zum Systemanbieter zeigen drei unterschiedliche Facetten, wie sich KI-Geschäftsmodelle gerade verschieben.",
-   "skip": [
+   "title": "Prime Inference startet serverlose und reservierte Open-Model-Inferenz",
+   "category": "business",
+   "impact": 3,
+   "date": "2026-10-02",
+   "summary": "Prime Intellect veröffentlicht am 2. Oktober Prime Inference mit serverlosen Endpunkten, reservierter Kapazität und einer OpenAI-kompatiblen API.[11][10] Der GLM-5.3-Endpunkt auf OpenRouter existierte bereits seit 22. September; beworbene Geschwindigkeits-, Uptime- und Tool-Fehlerwerte bleiben Anbieterangaben.[11] Batch-Inferenz und One-Click-Dedicated-Deployments stehen noch auf der Roadmap.[11]",
+   "sources": [
     {
-     "reason": "An anderer Stelle vertieft",
-     "text": "Tencents Hy4-Preview und Googles WikiSkill werden unter Lokale LLMs, AI News, Agentic Engineering und Context Engineering behandelt."
+     "label": "[11] www.primeintellect.ai",
+     "url": "https://www.primeintellect.ai/blog/prime-inference"
+    },
+    {
+     "label": "[10] www.marktechpost.com",
+     "url": "https://www.marktechpost.com/2026/10/02/prime-intellect-launches-prime-inference-serverless-and-reserved-serving-for-frontier-open-models/"
     }
-   ]
+   ],
+   "first_seen": "2026-10-04"
   },
+  {
+   "topic_id": "enterprise",
+   "title": "Chatham validiert KI-gestützte Trade-Prüfung mit menschlichen Reviewern",
+   "category": "business",
+   "impact": 3,
+   "date": "2026-10-02",
+   "summary": "Chatham Financial beschreibt ein mit Codex gebautes Tool, das Transaktionsbelege sammelt, Vertragsdaten vergleicht und Abweichungen zur Prüfung markiert.[14] Eine frühe Unternehmensmessung nennt eine Verkürzung von etwa 30 auf unter vier Minuten; die Ergebnisse werden noch gegen reale Transaktionen und erfahrene Reviewer validiert, bevor mehr automatisiert wird.[14] OpenAI-Kundenfallstudie, kein unabhängiger Benchmark.[14]",
+   "sources": [
+    {
+     "label": "[14] openai.com",
+     "url": "https://openai.com/index/chatham-financial/"
+    }
+   ],
+   "first_seen": "2026-10-04"
+  },
+  {
+   "topic_id": "enterprise",
+   "title": "Amazon sagt Rechenzentrums-Gemeinden mehr als eine Milliarde Dollar zu",
+   "category": "business",
+   "impact": 3,
+   "date": "2026-10-02",
+   "summary": "Amazon kündigt mit Built Together zusätzliche Investitionen von mehr als einer Milliarde Dollar über fünf Jahre für Gemeinden rund um seine Rechenzentren an.[23][36] Das Unternehmen erklärt außerdem, bei diesen Projekten keine NDAs mehr mit beteiligten Behörden einzusetzen.[23] Ars dokumentiert Kritik von Stand.Earth; die Zusagen belegen keine bereits gelösten Umwelt- oder Infrastrukturprobleme.[36]",
+   "sources": [
+    {
+     "label": "[23] www.aboutamazon.com",
+     "url": "https://www.aboutamazon.com/news/company-news/amazon-data-centers-built-together"
+    },
+    {
+     "label": "[36] arstechnica.com",
+     "url": "https://arstechnica.com/tech-policy/2026/10/amazons-1b-plan-to-combat-data-center-backlash-draws-more-backlash/"
+    }
+   ],
+   "first_seen": "2026-10-04"
+  }
+ ],
+ "summaries": [
   {
    "topic_id": "ai-news",
    "date": "2026-08-31",
@@ -11512,40 +11417,136 @@
    "date": "2026-10-03",
    "summary": "Anthropic sagt 100 Millionen Dollar für die Claude Frontier Academy zu und will bis Ende 2027 insgesamt 10.000 Frontier Deployed Engineers ausbilden.[18] Präsenztraining und zwölfwöchige Praxisarbeit sind vorgesehen; erste Abschlusszertifizierungen werden Anfang 2027 erwartet, die Zielzahl ist noch nicht erreicht.[18]",
    "skip": []
+  },
+  {
+   "topic_id": "ai-news",
+   "date": "2026-10-04",
+   "summary": "Matthew Schwartz beschreibt BootLoops als offenen Harness für exakte wissenschaftliche Rechnungen und berichtet über 36 Manuskripte in 18 Fachgebieten mit 19 Koautoren binnen drei Monaten.[7] Fachleute mussten Fragestellungen und Interpretation lenken; korrekte Rechnungen garantieren keine richtigen Schlussfolgerungen.[7][6] Der Gastbeitrag vom 1. Oktober und die Einordnung vom 3. Oktober sind keine unabhängige Bestätigung aller Forschungsergebnisse.[7][6]",
+   "skip": [
+    {
+     "reason": "Quellenlücke",
+     "text": "Latent Space: Die registrierte Domain latentspace.com zeigt ein Portfolio statt der KI-Publikation; dieser Registereintrag liefert keine belastbare KI-Abdeckung."
+    }
+   ]
+  },
+  {
+   "topic_id": "lokale-llms",
+   "date": "2026-10-04",
+   "summary": "Kolibri ist ein deutsch-englisches MoE-Modell mit 78,1 Milliarden Gesamtparametern und 3,46 Milliarden aktiven Parametern je Token; die vollständigen Gewichte stehen unter Apache 2.0 bereit.[3][2] Der Hersteller nennt bis zu eine Million Kontexttokens und vier Reasoning-Stufen.[3] Die kleine aktive Parameterzahl bedeutet nicht, dass nur diese Gewichte gespeichert werden müssen; Leistungs- und Grounding-Vergleiche sind Herstellertests.[3]",
+   "skip": [
+    {
+     "reason": "Quellenlücke",
+     "text": "Latent Space: Die registrierte Domain latentspace.com zeigt ein Portfolio statt der KI-Publikation; dieser Registereintrag liefert keine belastbare KI-Abdeckung."
+    }
+   ]
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "date": "2026-10-04",
+   "summary": "Microsoft und Hugging Face stellen ThinkingBox über OpenEnv bereit: 507 zustandsbehaftete Geschäftsworkflows werden jeweils 20-mal ausgeführt und an Backend-Endzustand und Nebenwirkungen geprüft.[20] Der aktuelle Beitrag trennt korrekte Tool-Aufrufe von erledigten Aufgaben und einmaligen Erfolg von Wiederholbarkeit; die Ergebnisse stammen aus der eigenen Evaluation.[20]",
+   "skip": [
+    {
+     "reason": "Quellenlücke",
+     "text": "Latent Space: Die registrierte Domain latentspace.com zeigt ein Portfolio statt der KI-Publikation; dieser Registereintrag liefert keine belastbare KI-Abdeckung."
+    }
+   ]
+  },
+  {
+   "topic_id": "ai-tools",
+   "date": "2026-10-04",
+   "summary": "Meta stellt SDKs und Firmware bereit, um selbstgebaute ESP32- oder Raspberry-Pi-/Linux-Geräte mit Muse zu verbinden.[5][4] Zum Pairing sind ein SDK-Token und der Entwicklermodus in der Muse-App nötig; das Repository warnt ausdrücklich vor Risiken beim Basteln.[5] Der am 3. Oktober berichtete Home-Link-Versand ist erst für die folgenden Wochen angekündigt, kein bereits abgeschlossener Hardware-Rollout.[4]",
+   "skip": [
+    {
+     "reason": "Quellenlücke",
+     "text": "Latent Space: Die registrierte Domain latentspace.com zeigt ein Portfolio statt der KI-Publikation; dieser Registereintrag liefert keine belastbare KI-Abdeckung."
+    }
+   ]
+  },
+  {
+   "topic_id": "context-engineering",
+   "date": "2026-10-04",
+   "summary": "ServiceNow beschreibt AutoSynthData: Fehler eines Zielmodells und Erfolge eines stärkeren Teacher-Modells steuern neue Trainingsaufgaben.[21] Die Aufgaben kombinieren Systemspezifikation, Nutzerauftrag und Verifier und werden in der Umgebung ausgeführt und validiert.[21] EnterpriseOps Gym dient als Demonstration; daraus folgt keine unabhängig bestätigte allgemeine Leistungszusage.[21]",
+   "skip": [
+    {
+     "reason": "Quellenlücke",
+     "text": "Latent Space: Die registrierte Domain latentspace.com zeigt ein Portfolio statt der KI-Publikation; dieser Registereintrag liefert keine belastbare KI-Abdeckung."
+    }
+   ]
+  },
+  {
+   "topic_id": "ai-security",
+   "date": "2026-10-04",
+   "summary": "David Robinson hat OpenAI verlassen und kritisiert in einem persönlichen Essay die Sicherheitskultur; TechCrunch und Guardian berichten darüber.[16][17] OpenAI verweist als Antwort auf verstärkte Tests, externe Evaluationen, Monitoring und bei Bedarf zurückgehaltene Modelle.[16] Robinsons Bewertung ist kein neu nachgewiesener Sicherheitsvorfall; der Atlantic-Volltext war nicht zugänglich.[16][17]",
+   "skip": [
+    {
+     "reason": "Quellenlücke",
+     "text": "Latent Space: Die registrierte Domain latentspace.com zeigt ein Portfolio statt der KI-Publikation; dieser Registereintrag liefert keine belastbare KI-Abdeckung."
+    },
+    {
+     "reason": "Belegzugang",
+     "text": "Robinsons Atlantic-Essay war nicht vollständig zugänglich; aufgenommen wurden nur Aussagen aus zwei gelesenen Berichten, einschließlich OpenAIs Antwort."
+    }
+   ]
+  },
+  {
+   "topic_id": "ai-governance",
+   "date": "2026-10-04",
+   "summary": "Pramila Jayapals National-AI-Charter-Act-Rahmen würde den US-Marktzugang von einer verpflichtenden Bundes-Charta abhängig machen und staatliche Aufsicht sowie Tests vor Modellfreigaben vorsehen.[46] Der am 1. Oktober veröffentlichte politische Gesetzgebungsrahmen ist kein verabschiedetes Gesetz und keine bereits geltende Zulassungspflicht.[46]",
+   "skip": [
+    {
+     "reason": "Quellenlücke",
+     "text": "Latent Space: Die registrierte Domain latentspace.com zeigt ein Portfolio statt der KI-Publikation; dieser Registereintrag liefert keine belastbare KI-Abdeckung."
+    },
+    {
+     "reason": "Nicht ausreichend bestätigt",
+     "text": "Die berichtete neue US-Superintelligenz-Taskforce bleibt zurückgestellt: WSJ-Original nicht zugänglich, keine unabhängige Originalbestätigung."
+    }
+   ]
+  },
+  {
+   "topic_id": "enterprise",
+   "date": "2026-10-04",
+   "summary": "Prime Intellect veröffentlicht am 2. Oktober Prime Inference mit serverlosen Endpunkten, reservierter Kapazität und einer OpenAI-kompatiblen API.[11][10] Der GLM-5.3-Endpunkt auf OpenRouter existierte bereits seit 22. September; beworbene Geschwindigkeits-, Uptime- und Tool-Fehlerwerte bleiben Anbieterangaben.[11] Batch-Inferenz und One-Click-Dedicated-Deployments stehen noch auf der Roadmap.[11]",
+   "skip": [
+    {
+     "reason": "Quellenlücke",
+     "text": "Latent Space: Die registrierte Domain latentspace.com zeigt ein Portfolio statt der KI-Publikation; dieser Registereintrag liefert keine belastbare KI-Abdeckung."
+    }
+   ]
   }
  ],
  "fingerprints": {
   "ai-news": {
-   "hash": "278da6ebd604e6dec608f036dac0bea015d0a166",
-   "date": "2026-10-03"
+   "hash": "3b5375baa0a756ac74b9cef67d05a3080b35dd87",
+   "date": "2026-10-04"
   },
   "lokale-llms": {
-   "hash": "156b3cb4b294226df96a23c5e37a846f0bd6a68f",
-   "date": "2026-10-03"
+   "hash": "61e8e7ade3fdbea46e08bff5211138995b877197",
+   "date": "2026-10-04"
   },
   "agentic-engineering": {
-   "hash": "9b0d2be645cdf922eeca4408e4794fb26681298e",
-   "date": "2026-10-03"
+   "hash": "81cbf01383dd74c8ae9920f1aad087f62b2357b9",
+   "date": "2026-10-04"
   },
   "ai-tools": {
-   "hash": "d52cdad4fd8b30aa260b594bcbdfd593b616781c",
-   "date": "2026-10-03"
+   "hash": "ffe3788e27e7213cf5d791f88d0f28a237b42b67",
+   "date": "2026-10-04"
   },
   "context-engineering": {
-   "hash": "a0c41499cba917f7548ad4f6316187034f8d9212",
-   "date": "2026-10-03"
+   "hash": "3af629d2c6f2caa6eb72ebd0aab41d156ed6285b",
+   "date": "2026-10-04"
   },
   "ai-security": {
-   "hash": "bc41f6e46157a69434e3b8910476d2cc2a3beccd",
-   "date": "2026-10-03"
+   "hash": "b6d5cd77f9a285e85acde614f1447c4900f5ba78",
+   "date": "2026-10-04"
   },
   "ai-governance": {
-   "hash": "2ffd14b120d2ec3149dc2b731e48fdbc3b2064ca",
-   "date": "2026-10-03"
+   "hash": "a9702a92a566c4b928c6811494a9fd1423715e6e",
+   "date": "2026-10-04"
   },
   "enterprise": {
-   "hash": "b935893ea5d3d84cc7d8b6d063e1851f7ba83ea7",
-   "date": "2026-10-03"
+   "hash": "fbdda394fb7dcad510c5c9d1afc8545adc95db19",
+   "date": "2026-10-04"
   }
  }
 }
