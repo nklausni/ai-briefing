@@ -12,6 +12,14 @@ Reuters-Texte als Kandidaten oder Belege für neue Meldungen. Eine Entwicklung d
 über andere, selbst geprüfte Primärquellen oder unabhängige Berichte aufgenommen
 werden. Historische Briefing-Einträge bleiben unverändert.
 
+## Qwen: aktuelle Quelle
+
+Für die Quelle `qwen.ai` prüfe `https://qwen.ai/research` und die dort verlinkten
+Originalbeiträge. Der alte Blog `qwenlm.github.io` wird nicht mehr aktualisiert und
+dient nicht als aktueller Nachrichtenindex. Bei einer JS-Hülle nutze einen anderen
+sinnvollen Abrufweg; bestätige Veröffentlichungsdaten am Original und behandle
+ein dynamisches Tagesdatum oder leere Artikel nicht als neue Veröffentlichung.
+
 ## Recherche und Suchbudget
 
 1. Nutze `python3 ROOT/scripts/editor_context.py history --run-dir RUN --query 'BEGRIFF'`

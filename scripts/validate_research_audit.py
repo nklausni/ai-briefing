@@ -46,16 +46,18 @@ SOURCES = (
     ("shopify.engineering", "Shopify Engineering"),
     ("technologyreview.com", "MIT Technology Review"),
     ("cohere.com", "Cohere"),
-    ("qwenlm.github.io", "Qwen"),
+    ("qwen.ai", "Qwen"),
     ("aws.amazon.com", "AWS Machine Learning"),
     ("deepmind.google", "Google DeepMind"),
     ("research.google", "Google Research"),
     ("nist.gov", "NIST AI"),
 )
-REGISTRY_VERSION = 2
-# Published v1 audits are immutable and still need their original source set.
-LEGACY_SOURCES = SOURCES + (("reuters.com", "Reuters AI"),)
-SOURCE_REGISTRIES = {1: LEGACY_SOURCES, REGISTRY_VERSION: SOURCES}
+REGISTRY_VERSION = 3
+# Published audits retain their original source domains and source count.
+V2_SOURCES = tuple(("qwenlm.github.io" if domain == "qwen.ai" else domain, name)
+                   for domain, name in SOURCES)
+LEGACY_SOURCES = V2_SOURCES + (("reuters.com", "Reuters AI"),)
+SOURCE_REGISTRIES = {1: LEGACY_SOURCES, 2: V2_SOURCES, REGISTRY_VERSION: SOURCES}
 
 VALID_STATUS = {"checked", "unavailable"}
 
@@ -81,7 +83,7 @@ def validate(audit: dict, expected_date: str | None = None) -> list[str]:
     registry_version = audit.get("registry_version", 1)
     registry = SOURCE_REGISTRIES.get(registry_version)
     if registry is None:
-        errors.append("registry_version muss 1 oder 2 sein")
+        errors.append("registry_version muss 1, 2 oder 3 sein")
         registry = SOURCES
     expected = {domain: name for domain, name in registry}
     seen: set[str] = set()

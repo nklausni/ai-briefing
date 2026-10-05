@@ -165,6 +165,9 @@ Quelle gehört. Ein fehlendes oder unvollständiges Protokoll blockiert Commit u
 Veröffentlichung. Die Quellenliste ist versioniert: Die bisherigen 42-Quellen-Audits
 bleiben unverändert und prüfbar; ab Quellenlisten-Version 2 wird Reuters nicht mehr recherchiert
 oder als Beleg für neue Meldungen verwendet.
+Ab Quellenlisten-Version 3 ist Qwens aktuelle Primärquelle `https://qwen.ai/research`
+(`qwen.ai`); der nicht mehr gepflegte Blog `qwenlm.github.io` bleibt ausschließlich
+in historischen Audits der Versionen 1 und 2 erhalten. Die Pflichtliste bleibt bei 41 Quellen.
 
 Beispiel für einen historischen Audit mit 42 Quellen:
 

@@ -41,7 +41,7 @@ class TestResearchAuditValidation(unittest.TestCase):
                 "shopify.engineering",
                 "technologyreview.com",
                 "cohere.com",
-                "qwenlm.github.io",
+                "qwen.ai",
                 "aws.amazon.com",
                 "deepmind.google",
                 "research.google",
@@ -55,6 +55,10 @@ class TestResearchAuditValidation(unittest.TestCase):
     def test_legacy_audit_with_reuters_remains_valid(self):
         audit = self.valid_audit()
         del audit["registry_version"]
+        for entry in audit["sources"]:
+            if entry["domain"] == "qwen.ai":
+                entry["domain"] = "qwenlm.github.io"
+                entry["checked_url"] = "https://qwenlm.github.io/"
         audit["sources"].append({
             "domain": "reuters.com", "name": "Reuters AI", "status": "checked",
             "checked_url": "https://www.reuters.com/technology/",
