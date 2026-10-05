@@ -200,7 +200,16 @@ auf. Der Bericht trennt Recherche, Schlussredaktion und Publikationsprüfung und
 zeigt die Laufzeit jedes Quellenpakets. Nutze ihn zur späteren Optimierung;
 verändere dafür weder die Quellenabdeckung noch die Belegregeln.
 
-Antworte kurz auf Deutsch: wichtigste Änderungen, Link und relevante Quellenlücken.
+Antworte kurz auf Deutsch: wichtigste Änderungen und Link. Prüfe für die Abschlussmeldung
+alle Einträge des aktuellen Tagesaudits, nicht nur `status=unavailable`: Auch `checked`
+kann eine falsche Domain, einen veralteten Index oder eingeschränkt prüfbare Inhalte enthalten.
+Bei Problemen ergänze einen Abschnitt **Quellenprobleme** mit jeder betroffenen Quelle
+(Name und Domain/URL), konkretem Grund und Auswirkung auf die Recherche. Unterscheide
+nicht erreichbar, falsch konfiguriert/veraltet und eingeschränkt prüfbar. Nenne einen
+erfolgreichen RSS-/Alternativzugang ausdrücklich; ein einzelner fehlgeschlagener Direktabruf
+ist kein Totalausfall. Keine neuen Meldungen ist ebenfalls kein Quellenfehler.
+Bei einem unvollständigen Lauf liste auch ungeprüfte Pflichtquellen auf. Wenn es keine
+Quellenprobleme gibt, entfällt der Abschnitt. Behaupte keinen dauerhaften Ausfall ohne Beleg.
 Bei Fehlern sage ausdrücklich, dass kein neues verifiziertes Briefing veröffentlicht
 wurde, und welcher Schritt fehlt. Der Hauptagent meldet sich erst nach beendeten
 Subagenten und abgeschlossenen Prüfungen.
