@@ -16,7 +16,8 @@ class TestQwenMigration(unittest.TestCase):
     def test_historical_registries_preserve_old_qwen(self):
         for version in (1, 2):
             registry = [
-                ("qwenlm.github.io" if domain == "qwen.ai" else domain, name)
+                ("latentspace.com" if domain == "latent.space" else
+                 "qwenlm.github.io" if domain == "qwen.ai" else domain, name)
                 for domain, name in validator.SOURCES
             ]
             if version == 1:

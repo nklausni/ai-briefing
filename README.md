@@ -168,6 +168,12 @@ oder als Beleg für neue Meldungen verwendet.
 Ab Quellenlisten-Version 3 ist Qwens aktuelle Primärquelle `https://qwen.ai/research`
 (`qwen.ai`); der nicht mehr gepflegte Blog `qwenlm.github.io` bleibt ausschließlich
 in historischen Audits der Versionen 1 und 2 erhalten. Die Pflichtliste bleibt bei 41 Quellen.
+Ab Version 4 ist Latent Space korrekt als `latent.space` registriert; Versionen 1–3
+behalten die frühere Domain `latentspace.com` unverändert. Geprüfte Feed-/News-Einstiege
+für Latent Space, SemiAnalysis, MarkTechPost, VentureBeat, Microsoft AI und Qwen sind
+in `URL_OVERRIDES` hinterlegt. Quellenbezogene Alternativabrufe und xAI-Release-Notes
+sind in `docs/briefing-research-worker.md` dokumentiert; Zugriffssperren werden nicht
+als behoben behauptet und verbleibende Lücken in der Abschlussmeldung aufgelistet.
 
 Beispiel für einen historischen Audit mit 42 Quellen:
 

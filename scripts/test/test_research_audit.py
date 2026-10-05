@@ -59,6 +59,9 @@ class TestResearchAuditValidation(unittest.TestCase):
             if entry["domain"] == "qwen.ai":
                 entry["domain"] = "qwenlm.github.io"
                 entry["checked_url"] = "https://qwenlm.github.io/"
+            elif entry["domain"] == "latent.space":
+                entry["domain"] = "latentspace.com"
+                entry["checked_url"] = "https://latentspace.com/"
         audit["sources"].append({
             "domain": "reuters.com", "name": "Reuters AI", "status": "checked",
             "checked_url": "https://www.reuters.com/technology/",

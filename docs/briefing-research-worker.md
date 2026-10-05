@@ -20,6 +20,36 @@ dient nicht als aktueller Nachrichtenindex. Bei einer JS-Hülle nutze einen ande
 sinnvollen Abrufweg; bestätige Veröffentlichungsdaten am Original und behandle
 ein dynamisches Tagesdatum oder leere Artikel nicht als neue Veröffentlichung.
 
+## Bewährte Zugangswege je Quelle
+
+Die Assignment-URLs stammen aus `URL_OVERRIDES` in `research_pipeline.py`.
+Verwende diese Einstiege und die folgenden begrenzten Alternativen:
+
+- **Latent Space:** `https://www.latent.space/feed` und die verlinkten Originale
+  unter `https://www.latent.space/`. `latentspace.com` ist eine fremde Kunstseite
+  und keine KI-Quelle. Die korrigierte Pflichtdomain ist `latent.space`.
+- **SemiAnalysis:** `https://newsletter.semianalysis.com/feed` ist der aktuelle
+  Newsletter-Einstieg. Verlinkte Originale prüfen; das alte WordPress-Archiv/Feed
+  nicht als aktuellen Nachrichtenindex verwenden. Paywalls nicht umgehen.
+- **MarkTechPost:** `https://www.marktechpost.com/feed/` zuerst lesen; `www` und
+  abschließenden Slash erhalten. Bei Artikel-403 `web_extract` für genau das Original
+  versuchen; nur im Feed tatsächlich enthaltene Aussagen können ohne Artikelabruf belegt werden.
+- **VentureBeat:** `https://venturebeat.com/category/ai/` via `web_extract` bei
+  direktem 429. Eine lesbare Übersicht kann veraltet sein: gezielte Datumssuche
+  und verlinkte Originalartikel prüfen, nicht aus einer alten Übersicht Entwarnung ableiten.
+- **Microsoft AI:** `https://microsoft.ai/?post_type=new` via `web_extract` bei
+  direktem 403. Daten und Aussagen am verlinkten Original bestätigen.
+- **xAI:** `https://x.ai/news/` via `web_extract` bei direktem 403; zusätzlich
+  `https://docs.x.ai/developers/release-notes` für API-Änderungen. Release Notes
+  ersetzen nicht sämtliche Unternehmensnachrichten; monatsgenaue Angaben nicht
+  als gesichertes Tagesdatum behandeln.
+- **Qwen:** Der Einstieg `https://qwen.ai/research` ist auch in der Pipeline
+  hinterlegt. Es gelten die Datums-/JS-Prüfregeln oben.
+
+Alternativen sind keine Garantie für vollständige Verfügbarkeit. Dokumentiere
+fehlgeschlagene und erfolgreiche Zugangswege im `result`; verbleibende Einschränkungen
+müssen in die Abschlussmeldung. Kein Quellenfehler darf andere Quellen abbrechen.
+
 ## Recherche und Suchbudget
 
 1. Nutze `python3 ROOT/scripts/editor_context.py history --run-dir RUN --query 'BEGRIFF'`
