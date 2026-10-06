@@ -203,13 +203,20 @@ verändere dafür weder die Quellenabdeckung noch die Belegregeln.
 Antworte kurz auf Deutsch: wichtigste Änderungen und Link. Prüfe für die Abschlussmeldung
 alle Einträge des aktuellen Tagesaudits, nicht nur `status=unavailable`: Auch `checked`
 kann eine falsche Domain, einen veralteten Index oder eingeschränkt prüfbare Inhalte enthalten.
-Bei Problemen ergänze einen Abschnitt **Quellenprobleme** mit jeder betroffenen Quelle
-(Name und Domain/URL), konkretem Grund und Auswirkung auf die Recherche. Unterscheide
-nicht erreichbar, falsch konfiguriert/veraltet und eingeschränkt prüfbar. Nenne einen
-erfolgreichen RSS-/Alternativzugang ausdrücklich; ein einzelner fehlgeschlagener Direktabruf
-ist kein Totalausfall. Keine neuen Meldungen ist ebenfalls kein Quellenfehler.
-Bei einem unvollständigen Lauf liste auch ungeprüfte Pflichtquellen auf. Wenn es keine
-Quellenprobleme gibt, entfällt der Abschnitt. Behaupte keinen dauerhaften Ausfall ohne Beleg.
+Ordne Probleme nach ihrer verbleibenden Auswirkung ein, nicht nach dem ersten HTTP-Fehler:
+- **Offene Recherchelücken:** jede Quelle mit Name und Domain/URL, Ursache und
+  fehlender Abdeckung einzeln nennen. Dazu zählen ungeprüfte Pflichtquellen,
+  nicht lesbare Originale und unzuverlässige/veraltete Indizes, deren Abdeckung
+  durch Alternativen nicht ausreichend hergestellt wurde.
+- **Eingeschränkte Quellen:** einzeln nennen, wenn nur Vorschauen/öffentliche
+  Paywall-Teile oder undatierte Teilbereiche prüfbar waren. Nur belegte Inhalte verwenden.
+- **Aufgefangene Abruffehler:** erfolgreich wiederhergestellte Quellen namentlich
+  in höchstens zwei kurzen Sätzen bündeln, einschließlich wirksamer Alternative
+  (z. B. RSS, Direktabruf oder Browser). Kein eigener Absatz je Abruffehler.
+Leere Abschnitte weglassen. Keine neuen Meldungen ist kein Quellenfehler. Nicht
+vollständig reparierte Abdeckung niemals als bloß aufgefangenen Fehler einsortieren.
+Behaupte keinen dauerhaften Ausfall ohne Beleg. Bericht knapp halten, aber keine
+betroffene Quelle still weglassen; technische Abrufdetails stehen im Tagesaudit.
 Bei Fehlern sage ausdrücklich, dass kein neues verifiziertes Briefing veröffentlicht
 wurde, und welcher Schritt fehlt. Der Hauptagent meldet sich erst nach beendeten
 Subagenten und abgeschlossenen Prüfungen.

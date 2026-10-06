@@ -39,7 +39,7 @@ URL_OVERRIDES = {
     "openai.com": "https://openai.com/news/",
     "openrouter.ai": "https://openrouter.ai/blog/",
     "blog.google": "https://blog.google/innovation-and-ai/",
-    "microsoft.ai": "https://microsoft.ai/?post_type=new",
+    "microsoft.ai": "https://microsoft.ai/blog/",
     "latent.space": "https://www.latent.space/feed",
     "semianalysis.com": "https://newsletter.semianalysis.com/feed",
     "marktechpost.com": "https://www.marktechpost.com/feed/",

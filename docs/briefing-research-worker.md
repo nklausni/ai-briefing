@@ -20,6 +20,44 @@ dient nicht als aktueller Nachrichtenindex. Bei einer JS-Hülle nutze einen ande
 sinnvollen Abrufweg; bestätige Veröffentlichungsdaten am Original und behandle
 ein dynamisches Tagesdatum oder leere Artikel nicht als neue Veröffentlichung.
 
+**Verbindlicher Browser-Ersatzweg:** Wenn HTTP/web_extract nur die JS-Hülle liefert,
+öffne die Research-Seite im gerenderten Browser. Über `terminal` ist hier geprüft:
+
+```sh
+npx --yes agent-browser --session "briefing-QWEN-ID" open https://qwen.ai/research
+npx --yes agent-browser --session "briefing-QWEN-ID" snapshot
+```
+
+Ersetze `ID` durch die eindeutige Assignment-/Run-Kennung; jeder Worker nutzt seine
+eigene Session. Klicke die relevante Karte über die Referenz des **aktuellen** Snapshots,
+ermittle danach die tatsächliche Original-URL mit `get url` und lies `snapshot` bzw.
+`eval`. Die Karten führen auf URLs wie `https://qwen.ai/blog?id=qwen-image-2.1`;
+ein geratener Pfad `/blog/qwen-image-2.1` ist kein gleichwertiger Ersatz.
+Ein Datumsheader und ein echter Artikeltext müssen vorhanden sein. Am 06.10.2026
+war Qwen-Image-2.1 so mit Originaldatum 20.09.2026 und Volltext lesbar; dies ist
+kein Beleg für eine neue Oktober-Veröffentlichung oder vollständige Indexabdeckung.
+
+Speichere den Originalabruf ohne Kürzung im Worker-Cache:
+
+```sh
+npx --yes agent-browser --session "briefing-QWEN-ID" eval '({url:location.href,retrieved_at:new Date().toISOString(),text:document.body.innerText,links:Array.from(document.querySelectorAll("article a")).map(a=>({text:a.innerText,url:a.href}))})' > WORKER/qwen-original.json
+```
+
+Ersetze `WORKER` durch deinen eigenen Arbeitsordner. Das Schema ist `url`,
+`retrieved_at`, `text`; Originalstellen später gezielt daraus lesen. Browserabrufe
+als `method: direct` dokumentieren und im `result` den gerenderten Browser nennen.
+Offizielle GitHub-/Hugging-Face-Links **aus dem Original** sind ergänzende Belege:
+Model Card, datierte Releases und README prüfen, nicht Änderungen/Downloads als
+Veröffentlichungsdatum ausgeben. `QwenLM/Qwen/releases` hat keine Releases und
+ist kein Ersatzindex für alle aktuellen Qwen-Modelle.
+
+Maximal ein Browser-Indexabruf und drei relevante Originalartikel pro Quelle,
+Werkzeugbefehle jeweils höchstens 60 Sekunden; eine gescheiterte Browserroute
+nicht endlos wiederholen. Vorhandene funktionierende Extraktionen weiterverwenden.
+Session nach Abschluss mit `npx --yes agent-browser --session "briefing-QWEN-ID" close`
+schließen. Bei Loginwand stoppen, keine Zugangsdaten raten. Falls weiterhin Datum
+oder Text fehlen, bleibt die Quelle eingeschränkt/unavailable; andere Quellen laufen weiter.
+
 ## Bewährte Zugangswege je Quelle
 
 Die Assignment-URLs stammen aus `URL_OVERRIDES` in `research_pipeline.py`.
@@ -37,12 +75,23 @@ Verwende diese Einstiege und die folgenden begrenzten Alternativen:
 - **VentureBeat:** `https://venturebeat.com/category/ai/` via `web_extract` bei
   direktem 429. Eine lesbare Übersicht kann veraltet sein: gezielte Datumssuche
   und verlinkte Originalartikel prüfen, nicht aus einer alten Übersicht Entwarnung ableiten.
-- **Microsoft AI:** `https://microsoft.ai/?post_type=new` via `web_extract` bei
-  direktem 403. Daten und Aussagen am verlinkten Original bestätigen.
+  Bei veraltetem Index sind die Datumssuche und eine breitere Zeitfenstersuche
+  verpflichtende Ersatzwege, nicht nur optionale Nachprüfungen.
+- **Microsoft AI:** neuer Haupteinstieg `https://microsoft.ai/blog/`.
+  `web_extract` liefert hier eventuell nur den Titel; dann den oben beschriebenen
+  isolierten Browser verwenden. Die gerenderte Übersicht liefert aktuelle Artikel-Links;
+  Daten und Aussagen am verlinkten Original bestätigen. Die alte Sammelansicht
+  `?post_type=new` nicht als vollständigen aktuellen Nachrichtenindex verwenden.
+- **TechCrunch und Meta AI:** Bei veraltetem KI-/Blogindex gezielte Datumssuche
+  **und** eine breitere Suche nach dem Unternehmen im zugeteilten Zeitfenster
+  verbindlich ergänzen. Artikel am Original prüfen. Eine leere Suche oder ein alter
+  Index ist kein Beleg, dass es keine neuen Unternehmensnachrichten gibt.
 - **xAI:** `https://x.ai/news/` via `web_extract` bei direktem 403; zusätzlich
   `https://docs.x.ai/developers/release-notes` für API-Änderungen. Release Notes
   ersetzen nicht sämtliche Unternehmensnachrichten; monatsgenaue Angaben nicht
-  als gesichertes Tagesdatum behandeln.
+  als gesichertes Tagesdatum behandeln. Bei altem/gesperrtem Newsindex zusätzlich
+  gezielte Datumssuche und breitere Unternehmenssuche im Zeitfenster ausführen.
+  Bleibt die Newsabdeckung offen, trotz lesbarer API-Notes als Recherchelücke melden.
 - **Qwen:** Der Einstieg `https://qwen.ai/research` ist auch in der Pipeline
   hinterlegt. Es gelten die Datums-/JS-Prüfregeln oben.
 

@@ -13,7 +13,7 @@ class SourceAccessTests(unittest.TestCase):
             'latent.space': 'https://www.latent.space/feed',
             'semianalysis.com': 'https://newsletter.semianalysis.com/feed',
             'marktechpost.com': 'https://www.marktechpost.com/feed/',
-            'microsoft.ai': 'https://microsoft.ai/?post_type=new',
+            'microsoft.ai': 'https://microsoft.ai/blog/',
             'venturebeat.com': 'https://venturebeat.com/category/ai/',
             'qwen.ai': 'https://qwen.ai/research',
         }

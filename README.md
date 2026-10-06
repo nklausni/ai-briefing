@@ -174,6 +174,10 @@ für Latent Space, SemiAnalysis, MarkTechPost, VentureBeat, Microsoft AI und Qwe
 in `URL_OVERRIDES` hinterlegt. Quellenbezogene Alternativabrufe und xAI-Release-Notes
 sind in `docs/briefing-research-worker.md` dokumentiert; Zugriffssperren werden nicht
 als behoben behauptet und verbleibende Lücken in der Abschlussmeldung aufgelistet.
+Qwen-Originale mit `blog?id=...` und Microsofts `/blog/` sind im gerenderten Browser
+geprüft; dieser begrenzte Ersatzweg ist verbindlich dokumentiert. Veraltete Indizes
+erfordern zusätzliche Zeitfenstersuchen und Originalprüfungen. Abschlussmeldungen
+trennen offene Recherchelücken, eingeschränkte Quellen und gebündelte aufgefangene Fehler.
 
 Beispiel für einen historischen Audit mit 42 Quellen:
 
