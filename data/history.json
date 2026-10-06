@@ -2,314 +2,6 @@
  "items": [
   {
    "topic_id": "ai-news",
-   "title": "Anthropic veröffentlicht Claude Fable 5.1 und Mythos 5.1",
-   "category": "modelle",
-   "impact": 5,
-   "date": "2026-09-01",
-   "summary": "Fable 5.1 ist allgemein verfügbar, Mythos 5.1 bleibt geprüften Cyber- und Life-Science-Organisationen vorbehalten. Anthropic meldet deutliche Zuwächse bei lang laufenden Coding- und Wissensaufgaben; günstigere Cache-Lesezugriffe sollen typische Kosten um rund 25 Prozent und stark agentische Workloads um bis zu 45 Prozent senken. Die regulären Preise bleiben bei 10 Dollar je Million Eingabe- und 50 Dollar je Million Ausgabe-Token.",
-   "sources": [
-    {
-     "label": "Anthropic",
-     "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1"
-    },
-    {
-     "label": "TechCrunch",
-     "url": "https://techcrunch.com/2026/09/01/anthropics-new-fable-release-is-cheaper-less-restrictive"
-    }
-   ],
-   "first_seen": "2026-09-02"
-  },
-  {
-   "topic_id": "ai-news",
-   "title": "GitSpawn betrifft mehrere verbreitete Coding-Agenten",
-   "category": "security",
-   "impact": 5,
-   "date": "2026-09-01",
-   "summary": "Manifold Security beschreibt acht Schwachstellen in sieben Coding-Agenten: Beim automatischen Erfassen des Repository-Kontexts können manipulierte Git-Einstellungen Code mit den Rechten des Entwicklers ausführen, teils noch vor einer Vertrauensabfrage und außerhalb der Sandbox. Vier Befunde waren bei Veröffentlichung ungepatcht, darunter Varianten in Claude Code, Hermes Agent, Qwen Code und Grok Build; Codex, Cursor, Goose und eine weitere Claude-Code-Variante waren bereits korrigiert.",
-   "sources": [
-    {
-     "label": "Manifold Security",
-     "url": "https://www.manifold.security/blog/ai-coding-agents-git-hijack"
-    }
-   ],
-   "first_seen": "2026-09-02"
-  },
-  {
-   "topic_id": "ai-news",
-   "title": "OpenAI verbindet ChatGPT for Healthcare mit Epic und öffentlichen Gesundheitsdaten",
-   "category": "business",
-   "impact": 4,
-   "date": "2026-09-01",
-   "summary": "Eine neue Epic-Integration bringt autorisierte Patientendaten in ChatGPT for Healthcare und kann auch direkt in unterstützte EHR-Oberflächen eingebettet werden. Ein zusätzlicher Plugin-Verbund erschließt neun offizielle Datenquellen wie PubMed, DailyMed und ClinicalTrials.gov; Rollenrechte, SSO und Audit-Protokolle bleiben Teil des verwalteten Arbeitsbereichs.",
-   "sources": [
-    {
-     "label": "OpenAI",
-     "url": "https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources/"
-    }
-   ],
-   "first_seen": "2026-09-02"
-  },
-  {
-   "topic_id": "agentic-engineering",
-   "title": "GitSpawn: Kontext-Erfassung führt Git-Befehle vor der Vertrauensabfrage aus",
-   "category": "security",
-   "impact": 5,
-   "date": "2026-09-01",
-   "summary": "Mehrere Coding-Agenten rufen beim Start Git auf, ohne ausführbare Einstellungen aus der Repository-Konfiguration zu neutralisieren. Ein als vollständiger Ordner oder ZIP übergebenes Projekt kann dadurch Befehle außerhalb der Agenten-Sandbox auslösen; für Agenten-Workflows reicht eine Modell-Sandbox allein also nicht, auch die vorgelagerten Werkzeuge müssen gehärtet werden.",
-   "sources": [
-    {
-     "label": "Manifold Security",
-     "url": "https://www.manifold.security/blog/ai-coding-agents-git-hijack"
-    }
-   ],
-   "first_seen": "2026-09-02"
-  },
-  {
-   "topic_id": "agentic-engineering",
-   "title": "GitHub Copilot kann Pull Requests als genehmigt markieren",
-   "category": "agents",
-   "impact": 4,
-   "date": "2026-09-01",
-   "summary": "In einer öffentlichen Vorschau kann Copilot eine Freigabe abgeben, die auf Wunsch auf die erforderliche Zahl von Reviews angerechnet wird. Die Funktion ist standardmäßig deaktiviert, lässt sich bis auf Repository- und Dateipfad-Ebene begrenzen und eine Freigabe verfällt nach neuen Commits wie bei menschlichen Reviewern.",
-   "sources": [
-    {
-     "label": "GitHub Changelog",
-     "url": "https://github.blog/changelog/2026-09-01-copilot-code-review-can-now-approve-pull-requests"
-    }
-   ],
-   "first_seen": "2026-09-02"
-  },
-  {
-   "topic_id": "agentic-engineering",
-   "title": "Fable 5.1 zielt auf lange, unbeaufsichtigte Coding-Läufe",
-   "category": "agents",
-   "impact": 4,
-   "date": "2026-09-01",
-   "summary": "Anthropic positioniert Fable 5.1 als stärkeres Modell für lang laufende Coding- und Forschungsaufgaben und nennt deutliche Zugewinne auf Terminal-Bench 4.0 sowie CursorBench. Günstigere Cache-Lesezugriffe senken gerade bei kontext- und werkzeuglastigen Agenten die Kosten, ohne die Preise für reguläre Ein- und Ausgabe-Token zu verändern.",
-   "sources": [
-    {
-     "label": "Anthropic",
-     "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1"
-    }
-   ],
-   "first_seen": "2026-09-02"
-  },
-  {
-   "topic_id": "ai-tools",
-   "title": "Google Pics startet als KI-Bildeditor für Workspace",
-   "category": "tools",
-   "impact": 4,
-   "date": "2026-09-01",
-   "summary": "Google Pics wird als eigenständiges Werkzeug sowie in Docs und Slides ausgerollt, Drive soll folgen. Auf Basis von Nano Banana erzeugt und bearbeitet es Bilder per Textanweisung, kann einzelne Objekte isolieren, Text im Bild ändern oder übersetzen und unterstützt gemeinsames Bearbeiten.",
-   "sources": [
-    {
-     "label": "Google",
-     "url": "https://blog.google/products-and-platforms/products/workspace/google-pics/"
-    }
-   ],
-   "first_seen": "2026-09-02"
-  },
-  {
-   "topic_id": "ai-tools",
-   "title": "GitHub Copilot übernimmt auf Wunsch formelle Pull-Request-Freigaben",
-   "category": "tools",
-   "impact": 4,
-   "date": "2026-09-01",
-   "summary": "Copilot Reviews enthalten nun immer eine Einschätzung zur Freigabereife; Administratoren können zusätzlich echte Approvals erlauben, die Branch-Regeln erfüllen. Der Schalter ist standardmäßig aus und kann auf Unternehmen, Organisationen, Repositories und bestimmte Pfade begrenzt werden.",
-   "sources": [
-    {
-     "label": "GitHub Changelog",
-     "url": "https://github.blog/changelog/2026-09-01-copilot-code-review-can-now-approve-pull-requests"
-    }
-   ],
-   "first_seen": "2026-09-02"
-  },
-  {
-   "topic_id": "ai-tools",
-   "title": "Claude Fable 5.1 ist auf allen großen Plattformen verfügbar",
-   "category": "tools",
-   "impact": 3,
-   "date": "2026-09-01",
-   "summary": "Fable 5.1 steht über Claude, die API sowie AWS, Google Cloud und Microsoft Azure bereit. GitHub hat das Modell am selben Tag auch für Copilot allgemein verfügbar gemacht; für Business- und Enterprise-Konten bleibt eine administrative Freigabe nötig.",
-   "sources": [
-    {
-     "label": "Anthropic",
-     "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1"
-    },
-    {
-     "label": "GitHub Changelog",
-     "url": "https://github.blog/changelog/2026-09-01-claude-fable-5-1-generally-available-in-github-copilot"
-    }
-   ],
-   "first_seen": "2026-09-02"
-  },
-  {
-   "topic_id": "context-engineering",
-   "title": "Anthropic senkt Cache-Lesezugriffe für Fable 5.1 um 75 Prozent",
-   "category": "agents",
-   "impact": 4,
-   "date": "2026-09-01",
-   "summary": "Bereits verarbeiteter Kontext kostet bei Fable 5.1 nur noch 0,25 Dollar je Million Token. Anthropic beziffert die Gesamtersparnis gegenüber Fable 5 bei typischer Nutzung auf rund 25 Prozent und bei stark agentischen, kontextreichen Abläufen auf bis zu 45 Prozent; damit wird gepflegter, wiederverwendbarer Kontext wirtschaftlich wichtiger.",
-   "sources": [
-    {
-     "label": "Anthropic",
-     "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1"
-    }
-   ],
-   "first_seen": "2026-09-02"
-  },
-  {
-   "topic_id": "context-engineering",
-   "title": "GitSpawn macht die Kontext-Erfassung selbst zur Angriffsfläche",
-   "category": "security",
-   "impact": 4,
-   "date": "2026-09-01",
-   "summary": "Coding-Agenten sammeln Repository-Kontext teils schon vor der ersten Eingabe durch automatische Git-Aufrufe. Wenn dabei lokale Git-Konfiguration ungeprüft übernommen wird, kann ein fremdes Projekt Code außerhalb der Sandbox starten; Kontextaufnahme braucht deshalb dieselben Vertrauensgrenzen wie spätere Werkzeugaufrufe.",
-   "sources": [
-    {
-     "label": "Manifold Security",
-     "url": "https://www.manifold.security/blog/ai-coding-agents-git-hijack"
-    }
-   ],
-   "first_seen": "2026-09-02"
-  },
-  {
-   "topic_id": "ai-security",
-   "title": "GitSpawn ermöglicht Codeausführung über manipulierte Git-Konfiguration",
-   "category": "security",
-   "impact": 5,
-   "date": "2026-09-01",
-   "summary": "Die von Manifold Security dokumentierte Fehlerklasse nutzt aus, dass Coding-Agenten Git-Befehle zur Kontextsammlung starten und dabei ausführbare Repository-Einstellungen übernehmen. Angreifer können so bei als Ordner oder ZIP weitergegebenen Projekten Befehle mit Benutzerrechten, außerhalb der Sandbox und ohne sichtbare Freigabe ausführen; vier der acht gemeldeten Varianten waren am 1. September noch offen.",
-   "sources": [
-    {
-     "label": "Manifold Security",
-     "url": "https://www.manifold.security/blog/ai-coding-agents-git-hijack"
-    }
-   ],
-   "first_seen": "2026-09-02"
-  },
-  {
-   "topic_id": "ai-security",
-   "title": "AIR sammelt 50 Millionen Dollar für eine Kontrollschicht um Agenten-Werkzeuge ein",
-   "category": "security",
-   "impact": 3,
-   "date": "2026-09-01",
-   "summary": "Das Sicherheitsunternehmen will laufende Agenten in Firmen erkennen und deren Skills, Plugins, MCP-Server sowie externe Abrufe fortlaufend prüfen und blockieren können. AIR berichtet, derzeit rund 27 Prozent der online gefundenen Erweiterungen auszufiltern; mehr als 20 Kunden nutzen die Plattform, besonders aus Finanz- und Pharmaunternehmen.",
-   "sources": [
-    {
-     "label": "TechCrunch",
-     "url": "https://techcrunch.com/2026/09/01/air-raises-50m-to-help-companies-vet-the-skills-and-add-ons-ai-agents-use"
-    }
-   ],
-   "first_seen": "2026-09-02"
-  },
-  {
-   "topic_id": "ai-security",
-   "title": "Fable 5.1 reduziert Fehlalarme seiner Cyber-Schutzfilter",
-   "category": "security",
-   "impact": 3,
-   "date": "2026-09-01",
-   "summary": "Anthropic gibt an, dass die neuen Schutzmechanismen 60 Prozent weniger harmlose Cyber-Anfragen fälschlich blockieren. Fable 5.1 darf nun Software-Schwachstellen finden, aber keine Exploits entwickeln; der weitergehende Zugriff auf Mythos 5.1 bleibt geprüften Organisationen vorbehalten.",
-   "sources": [
-    {
-     "label": "Anthropic",
-     "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1"
-    }
-   ],
-   "first_seen": "2026-09-02"
-  },
-  {
-   "topic_id": "ai-governance",
-   "title": "Anthropic öffnet Watermark-Prüfung in einer privaten Vorschau",
-   "category": "security",
-   "impact": 3,
-   "date": "2026-09-01",
-   "summary": "Anthropic hat seine Dokumentation am 1. September aktualisiert und stellt eine API zur Erkennung von Claude-Textwasserzeichen zunächst berechtigten Regulierern, Medien, Faktenprüfern, Forschern, Bildungseinrichtungen und betroffenen Unternehmen bereit. Das probabilistische Verfahren soll bei längeren Texten Claude-Beteiligung erkennen, kann aber weder menschliche Urheberschaft beweisen noch starke Überarbeitung zuverlässig überstehen.",
-   "sources": [
-    {
-     "label": "Anthropic",
-     "url": "https://www.anthropic.com/news/claude-text-watermark"
-    }
-   ],
-   "first_seen": "2026-09-02"
-  },
-  {
-   "topic_id": "ai-governance",
-   "title": "GitHub macht KI-Freigaben zu einer administrierbaren Repository-Regel",
-   "category": "security",
-   "impact": 3,
-   "date": "2026-09-01",
-   "summary": "Unternehmen können festlegen, ob Copilot Pull Requests überhaupt genehmigen darf und für welche Repositories oder Dateipfade dies gilt. Weil eine solche Genehmigung auf erforderliche Reviews angerechnet werden kann, wird die Konfiguration Teil der Software-Governance statt nur eine Komfortfunktion.",
-   "sources": [
-    {
-     "label": "GitHub Changelog",
-     "url": "https://github.blog/changelog/2026-09-01-copilot-code-review-can-now-approve-pull-requests"
-    }
-   ],
-   "first_seen": "2026-09-02"
-  },
-  {
-   "topic_id": "ai-governance",
-   "title": "Fable 5.1 bringt Zero-Data-Retention vor der neuen Enterprise-Schutzarchitektur",
-   "category": "business",
-   "impact": 3,
-   "date": "2026-09-01",
-   "summary": "Berechtigte Unternehmenskunden können Fable 5.1 vorübergehend ohne Datenaufbewahrung nutzen. Später soll Enterprise Frontier Safeguards Missbrauchskontrollen in vollständig kundenseitig kontrollierter Cloud-Infrastruktur ausführen und so Überwachung mit vollständiger Datenhoheit verbinden.",
-   "sources": [
-    {
-     "label": "Anthropic",
-     "url": "https://www.anthropic.com/claude-fable-and-mythos-5-1"
-    }
-   ],
-   "first_seen": "2026-09-02"
-  },
-  {
-   "topic_id": "enterprise",
-   "title": "ChatGPT for Healthcare erhält Epic-Anbindung und neun öffentliche Datenquellen",
-   "category": "business",
-   "impact": 4,
-   "date": "2026-09-01",
-   "summary": "OpenAI verbindet autorisierte Patientenkontexte aus Epic mit ChatGPT und ermöglicht unterstützten Einrichtungen eine Einbettung direkt in die elektronische Patientenakte. Der neue Healthcare-Public-Data-Verbund erschließt unter anderem PubMed, DailyMed, RxNorm und ClinicalTrials.gov unter bestehenden Rollen-, SSO- und Audit-Kontrollen.",
-   "sources": [
-    {
-     "label": "OpenAI",
-     "url": "https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources/"
-    }
-   ],
-   "first_seen": "2026-09-02"
-  },
-  {
-   "topic_id": "enterprise",
-   "title": "Google Pics rückt in das Kernpaket von Workspace",
-   "category": "business",
-   "impact": 3,
-   "date": "2026-09-01",
-   "summary": "Google rollt seinen generativen Bildeditor für AI-Pro- und Ultra-Abonnenten sowie die meisten Workspace-Geschäftskunden aus. Die Integration beginnt in Docs und Slides und greift damit direkt Canva und Adobe Express in bestehenden Büroabläufen an, statt ein isoliertes Kreativwerkzeug zu bleiben.",
-   "sources": [
-    {
-     "label": "Google",
-     "url": "https://blog.google/products-and-platforms/products/workspace/google-pics/"
-    }
-   ],
-   "first_seen": "2026-09-02"
-  },
-  {
-   "topic_id": "enterprise",
-   "title": "AIR setzt auf fortlaufende Kontrolle der Agenten-Lieferkette",
-   "category": "business",
-   "impact": 3,
-   "date": "2026-09-01",
-   "summary": "AIR kommt mit 50 Millionen Dollar aus zwei Seed-Runden aus dem Stealth-Modus und verkauft eine herstellerübergreifende Kontrollschicht für Agenten, Skills und MCP-Server. Das Produkt kombiniert Bestandsaufnahme, Laufzeitprüfung und eine Whitelist geprüfter Erweiterungen; die frühe Nachfrage kommt laut Unternehmen vor allem aus regulierten Branchen.",
-   "sources": [
-    {
-     "label": "TechCrunch",
-     "url": "https://techcrunch.com/2026/09/01/air-raises-50m-to-help-companies-vet-the-skills-and-add-ons-ai-agents-use"
-    }
-   ],
-   "first_seen": "2026-09-02"
-  },
-  {
-   "topic_id": "ai-news",
    "title": "Google veröffentlicht Gemini 3.8 Flash und 3.8 Flash Cyber",
    "category": "modelle",
    "impact": 4,
@@ -9205,10 +8897,6 @@
     {
      "label": "[8] venturebeat.com",
      "url": "https://venturebeat.com/orchestration/we-built-an-ai-agent-for-servicenow-the-real-pain-points-were-narrower-than-our-roadmap-assumed"
-    },
-    {
-     "label": "[9] venturebeat.com",
-     "url": "https://venturebeat.com/orchestration/we-built-an-ai-agent-for-servicenow-the-real-pain-points-were-narrower-than-our-roadmap-assumed?x=1"
     }
    ],
    "first_seen": "2026-10-05"
@@ -9231,77 +8919,224 @@
     }
    ],
    "first_seen": "2026-10-05"
-  }
- ],
- "summaries": [
+  },
   {
    "topic_id": "ai-news",
-   "date": "2026-09-01",
-   "summary": "Anthropic sichert sich mit einem 35-Milliarden-Dollar-Cloudvertrag zusätzliche Nvidia-Rechenleistung, Google zeigt mehrtägige Multi-Agenten-Teams für Forschung und Engineering, und Anthropic legt zugleich einen ungewöhnlich offenen Sicherheitsbericht vor.",
-   "skip": [
+   "title": "Reka zeigt Rho-1 als einheitliches Modell für Text, Bild, Video und Aktionen",
+   "category": "modelle",
+   "impact": 3,
+   "date": "2026-10-05",
+   "summary": "Reka zeigt Rho-1 als Research Preview: Das 19B-Modell vereinigt Text, Bild, Video und Robotikaktionen in einem gemeinsamen Token-Kontext.[3][4] Die Vorschau belegt keine Produktionsreife oder allgemeine physische Intelligenz; die Architekturangaben stammen von Reka.[4]",
+   "sources": [
     {
-     "reason": "An anderer Stelle vertieft",
-     "text": "Details zum Pentagon-Rollout von ChatGPT Mil und Grok for Government sowie zu OpenAIs erfolgsbasierter Preisgestaltung werden unter Enterprise behandelt, die EU-Einstufung von ChatGPT und Anthropics Aufruf zu koordiniertem Tempo unter AI Governance, die ServiceNow- und Kiro-Lücken unter AI Security."
+     "label": "[3] the-decoder.com",
+     "url": "https://the-decoder.com/reka-ais-omni-model-rho-1-handles-text-images-video-and-robot-control-in-a-single-model/"
+    },
+    {
+     "label": "[4] reka.ai",
+     "url": "https://reka.ai/news/rho-1-collapsing-the-multimodal-stack"
     }
-   ]
+   ],
+   "first_seen": "2026-10-06"
   },
   {
    "topic_id": "lokale-llms",
-   "date": "2026-09-01",
-   "summary": "HUMAIN und Qualcomm bringen lokale KI-Verarbeitung in einen neuen Enterprise-PC, während große Modelllabore Mac minis in hoher Stückzahl für Computer-Use-Training einsetzen.",
-   "skip": [
+   "title": "Reflection kündigt Beam an; offene Gewichte sollen erst später im Oktober folgen",
+   "category": "lokal",
+   "impact": 3,
+   "date": "2026-10-05",
+   "summary": "Reflection kündigt Beam mit 501 Milliarden Gesamtparametern und 23 Milliarden aktiven Parametern für Coding und Agenten an.[11][20] Gewichte, Model Card und Technikbericht sollen erst später im Oktober folgen; derzeit laufen finale Red-Team-Tests und eine Early-Access-Anmeldung.[11] Die beworbenen Effizienz- und Leistungswerte sind nicht unabhängig bestätigt.[20]",
+   "sources": [
     {
-     "reason": "Keine neue Modell-Veröffentlichung im Zeitraum",
-     "text": "Die letzten offenen Modell-Releases (GLM-5.3-Flash, Qwen3.8-Flash-Next) stammen bereits vom 26.08.; am 31.08./01.09. gab es keine neue Gewichts-Veröffentlichung."
+     "label": "[20] techcrunch.com",
+     "url": "https://techcrunch.com/2026/10/05/reflection-debuts-beam-a-open-weight-ai-model-to-rival-chinese-models-at-lower-compute-cost/"
+    },
+    {
+     "label": "[11] reflection.ai",
+     "url": "https://reflection.ai/blog/introducing-beam"
     }
-   ]
+   ],
+   "first_seen": "2026-10-06"
+  },
+  {
+   "topic_id": "lokale-llms",
+   "title": "llama.cpp 0.6.0 erweitert Batch-API, Modellunterstützung und lokale Backends",
+   "category": "lokal",
+   "impact": 3,
+   "date": "2026-10-05",
+   "summary": "llama.cpp 0.6.0 ergänzt llama_batch_ext und llama_process für gemischte Token-/Embedding-Batches sowie GLM-5.3-Flash- und Clef-Unterstützung.[57] Hinzu kommen Metal- und Vulkan-Erweiterungen; die bereits berichtete System-One-API ist nicht der neue Aufhänger dieser Meldung.[57]",
+   "sources": [
+    {
+     "label": "[57] github.com",
+     "url": "https://github.com/ggml-org/llama.cpp/releases/tag/v0.6.0"
+    }
+   ],
+   "first_seen": "2026-10-06"
   },
   {
    "topic_id": "agentic-engineering",
-   "date": "2026-09-01",
-   "summary": "Google zeigt Agententeams, die über Stunden oder Tage gemeinsam forschen und Code prüfen, während OpenClaw 2.0 Cloud-Sessions und Multiplayer-Betrieb ausbaut.",
-   "skip": [
+   "title": "Together Link verbindet bestehende Coding-Agenten mit offenen Cloud-Modellen",
+   "category": "tools",
+   "impact": 3,
+   "date": "2026-10-05",
+   "summary": "Together Link verbindet bestehende Coding-Agenten wie Claude Code, Codex, OpenCode und Pi mit offenen, auf Together gehosteten Modellen.[9] Die MIT-lizenzierte CLI ist als kostenlose Beta für macOS und Linux verfügbar; der benötigte API-Zugang ist nicht mit kostenloser Inferenz gleichzusetzen.[8] Das beworbene Einsparungsversprechen ist eine Anbieterangabe, keine unabhängige Messung.[9]",
+   "sources": [
     {
-     "reason": "An anderer Stelle vertieft",
-     "text": "Anthropics Befunde zu Reward-Hacking in RL-Trainingsumgebungen und Sandbox-Ausbrüchen werden unter AI Security behandelt."
+     "label": "[8] www.marktechpost.com",
+     "url": "https://www.marktechpost.com/2026/10/05/meet-together-link-a-free-cli-that-runs-open-models-like-kimi-k3-and-glm-5-3-inside-claude-code-codex-and-opencode/"
+    },
+    {
+     "label": "[9] www.together.ai",
+     "url": "https://www.together.ai/blog/together-link-frontier-quality-open-models-in-the-harness-you-already-use"
     }
-   ]
+   ],
+   "first_seen": "2026-10-06"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "GitHub veröffentlicht ReviewBench für KI-Code-Reviews",
+   "category": "tools",
+   "impact": 3,
+   "date": "2026-10-05",
+   "summary": "GitHub veröffentlicht ReviewBench als Research Preview für KI-Code-Reviews mit 219 Pull Requests aus 187 öffentlichen Repositories und 19 Sprachen.[35] Datensatz, Bewertungsrubrik und Runner sollen Vergleiche nachvollziehbar machen; die behauptete Aussagekraft für Produktion stammt von GitHub, nicht aus einer unabhängigen Validierung.[35]",
+   "sources": [
+    {
+     "label": "[35] github.blog",
+     "url": "https://github.blog/ai-and-ml/github-copilot/reviewbench-an-open-benchmark-for-ai-code-review/"
+    }
+   ],
+   "first_seen": "2026-10-06"
   },
   {
    "topic_id": "ai-tools",
-   "date": "2026-09-01",
-   "summary": "Microsoft und HUMAIN bündeln eine agentische Arbeitsoberfläche mit Microsoft 365 Copilot, während OpenClaw 2.0 den Einstieg vereinfacht und GitHub sein August-Update für Copilot bündelt.",
-   "skip": [
+   "title": "RemoveMacAI schaltet Apple Intelligence auf macOS 27 reversibel ab",
+   "category": "tools",
+   "impact": 2,
+   "date": "2026-10-05",
+   "summary": "Ars berichtet am 5. Oktober über RemoveMacAI, das Apple Intelligence unter macOS 27 über ein freizugebendes Konfigurationsprofil deaktiviert und lokale Modelle entfernt.[29] Laut Projekt sind die Änderungen rückgängig zu machen; System Integrity Protection bleibt nach Entwicklerangabe eingeschaltet.[29][30] Das Werkzeug wurde hier nicht ausgeführt; der Speichergewinn hängt vom Modellbestand ab.",
+   "sources": [
     {
-     "reason": "An anderer Stelle vertieft",
-     "text": "Die tieferen Funktions- und Governance-Änderungen von OpenClaw 2.0 (Cloud-Sessions, Sicherheitsmodell) werden unter Agentic Engineering und Lokale LLMs behandelt."
+     "label": "[29] arstechnica.com",
+     "url": "https://arstechnica.com/apple/2026/10/command-line-tool-quickly-removes-apple-intelligence-from-macos-27/"
+    },
+    {
+     "label": "[30] raw.githubusercontent.com",
+     "url": "https://raw.githubusercontent.com/omlahore/RemoveMacAI/main/README.md"
     }
-   ]
+   ],
+   "first_seen": "2026-10-06"
   },
   {
    "topic_id": "context-engineering",
-   "date": "2026-09-01",
-   "summary": "Google setzt bei langen Forschungsaufgaben auf spezialisierte Agenten mit gegenseitiger Kritik; ergänzend zeigt eine Studie, dass Coding-Agenten Zeit nur zuverlässig einschätzen, wenn sie ausdrücklich im Kontext steht.",
-   "skip": []
+   "title": "HEAR-Protokoll verbindet Agenten-Harness und Inference Engine",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-10-05",
+   "summary": "Der HEAR-Preprint vom 5. Oktober definiert ein bidirektionales Protokoll zwischen Agenten-Harness und Inference Engine: Workflow-Absichten und Kontext-Lebenszyklen werden mit Laufzeitstatus und Ressourceninformationen verbunden.[18] Die Autoren melden bessere Laufzeiten in vier Benchmarks ohne beobachteten Qualitätsverlust; daraus folgt keine allgemeine Produktionsgarantie.[18]",
+   "sources": [
+    {
+     "label": "[18] arxiv.org",
+     "url": "https://arxiv.org/abs/2610.06597"
+    }
+   ],
+   "first_seen": "2026-10-06"
   },
   {
    "topic_id": "ai-security",
-   "date": "2026-09-01",
-   "summary": "Anthropic öffnet sich außergewöhnlich weit über eigene Sicherheits- und Alignment-Pannen, während bei ServiceNow drei ungepatchte Maximal-Schwere-Lücken in der KI-Plattform und bei Amazon Kiro eine Prompt-Injection zur Datenexfiltration bekannt werden.",
-   "skip": []
+   "title": "Google Research skizziert kontextabhängige Datenschutz- und Sicherheitsarchitektur für Agenten",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-10-05",
+   "summary": "Google Research veröffentlicht eine Forschungsagenda für Datenschutz und Sicherheit autonomer Agenten, erarbeitet mit mehr als 50 Fachleuten.[54] Vorgeschlagen werden kontextabhängige Policy-Engines in einer Aufsichtsschicht, dynamische Berechtigungen und geeignete Nutzerkontrollen; das ist keine ausgelieferte Abwehrfunktion oder belegte Sicherheitsgarantie.[54]",
+   "sources": [
+    {
+     "label": "[54] research.google",
+     "url": "https://research.google/blog/open-and-emergent-problems-in-agentic-privacy-and-security-a-contextual-angle/"
+    }
+   ],
+   "first_seen": "2026-10-06"
   },
   {
    "topic_id": "ai-governance",
-   "date": "2026-09-01",
-   "summary": "Die EU stuft ChatGPT unter dem Digital Services Act als \"sehr große Suchmaschine\" ein, Anthropic ruft nach eigenen Sicherheitsvorfällen zu koordiniertem Entwicklungstempo auf, und die Bank of England warnt vor einer KI-Bewertungsblase mit Systemrisiko.",
-   "skip": []
+   "title": "OpenAI startet Textwasserzeichen in der API und kündigt EU-Rollout an",
+   "category": "security",
+   "impact": 4,
+   "date": "2026-10-05",
+   "summary": "OpenAI öffnet Textwasserzeichen weltweit als API-Opt-in für ausgewählte Modelle; standardmäßig bleiben sie dort aus.[6] Für geeignete ChatGPT- und Codex-Texte in der EU ist der Rollout erst in den kommenden Wochen vorgesehen.[6] Der textGrain-Detektor ist zunächst genehmigten Forschern und Fachorganisationen vorbehalten; Fehlalarme, übersehene Wasserzeichen und schwächere Erkennung nach Bearbeitung bleiben möglich.[6]",
+   "sources": [
+    {
+     "label": "[6] openai.com",
+     "url": "https://openai.com/index/eu-text-provenance/"
+    }
+   ],
+   "first_seen": "2026-10-06"
+  },
+  {
+   "topic_id": "ai-governance",
+   "title": "Anthropic, OpenAI, Google und Meta sagen bei New Yorker KI-Anhörung aus",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-10-05",
+   "summary": "Vertreter von Anthropic, OpenAI, Google und Meta sagen am 5. Oktober beim New York City Council unter Eid zu KI-Risiken und Schutzmaßnahmen aus.[32] Diskutiert werden unter anderem Whistleblower-Anreize, private Klagerechte und unabhängige Validierung; die Anhörung und vorgeschlagenen Vorlagen sind kein bereits verabschiedetes Recht.[32][33]",
+   "sources": [
+    {
+     "label": "[32] www.cnbc.com",
+     "url": "https://www.cnbc.com/2026/10/05/anthropic-openai-google-meta-execs-testify-nyc-council-ai-hearing.html"
+    },
+    {
+     "label": "[33] council.nyc.gov",
+     "url": "https://council.nyc.gov/press/2026/09/28/3266/"
+    }
+   ],
+   "first_seen": "2026-10-06"
   },
   {
    "topic_id": "enterprise",
-   "date": "2026-09-01",
-   "summary": "Anthropic sichert sich Rechenleistung für 35 Milliarden Dollar, Microsoft und HUMAIN verbinden Copilot mit einer agentischen Enterprise-Oberfläche und einem lokalen KI-PC, und Nvidia investiert in MediaTek.",
-   "skip": []
+   "title": "Cohere stellt North 2 mit neuem Agenten-Harness und Kostensteuerung vor",
+   "category": "agents",
+   "impact": 4,
+   "date": "2026-10-05",
+   "summary": "Cohere kündigt North 2 mit neuem Agenten-Harness, wiederverwendbaren Skills, sitzungsübergreifendem Memory und geteilten Libraries an.[47] North Admin ergänzt Quoten, Ratenlimits und organisationsweite Verbrauchsgrenzen; Cloud-, On-Premises- und Air-Gap-Betrieb werden angeboten.[47] Das sind Herstellerangaben, keine unabhängig belegte Sicherheits- oder ROI-Garantie.[47]",
+   "sources": [
+    {
+     "label": "[47] cohere.com",
+     "url": "https://cohere.com/blog/introducing-north-2"
+    }
+   ],
+   "first_seen": "2026-10-06"
   },
+  {
+   "topic_id": "enterprise",
+   "title": "Snowflake gibt Codeausführung für Cortex Agents allgemein frei",
+   "category": "tools",
+   "impact": 3,
+   "date": "2026-10-05",
+   "summary": "Snowflake gibt das Codeausführungswerkzeug für Cortex Agents allgemein frei: Agenten können Daten verarbeiten, rechnen und Visualisierungen erzeugen.[56] Es muss in der Agentenspezifikation aktiviert werden und läuft standardmäßig isoliert mit Zugriff nur auf die Daten der aktuellen Sitzung; diese Produktbeschreibung ersetzt keine Sicherheitsprüfung.[56]",
+   "sources": [
+    {
+     "label": "[56] docs.snowflake.com",
+     "url": "https://docs.snowflake.com/en/release-notes/2026/other/2026-10-05-cortex-agents-code-execution-tool-ga"
+    }
+   ],
+   "first_seen": "2026-10-06"
+  },
+  {
+   "topic_id": "enterprise",
+   "title": "Fujitsu startet Testumgebung für vier Handelsagenten",
+   "category": "agents",
+   "impact": 2,
+   "date": "2026-10-06",
+   "summary": "Fujitsu startet am 6. Oktober eine Testumgebung für vier Handelsagenten: Verkaufsstruktur, Kundenloyalität, Warenplanung und Filialleitung.[55] Der reguläre Start der Agenten samt Ausführungsplattform ist erst für Juni 2027 geplant; ein wirtschaftlicher Nutzen ist damit noch nicht nachgewiesen.[55]",
+   "sources": [
+    {
+     "label": "[55] global.fujitsu",
+     "url": "https://global.fujitsu/en-global/pr/news/2026/10/06-01"
+    }
+   ],
+   "first_seen": "2026-10-06"
+  }
+ ],
+ "summaries": [
   {
    "topic_id": "ai-news",
    "date": "2026-09-02",
@@ -11297,40 +11132,93 @@
    "date": "2026-10-05",
    "summary": "Singtels RE:AI startet am 1. Oktober einen vollständig verwalteten AI Token-as-a-Service mit tokenbasierter Nutzung, Orchestrierung und Governance.[25] Für weniger sensible Aufgaben sind ausdrücklich auch nicht-souveräne Clouds vorgesehen; tokenbasierte Verbrauchstransparenz unterstützt Kontrollen und Monitoring.[25] Beworbene Kosten- und Effizienzvorteile bleiben Anbieterangaben.[25]",
    "skip": []
+  },
+  {
+   "topic_id": "ai-news",
+   "date": "2026-10-06",
+   "summary": "Reka zeigt Rho-1 als Research Preview: Das 19B-Modell vereinigt Text, Bild, Video und Robotikaktionen in einem gemeinsamen Token-Kontext.[3][4] Die Vorschau belegt keine Produktionsreife oder allgemeine physische Intelligenz; die Architekturangaben stammen von Reka.[4]",
+   "skip": [
+    {
+     "reason": "Quellenabdeckung eingeschränkt",
+     "text": "Qwen: Research-Übersicht erreichbar, datierte Originalbeiträge nicht verifizierbar. Veraltete Indizes bei VentureBeat, Microsoft AI, TechCrunch, Meta AI und xAI wurden durch gezielte Suchen beziehungsweise Originalabrufe ergänzt; verbleibende Lücken sind im Tagesaudit dokumentiert. Latent Space ist unter latent.space über den korrekten Feed geprüft; einzelne Vorschauen sind paywallbegrenzt. LLM Stats liefert teilweise nur dynamische oder undatierte Inhalte."
+    }
+   ]
+  },
+  {
+   "topic_id": "lokale-llms",
+   "date": "2026-10-06",
+   "summary": "Reflection kündigt Beam mit 501 Milliarden Gesamtparametern und 23 Milliarden aktiven Parametern für Coding und Agenten an.[11][20] Gewichte, Model Card und Technikbericht sollen erst später im Oktober folgen; derzeit laufen finale Red-Team-Tests und eine Early-Access-Anmeldung.[11] Die beworbenen Effizienz- und Leistungswerte sind nicht unabhängig bestätigt.[20]",
+   "skip": []
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "date": "2026-10-06",
+   "summary": "Together Link verbindet bestehende Coding-Agenten wie Claude Code, Codex, OpenCode und Pi mit offenen, auf Together gehosteten Modellen.[9] Die MIT-lizenzierte CLI ist als kostenlose Beta für macOS und Linux verfügbar; der benötigte API-Zugang ist nicht mit kostenloser Inferenz gleichzusetzen.[8] Das beworbene Einsparungsversprechen ist eine Anbieterangabe, keine unabhängige Messung.[9]",
+   "skip": []
+  },
+  {
+   "topic_id": "ai-tools",
+   "date": "2026-10-06",
+   "summary": "Ars berichtet am 5. Oktober über RemoveMacAI, das Apple Intelligence unter macOS 27 über ein freizugebendes Konfigurationsprofil deaktiviert und lokale Modelle entfernt.[29] Laut Projekt sind die Änderungen rückgängig zu machen; System Integrity Protection bleibt nach Entwicklerangabe eingeschaltet.[29][30] Das Werkzeug wurde hier nicht ausgeführt; der Speichergewinn hängt vom Modellbestand ab.",
+   "skip": []
+  },
+  {
+   "topic_id": "context-engineering",
+   "date": "2026-10-06",
+   "summary": "Der HEAR-Preprint vom 5. Oktober definiert ein bidirektionales Protokoll zwischen Agenten-Harness und Inference Engine: Workflow-Absichten und Kontext-Lebenszyklen werden mit Laufzeitstatus und Ressourceninformationen verbunden.[18] Die Autoren melden bessere Laufzeiten in vier Benchmarks ohne beobachteten Qualitätsverlust; daraus folgt keine allgemeine Produktionsgarantie.[18]",
+   "skip": []
+  },
+  {
+   "topic_id": "ai-security",
+   "date": "2026-10-06",
+   "summary": "Google Research veröffentlicht eine Forschungsagenda für Datenschutz und Sicherheit autonomer Agenten, erarbeitet mit mehr als 50 Fachleuten.[54] Vorgeschlagen werden kontextabhängige Policy-Engines in einer Aufsichtsschicht, dynamische Berechtigungen und geeignete Nutzerkontrollen; das ist keine ausgelieferte Abwehrfunktion oder belegte Sicherheitsgarantie.[54]",
+   "skip": []
+  },
+  {
+   "topic_id": "ai-governance",
+   "date": "2026-10-06",
+   "summary": "OpenAI öffnet Textwasserzeichen weltweit als API-Opt-in für ausgewählte Modelle; standardmäßig bleiben sie dort aus.[6] Für geeignete ChatGPT- und Codex-Texte in der EU ist der Rollout erst in den kommenden Wochen vorgesehen.[6] Der textGrain-Detektor ist zunächst genehmigten Forschern und Fachorganisationen vorbehalten; Fehlalarme, übersehene Wasserzeichen und schwächere Erkennung nach Bearbeitung bleiben möglich.[6]",
+   "skip": []
+  },
+  {
+   "topic_id": "enterprise",
+   "date": "2026-10-06",
+   "summary": "Cohere kündigt North 2 mit neuem Agenten-Harness, wiederverwendbaren Skills, sitzungsübergreifendem Memory und geteilten Libraries an.[47] North Admin ergänzt Quoten, Ratenlimits und organisationsweite Verbrauchsgrenzen; Cloud-, On-Premises- und Air-Gap-Betrieb werden angeboten.[47] Das sind Herstellerangaben, keine unabhängig belegte Sicherheits- oder ROI-Garantie.[47]",
+   "skip": []
   }
  ],
  "fingerprints": {
   "ai-news": {
-   "hash": "467f63e1f73ff1975e814ceb97e45a30c8285fb8",
-   "date": "2026-10-05"
+   "hash": "a343dd4422b0de2b4e23c03de013f1e35bf2b72e",
+   "date": "2026-10-06"
   },
   "lokale-llms": {
-   "hash": "69104c6e0fe9091b507c37b6f813a8a09bcae1a5",
-   "date": "2026-10-05"
+   "hash": "069020eff8c9488a0957b3c6e3e607fe9420dc20",
+   "date": "2026-10-06"
   },
   "agentic-engineering": {
-   "hash": "1b59eecd0425badc6259b406e16c6596cd4a3a6b",
-   "date": "2026-10-05"
+   "hash": "e6936089683fdbc9d46fd91dd67f5556c9f5097f",
+   "date": "2026-10-06"
   },
   "ai-tools": {
-   "hash": "c99d08426919cdd26385a0c8ecb8a21038650d6d",
-   "date": "2026-10-05"
+   "hash": "f9db9fbfddcdf26834c2bee57039bdb3106f529a",
+   "date": "2026-10-06"
   },
   "context-engineering": {
-   "hash": "09b29fb08b654748d887638f5b855b0902b1cc41",
-   "date": "2026-10-05"
+   "hash": "ea90deced3d7eee4047e6f40220f556b1c5d34f5",
+   "date": "2026-10-06"
   },
   "ai-security": {
-   "hash": "f14db8d0566aacb7918b759da8c896d3b30719af",
-   "date": "2026-10-05"
+   "hash": "7657df447da7884724f02f14116ec5aa7292a828",
+   "date": "2026-10-06"
   },
   "ai-governance": {
-   "hash": "cb1600e2833692d704918cd1c4a1012930513601",
-   "date": "2026-10-05"
+   "hash": "8860f3e3a59b07bb650fc0091a065c2e52bbffba",
+   "date": "2026-10-06"
   },
   "enterprise": {
-   "hash": "e4dfa60a365fe2d3648a6c4c4af76c2821bb27b7",
-   "date": "2026-10-05"
+   "hash": "0098583149ad0a941c5f95b0ccf14995db985717",
+   "date": "2026-10-06"
   }
  }
 }
