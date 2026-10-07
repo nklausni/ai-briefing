@@ -48,3 +48,9 @@ Die Berliner Gate-Datei `ai-briefing-berlin-gate.py` lässt nur den Lauf um 08:0
 Seiten-/Textfortsetzungen. Kandidaten, vollständige Belege und Artikel bleiben in den
 Run-Dateien erhalten. `check-editor` erzwingt weiterhin eine Entscheidung je Kandidat
 und belegte Original-URLs. Kontextbegrenzung ist keine Kürzung der Quellenabdeckung.
+
+Neue Runs nutzen `docs/editorial-contract.md` (Manifest Version 2): konkrete
+Kandidatenzuordnung, Duplikatziele und getrennte Freigabeschritte. Beim Deployment
+auch den versionierten Cron-Prompt einspielen. Die temporäre Planungsabnahme prüft
+zusätzlich Manifest-Version 2 und OpenAIs `required_checks` mit API-Changelog.
+Bestehende Recherche-Runs werden nicht nachträglich migriert oder neu gestartet.

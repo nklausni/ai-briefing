@@ -23,10 +23,14 @@ class PipelineTests(unittest.TestCase):
         self.manifest = p.prepare(self.root, self.run, "2026-09-19")
 
     def entry(self, domain, candidates=None):
-        return {"domain": domain, "name": domain, "status": "checked", "checked_url": "https://" + domain + "/", "result": "Current source checked; no additional news.", "candidates": candidates or []}
+        return {"domain": domain, "name": domain, "status": "checked", "checked_url": "https://" + domain + "/", "result": "Current source checked; no additional news.", "candidates": candidates or [],
+                "checks": [{"url": url, "status": "checked", "result": "Original checked"}
+                           for url in p.REQUIRED_SOURCE_CHECKS.get(domain, ())]}
 
     def candidate(self):
-        return {"title": "A verifiable development", "summary": "A factual summary", "url": "https://simonwillison.net/original", "published_at": "2026-09-18", "evidence": [{"url": "https://simonwillison.net/original", "excerpt": "An actual original quotation supporting the development.", "method": "web_extract", "retrieved_at": "2026-09-19T08:05:00+02:00"}]}
+        return {"title": "A verifiable development", "summary": "A factual summary",
+                "development": "A specific verified product update", "headline_terms": ["verifiable development"],
+                "change_type": "update", "url": "https://simonwillison.net/original", "published_at": "2026-09-18", "evidence": [{"url": "https://simonwillison.net/original", "excerpt": "An actual original quotation supporting the development.", "method": "web_extract", "retrieved_at": "2026-09-19T08:05:00+02:00"}]}
 
     def fill(self, candidate=None):
         for task in self.manifest["tasks"]:
@@ -363,7 +367,9 @@ class PipelineTests(unittest.TestCase):
         p.write(self.run / "editor-decisions.json", [{"id": candidate["id"], "decision": "selected", "reason": "Relevant and verified"}])
         briefing = copy.deepcopy(self.briefing)
         briefing["meta"]["generated"] = "2026-09-19"
-        briefing["topics"][0]["items"] = [{"title": candidate["title"], "date": "2026-09-18", "impact": 3, "sources": [{"url": candidate["url"]}]}]
+        briefing["topics"][0]["items"] = [{"title": candidate["title"], "date": "2026-09-18", "impact": 3,
+                                            "candidate_ids": [candidate["id"]], "change_type": candidate["change_type"],
+                                            "sources": [{"url": candidate["url"]}]}]
         p.write(self.root / "data/briefing.json", briefing)
         self.assertEqual(p.check_editor(self.run)["status"], "ready_to_publish")
         briefing["topics"][0]["items"][0]["sources"].append({"url": "https://unread.example/story"})

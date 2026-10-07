@@ -72,6 +72,28 @@ def _item(title="Meldung A", url="https://example.com/a", date="09.06.2026",
 
 
 class TestIngest(unittest.TestCase):
+    def test_release_milestones_are_preserved_even_with_same_title_and_url(self):
+        h = {"items": [], "summaries": []}
+        for stage, day in [("preview", "2026-09-29"), ("public_beta", "2026-10-06"),
+                           ("general_availability", "2026-10-20")]:
+            item = _item(title="OpenAI Decisions API verfügbar", date=day)
+            item["change_type"] = stage
+            history.ingest(h, _briefing([item], generated=day))
+        self.assertEqual([i.get("change_type") for i in h["items"]],
+                         ["preview", "public_beta", "general_availability"])
+        self.assertEqual([i["date"] for i in h["items"]], ["2026-09-29", "2026-10-06", "2026-10-20"])
+        history.ingest(h, _briefing([item], generated="2026-10-20"))
+        self.assertEqual(len(h["items"]), 3)
+
+    def test_new_release_does_not_overwrite_unknown_legacy_milestone(self):
+        h = {"items": [], "summaries": []}
+        history.ingest(h, _briefing([_item(title="OpenAI Decisions API verfügbar", date="2026-09-29")]))
+        beta = _item(title="OpenAI Decisions API verfügbar", date="2026-10-06")
+        beta["change_type"] = "public_beta"
+        history.ingest(h, _briefing([beta], generated="2026-10-07"))
+        self.assertEqual(len(h["items"]), 2)
+        self.assertEqual(h["items"][1]["date"], "2026-10-06")
+
     def test_new_item_appended_with_iso_date_and_first_seen(self):
         h = {"items": [], "summaries": []}
         history.ingest(h, _briefing([_item()]))

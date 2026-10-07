@@ -87,7 +87,7 @@ class EditorContextTests(unittest.TestCase):
     def test_history_matches_and_pagination_do_not_silently_discard_items(self):
         history = [{"title": "Earlier model", "date": "2026-09-29", "sources": [{"url": self.candidate["url"]}]}]
         history += [{"title": f"Other {i}", "date": "2026-09-28", "sources": []} for i in range(40)]
-        p.write(self.root / "data/history.json", {"items": history})
+        p.write(self.run / "history-before.json", {"items": history})
         result = e.candidate(self.run, "candidate-1")
         self.assertEqual(result["history_matches"][0]["title"], "Earlier model")
         seen, offset = [], 0
@@ -98,7 +98,7 @@ class EditorContextTests(unittest.TestCase):
         self.assertEqual(len(seen), 41)
 
     def test_overview_preserves_topic_ids_without_dumping_full_history(self):
-        p.write(self.root / "data/history.json", {"items": [{"summary": "x" * 100000}]})
+        p.write(self.run / "history-before.json", {"items": [{"summary": "x" * 100000}]})
         result = e.overview(self.run)
         self.assertEqual([t["id"] for t in result["topics"]], [str(i) for i in range(8)])
         self.assertEqual(result["history_items"], 1)

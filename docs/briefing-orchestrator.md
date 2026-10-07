@@ -121,6 +121,12 @@ zwingend eine neue Meldung. Ein technischer Abbruch zählt nicht als erfolgreich
 
 ## 4. Schlussredaktion und Gegenprüfung
 
+Lies `docs/editorial-contract.md` vollständig und verwende dessen Zuordnungs- und
+Duplikatformat. Prüfe die eigenständige Entwicklung jedes Kandidaten, nicht nur
+die Quell-URL. API-Freigaben erhalten eine erkennbare Hauptmeldung; ergänzende
+Plugins bleiben Integrationsmeldungen. Die technische Abnahme blockiert fehlende
+Zuordnungen und unterschiedliche Freigabeschritte.
+
 Bewerte jeden Kandidaten in der kompakten Übersicht. Für mögliche Aufnahmen,
 Duplikate oder offene Aussagen prüfe die gezielten Belegdetails mit:
 
@@ -177,7 +183,8 @@ git diff --check
 ```
 
 Alle Befehle müssen erfolgreich sein. Insbesondere weist `check-editor` fehlende
-Kandidatenentscheidungen oder neue unbelegte Quell-URLs zurück. Bei Fehler keine
+Kandidatenentscheidungen, fehlende Kandidatenzuordnungen, ungeprüfte Duplikatziele
+oder neue unbelegte Quell-URLs zurück. Bei Fehler keine
 Veröffentlichung; recherchierten Zwischenstand für den nächsten Versuch erhalten.
 
 ## 5. Veröffentlichung und Abschluss
@@ -203,6 +210,8 @@ verändere dafür weder die Quellenabdeckung noch die Belegregeln.
 Antworte kurz auf Deutsch: wichtigste Änderungen und Link. Prüfe für die Abschlussmeldung
 alle Einträge des aktuellen Tagesaudits, nicht nur `status=unavailable`: Auch `checked`
 kann eine falsche Domain, einen veralteten Index oder eingeschränkt prüfbare Inhalte enthalten.
+Prüfe auch alle `checks` je Quelle: Ein ausgefallener Entwickler-Changelog ist eine
+offene Abdeckungslücke, selbst wenn der Newsindex erreichbar war.
 Ordne Probleme nach ihrer verbleibenden Auswirkung ein, nicht nach dem ersten HTTP-Fehler:
 - **Offene Recherchelücken:** jede Quelle mit Name und Domain/URL, Ursache und
   fehlender Abdeckung einzeln nennen. Dazu zählen ungeprüfte Pflichtquellen,

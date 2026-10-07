@@ -142,6 +142,18 @@ ein technisches Hermes-`ok` allein ist keine Veröffentlichungsbestätigung. Der
 read-only-Befehl `research_pipeline.py timings --run-dir RUN` trennt Recherche,
 Schlussredaktion und Publikationsprüfung für den Laufzeitvergleich.
 
+Neue Runs verwenden Abdeckungsvertrag Version 2
+([`docs/editorial-contract.md`](docs/editorial-contract.md)): atomare Entwicklungen,
+Überschriftenanker, Freigabeschritte und explizite `candidate_ids` je Meldung.
+Duplikate referenzieren eine konkret veröffentlichte Meldung oder eine stabile ID
+aus der eingefrorenen Historie. Eine gemeinsame URL genügt nicht zur Abnahme.
+`editor-coverage.json` dokumentiert die tatsächliche Zuordnung. Die semantische
+Prüfung der Aussagen bleibt bei der Schlussredaktion. Die Historie bewahrt getrennte
+Preview-/Beta-/GA-Schritte, während alte Daten und Audits unverändert prüfbar bleiben.
+OpenAI-News und API-Changelog sowie xAI-News und Release Notes erhalten verpflichtende,
+separat protokollierte `checks`. Teilfehler bleiben transparent und schieben den
+Quellen-Wasserstand nicht vor. Die 41 Quellen, Suchbudgets und Parallelität bleiben gleich.
+
 **Aktiver Weg (ohne zusätzlichen Recherche-API-Key):** Ein Hermes-Cronjob
 (`ai-briefing-daily`, täglich um 08:00 Uhr Europe/Berlin) recherchiert die Meldungen
 der letzten 24 Stunden mit den Hermes-Web-Tools. Er aktualisiert ausschließlich

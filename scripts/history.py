@@ -118,6 +118,13 @@ def _same_item(a, b):
     """Dieselbe Meldung? Identischer normalisierter Titel — oder gemeinsame
     Quell-URL UND ähnlicher Titel (eine Ankündigung kann mehrere
     eigenständige Items speisen, die URL allein genügt daher nicht)."""
+    stages = a.get("change_type"), b.get("change_type")
+    if all(stages) and stages[0] != stages[1]:
+        return False
+    release_stages = {"announcement", "preview", "public_beta", "general_availability"}
+    if any(stage in release_stages for stage in stages) and not all(stages) and a.get("date") != b.get("date"):
+        # A legacy entry's release stage is unknown; keep a dated new milestone.
+        return False
     ta, tb = normalize_title(a.get("title", "")), normalize_title(b.get("title", ""))
     if bool(ta) and ta == tb:
         return True
@@ -153,6 +160,8 @@ def ingest(history, briefing):
                 "sources": item.get("sources") or [],
                 "first_seen": generated,
             }
+            if item.get("change_type"):
+                incoming["change_type"] = item["change_type"]
             existing = next((e for e in history["items"]
                              if e["topic_id"] == tid and _same_item(e, incoming)), None)
             if existing:
@@ -164,6 +173,8 @@ def ingest(history, briefing):
                     date=min(existing["date"], incoming["date"]),
                     first_seen=min(existing["first_seen"], incoming["first_seen"]),
                 )
+                if incoming.get("change_type"):
+                    existing["change_type"] = incoming["change_type"]
             else:
                 history["items"].append(incoming)
         history["summaries"] = [s for s in history["summaries"]

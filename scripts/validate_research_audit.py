@@ -62,6 +62,34 @@ LEGACY_SOURCES = V2_SOURCES + (("reuters.com", "Reuters AI"),)
 SOURCE_REGISTRIES = {1: LEGACY_SOURCES, 2: V2_SOURCES, 3: V3_SOURCES, REGISTRY_VERSION: SOURCES}
 
 VALID_STATUS = {"checked", "unavailable"}
+SOURCE_CHECKS_VERSION = 1
+REQUIRED_SOURCE_CHECKS = {
+    "openai.com": ("https://openai.com/news/", "https://developers.openai.com/api/docs/changelog"),
+    "x.ai": ("https://x.ai/news/", "https://docs.x.ai/developers/release-notes"),
+}
+
+
+def validate_source_checks(entry):
+    """Require an explicit outcome for each configured news/changelog entry."""
+    urls = REQUIRED_SOURCE_CHECKS.get(entry.get("domain"), ())
+    if not urls:
+        return []
+    checks = entry.get("checks")
+    if not isinstance(checks, list):
+        return [f"{entry['domain']}: Pflichtprüfungen (checks) fehlen"]
+    seen, errors = set(), []
+    for check in checks:
+        if not isinstance(check, dict) or check.get("url") not in urls:
+            errors.append(f"{entry['domain']}: unbekannte Pflichtprüfung")
+            continue
+        url = check["url"]
+        if url in seen:
+            errors.append(f"{entry['domain']}: Pflichtprüfung doppelt: {url}")
+        seen.add(url)
+        if check.get("status") not in VALID_STATUS or not isinstance(check.get("result"), str) or not check["result"].strip():
+            errors.append(f"{entry['domain']}: Pflichtprüfung benötigt checked/unavailable und Ergebnis: {url}")
+    errors.extend(f"{entry['domain']}: Pflichtprüfungen fehlen: {url}" for url in urls if url not in seen)
+    return errors
 
 
 def domain_matches(url: str, domain: str) -> bool:
@@ -77,6 +105,9 @@ def validate(audit: dict, expected_date: str | None = None) -> list[str]:
         errors.append("schema_version muss 1 sein")
     if audit.get("date") != expected_date:
         errors.append(f"date muss {expected_date} sein")
+    source_checks_version = audit.get("source_checks_version", 0)
+    if source_checks_version not in {0, SOURCE_CHECKS_VERSION}:
+        errors.append("unbekannte source_checks_version")
 
     entries = audit.get("sources")
     if not isinstance(entries, list):
@@ -110,6 +141,8 @@ def validate(audit: dict, expected_date: str | None = None) -> list[str]:
             errors.append(f"{domain}: checked_url muss eine URL der Quelle sein")
         if not isinstance(result, str) or not result.strip():
             errors.append(f"{domain}: result darf nicht leer sein")
+        if source_checks_version == SOURCE_CHECKS_VERSION:
+            errors.extend(validate_source_checks(entry))
 
     missing = sorted(set(expected) - seen)
     if missing:

@@ -12,6 +12,11 @@ Reuters-Texte als Kandidaten oder Belege für neue Meldungen. Eine Entwicklung d
 über andere, selbst geprüfte Primärquellen oder unabhängige Berichte aufgenommen
 werden. Historische Briefing-Einträge bleiben unverändert.
 
+Lies `docs/editorial-contract.md` vollständig. Erzeuge atomare Kandidaten mit
+`development`, `change_type` und `headline_terms` nach dessen Recherche-Schema.
+Die Schlussredaktion verwendet diese Felder zur Abnahme; liefere auch bei
+Sammelartikeln eine belegte Entwicklung je Kandidat.
+
 ## Qwen: aktuelle Quelle
 
 Für die Quelle `qwen.ai` prüfe `https://qwen.ai/research` und die dort verlinkten
@@ -92,6 +97,10 @@ Verwende diese Einstiege und die folgenden begrenzten Alternativen:
   als gesichertes Tagesdatum behandeln. Bei altem/gesperrtem Newsindex zusätzlich
   gezielte Datumssuche und breitere Unternehmenssuche im Zeitfenster ausführen.
   Bleibt die Newsabdeckung offen, trotz lesbarer API-Notes als Recherchelücke melden.
+- **OpenAI:** Prüfe neben dem Newsindex den API-Changelog aus `required_checks`.
+  Lies datierte Änderungen im Assignment-Zeitfenster und die verlinkten Originaldocs.
+  Eine neue API oder Beta-/GA-Freigabe ist ein eigener Kandidat; ein News-RSS oder
+  ein Community-Plugin ersetzt diese Prüfung nicht.
 - **Qwen:** Der Einstieg `https://qwen.ai/research` ist auch in der Pipeline
   hinterlegt. Es gelten die Datums-/JS-Prüfregeln oben.
 
@@ -136,6 +145,20 @@ müssen in die Abschlussmeldung. Kein Quellenfehler darf andere Quellen abbreche
 
 ## Sofortiger Checkpoint je Quelle
 
+Bearbeite alle Assignment-URLs unter `required_checks` zusätzlich zum normalen
+Quellencheck. Pro URL kommt ein Objekt in `checks`: `url` (exakt aus dem Assignment),
+`status` (`checked` oder nach erfolglosen Ersatzwegen `unavailable`) und konkrete
+`result` mit Zugangsweg, geprüftem Zeitraum oder verbleibender Lücke. Auch bei
+unerreichbarer Gesamtquelle ist jede Pflichtprüfung zu dokumentieren. Ein fehlender
+Eintrag blockiert `record/assemble`; ein dokumentierter Ausfall hält das Recherchefenster
+offen und muss in der Abschlussmeldung erscheinen. Beispiel:
+
+```json
+{"checks": [{"url": "https://developers.openai.com/api/docs/changelog", "status": "checked", "result": "Datierte API-Änderungen im zugeteilten Fenster am Original gelesen."}]}
+```
+
+Das Beispiel zeigt einen Check; liefere die vollständige Assignment-Liste.
+
 Schreibe nach jeder vollständig bearbeiteten Quelle eine eigene JSON-Eingabedatei
 im Arbeitsordner und rufe auf:
 
@@ -153,8 +176,11 @@ Checkpoints sind abgeschlossen und werden erhalten. Quellenobjekt:
   "result": "Was tatsächlich geprüft wurde; neue Meldung oder keine neue Meldung.",
   "candidates": [
     {
-      "title": "Titel einer belegten Entwicklung",
+      "title": "Example API erhält eine neue Routing-Funktion",
       "summary": "Sachliche deutsche Zusammenfassung mit klaren Einschränkungen.",
+      "development": "Die Example API ergänzt eine neue Routing-Funktion für Anfragen.",
+      "change_type": "update",
+      "headline_terms": ["Example API"],
       "url": "https://example.org/original",
       "published_at": "YYYY-MM-DD",
       "evidence": [

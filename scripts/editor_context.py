@@ -8,6 +8,7 @@ from pathlib import Path
 import re
 
 from research_pipeline import read, require
+from editorial_coverage import history_id
 
 MAX_OUTPUT_CHARS = 12000
 PAGE_SIZE = 8
@@ -34,14 +35,22 @@ def page(items, offset=0, limit=PAGE_SIZE, **metadata):
         end -= 1
 
 
+def history_file_for(run):
+    path = Path(run) / "history-before.json"
+    if not path.exists():
+        path = root_for(run) / "data/history.json"
+    return path
+
+
 def history_items(run):
-    path = root_for(run) / "data/history.json"
+    path = history_file_for(run)
     value = read(path) if path.exists() else {}
     return value.get("items", []) if isinstance(value, dict) else value
 
 
 def history_view(item):
-    return {"title": short(item.get("title"), 500), "date": item.get("date"),
+    return {"history_id": history_id(item), "title": short(item.get("title"), 500), "date": item.get("date"),
+            "change_type": item.get("change_type"),
             "topic": short(item.get("topic", item.get("topic_id")), 100),
             "summary": short(item.get("summary"), 1000),
             "sources": [{"url": short(s.get("url"), 800)} for s in item.get("sources", [])[:4]],
@@ -53,7 +62,7 @@ def history(run, offset=0, limit=PAGE_SIZE, query=None):
     if query:
         items = [i for i in items if query.lower() in json.dumps(i, ensure_ascii=False).lower()]
     return page([history_view(i) for i in items], offset, limit,
-                file=str(root_for(run) / "data/history.json"), query=query)
+                file=str(history_file_for(run)), query=query)
 
 
 def history_matches(run, candidate):
@@ -73,7 +82,7 @@ def overview(run):
                         "summary": short(t.get("summary"), 800),
                         "items": len(t.get("items", []))} for t in briefing.get("topics", [])],
             "briefing_file": str(root / "data/briefing.json"),
-            "history_file": str(root / "data/history.json")}
+            "history_file": str(history_file_for(run))}
 
 
 def all_candidates(run):
@@ -88,6 +97,9 @@ def find_candidate(run, candidate_id):
 
 def candidate_view(candidate):
     return {"id": candidate["id"], "title": short(candidate["title"], 500),
+            "development": short(candidate.get("development"), 800),
+            "headline_terms": candidate.get("headline_terms", []),
+            "change_type": candidate.get("change_type"),
             "summary": short(candidate["summary"], 1200),
             "summary_truncated": len(candidate["summary"]) > 1200,
             "url": short(candidate["url"], 800), "published_at": candidate["published_at"],
