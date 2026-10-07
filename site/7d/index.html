@@ -25,27 +25,27 @@
   </header>
   <nav class="nav"><a href="index.html" class="active">Übersicht</a><a href="ai-news.html">AI News</a><a href="lokale-llms.html">Lokale LLMs</a><a href="agentic-engineering.html">Agentic Engineering / Vibe Coding</a><a href="ai-tools.html">AI Tools</a><a href="context-engineering.html">Context &amp; Prompt Engineering</a><a href="ai-security.html">AI Security &amp; Safety</a><a href="ai-governance.html">AI Governance &amp; Regulierung</a><a href="enterprise.html">Enterprise &amp; Vertikalisierung</a></nav>
 
-  <p class="lede">Neu belegte Entwicklungen: Mistral Large 4 als API-Vorschau, lokale multimodale Embeddings, Cyber-Zugangsstufen und konkrete Änderungen an Design-, Coding- und Enterprise-Agenten. Alle acht Themen, 41 Pflichtquellen und offene Entdeckung wurden bearbeitet; sämtliche Kandidaten wurden redaktionell bewertet. Herstellerwerte, Preprints und geplante Rollouts sind gekennzeichnet. Verbleibende Zugriffs- und Abdeckungslücken stehen im Quellenprotokoll; fehlende neue Meldungen sind keine Entwarnung. Frühere Meldungen bleiben in den Zeitraum-Ansichten und im Archiv.</p>
+  <p class="lede">Tagesergänzung: Die Decisions API erhält eine eigene Hauptmeldung zur öffentlichen Beta, getrennt von der CLI-Integration. Neu sind unter anderem Coworks verbindlicher Cloud-Betrieb, API-Nutzungsstufen, ein HIPAA-Self-Service, lokale Underdog-Vorschau, Agenten-Datenschutzforschung und der umstrittene Copilot-Autopilot-Angriff. Nachträge vom 30. September und 2. Oktober behalten ihre Originaldaten. Alle acht Themen, 41 Pflichtquellen und offene Entdeckung wurden bearbeitet; alle 111 Kandidaten ausdrücklich bewertet. Verbleibende Index-, Datums- und Zugriffslücken stehen im Quellenprotokoll; keine neuen Meldungen bedeutet keine Entwarnung. Bereits berichtete Workspace- und textGrain-Sammelmeldungen sind jetzt in ihre einzelnen Entwicklungen aufgeteilt; bekannte Mathematik-, Cyber- und Metrikmeldungen bleiben mit Originaldatum erhalten.</p>
 
   <div class="ov-group"><h2>Überblick</h2></div>
   <div class="ov-grid">
   <div class="ov-card">
     <div class="ov-card-head">
       <h3>AI News</h3>
-      <span class="ov-count">10 Meldungen</span>
+      <span class="ov-count">12 Meldungen</span>
     </div>
     <div class="ov-sub">Allgemeine AI-Industrie: Modell-Releases, Plattformen, Regulierung und Markt</div>
     <ul class="ov-list">
       <li><span class="ov-dot" style="background:#0075de"></span><a class="ov-item-t" href="https://mistral.ai/news/mistral-large-4/" target="_blank" rel="noopener">Mistral Large 4: API-Vorschau jetzt, offene Gewichte erst Ende Oktober</a><span class="ov-item-d">●●●●○</span></li>
+      <li><span class="ov-dot" style="background:#0075de"></span><a class="ov-item-t" href="https://developers.openai.com/api/docs/changelog" target="_blank" rel="noopener">OpenAI startet Decisions API als öffentliche Beta mit gpt-6-luna</a><span class="ov-item-d">●●●●○</span></li>
       <li><span class="ov-dot" style="background:#0075de"></span><a class="ov-item-t" href="https://openai.com/index/sharing-ai-progress-in-mathematics/" target="_blank" rel="noopener">OpenAI veröffentlicht Mathematikresultate und prüfbare Beweisartefakte</a><span class="ov-item-d">●●●○○</span></li>
-      <li><span class="ov-dot" style="background:#0075de"></span><a class="ov-item-t" href="https://the-decoder.com/reka-ais-omni-model-rho-1-handles-text-images-video-and-robot-control-in-a-single-model/" target="_blank" rel="noopener">Reka zeigt Rho-1 als einheitliches Modell für Text, Bild, Video und Aktionen</a><span class="ov-item-d">●●●○○</span></li>
     </ul>
     <a class="ov-link" href="ai-news.html">Zum Feld-Report <span>→</span></a>
   </div>
   <div class="ov-card">
     <div class="ov-card-head">
       <h3>Lokale LLMs</h3>
-      <span class="ov-count">14 Meldungen</span>
+      <span class="ov-count">15 Meldungen</span>
     </div>
     <div class="ov-sub">On-Device- und Open-Weight-Modelle: lokal lauffähig, datenschutz- und kostenrelevant</div>
     <ul class="ov-list">
@@ -61,20 +61,20 @@
   <div class="ov-card">
     <div class="ov-card-head">
       <h3>Agentic Engineering / Vibe Coding</h3>
-      <span class="ov-count">15 Meldungen</span>
+      <span class="ov-count">19 Meldungen</span>
     </div>
     <div class="ov-sub">Coding-Agenten, Workflows, Reviewer-Disziplin und Agent-Governance</div>
     <ul class="ov-list">
       <li><span class="ov-dot" style="background:#213183"></span><a class="ov-item-t" href="https://github.blog/changelog/2026-10-01-github-copilot-can-now-interact-with-desktop-apps" target="_blank" rel="noopener">Copilot Computer Use startet für macOS und Windows</a><span class="ov-item-d">●●●●○</span></li>
       <li><span class="ov-dot" style="background:#2a9d99"></span><a class="ov-item-t" href="https://github.blog/changelog/2026-10-06-update-your-ide-to-restore-agent-activity-in-copilot-usage-metrics/" target="_blank" rel="noopener">Copilot-Agentenmetriken fehlen: IDE aktualisieren, historische Lücke bleibt</a><span class="ov-item-d">●●●○○</span></li>
-      <li><span class="ov-dot" style="background:#2a9d99"></span><a class="ov-item-t" href="https://www.marktechpost.com/2026/10/05/meet-together-link-a-free-cli-that-runs-open-models-like-kimi-k3-and-glm-5-3-inside-claude-code-codex-and-opencode/" target="_blank" rel="noopener">Together Link verbindet bestehende Coding-Agenten mit offenen Cloud-Modellen</a><span class="ov-item-d">●●●○○</span></li>
+      <li><span class="ov-dot" style="background:#2a9d99"></span><a class="ov-item-t" href="https://github.blog/changelog/2026-10-06-update-your-ide-to-restore-agent-activity-in-copilot-usage-metrics/" target="_blank" rel="noopener">Copilot usage metrics: IDE-Update behebt fehlende Agentenaktivität</a><span class="ov-item-d">●●●○○</span></li>
     </ul>
     <a class="ov-link" href="agentic-engineering.html">Zum Feld-Report <span>→</span></a>
   </div>
   <div class="ov-card">
     <div class="ov-card-head">
       <h3>AI Tools</h3>
-      <span class="ov-count">14 Meldungen</span>
+      <span class="ov-count">17 Meldungen</span>
     </div>
     <div class="ov-sub">IDEs, Assistenten und Plattformen für den täglichen Einsatz</div>
     <ul class="ov-list">
@@ -87,13 +87,13 @@
   <div class="ov-card">
     <div class="ov-card-head">
       <h3>Context &amp; Prompt Engineering</h3>
-      <span class="ov-count">12 Meldungen</span>
+      <span class="ov-count">15 Meldungen</span>
     </div>
     <div class="ov-sub">Kontextsteuerung, Prompting und Agent-Design: was im Kontextfenster landet, entscheidet über Qualität und Kosten</div>
     <ul class="ov-list">
       <li><span class="ov-dot" style="background:#213183"></span><a class="ov-item-t" href="https://arxiv.org/abs/2610.07863" target="_blank" rel="noopener">ReFold faltet Agentenkontext reversibel statt Historie dauerhaft zu löschen</a><span class="ov-item-d">●●●○○</span></li>
       <li><span class="ov-dot" style="background:#ff64c8"></span><a class="ov-item-t" href="https://thenewstack.io/sap-acquires-techwolf-skills/" target="_blank" rel="noopener">SAP vereinbart TechWolf-Übernahme für Skills-Kontext und Agenten-Grounding</a><span class="ov-item-d">●●●○○</span></li>
-      <li><span class="ov-dot" style="background:#213183"></span><a class="ov-item-t" href="https://arxiv.org/abs/2610.06597" target="_blank" rel="noopener">HEAR-Protokoll verbindet Agenten-Harness und Inference Engine</a><span class="ov-item-d">●●●○○</span></li>
+      <li><span class="ov-dot" style="background:#213183"></span><a class="ov-item-t" href="https://venturebeat.com/orchestration/atlassian-deepens-its-openai-partnership-with-a-spend-commitment-but-its-platform-stays-firmly-multi-model" target="_blank" rel="noopener">Atlassian erweitert MCP-Server auf mehr als 220 Tools</a><span class="ov-item-d">●●●○○</span></li>
     </ul>
     <a class="ov-link" href="context-engineering.html">Zum Feld-Report <span>→</span></a>
   </div>
@@ -103,11 +103,11 @@
   <div class="ov-card">
     <div class="ov-card-head">
       <h3>AI Security &amp; Safety</h3>
-      <span class="ov-count">12 Meldungen</span>
+      <span class="ov-count">15 Meldungen</span>
     </div>
     <div class="ov-sub">Sicherheit von AI-Systemen und -Agenten: Angriffsflächen, Schutzmechanismen und automatisierte Schwachstellensuche</div>
     <ul class="ov-list">
-      <li><span class="ov-dot" style="background:#dd5b00"></span><a class="ov-item-t" href="https://www.anthropic.com/news/cyber-verification-program" target="_blank" rel="noopener">Anthropic bündelt Cyber Verification in drei geprüfte Zugangsstufen</a><span class="ov-item-d">●●●●○</span></li>
+      <li><span class="ov-dot" style="background:#dd5b00"></span><a class="ov-item-t" href="https://www.anthropic.com/news/cyber-verification-program" target="_blank" rel="noopener">Cyber Verification Program: Anthropic bündelt drei geprüfte Zugangsstufen</a><span class="ov-item-d">●●●●○</span></li>
       <li><span class="ov-dot" style="background:#dd5b00"></span><a class="ov-item-t" href="https://wikimediafoundation.org/news/2026/10/05/openai-rogue-agent-activities-found-on-wikimedia-projects/" target="_blank" rel="noopener">Wikimedia meldet unerlaubte Agentenaktivität, aber keine belegte Kompromittierung</a><span class="ov-item-d">●●●●○</span></li>
       <li><span class="ov-dot" style="background:#dd5b00"></span><a class="ov-item-t" href="https://docs.gitlab.com/releases/patches/other-patches/patch-release-gitlab-ai-gateway-19-4-1-released/" target="_blank" rel="noopener">GitLab patcht kritische Sandbox-Lücke im AI Gateway</a><span class="ov-item-d">●●●●○</span></li>
     </ul>
@@ -116,7 +116,7 @@
   <div class="ov-card">
     <div class="ov-card-head">
       <h3>AI Governance &amp; Regulierung</h3>
-      <span class="ov-count">12 Meldungen</span>
+      <span class="ov-count">17 Meldungen</span>
     </div>
     <div class="ov-sub">Regeln, Recht, Lizenzen und Budgets für AI im Unternehmen: was Compliance und Kostensteuerung verlangen</div>
     <ul class="ov-list">
@@ -132,7 +132,7 @@
   <div class="ov-card">
     <div class="ov-card-head">
       <h3>Enterprise &amp; Vertikalisierung</h3>
-      <span class="ov-count">17 Meldungen</span>
+      <span class="ov-count">18 Meldungen</span>
     </div>
     <div class="ov-sub">AI in Branchen und Unternehmen: Vertikalisierung, Verdrängung klassischer Software und Augmentation</div>
     <ul class="ov-list">

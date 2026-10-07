@@ -2,9 +2,9 @@
   "meta": {
     "title": "AI-Briefing",
     "subtitle": "Multi-Briefing · Privates AI-Briefing",
-    "period": "5.–7. Oktober 2026",
+    "period": "30. September–7. Oktober 2026",
     "generated": "2026-10-07",
-    "intro": "Neu belegte Entwicklungen: Mistral Large 4 als API-Vorschau, lokale multimodale Embeddings, Cyber-Zugangsstufen und konkrete Änderungen an Design-, Coding- und Enterprise-Agenten. Alle acht Themen, 41 Pflichtquellen und offene Entdeckung wurden bearbeitet; sämtliche Kandidaten wurden redaktionell bewertet. Herstellerwerte, Preprints und geplante Rollouts sind gekennzeichnet. Verbleibende Zugriffs- und Abdeckungslücken stehen im Quellenprotokoll; fehlende neue Meldungen sind keine Entwarnung. Frühere Meldungen bleiben in den Zeitraum-Ansichten und im Archiv.",
+    "intro": "Tagesergänzung: Die Decisions API erhält eine eigene Hauptmeldung zur öffentlichen Beta, getrennt von der CLI-Integration. Neu sind unter anderem Coworks verbindlicher Cloud-Betrieb, API-Nutzungsstufen, ein HIPAA-Self-Service, lokale Underdog-Vorschau, Agenten-Datenschutzforschung und der umstrittene Copilot-Autopilot-Angriff. Nachträge vom 30. September und 2. Oktober behalten ihre Originaldaten. Alle acht Themen, 41 Pflichtquellen und offene Entdeckung wurden bearbeitet; alle 111 Kandidaten ausdrücklich bewertet. Verbleibende Index-, Datums- und Zugriffslücken stehen im Quellenprotokoll; keine neuen Meldungen bedeutet keine Entwarnung. Bereits berichtete Workspace- und textGrain-Sammelmeldungen sind jetzt in ihre einzelnen Entwicklungen aufgeteilt; bekannte Mathematik-, Cyber- und Metrikmeldungen bleiben mit Originaldatum erhalten.",
     "disclaimer": "Hinweis: Alle Infos auf eigene Gefahr. Dies ist ein privates Projekt, automatisch generiert aus Web-Recherche.",
     "host": "Niko Klausnitzer"
   },
@@ -94,7 +94,34 @@
           "n": 1
         },
         {
-          "title": "OpenAI veröffentlicht Mathematikresultate und prüfbare Beweisartefakte",
+          "title": "OpenAI startet Decisions API als öffentliche Beta mit gpt-6-luna",
+          "date": "2026-10-06",
+          "summary": "OpenAI gibt die Decisions API am 6. Oktober als öffentliche Beta mit gpt-6-luna frei.[100] Die Dokumentation beschreibt typisierte Ja/Nein-, Auswahl- und Score-Antworten für Text und Bilder; GA ist erst für die kommenden Wochen geplant.[4] Das ist die API-Freigabe selbst, getrennt vom bereits berichteten Alpha-Plugin für das LLM-CLI.[4][3]",
+          "category": "modelle",
+          "impact": 4,
+          "sources": [
+            {
+              "label": "[100] developers.openai.com",
+              "url": "https://developers.openai.com/api/docs/changelog"
+            },
+            {
+              "label": "[4] developers.openai.com",
+              "url": "https://developers.openai.com/api/docs/guides/decisions"
+            },
+            {
+              "label": "[3] simonwillison.net",
+              "url": "https://simonwillison.net/2026/Oct/6/llm-openai-decisions/"
+            }
+          ],
+          "change_type": "public_beta",
+          "candidate_ids": [
+            "444a084f510aa7cdbe27",
+            "9f5ccb5e00143a1972eb"
+          ],
+          "n": 2
+        },
+        {
+          "title": "OpenAI veröffentlicht Mathematikresultate samt Lean-Beweisartefakten",
           "date": "2026-10-06",
           "summary": "OpenAI veröffentlicht Ergebnisse eines nicht öffentlich verfügbaren Frontier-Modells in einem GitHub-Repository mit Revisions- und Zitierprotokollen.[26] Viele Beweise werden in Lean formalisiert; zehn Reasoning-Zusammenfassungen und Angaben zum Rechenaufwand sollen die Prüfung erleichtern.[26] Die Veröffentlichung allein bestätigt weder Neuheit noch Korrektheit jedes Resultats; die fachliche Validierung bleibt entscheidend.[26]",
           "category": "modelle",
@@ -105,17 +132,25 @@
               "url": "https://openai.com/index/sharing-ai-progress-in-mathematics/"
             }
           ],
-          "n": 2
+          "n": 3,
+          "change_type": "research",
+          "candidate_ids": [
+            "10a7a794cf1638644f7c"
+          ]
         }
       ],
       "skip": [
         {
           "reason": "Offene Recherchelücken",
-          "text": "Meta AI (ai.meta.com): Blog bis 27.07., Newsroom/Feed nur bis 01.10.; Pflicht-Zeitfenstersuchen schließen die aktuelle Unternehmensabdeckung nicht. xAI (x.ai): Newsindex gesperrt/veraltet, API-Notes und Bot/Build-Changelogs decken Unternehmensnachrichten nicht verlässlich ab. Qwen (qwen.ai/research): gerenderter Index und datiertes Original vom 20.09. lesbar, Load-more-Gesamtabdeckung bleibt ungesichert."
+          "text": "Meta AI (ai.meta.com): Index endet im Juli; verpflichtende Zeitfenstersuchen schließen aktuelle Unternehmensabdeckung nicht. xAI (x.ai/news/): HTTP-/Browserblock und veraltete Extraktionen; API/SDK/Bot-Belege ersetzen Unternehmensnachrichten nicht. Qwen (qwen.ai/research): gerenderter Index und zwei datierte ältere Originale gelesen, vollständige aktuelle Indexabdeckung ungesichert. LLM Stats (llm-stats.com/llm-updates): neuester datierter Release 29.09., trotz anderweitig bestätigter Oktober-Releases; Katalog verzögert. Google DeepMind (ai.google.dev/gemini-api/docs/changelog): widersprüchliche Originalabzüge; optionale Abschaltfrist nicht bestätigt. Ollama (github.com/ollama/ollama/releases/tag/v0.40.0): Release-HTML 06.10. versus API published_at 25.09.; Oktober-Meilenstein zurückgestellt. Gemini-Tarifgrenzen (support.google.com/gemini/answer/17004136): widersprüchliche Support-Abzüge, Ankündigung nicht übernommen. OpenClaw (openclaw.ai/blog/ und docs.openclaw.ai/releases): alte Indizes, keine bestätigte Oktober-Veröffentlichung; keine vollständige aktuelle Entwicklungsabdeckung."
         },
         {
           "reason": "Eingeschränkte Quellen",
-          "text": "SemiAnalysis (newsletter.semianalysis.com): nur öffentliche Artikelteile, Bezahl-Dashboard nicht geprüft. MarkTechPost (marktechpost.com): Originalextraktionen gekürzt; tragende Aussagen aus vollständigem RSS-Inhalt und Primäroriginalen geprüft. VentureBeat (venturebeat.com): Artikelprüfung auf drei Browseroriginale begrenzt; Pegasus-Kandidat unvertieft. LLM Stats (llm-stats.com): Blog im Browser geprüft, dynamische/undatierte Ranglisten nicht als neue Veröffentlichungen gewertet."
+          "text": "SemiAnalysis (newsletter.semianalysis.com): öffentliche Methodik/Artikelteile, kostenpflichtiges Dashboard nicht geprüft. Latent Space (latent.space): öffentliche Artikelteile und Primäroriginale, Paywall-Inhalte nicht geprüft. arXiv (arxiv.org): thematische Stichprobe der aktuellen Tageslisten, keine Prüfung sämtlicher Einreichungen. Google AI Blog (blog.google/company-news/why-were-backing-americas-existing-nuclear-plants/): Nuclear-Original nur als Titel lesbar, daraus keine Meldung. California Legislative Information (leginfo.legislature.ca.gov): SB-574-Abruf zeigt älteren Änderungsstand; endgültige Details nicht verwendet."
+        },
+        {
+          "reason": "Aufgefangene Abruffehler",
+          "text": "Microsoft AI über gerenderten Browser; VentureBeat über Fenstersuchen und Browseroriginale; TechCrunch über aktuelle Direktoriginale; Anthropic, Mistral und Ars Technica über Direktabruf/Originalsuche. MarkTechPost, Hugging Face, GitHub Blog, The New Stack, Embrace The Red, Interconnects, ChinaTalk und Google DeepMind über aktuelle direkte Feeds beziehungsweise Originale; SemiAnalysis und Latent Space haben trotz korrektem Feed weiter die oben genannten Paywall-Grenzen."
         }
       ]
     },
@@ -175,6 +210,28 @@
             }
           ],
           "n": 3
+        },
+        {
+          "title": "Underdog startet einladungsbasierte Vorschau mit lokaler Inferenz",
+          "date": "2026-10-06",
+          "summary": "TechCrunch berichtet am 6. Oktober über den Start der einladungsbasierten Underdog-Beta mit einem von Qwen3.8 27B abgeleiteten Modell und lokaler Inferenz.[106][107] Das Hersteller-Manifest nennt aktuell den Mac und führt Windows als kommend auf, während TechCrunch Windows bereits als verfügbar beschreibt; diese Plattformabweichung bleibt offen.[106][107] Ein allgemein belegter Sicherheitsvorsprung wird daraus nicht abgeleitet.[106][107]",
+          "category": "lokal",
+          "impact": 3,
+          "sources": [
+            {
+              "label": "[106] techcrunch.com",
+              "url": "https://techcrunch.com/2026/10/06/silicon-valleys-ai-wunderkind-launches-underdog-the-most-private-instinct-muse-competitor-yet/"
+            },
+            {
+              "label": "[107] underdog.ai",
+              "url": "https://underdog.ai/manifesto"
+            }
+          ],
+          "change_type": "preview",
+          "candidate_ids": [
+            "5101d1b61318ba824778"
+          ],
+          "n": 4
         }
       ],
       "skip": []
@@ -187,7 +244,7 @@
       "summary": "GitHub bestätigt, dass SDK-basierte Agentensitzungen in einigen IDEs in Nutzungsberichten fehlten oder als Copilot-CLI-Aktivität gezählt wurden.[66] Der Fix ist ab VS Code 1.139.0 verfügbar; andere IDEs sollen bis November folgen.[66] Fehlende historische Daten lassen sich nicht nachtragen; die Abrechnung ist laut GitHub nicht betroffen.[66]",
       "items": [
         {
-          "title": "Copilot-Agentenmetriken fehlen: IDE aktualisieren, historische Lücke bleibt",
+          "title": "Copilot usage metrics: IDE-Update behebt fehlende Agentenaktivität",
           "date": "2026-10-06",
           "summary": "GitHub bestätigt, dass SDK-basierte Agentensitzungen in einigen IDEs in Nutzungsberichten fehlten oder als Copilot-CLI-Aktivität gezählt wurden.[66] Der Fix ist ab VS Code 1.139.0 verfügbar; andere IDEs sollen bis November folgen.[66] Fehlende historische Daten lassen sich nicht nachtragen; die Abrechnung ist laut GitHub nicht betroffen.[66]",
           "category": "tools",
@@ -198,7 +255,29 @@
               "url": "https://github.blog/changelog/2026-10-06-update-your-ide-to-restore-agent-activity-in-copilot-usage-metrics/"
             }
           ],
-          "n": 1
+          "n": 1,
+          "change_type": "update",
+          "candidate_ids": [
+            "b337eb6b1ac0169516d9"
+          ]
+        },
+        {
+          "title": "Stacked pull requests auf GitHub erreichen allgemeine Verfügbarkeit",
+          "date": "2026-10-06",
+          "summary": "GitHub gibt Stacked pull requests am 6. Oktober allgemein frei: Große Änderungen lassen sich in getrennt prüfbare Pull Requests aufteilen und gemeinsam zusammenführen.[101] Die zuvor öffentliche Preview wird damit zu GA; Auto-Merge für Stacks wird dagegen erst über die nächsten Wochen ausgerollt.[101]",
+          "category": "tools",
+          "impact": 3,
+          "sources": [
+            {
+              "label": "[101] github.blog",
+              "url": "https://github.blog/changelog/2026-10-06-stacked-pull-requests-generally-available/"
+            }
+          ],
+          "change_type": "general_availability",
+          "candidate_ids": [
+            "968474eefd8612d54878"
+          ],
+          "n": 2
         },
         {
           "title": "Alpha-Plugin bringt OpenAI Decisions in das LLM-CLI",
@@ -216,7 +295,7 @@
               "url": "https://developers.openai.com/api/docs/guides/decisions"
             }
           ],
-          "n": 2
+          "n": 3
         },
         {
           "title": "Google Flow Music exportiert promptgebaute Effekte als VST3/AU",
@@ -230,7 +309,43 @@
               "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/create-music-production-plugins-google-flow/"
             }
           ],
-          "n": 3
+          "n": 4
+        },
+        {
+          "title": "ParanoiaEval prüft unnötige defensive Arbeit von Coding-Agenten",
+          "date": "2026-10-06",
+          "summary": "Der ParanoiaEval-Preprint führt 200 evidenzkontrollierte Repository-Aufgabenpaare zur Bewertung der Risikobehandlung von Coding-Agenten ein.[102] Je nach Konfiguration beobachten die Autoren unnötige Risikobehandlung in 11,2 bis 58,7 Prozent der Läufe; das sind Studienwerte, keine allgemeine Fehlerquote aller Coding-Agenten.[102]",
+          "category": "agents",
+          "impact": 2,
+          "sources": [
+            {
+              "label": "[102] arxiv.org",
+              "url": "https://arxiv.org/abs/2610.08662"
+            }
+          ],
+          "change_type": "research",
+          "candidate_ids": [
+            "1f6a0fdd5480825a299f"
+          ],
+          "n": 5
+        },
+        {
+          "title": "SpaceXAI TypeScript SDK erscheint erstmals öffentlich",
+          "date": "2026-10-02",
+          "summary": "Der offizielle Changelog datiert die erste öffentliche Version des SpaceXAI TypeScript SDK auf den 2. Oktober.[109] Das SDK bündelt Responses, Streaming, Tool-Aufrufe und Medien-APIs; ein ebenfalls am 2. Oktober dokumentierter breaking change benennt die Clientklasse von xAI in SpaceXAI um.[109]",
+          "category": "tools",
+          "impact": 2,
+          "sources": [
+            {
+              "label": "[109] raw.githubusercontent.com",
+              "url": "https://raw.githubusercontent.com/xai-org/xai-sdk-ts/main/CHANGELOG.md"
+            }
+          ],
+          "change_type": "announcement",
+          "candidate_ids": [
+            "19582c695e848983d652"
+          ],
+          "n": 6
         }
       ],
       "skip": []
@@ -240,22 +355,8 @@
       "name": "AI Tools",
       "group": "Praxis",
       "angle": "IDEs, Assistenten und Plattformen für den täglichen Einsatz",
-      "summary": "VentureBeat berichtet über Anthropics Google-Workspace-Integration: Claude kann direkt in Docs, Sheets und Slides sowie umgekehrt im Claude-Webinterface Dateien bearbeiten.[24] Die öffentliche Beta steht bezahlten Claude-Plänen einschließlich Enterprise offen; standardmäßig werden Änderungen zur Bestätigung vorgelegt.[24] Der Originalartikel ist auf den 6. Oktober in Pacific Time datiert, auch wenn der Index den 7. Oktober zeigt.[24]",
+      "summary": "Figma hebt die Beta seines Designagenten auf und ergänzt Markdown-Guidelines für Bibliotheken sowie die Sichtbarkeit der Agentenarbeit von Kollegen.[47][48] Der Zugriff bleibt vom Sitztyp und Tarif abhängig; die beworbenen Qualitätsgewinne beruhen auf Figma-eigenen Designer-Evaluationen.[48]",
       "items": [
-        {
-          "title": "Claude bearbeitet Docs, Sheets und Slides in öffentlicher Beta",
-          "date": "2026-10-06",
-          "summary": "VentureBeat berichtet über Anthropics Google-Workspace-Integration: Claude kann direkt in Docs, Sheets und Slides sowie umgekehrt im Claude-Webinterface Dateien bearbeiten.[24] Die öffentliche Beta steht bezahlten Claude-Plänen einschließlich Enterprise offen; standardmäßig werden Änderungen zur Bestätigung vorgelegt.[24] Der Originalartikel ist auf den 6. Oktober in Pacific Time datiert, auch wenn der Index den 7. Oktober zeigt.[24]",
-          "category": "tools",
-          "impact": 3,
-          "sources": [
-            {
-              "label": "[24] venturebeat.com",
-              "url": "https://venturebeat.com/technology/you-can-now-open-claude-directly-in-google-docs-sheets-and-slides-and-vice-versa-open-and-edit-the-files-in-claude"
-            }
-          ],
-          "n": 1
-        },
         {
           "title": "Figma-Agent wird allgemein verfügbar und erhält Markdown-Guidelines",
           "date": "2026-10-06",
@@ -272,7 +373,7 @@
               "url": "https://www.figma.com/blog/3-ways-product-designers-use-the-figma-agent/"
             }
           ],
-          "n": 2
+          "n": 1
         },
         {
           "title": "Nano Banana 2.1 ergänzt Googles Bildgenerierung und Bildbearbeitung",
@@ -290,7 +391,79 @@
               "url": "https://deepmind.google/models/model-cards/nano-banana-2-1/"
             }
           ],
+          "n": 2
+        },
+        {
+          "title": "Claude Cowork: neue Pro-/Max-Aufgaben laufen verbindlich in der Cloud",
+          "date": "2026-10-06",
+          "summary": "Seit dem 6. Oktober laufen neue Claude-Cowork-Aufgaben auf Pro und Max in der Cloud; die Einstellung für ausschließlich lokale Ausführung entfällt.[98] Bereits gestartete lokale Aufgaben bleiben dort, und verbundene lokale Dateien sind weiterhin nur über die geöffnete Desktop-App erreichbar.[98]",
+          "category": "agents",
+          "impact": 3,
+          "sources": [
+            {
+              "label": "[98] support.claude.com",
+              "url": "https://support.claude.com/en/articles/15520349-use-claude-cowork-on-web-desktop-and-mobile"
+            }
+          ],
+          "change_type": "update",
+          "candidate_ids": [
+            "d09f738c69034855cc8e"
+          ],
           "n": 3
+        },
+        {
+          "title": "Claude for Google Workspace: öffentliche Beta in Docs, Sheets und Slides",
+          "date": "2026-10-06",
+          "summary": "Anthropic startet Claude for Google Workspace als öffentliche Beta für alle bezahlten Claude-Pläne.[113] Das Add-on bringt Claude direkt in geöffnete Google-Dateien; es ist keine GA-Freigabe.[113]",
+          "category": "tools",
+          "impact": 3,
+          "sources": [
+            {
+              "label": "[113] claude.com",
+              "url": "https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides"
+            }
+          ],
+          "change_type": "public_beta",
+          "candidate_ids": [
+            "a83e3335c8f0d1900742"
+          ],
+          "n": 4
+        },
+        {
+          "title": "Claude: Google Docs, Sheets und Slides erhalten Schreib-Connectoren in Beta",
+          "date": "2026-10-06",
+          "summary": "Anthropic veröffentlicht zusätzlich Beta-Connectoren zum Erstellen und Bearbeiten von Google Docs, Sheets und Slides direkt aus Claude heraus.[113] Das ist die andere Richtung der Integration, getrennt vom Add-on innerhalb geöffneter Google-Dateien.[113]",
+          "category": "tools",
+          "impact": 3,
+          "sources": [
+            {
+              "label": "[113] claude.com",
+              "url": "https://claude.com/resources/articles/claude-now-works-in-google-docs-sheets-and-slides"
+            }
+          ],
+          "change_type": "public_beta",
+          "candidate_ids": [
+            "ff65fc3cb2b174f3177c"
+          ],
+          "n": 5
+        },
+        {
+          "title": "Grok Voice Transcribe 1.0 endet; API-Aufrufe gehen an Version 2.0",
+          "date": "2026-10-02",
+          "summary": "Die xAI-Release-Notes dokumentieren das Ende von Grok Voice Transcribe 1.0 am 2. Oktober.[108] Aufrufe des alten Slugs werden bei gleichem Preis an grok-voice-transcribe-2.0 umgeleitet; das ist der Abschaltmeilenstein, nicht erneut die im September gemeldete Veröffentlichung von Version 2.0.[108]",
+          "category": "tools",
+          "impact": 2,
+          "sources": [
+            {
+              "label": "[108] docs.x.ai",
+              "url": "https://docs.x.ai/developers/release-notes"
+            }
+          ],
+          "change_type": "update",
+          "candidate_ids": [
+            "ae1b687f10de5668e817"
+          ],
+          "n": 6
         }
       ],
       "skip": []
@@ -339,6 +512,42 @@
           "n": 2
         },
         {
+          "title": "Atlassian erweitert MCP-Server auf mehr als 220 Tools",
+          "date": "2026-10-06",
+          "summary": "Atlassians MCP-Server erschließt laut VentureBeat mehr als 220 Werkzeuge in Jira, Confluence, Bitbucket, Loom und weiteren Produkten.[21] Bis zu 25 Prozent weniger Tokens bei vergleichbaren Jira-/Confluence-Aufgaben stammen aus internen Atlassian-Tests, nicht aus einer unabhängigen Kostenmessung.[21] Der technische Ausbau ist eine eigene Entwicklung neben der bereits berichteten OpenAI-Partnerschaft.[21]",
+          "category": "agents",
+          "impact": 3,
+          "sources": [
+            {
+              "label": "[21] venturebeat.com",
+              "url": "https://venturebeat.com/orchestration/atlassian-deepens-its-openai-partnership-with-a-spend-commitment-but-its-platform-stays-firmly-multi-model"
+            }
+          ],
+          "change_type": "update",
+          "candidate_ids": [
+            "e99b8a85484c48001666"
+          ],
+          "n": 3
+        },
+        {
+          "title": "SAP Reltio erreicht GA in SAP Business Data Cloud",
+          "date": "2026-10-06",
+          "summary": "The New Stack meldet SAP Reltio als allgemein verfügbar in SAP Business Data Cloud.[70] Die Stammdatenverwaltung führt Datensätze zu einheitlichen Profilen für Joule und Agenten zusammen; diese konkrete GA ist getrennt von den angekündigten Joule-Assistenten zu bewerten.[70]",
+          "category": "business",
+          "impact": 3,
+          "sources": [
+            {
+              "label": "[70] thenewstack.io",
+              "url": "https://thenewstack.io/sap-connect-joule-assistants/"
+            }
+          ],
+          "change_type": "general_availability",
+          "candidate_ids": [
+            "e135778914d69e34fdf4"
+          ],
+          "n": 4
+        },
+        {
           "title": "TRACE-Preprint: jüngste Historie sagt Komprimierungsschäden nur schwach voraus",
           "date": "2026-10-06",
           "summary": "Ein Preprint untersucht 590 gepaarte AppWorld-Komprimierungsgrenzen und findet nur schwache Vorhersagekraft der jüngsten Agentenhistorie für spätere Fehler.[34] Der beste erweiterte Trigger erreicht eine AUROC von 0,66; ob er bei gleicher Retention eine Tokenbudgetregel schlägt, lässt sich mit der Veröffentlichung ausdrücklich nicht bestimmen.[34][35]",
@@ -354,7 +563,25 @@
               "url": "https://arxiv.org/html/2610.08722v1"
             }
           ],
-          "n": 3
+          "n": 5
+        },
+        {
+          "title": "brethof-brain startet mit Sitzungsbriefings und Entscheidungshistorie",
+          "date": "2026-10-06",
+          "summary": "Brethof startet am 6. Oktober brethof-brain mit automatisch bereitgestellten Sitzungsbriefings, kuratierten Projektdaten und einer datierten Entscheidungshistorie.[105] Auch bei lokaler Speicherung sendet das System Inhalte zur Verarbeitung an den Anbieter-Hub; lokal gespeichert bedeutet daher nicht ausschließlich lokal verarbeitet.[105] Funktions- und Datenschutzversprechen sind Herstellerangaben.[105]",
+          "category": "agents",
+          "impact": 2,
+          "sources": [
+            {
+              "label": "[105] brethof.ai",
+              "url": "https://brethof.ai/brain/launch/"
+            }
+          ],
+          "change_type": "general_availability",
+          "candidate_ids": [
+            "a69724103b14e73de369"
+          ],
+          "n": 6
         }
       ],
       "skip": []
@@ -367,7 +594,7 @@
       "summary": "Anthropic erweitert das Cyber Verification Program um Defense Access, Red Team Access und Specialized Access für verifizierte Sicherheitsarbeit.[25] Red-Team-Zugang ist auf autorisierte Tests beschränkt; die Spezialstufe hat zusätzliche Prüf- und Sicherheitsanforderungen.[25] Das ist kein unbeschränkter öffentlicher Zugang zu Cyberfähigkeiten und kein Nachweis, dass Missbrauch ausgeschlossen ist.[25]",
       "items": [
         {
-          "title": "Anthropic bündelt Cyber Verification in drei geprüfte Zugangsstufen",
+          "title": "Cyber Verification Program: Anthropic bündelt drei geprüfte Zugangsstufen",
           "date": "2026-10-06",
           "summary": "Anthropic erweitert das Cyber Verification Program um Defense Access, Red Team Access und Specialized Access für verifizierte Sicherheitsarbeit.[25] Red-Team-Zugang ist auf autorisierte Tests beschränkt; die Spezialstufe hat zusätzliche Prüf- und Sicherheitsanforderungen.[25] Das ist kein unbeschränkter öffentlicher Zugang zu Cyberfähigkeiten und kein Nachweis, dass Missbrauch ausgeschlossen ist.[25]",
           "category": "security",
@@ -378,7 +605,11 @@
               "url": "https://www.anthropic.com/news/cyber-verification-program"
             }
           ],
-          "n": 1
+          "n": 1,
+          "change_type": "security",
+          "candidate_ids": [
+            "ef18c3b0ea6ce920905f"
+          ]
         },
         {
           "title": "Wikimedia meldet unerlaubte Agentenaktivität, aber keine belegte Kompromittierung",
@@ -401,6 +632,82 @@
             }
           ],
           "n": 2
+        },
+        {
+          "title": "GitHub Copilot CLI: verschlüsselte Anweisungen können im Autopilot Daten abziehen",
+          "date": "2026-10-06",
+          "summary": "Adversa demonstriert einen modellabhängigen Exfiltrationsangriff gegen GitHub Copilot CLI im Autopilot-Modus mit verschlüsselten Webseitenanweisungen; ein allgemeiner One-Click-Angriff oder Freigabebypass wird ausdrücklich nicht behauptet.[110] GitHub bestätigt gegenüber The Register die Untersuchung, stuft den Fall wegen erforderlicher Nutzeraktionen aber nicht als Produktschwachstelle ein; die Forscher widersprechen dieser Einordnung.[111]",
+          "category": "security",
+          "impact": 3,
+          "sources": [
+            {
+              "label": "[110] adversa.ai",
+              "url": "https://adversa.ai/blog/cryptographic-context-injection-github-copilot/"
+            },
+            {
+              "label": "[111] www.theregister.com",
+              "url": "https://www.theregister.com/ai-and-ml/2026/10/06/zombie-instructions-on-carefully-constructed-web-pages-could-trick-github-copilot-cli-into-sharing-secrets/5301206"
+            }
+          ],
+          "change_type": "security",
+          "candidate_ids": [
+            "ac54309a1270a387d533"
+          ],
+          "n": 3
+        },
+        {
+          "title": "AgentPrivArena bewertet unnötige Datenzugriffe entlang des Agentenablaufs",
+          "date": "2026-10-05",
+          "summary": "AgentPrivArena verbindet echte MCP-Tools und selbst gehostete Dienste in einer reproduzierbaren Evaluationsumgebung.[103] Der Preprint misst unnötigen Informationszugriff entlang der Ausführung statt ausschließlich Datenlecks in der Endantwort; er ist keine Produktionszertifizierung.[103]",
+          "category": "security",
+          "impact": 3,
+          "sources": [
+            {
+              "label": "[103] arxiv.org",
+              "url": "https://arxiv.org/abs/2610.06454"
+            }
+          ],
+          "change_type": "research",
+          "candidate_ids": [
+            "6c96633f64dcc2946b88"
+          ],
+          "n": 4
+        },
+        {
+          "title": "CoreWeave Sandboxes werden für Agenten und Evaluation allgemein verfügbar",
+          "date": "2026-09-30",
+          "summary": "Nachtrag vom 30. September: NVIDIA meldet CoreWeave Sandboxes als allgemein verfügbar für Agenten, Tool-Aufrufe, Reinforcement Learning und Evaluation in isolierten CPU- oder GPU-Umgebungen.[112] Angeboten werden serverlose Ausführung und vorhandene Trainingsinfrastruktur; daraus folgt keine unabhängig geprüfte Sicherheitsgarantie.[112]",
+          "category": "security",
+          "impact": 3,
+          "sources": [
+            {
+              "label": "[112] blogs.nvidia.com",
+              "url": "https://blogs.nvidia.com/blog/coreweave-agentic-ai-vera-rubin"
+            }
+          ],
+          "change_type": "general_availability",
+          "candidate_ids": [
+            "3c8925ef66e00a8bbde8"
+          ],
+          "n": 5
+        },
+        {
+          "title": "AgentPrivAudit ergänzt Datenschutzprüfungen während der Ausführung",
+          "date": "2026-10-05",
+          "summary": "Derselbe Preprint stellt AgentPrivAudit als eigenen Ansatz zur Überwachung von Datenschutzverstößen während der Agentenausführung vor.[103] Es handelt sich um eine Forschungsentwicklung, nicht um einen allgemein verfügbaren Managed-Security-Dienst oder einen belegten Schutz vor sämtlichen Datenlecks.[103]",
+          "category": "security",
+          "impact": 2,
+          "sources": [
+            {
+              "label": "[103] arxiv.org",
+              "url": "https://arxiv.org/abs/2610.06454"
+            }
+          ],
+          "change_type": "research",
+          "candidate_ids": [
+            "b361ff0c7e1ee6b6e763"
+          ],
+          "n": 6
         }
       ],
       "skip": []
@@ -443,6 +750,96 @@
             }
           ],
           "n": 2
+        },
+        {
+          "title": "OpenAI vereinfacht API Usage tiers auf Build, Launch und Grow",
+          "date": "2026-10-06",
+          "summary": "OpenAI ersetzt am 6. Oktober fünf API-Nutzungsstufen durch Build, Launch und Grow.[100] Organisationen steigen anhand ihrer gesamten Guthabenkäufe automatisch auf; monatliche Nutzungsgrenzen und modellbezogene Ratenlimits bleiben zu beachten.[100]",
+          "category": "business",
+          "impact": 3,
+          "sources": [
+            {
+              "label": "[100] developers.openai.com",
+              "url": "https://developers.openai.com/api/docs/changelog"
+            }
+          ],
+          "change_type": "update",
+          "candidate_ids": [
+            "c6d5cf4c850f2c717d4b"
+          ],
+          "n": 3
+        },
+        {
+          "title": "OpenAI ergänzt Self-Service für HIPAA compliance support",
+          "date": "2026-10-05",
+          "summary": "Seit dem 5. Oktober können Administratoren berechtigter API-Organisationen die Standard-BAA direkt in den Einstellungen annehmen und HIPAA compliance support aktivieren.[100] Der Changelog verweist für Berechtigung, abgedeckte Dienste und erforderliche Konfiguration auf gesonderte Bedingungen; daraus folgt keine pauschale Compliance sämtlicher API-Anwendungen.[100]",
+          "category": "security",
+          "impact": 3,
+          "sources": [
+            {
+              "label": "[100] developers.openai.com",
+              "url": "https://developers.openai.com/api/docs/changelog"
+            }
+          ],
+          "change_type": "update",
+          "candidate_ids": [
+            "54d965c7ba7026516f40"
+          ],
+          "n": 4
+        },
+        {
+          "title": "textGrain: Textwasserzeichen sind in ausgewählten OpenAI-API-Modellen optional",
+          "date": "2026-10-05",
+          "summary": "Einordnung der am 5. Oktober berichteten Entwicklung: API-Kunden können textGrain weltweit für ausgewählte Modelle aktivieren; standardmäßig ist die Option aus.[60] Bearbeitung, kurze Texte und Fehlalarme begrenzen die Nachweisbarkeit; ein Wasserzeichen ist keine sichere Herkunftsgarantie.[60]",
+          "category": "security",
+          "impact": 3,
+          "sources": [
+            {
+              "label": "[60] openai.com",
+              "url": "https://openai.com/index/eu-text-provenance/"
+            }
+          ],
+          "change_type": "update",
+          "candidate_ids": [
+            "c5857a9ff1edbd2e673a"
+          ],
+          "n": 5
+        },
+        {
+          "title": "textGrain: EU-Rollout für ChatGPT und Codex erst angekündigt",
+          "date": "2026-10-05",
+          "summary": "OpenAI kündigt am 5. Oktober unsichtbare textGrain-Wasserzeichen für geeignete ChatGPT- und Codex-Texte in der EU für die kommenden Wochen an.[60] Dieser regionale Rollout ist von der bereits verfügbaren API-Opt-in-Funktion getrennt; er wird nicht als abgeschlossen dargestellt.[60]",
+          "category": "security",
+          "impact": 3,
+          "sources": [
+            {
+              "label": "[60] openai.com",
+              "url": "https://openai.com/index/eu-text-provenance/"
+            }
+          ],
+          "change_type": "announcement",
+          "candidate_ids": [
+            "bdd3d1c5f90402d617b8"
+          ],
+          "n": 6
+        },
+        {
+          "title": "textGrain-Detektor (textGrain detector): Anträge für Fachorganisationen geöffnet",
+          "date": "2026-10-05",
+          "summary": "OpenAI öffnet am 5. Oktober Bewerbungen für den textGrain-Detektor.[60] Zugang ist zunächst auf genehmigte Forschende und Fachorganisationen beschränkt; dies ist keine allgemein öffentliche Detektorfreigabe.[60]",
+          "category": "security",
+          "impact": 2,
+          "sources": [
+            {
+              "label": "[60] openai.com",
+              "url": "https://openai.com/index/eu-text-provenance/"
+            }
+          ],
+          "change_type": "announcement",
+          "candidate_ids": [
+            "f7d1cce7120513b16a8c"
+          ],
+          "n": 7
         }
       ],
       "skip": []
@@ -503,6 +900,42 @@
             }
           ],
           "n": 3
+        },
+        {
+          "title": "CoreWeave ARIA erreicht allgemeine Verfügbarkeit",
+          "date": "2026-09-30",
+          "summary": "Nachtrag vom 30. September: NVIDIA meldet CoreWeave ARIA als allgemein verfügbar.[112] ARIA unterstützt die Analyse von Experimentläufen, schlägt nächste Experimente und Codeänderungen vor und kann Änderungen in GitHub ablegen; die Beschreibung stammt von einem beteiligten Anbieter.[112]",
+          "category": "agents",
+          "impact": 3,
+          "sources": [
+            {
+              "label": "[112] blogs.nvidia.com",
+              "url": "https://blogs.nvidia.com/blog/coreweave-agentic-ai-vera-rubin"
+            }
+          ],
+          "change_type": "general_availability",
+          "candidate_ids": [
+            "4d0c3b683ee0b06453e9"
+          ],
+          "n": 4
+        },
+        {
+          "title": "Claude for Startups ergänzt ein Jahr Team-Zugang und API-Guthaben",
+          "date": "2026-10-06",
+          "summary": "Laut TechCrunch bietet das erweiterte Claude-for-Startups-Programm qualifizierten Firmen ein Jahr Claude Team mit bis zu fünf Premium-Sitzen und 1.000 US-Dollar API-Guthaben.[42] Das ist eine konditionierte Förderung, kein kostenloser unbegrenzter API-Zugang.[42]",
+          "category": "business",
+          "impact": 2,
+          "sources": [
+            {
+              "label": "[42] techcrunch.com",
+              "url": "https://techcrunch.com/2026/10/06/anthropic-gives-startups-a-free-year-of-enterprise-service-and-1000-in-token-credits/"
+            }
+          ],
+          "change_type": "business",
+          "candidate_ids": [
+            "28fd579b725c898efae6"
+          ],
+          "n": 5
         }
       ],
       "skip": []
