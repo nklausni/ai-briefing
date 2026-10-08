@@ -207,25 +207,8 @@ auf. Der Bericht trennt Recherche, Schlussredaktion und Publikationsprüfung und
 zeigt die Laufzeit jedes Quellenpakets. Nutze ihn zur späteren Optimierung;
 verändere dafür weder die Quellenabdeckung noch die Belegregeln.
 
-Antworte kurz auf Deutsch: wichtigste Änderungen und Link. Prüfe für die Abschlussmeldung
-alle Einträge des aktuellen Tagesaudits, nicht nur `status=unavailable`: Auch `checked`
-kann eine falsche Domain, einen veralteten Index oder eingeschränkt prüfbare Inhalte enthalten.
-Prüfe auch alle `checks` je Quelle: Ein ausgefallener Entwickler-Changelog ist eine
-offene Abdeckungslücke, selbst wenn der Newsindex erreichbar war.
-Ordne Probleme nach ihrer verbleibenden Auswirkung ein, nicht nach dem ersten HTTP-Fehler:
-- **Offene Recherchelücken:** jede Quelle mit Name und Domain/URL, Ursache und
-  fehlender Abdeckung einzeln nennen. Dazu zählen ungeprüfte Pflichtquellen,
-  nicht lesbare Originale und unzuverlässige/veraltete Indizes, deren Abdeckung
-  durch Alternativen nicht ausreichend hergestellt wurde.
-- **Eingeschränkte Quellen:** einzeln nennen, wenn nur Vorschauen/öffentliche
-  Paywall-Teile oder undatierte Teilbereiche prüfbar waren. Nur belegte Inhalte verwenden.
-- **Aufgefangene Abruffehler:** erfolgreich wiederhergestellte Quellen namentlich
-  in höchstens zwei kurzen Sätzen bündeln, einschließlich wirksamer Alternative
-  (z. B. RSS, Direktabruf oder Browser). Kein eigener Absatz je Abruffehler.
-Leere Abschnitte weglassen. Keine neuen Meldungen ist kein Quellenfehler. Nicht
-vollständig reparierte Abdeckung niemals als bloß aufgefangenen Fehler einsortieren.
-Behaupte keinen dauerhaften Ausfall ohne Beleg. Bericht knapp halten, aber keine
-betroffene Quelle still weglassen; technische Abrufdetails stehen im Tagesaudit.
+Abschlussmeldung auf Deutsch, maximal 600 Zeichen und 5 kurze Zeilen (Ziel: 300–450 Zeichen). Erste Zeile: Veröffentlichung bestätigt oder ehrlich unbestätigter Stand; optional Anzahl neuer Meldungen. Danach höchstens zwei Top-Themen in einer Zeile und der Link https://nklausni.github.io/ai-briefing/. Nur bei verbleibenden Quellenproblemen eine kompakte Zeile „Quellen: …“ mit allen betroffenen Quellennamen und knappem Grund; offene Lücken und Einschränkungen dabei kennzeichnen. Prüfe alle Audit-Ergebnisse einschließlich checked und Teilchecks; ungeprüfte Pflichtquellen zählen als Lücke. Erfolgreich aufgefangene Abruffehler, Domains/URLs, technische Details, Tests, Laufzeiten und Prozessberichte nicht in Telegram aufführen; vollständige Details bleiben im Tagesaudit. Wenn die Quellenliste die Zeichenobergrenze sprengt, hat die vollständige Namensliste Vorrang: Top-Themen zuerst weglassen und Gründe knapp bündeln. Keine neuen Meldungen ist kein Ausfall. Melde dich erst nach abgeschlossener Verarbeitung und Publikationsprüfung.
+
 Bei Fehlern sage ausdrücklich, dass kein neues verifiziertes Briefing veröffentlicht
 wurde, und welcher Schritt fehlt. Der Hauptagent meldet sich erst nach beendeten
 Subagenten und abgeschlossenen Prüfungen.
