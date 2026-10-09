@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI-Radar — Context &amp; Prompt Engineering — 1.–8. Oktober 2026</title>
+<title>AI-Radar — Context &amp; Prompt Engineering — 7.–9. Oktober 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -19,13 +19,13 @@
         <div class="sub">Blickwinkel: Kontextsteuerung, Prompting und Agent-Design: was im Kontextfenster landet, entscheidet über Qualität und Kosten</div>
       </div>
       <div class="meta-right">
-        <nav class="range-sw"><a href="context-engineering.html" class="active">Heute</a><a href="7d/context-engineering.html">7 Tage</a><a href="14d/context-engineering.html">14 Tage</a><a href="30d/context-engineering.html">30 Tage</a></nav><div class="range-period">1.–8. Oktober 2026</div>
+        <nav class="range-sw"><a href="context-engineering.html" class="active">Heute</a><a href="7d/context-engineering.html">7 Tage</a><a href="14d/context-engineering.html">14 Tage</a><a href="30d/context-engineering.html">30 Tage</a></nav><div class="range-period">7.–9. Oktober 2026</div>
       </div>
     </div>
   </header>
   <nav class="nav"><a href="index.html">Übersicht</a><a href="ai-news.html">AI News</a><a href="lokale-llms.html">Lokale LLMs</a><a href="agentic-engineering.html">Agentic Engineering / Vibe Coding</a><a href="ai-tools.html">AI Tools</a><a href="context-engineering.html" class="active">Context &amp; Prompt Engineering</a><a href="ai-security.html">AI Security &amp; Safety</a><a href="ai-governance.html">AI Governance &amp; Regulierung</a><a href="enterprise.html">Enterprise &amp; Vertikalisierung</a></nav>
 
-  <p class="lede">Anthropic senkt Cache Reads bei Claude Sonnet 5.5 von 0,20 auf 0,10 US-Dollar je Million Tokens.[2] Die beworbenen rund 20 Prozent geringeren Agentenkosten sind eine Abschätzung für cachelastige Aufgaben, keine pauschale Halbierung sämtlicher API-Kosten.[2]</p>
+  <p class="lede">Der REMORY-Preprint ergänzt eine lesbare Kontextzusammenfassung um begrenzte gelernte Soft-Memory-Tokens, während das ausführende Sprachmodell unverändert bleibt.[46] Autoren berichten bessere Quellenzuordnung auf SummHay bei 5,2 Prozent der Eingabepositionen; das ist eine Forschungs-Evaluation, keine allgemeine Produktfreigabe.[46]</p>
 
   <div class="board">
     <div class="board-left">
@@ -70,20 +70,16 @@
 <text x="400" y="754" class="sector-label" text-anchor="middle" fill="#1f1d1b">Security &amp; Governance</text>
 <text x="96.89" y="579" class="sector-label" text-anchor="end" fill="#1f1d1b">Business &amp; Markt</text>
 <g>
-<circle cx="251.74" cy="314.4" r="13" fill="#0075de" stroke="#ffffff" stroke-width="2"/>
-<text x="251.74" y="318.4" class="blip-num" text-anchor="middle" fill="#ffffff">1</text>
-</g>
-<g>
 <circle cx="512.59" cy="287.41" r="13" fill="#213183" stroke="#ffffff" stroke-width="2"/>
-<text x="512.59" y="291.41" class="blip-num" text-anchor="middle" fill="#ffffff">2</text>
+<text x="512.59" y="291.41" class="blip-num" text-anchor="middle" fill="#ffffff">1</text>
 </g>
 <g>
 <circle cx="548.26" cy="314.4" r="13" fill="#213183" stroke="#ffffff" stroke-width="2"/>
-<text x="548.26" y="318.4" class="blip-num" text-anchor="middle" fill="#ffffff">3</text>
+<text x="548.26" y="318.4" class="blip-num" text-anchor="middle" fill="#ffffff">2</text>
 </g>
 <g>
 <circle cx="576.93" cy="352.59" r="13" fill="#213183" stroke="#ffffff" stroke-width="2"/>
-<text x="576.93" y="356.59" class="blip-num" text-anchor="middle" fill="#ffffff">4</text>
+<text x="576.93" y="356.59" class="blip-num" text-anchor="middle" fill="#ffffff">3</text>
 </g>
 </svg>
       </div>
@@ -110,46 +106,37 @@
   <div class="section"><h2>Die Meldungen im Detail</h2></div>
   <div class="detail-list">
   <div class="dcard">
-    <span class="dnum" style="background:#0075de;color:#ffffff">1</span>
+    <span class="dnum" style="background:#213183;color:#ffffff">1</span>
     <div class="dbody">
-      <h3 class="dtitle"><a class="dtitle-link" href="https://www.anthropic.com/claude-haiku-5-5" target="_blank" rel="noopener">Claude Sonnet 5.5 halbiert den Cache-Read-Tarif</a></h3>
-      <div class="dmeta"><span class="cat-badge" style="background:#0075de1f;color:#0075de">Modelle</span><span class="dmeta-src">[2] www.anthropic.com · 2026-10-07</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
-      <p>Anthropic senkt Cache Reads bei Claude Sonnet 5.5 von 0,20 auf 0,10 US-Dollar je Million Tokens.[2] Die beworbenen rund 20 Prozent geringeren Agentenkosten sind eine Abschätzung für cachelastige Aufgaben, keine pauschale Halbierung sämtlicher API-Kosten.[2]</p>
-      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.anthropic.com/claude-haiku-5-5" target="_blank" rel="noopener">[2] www.anthropic.com <span class="arw">→</span></a></div>
+      <h3 class="dtitle"><a class="dtitle-link" href="https://arxiv.org/abs/2610.11287" target="_blank" rel="noopener">REMORY ergänzt Kontextzusammenfassungen durch Speichertokens</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2131831f;color:#213183">Agents &amp; Frameworks</span><span class="dmeta-src">[46] arxiv.org · 2026-10-08</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Der REMORY-Preprint ergänzt eine lesbare Kontextzusammenfassung um begrenzte gelernte Soft-Memory-Tokens, während das ausführende Sprachmodell unverändert bleibt.[46] Autoren berichten bessere Quellenzuordnung auf SummHay bei 5,2 Prozent der Eingabepositionen; das ist eine Forschungs-Evaluation, keine allgemeine Produktfreigabe.[46]</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://arxiv.org/abs/2610.11287" target="_blank" rel="noopener">[46] arxiv.org <span class="arw">→</span></a></div>
     </div>
   </div>
   <div class="dcard">
     <span class="dnum" style="background:#213183;color:#ffffff">2</span>
     <div class="dbody">
-      <h3 class="dtitle"><a class="dtitle-link" href="https://arxiv.org/abs/2610.10062" target="_blank" rel="noopener">Loud Failures, Quiet Failures untersucht stille Tool-Fehler</a></h3>
-      <div class="dmeta"><span class="cat-badge" style="background:#2131831f;color:#213183">Agents &amp; Frameworks</span><span class="dmeta-src">[52] arxiv.org · 2026-10-07</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
-      <p>Der Preprint Loud Failures, Quiet Failures unterscheidet explizite Fehlermeldungen von plausiblen, aber falschen Tool-Ergebnissen.[52] Im untersuchten Benchmark behandeln Agenten explizite Fehler in 91,3 Prozent der Versuche als Problem, plausible falsche Werte nur in 58,8 Prozent.[52] Die Ergebnisse beschreiben diese Testbedingungen, nicht alle Agenten oder Anwendungen.[52]</p>
-      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://arxiv.org/abs/2610.10062" target="_blank" rel="noopener">[52] arxiv.org <span class="arw">→</span></a></div>
+      <h3 class="dtitle"><a class="dtitle-link" href="https://www.elastic.co/search-labs/blog/context-engineering-for-agents" target="_blank" rel="noopener">Elastic beschreibt einen wiederverwendbaren Context Engine</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2131831f;color:#213183">Agents &amp; Frameworks</span><span class="dmeta-src">[113] www.elastic.co · 2026-10-08</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Elastic beschreibt einen Context Engine, der Quellenwissen und Agentenerfahrung vorab strukturiert und wiederverwendet.[113] Das gezeigte Anbieterbeispiel reduziert Werkzeugaufrufe von 33 auf 9 und Antwortzeit von 213 auf 64 Sekunden; die Werte belegen weder allgemeine Leistungssteigerungen noch eine GA-Freigabe.[113]</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.elastic.co/search-labs/blog/context-engineering-for-agents" target="_blank" rel="noopener">[113] www.elastic.co <span class="arw">→</span></a></div>
     </div>
   </div>
   <div class="dcard">
     <span class="dnum" style="background:#213183;color:#ffffff">3</span>
     <div class="dbody">
-      <h3 class="dtitle"><a class="dtitle-link" href="https://thenewstack.io/infino-agent-retrieval-layer/" target="_blank" rel="noopener">Infino startet eine gemeinsame Retrieval-Schicht für Agenten</a></h3>
-      <div class="dmeta"><span class="cat-badge" style="background:#2131831f;color:#213183">Agents &amp; Frameworks</span><span class="dmeta-src">[92] thenewstack.io · 2026-10-07</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
-      <p>Infino startet eine Retrieval-Plattform, die Suche, Filter, Joins und Aggregationen über eine Parquet-Kopie im Object Storage zusammenführt.[92] Die Kernengine steht unter Apache 2.0, Cloud-Erweiterungen bleiben proprietär; behauptete Kostenvorteile sind Anbieterangaben.[92]</p>
-      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://thenewstack.io/infino-agent-retrieval-layer/" target="_blank" rel="noopener">[92] thenewstack.io <span class="arw">→</span></a></div>
-    </div>
-  </div>
-  <div class="dcard">
-    <span class="dnum" style="background:#213183;color:#ffffff">4</span>
-    <div class="dbody">
-      <h3 class="dtitle"><a class="dtitle-link" href="https://earendil.com/posts/pi-durable/" target="_blank" rel="noopener">Pi Durable: experimenteller Harness für langlebige Agenten</a></h3>
-      <div class="dmeta"><span class="cat-badge" style="background:#2131831f;color:#213183">Agents &amp; Frameworks</span><span class="dmeta-src">[118] earendil.com · 2026-10-01</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
-      <p>Earendil veröffentlicht Pi Durable als experimentelles Paket für langlebige Agentenanwendungen.[118] Memory-, SQLite- und JSONL-Backends sowie wiederaufnehmbare Abläufe und Kontextverdichtung sind dokumentiert; die API kann sich noch ändern.[118] Der Nachtrag behält das Originaldatum 1. Oktober und ist keine neue Freigabe vom 8. Oktober.[118]</p>
-      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://earendil.com/posts/pi-durable/" target="_blank" rel="noopener">[118] earendil.com <span class="arw">→</span></a></div>
+      <h3 class="dtitle"><a class="dtitle-link" href="https://www.heise.de/news/KI-Features-fuer-Webex-Telefonie-Persoenliche-Assistenz-und-Echtzeituebersetzung-11480604.html" target="_blank" rel="noopener">Webex Calling kündigt persönliche Telefonagenten für 2027 an</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="background:#2131831f;color:#213183">Agents &amp; Frameworks</span><span class="dmeta-src">[77] www.heise.de · 2026-10-08</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Cisco plant persönliche Agenten für Webex Calling zur Anrufannahme, Dringlichkeitsbewertung und anschließenden Aktionen.[78][77] Das Herstelleroriginal nennt das erste Halbjahr 2027; engere Quartalsangaben aus Sekundärberichten werden nicht als gesichert übernommen.[78]</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.heise.de/news/KI-Features-fuer-Webex-Telefonie-Persoenliche-Assistenz-und-Echtzeituebersetzung-11480604.html" target="_blank" rel="noopener">[77] www.heise.de <span class="arw">→</span></a> · <a class="dlink" href="https://blog.webex.com/collaboration/personal-agents-for-webex-calling-important-calls-intelligently-handled/" target="_blank" rel="noopener">[78] blog.webex.com <span class="arw">→</span></a></div>
     </div>
   </div>
   </div>
 
 
 
-  <div class="footer">Hinweis: Alle Infos auf eigene Gefahr. Dies ist ein privates Projekt, automatisch generiert aus Web-Recherche.<br>Aufbau nach dem Tech-Radar-Prinzip (Ringe = Impact, Segmente = Kategorie). Statischer Export, kein JavaScript. Auswahl per Recherche — keine Gewähr auf Vollständigkeit.<br><span class="footer-updated">Zuletzt aktualisiert: 8. Oktober 2026</span></div>
+  <div class="footer">Hinweis: Alle Infos auf eigene Gefahr. Dies ist ein privates Projekt, automatisch generiert aus Web-Recherche.<br>Aufbau nach dem Tech-Radar-Prinzip (Ringe = Impact, Segmente = Kategorie). Statischer Export, kein JavaScript. Auswahl per Recherche — keine Gewähr auf Vollständigkeit.<br><span class="footer-updated">Zuletzt aktualisiert: 9. Oktober 2026</span></div>
 </div>
 </body>
 </html>

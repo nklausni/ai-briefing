@@ -2,9 +2,9 @@
   "meta": {
     "title": "AI-Briefing",
     "subtitle": "Multi-Briefing · Privates AI-Briefing",
-    "period": "1.–8. Oktober 2026",
-    "generated": "2026-10-08",
-    "intro": "Neue Ausgabe mit Haiku 5.5, interaktiver ChatGPT-Oberfläche, lokalem MAI-Code-Modell sowie getrennten GA-Meilensteinen für MXC und Copilot-Sandboxing. Beta, private Preview, Vorbestellung und spätere Lieferung werden nicht gleichgesetzt. Alle acht Themen, 41 Pflichtquellen einschließlich OpenAI-API-Changelog und offene Entdeckung sind protokolliert; alle 143 Kandidaten bewertet. Bereits berichtete Workspace-, Decisions-API- und Mathematikentwicklungen werden nicht erneut als neu ausgegeben. Pi Durable bleibt als Nachtrag mit Originaldatum 1. Oktober erhalten. Verbleibende Index-, Datums- und Teilprüflücken stehen im Quellenprotokoll.",
+    "period": "7.–9. Oktober 2026",
+    "generated": "2026-10-09",
+    "intro": "Neue Ausgabe mit getrennten Claude-Dashboards-/Motion-Betas, Docs-/Slides-/Design-GA, GPT-6.1 Sol Ultrafast und Mellum2.1. OSS Scanner und die exponierten LMCache-Multiprozess-Server stehen im Sicherheitsfokus. Alle acht Themen, 41 Pflichtquellen einschließlich OpenAI-API-Changelog und offene Entdeckung sind bearbeitet; alle 150 Kandidaten ausdrücklich bewertet. Frühere Modell-, SDK-, API- und Sandbox-Meilensteine werden nicht erneut als neu ausgegeben. Herstellerwerte, angekündigte Verfügbarkeit und verbleibende Quellenlücken bleiben getrennt.",
     "disclaimer": "Hinweis: Alle Infos auf eigene Gefahr. Dies ist ein privates Projekt, automatisch generiert aus Web-Recherche.",
     "host": "Niko Klausnitzer"
   },
@@ -73,61 +73,109 @@
       "name": "AI News",
       "group": "Überblick",
       "angle": "Allgemeine AI-Industrie: Modell-Releases, Plattformen, Regulierung und Markt",
-      "summary": "Anthropic gibt Claude Haiku 5.5 auf Claude Platform, AWS, Google Cloud und Azure frei und ergänzt ein einstellbares Effort-Niveau.[2] Bis 100.000 Prompt-Tokens kosten Ein- und Ausgabe 0,10 beziehungsweise 0,50 US-Dollar je Million Tokens; darüber steigen beide Tarife auf das Fünffache.[30] Der neue Tokenizer und hohe Reasoning-Verbrauch begrenzen pauschale Sparversprechen; Benchmarkvorteile sind workloadabhängig.[30]",
+      "summary": "OpenAI rollt GPT-6.1 Sol Ultrafast in API, Codex und ChatGPT Work aus; bis zu achtfaches Tempo gegenüber Sol Standard ist eine Anbieterangabe.[97][49] Die API kostet 12 beziehungsweise 60 US-Dollar je Million Ein- und Ausgabetokens; Zugang in Codex und Work besteht für Pro 500 sowie geeignete Enterprise- und Edu-Pläne, teils mit Admin-Freigabe.[97]",
       "items": [
         {
-          "title": "Claude Haiku 5.5 ist allgemein verfügbar",
-          "date": "2026-10-07",
-          "summary": "Anthropic gibt Claude Haiku 5.5 auf Claude Platform, AWS, Google Cloud und Azure frei und ergänzt ein einstellbares Effort-Niveau.[2] Bis 100.000 Prompt-Tokens kosten Ein- und Ausgabe 0,10 beziehungsweise 0,50 US-Dollar je Million Tokens; darüber steigen beide Tarife auf das Fünffache.[30] Der neue Tokenizer und hohe Reasoning-Verbrauch begrenzen pauschale Sparversprechen; Benchmarkvorteile sind workloadabhängig.[30]",
+          "title": "GPT-6.1 Sol Ultrafast startet in API, Codex und ChatGPT Work",
+          "date": "2026-10-08",
+          "summary": "OpenAI rollt GPT-6.1 Sol Ultrafast in API, Codex und ChatGPT Work aus; bis zu achtfaches Tempo gegenüber Sol Standard ist eine Anbieterangabe.[97][49] Die API kostet 12 beziehungsweise 60 US-Dollar je Million Ein- und Ausgabetokens; Zugang in Codex und Work besteht für Pro 500 sowie geeignete Enterprise- und Edu-Pläne, teils mit Admin-Freigabe.[97]",
           "category": "modelle",
           "impact": 4,
           "sources": [
             {
-              "label": "[30] artificialanalysis.ai",
-              "url": "https://artificialanalysis.ai/articles/claude-haiku-5-5"
+              "label": "[49] www.latent.space",
+              "url": "https://www.latent.space/p/ainews-not-much-happened-today-60f"
             },
             {
-              "label": "[2] www.anthropic.com",
-              "url": "https://www.anthropic.com/claude-haiku-5-5"
-            }
-          ],
-          "change_type": "general_availability",
-          "candidate_ids": [
-            "1518d8b8eacf13aa757f"
-          ],
-          "n": 1
-        },
-        {
-          "title": "GPT-6 bringt Intelligent UI in ChatGPT",
-          "date": "2026-10-07",
-          "summary": "OpenAI startet den ChatGPT-Rollout von GPT-6 mit Intelligent UI: Antworten können interaktive Oberflächen und kleine Werkzeuge statt ausschließlich Text enthalten.[16] Bezahlte Pläne starten am 7. Oktober, Free und Go sollen am 8. Oktober folgen; Enterprise hängt von Admin-Einstellungen ab.[16] Das Update betrifft den Chat, nicht die Modelle hinter Work und Codex.[16]",
-          "category": "tools",
-          "impact": 4,
-          "sources": [
-            {
-              "label": "[16] openai.com",
-              "url": "https://openai.com/index/gpt-6-for-everyone/"
+              "label": "[97] x.com",
+              "url": "https://x.com/OpenAIDevs/status/2108262812489531498"
             }
           ],
           "change_type": "update",
           "candidate_ids": [
-            "aad8d3975f1de768fcaf"
+            "25ea30520975a6988755"
+          ],
+          "n": 1
+        },
+        {
+          "title": "Arena meldet 200 Millionen Dollar Series B",
+          "date": "2026-10-08",
+          "summary": "Arena meldet eine Series B über 200 Millionen US-Dollar bei einer Bewertung von 3,1 Milliarden Dollar; TechCrunch bestätigt die Finanzierungsangaben.[56][55] Die Runde ist von der gleichzeitig angekündigten Alignment-Evaluation getrennt.[56]",
+          "category": "business",
+          "impact": 3,
+          "sources": [
+            {
+              "label": "[55] techcrunch.com",
+              "url": "https://techcrunch.com/2026/10/08/popular-ai-leaderboard-arena-nearly-doubles-valuation-to-3-1b-valuation-in-10-months/"
+            },
+            {
+              "label": "[56] arena.ai",
+              "url": "https://arena.ai/blog/series-b"
+            }
+          ],
+          "change_type": "business",
+          "candidate_ids": [
+            "16a83f4536b26ff2ed05"
           ],
           "n": 2
+        },
+        {
+          "title": "Manus nimmt mehr als 500 Millionen Dollar auf",
+          "date": "2026-10-08",
+          "summary": "CNBC und TechCrunch berichten übereinstimmend über mehr als 500 Millionen US-Dollar für Manus-Mutter Butterfly Effect, angeführt von Boyu Capital und IDG Capital.[85][61] Die neue Bewertung wurde nicht offengelegt; die zuvor diskutierten vier Milliarden Dollar sind kein bestätigtes Rundenergebnis.[85][61]",
+          "category": "business",
+          "impact": 3,
+          "sources": [
+            {
+              "label": "[85] www.cnbc.com",
+              "url": "https://www.cnbc.com/2026/10/08/manus-fund-raise-meta-muse-tencent.html"
+            },
+            {
+              "label": "[61] techcrunch.com",
+              "url": "https://techcrunch.com/2026/10/08/chinas-manus-raises-over-500m-in-first-funding-round-since-split-with-meta/"
+            }
+          ],
+          "change_type": "business",
+          "candidate_ids": [
+            "33b68b1b199457f08862"
+          ],
+          "n": 3
+        },
+        {
+          "title": "Carbon-A veröffentlicht offene Genannotationsvorhersagen",
+          "date": "2026-10-08",
+          "summary": "Hugging Face veröffentlicht Carbon-A mit 1,2 Milliarden Parametern zur Vorhersage proteincodierender DNA-Regionen.[53] Genkandidaten und Anbieter-Benchmarkwerte sind keine flächendeckende experimentelle Bestätigung neuer Gene.[53]",
+          "category": "modelle",
+          "impact": 2,
+          "sources": [
+            {
+              "label": "[53] huggingface.co",
+              "url": "https://huggingface.co/blog/HuggingFaceBio/carbon-annotator-genbank-genome-annotation"
+            }
+          ],
+          "change_type": "general_availability",
+          "candidate_ids": [
+            "88bc9f6d69fc9fc8a1c2"
+          ],
+          "n": 4
         }
       ],
       "skip": [
         {
-          "reason": "Offene Recherchelücken",
-          "text": "Qwen (qwen.ai/research): gerenderter Index reicht nur bis 20.09.; zwei ältere datierte Originale schließen aktuelle Modellabdeckung nicht. xAI (x.ai/news/): 403/veralteter Index trotz Fenstersuchen; Unternehmens-News bleiben unvollständig, API-Notes sind geprüft. VentureBeat (venturebeat.com/category/ai/), Computerworld (computerworld.com) und Meta AI (ai.meta.com/blog/): Indizes bleiben veraltet; Fenstersuchen und aktuelle Einzeloriginale liefern belegte Meldungen, aber keine vollständige aktuelle Indexabdeckung."
+          "reason": "Offene Abdeckungslücken",
+          "text": "Qwen: gerenderter Researchindex zeigt zunächst fünf Karten und Load more, jüngste sichtbare Karte und datierter Originalartikel vom 20.09.; keine vollständige Abdeckung 06.–09.10. belegt. xAI: News-Pflichtcheck unavailable trotz Datumssuchen; API-Notes sind geprüft, Unternehmens-News bleiben offen. Meta AI: Researchindex weiterhin Juli; aktueller Newsroom und verbindliche Fenstersuchen geprüft, keine vollständige Researchindex-Abdeckung."
         },
         {
-          "reason": "Eingeschränkte Quellen",
-          "text": "arXiv (arxiv.org): thematische Stichprobe, 06.10.-Liste nur teilweise geprüft. LLM Stats (llm-stats.com): datierter Releaseindex lesbar, Blog bleibt Loading-/Verifikationshülle. heise-Primärlinks SynthID (synthid.com) und Foresight (developers.google.com/edge/foresight): nur JS-Hüllen; SynthID-Ankündigung am vollständigen Google-Original belegt, Foresight zurückgestellt. xAI (x.ai/changelog/bot): gekürzte Extraktion, keine vollständige aktuelle Bot-Prüfung. NIST (nist.gov): Themen-/Newsseite und datierte Einzelpublikation geprüft, keine vollständige Publikationsprüfung. Perplexity (perplexity.ai): Datum 06./07.10. widersprüchlich, Embeddingmeldung zurückgestellt. EC-Council (eccouncil.org/adgframework/): Produktseite weiter v1.0 trotz ADG-2.0-Mitteilung; Bereitstellung nicht bestätigt."
+          "reason": "Eingeschränkte Indizes und Volltexte",
+          "text": "VentureBeat: KI-Kategorie bleibt teils veraltet; aktuelle Homepage, Fenstersuchen und Originale liefern belegte Meldungen, nicht vollständige Kategorieabdeckung. Hugging Face: Blogindex eingeschränkt/veraltet, fünf relevante Originale plus Fenstersuche gelesen. SemiAnalysis: Studie öffentlich teilweise lesbar, Bezahlabschnitt nicht umgangen. NIST: Topic-Newsindex veraltet, datierter Einzelartikel und Fenstersuchen gelesen, kein vollständiger aktueller Indexnachweis. OpenAI: False-Front-Volltext nur teilweise lesbar; News-RSS, andere Originale und API-Changelog erfolgreich geprüft."
         },
         {
-          "reason": "Aufgefangene Abruffehler",
-          "text": "Microsoft AI über gerenderten Browser; Simon Willison, TestingCatalog, Anthropic, OpenAI samt API-Changelog, OpenRouter, Google AI Blog, Hugging Face, TechCrunch, heise, Ars Technica, CNBC, GitHub, The New Stack, Artificial Analysis, OpenClaw, Cohere, AWS, DeepMind und Google Research über aktuelle Direktindizes, Originale oder Feeds. MarkTechPost über geprüften Volltextfeed und Originalextraktion; Embrace The Red über Posts/RSS, Import AI, Interconnects, Latent Space und ChinaTalk über verifizierte Feeds beziehungsweise Originale; offene Index-/Teilprüflücken oben bleiben ausdrücklich bestehen."
+          "reason": "Datums- und Primärbeleggrenzen",
+          "text": "Anthropic: Wirksamkeitsdaten der Usage Policy unterscheiden sich zwischen abgerufenen AUP-Fassungen; neuer Änderungsinhalt am datierten Newsoriginal geprüft, kein verbindlicher Stichtag behauptet. Google AI Edge Foresight: Herstellerdocs falsch beziehungsweise unzureichend, Veröffentlichung zurückgestellt. OpenAI-Umsatzkorrektur: FT paywalled und Quartz derivativ, keine zweite unabhängige Zahlenbestätigung; zurückgestellt. LLM Stats: ältere Release-Timeline weicht teilweise von Herstellerdaten ab, dynamische Vergleichsseiten nicht als Veröffentlichungsnachweis genutzt."
+        },
+        {
+          "reason": "Zusatzfund zurückgestellt",
+          "text": "Ein nach dem Google-Checkpoint entdeckter medizinischer AMIE-Zusatzfund wurde separat zurückgestellt: Lancet-Original und klinische Wirksamkeitsendpunkte nicht unabhängig gegengeprüft. Keine autonome Diagnostikfreigabe oder allgemeine klinische Wirksamkeit behauptet."
         }
       ]
     },
@@ -136,209 +184,156 @@
       "name": "Lokale LLMs",
       "group": "Überblick",
       "angle": "On-Device- und Open-Weight-Modelle: lokal lauffähig, datenschutz- und kostenrelevant",
-      "summary": "Microsoft ergänzt MAI-Code-1.1-Flash am 7. Oktober um lokale Ausführung mit 3-Bit-Quantisierung und 256K Kontext.[49] Empfohlen werden mehr als 120 GB RAM; lokale Modellaufrufe haben keine Inferenzgebühr.[49] Experimenteller Zugang in Copilot-App, CLI und VS Code ist erst bis Monatsende angekündigt, nicht bereits allgemein verfügbar.[49]",
+      "summary": "JetBrains veröffentlicht Mellum2.1 unter Apache 2.0: zwölf Milliarden Gesamtparameter, 2,5 Milliarden aktive Parameter und RL-Posttraining in Softwareumgebungen.[21][20] Die Gewichte sind verfügbar; GGUF-Builds und der MTP-Head werden im Herstelleroriginal noch als coming soon angekündigt, anders als in Teilen der Sekundärberichterstattung.[21][20] Benchmarkvorteile bleiben Anbieterwerte.[21]",
       "items": [
         {
-          "title": "MAI-Code-1.1-Flash lässt sich lokal herunterladen und ausführen",
-          "date": "2026-10-07",
-          "summary": "Microsoft ergänzt MAI-Code-1.1-Flash am 7. Oktober um lokale Ausführung mit 3-Bit-Quantisierung und 256K Kontext.[49] Empfohlen werden mehr als 120 GB RAM; lokale Modellaufrufe haben keine Inferenzgebühr.[49] Experimenteller Zugang in Copilot-App, CLI und VS Code ist erst bis Monatsende angekündigt, nicht bereits allgemein verfügbar.[49]",
+          "title": "Mellum2.1: offenes MoE-Modell für Coding-Agenten",
+          "date": "2026-10-08",
+          "summary": "JetBrains veröffentlicht Mellum2.1 unter Apache 2.0: zwölf Milliarden Gesamtparameter, 2,5 Milliarden aktive Parameter und RL-Posttraining in Softwareumgebungen.[21][20] Die Gewichte sind verfügbar; GGUF-Builds und der MTP-Head werden im Herstelleroriginal noch als coming soon angekündigt, anders als in Teilen der Sekundärberichterstattung.[21][20] Benchmarkvorteile bleiben Anbieterwerte.[21]",
           "category": "lokal",
           "impact": 4,
           "sources": [
             {
-              "label": "[49] microsoft.ai",
-              "url": "https://microsoft.ai/news/mai-code-1-1-flash-br-better-faster-at-a-quarter-of-the-cost/"
-            }
-          ],
-          "change_type": "update",
-          "candidate_ids": [
-            "e2e88bed33a0ef4bf5e0"
-          ],
-          "n": 1
-        },
-        {
-          "title": "Surface RTX Spark Dev Box startet Vorbestellungen",
-          "date": "2026-10-08",
-          "summary": "Die Surface RTX Spark Dev Box kann in den USA für 5.999 US-Dollar vorbestellt werden; Auslieferung ist für November geplant.[82] Microsoft bewirbt 128 GB gemeinsamen Speicher für lokale KI-Entwicklung; der Petaflop-Wert ist keine gemessene allgemeine Modellgeschwindigkeit.[81] Vorbestellung bedeutet noch keine heutige Lieferbarkeit.[82]",
-          "category": "lokal",
-          "impact": 3,
-          "sources": [
-            {
-              "label": "[81] arstechnica.com",
-              "url": "https://arstechnica.com/gadgets/2026/10/microsoft-event-debuts-new-ai-friendly-hardware-and-windows-changes/"
+              "label": "[20] www.marktechpost.com",
+              "url": "https://www.marktechpost.com/2026/10/08/jetbrains-releases-mellum2-1-a-12b-moe-open-model-for-coding-agents/"
             },
             {
-              "label": "[82] blogs.windows.com",
-              "url": "https://blogs.windows.com/devices/2026/10/07/pre-order-our-most-powerful-surface-devices-ever/"
-            }
-          ],
-          "change_type": "announcement",
-          "candidate_ids": [
-            "f7c0e091c2ef5410ea9d"
-          ],
-          "n": 2
-        },
-        {
-          "title": "Liquid AI veröffentlicht d1-3B als Entscheidungsmodell",
-          "date": "2026-10-07",
-          "summary": "Liquid AI veröffentlicht d1-3B mit Gewichten für Text- und Bildentscheidungen.[54] Statt freien Text zu generieren, antwortet das Modell in einem Forward Pass; die genannten Jetson-Latenzen und Benchmarkvorteile stammen vom Anbieter.[54]",
-          "category": "lokal",
-          "impact": 3,
-          "sources": [
-            {
-              "label": "[54] huggingface.co",
-              "url": "https://huggingface.co/blog/LiquidAI/open-d1"
+              "label": "[21] blog.jetbrains.com",
+              "url": "https://blog.jetbrains.com/ai/2026/10/mellum2-1-gets-to-work-a-fast-open-model-for-coding-agents/"
             }
           ],
           "change_type": "general_availability",
           "candidate_ids": [
-            "923e4478a87fe3d0ce06"
+            "2b14d3196b3e2048f8ba"
           ],
-          "n": 3
+          "n": 1
         },
         {
-          "title": "Surface Laptop Ultra: Vorbestellung ab 2.599 US-Dollar",
-          "date": "2026-10-07",
-          "summary": "Microsoft öffnet Vorbestellungen für Surface Laptop Ultra ab 2.599 US-Dollar; Verfügbarkeit beginnt laut Hersteller am 16. Oktober.[82][84] Konfigurationen mit bis zu 128 GB gemeinsamem Speicher zielen auf große lokale Modelle; tatsächliche Geschwindigkeit hängt von Modell und Konfiguration ab.[82] Neu ist die Bestellfreigabe, nicht die erste Geräteankündigung.[84]",
+          "title": "LightOnOCR-3 verbindet OCR mit Layout- und Diagrammextraktion",
+          "date": "2026-10-08",
+          "summary": "LightOn gibt LightOnOCR-3 unter Apache 2.0 frei und ergänzt Transkription um beschriftete Begrenzungsboxen, Bildbeschreibungen und extrahierte Diagrammdaten.[52] Die drei Modellgrößen und gemeldeten Qualitäts- beziehungsweise Geschwindigkeitsfortschritte stammen vom Anbieter, nicht aus einer unabhängigen Vergleichsstudie.[52]",
           "category": "lokal",
           "impact": 3,
           "sources": [
             {
-              "label": "[82] blogs.windows.com",
-              "url": "https://blogs.windows.com/devices/2026/10/07/pre-order-our-most-powerful-surface-devices-ever/"
-            },
+              "label": "[52] huggingface.co",
+              "url": "https://huggingface.co/blog/lightonai/lightonocr-3"
+            }
+          ],
+          "change_type": "general_availability",
+          "candidate_ids": [
+            "15ab18d367313426f294"
+          ],
+          "n": 2
+        },
+        {
+          "title": "Windows ML kündigt llama.cpp-Unterstützung an",
+          "date": "2026-10-07",
+          "summary": "Microsoft kündigt llama.cpp als weiteren Ausführungspfad in Windows ML an; die Runtime soll lokale Modelle über GPU, NPU und CPU zugänglich machen.[120] Der Beitrag belegt die Ankündigung, nicht die allgemeine Freigabe sämtlicher Modelle und Hardwarepfade.[120]",
+          "category": "lokal",
+          "impact": 3,
+          "sources": [
             {
-              "label": "[84] www.cnbc.com",
-              "url": "https://www.cnbc.com/2026/10/07/microsoft-starts-taking-preorders-for-2599-surface-laptop-ultra.html"
+              "label": "[120] blogs.windows.com",
+              "url": "https://blogs.windows.com/windowsexperience/2026/10/07/building-windows-for-hybrid-intelligence/"
             }
           ],
           "change_type": "announcement",
           "candidate_ids": [
-            "fa5c680f237efcec4ed7"
+            "74f5ba83c45af8d886df"
           ],
-          "n": 4
-        },
-        {
-          "title": "d1-omni-600M startet als experimentelle Preview",
-          "date": "2026-10-07",
-          "summary": "Liquid AI gibt d1-omni-600M als frühe Forschungsversion frei.[54] Das Modell akzeptiert Text mit Bildern oder Text mit Audio; eine gemeinsame Bild-und-Audio-Eingabe wird damit nicht zugesagt.[54] Die Preview bleibt in Entwicklung und ist getrennt vom d1-3B-Release zu bewerten.[54]",
-          "category": "lokal",
-          "impact": 2,
-          "sources": [
-            {
-              "label": "[54] huggingface.co",
-              "url": "https://huggingface.co/blog/LiquidAI/open-d1"
-            }
-          ],
-          "change_type": "preview",
-          "candidate_ids": [
-            "598217405cbee62ed335"
-          ],
-          "n": 5
+          "n": 3
         }
       ],
-      "skip": []
+      "skip": [
+        {
+          "reason": "Verfügbarkeit begrenzt",
+          "text": "Die lokale HydraFusion-Vorschau kommt erst später im Oktober. Windows-ML-/llama.cpp-Unterstützung ist angekündigt. MAI-Code-lokal, d1-3B und d1-omni-Preview sind bereits in der Historie; keine neue GA daraus konstruiert."
+        }
+      ]
     },
     {
       "id": "agentic-engineering",
       "name": "Agentic Engineering / Vibe Coding",
       "group": "Praxis",
       "angle": "Coding-Agenten, Workflows, Reviewer-Disziplin und Agent-Governance",
-      "summary": "Lokales Sandboxing ist in GitHub Copilot CLI, Copilot-App und VS-Code-Sitzungen mit Agent Host allgemein verfügbar.[6] Datei-, Netzwerk- und Credential-Zugriffe werden über native Betriebssystemkontrollen auf Windows, macOS und Linux eingeschränkt; die Tool-Isolation ist unabhängig vom Modell.[6] Die GA ist ein eigener Meilenstein gegenüber der früheren App-Preview und bleibt ohne Zusatzkosten.[6]",
+      "summary": "Cisco kündigt an, Claude Managed Agents in Webex Spaces, Meetings und Anrufen als digitale Teammitglieder einzubinden.[79][77] Das Herstelleroriginal spricht von künftiger Verfügbarkeit; eine bereits produktiv gestartete Integration wird nicht behauptet.[79]",
       "items": [
         {
-          "title": "GitHub Copilot gibt lokales Sandboxing allgemein frei",
-          "date": "2026-10-07",
-          "summary": "Lokales Sandboxing ist in GitHub Copilot CLI, Copilot-App und VS-Code-Sitzungen mit Agent Host allgemein verfügbar.[6] Datei-, Netzwerk- und Credential-Zugriffe werden über native Betriebssystemkontrollen auf Windows, macOS und Linux eingeschränkt; die Tool-Isolation ist unabhängig vom Modell.[6] Die GA ist ein eigener Meilenstein gegenüber der früheren App-Preview und bleibt ohne Zusatzkosten.[6]",
-          "category": "security",
-          "impact": 4,
+          "title": "Claude Managed Agents sollen als Webex-Teammitglieder arbeiten",
+          "date": "2026-10-08",
+          "summary": "Cisco kündigt an, Claude Managed Agents in Webex Spaces, Meetings und Anrufen als digitale Teammitglieder einzubinden.[79][77] Das Herstelleroriginal spricht von künftiger Verfügbarkeit; eine bereits produktiv gestartete Integration wird nicht behauptet.[79]",
+          "category": "agents",
+          "impact": 3,
           "sources": [
             {
-              "label": "[6] github.blog",
-              "url": "https://github.blog/changelog/2026-10-07-local-sandboxing-for-github-copilot-now-generally-available"
+              "label": "[77] www.heise.de",
+              "url": "https://www.heise.de/news/KI-Features-fuer-Webex-Telefonie-Persoenliche-Assistenz-und-Echtzeituebersetzung-11480604.html"
+            },
+            {
+              "label": "[79] blog.webex.com",
+              "url": "https://blog.webex.com/collaboration/webex-ai-native-collaboration-context-agents-trust/"
             }
           ],
-          "change_type": "general_availability",
+          "change_type": "announcement",
           "candidate_ids": [
-            "5d46329f58fd76c4601a"
+            "70767470e75736c18e65"
           ],
           "n": 1
         },
         {
-          "title": "GitHub Copilot CLI entdeckt lokale Ollama-Modelle",
+          "title": "GitHub HydraFusion kündigt lokales Cloud-Routing auf Windows an",
           "date": "2026-10-07",
-          "summary": "Ab GitHub Copilot CLI 1.0.94-0 zeigt /model unterstützte Modelle einer laufenden Ollama-Instanz und übernimmt die Auswahl erst nach Bestätigung.[7] Ollama und Modelle müssen bereits installiert sein; Tool Calling und Streaming sind erforderlich.[7] Lokale Modellwahl allein macht eine Sitzung nicht offline und schaltet Telemetrie nicht automatisch ab.[7]",
-          "category": "lokal",
+          "summary": "Microsoft erweitert die HydraFusion-Roadmap um Routing zu lokal laufenden Windows-Modellen.[120] Experimentelle Vorschauen für Copilot-App, CLI und VS Code sind erst für später im Oktober angekündigt; dies ist weder GA noch die erneute Veröffentlichung der September-Cloud-Preview.[120]",
+          "category": "agents",
           "impact": 3,
           "sources": [
             {
-              "label": "[7] github.blog",
-              "url": "https://github.blog/changelog/2026-10-07-discover-local-models-in-github-copilot-cli"
+              "label": "[120] blogs.windows.com",
+              "url": "https://blogs.windows.com/windowsexperience/2026/10/07/building-windows-for-hybrid-intelligence/"
             }
           ],
-          "change_type": "update",
+          "change_type": "announcement",
           "candidate_ids": [
-            "2a4482970901bbf8a5f2"
+            "df9226450ee34ee25405"
           ],
           "n": 2
         },
         {
-          "title": "Claude Python und TypeScript SDKs: Claude SDKs erhalten Browser- und Computer-Use-Beta",
+          "title": "Webex kündigt gemeinsame Agenten in Spaces an",
           "date": "2026-10-07",
-          "summary": "Anthropic ergänzt die Claude Python und TypeScript SDKs um Browser- und Computer-Toolsets als Beta.[2] Entwickler liefern eigene Browser- oder Desktop-Treiber und konfigurieren Richtlinien und Freigaben selbst.[32] Ein fertig isolierter Browser oder vollständige Zugriffssicherheit wird dadurch nicht mitgeliefert.[32]",
+          "summary": "Cisco kündigt Agenten an, die in Webex Spaces gemeinsam mit Teams Aufgaben bearbeiten und Ergebnisse teilen sollen.[82] Die neue App und kollaborative Agenten sind für das erste Quartal 2027 geplant, nicht heute allgemein verfügbar.[82]",
           "category": "agents",
           "impact": 3,
           "sources": [
             {
-              "label": "[32] platform.claude.com",
-              "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/browser-use-sdk"
-            },
-            {
-              "label": "[2] www.anthropic.com",
-              "url": "https://www.anthropic.com/claude-haiku-5-5"
+              "label": "[82] www.computerworld.com",
+              "url": "https://www.computerworld.com/article/4231779/cisco-brings-collaborative-agents-and-claude-into-webex-chats.html"
             }
           ],
-          "change_type": "public_beta",
+          "change_type": "announcement",
           "candidate_ids": [
-            "025e09e44622a5d83972"
+            "37c6d8e8aa6fe8ac6e11"
           ],
           "n": 3
         },
         {
-          "title": "SkillSandbox prüft Skills in neuen ausführbaren Szenarien",
-          "date": "2026-10-07",
-          "summary": "Der SkillSandbox-Preprint beschreibt dynamisch erzeugte Aufgaben und Umgebungen für wiederverwendbare Agenten-Skills.[50] Proposer, Builder und Verifier vergleichen Szenarien mit und ohne Skill; berichtete Benchmarkgewinne sind Autorenresultate, kein Produktionsnachweis.[50]",
-          "category": "agents",
+          "title": "ttok 1.0 wechselt den Standard-Tokenizer",
+          "date": "2026-10-09",
+          "summary": "Simon Willison stellt mit ttok 1.0 den Standard von GPT-4 auf den GPT-5-/GPT-6-Tokenizer um.[1] Die Gleichheit der GPT-6-Tokenisierung ist laut Autor experimentell plausibel, aber noch nicht von OpenAI bestätigt.[1]",
+          "category": "tools",
           "impact": 2,
           "sources": [
             {
-              "label": "[50] arxiv.org",
-              "url": "https://arxiv.org/abs/2610.10088"
+              "label": "[1] simonwillison.net",
+              "url": "https://simonwillison.net/2026/Oct/9/ttok/"
             }
           ],
-          "change_type": "research",
+          "change_type": "update",
           "candidate_ids": [
-            "a49d189a4c9af90cb6ea"
+            "e4078781c8861d5f754c"
           ],
           "n": 4
-        },
-        {
-          "title": "SkillForge entwickelt Skills und Agenten gemeinsam im RL-Training",
-          "date": "2026-10-07",
-          "summary": "SkillForge führt einen fitnessgesteuerten Lebenszyklus aus Test-, Aktiv-, Stabil- und Ruhestandsphasen für Skills im Agententraining ein.[51] Der Forschungsansatz soll nützliche Skills erhalten und veraltete entfernen; Verbesserungen gelten zunächst für die untersuchten Benchmarks.[51]",
-          "category": "agents",
-          "impact": 2,
-          "sources": [
-            {
-              "label": "[51] arxiv.org",
-              "url": "https://arxiv.org/abs/2610.09832"
-            }
-          ],
-          "change_type": "research",
-          "candidate_ids": [
-            "cebde35eadff91746de3"
-          ],
-          "n": 5
         }
       ],
       "skip": []
@@ -348,61 +343,151 @@
       "name": "AI Tools",
       "group": "Praxis",
       "angle": "IDEs, Assistenten und Plattformen für den täglichen Einsatz",
-      "summary": "OpenRouter stellt neun ElevenLabs-Text-to-Speech- und zwei Speech-to-Text-Modelle über seine Audio-APIs bereit.[41] Bestehende OpenRouter-Schlüssel reichen für Sprachgenerierung und Transkription, darunter Scribe v2 mit Sprecherzuordnung.[41] Realtime-Scribe per WebSocket ist nicht Teil des Starts; eigene geklonte Stimmen benötigen BYOK.[41]",
+      "summary": "Claude Motion erstellt editierbare, codebasierte Animationen und exportiert MP4; die Beta ist auf Team und Enterprise beschränkt.[4] Es handelt sich nicht um ein generatives Videomodell; Canva- und Captions-Unterstützung ist erst geplant.[4]",
       "items": [
         {
-          "title": "ElevenLabs integriert Sprache und Transkription in OpenRouter",
-          "date": "2026-10-07",
-          "summary": "OpenRouter stellt neun ElevenLabs-Text-to-Speech- und zwei Speech-to-Text-Modelle über seine Audio-APIs bereit.[41] Bestehende OpenRouter-Schlüssel reichen für Sprachgenerierung und Transkription, darunter Scribe v2 mit Sprecherzuordnung.[41] Realtime-Scribe per WebSocket ist nicht Teil des Starts; eigene geklonte Stimmen benötigen BYOK.[41]",
+          "title": "Claude Motion startet als Beta für Team und Enterprise",
+          "date": "2026-10-08",
+          "summary": "Claude Motion erstellt editierbare, codebasierte Animationen und exportiert MP4; die Beta ist auf Team und Enterprise beschränkt.[4] Es handelt sich nicht um ein generatives Videomodell; Canva- und Captions-Unterstützung ist erst geplant.[4]",
           "category": "tools",
           "impact": 3,
           "sources": [
             {
-              "label": "[41] openrouter.ai",
-              "url": "https://openrouter.ai/blog/announcements/elevenlabs-on-openrouter/"
+              "label": "[4] www.testingcatalog.com",
+              "url": "https://www.testingcatalog.com/claude-launches-dashboards-and-motion-in-beta/"
             }
           ],
-          "change_type": "integration",
+          "change_type": "public_beta",
           "candidate_ids": [
-            "9a3cc38d6f8be17520fc"
+            "87ca6168d1105c1c2335"
           ],
           "n": 1
         },
         {
-          "title": "Claude Haiku 5.5 ist in GitHub Copilot allgemein verfügbar",
-          "date": "2026-10-07",
-          "summary": "GitHub rollt Claude Haiku 5.5 für Copilot Pro, Pro+, Max, Business und Enterprise über seine unterstützten Oberflächen aus.[9] Organisationsrichtlinien können den Zugang sperren; abgerechnet wird zum Anbieter-Listenpreis.[9] Diese Copilot-Freigabe ist von der eigenständigen Anthropic-Modellveröffentlichung getrennt.[9]",
-          "category": "modelle",
+          "title": "Claude Docs verlässt die Beta",
+          "date": "2026-10-08",
+          "summary": "Claude Docs verlässt die Beta und wird regulär verfügbar.[92] Die Veröffentlichung gehört zur erweiterten Claude-Artifacts-Suite, ist aber ein eigener Freigabeschritt gegenüber den neuen Dashboards- und Motion-Betas.[92]",
+          "category": "tools",
           "impact": 3,
           "sources": [
             {
-              "label": "[9] github.blog",
-              "url": "https://github.blog/changelog/2026-10-07-claude-haiku-5-5-in-github-copilot"
+              "label": "[92] thenewstack.io",
+              "url": "https://thenewstack.io/claude-dashboards-data-motion/"
             }
           ],
           "change_type": "general_availability",
           "candidate_ids": [
-            "719a2034f2e78782c3da"
+            "3972cf49cad817eca4ba"
           ],
           "n": 2
         },
         {
-          "title": "Playground startet als experimentelle Spieleplattform",
-          "date": "2026-10-07",
-          "summary": "Googles Playground erzeugt, spielt und teilt Spiele über eine dialogbasierte Browseroberfläche.[45] Der Start gilt für Erwachsene ab 18 Jahren in den USA; Erstellungszugang ist nach Google-AI-Abonnement gestaffelt.[45] Es handelt sich um ein frühes Experiment, nicht um eine uneingeschränkt weltweit verfügbare Spieleentwicklungsplattform.[45]",
+          "title": "Claude Slides verlässt die Beta",
+          "date": "2026-10-08",
+          "summary": "Claude Slides verlässt die Beta und wird regulär verfügbar.[92] Die GA der Präsentationsfunktion ist von der gleichzeitig gestarteten Motion-Beta getrennt.[92]",
           "category": "tools",
-          "impact": 2,
+          "impact": 3,
           "sources": [
             {
-              "label": "[45] blog.google",
-              "url": "https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/"
+              "label": "[92] thenewstack.io",
+              "url": "https://thenewstack.io/claude-dashboards-data-motion/"
             }
           ],
-          "change_type": "preview",
+          "change_type": "general_availability",
           "candidate_ids": [
-            "5df84696c132c9ab4bfb"
+            "9ced66dfe1139f42b8a7"
           ],
           "n": 3
+        },
+        {
+          "title": "Claude Design verlässt die Beta",
+          "date": "2026-10-08",
+          "summary": "Claude Design verlässt die Beta innerhalb der Claude-Artifacts-Suite.[92]",
+          "category": "tools",
+          "impact": 3,
+          "sources": [
+            {
+              "label": "[92] thenewstack.io",
+              "url": "https://thenewstack.io/claude-dashboards-data-motion/"
+            }
+          ],
+          "change_type": "general_availability",
+          "candidate_ids": [
+            "6ddd1069521ee04498c2"
+          ],
+          "n": 4
+        },
+        {
+          "title": "Claude Design kündigt das Ende der eigenständigen Seite an",
+          "date": "2026-10-08",
+          "summary": "Die eigenständige Claude-Design-Seite soll bis 14. Dezember verfügbar bleiben.[4] Organisationen können Designsysteme migrieren; Chats, Kommentare und öffentliche Projektlinks werden bei der Schließung nicht übernommen.[4]",
+          "category": "tools",
+          "impact": 3,
+          "sources": [
+            {
+              "label": "[4] www.testingcatalog.com",
+              "url": "https://www.testingcatalog.com/claude-launches-dashboards-and-motion-in-beta/"
+            }
+          ],
+          "change_type": "announcement",
+          "candidate_ids": [
+            "9707297ef53a9e7c8d8e"
+          ],
+          "n": 5
+        },
+        {
+          "title": "Magnific One startet für professionelle Bildproduktion",
+          "date": "2026-10-08",
+          "summary": "Magnific One startet für zahlende Abonnenten mit Creative Direction sowie Draft- und Final-Modi auf Basis von OpenAIs Bildtechnologie.[26] Der Start belegt keinen vollständig eigenständig trainierten neuen Basismodell-Release.[26]",
+          "category": "tools",
+          "impact": 3,
+          "sources": [
+            {
+              "label": "[26] venturebeat.com",
+              "url": "https://venturebeat.com/orchestration/magnific-one-launches-to-give-teams-an-image-generator-that-avoids-the-ai-look-and-automatically-upholds-their-brand-kit"
+            }
+          ],
+          "change_type": "general_availability",
+          "candidate_ids": [
+            "1a5e25f237dbeb7e4f26"
+          ],
+          "n": 6
+        },
+        {
+          "title": "Magnific One ergänzt Brand Kit zur Markenprüfung",
+          "date": "2026-10-08",
+          "summary": "Brand Kit hinterlegt visuelle Markenregeln und beeinflusst die Bilderzeugung im Final-Modus von Magnific One.[26] Anschließende Prüfungen und Korrekturen sollen Abweichungen finden; fehlerfreie Markenkonformität jedes ersten Ergebnisses wird nicht garantiert.[26]",
+          "category": "tools",
+          "impact": 3,
+          "sources": [
+            {
+              "label": "[26] venturebeat.com",
+              "url": "https://venturebeat.com/orchestration/magnific-one-launches-to-give-teams-an-image-generator-that-avoids-the-ai-look-and-automatically-upholds-their-brand-kit"
+            }
+          ],
+          "change_type": "update",
+          "candidate_ids": [
+            "c37f91d947ac776b48c7"
+          ],
+          "n": 7
+        },
+        {
+          "title": "Crossmint Agent Commerce Toolkit wird selbstbedienbar verfügbar",
+          "date": "2026-10-08",
+          "summary": "Crossmint meldet die sofortige Self-Service-Verfügbarkeit des Agent Commerce Toolkit für Kartenspeicherung, Zahlungscredentials und Händlercheckout über eine Integration.[119] Die Pressemitteilung ist Anbieterbeleg; universelle Kompatibilität mit jeder Karte oder jedem Shop wurde nicht unabhängig bestätigt.[119]",
+          "category": "agents",
+          "impact": 3,
+          "sources": [
+            {
+              "label": "[119] prnewswire.com",
+              "url": "https://prnewswire.com/news-releases/crossmint-launches-agent-commerce-toolkit-enabling-ai-agents-to-pay-with-any-card-and-check-out-online-through-one-integration-302901649.html"
+            }
+          ],
+          "change_type": "general_availability",
+          "candidate_ids": [
+            "36d294c40902deeeab8d"
+          ],
+          "n": 8
         }
       ],
       "skip": []
@@ -412,79 +497,65 @@
       "name": "Context & Prompt Engineering",
       "group": "Praxis",
       "angle": "Kontextsteuerung, Prompting und Agent-Design: was im Kontextfenster landet, entscheidet über Qualität und Kosten",
-      "summary": "Anthropic senkt Cache Reads bei Claude Sonnet 5.5 von 0,20 auf 0,10 US-Dollar je Million Tokens.[2] Die beworbenen rund 20 Prozent geringeren Agentenkosten sind eine Abschätzung für cachelastige Aufgaben, keine pauschale Halbierung sämtlicher API-Kosten.[2]",
+      "summary": "Der REMORY-Preprint ergänzt eine lesbare Kontextzusammenfassung um begrenzte gelernte Soft-Memory-Tokens, während das ausführende Sprachmodell unverändert bleibt.[46] Autoren berichten bessere Quellenzuordnung auf SummHay bei 5,2 Prozent der Eingabepositionen; das ist eine Forschungs-Evaluation, keine allgemeine Produktfreigabe.[46]",
       "items": [
         {
-          "title": "Claude Sonnet 5.5 halbiert den Cache-Read-Tarif",
-          "date": "2026-10-07",
-          "summary": "Anthropic senkt Cache Reads bei Claude Sonnet 5.5 von 0,20 auf 0,10 US-Dollar je Million Tokens.[2] Die beworbenen rund 20 Prozent geringeren Agentenkosten sind eine Abschätzung für cachelastige Aufgaben, keine pauschale Halbierung sämtlicher API-Kosten.[2]",
-          "category": "modelle",
-          "impact": 3,
-          "sources": [
-            {
-              "label": "[2] www.anthropic.com",
-              "url": "https://www.anthropic.com/claude-haiku-5-5"
-            }
-          ],
-          "change_type": "update",
-          "candidate_ids": [
-            "0713943df1da2a3930ce"
-          ],
-          "n": 1
-        },
-        {
-          "title": "Loud Failures, Quiet Failures untersucht stille Tool-Fehler",
-          "date": "2026-10-07",
-          "summary": "Der Preprint Loud Failures, Quiet Failures unterscheidet explizite Fehlermeldungen von plausiblen, aber falschen Tool-Ergebnissen.[52] Im untersuchten Benchmark behandeln Agenten explizite Fehler in 91,3 Prozent der Versuche als Problem, plausible falsche Werte nur in 58,8 Prozent.[52] Die Ergebnisse beschreiben diese Testbedingungen, nicht alle Agenten oder Anwendungen.[52]",
+          "title": "REMORY ergänzt Kontextzusammenfassungen durch Speichertokens",
+          "date": "2026-10-08",
+          "summary": "Der REMORY-Preprint ergänzt eine lesbare Kontextzusammenfassung um begrenzte gelernte Soft-Memory-Tokens, während das ausführende Sprachmodell unverändert bleibt.[46] Autoren berichten bessere Quellenzuordnung auf SummHay bei 5,2 Prozent der Eingabepositionen; das ist eine Forschungs-Evaluation, keine allgemeine Produktfreigabe.[46]",
           "category": "agents",
           "impact": 3,
           "sources": [
             {
-              "label": "[52] arxiv.org",
-              "url": "https://arxiv.org/abs/2610.10062"
+              "label": "[46] arxiv.org",
+              "url": "https://arxiv.org/abs/2610.11287"
             }
           ],
           "change_type": "research",
           "candidate_ids": [
-            "41137d5de4a94428b353"
+            "399b8136ea77148036e2"
+          ],
+          "n": 1
+        },
+        {
+          "title": "Elastic beschreibt einen wiederverwendbaren Context Engine",
+          "date": "2026-10-08",
+          "summary": "Elastic beschreibt einen Context Engine, der Quellenwissen und Agentenerfahrung vorab strukturiert und wiederverwendet.[113] Das gezeigte Anbieterbeispiel reduziert Werkzeugaufrufe von 33 auf 9 und Antwortzeit von 213 auf 64 Sekunden; die Werte belegen weder allgemeine Leistungssteigerungen noch eine GA-Freigabe.[113]",
+          "category": "agents",
+          "impact": 3,
+          "sources": [
+            {
+              "label": "[113] www.elastic.co",
+              "url": "https://www.elastic.co/search-labs/blog/context-engineering-for-agents"
+            }
+          ],
+          "change_type": "research",
+          "candidate_ids": [
+            "c940d54ca1aed7a95bc6"
           ],
           "n": 2
         },
         {
-          "title": "Infino startet eine gemeinsame Retrieval-Schicht für Agenten",
-          "date": "2026-10-07",
-          "summary": "Infino startet eine Retrieval-Plattform, die Suche, Filter, Joins und Aggregationen über eine Parquet-Kopie im Object Storage zusammenführt.[92] Die Kernengine steht unter Apache 2.0, Cloud-Erweiterungen bleiben proprietär; behauptete Kostenvorteile sind Anbieterangaben.[92]",
+          "title": "Webex Calling kündigt persönliche Telefonagenten für 2027 an",
+          "date": "2026-10-08",
+          "summary": "Cisco plant persönliche Agenten für Webex Calling zur Anrufannahme, Dringlichkeitsbewertung und anschließenden Aktionen.[78][77] Das Herstelleroriginal nennt das erste Halbjahr 2027; engere Quartalsangaben aus Sekundärberichten werden nicht als gesichert übernommen.[78]",
           "category": "agents",
           "impact": 3,
           "sources": [
             {
-              "label": "[92] thenewstack.io",
-              "url": "https://thenewstack.io/infino-agent-retrieval-layer/"
+              "label": "[77] www.heise.de",
+              "url": "https://www.heise.de/news/KI-Features-fuer-Webex-Telefonie-Persoenliche-Assistenz-und-Echtzeituebersetzung-11480604.html"
+            },
+            {
+              "label": "[78] blog.webex.com",
+              "url": "https://blog.webex.com/collaboration/personal-agents-for-webex-calling-important-calls-intelligently-handled/"
             }
           ],
           "change_type": "announcement",
           "candidate_ids": [
-            "4b18dbd77a651bb00543"
+            "ecb6f18ef08e7b9082cb"
           ],
           "n": 3
-        },
-        {
-          "title": "Pi Durable: experimenteller Harness für langlebige Agenten",
-          "date": "2026-10-01",
-          "summary": "Earendil veröffentlicht Pi Durable als experimentelles Paket für langlebige Agentenanwendungen.[118] Memory-, SQLite- und JSONL-Backends sowie wiederaufnehmbare Abläufe und Kontextverdichtung sind dokumentiert; die API kann sich noch ändern.[118] Der Nachtrag behält das Originaldatum 1. Oktober und ist keine neue Freigabe vom 8. Oktober.[118]",
-          "category": "agents",
-          "impact": 3,
-          "sources": [
-            {
-              "label": "[118] earendil.com",
-              "url": "https://earendil.com/posts/pi-durable/"
-            }
-          ],
-          "change_type": "preview",
-          "candidate_ids": [
-            "01257ffe5e0be9fa46af"
-          ],
-          "n": 4
         }
       ],
       "skip": []
@@ -494,151 +565,163 @@
       "name": "AI Security & Safety",
       "group": "Sicherheit & Recht",
       "angle": "Sicherheit von AI-Systemen und -Agenten: Angriffsflächen, Schutzmechanismen und automatisierte Schwachstellensuche",
-      "summary": "Microsoft gibt Microsoft Execution Containers als richtliniengesteuerte Isolationsschicht für Agenten frei.[76][81] Entwickler und IT legen Datei- und Netzwerkzugriffe fest; die passenden Isolations-Backends setzen diese Grenzen zur Laufzeit durch.[76] MicroVM bleibt experimentell, Entra-Agentenattribution und Intune-Verwaltung folgen erst später; GA bedeutet keine pauschale Sicherheitsgarantie.[81][76]",
+      "summary": "Anthropic startet OSS Scanner für kostenlose periodische Sicherheitsprüfungen optierender Open-Source-Projekte.[69][68] Die Reports werden ohne menschliche Prüfung oder Triage erzeugt und können falsch sein; Maintainer müssen Funde selbst validieren und priorisieren.[69]",
       "items": [
         {
-          "title": "Microsoft Execution Containers erreichen allgemeine Verfügbarkeit",
+          "title": "OSS Scanner startet kostenlose Opt-in-Prüfungen für Open Source",
           "date": "2026-10-08",
-          "summary": "Microsoft gibt Microsoft Execution Containers als richtliniengesteuerte Isolationsschicht für Agenten frei.[76][81] Entwickler und IT legen Datei- und Netzwerkzugriffe fest; die passenden Isolations-Backends setzen diese Grenzen zur Laufzeit durch.[76] MicroVM bleibt experimentell, Entra-Agentenattribution und Intune-Verwaltung folgen erst später; GA bedeutet keine pauschale Sicherheitsgarantie.[81][76]",
+          "summary": "Anthropic startet OSS Scanner für kostenlose periodische Sicherheitsprüfungen optierender Open-Source-Projekte.[69][68] Die Reports werden ohne menschliche Prüfung oder Triage erzeugt und können falsch sein; Maintainer müssen Funde selbst validieren und priorisieren.[69]",
           "category": "security",
           "impact": 4,
           "sources": [
             {
-              "label": "[81] arstechnica.com",
-              "url": "https://arstechnica.com/gadgets/2026/10/microsoft-event-debuts-new-ai-friendly-hardware-and-windows-changes/"
+              "label": "[68] www.theverge.com",
+              "url": "https://www.theverge.com/ai-artificial-intelligence/1008521/anthropic-open-source-oss-scanner"
             },
             {
-              "label": "[76] blogs.windows.com",
-              "url": "https://blogs.windows.com/windowsdeveloper/2026/10/07/microsoft-execution-containers-policy-driven-containment-for-ai-agents/"
+              "label": "[69] www.anthropic.com",
+              "url": "https://www.anthropic.com/research/launching-opt-in-vuln-finding-service-for-open-source"
             }
           ],
-          "change_type": "general_availability",
+          "change_type": "security",
           "candidate_ids": [
-            "85f3dfc73a22c36e672b"
+            "ca9156861b67429fde88"
           ],
           "n": 1
         },
         {
-          "title": "ChatGPT for Teens: Common Sense Media kritisiert Schutzmaßnahmen",
-          "date": "2026-10-07",
-          "summary": "Common Sense Media stuft ChatGPT for Teens nach eigenen Tests als unvertretbares Risiko ein und berichtet Lücken bei Elternhinweisen und Krisenverweisen.[62] OpenAI bestreitet die Aussagekraft: Ein Großteil der Tests könnte vor vollständiger Aktivierung der Elternkontrollen stattgefunden haben; CSM verteidigt seine Methodik.[68] Der strittige Prüfbericht ist kein Nachweis universellen Versagens aller Konten.[68]",
+          "title": "AgentCorruption zeigt eine historische AgentCore-Angriffskette",
+          "date": "2026-10-08",
+          "summary": "Zenity veröffentlicht AgentCorruption: erbeutete Cloud-Credentials und überbreite Rollen konnten weitere Agenten im selben AWS-Konto und derselben Region erreichbar machen.[13][14][12] AWS hat laut Bericht IMDS-Zugriff und Standardrollen bereits eingeschränkt; bestehende eigene Rollen müssen gesondert auf Least Privilege geprüft werden.[12] Eine heute universell ausnutzbare Kontoübernahme wird nicht behauptet.[12]",
           "category": "security",
           "impact": 4,
           "sources": [
             {
-              "label": "[62] institute.commonsensemedia.org",
-              "url": "https://institute.commonsensemedia.org/risk-assessments/chatgpt-teens"
+              "label": "[12] the-decoder.com",
+              "url": "https://the-decoder.com/a-single-prompt-was-enough-to-hijack-every-ai-agent-in-an-aws-account-zenity-researchers-found/"
             },
             {
-              "label": "[68] www.theverge.com",
-              "url": "https://www.theverge.com/ai-artificial-intelligence/1006355/openai-chatgpt-for-teens-common-sense-media"
+              "label": "[13] labs.zenity.io",
+              "url": "https://labs.zenity.io/post/agentcorruption-initial-imds-access"
+            },
+            {
+              "label": "[14] labs.zenity.io",
+              "url": "https://labs.zenity.io/post/agentcorruption-one-role-to-rule-them-all"
             }
           ],
           "change_type": "security",
           "candidate_ids": [
-            "21fc8070432f7482cc53"
+            "f31953ff0d8691c75288"
           ],
           "n": 2
         },
         {
-          "title": "AISeal isoliert persönlichen Kontext für Android-KI",
+          "title": "LMCache: CVE-2026-105192 gefährdet exponierte Multiprozess-Server",
           "date": "2026-10-07",
-          "summary": "Google stellt AISeal als Enklavenarchitektur auf AVF und pKVM vor und rollt geschützte lokale Kontextspeicherung aus.[46] Inferenz und autonome Agenten vollständig im geschützten Vault gehören zum geplanten nächsten Schritt.[46] Hardwareisolierung reduziert den möglichen Schadensradius, beseitigt aber nicht sämtliche Hardware-, Hypervisor- oder Implementierungsrisiken.[47]",
+          "summary": "JFrog beschreibt unauthentifizierte Codeausführung im ZeroMQ-Transport von LMCache ab Version 0.3.9; The Hacker News bestätigt den Befund.[116][117] Fernangriffe erfordern eine netzwerkerreichbare Bind-Adresse: Standard-Localhost und rein eingebettete vLLM-Nutzung sind nicht gleich exponiert.[116] Laut datiertem Original war am 7. Oktober keine korrigierte Version verfügbar; ein heute bestätigter Patchstatus liegt nicht vor.[116]",
           "category": "security",
-          "impact": 3,
+          "impact": 4,
           "sources": [
             {
-              "label": "[46] blog.google",
-              "url": "https://blog.google/security/enabling-the-next-gen-enclave-architecture-for-on-device-ai-on-android/"
+              "label": "[116] research.jfrog.com",
+              "url": "https://research.jfrog.com/vulnerabilities/lmcache-is-vulnerable-to-unauthenticated-remote-code-execution-via-pickle-deserialization-on-the-multiprocess-zmq-transport-cve-2026-105192-jfsa-2026-001694382/"
             },
             {
-              "label": "[47] morningoverview.com",
-              "url": "https://morningoverview.com/google-is-isolating-phone-ai-inside-hardware-backed-virtual-machines/"
+              "label": "[117] thehackernews.com",
+              "url": "https://thehackernews.com/2026/10/unpatched-critical-lmcache-flaw-lets.html"
             }
           ],
           "change_type": "security",
           "candidate_ids": [
-            "c643225bab35825ca117"
+            "916983c854b9026ae4d0"
           ],
           "n": 3
         },
         {
-          "title": "GitHub Secret Protection erhält spezialisiertes Secret-Modell",
-          "date": "2026-10-07",
-          "summary": "GitHub ersetzt die bisherige KI-Secret-Erkennung durch ein eigenes kontextsensitives Modell.[87] Bestehende AI-detected-alert-Scans wechseln für GHSP- und GHAS-Kunden automatisch und ohne Zusatzkosten.[87] Das Update ist getrennt von neuen opt-inpflichtigen Push-Protection- und Security-Review-Checks mit geplantem AI-Credit-Verbrauch.[87]",
+          "title": "Critical Infrastructure Defense Program startet für OT-Verteidiger",
+          "date": "2026-10-08",
+          "summary": "Anthropic stellt mit dem Critical Infrastructure Defense Program Modelle, Ingenieure vor Ort und Bedrohungsforschung für Verteidiger operativer Technologie bereit.[31] Der Programmstart ist kein unabhängiger Nachweis bereits reduzierter Infrastruktur-Risiken.[31]",
           "category": "security",
           "impact": 3,
           "sources": [
             {
-              "label": "[87] github.blog",
-              "url": "https://github.blog/changelog/2026-10-07-purpose-built-model-for-leaked-secret-detection"
+              "label": "[31] www.anthropic.com",
+              "url": "https://www.anthropic.com/news/anthropic-cyber-mission"
             }
           ],
-          "change_type": "update",
+          "change_type": "security",
           "candidate_ids": [
-            "ef6553c22235bd851606"
+            "6dadb7466d5a5f3a280e"
           ],
           "n": 4
         },
         {
-          "title": "Meta ergänzt LLM-Erkennung für Signposting-Anzeigen",
-          "date": "2026-10-07",
-          "summary": "Meta führt LLM-Erkennung für scheinbar harmlose Signposting-Anzeigen ein, die zu Material sexueller Ausbeutung von Kindern führen.[101][102] Die Maßnahme belegt eine neue Erkennungsschicht, nicht eine unabhängig gemessene vollständige Schutzwirkung.[101]",
+          "title": "Goodfire veröffentlicht Cyber-Monitore für Kimi K3 und GLM 5.3",
+          "date": "2026-10-08",
+          "summary": "Goodfire stellt aktivierungsbasierte Cyber-Monitore für Kimi K3 und GLM 5.3 auf einem produktiven Inferenzstack bereit; TechCrunch berichtet Verfügbarkeit für Baseten-Kunden.[99][58][49] Erkennungs- und Kostenvorteile sind Anbieter-Evaluationen; statische nicht-adaptive Jailbreak-Tests beweisen keine allgemeine Angriffsresistenz.[99]",
           "category": "security",
           "impact": 3,
           "sources": [
             {
-              "label": "[101] about.fb.com",
-              "url": "https://about.fb.com/news/2026/10/measures-weve-put-in-place-to-fight-child-exploitation/"
+              "label": "[49] www.latent.space",
+              "url": "https://www.latent.space/p/ainews-not-much-happened-today-60f"
             },
             {
-              "label": "[102] techcrunch.com",
-              "url": "https://techcrunch.com/2026/10/07/meta-rolls-out-new-ai-tools-to-detect-ads-that-secretly-lead-to-child-sexual-abuse-material/"
+              "label": "[99] www.goodfire.com",
+              "url": "https://www.goodfire.com/research/production-cyber-monitors-on-kimi-k3"
+            },
+            {
+              "label": "[58] techcrunch.com",
+              "url": "https://techcrunch.com/2026/10/08/goodfire-says-its-new-inside-out-monitors-catch-rogue-ai-agents-at-a-fraction-of-the-cost/"
             }
           ],
           "change_type": "security",
           "candidate_ids": [
-            "364b044e774efd435d94"
+            "8e34e635f1cd73f04d63"
           ],
           "n": 5
         },
         {
-          "title": "GitHub Push Protection testet KI-Secret-Erkennung als private Preview",
-          "date": "2026-10-07",
-          "summary": "GitHub bietet Erkennung unstrukturierter Secrets in Push Protection als private Preview an.[87] Neue Checks sind Opt-in und sollen AI Credits verbrauchen; bestehende Secret-Alerts bleiben dagegen ohne Zusatzkosten in GHSP und GHAS enthalten.[87] Private Preview ist weder öffentliche Beta noch allgemeine Verfügbarkeit.[87]",
+          "title": "Artificial Analysis Cyber Index erweitert sich um Trusted Access",
+          "date": "2026-10-08",
+          "summary": "Der Artificial Analysis Cyber Index nimmt nicht öffentlich zugängliche Trusted-Access-Modelle auf, beginnend mit GPT-6 Sol Daybreak Blue.[101][49] Benchmarkwerte und das Ausbleiben von Verweigerungen in diesem Test belegen keine allgemeine Sicherheit oder uneingeschränkte Modellverfügbarkeit.[101]",
           "category": "security",
-          "impact": 2,
+          "impact": 3,
           "sources": [
             {
-              "label": "[87] github.blog",
-              "url": "https://github.blog/changelog/2026-10-07-purpose-built-model-for-leaked-secret-detection"
+              "label": "[101] artificialanalysis.ai",
+              "url": "https://artificialanalysis.ai/articles/trusted-access-models-cyber-index"
+            },
+            {
+              "label": "[49] www.latent.space",
+              "url": "https://www.latent.space/p/ainews-not-much-happened-today-60f"
             }
           ],
-          "change_type": "preview",
+          "change_type": "update",
           "candidate_ids": [
-            "ee0aabef05e1c904d636"
+            "87e442daebd9b0302151"
           ],
           "n": 6
         },
         {
-          "title": "Meta setzt Red-Teaming-Agenten für Kinderschutz ein",
-          "date": "2026-10-07",
-          "summary": "Meta beschreibt einen neuen Red-Teaming-Agenten, der eigene Abwehrmaßnahmen auf Schwächen und neue Missbrauchstaktiken prüft.[101][102] Dies ist eine getrennte Entwicklung von der Anzeigenklassifikation; unabhängige Wirksamkeitsdaten werden nicht belegt.[101]",
+          "title": "Arena Alignment Index startet als vorläufige Evaluation",
+          "date": "2026-10-08",
+          "summary": "Arena veröffentlicht den vorläufigen Arena Alignment Index für unautorisierte Aktionen, falsche Zuschreibung und täuschende Fertigstellung in Agentensitzungen.[56][55] Die Evaluation beginnt mit drei eng definierten Signalen und ist kein Sicherheitszertifikat für beliebige Einsatzbedingungen.[56]",
           "category": "security",
-          "impact": 2,
+          "impact": 3,
           "sources": [
             {
-              "label": "[101] about.fb.com",
-              "url": "https://about.fb.com/news/2026/10/measures-weve-put-in-place-to-fight-child-exploitation/"
+              "label": "[55] techcrunch.com",
+              "url": "https://techcrunch.com/2026/10/08/popular-ai-leaderboard-arena-nearly-doubles-valuation-to-3-1b-valuation-in-10-months/"
             },
             {
-              "label": "[102] techcrunch.com",
-              "url": "https://techcrunch.com/2026/10/07/meta-rolls-out-new-ai-tools-to-detect-ads-that-secretly-lead-to-child-sexual-abuse-material/"
+              "label": "[56] arena.ai",
+              "url": "https://arena.ai/blog/series-b"
             }
           ],
-          "change_type": "security",
+          "change_type": "research",
           "candidate_ids": [
-            "7606fea479adfc349a4b"
+            "a7e32654aa62afcfd698"
           ],
           "n": 7
         }
@@ -650,191 +733,294 @@
       "name": "AI Governance & Regulierung",
       "group": "Sicherheit & Recht",
       "angle": "Regeln, Recht, Lizenzen und Budgets für AI im Unternehmen: was Compliance und Kostensteuerung verlangen",
-      "summary": "Google öffnet SynthID Detector weltweit auf Englisch für alle Nutzer.[18] Er prüft unterstützte Wasserzeichen in Bildern, Video und Audio von Google und Partnern wie OpenAI, NVIDIA und Kakao; Apple ist erst angekündigt.[18] Das Werkzeug erkennt nicht beliebige KI-Medien, und ein negatives Ergebnis beweist keine menschliche Herkunft.[44]",
+      "summary": "Die britische ICO eröffnet am 8. Oktober eine Beweissammlung zu Datenschutzrisiken von Agentic AI; Eingaben sind bis 20. November möglich.[114] Die Konsultation ist kein neues bereits geltendes Gesetz.[114]",
       "items": [
         {
-          "title": "SynthID Detector wird weltweit auf Englisch öffentlich",
-          "date": "2026-10-07",
-          "summary": "Google öffnet SynthID Detector weltweit auf Englisch für alle Nutzer.[18] Er prüft unterstützte Wasserzeichen in Bildern, Video und Audio von Google und Partnern wie OpenAI, NVIDIA und Kakao; Apple ist erst angekündigt.[18] Das Werkzeug erkennt nicht beliebige KI-Medien, und ein negatives Ergebnis beweist keine menschliche Herkunft.[44]",
+          "title": "ICO startet Konsultation zu Agentic AI und Datenschutz",
+          "date": "2026-10-08",
+          "summary": "Die britische ICO eröffnet am 8. Oktober eine Beweissammlung zu Datenschutzrisiken von Agentic AI; Eingaben sind bis 20. November möglich.[114] Die Konsultation ist kein neues bereits geltendes Gesetz.[114]",
           "category": "security",
           "impact": 3,
           "sources": [
             {
-              "label": "[18] blog.google",
-              "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/synth-id-ai-content/"
-            },
-            {
-              "label": "[44] thenextweb.com",
-              "url": "https://thenextweb.com/news/google-synthid-detector-public-ai-content-checker"
+              "label": "[114] ico.org.uk",
+              "url": "https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/2026/10/ico-secures-changes-from-leading-ai-developers-as-scrutiny-extends-to-ai-agents/"
             }
           ],
-          "change_type": "general_availability",
+          "change_type": "policy",
           "candidate_ids": [
-            "1293a5ff8d4f85297852"
+            "e78f200fbca601469dee"
           ],
           "n": 1
         },
         {
-          "title": "Cantwell legt Governance Framework für Frontier AI vor",
-          "date": "2026-10-07",
-          "summary": "US-Senatorin Maria Cantwell stellt ein sechsteiliges Governance Framework für Frontier AI mit NIST-Sicherheitsstandards, unabhängigen Prüfungen und fortlaufender Aufsicht vor.[125] Roll Call bestätigt, dass das Rahmenpapier keinen Gesetzestext enthält; es ist ein Vorschlag für künftige Gesetzgebung, keine bereits geltende Regulierung.[126]",
+          "title": "ICO-Bericht dokumentiert Datenschutzzusagen von zehn Modellentwicklern",
+          "date": "2026-10-08",
+          "summary": "Die ICO veröffentlicht Ergebnisse ihrer Aufsicht über zehn Foundation-Model-Entwickler, die Datenschutzänderungen umgesetzt oder zugesagt haben.[114] Zusagen sind von bereits erfolgten Änderungen zu unterscheiden; die Behörde überwacht den Fortschritt weiter.[114]",
           "category": "security",
           "impact": 3,
           "sources": [
             {
-              "label": "[126] rollcall.com",
-              "url": "https://rollcall.com/2026/10/07/sen-maria-cantwell-looks-to-federal-testing-role-in-ai-safety-framework"
-            },
-            {
-              "label": "[125] www.commerce.senate.gov",
-              "url": "https://www.commerce.senate.gov/press/dem/release/cantwell-outlines-comprehensive-governance-framework-for-safe-and-secure-frontier-ai/"
+              "label": "[114] ico.org.uk",
+              "url": "https://ico.org.uk/about-the-ico/media-centre/news-and-blogs/2026/10/ico-secures-changes-from-leading-ai-developers-as-scrutiny-extends-to-ai-agents/"
             }
           ],
           "change_type": "policy",
           "candidate_ids": [
-            "037223872ec80c70bb9e"
+            "a48ac4733cedef52bcd3"
           ],
           "n": 2
         },
         {
-          "title": "Student Advisory Council soll Teen-KI mitgestalten",
-          "date": "2026-10-07",
-          "summary": "OpenAI unterstützt den unabhängigen Student Advisory Council des Digital Wellness Lab am Boston Childrens Hospital über drei Jahre.[36] Jugendliche sollen Erfahrungen in KI-Gestaltung und Schutzstandards einbringen; die Beteiligung ist kein unabhängiges Sicherheitszertifikat.[36]",
+          "title": "Usage Policy: Anthropic lockert das pauschale Wahlansprache-Verbot",
+          "date": "2026-10-08",
+          "summary": "Anthropics angekündigtes Usage-Policy-Update entfernt das pauschale Verbot personalisierter Wahl- und Kampagnenansprache; Täuschung und missbräuchliche Datennutzung bleiben verboten.[29][63] Den Wirksamkeitsstichtag lassen wir wegen widersprüchlicher Abrufe offen; eine sofortige Freigabe von Wahlmanipulation wird nicht behauptet.",
           "category": "security",
-          "impact": 2,
+          "impact": 3,
           "sources": [
             {
-              "label": "[36] openai.com",
-              "url": "https://openai.com/index/teens-learn-and-plan/"
+              "label": "[63] techcrunch.com",
+              "url": "https://techcrunch.com/2026/10/08/anthropic-changes-usage-policy-to-ban-model-abuse-and-election-interference/"
+            },
+            {
+              "label": "[29] www.anthropic.com",
+              "url": "https://www.anthropic.com/news/2026-usage-policy-update"
             }
           ],
           "change_type": "policy",
           "candidate_ids": [
-            "ffb5cab23c6a08bd53e2"
+            "9884d9f8edff02bbfa85"
           ],
           "n": 3
+        },
+        {
+          "title": "Claude-Nutzungspolitik (Usage Policy) ergänzt Anforderungen für autonome Hardware",
+          "date": "2026-10-08",
+          "summary": "Anthropics angekündigtes Usage-Policy-Update verlangt bei potenziell verletzender autonomer Hardware einen qualifizierten Operator mit Beobachtungs- und Stop-Möglichkeit sowie einen sicheren Zustand bei Verbindungsabbruch.[29][63] Ein gesicherter Wirksamkeitsstichtag und eine unabhängig geprüfte Produktschutzwirkung werden nicht behauptet.[29]",
+          "category": "security",
+          "impact": 3,
+          "sources": [
+            {
+              "label": "[63] techcrunch.com",
+              "url": "https://techcrunch.com/2026/10/08/anthropic-changes-usage-policy-to-ban-model-abuse-and-election-interference/"
+            },
+            {
+              "label": "[29] www.anthropic.com",
+              "url": "https://www.anthropic.com/news/2026-usage-policy-update"
+            }
+          ],
+          "change_type": "policy",
+          "candidate_ids": [
+            "575292332157937e929d"
+          ],
+          "n": 4
+        },
+        {
+          "title": "Harvey LAB-AA v1.1 ergänzt Halluzinationsprüfungen",
+          "date": "2026-10-08",
+          "summary": "Artificial Analysis und Harvey ergänzen LAB-AA v1.1 um Prüfungen gegen Quelldokumente und eine Hallucination-Gated All-Pass Rate.[100][49] Die Hauptmetrik zählt nur vollständig erfüllte Aufgaben ohne substanzielle Halluzinationen; die geänderte Methodik erlaubt keinen direkten Vergleich mit v1.0 und beweist keine allgemeine juristische Zuverlässigkeit.[100]",
+          "category": "security",
+          "impact": 3,
+          "sources": [
+            {
+              "label": "[100] artificialanalysis.ai",
+              "url": "https://artificialanalysis.ai/articles/harvey-lab-aa-v1-1"
+            },
+            {
+              "label": "[49] www.latent.space",
+              "url": "https://www.latent.space/p/ainews-not-much-happened-today-60f"
+            }
+          ],
+          "change_type": "update",
+          "candidate_ids": [
+            "e288fe5e476606e01e76"
+          ],
+          "n": 5
+        },
+        {
+          "title": "Claude-Nutzungspolitik (Usage Policy) ergänzt ein Verbot extremer Modellmisshandlung",
+          "date": "2026-10-08",
+          "summary": "Anthropic kündigt ein Verbot anhaltenden zwecklos grausamen Verhaltens gegenüber seinen Modellen in Extremfällen an; gewöhnliche Frustration, dunkle Fiktion und Modelltests sind ausgenommen.[29][63] Ein gesicherter Wirksamkeitsstichtag und neue automatische Nutzersperren werden nicht behauptet.[29]",
+          "category": "security",
+          "impact": 2,
+          "sources": [
+            {
+              "label": "[63] techcrunch.com",
+              "url": "https://techcrunch.com/2026/10/08/anthropic-changes-usage-policy-to-ban-model-abuse-and-election-interference/"
+            },
+            {
+              "label": "[29] www.anthropic.com",
+              "url": "https://www.anthropic.com/news/2026-usage-policy-update"
+            }
+          ],
+          "change_type": "policy",
+          "candidate_ids": [
+            "9a5e846e7f058ed5c73f"
+          ],
+          "n": 6
         }
       ],
-      "skip": []
+      "skip": [
+        {
+          "reason": "Stichtag offen",
+          "text": "Die neuen Usage-Policy-Inhalte sind am Herstellerartikel bestätigt; widersprüchliche Abrufe der effektiven AUP-Daten erlauben keine verbindliche Stichtagsbehauptung."
+        }
+      ]
     },
     {
       "id": "enterprise",
       "name": "Enterprise & Vertikalisierung",
       "group": "Markt & Branchen",
       "angle": "AI in Branchen und Unternehmen: Vertikalisierung, Verdrängung klassischer Software und Augmentation",
-      "summary": "Anthropic kündigt den Rollout monatlicher API-Guthaben an: 100 US-Dollar für Max 5x, 200 für Max 20x und bis zu 500 als gemeinsamer Team-Pool.[2] Ungenutzte Credits verfallen pro Abrechnungszyklus und verändern die Nutzungsgrenzen für Claude, Claude Code oder Cowork nicht.[31]",
+      "summary": "Claude Dashboards startet als Beta für bezahlte Pläne und erstellt aktualisierbare Dashboards aus angebundenen Datenquellen wie BigQuery, Snowflake und Salesforce.[4] Abfragen und Aktualisierungszeiten sind nachvollziehbar; Enterprise-Admins müssen die Funktion aktivieren.[4]",
       "items": [
         {
-          "title": "Claude Max und Team bekommen monatliches API-Guthaben",
-          "date": "2026-10-07",
-          "summary": "Anthropic kündigt den Rollout monatlicher API-Guthaben an: 100 US-Dollar für Max 5x, 200 für Max 20x und bis zu 500 als gemeinsamer Team-Pool.[2] Ungenutzte Credits verfallen pro Abrechnungszyklus und verändern die Nutzungsgrenzen für Claude, Claude Code oder Cowork nicht.[31]",
-          "category": "business",
-          "impact": 3,
+          "title": "Claude Dashboards startet als Beta für bezahlte Pläne",
+          "date": "2026-10-08",
+          "summary": "Claude Dashboards startet als Beta für bezahlte Pläne und erstellt aktualisierbare Dashboards aus angebundenen Datenquellen wie BigQuery, Snowflake und Salesforce.[4] Abfragen und Aktualisierungszeiten sind nachvollziehbar; Enterprise-Admins müssen die Funktion aktivieren.[4]",
+          "category": "tools",
+          "impact": 4,
           "sources": [
             {
-              "label": "[31] support.claude.com",
-              "url": "https://support.claude.com/en/articles/17154008"
-            },
-            {
-              "label": "[2] www.anthropic.com",
-              "url": "https://www.anthropic.com/claude-haiku-5-5"
+              "label": "[4] www.testingcatalog.com",
+              "url": "https://www.testingcatalog.com/claude-launches-dashboards-and-motion-in-beta/"
             }
           ],
-          "change_type": "announcement",
+          "change_type": "public_beta",
           "candidate_ids": [
-            "69540dcbaec7d4571012"
+            "274675641168b653ff5c"
           ],
           "n": 1
         },
         {
-          "title": "Hermes for Businesses: Nous kündigt Unternehmensagenten an",
-          "date": "2026-10-07",
-          "summary": "Nous Research kündigt Hermes for Businesses für anpassbare Unternehmensagenten und mehrstufige Workflows an.[65] Aussagen zur privaten und sicheren Datenverarbeitung sind Anbieterpositionierung, kein unabhängig geprüftes Sicherheitsversprechen.[65] Finanzierungs- und Nutzungszahlen werden nicht als Produktnachweis übernommen.[65]",
+          "title": "Gemini agent startet als private Preview in Gemini Enterprise",
+          "date": "2026-10-08",
+          "summary": "Google zeigt Gemini agent als private Preview für Enterprise-Kunden mit Anbindungen an Workspace, Microsoft 365 und Slack.[70] Der cloudbasierte Agent soll Kontext geräteübergreifend erhalten; das ist keine allgemeine Freigabe für alle Unternehmen oder Privatnutzer.[70]",
           "category": "agents",
-          "impact": 3,
+          "impact": 4,
           "sources": [
             {
-              "label": "[65] techcrunch.com",
-              "url": "https://techcrunch.com/2026/10/07/nous-research-confirms-it-hit-1-5b-valuation-launches-ai-agents-for-business-users/"
-            }
-          ],
-          "change_type": "announcement",
-          "candidate_ids": [
-            "53ad58b2bd0cb11b8f24"
-          ],
-          "n": 2
-        },
-        {
-          "title": "Amazon Quick und Amazon Bedrock Knowledge Bases prüfen Rechte in Echtzeit",
-          "date": "2026-10-07",
-          "summary": "AWS ergänzt Amazon Quick und Amazon Bedrock Knowledge Bases um eine Rechteprüfung an der autoritativen Datenquelle zur Anfragezeit.[113] Sie folgt auf die bestehende ACL-Vorfilterung und prüft Dokumente erneut, bevor deren Inhalte ans Modell gehen.[113] Die zusätzliche Schicht soll veraltete Berechtigungen abfangen, ersetzt die Vorfilterung aber nicht.[113]",
-          "category": "security",
-          "impact": 3,
-          "sources": [
-            {
-              "label": "[113] aws.amazon.com",
-              "url": "https://aws.amazon.com/blogs/machine-learning/rethinking-access-control-for-rag-with-amazon-quick-and-amazon-bedrock/"
-            }
-          ],
-          "change_type": "update",
-          "candidate_ids": [
-            "e13bb3a897ecb765a7be"
-          ],
-          "n": 3
-        },
-        {
-          "title": "Patententwurf: bessere KI-Arbeit bedeutet nicht automatisch besseren Lernfortschritt",
-          "date": "2026-10-07",
-          "summary": "Googles dreimonatiger randomisierter Feldversuch mit 133 Patentanwälten aus elf Kanzleien zeigt bessere Entwurfsqualität mit KI.[115] Im anschließenden Test ohne KI profitieren erfahrene Anwälte, während Junioren im Mittel keinen Kompetenzzuwachs zeigen.[115] Die kleine berufsbezogene Stichprobe erlaubt keine Verallgemeinerung auf alle Beschäftigten.[115]",
-          "category": "business",
-          "impact": 3,
-          "sources": [
-            {
-              "label": "[115] research.google",
-              "url": "https://research.google/blog/does-better-work-always-mean-better-workers/"
-            }
-          ],
-          "change_type": "research",
-          "candidate_ids": [
-            "ab1fcd17a35b49aa5f60"
-          ],
-          "n": 4
-        },
-        {
-          "title": "DGX Station for Windows wird als Preview gezeigt",
-          "date": "2026-10-07",
-          "summary": "NVIDIA zeigt DGX Station for Windows mit GB300 als Vorschau für lokale große Modell- und Multi-Agenten-Workloads.[120] Die Demonstration ist kein Beleg bereits allgemeiner Lieferbarkeit oder unabhängig bestätigter Geschwindigkeit.[120]",
-          "category": "lokal",
-          "impact": 3,
-          "sources": [
-            {
-              "label": "[120] blogs.nvidia.com",
-              "url": "https://blogs.nvidia.com/blog/local-ai-rtx-spark-microsoft-windows-event/"
+              "label": "[70] www.theverge.com",
+              "url": "https://www.theverge.com/tech/1007904/google-gemini-ai-agent-enterprise"
             }
           ],
           "change_type": "preview",
           "candidate_ids": [
-            "b536d2aac370f4dc6398"
+            "a9e56ad3a1f922b5bba0"
           ],
-          "n": 5
+          "n": 2
         },
         {
-          "title": "SAP beginnt Kunden-Rollout von Joule Work",
-          "date": "2026-10-06",
-          "summary": "SAP beginnt den Kunden-Rollout von Joule Work als KI-Oberfläche für SAP- und Drittdaten mit Geschäftskontext aus dem SAP Knowledge Graph.[124] Die genannten internen Produktivitätsgewinne sind SAP-Angaben; selektive frühe Kundenbereitstellung ist keine GA aller Joule-Assistenten.[124] Dieser Rollout ist getrennt von der TechWolf-Übernahme und später angekündigten Backoffice-Assistenten.[124]",
+          "title": "Gemini for Financial Services startet als Preview",
+          "date": "2026-10-08",
+          "summary": "Google gibt Gemini for Financial Services als Preview für Investmentresearch, Kreditanalyse und Risikomodellierung frei.[27] Anbieterangaben zu Compliance, Datenherkunft und Konfidenzwerten sind keine unabhängige Zertifizierung der fachlichen Zuverlässigkeit.[27]",
           "category": "agents",
           "impact": 3,
           "sources": [
             {
-              "label": "[124] news.sap.com",
-              "url": "https://news.sap.com/2026/10/sap-connect-sap-puts-autonomous-enterprise-to-work/"
+              "label": "[27] cloud.google.com",
+              "url": "https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026"
+            }
+          ],
+          "change_type": "preview",
+          "candidate_ids": [
+            "74db829bc0093d8d5e14"
+          ],
+          "n": 3
+        },
+        {
+          "title": "Gemini für Legal startet als Preview",
+          "date": "2026-10-08",
+          "summary": "Google kündigt Gemini für Legal in Preview an und beschreibt die Übernahme fallbezogener Berechtigungen und Ethical Walls aus Dokumentmanagementsystemen.[27] Das ist keine allgemeine Freigabe und keine unabhängig geprüfte Sicherheitsgarantie.[27]",
+          "category": "agents",
+          "impact": 3,
+          "sources": [
+            {
+              "label": "[27] cloud.google.com",
+              "url": "https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026"
+            }
+          ],
+          "change_type": "preview",
+          "candidate_ids": [
+            "724c49bfaf23826223eb"
+          ],
+          "n": 4
+        },
+        {
+          "title": "Gemini Enterprise ergänzt harte Ausgabenlimits",
+          "date": "2026-10-08",
+          "summary": "Google ergänzt projektbezogene harte Ausgabenlimits in der Cloud Billing Console: Token- und Sandboxkosten werden überwacht, und beim Erreichen des Limits pausiert der Agent.[27] Administratoren können Arbeit anschließend gezielt fortsetzen; die Kosten werden projektbezogen zugeordnet.[27]",
+          "category": "agents",
+          "impact": 3,
+          "sources": [
+            {
+              "label": "[27] cloud.google.com",
+              "url": "https://cloud.google.com/blog/products/ai-machine-learning/welcome-to-gemini-at-work-2026"
             }
           ],
           "change_type": "update",
           "candidate_ids": [
-            "baf681f23317a25474c9"
+            "753946a4e9dc500ac5c5"
+          ],
+          "n": 5
+        },
+        {
+          "title": "Claude Artifacts ergänzt kundenseitig verwaltete Schlüssel",
+          "date": "2026-10-08",
+          "summary": "Claude Artifacts unterstützt nun Customer-Managed Encryption Keys.[92] Das Verwaltungsupdate ist von den neuen Artifacts-Freigaben getrennt und bestätigt keine unabhängig auditierte umfassende Schutzwirkung.[92]",
+          "category": "security",
+          "impact": 3,
+          "sources": [
+            {
+              "label": "[92] thenewstack.io",
+              "url": "https://thenewstack.io/claude-dashboards-data-motion/"
+            }
+          ],
+          "change_type": "update",
+          "candidate_ids": [
+            "492949b925a557605445"
           ],
           "n": 6
+        },
+        {
+          "title": "Webex Translator Agent startet in kontrollierter Verfügbarkeit",
+          "date": "2026-10-08",
+          "summary": "Cisco stellt Webex Translator Agent in Controlled Availability für die Webex-App und Cisco-9800-Tischtelefone bereit, mit zehn Sprachen einschließlich Deutsch.[79][77] Kontrollierte Verfügbarkeit ist keine allgemeine Freigabe; erhaltene Emotion und Tonfall sind Anbieterbeschreibungen.[79]",
+          "category": "tools",
+          "impact": 3,
+          "sources": [
+            {
+              "label": "[77] www.heise.de",
+              "url": "https://www.heise.de/news/KI-Features-fuer-Webex-Telefonie-Persoenliche-Assistenz-und-Echtzeituebersetzung-11480604.html"
+            },
+            {
+              "label": "[79] blog.webex.com",
+              "url": "https://blog.webex.com/collaboration/webex-ai-native-collaboration-context-agents-trust/"
+            }
+          ],
+          "change_type": "preview",
+          "candidate_ids": [
+            "faef03d0adbb6273b734"
+          ],
+          "n": 7
+        },
+        {
+          "title": "Genesis Mission: Anthropic sagt 150 Millionen Dollar zu",
+          "date": "2026-10-08",
+          "summary": "Anthropic sagt 150 Millionen US-Dollar über drei Jahre für Claude-Zugang, API-Guthaben und Unterstützung von Projekten der Genesis Mission zu.[30] Die Zusage vertieft die bestehende Partnerschaft; sie belegt keine bereits erfolgte Barauszahlung an sämtliche beteiligten Behörden.[30]",
+          "category": "business",
+          "impact": 3,
+          "sources": [
+            {
+              "label": "[30] www.anthropic.com",
+              "url": "https://www.anthropic.com/news/genesis-mission-commitment"
+            }
+          ],
+          "change_type": "business",
+          "candidate_ids": [
+            "60cca762be28a6cce19e"
+          ],
+          "n": 8
         }
       ],
       "skip": []
