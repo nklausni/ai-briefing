@@ -11650,67 +11650,209 @@
    ],
    "first_seen": "2026-10-11",
    "change_type": "update"
-  }
- ],
- "summaries": [
-  {
-   "topic_id": "ai-news",
-   "date": "2026-09-07",
-   "summary": "OpenAI veröffentlicht neue interne Kennzahlen zum Einsatz von Coding-Agenten in der Forschung und ordnet diese als Fortschritt hin zu einem automatisierten Forschungsassistenten ein.",
-   "skip": []
   },
   {
    "topic_id": "lokale-llms",
-   "date": "2026-09-07",
-   "summary": "Im Zeitraum 06./07.09.2026 fand sich keine belastbar datierte neue Veröffentlichung offener Gewichte oder eines lokalen Laufzeitsystems.",
-   "skip": [
+   "title": "HAL-X veröffentlicht THX-01 als lokales 322M-Entscheidungsmodell",
+   "category": "lokal",
+   "impact": 3,
+   "date": "2026-10-10",
+   "summary": "HAL-X veröffentlicht am 10. Oktober THX-01 mit 322 Millionen Parametern, offenen Gewichten und Python-Paket unter Apache 2.0; das Modell liefert strukturierte Entscheidungen statt freien Text.[158][159] Die Model Card begrenzt die Eingabe je Frage auf 1.024 Tokens; Smartphonebetrieb benötigt eine passende Laufzeit, und beworbene Latenzvorteile beruhen auf unterschiedlichen Serving-Bedingungen.[159][158]",
+   "sources": [
     {
-     "reason": "Keine neue eigenständige Entwicklung im Zeitraum",
-     "text": "Die Recherche bei Ollama, Hugging Face und den priorisierten Modellquellen ergab für den 06./07.09.2026 kein verifiziertes neues Open-Weight- oder On-Device-Release."
+     "label": "[158] huggingface.co",
+     "url": "https://huggingface.co/blog/doofz/thx-01-we-open-sourced-a-322m-decision-model-that"
+    },
+    {
+     "label": "[159] huggingface.co",
+     "url": "https://huggingface.co/doofz/THX-01"
     }
-   ]
+   ],
+   "first_seen": "2026-10-12",
+   "change_type": "general_availability"
+  },
+  {
+   "topic_id": "lokale-llms",
+   "title": "Scality AI Inference Factory startet für eigene Unternehmensinfrastruktur",
+   "category": "lokal",
+   "impact": 3,
+   "date": "2026-10-08",
+   "summary": "Scality meldet am 8. Oktober die Verfügbarkeit der AI Inference Factory für Open-Weight-Inferenz auf unternehmenseigener Infrastruktur.[170] Der unterstützte Stack verbindet validierte Modelle, getrennte Inferenzdienste, einen Kontrolllayer und ADI-Speicher; behauptete Kosten- und Souveränitätsvorteile werden nicht als unabhängig bestätigte Garantien übernommen.[170]",
+   "sources": [
+    {
+     "label": "[170] www.scality.com",
+     "url": "https://www.scality.com/press-releases/ai-inference-factory"
+    }
+   ],
+   "first_seen": "2026-10-12",
+   "change_type": "general_availability"
   },
   {
    "topic_id": "agentic-engineering",
-   "date": "2026-09-07",
-   "summary": "GitHub erprobt mit HydraFusion die automatische Orchestrierung mehrerer Modellfamilien für Coding-Aufgaben. OpenAI veröffentlicht zugleich interne Nutzungsdaten, nach denen Coding-Agenten in der Forschung zunehmend parallel und für längere Aufgaben eingesetzt werden.",
-   "skip": []
+   "title": "SWE-Journey prüft lange Coding-Aufgaben mit simulierten Nutzerpersonas",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-10-08",
+   "summary": "Der am 8. Oktober eingereichte SWE-Journey-Preprint verbindet lange Coding-Aufgaben mit vier aus Interaktionsdaten abgeleiteten, simulierten Nutzerpersonas.[164] Die Autoren berichten im Mittel über 75 Prozent bestandene Funktionstests mit Softwarearchitekten, aber weniger als 25 Prozent mit Nichtprogrammierern; das ist ein Ergebnis dieser Simulation, keine Erfolgsquote für sämtliche realen Nutzer.[164]",
+   "sources": [
+    {
+     "label": "[164] arxiv.org",
+     "url": "https://arxiv.org/abs/2610.11559"
+    }
+   ],
+   "first_seen": "2026-10-12",
+   "change_type": "research"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "ElevenAgents validiert Structured Procedures automatisch beim Speichern",
+   "category": "agents",
+   "impact": 2,
+   "date": "2026-10-05",
+   "summary": "ElevenAgents kompiliert und validiert Structured Procedures laut Changelog vom 5. Oktober automatisch beim Speichern beziehungsweise Veröffentlichen über Update Agent und Create Agent Draft.[167] Ungültige Prozeduren führen zu 400 procedure_validation_failed; der separate Compile-Endpunkt bleibt für bestehende Integrationen verfügbar, gilt für neue aber als Legacy.[167]",
+   "sources": [
+    {
+     "label": "[167] elevenlabs.io",
+     "url": "https://elevenlabs.io/docs/changelog/2026/10/5"
+    }
+   ],
+   "first_seen": "2026-10-12",
+   "change_type": "update"
   },
   {
    "topic_id": "ai-tools",
-   "date": "2026-09-07",
-   "summary": "GitHub startet mit HydraFusion eine Research Preview für automatische Multi-Modell-Auswahl in Copilot. Sie kombiniert Modellwahl, Eskalation und unabhängige Kritik in einem auswählbaren Laufzeitmodus.",
-   "skip": []
+   "title": "ElevenAgents stellt Merge Proposals als Alpha bereit",
+   "category": "tools",
+   "impact": 2,
+   "date": "2026-10-05",
+   "summary": "ElevenAgents führt am 5. Oktober Merge Proposals als Alpha ein: Teams können Änderungen zwischen Agentenbranches vorschlagen, Konfiguration und Tests prüfen, kommentieren und freigegebene Änderungen zusammenführen.[167] Dieser frühe Freigabeschritt ist keine allgemeine Verfügbarkeit und bleibt von der automatischen Prozedurvalidierung getrennt.[167]",
+   "sources": [
+    {
+     "label": "[167] elevenlabs.io",
+     "url": "https://elevenlabs.io/docs/changelog/2026/10/5"
+    }
+   ],
+   "first_seen": "2026-10-12",
+   "change_type": "preview"
   },
   {
    "topic_id": "context-engineering",
-   "date": "2026-09-07",
-   "summary": "GitHub erprobt mit HydraFusion eine Laufzeitentscheidung darüber, wann ein einzelnes Modell genügt, wann eskaliert wird und wann ein unabhängiger Review-Schritt sinnvoll ist.",
-   "skip": []
+   "title": "Claude Code findet im Bit-Cloud-Demotest Kontext über zwei MCP-Aufrufe",
+   "category": "tools",
+   "impact": 2,
+   "date": "2026-10-11",
+   "summary": "Ein am 11. Oktober veröffentlichter Bit-Cloud-Demotest zeigt, wie Claude Code ohne lokale Komponenten über read_scope und read_components Abhängigkeiten und Versionskontext findet.[162] Der Autor meldet 41 bestandene Tests, räumt aber überspringbare MongoDB-Integrationstests und separat nötige API-Prüfungen ein; als Bit-Cloud-Mitarbeiter liefert er eine praktische Fallstudie, keinen unabhängigen Qualitätsbenchmark.[162]",
+   "sources": [
+    {
+     "label": "[162] thenewstack.io",
+     "url": "https://thenewstack.io/claude-code-mcp-records/"
+    }
+   ],
+   "first_seen": "2026-10-12",
+   "change_type": "research"
   },
   {
    "topic_id": "ai-security",
-   "date": "2026-09-07",
-   "summary": "Für AI-Sicherheit und Safety fand sich im Zeitraum keine belastbar datierte, eigenständige Entwicklung mit ausreichender Relevanz.",
-   "skip": [
+   "title": "OrcaCyber Zero 1.5 startet als zugangsbeschränkte Sicherheits-API",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-10-10",
+   "summary": "OrcaRouter datiert OrcaCyber Zero 1.5 auf den 10. Oktober und bietet das Modell über eine OpenAI-kompatible API mit einer Million Tokens Kontext, Function Calling und strukturierten Ausgaben an.[157][156] Zugang erhalten nur zugelassene Sicherheitsforscher und autorisierte Tests im Security-Research-Tarif; die genannten Benchmarkergebnisse sind Anbieterwerte, keine unabhängig replizierten Nachweise.[157]",
+   "sources": [
     {
-     "reason": "Keine neue eigenständige Entwicklung im Zeitraum",
-     "text": "Bei den priorisierten Sicherheitsquellen fand sich für den 06./07.09.2026 keine verifizierte neue Entwicklung zu Prompt Injection, Sandboxing, Egress oder automatisierter Schwachstellensuche."
+     "label": "[156] www.marktechpost.com",
+     "url": "https://www.marktechpost.com/2026/10/10/orcarouter-releases-orcacyber-zero-1-5-cybersecurity-model-with-1m-context/"
+    },
+    {
+     "label": "[157] www.orcarouter.ai",
+     "url": "https://www.orcarouter.ai/models/orca/orcacyber-zero-1.5"
     }
-   ]
+   ],
+   "first_seen": "2026-10-12",
+   "change_type": "update"
+  },
+  {
+   "topic_id": "ai-security",
+   "title": "Project Beacon: Goodfire und Baseten kündigen Sicherheitsmonitoring an",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-10-09",
+   "summary": "Goodfire und Baseten kündigen am 9. Oktober Project Beacon an, das Aktivierungsmonitore in Basetens Inferenzplattform integrieren soll.[171] Vorgesehen sind unter anderem Signale für Prompt Injection, sensible Daten und Reward Hacking; das Original formuliert den Kundenzugang zukunftsgerichtet, deshalb keine bereits bestätigte GA.[171]",
+   "sources": [
+    {
+     "label": "[171] goodfire.ai",
+     "url": "https://goodfire.ai/blog/goodfire-baseten-partnership"
+    }
+   ],
+   "first_seen": "2026-10-12",
+   "change_type": "announcement"
+  },
+  {
+   "topic_id": "ai-security",
+   "title": "AvePoint Policies ergänzt Agent content labeling",
+   "category": "security",
+   "impact": 2,
+   "date": "2026-10-11",
+   "summary": "AvePoint ergänzt laut Oktoberupdate vom 11. Oktober Agent content labeling: Sensitivitätslabels werden automatisch auf Inhalte in Agentenwissensbasen und auf von Copilot-Studio- oder SharePoint-Agenten abgerufene Inhalte angewendet.[168] Die Funktion beschreibt Klassifizierung, nicht einen unabhängig bestätigten vollständigen Schutz vor Datenabfluss.[168]",
+   "sources": [
+    {
+     "label": "[168] www.avepoint.com",
+     "url": "https://www.avepoint.com/blog/solutions-blog/avepoint-updates-october-2026"
+    }
+   ],
+   "first_seen": "2026-10-12",
+   "change_type": "update"
   },
   {
    "topic_id": "ai-governance",
-   "date": "2026-09-07",
-   "summary": "OpenAI verknüpft den Ausbau automatisierter Forschung ausdrücklich mit öffentlicher Messung, Sicherheitsarbeit und menschlicher Entscheidungshoheit. Damit wird die Offenlegung eigener Fortschrittsmetriken selbst zum Governance-Thema.",
-   "skip": []
+   "title": "AgentPulse erweitert Governance auf Amazon- und Claude-Agenten",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-10-11",
+   "summary": "AvePoint beschreibt im Update vom 11. Oktober die Erweiterung von AgentPulse um Reporting und Governance-Sichtbarkeit für Amazon- und Anthropic-Claude-Agenten.[168] Eine Origin-Spalte kennzeichnet die Herkunft; die angekündigte zentrale Übersicht ist eine Herstellerfunktion, kein unabhängig gemessener Nachweis besserer Sicherheitswirkung.[168]",
+   "sources": [
+    {
+     "label": "[168] www.avepoint.com",
+     "url": "https://www.avepoint.com/blog/solutions-blog/avepoint-updates-october-2026"
+    }
+   ],
+   "first_seen": "2026-10-12",
+   "change_type": "integration"
+  },
+  {
+   "topic_id": "ai-governance",
+   "title": "Outbound Investment Security Program: Treasury legt erste Geldstrafe offen",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-10-07",
+   "summary": "Treasury veröffentlicht am 7. Oktober die erste Geldstrafe unter dem Outbound Investment Security Program: Amidi wurde wegen einer nicht gemeldeten Investition seiner kontrollierten chinesischen Tochter in ein Unternehmen für verkörperte KI mit 200.000 Dollar belegt.[166] Die Strafe wurde bereits im Juli 2026 verhängt; neu ist die Veröffentlichung, nicht eine erst im Oktober erfolgte Sanktion.[166]",
+   "sources": [
+    {
+     "label": "[166] home.treasury.gov",
+     "url": "https://home.treasury.gov/news/press-releases/sb0652"
+    }
+   ],
+   "first_seen": "2026-10-12",
+   "change_type": "policy"
   },
   {
    "topic_id": "enterprise",
-   "date": "2026-09-07",
-   "summary": "Interne Kennzahlen von OpenAI zeigen, wie Agentenarbeit in forschungsnahen Organisationen zum eigenen Produktionsfaktor wird. Unternehmen müssen dabei Kosten, parallele Ausführung und menschliche Freigaben als zusammenhängendes Betriebsmodell behandeln.",
-   "skip": []
-  },
+   "title": "Copilot Studio Agent Backup wird bei AvePoint allgemein verfügbar",
+   "category": "tools",
+   "impact": 3,
+   "date": "2026-10-11",
+   "summary": "AvePoint erklärt Copilot Studio Agent Backup im Update vom 11. Oktober für allgemein verfügbar: Gesichert und wiederhergestellt werden Agentenkonfigurationen einschließlich Prompts, Topics, Orchestrierungslogik und Workflows.[168] Environment- und Tenant-Angaben erleichtern die Auswahl gleichnamiger Agenten; die GA ist ein eigener Freigabeschritt, nicht bloß eine weitere allgemeine Backup-Ankündigung.[168]",
+   "sources": [
+    {
+     "label": "[168] www.avepoint.com",
+     "url": "https://www.avepoint.com/blog/solutions-blog/avepoint-updates-october-2026"
+    }
+   ],
+   "first_seen": "2026-10-12",
+   "change_type": "general_availability"
+  }
+ ],
+ "summaries": [
   {
    "topic_id": "ai-news",
    "date": "2026-09-08",
@@ -13769,6 +13911,106 @@
      "text": "Bereits veröffentlichte Entwicklungen werden nicht erneut als Tagesneuigkeit datiert. Preview, öffentliche Beta und GA bleiben getrennt; sämtliche Kandidatenentscheidungen und Belege liegen im Tagesaudit und Forschungsprotokoll."
     }
    ]
+  },
+  {
+   "topic_id": "ai-news",
+   "date": "2026-10-12",
+   "summary": "TypeSafe AI meldet eine Series A über 870 Millionen Dollar bei 7,5 Milliarden Dollar Bewertung, angeführt von Andreessen Horowitz mit Sequoia und DCVC.[118][53][133] Das ist ein Finanzierungsmeilenstein nach dem Jev-Start, keine erneute Modellfreigabe; Nutzungs- und Umsatzbehauptungen des Anbieters werden nicht als unabhängig bestätigte Marktgröße übernommen.[53][135]",
+   "skip": [
+    {
+     "reason": "Originaldaten und Fortführung",
+     "text": "Meldungen aus früheren Ausgaben bleiben mit ihrem Originaldatum erhalten; nur ausdrücklich zugeordnete neue Entwicklungen werden ergänzt. Für jeden Recherchekandidaten ist eine begründete Auswahl-, Duplikat- oder Zurückstellungsentscheidung dokumentiert."
+    },
+    {
+     "reason": "Offene Quellenlücken",
+     "text": "Meta AI: aktuelle Unternehmensnews trotz veralteter Originalindizes und verpflichtender Ersatzsuchen offen. xAI: News-Pflichtcheck bleibt offen; API-Notes wurden gelesen, ersetzen den Unternehmensindex aber nicht."
+    },
+    {
+     "reason": "Eingeschränkte Quellen",
+     "text": "Qwen: gerenderter Research-Index bleibt bei September, Indexabdeckung eingeschränkt. VentureBeat: Kategorieindex veraltet trotz funktionierender Homepage und Originalabrufe. ChinaTalk: Interviewvolltext hinter Registrierungswand. Simon Willison: NYT-Original zum Visaantragsdetail gesperrt; Detail nicht als neue bestätigte Meldung aufgenommen."
+    },
+    {
+     "reason": "Zurückgestellt",
+     "text": "Interne Claude-Navigation und HomeView-Gerüchte sind keine bestätigten Freigaben. gpt-rosalind-discovery und Decision 3.0 fehlen gesicherte neue primäre Release-Tagesdaten; ältere Studienberichte und Huxe werden nicht auf das Berichtsdatum umdatiert."
+    }
+   ]
+  },
+  {
+   "topic_id": "lokale-llms",
+   "date": "2026-10-12",
+   "summary": "HAL-X veröffentlicht am 10. Oktober THX-01 mit 322 Millionen Parametern, offenen Gewichten und Python-Paket unter Apache 2.0; das Modell liefert strukturierte Entscheidungen statt freien Text.[158][159] Die Model Card begrenzt die Eingabe je Frage auf 1.024 Tokens; Smartphonebetrieb benötigt eine passende Laufzeit, und beworbene Latenzvorteile beruhen auf unterschiedlichen Serving-Bedingungen.[159][158]",
+   "skip": [
+    {
+     "reason": "Originaldaten und Fortführung",
+     "text": "Meldungen aus früheren Ausgaben bleiben mit ihrem Originaldatum erhalten; nur ausdrücklich zugeordnete neue Entwicklungen werden ergänzt. Für jeden Recherchekandidaten ist eine begründete Auswahl-, Duplikat- oder Zurückstellungsentscheidung dokumentiert."
+    }
+   ]
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "date": "2026-10-12",
+   "summary": "Der am 8. Oktober eingereichte SWE-Journey-Preprint verbindet lange Coding-Aufgaben mit vier aus Interaktionsdaten abgeleiteten, simulierten Nutzerpersonas.[164] Die Autoren berichten im Mittel über 75 Prozent bestandene Funktionstests mit Softwarearchitekten, aber weniger als 25 Prozent mit Nichtprogrammierern; das ist ein Ergebnis dieser Simulation, keine Erfolgsquote für sämtliche realen Nutzer.[164]",
+   "skip": [
+    {
+     "reason": "Originaldaten und Fortführung",
+     "text": "Meldungen aus früheren Ausgaben bleiben mit ihrem Originaldatum erhalten; nur ausdrücklich zugeordnete neue Entwicklungen werden ergänzt. Für jeden Recherchekandidaten ist eine begründete Auswahl-, Duplikat- oder Zurückstellungsentscheidung dokumentiert."
+    }
+   ]
+  },
+  {
+   "topic_id": "ai-tools",
+   "date": "2026-10-12",
+   "summary": "ElevenAgents führt am 5. Oktober Merge Proposals als Alpha ein: Teams können Änderungen zwischen Agentenbranches vorschlagen, Konfiguration und Tests prüfen, kommentieren und freigegebene Änderungen zusammenführen.[167] Dieser frühe Freigabeschritt ist keine allgemeine Verfügbarkeit und bleibt von der automatischen Prozedurvalidierung getrennt.[167]",
+   "skip": [
+    {
+     "reason": "Originaldaten und Fortführung",
+     "text": "Meldungen aus früheren Ausgaben bleiben mit ihrem Originaldatum erhalten; nur ausdrücklich zugeordnete neue Entwicklungen werden ergänzt. Für jeden Recherchekandidaten ist eine begründete Auswahl-, Duplikat- oder Zurückstellungsentscheidung dokumentiert."
+    }
+   ]
+  },
+  {
+   "topic_id": "context-engineering",
+   "date": "2026-10-12",
+   "summary": "Ein am 11. Oktober veröffentlichter Bit-Cloud-Demotest zeigt, wie Claude Code ohne lokale Komponenten über read_scope und read_components Abhängigkeiten und Versionskontext findet.[162] Der Autor meldet 41 bestandene Tests, räumt aber überspringbare MongoDB-Integrationstests und separat nötige API-Prüfungen ein; als Bit-Cloud-Mitarbeiter liefert er eine praktische Fallstudie, keinen unabhängigen Qualitätsbenchmark.[162]",
+   "skip": [
+    {
+     "reason": "Originaldaten und Fortführung",
+     "text": "Meldungen aus früheren Ausgaben bleiben mit ihrem Originaldatum erhalten; nur ausdrücklich zugeordnete neue Entwicklungen werden ergänzt. Für jeden Recherchekandidaten ist eine begründete Auswahl-, Duplikat- oder Zurückstellungsentscheidung dokumentiert."
+    }
+   ]
+  },
+  {
+   "topic_id": "ai-security",
+   "date": "2026-10-12",
+   "summary": "OrcaRouter datiert OrcaCyber Zero 1.5 auf den 10. Oktober und bietet das Modell über eine OpenAI-kompatible API mit einer Million Tokens Kontext, Function Calling und strukturierten Ausgaben an.[157][156] Zugang erhalten nur zugelassene Sicherheitsforscher und autorisierte Tests im Security-Research-Tarif; die genannten Benchmarkergebnisse sind Anbieterwerte, keine unabhängig replizierten Nachweise.[157]",
+   "skip": [
+    {
+     "reason": "Originaldaten und Fortführung",
+     "text": "Meldungen aus früheren Ausgaben bleiben mit ihrem Originaldatum erhalten; nur ausdrücklich zugeordnete neue Entwicklungen werden ergänzt. Für jeden Recherchekandidaten ist eine begründete Auswahl-, Duplikat- oder Zurückstellungsentscheidung dokumentiert."
+    }
+   ]
+  },
+  {
+   "topic_id": "ai-governance",
+   "date": "2026-10-12",
+   "summary": "AvePoint beschreibt im Update vom 11. Oktober die Erweiterung von AgentPulse um Reporting und Governance-Sichtbarkeit für Amazon- und Anthropic-Claude-Agenten.[168] Eine Origin-Spalte kennzeichnet die Herkunft; die angekündigte zentrale Übersicht ist eine Herstellerfunktion, kein unabhängig gemessener Nachweis besserer Sicherheitswirkung.[168]",
+   "skip": [
+    {
+     "reason": "Originaldaten und Fortführung",
+     "text": "Meldungen aus früheren Ausgaben bleiben mit ihrem Originaldatum erhalten; nur ausdrücklich zugeordnete neue Entwicklungen werden ergänzt. Für jeden Recherchekandidaten ist eine begründete Auswahl-, Duplikat- oder Zurückstellungsentscheidung dokumentiert."
+    }
+   ]
+  },
+  {
+   "topic_id": "enterprise",
+   "date": "2026-10-12",
+   "summary": "AvePoint erklärt Copilot Studio Agent Backup im Update vom 11. Oktober für allgemein verfügbar: Gesichert und wiederhergestellt werden Agentenkonfigurationen einschließlich Prompts, Topics, Orchestrierungslogik und Workflows.[168] Environment- und Tenant-Angaben erleichtern die Auswahl gleichnamiger Agenten; die GA ist ein eigener Freigabeschritt, nicht bloß eine weitere allgemeine Backup-Ankündigung.[168]",
+   "skip": [
+    {
+     "reason": "Originaldaten und Fortführung",
+     "text": "Meldungen aus früheren Ausgaben bleiben mit ihrem Originaldatum erhalten; nur ausdrücklich zugeordnete neue Entwicklungen werden ergänzt. Für jeden Recherchekandidaten ist eine begründete Auswahl-, Duplikat- oder Zurückstellungsentscheidung dokumentiert."
+    }
+   ]
   }
  ],
  "fingerprints": {
@@ -13777,32 +14019,32 @@
    "date": "2026-10-11"
   },
   "lokale-llms": {
-   "hash": "994fefe1bf38c62925d06eb4c48bc80a10b45e50",
-   "date": "2026-10-11"
+   "hash": "92fb0bd6823e7f9daaadfade708c66539c01347f",
+   "date": "2026-10-12"
   },
   "agentic-engineering": {
-   "hash": "e2ed6e3b3a21ee9f984a56cf9ca0f6089b9c1a3c",
-   "date": "2026-10-11"
+   "hash": "9e8ff65d83a15b333fad8a67d93f7f04992d54d7",
+   "date": "2026-10-12"
   },
   "ai-tools": {
-   "hash": "5ac858ecbc1962d9e5f21673a5a6149072b2d77c",
-   "date": "2026-10-11"
+   "hash": "8a9f91488c66409e75604e9e13fdb2f4355ba89d",
+   "date": "2026-10-12"
   },
   "context-engineering": {
-   "hash": "2655d2717c4bd8c702d7ac93c18e4621f4f38c0d",
-   "date": "2026-10-11"
+   "hash": "5b9f7806e4689688016bf9efce58cd13974d637f",
+   "date": "2026-10-12"
   },
   "ai-security": {
-   "hash": "75fde11cc7a2adc29ef2b1f71f550d89bd76e371",
-   "date": "2026-10-11"
+   "hash": "3884e78614b6aa1c5a2a51f9102d054d7d504a1e",
+   "date": "2026-10-12"
   },
   "ai-governance": {
-   "hash": "e51e8352b5f7d258e02d6142b07fb2affc797b64",
-   "date": "2026-10-11"
+   "hash": "2d5bcb216641ebdc4b276cf5322a0f1daad3c4e0",
+   "date": "2026-10-12"
   },
   "enterprise": {
-   "hash": "d66a83dec28a1d95c8bcf36e28903921ab1a05d9",
-   "date": "2026-10-11"
+   "hash": "ed4e624986fb18e1918eb31c14157b14d3f5d333",
+   "date": "2026-10-12"
   }
  }
 }
