@@ -17,6 +17,23 @@ Lies `docs/editorial-contract.md` vollständig. Erzeuge atomare Kandidaten mit
 Die Schlussredaktion verwendet diese Felder zur Abnahme; liefere auch bei
 Sammelartikeln eine belegte Entwicklung je Kandidat.
 
+## Prüffähige Dateioperationen im unbeaufsichtigten Lauf
+
+Schreibe JSON-Checkpoints, redaktionelle Daten und kurze Hilfsskripte mit dem
+Dateiwerkzeug `write_file`, statt große Python-Inline-Payloads oder Shell-Heredocs
+für Datei-/Netzwerkoperationen zu erzeugen. Lies bestehende Dateien mit `read_file`
+oder den vorhandenen Pipeline-CLIs. Falls ein Hilfsskript nötig ist, speichere es
+nur im eigenen Worker-Verzeichnis, prüfe seinen Inhalt und führe es als Datei aus;
+auch dieser Aufruf unterliegt unverändert der normalen Sicherheitsprüfung.
+
+`pending_approval` bedeutet nicht ausgeführt und ist kein Quellenfehler. Eine
+explizite Freigabeanforderung für eine Aktion nicht durch andere Werkzeuge oder
+Verschleierung umgehen. Freigabesicherung nicht deaktivieren. Sichere bereits
+vorhandene Resultate, stoppe die betroffene Aktion und melde dem Hauptagenten
+Befehl, Zweck und ausstehenden Checkpoint. Bereits vorliegende, separat zulässige
+Dateioperationen über die dafür vorgesehenen Werkzeuge durchführen, nicht die
+blockierte Aktion wiederholt oder verändert erzwingen. Suchbudgets bleiben erhalten.
+
 ## Qwen: aktuelle Quelle
 
 Für die Quelle `qwen.ai` prüfe `https://qwen.ai/research` und die dort verlinkten

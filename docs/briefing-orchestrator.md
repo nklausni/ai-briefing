@@ -40,6 +40,20 @@ abgeschlossene Vortage vorhanden sind, mischt es historisch langsamere Quellen a
 die Pakete. `tasks` zeigt die offenen Aufträge. Lies außerdem
 `docs/briefing-research-worker.md`, um die Ergebnisse prüfen zu können.
 
+## Unbeaufsichtigte Dateioperationen und Freigaben
+
+Für JSON-Eingaben, Redaktion und Worker-Hilfsskripte verwende `write_file` und
+vorhandene CLIs; keine großen Inline-Interpreter-Payloads für Datei-/Netzwerkaktionen.
+Hilfsskripte nur in RUN ablegen, lesen und normal prüfen lassen. Die
+Freigabesicherung bleibt unverändert aktiv. `pending_approval` bedeutet: Aktion
+nicht ausgeführt; nicht durch ein anderes Werkzeug oder eine umformulierte Aktion
+umgehen. Keine wiederholten blockierten Befehle und kein Reset der Suchbudgets.
+Die gespeicherten Checkpoints erhalten und eindeutig benennen, welche Aktion
+Freigabe braucht; diese nicht fälschlich als Quellen-Ausfall oder Prüfung verbuchen.
+Im Kopf jedes Worker-Auftrags auf diese Dateioperationen-Regel und
+`docs/briefing-research-worker.md` verweisen. Bei autorisierter Wiederaufnahme
+bestehende Belege/Checkpoints verwenden und nur fehlende Quellen abschließen.
+
 ## 2. Recherche in parallelen Cron-Batches ausführen
 
 Nutze die aktuell in Hermes konfigurierte Delegationsgrenze von **zehn
