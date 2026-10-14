@@ -11,7 +11,20 @@ class HermesRuntimeTests(unittest.TestCase):
     def setUp(self):
         self.cfg = {"delegation": {"max_concurrent_children": 10}}
         self.job = {"enabled": True, "prompt": "current instruction", "workdir": "/opt/data/ai-briefing",
-                    "schedule": {"expr": "0 6,7 * * *"}, "script": "ai-briefing-berlin-gate.py"}
+                    "schedule": {"expr": "0 6,7 * * *"}, "script": "ai-briefing-berlin-gate.py",
+                    "enabled_toolsets": ["web", "terminal", "file", "delegation"]}
+
+    def test_plural_files_toolset_is_rejected(self):
+        job = copy.deepcopy(self.job)
+        job['enabled_toolsets'] = ['web', 'terminal', 'files', 'delegation']
+        result = r.checks(self.cfg, job, 1800, 1800, 'current instruction')
+        self.assertFalse(result['cron_toolsets_valid'])
+
+    def test_missing_file_toolset_is_rejected(self):
+        job = copy.deepcopy(self.job)
+        job['enabled_toolsets'] = ['web', 'terminal', 'delegation']
+        result = r.checks(self.cfg, job, 1800, 1800, 'current instruction')
+        self.assertFalse(result['cron_toolsets_valid'])
 
     def test_real_deployment_contract_accepts_persistent_runtime_values(self):
         self.assertTrue(all(r.checks(self.cfg, self.job, 1800, 1800, "current instruction").values()))

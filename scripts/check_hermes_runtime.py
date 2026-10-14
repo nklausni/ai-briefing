@@ -19,6 +19,7 @@ def checks(config, job, sequential_timeout, concurrent_timeout, expected_prompt)
         "concurrent_timeout_resolves": concurrent_timeout == TOOL_TIMEOUT_S,
         "cron_prompt_matches_repo": (job.get("prompt") or "").strip() == expected_prompt.strip(),
         "cron_enabled": job.get("enabled") is True,
+        "cron_toolsets_valid": set(job.get("enabled_toolsets") or []) == {"web", "terminal", "file", "delegation"},
         "cron_workdir": job.get("workdir") == "/opt/data/ai-briefing",
         "cron_schedule_unchanged": (job.get("schedule") or {}).get("expr") == "0 6,7 * * *",
         "berlin_gate_present": job.get("script") == "ai-briefing-berlin-gate.py",
@@ -36,6 +37,11 @@ def main():
     expected = (REPO / "ops/ai-briefing-cron-prompt.txt").read_text()
     result = checks(load_config_readonly(), job, _resolve_sequential_tool_timeout(),
                     _resolve_concurrent_tool_timeout(), expected)
+    from toolsets import resolve_toolset
+    configured_tools = set()
+    for name in job.get('enabled_toolsets') or []:
+        configured_tools.update(resolve_toolset(name))
+    result['actual_file_tools_available'] = {'read_file', 'write_file', 'patch', 'search_files'} <= configured_tools
     print(json.dumps({"status": "pass" if all(result.values()) else "fail", "checks": result}))
     return 0 if all(result.values()) else 1
 
