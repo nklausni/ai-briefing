@@ -53,6 +53,38 @@ class SearchIndexTests(unittest.TestCase):
 
 
 class SearchGenerationTests(unittest.TestCase):
+    def test_overview_has_direct_accessible_get_search_in_every_range(self):
+        from html.parser import HTMLParser
+
+        class Elements(HTMLParser):
+            def __init__(self):
+                super().__init__()
+                self.tags = []
+            def handle_starttag(self, tag, attrs):
+                self.tags.append((tag, dict(attrs)))
+
+        for key in ('today', '7d', '14d', '30d'):
+            with self.subTest(range=key):
+                page = render.build_overview(BRIEFING, key)
+                parsed = Elements()
+                parsed.feed(page)
+                forms = [attrs for tag, attrs in parsed.tags if tag == 'form']
+                self.assertEqual(len(forms), 1)
+                self.assertEqual(forms[0]['method'].lower(), 'get')
+                self.assertEqual(forms[0]['action'], ('../' if key != 'today' else '') + 'search.html')
+                self.assertEqual(forms[0]['role'], 'search')
+                inputs = [attrs for tag, attrs in parsed.tags if tag == 'input']
+                query = next(attrs for attrs in inputs if attrs.get('name') == 'q')
+                self.assertEqual(query['type'], 'search')
+                self.assertIn(f'<label for="{query["id"]}">', page)
+                self.assertIn('placeholder', query)
+                self.assertNotIn('disabled', query)
+                self.assertIn('aria-describedby', query)
+                self.assertIn('type="submit">Suchen</button>', page)
+                self.assertLess(page.index('<form'), page.index('class="ov-grid"'))
+                self.assertNotIn('search.js', page)
+                self.assertIn('flex-wrap:wrap', render.CSS)
+
     def test_assets_relative_navigation_and_idempotence(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
