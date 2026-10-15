@@ -65,8 +65,79 @@ class NewspaperLayout(unittest.TestCase):
         self.assertGreaterEqual(int(gap.group(1)), 8)
         self.assertIn(':focus-visible{outline:3px solid var(--blue);outline-offset:3px}', render.CSS)
 
-    def test_topic_desk_uses_balanced_newspaper_columns(self):
-        self.assertIn('<div class="edition-sections">', render.build_overview(BRIEFING))
+    def test_lead_and_legend_share_a_natural_height_column(self):
+        from html.parser import HTMLParser
+
+        class Columns(HTMLParser):
+            def __init__(self):
+                super().__init__()
+                self.stack = []
+                self.parents = {}
+
+            def handle_starttag(self, tag, attrs):
+                cls = dict(attrs).get('class', '')
+                if cls in ('lead-story', 'edition-aside', 'headlines'):
+                    self.parents[cls] = list(self.stack)
+                if tag not in ('br', 'input', 'meta', 'link'):
+                    self.stack.append(cls)
+
+            def handle_endtag(self, tag):
+                if self.stack:
+                    self.stack.pop()
+
+        for key, _, _ in render.RANGES:
+            parser = Columns()
+            parser.feed(render.build_overview(BRIEFING, key))
+            self.assertIn('front-primary', parser.parents['lead-story'])
+            self.assertIn('front-primary', parser.parents['edition-aside'])
+            self.assertNotIn('front-primary', parser.parents['headlines'])
+
+    def test_topic_desks_are_independent_and_keep_contiguous_reading_order(self):
+        from html.parser import HTMLParser
+
+        class Desks(HTMLParser):
+            def __init__(self):
+                super().__init__()
+                self.columns = []
+                self.in_heading = False
+
+            def handle_starttag(self, tag, attrs):
+                cls = dict(attrs).get('class')
+                if cls == 'edition-column':
+                    self.columns.append([])
+                self.in_heading = tag == 'h3' and bool(self.columns)
+
+            def handle_data(self, data):
+                if self.in_heading:
+                    self.columns[-1].append(data)
+
+            def handle_endtag(self, tag):
+                if tag == 'h3':
+                    self.in_heading = False
+
+        for key, _, _ in render.RANGES:
+            for length in (0, 1, 8, 9):
+                for summary in ('', 'Kurz.', 'Lange Zusammenfassung. ' * 100):
+                    briefing = copy.deepcopy(BRIEFING)
+                    briefing['topics'] = [dict(copy.deepcopy(BRIEFING['topics'][0]),
+                        id=f'topic-{i}', name=f'Thema {i}', summary=summary,
+                        group='Praxis' if i < 6 else 'Recht',
+                        items=[] if i % 2 else copy.deepcopy(BRIEFING['topics'][0]['items']))
+                        for i in range(length)]
+                    before = copy.deepcopy(briefing)
+                    parser = Desks()
+                    parser.feed(render.build_overview(briefing, key))
+                    self.assertEqual([name for column in parser.columns for name in column],
+                                     [t['name'] for t in briefing['topics']])
+                    self.assertTrue(all(len(c) <= (length + 1) // 2 for c in parser.columns))
+                    self.assertEqual(briefing, before)
+        import re
+        match = re.search(r'\.edition-sections\{([^}]+)\}', render.CSS)
+        self.assertIsNotNone(match)
+        rule = match.group(1) if match else ''
+        self.assertIn('display:grid', rule)
+        self.assertIn('align-items:start', rule)
+        self.assertNotRegex(rule, r'(?:^|;)columns:')
 
     def test_radar_number_ink_meets_text_contrast(self):
         for _, _, color in render.CATS:

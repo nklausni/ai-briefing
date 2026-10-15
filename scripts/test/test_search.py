@@ -81,7 +81,7 @@ class SearchGenerationTests(unittest.TestCase):
                 self.assertNotIn('disabled', query)
                 self.assertIn('aria-describedby', query)
                 self.assertIn('type="submit">Suchen</button>', page)
-                self.assertLess(page.index('<form'), page.index('class="ov-grid"'))
+                self.assertLess(page.index('<form'), page.index('class="ov-card"'))
                 self.assertNotIn('search.js', page)
                 self.assertIn('flex-wrap:wrap', render.CSS)
 

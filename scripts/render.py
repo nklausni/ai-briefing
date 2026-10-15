@@ -416,8 +416,9 @@ CSS = """  :root{
   .ov-dot{width:6px;height:6px;margin-top:8px}.ov-item-t{font-weight:700}
   .ov-item-d{grid-column:2;font-size:10px;padding:0;margin:0;letter-spacing:2px}
   .ov-link{font-size:12px;margin-top:12px;color:var(--blue)}
-  .front-page{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,1fr) minmax(180px,.7fr);gap:28px;margin:26px 0 36px}
-  .lead-story{padding-right:28px;border-right:1px solid var(--rule)}
+  .front-page{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:28px;align-items:start;margin:26px 0 28px}
+  .front-primary{min-width:0;padding-right:28px;border-right:1px solid var(--rule)}
+  .lead-story{padding:0}
   .edition-label{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--blue);font-weight:650}
   .lead-title{font-size:clamp(32px,3.7vw,53px);letter-spacing:-.035em;line-height:1.05;margin:10px 0 16px}
   .lead-title a,.headline a{color:var(--ink);text-decoration:none}.lead-title a:hover,.headline a:hover{text-decoration:underline}
@@ -426,9 +427,10 @@ CSS = """  :root{
   .headline{padding:0 0 18px;margin-bottom:18px;border-bottom:1px solid var(--rule)}
   .headline h3{font-size:25px;line-height:1.15;letter-spacing:-.02em;margin:6px 0 10px}
   .headline p{font-size:16px;line-height:1.5;margin:0}
-  .edition-aside{border-top:1px solid var(--ink);padding:12px 0;font-family:system-ui,sans-serif;font-size:12px}
-  .edition-aside h2{font:600 11px/1.5 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.12em;margin:0 0 14px}
-  .edition-aside p{padding:10px 0;border-bottom:1px solid var(--rule);margin:0}
+  .edition-aside{border-top:1px solid var(--rule);margin-top:20px;padding:12px 0 0;font-family:system-ui,sans-serif;font-size:11px;
+    display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px 20px;align-items:start}
+  .edition-aside h2{grid-column:1/-1;font:600 10px/1.5 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.12em;margin:0}
+  .edition-aside p{margin:0}
   .panel,.scale,.skip{background:none;box-shadow:none;border-radius:0;border:1px solid var(--rule)}
   .panel{padding:18px}.scale{padding:20px}.scale h3{font-family:Georgia,serif;font-size:25px;line-height:1.15}
   .section{border-top:3px double var(--ink);padding-top:12px;margin-top:36px}
@@ -442,24 +444,27 @@ CSS = """  :root{
   #search-form{padding:20px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
   #search-form .search-controls{margin:10px 0}#search-results .dcard{max-width:none}
   .sheet,.ov-card,.front-page>*{min-width:0}p,h2,h3,.sub,.dlink{overflow-wrap:anywhere}
-  .edition-sections{columns:3;column-gap:48px;column-rule:1px solid var(--rule)}
-  .edition-sections .ov-grid{display:block;margin-top:0}
-  .edition-sections .ov-group{break-after:avoid;margin:0 0 8px}
-  .edition-sections .ov-card{break-inside:avoid;padding:16px 0 28px;border:0}
+  .edition-sections{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:36px;align-items:start}
+  .edition-column{min-width:0}
+  .edition-column + .edition-column{border-left:1px solid var(--rule);padding-left:36px}
+  .edition-sections .ov-group{margin:0 0 8px}
+  .edition-sections .ov-card{padding:16px 0 24px;border:0;display:block}
+  .edition-sections .ov-card + .ov-card{border-top:1px solid var(--rule)}
   .edition-sections .ov-card-head{display:block}.edition-sections .ov-count{display:block;margin-top:4px}
-  @media(max-width:1000px){.edition-sections{columns:2;column-gap:36px}.front-page{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr)}
-    .edition-aside{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:10px 24px;align-items:baseline}
-    .edition-aside p{border:0;padding:0}.edition-aside h2{margin:0}.ov-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  @media(max-width:1000px){
+    .ov-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
     .ov-card{padding:0 18px 22px}.ov-card:nth-child(2n){border-right:0}}
-  @media(max-width:600px){.edition-sections{columns:1}body{padding-top:16px}.edition-kicker{font-size:9px;letter-spacing:.08em}
+  @media(max-width:600px){.edition-sections{display:block}
+    .edition-column + .edition-column{border:0;padding:0}
+    body{padding-top:16px}.edition-kicker{font-size:9px;letter-spacing:.08em}
     .masthead-motto{font-size:13px;margin-bottom:12px}.subrow{gap:6px}.meta-right{text-align:left;width:100%}
     .subs{flex-basis:100%}.range-sw{display:flex;gap:20px}.range-sw a{margin:0}
     .nav{justify-content:flex-start;gap:0 16px;font-size:11px}.nav a{padding:7px 0}
     .overview-search{display:block;padding:14px 0}.overview-search .search-controls{margin:8px 0}
     .overview-search p{font-size:10px}button{padding:10px 12px}
-    .front-page{display:block}.lead-story{border-right:0;border-bottom:1px solid var(--ink);padding:0 0 22px;margin-bottom:22px}
+    .front-page{display:block}.front-primary{border:0;padding:0;margin-bottom:22px}
     .lead-title{font-size:35px}.lead-story p{font-size:18px}.headline h3{font-size:26px}
-    .edition-aside{display:block}.edition-aside p{padding:6px 0}
+    .edition-aside{margin-top:16px;padding-bottom:16px;border-bottom:1px solid var(--rule)}
     .ov-grid{display:block}.ov-card,.ov-card:first-child{padding:18px 0;border-right:0;border-bottom:1px solid var(--rule)}
     .ov-group{margin-top:20px}.ov-card h3{font-size:28px}.ov-list li{font-size:19px}
     .dcard{gap:10px}.dnum{width:25px;height:25px;font-size:12px}.panel{padding:8px}
@@ -714,7 +719,7 @@ def front_page_html(topics):
                         f'<p>{esc(item["summary"])}</p><div class="dmeta">{esc(item["date"])} · Impact {esc(item["impact"])}/5 · {dots(int(item["impact"]))}</div>'
                         f'{sources_html(item)}<a class="ov-link" href="{esc(topic["id"])}.html">Zum Feld-Report →</a></article>')
     aside = '<aside class="edition-aside"><h2>Die Einordnung</h2><p>Impact je Themenbereich<br><b>●●●●●</b> Game-Changer<br><b>●●●●○</b> Stark<br><b>●●●○○</b> Relevant<br><b>●●○○○</b> Nennenswert<br><b>●○○○○</b> Routine</p><p>Im Feld-Report: alle Meldungen, Quellen und das Radar mit seiner vollständigen Legende.</p></aside>'
-    return '<section class="front-page" aria-label="Schlagzeilen">' + rendered[0] + '<div class="headlines">' + ''.join(rendered[1:]) + '</div>' + aside + '</section>', [e for _, e in stories]
+    return '<section class="front-page" aria-label="Schlagzeilen"><div class="front-primary">' + rendered[0] + aside + '</div><div class="headlines">' + ''.join(rendered[1:]) + '</div></section>', [e for _, e in stories]
 
 
 def ov_card(topic, meta=None, range_key="today", featured=()):
@@ -763,13 +768,26 @@ def build_overview(briefing, range_key="today"):
         g = t.get("group") or "Weitere"
         if g not in order:
             order.append(g)
-    blocks = []
-    for g in order:
-        grp = [t for t in topics if (t.get("group") or "Weitere") == g]
-        cards = "\n".join(ov_card(t, meta, range_key, featured) for t in grp)
-        blocks.append(f'  <div class="ov-group"><h2>{esc(g)}</h2></div>\n  <div class="ov-grid">\n{cards}\n  </div>')
-
-    body = '<div class="edition-sections">' + "\n".join(blocks) + '</div>'
+    # Two independent, contiguous reading columns: no multicolumn fragmentation
+    # or equal-height rows. Repeat the desk name when it crosses the midpoint.
+    ordered = [t for g in order for t in topics if (t.get("group") or "Weitere") == g]
+    midpoint = (len(ordered) + 1) // 2
+    columns = []
+    for start, end in ((0, midpoint), (midpoint, len(ordered))):
+        blocks = []
+        previous = None
+        for i in range(start, end):
+            topic = ordered[i]
+            group = topic.get("group") or "Weitere"
+            if group != previous:
+                continued = i == start and i > 0 and (ordered[i - 1].get("group") or "Weitere") == group
+                label = group + (' · Fortsetzung' if continued else '')
+                blocks.append(f'<div class="ov-group"><h2>{esc(label)}</h2></div>')
+                previous = group
+            blocks.append(ov_card(topic, meta, range_key, featured))
+        if blocks:
+            columns.append('<div class="edition-column">' + '\n'.join(blocks) + '</div>')
+    body = '<div class="edition-sections">' + '\n'.join(columns) + '</div>'
 
     return f'''<!DOCTYPE html>
 <html lang="de">
