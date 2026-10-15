@@ -61,6 +61,21 @@ def esc(s):
     return _html.escape(str(s), quote=True)
 
 
+def public_intro_html(meta):
+    """Reject known execution-log prose, only in the public overview intro.
+
+    This is a narrow editorial guard, not a semantic fact checker. Article
+    caveats, source access notes in audits and release milestones are untouched.
+    """
+    intro = meta.get("intro", "").strip()
+    if re.search(r"Tagesaudit|Quellenlücken|nachgeholt\w*\s+Entwicklungen|"
+                 r"bisherige\s+Ausgabe\s+bleibt\b[^.!?]*\berhalten|"
+                 r"ergänzter\s+Tagesstand", intro, re.IGNORECASE):
+        raise ValueError("meta.intro: Inhalt zusammenfassen, keinen Redaktionsstatus; "
+                         "Prozess- und Quellenlücken ins Audit verschieben.")
+    return f'<p class="lede">{esc(intro)}</p>' if intro else ""
+
+
 def pt(deg, r):
     a = deg * math.pi / 180
     return CX + r * math.sin(a), CY - r * math.cos(a)
@@ -657,7 +672,7 @@ def build_overview(briefing, range_key="today"):
   </form>
 
 {edition_note(range_key)}
-  <p class="lede">{esc(meta.get("intro",""))}</p>
+  {public_intro_html(meta)}
 
 {body}
 
@@ -670,6 +685,7 @@ def build_overview(briefing, range_key="today"):
 
 def main():
     briefing = json.loads(DATA.read_text(encoding="utf-8"))
+    public_intro_html(briefing["meta"])  # Fail before history or site writes.
     end_iso = history_mod.parse_date(briefing["meta"].get("generated")) \
         or datetime.date.today().isoformat()
 

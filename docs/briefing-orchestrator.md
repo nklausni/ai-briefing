@@ -202,7 +202,13 @@ Bearbeite `data/briefing.json`: acht bestehende Themen, deutsche Sprache, Impact
 Originalquellen-URLs, bestehendes Schema. Bei Wiederholung am selben Tag ergänze und
 dedupliziere vorhandene Meldungen. Erhalte Altinhalte nur transparent mit Originaldatum;
 nenne einen unveränderten Bereich nicht frisch recherchiert, wenn seine Quellen ausfielen.
-Das Datum `meta.generated` entspricht dem heutigen Lauf. Anschließend:
+Das Datum `meta.generated` entspricht dem heutigen Lauf. Schreibe `meta.intro`
+nach dem öffentlichen Einstieg-Vertrag in `docs/editorial-contract.md`: kurze
+inhaltliche Zusammenfassung belegter Meldungen, kein Ausführungsprotokoll.
+Keine Erhaltungs-/Nachholhinweise, Quellenlücken oder Tagesaudit-Verweise im Intro;
+Betriebsdetails bleiben im Audit. Ohne sinnvolle Zusammenfassung Intro auslassen.
+Prüfe auch die Themen-Summaries auf Prozessprosa; sachliche Einschränkungen der
+Meldungen und Preview-/GA-Unterschiede bleiben bestehen. Anschließend:
 
 ```sh
 python3 scripts/research_pipeline.py check-editor --run-dir "$RUN"

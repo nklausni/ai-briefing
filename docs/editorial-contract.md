@@ -37,6 +37,23 @@ neue Freigabe nicht ab. Routineänderungen dürfen sachlich zurückgestellt werd
 
 ## Schlussredaktion: ausdrückliche Zuordnung
 
+### Öffentlicher Einstieg: Inhalte statt Ausführungsprotokoll
+
+`meta.intro` fasst in ein bis drei kurzen Sätzen konkrete Themen der belegten
+Meldungen dieser Ausgabe zusammen. Keine neuen Fakten aus der Zusammenfassung
+ableiten. Fehlt ein sinnvoller inhaltlicher Einstieg, Feld weglassen oder leer lassen.
+Dies gilt auch für die Themen-`summary`: Nachrichten und relevante Einschränkungen,
+nicht den Redaktionsablauf beschreiben.
+
+Keine System-/Redaktionsstatusmeldungen im öffentlichen Intro: weder „bisherige
+Ausgabe bleibt erhalten“, „nachgeholte Entwicklungen“ oder „ergänzter Tagesstand“
+noch Verweise auf „Tagesaudit“, Quellenlücken, Abrufversuche oder abgeschlossene
+Prüfschritte. Solche Betriebsdetails gehören ins Audit bzw. Laufprotokoll.
+Der Renderer blockiert bekannte Prozessformulierungen in `meta.intro` vor dem
+Schreiben; die semantische Schlussprüfung bleibt erforderlich. Sachliche
+Quellenvorbehalte, Originaldaten und Unterschiede zwischen Preview, Beta und GA
+an einzelnen Meldungen bleiben erhalten. Historische Audits nicht umschreiben.
+
 Jede neue Meldung in `data/briefing.json` ergänzt das bestehende Schema um:
 
 ```json
