@@ -62,7 +62,14 @@ def build_search_index(briefing, pool, archive_dir):
     return sorted(rows, key=lambda r: (r['date'], r['topic_id'], r['title']), reverse=True)
 
 
-def build_search_page():
+def masthead_html(home='index.html', metadata=''):
+    """Shared newspaper nameplate; arguments are trusted renderer HTML."""
+    return (f'<header class="top"><div class="edition-kicker">Künstliche Intelligenz · Nachrichten & Einordnung</div>'
+            f'<h1 class="masthead"><a href="{home}">AI Briefing</a></h1>'
+            f'<p class="masthead-motto">Modelle, Werkzeuge und die Welt im Wandel.</p>{metadata}</header>')
+
+
+def build_search_page(header=None, navigation=None):
     return '''<!DOCTYPE html>
 <html lang="de">
 <head>
@@ -73,8 +80,8 @@ def build_search_page():
 <script src="search.js" defer></script>
 </head>
 <body><main class="sheet">
-<header class="top"><h1>AI-Briefing durchsuchen</h1></header>
-<nav class="nav"><a href="index.html">Zur Übersicht</a></nav>
+''' + (header or masthead_html()) + (navigation or '<nav class="nav"><a href="index.html">Zur Übersicht</a></nav>') + '''
+<h2 class="search-heading">Das Archiv durchsuchen</h2>
 <p>Suche in den gespeicherten Meldungen der aktuellen Ausgabe, der Historie und der vorhandenen Monatsarchive. Keine Suche im gesamten Web oder in den Volltexten der verlinkten Originalartikel.</p>
 <form id="search-form" role="search">
 <label for="search-query">Suchbegriffe (alle Wörter müssen vorkommen)</label>

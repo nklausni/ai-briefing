@@ -17,6 +17,18 @@ Pro Bereich gibt es eine Detailseite mit einem **Radar** (Ringe = Impact, innen 
 Segmente = Kategorie) und den Meldungen im Detail inkl. Quell-Links. Die Übersichtsseite
 bündelt die Top-Meldungen aller Bereiche.
 
+## Zeitungsgestaltung
+
+Die Oberfläche nutzt einen gemeinsamen Zeitungskopf, warme Papierfarben, lokale
+Systemschriften (Georgia/Serif und System-Sans) und ein responsives Spaltenlayout.
+Der Aufmacher folgt dem vorhandenen Impact, dann dem Originaldatum und einer stabilen
+Themen-/Artikelidentität. Die drei hervorgehobenen Meldungen werden in der
+Themenübersicht nicht noch einmal als Teaser wiederholt; alle Artikel bleiben in den
+Feld-Reports erhalten. Radarfarben, Originaldaten, Quellen und lokale Archivsuche
+bleiben unverändert verfügbar. Es werden keine externen Schriftendienste geladen.
+
+Designvertrag und Abnahmematrix: [docs/newspaper-design.md](docs/newspaper-design.md).
+
 ## Aufbau
 
 ```

@@ -82,7 +82,7 @@ class TestRenderVariants(unittest.TestCase):
             self.assertNotIn("Zeitraum: ", root, page)   # alte Label-Zeile bleibt weg
             # Umschalter samt Periodenzeile steht im meta-right-Block
             meta_block = root.split('class="meta-right"', 1)[1].split("</header>", 1)[0]
-            self.assertIn('<nav class="range-sw">', meta_block, page)
+            self.assertIn('<nav class="range-sw" aria-label="Zeitraum">', meta_block, page)
             self.assertIn('<div class="range-period">Ausgabe vom 10. Juni 2026</div>',
                           meta_block, page)
             self.assertIn('Enthält auch frühere Meldungen; Originaldaten stehen an den Einträgen.', root)

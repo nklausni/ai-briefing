@@ -24,7 +24,7 @@ import json, math, os, html as _html, datetime, re
 from pathlib import Path
 
 import history as history_mod
-from search import build_search_index, build_search_page
+from search import build_search_index, build_search_page, masthead_html
 
 # AI_BRIEFING_ROOT biegt Datenquelle und Ausgabe um (Probeläufe, Tests).
 ROOT = Path(os.environ.get("AI_BRIEFING_ROOT")
@@ -89,7 +89,10 @@ def lum(hexc):
 
 
 def contrast_text(hexc):
-    return "#ffffff" if lum(hexc) < 0.30 else "#1f1d1b"
+    background = lum(hexc)
+    light_ratio = 1.05 / (background + .05)
+    dark_ratio = (background + .05) / (lum('#191915') + .05)
+    return '#ffffff' if light_ratio >= dark_ratio else '#191915'
 
 
 def dots(imp):
@@ -171,7 +174,7 @@ def build_detail(entries):
         cname = CAT_NAME.get(e["category"], e["category"])
         primary_src = (e.get("sources") or [{}])[0].get("label", "")
         primary_url = (e.get("sources") or [{}])[0].get("url", "")
-        cat_badge = (f'<span class="cat-badge" style="background:{color}1f;color:{color}">'
+        cat_badge = (f'<span class="cat-badge" style="border-left:3px solid {color};color:var(--ink)">'
                      f'{esc(cname)}</span>')
         src_meta = f'<span class="dmeta-src">{esc(primary_src)} · {esc(e["date"])}</span> · ' if primary_src else f'<span class="dmeta-src">{esc(e["date"])}</span> · '
         title_html = (f'<a class="dtitle-link" href="{esc(primary_url)}" target="_blank" rel="noopener">{esc(e["title"])}</a>'
@@ -359,7 +362,110 @@ CSS = """  :root{
   [hidden]{display:none!important}
   #search-results{overflow-wrap:anywhere}
   #search-results .dcard{max-width:90ch}
-  :focus-visible{outline:3px solid var(--blue);outline-offset:3px}"""
+  :focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+
+  /* Newspaper edition: system fonts, paper, rules, editorial columns. */
+  :root{--paper:#f3f0e6;--ink:#191915;--muted:#5c594f;--rule:#b9b4a6;
+    --blue:#79432e;--blue-active:#512a1d;--wg100:var(--ink);--wg90:var(--muted);
+    --wg60:#777164;--wg40:var(--rule);--wg10:#ebe7db;--white:var(--paper);
+    --radius:0;--radius-lg:0;--shadow-card:none}
+  body{background:var(--paper);color:var(--ink);font-family:Georgia,'Times New Roman',serif;
+    padding:26px clamp(16px,4vw,60px) 48px;line-height:1.6}
+  .sheet{max-width:1320px}
+  a{color:var(--blue);text-underline-offset:3px}
+  header.top{border-bottom:0;padding:0}
+  .edition-kicker{font:11px/1.5 system-ui,sans-serif;letter-spacing:.16em;text-transform:uppercase;
+    text-align:center;border-top:1px solid var(--rule);padding-top:10px}
+  .top .masthead{font:700 clamp(52px,9.2vw,132px)/1.05 Georgia,'Times New Roman',serif;
+    text-align:center;letter-spacing:-.065em;margin:10px 0 0}
+  .masthead a{color:var(--ink);text-decoration:none}
+  .masthead-motto{text-align:center;font-style:italic;margin:0 0 18px;color:var(--muted);font-size:16px}
+  .subrow{margin:0;padding:9px 0;border-top:3px double var(--ink);border-bottom:1px solid var(--ink);
+    align-items:center;gap:12px}
+  .sub,.meta-right,.nav,.range-sw,.dmeta,.dsources,.key,.scale,.skip-lead,.footer,
+  .ov-count,.ov-sub,.ov-link,.ov-stale,.overview-search,#search-form,#search-status,#search-more,.edition-label{
+    font-family:system-ui,-apple-system,'Segoe UI',sans-serif}
+  .subs{flex:1 1 240px}.sub{font-size:12px}.meta-right{font-size:12px}
+  .range-period{color:var(--muted)}
+  .nav{display:flex;flex-wrap:wrap;justify-content:center;gap:2px 20px;margin:0;
+    padding:9px 0;border-bottom:3px double var(--ink);font-size:12px}
+  .nav a{margin:0;padding:5px 0}.nav a.active{text-decoration:underline;text-underline-offset:5px}
+  .range-sw a{display:inline-block;padding:5px 0}
+  .overview-search{display:grid;grid-template-columns:minmax(170px,.65fr) minmax(0,1.4fr);
+    column-gap:24px;align-items:center;margin:0 0 22px;padding:14px 0;border:0;border-bottom:1px solid var(--rule);border-radius:0;background:none}
+  .overview-search label{font-size:13px;letter-spacing:.04em}
+  .overview-search p{grid-column:2;font-size:11px;color:var(--muted);margin:0}
+  .search-controls{flex-wrap:nowrap;margin:0;gap:8px}
+  #search-query{font:14px/1.5 system-ui,sans-serif;border-radius:0;border:1px solid var(--wg60);background:#faf8f0;padding:10px 12px;flex:1 1 100px}
+  button{font:600 13px/1.5 system-ui,sans-serif;border-radius:0;background:var(--ink);border-color:var(--ink);padding:10px 20px}
+  button:hover{background:var(--blue)}
+  .lede{font-weight:400;font-size:clamp(19px,2vw,25px);line-height:1.5;letter-spacing:0;max-width:88ch;margin:18px 0 28px}
+  .topic-heading,.search-heading{font-size:clamp(32px,4vw,56px);line-height:1.1;margin:28px 0 16px;letter-spacing:-.035em}
+  .ov-group{margin:28px 0 0;padding-top:9px;border-top:3px double var(--ink)}
+  .ov-group h2{font:600 12px/1.5 system-ui,sans-serif;letter-spacing:.15em;text-transform:uppercase}
+  .ov-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:16px}
+  .ov-card{padding:0 24px 22px;border:0;border-right:1px solid var(--rule);background:none;border-radius:0;box-shadow:none}
+  .ov-card:first-child{padding-left:0}.ov-card:last-child{border-right:0}
+  .ov-card:hover{box-shadow:none;border-color:var(--rule)}
+  .ov-card-head{align-items:start;flex-wrap:wrap;gap:8px}
+  .ov-card h3{font:700 27px/1.15 Georgia,serif;letter-spacing:-.025em}
+  .ov-count{border:0;background:none;padding:0;font-size:11px}
+  .ov-card .ov-sub{display:block;overflow:visible;font-size:12px;margin-bottom:14px}
+  .ov-summary{font-size:16px;line-height:1.5;margin:0 0 16px}
+  .ov-list{gap:14px}.ov-list li{display:grid;grid-template-columns:7px minmax(0,1fr);gap:3px 9px;font-size:18px;line-height:1.3}
+  .ov-dot{width:6px;height:6px;margin-top:8px}.ov-item-t{font-weight:700}
+  .ov-item-d{grid-column:2;font-size:10px;padding:0;margin:0;letter-spacing:2px}
+  .ov-link{font-size:12px;margin-top:12px;color:var(--blue)}
+  .front-page{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,1fr) minmax(180px,.7fr);gap:28px;margin:26px 0 36px}
+  .lead-story{padding-right:28px;border-right:1px solid var(--rule)}
+  .edition-label{font-size:10px;letter-spacing:.13em;text-transform:uppercase;color:var(--blue);font-weight:650}
+  .lead-title{font-size:clamp(32px,3.7vw,53px);letter-spacing:-.035em;line-height:1.05;margin:10px 0 16px}
+  .lead-title a,.headline a{color:var(--ink);text-decoration:none}.lead-title a:hover,.headline a:hover{text-decoration:underline}
+  .lead-story p{font-size:19px;line-height:1.55;margin:0 0 14px}
+  .lead-story .dmeta{font-size:11px}.lead-story .dsources{font-size:12px}
+  .headline{padding:0 0 18px;margin-bottom:18px;border-bottom:1px solid var(--rule)}
+  .headline h3{font-size:25px;line-height:1.15;letter-spacing:-.02em;margin:6px 0 10px}
+  .headline p{font-size:16px;line-height:1.5;margin:0}
+  .edition-aside{border-top:1px solid var(--ink);padding:12px 0;font-family:system-ui,sans-serif;font-size:12px}
+  .edition-aside h2{font:600 11px/1.5 system-ui,sans-serif;text-transform:uppercase;letter-spacing:.12em;margin:0 0 14px}
+  .edition-aside p{padding:10px 0;border-bottom:1px solid var(--rule);margin:0}
+  .panel,.scale,.skip{background:none;box-shadow:none;border-radius:0;border:1px solid var(--rule)}
+  .panel{padding:18px}.scale{padding:20px}.scale h3{font-family:Georgia,serif;font-size:25px;line-height:1.15}
+  .section{border-top:3px double var(--ink);padding-top:12px;margin-top:36px}
+  .section h2{font-family:Georgia,serif;font-size:32px;letter-spacing:-.02em}
+  .dtitle{font:700 clamp(23px,2.4vw,30px)/1.18 Georgia,serif;letter-spacing:-.02em}
+  .dcard p{font-size:18px;line-height:1.6}.dmeta{font-size:11px}.dsources,.dlink{font-size:12px}
+  .cat-badge{border-radius:0;padding:2px 5px;font-size:10px}.dnum{font-family:system-ui,sans-serif}
+  .stale,.ov-stale{border-radius:0;background:transparent;border-color:var(--rule);color:#655022}
+  .footer{border-top:3px double var(--ink);font-size:11px}
+  .board{margin-top:24px}.key{font-size:11px;gap:10px}
+  #search-form{padding:20px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  #search-form .search-controls{margin:10px 0}#search-results .dcard{max-width:none}
+  .sheet,.ov-card,.front-page>*{min-width:0}p,h2,h3,.sub,.dlink{overflow-wrap:anywhere}
+  .edition-sections{columns:3;column-gap:48px;column-rule:1px solid var(--rule)}
+  .edition-sections .ov-grid{display:block;margin-top:0}
+  .edition-sections .ov-group{break-after:avoid;margin:0 0 8px}
+  .edition-sections .ov-card{break-inside:avoid;padding:16px 0 28px;border:0}
+  .edition-sections .ov-card-head{display:block}.edition-sections .ov-count{display:block;margin-top:4px}
+  @media(max-width:1000px){.edition-sections{columns:2;column-gap:36px}.front-page{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr)}
+    .edition-aside{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:10px 24px;align-items:baseline}
+    .edition-aside p{border:0;padding:0}.edition-aside h2{margin:0}.ov-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .ov-card{padding:0 18px 22px}.ov-card:nth-child(2n){border-right:0}}
+  @media(max-width:600px){.edition-sections{columns:1}body{padding-top:16px}.edition-kicker{font-size:9px;letter-spacing:.08em}
+    .masthead-motto{font-size:13px;margin-bottom:12px}.subrow{gap:6px}.meta-right{text-align:left;width:100%}
+    .subs{flex-basis:100%}.range-sw{display:flex;gap:20px}.range-sw a{margin:0}
+    .nav{justify-content:flex-start;gap:0 16px;font-size:11px}.nav a{padding:7px 0}
+    .overview-search{display:block;padding:14px 0}.overview-search .search-controls{margin:8px 0}
+    .overview-search p{font-size:10px}button{padding:10px 12px}
+    .front-page{display:block}.lead-story{border-right:0;border-bottom:1px solid var(--ink);padding:0 0 22px;margin-bottom:22px}
+    .lead-title{font-size:35px}.lead-story p{font-size:18px}.headline h3{font-size:26px}
+    .edition-aside{display:block}.edition-aside p{padding:6px 0}
+    .ov-grid{display:block}.ov-card,.ov-card:first-child{padding:18px 0;border-right:0;border-bottom:1px solid var(--rule)}
+    .ov-group{margin-top:20px}.ov-card h3{font-size:28px}.ov-list li{font-size:19px}
+    .dcard{gap:10px}.dnum{width:25px;height:25px;font-size:12px}.panel{padding:8px}
+    .scale{margin-top:24px;padding:16px}.scale li{gap:8px}.skip{padding:16px}.lede{font-size:20px}
+    .section h2{font-size:28px}.topic-heading{margin-top:24px}}
+"""
 
 SCALE_BLOCK = """  <div class="scale">
     <h3>Wie sich der Impact bestimmt</h3>
@@ -399,7 +505,7 @@ def range_switcher_html(page, active_key, period=""):
         href = f"{to_root}{page}.html" if key == "today" else f"{to_root}{key}/{page}.html"
         links.append(f'<a href="{href}"{cls}>{label}</a>')
     period_line = f'<div class="range-period">{esc(period)}</div>' if period else ""
-    return f'<nav class="range-sw">{"".join(links)}</nav>{period_line}'
+    return f'<nav class="range-sw" aria-label="Zeitraum">{"".join(links)}</nav>{period_line}'
 
 
 def nav_html(topics, active_id, range_key="today"):
@@ -410,7 +516,7 @@ def nav_html(topics, active_id, range_key="today"):
         links.append(f'<a href="{t["id"]}.html"{cls}>{esc(t["name"])}</a>')
     prefix = '' if range_key == 'today' else '../'
     links.append(f'<a href="{prefix}search.html">Suche</a>')
-    return '<nav class="nav">' + "".join(links) + '</nav>'
+    return '<nav class="nav" aria-label="Themen">' + "".join(links) + '</nav>'
 
 
 GERMAN_MONTHS = (
@@ -511,6 +617,13 @@ def footer_html(meta):
             f'{updated_line}</div>')
 
 
+def newspaper_header(meta, page, range_key, context):
+    prefix = '' if range_key == 'today' else '../'
+    metadata = (f'<div class="subrow"><div class="subs"><div class="sub">{esc(context)}</div></div>'
+                f'<div class="meta-right">{range_switcher_html(page, range_key, edition_label(meta, range_key))}</div></div>')
+    return masthead_html(prefix + 'index.html', metadata)
+
+
 def build_topic_page(topic, meta, topics, range_key="today"):
     zeitraum = edition_label(meta, range_key)
     ctx = topic.get("angle", "")
@@ -533,26 +646,13 @@ def build_topic_page(topic, meta, topics, range_key="today"):
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI-Radar — {esc(topic["name"])} — {esc(zeitraum)}</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{css_href(range_key)}">
 </head>
 <body>
-<div class="sheet">
-  <header class="top">
-    <h1>AI-Radar · {esc(topic["name"])}</h1>
-    <div class="subrow">
-      <div class="subs">
-        <div class="sub">Briefing-Infografik · Stand der AI-Welt für {esc(topic["name"])}</div>
-        <div class="sub">Blickwinkel: {esc(ctx)}</div>
-      </div>
-      <div class="meta-right">
-        {range_switcher_html(topic["id"], range_key, zeitraum)}
-      </div>
-    </div>
-  </header>
+<main class="sheet">
+  {newspaper_header(meta, topic['id'], range_key, 'Blickwinkel: ' + ctx)}
   {nav_html(topics, topic["id"], range_key)}
+  <h2 class="topic-heading">{esc(topic['name'])}</h2>
 
 {edition_note(range_key)}
   <p class="lede">{esc(topic.get("summary", ""))}</p>
@@ -579,14 +679,47 @@ def build_topic_page(topic, meta, topics, range_key="today"):
 {skip_block}
 
   {footer_html(meta)}
-</div>
+</main>
 </body>
 </html>
 '''
 
 
-def ov_card(topic, meta=None, range_key="today"):
-    top = sorted(topic.get("items", []), key=lambda e: -int(e.get("impact", 0)))[:3]
+def ranked_stories(topics):
+    """Existing editorial impact first; canonical dates and stable content break ties."""
+    return sorted(((t, e) for t in topics for e in t.get('items', [])),
+                  key=lambda pair: (-int(pair[1].get('impact', 0)),
+                                    -(int((history_mod.parse_date(pair[1].get('date')) or '0000-00-00').replace('-', ''))),
+                                    pair[0]['id'], pair[1]['title'],
+                                    json.dumps(pair[1].get('sources', []), sort_keys=True)))
+
+
+def select_lead(topics):
+    stories = ranked_stories(topics)
+    return stories[0] if stories else None
+
+
+def front_page_html(topics):
+    stories = ranked_stories(topics)[:3]
+    if not stories:
+        return '', []
+    rendered = []
+    for i, (topic, item) in enumerate(stories):
+        url = (item.get('sources') or [{}])[0].get('url') or topic['id'] + '.html'
+        heading = 'h2' if i == 0 else 'h3'
+        cls = 'lead-story' if i == 0 else 'headline'
+        title_cls = ' class="lead-title"' if i == 0 else ''
+        rendered.append(f'<article class="{cls}"><div class="edition-label">{esc(topic["name"])} · {esc(CAT_NAME.get(item["category"], item["category"]))}</div>'
+                        f'<{heading}{title_cls}><a href="{esc(url)}">{esc(item["title"])}</a></{heading}>'
+                        f'<p>{esc(item["summary"])}</p><div class="dmeta">{esc(item["date"])} · Impact {esc(item["impact"])}/5 · {dots(int(item["impact"]))}</div>'
+                        f'{sources_html(item)}<a class="ov-link" href="{esc(topic["id"])}.html">Zum Feld-Report →</a></article>')
+    aside = '<aside class="edition-aside"><h2>Die Einordnung</h2><p>Impact je Themenbereich<br><b>●●●●●</b> Game-Changer<br><b>●●●●○</b> Stark<br><b>●●●○○</b> Relevant<br><b>●●○○○</b> Nennenswert<br><b>●○○○○</b> Routine</p><p>Im Feld-Report: alle Meldungen, Quellen und das Radar mit seiner vollständigen Legende.</p></aside>'
+    return '<section class="front-page" aria-label="Schlagzeilen">' + rendered[0] + '<div class="headlines">' + ''.join(rendered[1:]) + '</div>' + aside + '</section>', [e for _, e in stories]
+
+
+def ov_card(topic, meta=None, range_key="today", featured=()):
+    top = [e for e in sorted(topic.get("items", []), key=lambda e: -int(e.get("impact", 0)))[:3]
+           if not any(e is shown for shown in featured)]
     if top:
         def title_html(e):
             url = (e.get("sources") or [{}])[0].get("url")
@@ -601,7 +734,8 @@ def ov_card(topic, meta=None, range_key="today"):
             for e in top)
         body = f'<ul class="ov-list">\n{items}\n    </ul>'
     else:
-        body = '<p class="ov-empty">In diesem Zeitraum keine eigenständigen Meldungen.</p>'
+        body = ('<p class="ov-empty">Die Schlagzeilen dieses Bereichs stehen oben; alle Meldungen im Feld-Report.</p>'
+                if topic.get('items') else '<p class="ov-empty">In diesem Zeitraum keine eigenständigen Meldungen.</p>')
     count = len(topic.get("items", []))
     count_label = "Meldung" if count == 1 else "Meldungen"
     badge = ""
@@ -614,6 +748,7 @@ def ov_card(topic, meta=None, range_key="today"):
       <span class="ov-count">{count} {count_label}</span>
     </div>{badge}
     <div class="ov-sub">{esc(topic.get("angle",""))}</div>
+    <p class="ov-summary">{esc(topic.get('summary', ''))}</p>
     {body}
     <a class="ov-link" href="{topic["id"]}.html">Zum Feld-Report <span>→</span></a>
   </div>'''
@@ -622,6 +757,7 @@ def ov_card(topic, meta=None, range_key="today"):
 def build_overview(briefing, range_key="today"):
     meta = briefing["meta"]
     topics = briefing["topics"]
+    front_page, featured = front_page_html(topics)
     order = []
     for t in topics:
         g = t.get("group") or "Weitere"
@@ -630,10 +766,10 @@ def build_overview(briefing, range_key="today"):
     blocks = []
     for g in order:
         grp = [t for t in topics if (t.get("group") or "Weitere") == g]
-        cards = "\n".join(ov_card(t, meta, range_key) for t in grp)
+        cards = "\n".join(ov_card(t, meta, range_key, featured) for t in grp)
         blocks.append(f'  <div class="ov-group"><h2>{esc(g)}</h2></div>\n  <div class="ov-grid">\n{cards}\n  </div>')
 
-    body = "\n".join(blocks)
+    body = '<div class="edition-sections">' + "\n".join(blocks) + '</div>'
 
     return f'''<!DOCTYPE html>
 <html lang="de">
@@ -641,25 +777,11 @@ def build_overview(briefing, range_key="today"):
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{esc(meta.get("title","AI-Briefing"))} Übersicht — {esc(edition_label(meta, range_key))}</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{css_href(range_key)}">
 </head>
 <body>
-<div class="sheet">
-  <header class="top">
-    <h1>{esc(meta.get("title","AI-Briefing"))} — Übersicht</h1>
-    <div class="subrow">
-      <div class="subs">
-        <div class="sub">{esc(meta.get("subtitle",""))}</div>
-        <div class="sub">{len(topics)} Themenbereich(e)</div>
-      </div>
-      <div class="meta-right">
-        {range_switcher_html("index", range_key, edition_label(meta, range_key))}
-      </div>
-    </div>
-  </header>
+<main class="sheet">
+  {newspaper_header(meta, 'index', range_key, meta.get('subtitle', '') + ' · ' + str(len(topics)) + ' Themenbereiche')}
   {nav_html(topics, "index", range_key)}
 
   <form class="overview-search" role="search" method="get" action="{'' if range_key == 'today' else '../'}search.html">
@@ -673,11 +795,12 @@ def build_overview(briefing, range_key="today"):
 
 {edition_note(range_key)}
   {public_intro_html(meta)}
+  {front_page}
 
 {body}
 
   {footer_html(meta)}
-</div>
+</main>
 </body>
 </html>
 '''
@@ -702,7 +825,7 @@ def main():
     history_mod.save_history(hist)
 
     SITE.mkdir(exist_ok=True)
-    (SITE / "style.css").write_text(CSS + "\n", encoding="utf-8")
+    (SITE / "style.css").write_text(CSS.rstrip() + "\n", encoding="utf-8")
     dirs = [SITE] + [SITE / key for key, _, _ in RANGES[1:]]
     for d in dirs:
         d.mkdir(exist_ok=True)
@@ -739,7 +862,9 @@ def main():
             (outdir / f'{rt["id"]}.html').write_text(
                 build_topic_page(rt, rmeta, rtopics, range_key=key), encoding="utf-8")
 
-    (SITE / "search.html").write_text(build_search_page(), encoding="utf-8")
+    (SITE / "search.html").write_text(build_search_page(
+        newspaper_header(briefing['meta'], 'index', 'today', 'Das Archiv'),
+        nav_html(topics, 'search')), encoding="utf-8")
     (SITE / "search.js").write_text(
         Path(__file__).with_name("search.js").read_text(encoding="utf-8"), encoding="utf-8")
     (SITE / "search-index.json").write_text(
