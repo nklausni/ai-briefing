@@ -112,6 +112,22 @@ das Briefing. Bereits abgeschlossene Quellen bleiben bei einem Retry erhalten.
 Nach einer erfolglosen Wiederherstellung bleibt der Lauf unvollständig; Grenzen
 werden nicht durch endlose neue Agenten zurückgesetzt.
 
+## Freie Ersatzbelege statt Aboschranken
+
+Eine Aboschranke ist kein Gesamtstopp. Nach dokumentiertem Zugangsergebnis
+mit den übrigen Quellen fortfahren; keine tragenden Aussagen aus Teasern.
+Die Worker-Regeln „Aboschranken und freie Ersatzquellen“ und „Headless Chrome
+mit normalem Desktop-User-Agent“ sind verbindlich. Bei technischen Index-/JS-/403-
+Problemen scripts/browser_source_fetch.py nutzen und Cache inhaltlich prüfen.
+Ein erfolgreicher Ersatzabruf gehört ins Audit; eine echte Aboschranke bleibt getrennt.
+Frei lesbare Originalquellen oder unabhängige Berichte zum selben Thema nutzen;
+Belege und veröffentlichte URLs müssen die tatsächlich gelesene Quelle nennen.
+Separat übergebene Ersatzkandidaten vor assemble nach regulärem Discovery-Schema
+in dessen vorhandenen Checkpoint einarbeiten und validieren; bestehende Entdeckungen
+nicht überschreiben. Dabei keine Budgets zurücksetzen, keine neue Pflichtquelle
+einführen und keine ungelese­ne Bezahlquelle als vollständig geprüft ausgeben.
+Ohne belastbaren Ersatz Kandidat auslassen, Zugriffslücke im Audit belassen.
+
 ## 3. Quellenabdeckung und Belege zusammenführen
 
 ```sh

@@ -125,6 +125,54 @@ Alternativen sind keine Garantie für vollständige Verfügbarkeit. Dokumentiere
 fehlgeschlagene und erfolgreiche Zugangswege im `result`; verbleibende Einschränkungen
 müssen in die Abschlussmeldung. Kein Quellenfehler darf andere Quellen abbrechen.
 
+## Headless Chrome mit normalem Desktop-User-Agent
+
+Bei HTTP-403/429, veraltetem Extraktionsindex oder JS-Hülle den begrenzten
+Browser-Ersatzweg verwenden, insbesondere für xAI. Verbindlicher Einstieg:
+
+```sh
+python3 ROOT/scripts/browser_source_fetch.py --url 'https://x.ai/news/' --session 'briefing-xai-ID' --output 'WORKER/xai-browser.json'
+```
+
+ROOT, ID und WORKER durch eigene tatsächliche Pfade/Assignmentkennung ersetzen.
+Das Hilfsskript nutzt Headless Chrome mit normaler Desktop-Chrome-Kennung und
+Navigation/Extraktion in EINEM agent-browser batch. Getrennte CLI-Aufrufe können
+sonst in about:blank landen und die User-Agent-Einstellung verlieren. Cache enthält
+URL, Zeitpunkt, tatsächlichen User-Agent, Volltext und Links. Die JSON-Datei lesen;
+Titel, Datum, Identität und tragende Aussagen prüfen. Nicht allein einen Exit-Code,
+Zeichenzahl oder eine Cloudflare-Seite als erfolgreichen Quellenabruf werten.
+Am 14.10. war xAI mit Standard-Headless-Kennung gesperrt, mit Desktop-Kennung
+war der aktuelle Newsindex lesbar. Dies ist keine Garantie für andere Quellen.
+Relevante Originalartikel ebenso prüfen und cachen, nicht nur den Index.
+Maximal ein Browser-Index und drei Originalartikel pro Quelle, je Aufruf 60 Sekunden;
+keine Login-/Abo-/CAPTCHA-Umgehung, keine Stealth-Patches. Bleibt eine echte
+Aboschranke, ausschließlich die freien Ersatzquellen gemäß nächstem Abschnitt nutzen.
+Historische Audits nicht nachträglich als erfolgreich umschreiben.
+
+## Aboschranken und freie Ersatzquellen
+
+Nikos Freigabe vom 14.10.2026: Bezahlinhalte sind keine Voraussetzung für das
+Briefing. Keine Abos abschließen, Logins verwenden oder Aboschranken umgehen.
+Bei erkannter Aboschranke keine weiteren Versuche, den gesperrten Volltext zu
+beschaffen. Nutze Titel/Teaser nur zur Themenentdeckung, keine tragenden Aussagen allein aus Teasern.
+Suche im bestehenden Suchbudget zuerst nach frei lesbaren Primärquellen
+(Originalankündigung, Paper, Model Card, Release Notes), danach nach unabhängigen
+frei lesbaren Berichten über dieselbe Entwicklung. Datum und jede übernommene
+Aussage müssen an den tatsächlich gelesenen Ersatzquellen geprüft werden.
+Die Bezahlschrankenquelle nicht als gelesen oder vollständig abgedeckt ausgeben.
+Im result Originalzugang und thematischen Ersatz samt URLs getrennt dokumentieren.
+Belege und veröffentlichte Links nennen die tatsächlich gelesenen Ersatzquellen,
+nicht den gesperrten Artikel. Keine Exklusivbehauptungen übernehmen, die der
+Ersatz nicht selbst trägt; unterschiedliche Datierungen ausdrücklich auflösen.
+Ohne ausreichenden Ersatz die Meldung weglassen, Quelle mit ehrlichem Resultat
+abschließen, übrige Recherche fortsetzen. Schema-Regeln bleiben unverändert:
+bei unavailable keine Kandidaten; Ersatzkandidaten im eigenen Workerordner
+separat mit Belegen sichern und dem Schlussredakteur zur offenen Entdeckung
+übergeben. Dieser darf sie erst nach regulärer Validierung übernehmen.
+Reuters und syndizierte Reuters-Texte bleiben ausgeschlossen.
+Anbieter mit einzelnen gesperrten Artikeln nicht pauschal entfernen: freie
+Beiträge bleiben nutzbar. Kein neues Quellenabo oder neues Pflichtregister.
+
 ## Recherche und Suchbudget
 
 1. Nutze `python3 ROOT/scripts/editor_context.py history --run-dir RUN --query 'BEGRIFF'`
