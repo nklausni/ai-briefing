@@ -1,53 +1,1159 @@
 {
-  "meta": {"title":"AI-Briefing","subtitle":"Multi-Briefing · Privates AI-Briefing","period":"8.–15. Oktober 2026","generated":"2026-10-15","intro":"Tagesstand vom 15. Oktober: neue Entwicklungen und nachgeholte Originalmeldungen aus acht Themen. Produktfreigaben, eingeschränkte Previews, Forschung und Ankündigungen bleiben getrennt. Frühere Meldungen stehen in den Zeitraumansichten; Originaldaten und verbleibende Quellenlücken sind transparent dokumentiert.","disclaimer":"Hinweis: Alle Infos auf eigene Gefahr. Dies ist ein privates Projekt, automatisch generiert aus Web-Recherche.","host":"Niko Klausnitzer"},
-  "categories":[{"id":"modelle","label":"Modelle","color":"#3b82f6"},{"id":"tools","label":"Tools & IDEs","color":"#06b6d4"},{"id":"agents","label":"Agents & Frameworks","color":"#8b5cf6"},{"id":"lokal","label":"Open Weight / Lokal","color":"#10b981"},{"id":"security","label":"Security & Governance","color":"#ef4444"},{"id":"business","label":"Business & Markt","color":"#f59e0b"}],
-  "impact_levels":[{"level":1,"name":"Routine","desc":"kleines Update, Bugfix, inkrementell."},{"level":2,"name":"Nennenswert","desc":"neues Feature, aber eher Nische."},{"level":3,"name":"Relevant","desc":"spürbare Verbesserung, betrifft viele."},{"level":4,"name":"Stark","desc":"verändert, wie man arbeitet, oder eröffnet eine neue Möglichkeit."},{"level":5,"name":"Game-Changer","desc":"grundlegender Sprung."}],
-  "topics":[
-    {"id":"ai-news","name":"AI News","group":"Überblick","angle":"Modelle, Forschung und Plattformen","summary":"Grok Voice 3.0 wird über die Speech-to-Speech-API verfügbar; laut xAI bleiben Schnittstelle und Preis unverändert.[49][50] Die datierten Einträge widersprechen allerdings der älteren Aktualisierungsfußzeile.[49]","items":[
-      {"n":1,"title":"Grok Voice 3.0 startet in der Speech-to-Speech-API","date":"2026-10-14","summary":"xAI führt Grok Voice 3.0 unter dem 14. Oktober als verfügbar; grok-voice-latest verweist auf die neue Version.[49] Laut Dokumentation bleiben Endpunkt, Sitzungsparameter, Events und Preis unverändert.[50] Die ältere Aktualisierungsfußzeile widerspricht dem Eintragsdatum; die Datierung folgt dem expliziten Release-Eintrag.[49]","category":"modelle","impact":3,"change_type":"general_availability","candidate_ids":["90b7dc959cfd1318b40b"],"sources":[{"label":"[49] xAI Release Notes","url":"https://docs.x.ai/developers/release-notes"},{"label":"[50] xAI Speech-to-Speech","url":"https://docs.x.ai/developers/model-capabilities/audio/speech-to-speech"}]},
-      {"n":2,"title":"HiRO-ACEv2 erweitert Klimasimulationen auf Wind- und Druckextreme","date":"2026-10-14","summary":"Ai2 stellt mit HiRO-ACEv2 ein neues Downscaling-Modell für mehrere hochauflösende Wetterfelder statt nur Niederschlag vor.[16] Das Modell bleibt an sein Trainingsklima gebunden; andere historische oder wärmere Klimata sind noch nicht abgedeckt.[16]","category":"modelle","impact":2,"change_type":"research","candidate_ids":["602b92107d4f0863d288"],"sources":[{"label":"[16] Ai2 / Hugging Face","url":"https://huggingface.co/blog/allenai/hiro-acev2"}]},
-      {"n":3,"title":"AA-Robotics v0.1 startet als Research Preview mit acht Roboterarm-Aufgaben","date":"2026-10-14","summary":"Artificial Analysis veröffentlicht einen experimentellen Benchmark mit acht physischen Aufgaben für einen von Sprachmodellen gesteuerten Roboterarm.[46] Der Anbieter bezeichnet die Systeme noch als viel zu langsam und teuer für Produktion; die Preview belegt keine industrielle Einsatzreife.[46]","category":"agents","impact":2,"change_type":"preview","candidate_ids":["06811be8b1a94c89e3cc"],"sources":[{"label":"[46] Artificial Analysis","url":"https://artificialanalysis.ai/articles/aa-robotics"}]}
-    ],"skip":[]},
-    {"id":"lokale-llms","name":"Lokale LLMs","group":"Praxis","angle":"Offene Gewichte und lokale Inferenz","summary":"Fish Audio veröffentlicht Drama 3 mit offenen Gewichten und sprachlichen Regieanweisungen.[6] Die Community-Lizenz erlaubt keine uneingeschränkte kommerzielle Nutzung.[6]","items":[
-      {"n":1,"title":"Minions erprobt verteilte Inferenz auf ungenutzten Apple-Silicon-Macs","date":"2026-10-14","summary":"Apple-Forschende beschreiben Minions als Prototyp für verteilte Inferenz auf wenig ausgelasteten Apple-Silicon-Rechnern; die Ausführungsknoten verwenden Ollama.[28] Das Konzept setzt gegenseitig vertrauende Organisationseinheiten voraus und ist kein öffentlicher Cloud-Dienst.[28]","category":"lokal","impact":3,"change_type":"research","candidate_ids":["2c7db3f07d9ba161d821"],"sources":[{"label":"[28] heise online","url":"https://www.heise.de/news/Apple-Forscher-nutzen-Apple-Silicon-Macs-im-Idle-Betrieb-als-virtuelle-GPUs-11487025.html"}]},
-      {"n":2,"title":"Drama 3 startet mit offenen Gewichten für steuerbare Sprachausgabe","date":"2026-10-13","summary":"Fish Audio veröffentlicht Drama 3 am 13. Oktober in Webanwendung, Apps und API sowie mit offenen Gewichten; Regieanweisungen steuern die Sprachausgabe.[6][5] Kommerzielle Nutzung ist unter der Community-Lizenz nur unter Bedingungen kostenlos: Ab 500.000 Dollar Jahresumsatz einschließlich verbundener Unternehmen sowie für bestimmte Hosting-Angebote wird eine zusätzliche Lizenz benötigt.[6]","category":"lokal","impact":3,"change_type":"general_availability","candidate_ids":["3c7564810676a3fb8cb9"],"sources":[{"label":"[6] Fish Audio","url":"https://beta.fish.audio/blog/fish-audio-drama-3/"},{"label":"[5] MarkTechPost","url":"https://www.marktechpost.com/2026/10/14/fish-audio-drama-3-open-weight-tts-model/"}]}
-    ],"skip":[]},
-    {"id":"agentic-engineering","name":"Agentic Engineering / Vibe Coding","group":"Praxis","angle":"Agentenentwicklung, Coding und kontrollierte Workflows","summary":"GitHub ergänzt HydraFusion Max als Research Preview, getrennt von den Änderungen am bisherigen HydraFusion-Pool.[40] Cohere untersucht zugleich günstigere Rollenverteilungen für Coding-Agententeams auf ProgramBench.[51]","items":[
-      {"n":1,"title":"HydraFusion Max ergänzt die Copilot Research Preview","date":"2026-10-14","summary":"GitHub führt HydraFusion Max für anspruchsvollere Agentenaufgaben mit höheren Reasoning-Stufen ein.[40] Die Option bleibt Research Preview und setzt einen berechtigten Copilot-Plan, aktivierte Vorschaufunktionen und passende Organisationsrichtlinien voraus; eine unabhängige Leistungsüberlegenheit ist damit nicht belegt.[40]","category":"agents","impact":3,"change_type":"preview","candidate_ids":["5d4831f39798ddfba0bb"],"sources":[{"label":"[40] GitHub Changelog","url":"https://github.blog/changelog/2026-10-14-hydrafusion-updates-and-new-max-option/"}]},
-      {"n":2,"title":"HydraFusion verbessert Modellpool und Review-Orchestrierung","date":"2026-10-14","summary":"GitHub aktualisiert HydraFusions Modellpool und Orchestrierung.[40] Das System verteilt Reasoning-Aufwand nun ausdrücklich nach Arbeitsschritt: mittlerer Aufwand für erste Entwürfe, hoher Aufwand für die Prüfung; der Status bleibt Research Preview.[40]","category":"agents","impact":3,"change_type":"update","candidate_ids":["7e561f4f41a1addd7a96"],"sources":[{"label":"[40] GitHub Changelog","url":"https://github.blog/changelog/2026-10-14-hydrafusion-updates-and-new-max-option/"}]},
-      {"n":3,"title":"Figma öffnet Code Layers als öffentliche Beta","date":"2026-10-14","summary":"Figma erweitert Code Layers von einer privaten zur öffentlichen Beta.[17] Die Funktion ergänzt Canvas-Designs um Code für interaktive Prototypen; das ist ein eigener Freigabeschritt und nicht erneut die allgemeine Verfügbarkeit des Figma-Agenten.[17]","category":"tools","impact":3,"change_type":"public_beta","candidate_ids":["8e9ccc85eea2e8ae6606"],"sources":[{"label":"[17] TechCrunch","url":"https://techcrunch.com/2026/10/14/figma-announces-new-features-to-define-how-agents-work-on-its-platform/"}]},
-      {"n":4,"title":"ProgramBench-Studie von Cohere untersucht günstigere Coding-Agententeams","date":"2026-10-14","summary":"In Coheres ProgramBench-Studie erreicht ein Sol-Leitagent mit 16 günstigeren Luna-Planungsarbeitern 61,8 Prozent Reward gegenüber 63,2 Prozent beim vollständig mit Sol besetzten Vergleichsteam; die berichteten Kosten betragen 155 statt 510 Dollar.[51] Das sind Messungen dieses Testaufbaus, keine allgemeine Garantie für Produktionskosten.[51]","category":"agents","impact":3,"change_type":"research","candidate_ids":["422cf588f22ab8186b67"],"sources":[{"label":"[51] Cohere Research","url":"https://cohere.com/blog/lessons-from-scaling-teams-of-frontier-coding-agents"}]},
-      {"n":5,"title":"Antigravity ergänzt Teamwork Deep Document Review Pattern","date":"2026-10-14","summary":"Google stellt das Teamwork Deep Document Review Pattern als Multi-Agenten-Prüfmuster für Antigravity vor.[56] Diese Integration ist von der öffentlichen Freigabe der Deep-Review-Anwendung getrennt.[56]","category":"agents","impact":2,"change_type":"integration","candidate_ids":["f6672aaa90d47ed3be52"],"sources":[{"label":"[56] Google Research","url":"https://research.google/blog/analyzing-technical-documents-with-deep-review/"}]},
-      {"n":6,"title":"Geospatial Reasoning Agent API öffnet experimentelle A2A-Anbindung für frühe Partner","date":"2026-10-14","summary":"Google bietet frühen Partnern mit der Geospatial Reasoning Agent API einen experimentellen Agent-to-Agent-Dienst zur Einbindung in eigene Agenten und Datenpipelines an.[57] Das ist begrenzter früher Zugang, keine allgemein verfügbare Produktions-API.[57]","category":"agents","impact":2,"change_type":"preview","candidate_ids":["0b53f410964d15a52479"],"sources":[{"label":"[57] Google Research","url":"https://research.google/blog/putting-earth-ai-to-work-geospatial-agents-for-our-planets-biggest-challenges/"}]},
-      {"n":7,"title":"Self-Evolving Agent Harness formalisiert Anpassungen bei festen Modellgewichten","date":"2026-10-13","summary":"Das Preprint Self-Evolving Agent Harness formalisiert dauerhafte Anpassungen von Prompts, Speicher, Workflows und Komponenten ohne Änderung der Modellgewichte.[15] Es fordert unabhängige Validierung und getrennte Schutzmechanismen für Laufzeitrechte und folgenreiche Aktionen; unbegrenzte rekursive Selbstverbesserung wird damit nicht nachgewiesen.[15]","category":"agents","impact":2,"change_type":"research","candidate_ids":["f249d21a6c8d43303d1b"],"sources":[{"label":"[15] arXiv","url":"https://arxiv.org/abs/2610.18813"}]}
-    ],"skip":[]},
-    {"id":"ai-tools","name":"AI Tools","group":"Praxis","angle":"Anwendungen und konkrete Verfügbarkeit","summary":"Google öffnet Deep Review für technische Dokumente und bietet zwei kostenlose Prüfungen pro Woche.[56] Der Dienst unterstützt fachliche Prüfung, ersetzt aber kein menschliches Urteil.[56]","items":[
-      {"n":1,"title":"Deep Review wird für die öffentliche Dokumentenprüfung freigegeben","date":"2026-10-14","summary":"Google gibt Deep Review nach wissenschaftlichen Piloten weltweit zur Prüfung technischer Dokumente frei; zwei Dokumentprüfungen pro Woche sind kostenlos.[56] Die agentische Analyse soll logische Konsistenz und Belege prüfen und lässt übergeordnete fachliche Urteile beim Menschen.[56]","category":"tools","impact":4,"change_type":"general_availability","candidate_ids":["6a0e13cb644c3fcd7751"],"sources":[{"label":"[56] Google Research","url":"https://research.google/blog/analyzing-technical-documents-with-deep-review/"}]},
-      {"n":2,"title":"ONLYOFFICE Docs 10.0 integriert KI-Werkzeuge in seine Editoren","date":"2026-10-10","summary":"ONLYOFFICE Docs 10.0 erweitert seine Editoren um KI-Werkzeuge; Serverinstallationen können auch lokale Modelle anbinden.[65] In den Open-Source-Versionen ist die KI nicht eingebaut und wird separat installiert.[65]","category":"tools","impact":3,"change_type":"update","candidate_ids":["be4f065c7cfd26bf687e"],"sources":[{"label":"[65] ONLYOFFICE","url":"https://www.onlyoffice.com/blog/2026/10/onlyoffice-docs-10"}]},
-      {"n":3,"title":"Ask Google Earth erweitert experimentellen Zugang zu tiefer Geodatenanalyse","date":"2026-10-14","summary":"Google erweitert den Preview-Zugang zu tiefen Analysefunktionen in Ask Google Earth.[57] Die experimentellen Funktionen bleiben einer begrenzten Gruppe früher Nutzer vorbehalten; Interessierte müssen sich bewerben.[57]","category":"tools","impact":2,"change_type":"preview","candidate_ids":["e2759f60473d689b1d45"],"sources":[{"label":"[57] Google Research","url":"https://research.google/blog/putting-earth-ai-to-work-geospatial-agents-for-our-planets-biggest-challenges/"}]},
-      {"n":4,"title":"Grok Voice 2.0 wird als veraltet markiert","date":"2026-10-14","summary":"xAI markiert Grok Voice 2.0 als deprecated; fest auf grok-voice-2.0 eingestellte Integrationen sollen auf grok-voice-3.0 oder grok-voice-latest umstellen.[49][50] Die geprüften Stellen nennen kein Abschaltdatum: Deprecation bedeutet hier nicht bereits Abschaltung.[49][50]","category":"modelle","impact":2,"change_type":"update","candidate_ids":["5f4fa0168190b2a40f66"],"sources":[{"label":"[49] xAI Release Notes","url":"https://docs.x.ai/developers/release-notes"},{"label":"[50] xAI Speech-to-Speech","url":"https://docs.x.ai/developers/model-capabilities/audio/speech-to-speech"}]}
-    ],"skip":[]},
-    {"id":"context-engineering","name":"Context Engineering","group":"Praxis","angle":"Kontext, Speicher und nachvollziehbare Fortsetzung","summary":"CarryOn organisiert Agentenfortschritte in wiederverwendbaren Aufgabenobjekten.[13][14] Der Forschungsansatz und seine eigenen Testergebnisse sind noch keine unabhängige Bestätigung allgemeiner Effizienzgewinne.[14]","items":[
-      {"n":1,"title":"Figma Specs definiert Designregeln für Teams und Agenten","date":"2026-10-14","summary":"Figma stellt mit Figma Specs einen Markdown-basierten Editor für die gemeinsame Designsprache von Teams und Agenten vor.[17] Der Spezifikationskontext ist eine eigene Funktion, nicht die Wiederholung der früheren Agenten-GA.[17]","category":"tools","impact":3,"change_type":"announcement","candidate_ids":["3447113570d9f52cdf37"],"sources":[{"label":"[17] TechCrunch","url":"https://techcrunch.com/2026/10/14/figma-announces-new-features-to-define-how-agents-work-on-its-platform/"}]},
-      {"n":2,"title":"CarryOn organisiert Agentenkontext als wiederverwendbare Aufgabenobjekte","date":"2026-10-13","summary":"CarryOn erhält bestätigte Arbeitsfortschritte als wiederverwendbare Aufgabenobjekte statt nur als langen Gesprächsverlauf.[13] In einer Zufallsstichprobe von 100 BrowseComp-Plus-Fragen berichten die Autoren 56 statt 49 Prozent Genauigkeit gegenüber ihrer Claude-Opus-4.7-Baseline; eine unabhängige Replikation ist damit nicht belegt.[14]","category":"agents","impact":3,"change_type":"research","candidate_ids":["10c0dcf9ea8aab4b4d2c"],"sources":[{"label":"[13] arXiv Abstract","url":"https://arxiv.org/abs/2610.18784"},{"label":"[14] CarryOn Volltext","url":"https://arxiv.org/html/2610.18784v2"}]},
-      {"n":3,"title":"Deep Agents: LangChain erläutert wiederherstellbares Kontextmanagement","date":"2026-10-14","summary":"Ein neuer LangChain-Praxisleitfaden erklärt, wie Deep Agents Kontext in Dateien, Zusammenfassungen und getrennte Agenten auslagert und Originaldaten später wieder zugänglich macht.[66] Das ist technische Anleitung, kein neuer Produktfreigabe- oder Leistungsmeilenstein.[66]","category":"agents","impact":2,"change_type":"other","candidate_ids":["2b668a34c27dfd8a5ffc"],"sources":[{"label":"[66] LangChain","url":"https://www.langchain.com/blog/context-engineering-deep-agents-remember"}]}
-    ],"skip":[]},
-    {"id":"ai-security","name":"AI Security","group":"Sicherheit & Recht","angle":"Angriffe, Schutzmechanismen und ihre Grenzen","summary":"Copilot kann beim Start aktuelle verwaltete Richtlinien erzwingen und bei fehlender Bestätigung den Start verweigern.[41] Anthropic ergänzt laut eigenem Bericht Klassifikatoren gegen mehrstufigen Wahlmissbrauch.[10]","items":[
-      {"n":1,"title":"Claude erhält neue Klassifikatoren gegen mehrstufigen Wahlmissbrauch","date":"2026-10-14","summary":"Anthropic ergänzt nach Tests neue Klassifikatoren gegen verschleierten, mehrstufigen Wahlmissbrauch, etwa den Aufbau falscher Konten oder Nachrichtenseiten.[10] Das ist ein Herstellerbericht über Schutzänderungen und kein unabhängig bestätigter vollständiger Schutz.[10]","category":"security","impact":3,"change_type":"security","candidate_ids":["d513241e2ed7275ef3a5"],"sources":[{"label":"[10] Anthropic","url":"https://www.anthropic.com/news/2026-us-midterms"}]},
-      {"n":2,"title":"Copilot erzwingt mit forceRemoteSettingsRefresh aktuelle Start-Policies","date":"2026-10-13","summary":"Administratoren können mit forceRemoteSettingsRefresh den Abruf aktueller verwalteter Copilot-Einstellungen beim Start verlangen.[41] Kann ein unterstützter Client die aktuelle Policy nicht bestätigen, verweigert er den Start statt mit veralteten Vorgaben weiterzulaufen.[41]","category":"security","impact":3,"change_type":"update","candidate_ids":["693698cd9c016ab82a1a"],"sources":[{"label":"[41] GitHub Changelog","url":"https://github.blog/changelog/2026-10-13-enterprise-managed-settings-enforcement-updates/"}]},
-      {"n":3,"title":"Warden Stealer: Gen dokumentiert Diebstahl lokaler Agentendaten","date":"2026-10-08","summary":"Gen Threat Labs dokumentiert in seiner Analyse vom 8. Oktober den Diebstahl lokaler Daten von Claude, Codex, Grok und Cursor durch Warden Stealer.[61] Darunter können Tokens, MCP-Zugangsdaten und Verläufe fallen; der ergänzende SecurityOnline-Bericht ist keine zweite unabhängige Malwareanalyse.[62] Die Meldung betrifft die technische Analyse, nicht eine neue Oktober-Freigabe des Schadprogramms.[61]","category":"security","impact":3,"change_type":"security","candidate_ids":["964a09edaabafeb78ff6"],"sources":[{"label":"[61] Gen Threat Labs","url":"https://www.gendigital.com/blog/insights/research/warden-stealer-rust-infostealer-analysis"},{"label":"[62] SecurityOnline","url":"https://securityonline.info/warden-stealer-rust-infostealer/"}]},
-      {"n":4,"title":"Copilot verlangt Mindestversionen für verwaltete sandbox-Einstellungen","date":"2026-10-13","summary":"GitHub beginnt die Durchsetzung von Mindestclientversionen bei verwalteten Governance-Schlüsseln mit sandbox.[41] Ist der Schlüssel gesetzt, müssen Nutzer veralteter Clients aktualisieren; das ist keine erneute Freigabe der lokalen Sandbox.[41]","category":"security","impact":2,"change_type":"update","candidate_ids":["42dfff67c697410d725f"],"sources":[{"label":"[41] GitHub Changelog","url":"https://github.blog/changelog/2026-10-13-enterprise-managed-settings-enforcement-updates/"}]}
-    ],"skip":[]},
-    {"id":"ai-governance","name":"AI Governance","group":"Sicherheit & Recht","angle":"Regulierung, Verfahren und Transparenz","summary":"Die EU-Kommission bestätigt bereits versandte Informationsersuchen zu KI-Sicherheit und kündigt weitere Fragen zu Kontrollverlust-Vorfällen an.[63] Das ist ein Verfahrensschritt, keine festgestellte Rechtsverletzung oder Geldbuße.[63]","items":[
-      {"n":1,"title":"Anthropic beantragt erneute Prüfung der Pentagon-Sperre","date":"2026-10-14","summary":"Anthropic beantragt eine erneute Prüfung der Pentagon-Einstufung als Lieferkettenrisiko beim Bundesberufungsgericht in Washington.[38][39] Der am 13. Oktober US-Zeit eingereichte Antrag ist weder eine bewilligte neue Verhandlung noch eine Aufhebung der Sperre; das Kandidatendatum folgt dem Berliner Kalendertag.[38][39]","category":"security","impact":3,"change_type":"policy","candidate_ids":["aa75c2dd73d3927aadd4"],"sources":[{"label":"[38] CNBC","url":"https://www.cnbc.com/2026/10/13/anthropic-wants-court-in-dc-to-rehear-appeal-of-pentagon-blacklist-.html"},{"label":"[39] Bloomberg","url":"https://www.bloomberg.com/news/articles/2026-10-13/anthropic-asks-appeals-court-to-rehear-fight-over-security-risk"}]},
-      {"n":2,"title":"YouTube Music rollt Kennzeichnungen für KI-Musik aus","date":"2026-10-14","summary":"YouTube Music beginnt mit sichtbaren Labels für überwiegend mit generativer KI erstellte Musik.[19] Die Labels erscheinen auf der Player-Seite und erläutern die Rolle der KI; sie belegen keine lückenlose Erkennung oder ein pauschales Monetarisierungsverbot.[18][19]","category":"security","impact":3,"change_type":"update","candidate_ids":["bdc1b0e2240b16c55fcc"],"sources":[{"label":"[18] TechCrunch","url":"https://techcrunch.com/2026/10/14/youtube-music-launches-new-labels-as-ai-generated-music-floods-streaming-platforms/"},{"label":"[19] YouTube","url":"https://blog.youtube/news-and-events/youtube-music-ai-labels/"}]},
-      {"n":3,"title":"AI Office fordert Sicherheitsinformationen von OpenAI und Anthropic an","date":"2026-10-12","summary":"Die EU-Kommission bestätigt am 12. Oktober erhaltene Vorfallberichte und versandte Informationsersuchen zu Sicherheitspraktiken.[63] Computerworld und Euronews berichten am 14. Oktober dazu über OpenAI und Anthropic.[36][37] Weitere gemeinsame Fragen von AI Office und Scientific Panel sollen die Vorfälle untersuchen; ein festgestellter Rechtsverstoß oder eine Geldbuße wird damit nicht belegt.[63][37]","category":"security","impact":3,"change_type":"policy","candidate_ids":["163d8e746da0682c6448","298c9c16794630ba425d"],"sources":[{"label":"[63] Europäische Kommission","url":"https://digital-strategy.ec.europa.eu/en/news/special-meeting-ai-scientific-panel"},{"label":"[36] Computerworld","url":"https://www.computerworld.com/article/4235408/the-eu-is-investigating-openai-and-anthropic-following-incidents-involving-ai-agents.html"},{"label":"[37] Euronews","url":"https://www.euronews.com/2026/10/14/eus-ai-rules-face-first-enforcement-test-over-lab-incidents"}]}
-    ],"skip":[]},
-    {"id":"enterprise","name":"Enterprise","group":"Markt & Branchen","angle":"Unternehmenseinsatz und klar getrennte Rollout-Stufen","summary":"Workday öffnet Autopilot im Talent Acquisition Agent nur für Early Adopters; die allgemeine Verfügbarkeit ist erst für Anfang 2027 geplant.[35] Honeywell stellt Forge Cognition für Gebäudebetrieb vor, zunächst ohne aktivierten autonomen Modus.[60]","items":[
-      {"n":1,"title":"Forge Cognition bringt KI-Agenten in den Gebäudebetrieb unter menschlicher Kontrolle","date":"2026-10-14","summary":"Honeywell stellt Forge Cognition mit Nvidia- und Dell-Technik für Gebäudebetrieb vor.[60] Laut CTO-Interview bleibt der autonome Modus ausgeschaltet, bis Kunden ihn aktivieren; identifizierte Einsparpotenziale sind nicht mit realisierten Ergebnissen gleichzusetzen.[60]","category":"business","impact":3,"change_type":"announcement","candidate_ids":["cffe3742f88de4460a30"],"sources":[{"label":"[60] Fortune","url":"https://fortune.com/2026/10/14/honeywell-technologies-brain-behind-the-bulding-forge-cognition-dell-nvidia/"}]},
-      {"n":2,"title":"Workday Talent Acquisition Agent startet Autopilot nur für Early Adopters","date":"2026-10-13","summary":"Workday stellt Autopilot-Funktionen des Talent Acquisition Agent zunächst Early-Adopter-Kunden bereit.[35] Die allgemeine Verfügbarkeit ist für Anfang 2027 geplant, nicht bereits erreicht; der Meilenstein ist von Workday Home und der geöffneten Plattform getrennt.[35]","category":"business","impact":3,"change_type":"preview","candidate_ids":["d5367a41d28238169847"],"sources":[{"label":"[35] Computerworld","url":"https://www.computerworld.com/article/4234434/workday-launches-sana-based-ui-autopilot-agents-as-it-deepens-its-focus-on-ai-2.html"}]},
-      {"n":3,"title":"TimesFM und TabFM sollen in Gemini for business integriert werden","date":"2026-10-14","summary":"Google kündigt die kommende Integration von TimesFM und TabFM in Gemini for business an.[58] Das ist eine Roadmap für Zeitreihen- und Tabellendatenmodelle, keine bereits allgemein freigegebene neue Gemini-Funktion.[58]","category":"business","impact":2,"change_type":"announcement","candidate_ids":["57a9a808eff1407091d8"],"sources":[{"label":"[58] Google Research","url":"https://research.google/blog/research-2026-10-ways-were-amplifying-human-ingenuity/"}]},
-      {"n":4,"title":"Amazon SageMaker AI übernimmt offene MoE-Kerneloptimierungen","date":"2026-10-13","summary":"AWS veröffentlicht mit der vLLM-Community entwickelte Optimierungen für Fused-MoE-Modelle und integriert sie in den LMI Deep Learning Container von Amazon SageMaker AI.[52] Der Anbieter berichtet bis zu zehn Prozent mehr Durchsatz und neun Prozent kürzere Time-to-First-Token; das sind eigene Messungen, keine allgemeine Leistungszusage.[52]","category":"tools","impact":2,"change_type":"update","candidate_ids":["a25b568af800f7c518ff"],"sources":[{"label":"[52] AWS Machine Learning","url":"https://aws.amazon.com/blogs/machine-learning/mixture-of-experts-kernel-engineering-on-amazon-sagemaker-ai/"}]}
-    ],"skip":[]}
+  "meta": {
+    "title": "AI-Briefing",
+    "subtitle": "Multi-Briefing · Privates AI-Briefing",
+    "period": "8.–15. Oktober 2026",
+    "generated": "2026-10-15",
+    "intro": "Ergänzter Tagesstand vom 15. Oktober: Die bisherige Ausgabe bleibt vollständig erhalten und wird um neu geprüfte sowie nachgeholte Entwicklungen erweitert. Originaldaten, eingeschränkte Zugänge und Preview-/GA-Meilensteine bleiben getrennt; verbleibende Quellenlücken stehen im Tagesaudit.",
+    "disclaimer": "Hinweis: Alle Infos auf eigene Gefahr. Dies ist ein privates Projekt, automatisch generiert aus Web-Recherche.",
+    "host": "Niko Klausnitzer"
+  },
+  "categories": [
+    {
+      "id": "modelle",
+      "label": "Modelle",
+      "color": "#3b82f6"
+    },
+    {
+      "id": "tools",
+      "label": "Tools & IDEs",
+      "color": "#06b6d4"
+    },
+    {
+      "id": "agents",
+      "label": "Agents & Frameworks",
+      "color": "#8b5cf6"
+    },
+    {
+      "id": "lokal",
+      "label": "Open Weight / Lokal",
+      "color": "#10b981"
+    },
+    {
+      "id": "security",
+      "label": "Security & Governance",
+      "color": "#ef4444"
+    },
+    {
+      "id": "business",
+      "label": "Business & Markt",
+      "color": "#f59e0b"
+    }
+  ],
+  "impact_levels": [
+    {
+      "level": 1,
+      "name": "Routine",
+      "desc": "kleines Update, Bugfix, inkrementell."
+    },
+    {
+      "level": 2,
+      "name": "Nennenswert",
+      "desc": "neues Feature, aber eher Nische."
+    },
+    {
+      "level": 3,
+      "name": "Relevant",
+      "desc": "spürbare Verbesserung, betrifft viele."
+    },
+    {
+      "level": 4,
+      "name": "Stark",
+      "desc": "verändert, wie man arbeitet, oder eröffnet eine neue Möglichkeit."
+    },
+    {
+      "level": 5,
+      "name": "Game-Changer",
+      "desc": "grundlegender Sprung."
+    }
+  ],
+  "topics": [
+    {
+      "id": "ai-news",
+      "name": "AI News",
+      "group": "Überblick",
+      "angle": "Modelle, Forschung und Plattformen",
+      "summary": "Grok Voice 3.0 wird über die Speech-to-Speech-API verfügbar; laut xAI bleiben Schnittstelle und Preis unverändert.[49][50] Die datierten Einträge widersprechen allerdings der älteren Aktualisierungsfußzeile.[49]",
+      "items": [
+        {
+          "n": 1,
+          "title": "Grok Voice 3.0 startet in der Speech-to-Speech-API",
+          "date": "2026-10-14",
+          "summary": "xAI führt Grok Voice 3.0 unter dem 14. Oktober als verfügbar; grok-voice-latest verweist auf die neue Version.[49] Laut Dokumentation bleiben Endpunkt, Sitzungsparameter, Events und Preis unverändert.[50] Die ältere Aktualisierungsfußzeile widerspricht dem Eintragsdatum; die Datierung folgt dem expliziten Release-Eintrag.[49]",
+          "category": "modelle",
+          "impact": 3,
+          "change_type": "general_availability",
+          "candidate_ids": [
+            "90b7dc959cfd1318b40b"
+          ],
+          "sources": [
+            {
+              "label": "[49] xAI Release Notes",
+              "url": "https://docs.x.ai/developers/release-notes"
+            },
+            {
+              "label": "[50] xAI Speech-to-Speech",
+              "url": "https://docs.x.ai/developers/model-capabilities/audio/speech-to-speech"
+            }
+          ]
+        },
+        {
+          "n": 2,
+          "title": "HiRO-ACEv2 erweitert Klimasimulationen auf Wind- und Druckextreme",
+          "date": "2026-10-14",
+          "summary": "Ai2 stellt mit HiRO-ACEv2 ein neues Downscaling-Modell für mehrere hochauflösende Wetterfelder statt nur Niederschlag vor.[16] Das Modell bleibt an sein Trainingsklima gebunden; andere historische oder wärmere Klimata sind noch nicht abgedeckt.[16]",
+          "category": "modelle",
+          "impact": 2,
+          "change_type": "research",
+          "candidate_ids": [
+            "602b92107d4f0863d288"
+          ],
+          "sources": [
+            {
+              "label": "[16] Ai2 / Hugging Face",
+              "url": "https://huggingface.co/blog/allenai/hiro-acev2"
+            }
+          ]
+        },
+        {
+          "n": 3,
+          "title": "AA-Robotics v0.1 startet als Research Preview mit acht Roboterarm-Aufgaben",
+          "date": "2026-10-14",
+          "summary": "Artificial Analysis veröffentlicht einen experimentellen Benchmark mit acht physischen Aufgaben für einen von Sprachmodellen gesteuerten Roboterarm.[46] Der Anbieter bezeichnet die Systeme noch als viel zu langsam und teuer für Produktion; die Preview belegt keine industrielle Einsatzreife.[46]",
+          "category": "agents",
+          "impact": 2,
+          "change_type": "preview",
+          "candidate_ids": [
+            "06811be8b1a94c89e3cc"
+          ],
+          "sources": [
+            {
+              "label": "[46] Artificial Analysis",
+              "url": "https://artificialanalysis.ai/articles/aa-robotics"
+            }
+          ]
+        },
+        {
+          "n": 4,
+          "title": "Probabilistic Bias Correction soll Wetterprognosen mit vorhandenen Modellen verbessern",
+          "date": "2026-10-14",
+          "summary": "Microsofts Probabilistic Bias Correction korrigiert mit maschinellem Lernen systematische Fehler bestehender Wettermodelle für Vorhersagen zwei bis sechs Wochen voraus.[74] The Verge berichtet über die Nature-Veröffentlichung und offenen Code; der CPU-taugliche Forschungsansatz ist kein unabhängig nachgewiesener verlässlicher Routinebetrieb.[74]",
+          "category": "modelle",
+          "impact": 3,
+          "change_type": "research",
+          "candidate_ids": [
+            "1c2426f42fc012e19f5e"
+          ],
+          "sources": [
+            {
+              "label": "[74] www.theverge.com",
+              "url": "https://www.theverge.com/science/1011127/ai-weather-forecast-microsoft"
+            }
+          ]
+        },
+        {
+          "n": 5,
+          "title": "Minos macht vorab gemessene Chemieexperimente für Agenten wiederholbar",
+          "date": "2026-10-14",
+          "summary": "Leash Bio stellt Minos vor: Agenten können Chemieexperimente aus vorab gemessenen Protein-Bindungslandschaften wiederholen, ohne neue Nasslaborläufe auszulösen.[44][45] Ausgewählte Harbor-Umgebungen und Reasoning-Traces sind angekündigt; das verlinkte Strelka-Portal verlangt eine Zugangsanfrage, daher kein pauschal frei herunterladbarer Datensatz.[45][85]",
+          "category": "agents",
+          "impact": 2,
+          "change_type": "research",
+          "candidate_ids": [
+            "c21299e0ba9131501bcf"
+          ],
+          "sources": [
+            {
+              "label": "[44] Minos macht gemessene Chemieexperimente für KI-Agenten wiederholbar",
+              "url": "https://www.latent.space/p/lab-in-the-loop-at-compute-speed"
+            },
+            {
+              "label": "[45] leashbio.substack.com",
+              "url": "https://leashbio.substack.com/p/making-reality-replayable"
+            },
+            {
+              "label": "[85] strelka.leash.bio",
+              "url": "https://strelka.leash.bio/"
+            }
+          ]
+        }
+      ],
+      "skip": []
+    },
+    {
+      "id": "lokale-llms",
+      "name": "Lokale LLMs",
+      "group": "Praxis",
+      "angle": "Offene Gewichte und lokale Inferenz",
+      "summary": "Fish Audio veröffentlicht Drama 3 mit offenen Gewichten und sprachlichen Regieanweisungen.[6] Die Community-Lizenz erlaubt keine uneingeschränkte kommerzielle Nutzung.[6]",
+      "items": [
+        {
+          "n": 1,
+          "title": "Minions erprobt verteilte Inferenz auf ungenutzten Apple-Silicon-Macs",
+          "date": "2026-10-14",
+          "summary": "Apple-Forschende beschreiben Minions als Prototyp für verteilte Inferenz auf wenig ausgelasteten Apple-Silicon-Rechnern; die Ausführungsknoten verwenden Ollama.[28] Das Konzept setzt gegenseitig vertrauende Organisationseinheiten voraus und ist kein öffentlicher Cloud-Dienst.[28]",
+          "category": "lokal",
+          "impact": 3,
+          "change_type": "research",
+          "candidate_ids": [
+            "2c7db3f07d9ba161d821"
+          ],
+          "sources": [
+            {
+              "label": "[28] heise online",
+              "url": "https://www.heise.de/news/Apple-Forscher-nutzen-Apple-Silicon-Macs-im-Idle-Betrieb-als-virtuelle-GPUs-11487025.html"
+            }
+          ]
+        },
+        {
+          "n": 2,
+          "title": "Drama 3 startet mit offenen Gewichten für steuerbare Sprachausgabe",
+          "date": "2026-10-13",
+          "summary": "Fish Audio veröffentlicht Drama 3 am 13. Oktober in Webanwendung, Apps und API sowie mit offenen Gewichten; Regieanweisungen steuern die Sprachausgabe.[6][5] Kommerzielle Nutzung ist unter der Community-Lizenz nur unter Bedingungen kostenlos: Ab 500.000 Dollar Jahresumsatz einschließlich verbundener Unternehmen sowie für bestimmte Hosting-Angebote wird eine zusätzliche Lizenz benötigt.[6]",
+          "category": "lokal",
+          "impact": 3,
+          "change_type": "general_availability",
+          "candidate_ids": [
+            "3c7564810676a3fb8cb9"
+          ],
+          "sources": [
+            {
+              "label": "[6] Fish Audio",
+              "url": "https://beta.fish.audio/blog/fish-audio-drama-3/"
+            },
+            {
+              "label": "[5] MarkTechPost",
+              "url": "https://www.marktechpost.com/2026/10/14/fish-audio-drama-3-open-weight-tts-model/"
+            }
+          ]
+        }
+      ],
+      "skip": []
+    },
+    {
+      "id": "agentic-engineering",
+      "name": "Agentic Engineering / Vibe Coding",
+      "group": "Praxis",
+      "angle": "Agentenentwicklung, Coding und kontrollierte Workflows",
+      "summary": "GitHub ergänzt HydraFusion Max als Research Preview, getrennt von den Änderungen am bisherigen HydraFusion-Pool.[40] Cohere untersucht zugleich günstigere Rollenverteilungen für Coding-Agententeams auf ProgramBench.[51]",
+      "items": [
+        {
+          "n": 1,
+          "title": "HydraFusion Max ergänzt die Copilot Research Preview",
+          "date": "2026-10-14",
+          "summary": "GitHub führt HydraFusion Max für anspruchsvollere Agentenaufgaben mit höheren Reasoning-Stufen ein.[40] Die Option bleibt Research Preview und setzt einen berechtigten Copilot-Plan, aktivierte Vorschaufunktionen und passende Organisationsrichtlinien voraus; eine unabhängige Leistungsüberlegenheit ist damit nicht belegt.[40]",
+          "category": "agents",
+          "impact": 3,
+          "change_type": "preview",
+          "candidate_ids": [
+            "5d4831f39798ddfba0bb"
+          ],
+          "sources": [
+            {
+              "label": "[40] GitHub Changelog",
+              "url": "https://github.blog/changelog/2026-10-14-hydrafusion-updates-and-new-max-option/"
+            }
+          ]
+        },
+        {
+          "n": 2,
+          "title": "HydraFusion verbessert Modellpool und Review-Orchestrierung",
+          "date": "2026-10-14",
+          "summary": "GitHub aktualisiert HydraFusions Modellpool und Orchestrierung.[40] Das System verteilt Reasoning-Aufwand nun ausdrücklich nach Arbeitsschritt: mittlerer Aufwand für erste Entwürfe, hoher Aufwand für die Prüfung; der Status bleibt Research Preview.[40]",
+          "category": "agents",
+          "impact": 3,
+          "change_type": "update",
+          "candidate_ids": [
+            "7e561f4f41a1addd7a96"
+          ],
+          "sources": [
+            {
+              "label": "[40] GitHub Changelog",
+              "url": "https://github.blog/changelog/2026-10-14-hydrafusion-updates-and-new-max-option/"
+            }
+          ]
+        },
+        {
+          "n": 3,
+          "title": "Figma öffnet Code Layers als öffentliche Beta",
+          "date": "2026-10-14",
+          "summary": "Figma erweitert Code Layers von einer privaten zur öffentlichen Beta.[17] Die Funktion ergänzt Canvas-Designs um Code für interaktive Prototypen; das ist ein eigener Freigabeschritt und nicht erneut die allgemeine Verfügbarkeit des Figma-Agenten.[17]",
+          "category": "tools",
+          "impact": 3,
+          "change_type": "public_beta",
+          "candidate_ids": [
+            "8e9ccc85eea2e8ae6606"
+          ],
+          "sources": [
+            {
+              "label": "[17] TechCrunch",
+              "url": "https://techcrunch.com/2026/10/14/figma-announces-new-features-to-define-how-agents-work-on-its-platform/"
+            }
+          ]
+        },
+        {
+          "n": 4,
+          "title": "ProgramBench-Studie von Cohere untersucht günstigere Coding-Agententeams",
+          "date": "2026-10-14",
+          "summary": "In Coheres ProgramBench-Studie erreicht ein Sol-Leitagent mit 16 günstigeren Luna-Planungsarbeitern 61,8 Prozent Reward gegenüber 63,2 Prozent beim vollständig mit Sol besetzten Vergleichsteam; die berichteten Kosten betragen 155 statt 510 Dollar.[51] Das sind Messungen dieses Testaufbaus, keine allgemeine Garantie für Produktionskosten.[51]",
+          "category": "agents",
+          "impact": 3,
+          "change_type": "research",
+          "candidate_ids": [
+            "422cf588f22ab8186b67"
+          ],
+          "sources": [
+            {
+              "label": "[51] Cohere Research",
+              "url": "https://cohere.com/blog/lessons-from-scaling-teams-of-frontier-coding-agents"
+            }
+          ]
+        },
+        {
+          "n": 5,
+          "title": "Antigravity ergänzt Teamwork Deep Document Review Pattern",
+          "date": "2026-10-14",
+          "summary": "Google stellt das Teamwork Deep Document Review Pattern als Multi-Agenten-Prüfmuster für Antigravity vor.[56] Diese Integration ist von der öffentlichen Freigabe der Deep-Review-Anwendung getrennt.[56]",
+          "category": "agents",
+          "impact": 2,
+          "change_type": "integration",
+          "candidate_ids": [
+            "f6672aaa90d47ed3be52"
+          ],
+          "sources": [
+            {
+              "label": "[56] Google Research",
+              "url": "https://research.google/blog/analyzing-technical-documents-with-deep-review/"
+            }
+          ]
+        },
+        {
+          "n": 6,
+          "title": "Geospatial Reasoning Agent API öffnet experimentelle A2A-Anbindung für frühe Partner",
+          "date": "2026-10-14",
+          "summary": "Google bietet frühen Partnern mit der Geospatial Reasoning Agent API einen experimentellen Agent-to-Agent-Dienst zur Einbindung in eigene Agenten und Datenpipelines an.[57] Das ist begrenzter früher Zugang, keine allgemein verfügbare Produktions-API.[57]",
+          "category": "agents",
+          "impact": 2,
+          "change_type": "preview",
+          "candidate_ids": [
+            "0b53f410964d15a52479"
+          ],
+          "sources": [
+            {
+              "label": "[57] Google Research",
+              "url": "https://research.google/blog/putting-earth-ai-to-work-geospatial-agents-for-our-planets-biggest-challenges/"
+            }
+          ]
+        },
+        {
+          "n": 7,
+          "title": "Self-Evolving Agent Harness formalisiert Anpassungen bei festen Modellgewichten",
+          "date": "2026-10-13",
+          "summary": "Das Preprint Self-Evolving Agent Harness formalisiert dauerhafte Anpassungen von Prompts, Speicher, Workflows und Komponenten ohne Änderung der Modellgewichte.[15] Es fordert unabhängige Validierung und getrennte Schutzmechanismen für Laufzeitrechte und folgenreiche Aktionen; unbegrenzte rekursive Selbstverbesserung wird damit nicht nachgewiesen.[15]",
+          "category": "agents",
+          "impact": 2,
+          "change_type": "research",
+          "candidate_ids": [
+            "f249d21a6c8d43303d1b"
+          ],
+          "sources": [
+            {
+              "label": "[15] arXiv",
+              "url": "https://arxiv.org/abs/2610.18813"
+            }
+          ]
+        },
+        {
+          "n": 8,
+          "title": "Figma Make integriert Payload für dynamische Websites",
+          "date": "2026-10-15",
+          "summary": "Figma integriert Payload mit Figma Make für dynamische Websites und direkte Inhaltsverwaltung.[17] Diese Integration ist von der bereits berichteten Code-Layers-Beta und Figma Specs getrennt; der gelesene Bericht spezifiziert keinen vollständigen Tarif- oder Rolloutumfang.[17]",
+          "category": "tools",
+          "impact": 3,
+          "change_type": "integration",
+          "candidate_ids": [
+            "b9b973c8696fc2b6f836"
+          ],
+          "sources": [
+            {
+              "label": "[17] Figma Specs definiert Designregeln für Teams und Agenten",
+              "url": "https://techcrunch.com/2026/10/14/figma-announces-new-features-to-define-how-agents-work-on-its-platform/"
+            }
+          ]
+        },
+        {
+          "n": 9,
+          "title": "Epic Games Launcher startet als KI-gestützte öffentliche Preview neu",
+          "date": "2026-10-14",
+          "summary": "Epic öffnet den mit KI-Unterstützung neu implementierten Epic Games Launcher als öffentliche Preview.[33] Ars bestätigt schnellere Kaltstarts in eigenen Tests; Funktionen fehlen noch und Epic warnt vor Bugs, daher weder GA noch vollständige Funktionsparität.[33]",
+          "category": "tools",
+          "impact": 3,
+          "change_type": "preview",
+          "candidate_ids": [
+            "345f8de07e7dcce20660"
+          ],
+          "sources": [
+            {
+              "label": "[33] Epic Games Launcher erscheint als KI-unterstützt entwickelte öffentliche Preview",
+              "url": "https://arstechnica.com/gaming/2026/10/programming-is-hard-epic-games-leans-on-vibe-coding-for-its-new-launcher-app/"
+            }
+          ]
+        },
+        {
+          "n": 10,
+          "title": "Claude Code hilft Torvalds bei experimentellen Linux-Page-Cache-Patches",
+          "date": "2026-10-14",
+          "summary": "Torvalds nutzt Claude Code unter eigener Aufsicht für Code, Tests und Dokumentation experimenteller Linux-Page-Cache-Patches.[77] Die Mailingliste dokumentiert bereits eine überarbeitete Zehn-Patch-Serie; die Änderungen sind nicht in den offiziellen Kernel übernommen.[43][77]",
+          "category": "agents",
+          "impact": 3,
+          "change_type": "research",
+          "candidate_ids": [
+            "585eb28230f1611f74d6"
+          ],
+          "sources": [
+            {
+              "label": "[77] www.computerworld.com",
+              "url": "https://www.computerworld.com/article/4235401/linus-torvalds-has-started-using-ai-to-develop-the-linux-kernel.html"
+            },
+            {
+              "label": "[43] lkml.iu.edu",
+              "url": "https://lkml.iu.edu/2610.1/13146.html"
+            }
+          ]
+        }
+      ],
+      "skip": []
+    },
+    {
+      "id": "ai-tools",
+      "name": "AI Tools",
+      "group": "Praxis",
+      "angle": "Anwendungen und konkrete Verfügbarkeit",
+      "summary": "Google öffnet Deep Review für technische Dokumente und bietet zwei kostenlose Prüfungen pro Woche.[56] Der Dienst unterstützt fachliche Prüfung, ersetzt aber kein menschliches Urteil.[56]",
+      "items": [
+        {
+          "n": 1,
+          "title": "Deep Review wird für die öffentliche Dokumentenprüfung freigegeben",
+          "date": "2026-10-14",
+          "summary": "Google gibt Deep Review nach wissenschaftlichen Piloten weltweit zur Prüfung technischer Dokumente frei; zwei Dokumentprüfungen pro Woche sind kostenlos.[56] Die agentische Analyse soll logische Konsistenz und Belege prüfen und lässt übergeordnete fachliche Urteile beim Menschen.[56]",
+          "category": "tools",
+          "impact": 4,
+          "change_type": "general_availability",
+          "candidate_ids": [
+            "6a0e13cb644c3fcd7751"
+          ],
+          "sources": [
+            {
+              "label": "[56] Google Research",
+              "url": "https://research.google/blog/analyzing-technical-documents-with-deep-review/"
+            }
+          ]
+        },
+        {
+          "n": 2,
+          "title": "ONLYOFFICE Docs 10.0 integriert KI-Werkzeuge in seine Editoren",
+          "date": "2026-10-10",
+          "summary": "ONLYOFFICE Docs 10.0 erweitert seine Editoren um KI-Werkzeuge; Serverinstallationen können auch lokale Modelle anbinden.[65] In den Open-Source-Versionen ist die KI nicht eingebaut und wird separat installiert.[65]",
+          "category": "tools",
+          "impact": 3,
+          "change_type": "update",
+          "candidate_ids": [
+            "be4f065c7cfd26bf687e"
+          ],
+          "sources": [
+            {
+              "label": "[65] ONLYOFFICE",
+              "url": "https://www.onlyoffice.com/blog/2026/10/onlyoffice-docs-10"
+            }
+          ]
+        },
+        {
+          "n": 3,
+          "title": "Ask Google Earth erweitert experimentellen Zugang zu tiefer Geodatenanalyse",
+          "date": "2026-10-14",
+          "summary": "Google erweitert den Preview-Zugang zu tiefen Analysefunktionen in Ask Google Earth.[57] Die experimentellen Funktionen bleiben einer begrenzten Gruppe früher Nutzer vorbehalten; Interessierte müssen sich bewerben.[57]",
+          "category": "tools",
+          "impact": 2,
+          "change_type": "preview",
+          "candidate_ids": [
+            "e2759f60473d689b1d45"
+          ],
+          "sources": [
+            {
+              "label": "[57] Google Research",
+              "url": "https://research.google/blog/putting-earth-ai-to-work-geospatial-agents-for-our-planets-biggest-challenges/"
+            }
+          ]
+        },
+        {
+          "n": 4,
+          "title": "Grok Voice 2.0 wird als veraltet markiert",
+          "date": "2026-10-14",
+          "summary": "xAI markiert Grok Voice 2.0 als deprecated; fest auf grok-voice-2.0 eingestellte Integrationen sollen auf grok-voice-3.0 oder grok-voice-latest umstellen.[49][50] Die geprüften Stellen nennen kein Abschaltdatum: Deprecation bedeutet hier nicht bereits Abschaltung.[49][50]",
+          "category": "modelle",
+          "impact": 2,
+          "change_type": "update",
+          "candidate_ids": [
+            "5f4fa0168190b2a40f66"
+          ],
+          "sources": [
+            {
+              "label": "[49] xAI Release Notes",
+              "url": "https://docs.x.ai/developers/release-notes"
+            },
+            {
+              "label": "[50] xAI Speech-to-Speech",
+              "url": "https://docs.x.ai/developers/model-capabilities/audio/speech-to-speech"
+            }
+          ]
+        },
+        {
+          "n": 5,
+          "title": "Jev 1.14 öffnet experimentelle Bildeingaben",
+          "date": "2026-10-14",
+          "summary": "TypeSafe öffnet Bildeingaben für Jev über einen experimentellen Danger-Zone-Header, auch für Version 1.13.[69] Der Anbieter warnt vor geringerer Zuverlässigkeit als bei reinem Text; dies ist keine produktionsreife allgemeine Bildprüfung.[69]",
+          "category": "modelle",
+          "impact": 2,
+          "change_type": "preview",
+          "candidate_ids": [
+            "f525eec7e8abc51fabe9"
+          ],
+          "sources": [
+            {
+              "label": "[69] typesafe.ai",
+              "url": "https://typesafe.ai/blog/jev-1-14"
+            }
+          ]
+        },
+        {
+          "n": 6,
+          "title": "SubQ Snap ist als öffentliche Preview für lange Entscheidungs-Kontexte verfügbar",
+          "date": "2026-10-12",
+          "summary": "SubQ Snap ist seit der Ankündigung vom 12. Oktober als öffentliche Preview für vorgegebene Entscheidungen mit bis zu 384.000 Text-/Bildtokens verfügbar.[84] The New Stack berichtet am 14. Oktober über 0,05 Dollar je Million Eingabetokens und kostenlose Ausgaben.[83] Leistungswerte stammen aus internen Tests; das ist weder GA noch eine neue Freigabe am Berichtstag.[83][84]",
+          "category": "modelle",
+          "impact": 3,
+          "change_type": "preview",
+          "candidate_ids": [
+            "e378a8d1f92a98a6f849"
+          ],
+          "sources": [
+            {
+              "label": "[84] subq.ai",
+              "url": "https://subq.ai/introducing-subq-snap"
+            },
+            {
+              "label": "[83] thenewstack.io",
+              "url": "https://thenewstack.io/subquadratic-snap-jev-decision-model/"
+            }
+          ]
+        },
+        {
+          "n": 7,
+          "title": "Planetary Prediction Engine erhält begrenzten Preview-Zugang",
+          "date": "2026-10-14",
+          "summary": "Google öffnet frühen Preview-Zugang zur Planetary Prediction Engine über eine interaktive Oberfläche und die Agent API.[57] Interessierte müssen Zugang beantragen; dies ist eine eigene Modellierungsfunktion neben Ask Google Earth, keine allgemein verfügbare Produktionsfreigabe.[57]",
+          "category": "tools",
+          "impact": 2,
+          "change_type": "preview",
+          "candidate_ids": [
+            "80411f5497d2e3350a20"
+          ],
+          "sources": [
+            {
+              "label": "[57] Ask Google Earth erweitert experimentellen Zugang zu tiefer Geodatenanalyse",
+              "url": "https://research.google/blog/putting-earth-ai-to-work-geospatial-agents-for-our-planets-biggest-challenges/"
+            }
+          ]
+        }
+      ],
+      "skip": []
+    },
+    {
+      "id": "context-engineering",
+      "name": "Context Engineering",
+      "group": "Praxis",
+      "angle": "Kontext, Speicher und nachvollziehbare Fortsetzung",
+      "summary": "Im Preprint Lost in Implicit Routing sinkt bei 1.000 zusätzlich angebotenen irrelevanten Skills der Loaded-Skill-Recall von 73,6 auf 27,4 Prozent; explizite Vorauswahl erreicht 73,9 Prozent.[73] Das sind Autorenmessungen im untersuchten Aufbau, keine allgemeine Ausfallquote aller Agenten; Abdeckung und Latenz bleiben Abwägungen.[73]",
+      "items": [
+        {
+          "n": 1,
+          "title": "Figma Specs definiert Designregeln für Teams und Agenten",
+          "date": "2026-10-14",
+          "summary": "Figma stellt mit Figma Specs einen Markdown-basierten Editor für die gemeinsame Designsprache von Teams und Agenten vor.[17] Der Spezifikationskontext ist eine eigene Funktion, nicht die Wiederholung der früheren Agenten-GA.[17]",
+          "category": "tools",
+          "impact": 3,
+          "change_type": "announcement",
+          "candidate_ids": [
+            "3447113570d9f52cdf37"
+          ],
+          "sources": [
+            {
+              "label": "[17] TechCrunch",
+              "url": "https://techcrunch.com/2026/10/14/figma-announces-new-features-to-define-how-agents-work-on-its-platform/"
+            }
+          ]
+        },
+        {
+          "n": 2,
+          "title": "CarryOn organisiert Agentenkontext als wiederverwendbare Aufgabenobjekte",
+          "date": "2026-10-13",
+          "summary": "CarryOn erhält bestätigte Arbeitsfortschritte als wiederverwendbare Aufgabenobjekte statt nur als langen Gesprächsverlauf.[13] In einer Zufallsstichprobe von 100 BrowseComp-Plus-Fragen berichten die Autoren 56 statt 49 Prozent Genauigkeit gegenüber ihrer Claude-Opus-4.7-Baseline; eine unabhängige Replikation ist damit nicht belegt.[14]",
+          "category": "agents",
+          "impact": 3,
+          "change_type": "research",
+          "candidate_ids": [
+            "10c0dcf9ea8aab4b4d2c"
+          ],
+          "sources": [
+            {
+              "label": "[13] arXiv Abstract",
+              "url": "https://arxiv.org/abs/2610.18784"
+            },
+            {
+              "label": "[14] CarryOn Volltext",
+              "url": "https://arxiv.org/html/2610.18784v2"
+            }
+          ]
+        },
+        {
+          "n": 3,
+          "title": "Deep Agents: LangChain erläutert wiederherstellbares Kontextmanagement",
+          "date": "2026-10-14",
+          "summary": "Ein neuer LangChain-Praxisleitfaden erklärt, wie Deep Agents Kontext in Dateien, Zusammenfassungen und getrennte Agenten auslagert und Originaldaten später wieder zugänglich macht.[66] Das ist technische Anleitung, kein neuer Produktfreigabe- oder Leistungsmeilenstein.[66]",
+          "category": "agents",
+          "impact": 2,
+          "change_type": "other",
+          "candidate_ids": [
+            "2b668a34c27dfd8a5ffc"
+          ],
+          "sources": [
+            {
+              "label": "[66] LangChain",
+              "url": "https://www.langchain.com/blog/context-engineering-deep-agents-remember"
+            }
+          ]
+        },
+        {
+          "n": 4,
+          "title": "Jev öffnet längeren Kontext per experimentellem API-Header",
+          "date": "2026-10-14",
+          "summary": "Jev erlaubt über einen experimentellen Header längere Kontexte als die bisherige Produktionsbegrenzung.[69] TypeSafe empfiehlt weiterhin kurze Kontexte, weil die Zuverlässigkeit bei längeren Eingaben sinkt; ein neuer garantierter Grenzwert wird hier nicht behauptet.[69]",
+          "category": "modelle",
+          "impact": 2,
+          "change_type": "preview",
+          "candidate_ids": [
+            "30deb6c652a9638c2972"
+          ],
+          "sources": [
+            {
+              "label": "[69] typesafe.ai",
+              "url": "https://typesafe.ai/blog/jev-1-14"
+            }
+          ]
+        },
+        {
+          "n": 5,
+          "title": "Lost in Implicit Routing untersucht Einbruch der Skill-Auswahl in großen Bibliotheken",
+          "date": "2026-10-13",
+          "summary": "Im Preprint Lost in Implicit Routing sinkt bei 1.000 zusätzlich angebotenen irrelevanten Skills der Loaded-Skill-Recall von 73,6 auf 27,4 Prozent; explizite Vorauswahl erreicht 73,9 Prozent.[73] Das sind Autorenmessungen im untersuchten Aufbau, keine allgemeine Ausfallquote aller Agenten; Abdeckung und Latenz bleiben Abwägungen.[73]",
+          "category": "agents",
+          "impact": 3,
+          "change_type": "research",
+          "candidate_ids": [
+            "2c30b7f1f69fa8105f43"
+          ],
+          "sources": [
+            {
+              "label": "[73] arxiv.org",
+              "url": "https://arxiv.org/abs/2610.18522"
+            }
+          ]
+        },
+        {
+          "n": 6,
+          "title": "Uvi erhält 7,5 Millionen Dollar für seine Enterprise-Kontextschicht",
+          "date": "2026-10-14",
+          "summary": "Uvi erhält laut Blocks & Files eine Seed-Finanzierung über 7,5 Millionen Dollar, geführt von CT Innovations mit Cardumen Capital, Manu VC und 91 Ventures.[93] Die Unternehmensseite beschreibt eine Kontextschicht innerhalb der Kundenumgebung; behauptete Einsparungen oder Kundenwirkung sind damit nicht unabhängig bestätigt.[94]",
+          "category": "business",
+          "impact": 2,
+          "change_type": "business",
+          "candidate_ids": [
+            "50884a22066ce2abd96c"
+          ],
+          "sources": [
+            {
+              "label": "[93] www.blocksandfiles.com",
+              "url": "https://www.blocksandfiles.com/ai-ml/2026/10/14/uvi-gives-ai-agents-enterprise-context/5302514"
+            },
+            {
+              "label": "[94] www.uvi.io",
+              "url": "https://www.uvi.io/"
+            }
+          ]
+        }
+      ],
+      "skip": []
+    },
+    {
+      "id": "ai-security",
+      "name": "AI Security",
+      "group": "Sicherheit & Recht",
+      "angle": "Angriffe, Schutzmechanismen und ihre Grenzen",
+      "summary": "Copilot kann beim Start aktuelle verwaltete Richtlinien erzwingen und bei fehlender Bestätigung den Start verweigern.[41] Anthropic ergänzt laut eigenem Bericht Klassifikatoren gegen mehrstufigen Wahlmissbrauch.[10]",
+      "items": [
+        {
+          "n": 1,
+          "title": "Claude erhält neue Klassifikatoren gegen mehrstufigen Wahlmissbrauch",
+          "date": "2026-10-14",
+          "summary": "Anthropic ergänzt nach Tests neue Klassifikatoren gegen verschleierten, mehrstufigen Wahlmissbrauch, etwa den Aufbau falscher Konten oder Nachrichtenseiten.[10] Das ist ein Herstellerbericht über Schutzänderungen und kein unabhängig bestätigter vollständiger Schutz.[10]",
+          "category": "security",
+          "impact": 3,
+          "change_type": "security",
+          "candidate_ids": [
+            "d513241e2ed7275ef3a5"
+          ],
+          "sources": [
+            {
+              "label": "[10] Anthropic",
+              "url": "https://www.anthropic.com/news/2026-us-midterms"
+            }
+          ]
+        },
+        {
+          "n": 2,
+          "title": "Copilot erzwingt mit forceRemoteSettingsRefresh aktuelle Start-Policies",
+          "date": "2026-10-13",
+          "summary": "Administratoren können mit forceRemoteSettingsRefresh den Abruf aktueller verwalteter Copilot-Einstellungen beim Start verlangen.[41] Kann ein unterstützter Client die aktuelle Policy nicht bestätigen, verweigert er den Start statt mit veralteten Vorgaben weiterzulaufen.[41]",
+          "category": "security",
+          "impact": 3,
+          "change_type": "update",
+          "candidate_ids": [
+            "693698cd9c016ab82a1a"
+          ],
+          "sources": [
+            {
+              "label": "[41] GitHub Changelog",
+              "url": "https://github.blog/changelog/2026-10-13-enterprise-managed-settings-enforcement-updates/"
+            }
+          ]
+        },
+        {
+          "n": 3,
+          "title": "Warden Stealer: Gen dokumentiert Diebstahl lokaler Agentendaten",
+          "date": "2026-10-08",
+          "summary": "Gen Threat Labs dokumentiert in seiner Analyse vom 8. Oktober den Diebstahl lokaler Daten von Claude, Codex, Grok und Cursor durch Warden Stealer.[61] Darunter können Tokens, MCP-Zugangsdaten und Verläufe fallen; der ergänzende SecurityOnline-Bericht ist keine zweite unabhängige Malwareanalyse.[62] Die Meldung betrifft die technische Analyse, nicht eine neue Oktober-Freigabe des Schadprogramms.[61]",
+          "category": "security",
+          "impact": 3,
+          "change_type": "security",
+          "candidate_ids": [
+            "964a09edaabafeb78ff6"
+          ],
+          "sources": [
+            {
+              "label": "[61] Gen Threat Labs",
+              "url": "https://www.gendigital.com/blog/insights/research/warden-stealer-rust-infostealer-analysis"
+            },
+            {
+              "label": "[62] SecurityOnline",
+              "url": "https://securityonline.info/warden-stealer-rust-infostealer/"
+            }
+          ]
+        },
+        {
+          "n": 4,
+          "title": "Copilot verlangt Mindestversionen für verwaltete sandbox-Einstellungen",
+          "date": "2026-10-13",
+          "summary": "GitHub beginnt die Durchsetzung von Mindestclientversionen bei verwalteten Governance-Schlüsseln mit sandbox.[41] Ist der Schlüssel gesetzt, müssen Nutzer veralteter Clients aktualisieren; das ist keine erneute Freigabe der lokalen Sandbox.[41]",
+          "category": "security",
+          "impact": 2,
+          "change_type": "update",
+          "candidate_ids": [
+            "42dfff67c697410d725f"
+          ],
+          "sources": [
+            {
+              "label": "[41] GitHub Changelog",
+              "url": "https://github.blog/changelog/2026-10-13-enterprise-managed-settings-enforcement-updates/"
+            }
+          ]
+        },
+        {
+          "n": 5,
+          "title": "Swarmchasers dokumentieren fehlgeleitete Agentenflotte auf Tencent Cloud",
+          "date": "2026-10-14",
+          "summary": "Swarmchasers dokumentieren in ihrem Vollbericht mehr als 2.600 Amap-Abrufversuche einer auf Tencent Cloud laufenden Agentenflotte.[2][3] Weder das zugrunde liegende Modell noch koordinierte Schwarmaktivität oder ein vollständiger Einbruch in fremde Systeme sind damit nachgewiesen.[3][68]",
+          "category": "security",
+          "impact": 3,
+          "change_type": "security",
+          "candidate_ids": [
+            "85d29377c31b65ff8a83"
+          ],
+          "sources": [
+            {
+              "label": "[2] Tencent-Cloud-Agentenflotte umging laut Forschungsbericht Amap-Sperren",
+              "url": "https://the-decoder.com/researchers-tracked-down-a-rogue-fleet-of-chinese-ai-agents-in-the-wild-and-actually-talked-to-it/"
+            },
+            {
+              "label": "[3] swarmcha.se",
+              "url": "https://swarmcha.se/posts/chinese-agent-fleet-full-report"
+            },
+            {
+              "label": "[68] thenewstack.io",
+              "url": "https://thenewstack.io/rogue-ai-agent-fleet-tencent/"
+            }
+          ]
+        },
+        {
+          "n": 6,
+          "title": "Google Messages kündigt Enhanced protection mit Private AI Compute an",
+          "date": "2026-10-14",
+          "summary": "Google kündigt für die kommenden Wochen den optionalen Enhanced-protection-Modus in Google Messages an.[72] Er ergänzt die Betrugserkennung um Gemini-Analyse über Private AI Compute; Verfügbarkeit und behauptete Schutzwirkung bleiben geräteabhängig beziehungsweise Herstellerangaben.[72]",
+          "category": "security",
+          "impact": 3,
+          "change_type": "announcement",
+          "candidate_ids": [
+            "cdf6529094e9b96ccb52"
+          ],
+          "sources": [
+            {
+              "label": "[72] blog.google",
+              "url": "https://blog.google/security/new-android-scam-protections/"
+            }
+          ]
+        },
+        {
+          "n": 7,
+          "title": "ToFu untersucht semantische Sicherheitslücken in MCP-Werkzeugen",
+          "date": "2026-10-09",
+          "summary": "Der ToFu-Preprint beschreibt metadatenbasiertes Fuzzing für MCP-Werkzeuge und berichtet 253 manuell bestätigte semantische Sicherheitsfehler in 343 Werkzeugen aus 118 der 273 getesteten Server.[90][91] Die nicht peer-reviewten Befunde gelten für die getesteten Codeversionen, nicht pauschal für sämtliche heutigen Installationen oder eine Ausnutzung in freier Wildbahn.[91]",
+          "category": "security",
+          "impact": 3,
+          "change_type": "research",
+          "candidate_ids": [
+            "79030c9c4b2c1054f5af"
+          ],
+          "sources": [
+            {
+              "label": "[90] arxiv.org",
+              "url": "https://arxiv.org/abs/2610.13651"
+            },
+            {
+              "label": "[91] www.csoonline.com",
+              "url": "https://www.csoonline.com/article/4233811/researchers-bypass-6-ai-agent-frameworks-with-a-simple-repeat-after-me-prompt.html"
+            }
+          ]
+        },
+        {
+          "n": 8,
+          "title": "Repeat-After-Me demonstriert fehlende Autorisierungsgrenzen bei Agenten",
+          "date": "2026-10-09",
+          "summary": "Die ToFu-Autoren demonstrieren mit Repeat-After-Me, wie die Wiedergabe strukturierter Eingaben in einer Orchestrierungsschicht als Werkzeugaufruf ausgeführt werden kann.[92] Die Demonstration belegt keine Verwundbarkeit jeder Installation der genannten Frameworks; Modellverweigerung ersetzt keine unabhängige Autorisierung vor Ausführung.[91][92]",
+          "category": "security",
+          "impact": 3,
+          "change_type": "research",
+          "candidate_ids": [
+            "0c27c60d293e4d3ffaef"
+          ],
+          "sources": [
+            {
+              "label": "[92] arxiv.org",
+              "url": "https://arxiv.org/html/2610.13651v1"
+            },
+            {
+              "label": "[91] www.csoonline.com",
+              "url": "https://www.csoonline.com/article/4233811/researchers-bypass-6-ai-agent-frameworks-with-a-simple-repeat-after-me-prompt.html"
+            },
+            {
+              "label": "[90] arxiv.org",
+              "url": "https://arxiv.org/abs/2610.13651"
+            }
+          ]
+        }
+      ],
+      "skip": []
+    },
+    {
+      "id": "ai-governance",
+      "name": "AI Governance",
+      "group": "Sicherheit & Recht",
+      "angle": "Regulierung, Verfahren und Transparenz",
+      "summary": "Acht US-Bundesstaaten verklagen OpenAI jeweils vor eigenen Gerichten wegen behaupteter ChatGPT-Sicherheits- und Verbraucherschutzverstöße, darunter Risiken für Minderjährige.[78][79] Das sind Vorwürfe, keine gerichtlichen Feststellungen; OpenAI verweist gegenüber CNBC auf altersabhängige Schutzmaßnahmen und weitere Sicherheitsarbeit.[78]",
+      "items": [
+        {
+          "n": 1,
+          "title": "Anthropic beantragt erneute Prüfung der Pentagon-Sperre",
+          "date": "2026-10-14",
+          "summary": "Anthropic beantragt eine erneute Prüfung der Pentagon-Einstufung als Lieferkettenrisiko beim Bundesberufungsgericht in Washington.[38][39] Der am 13. Oktober US-Zeit eingereichte Antrag ist weder eine bewilligte neue Verhandlung noch eine Aufhebung der Sperre; das Kandidatendatum folgt dem Berliner Kalendertag.[38][39]",
+          "category": "security",
+          "impact": 3,
+          "change_type": "policy",
+          "candidate_ids": [
+            "aa75c2dd73d3927aadd4"
+          ],
+          "sources": [
+            {
+              "label": "[38] CNBC",
+              "url": "https://www.cnbc.com/2026/10/13/anthropic-wants-court-in-dc-to-rehear-appeal-of-pentagon-blacklist-.html"
+            },
+            {
+              "label": "[39] Bloomberg",
+              "url": "https://www.bloomberg.com/news/articles/2026-10-13/anthropic-asks-appeals-court-to-rehear-fight-over-security-risk"
+            }
+          ]
+        },
+        {
+          "n": 2,
+          "title": "YouTube Music rollt Kennzeichnungen für KI-Musik aus",
+          "date": "2026-10-14",
+          "summary": "YouTube Music beginnt mit sichtbaren Labels für überwiegend mit generativer KI erstellte Musik.[19] Die Labels erscheinen auf der Player-Seite und erläutern die Rolle der KI; sie belegen keine lückenlose Erkennung oder ein pauschales Monetarisierungsverbot.[18][19]",
+          "category": "security",
+          "impact": 3,
+          "change_type": "update",
+          "candidate_ids": [
+            "bdc1b0e2240b16c55fcc"
+          ],
+          "sources": [
+            {
+              "label": "[18] TechCrunch",
+              "url": "https://techcrunch.com/2026/10/14/youtube-music-launches-new-labels-as-ai-generated-music-floods-streaming-platforms/"
+            },
+            {
+              "label": "[19] YouTube",
+              "url": "https://blog.youtube/news-and-events/youtube-music-ai-labels/"
+            }
+          ]
+        },
+        {
+          "n": 3,
+          "title": "AI Office fordert Sicherheitsinformationen von OpenAI und Anthropic an",
+          "date": "2026-10-12",
+          "summary": "Die EU-Kommission bestätigt am 12. Oktober erhaltene Vorfallberichte und versandte Informationsersuchen zu Sicherheitspraktiken.[63] Computerworld und Euronews berichten am 14. Oktober dazu über OpenAI und Anthropic.[36][37] Weitere gemeinsame Fragen von AI Office und Scientific Panel sollen die Vorfälle untersuchen; ein festgestellter Rechtsverstoß oder eine Geldbuße wird damit nicht belegt.[63][37]",
+          "category": "security",
+          "impact": 3,
+          "change_type": "policy",
+          "candidate_ids": [
+            "163d8e746da0682c6448",
+            "298c9c16794630ba425d"
+          ],
+          "sources": [
+            {
+              "label": "[63] Europäische Kommission",
+              "url": "https://digital-strategy.ec.europa.eu/en/news/special-meeting-ai-scientific-panel"
+            },
+            {
+              "label": "[36] Computerworld",
+              "url": "https://www.computerworld.com/article/4235408/the-eu-is-investigating-openai-and-anthropic-following-incidents-involving-ai-agents.html"
+            },
+            {
+              "label": "[37] Euronews",
+              "url": "https://www.euronews.com/2026/10/14/eus-ai-rules-face-first-enforcement-test-over-lab-incidents"
+            }
+          ]
+        },
+        {
+          "n": 4,
+          "title": "IAB-Studie findet bislang keinen allgemeinen KI-bedingten Beschäftigungseinbruch",
+          "date": "2026-10-13",
+          "summary": "Das IAB findet bis 2025 keinen allgemeinen Beschäftigungseinbruch in stark KI-betroffenen Berufen.[76] Bei 20- bis 29-Jährigen ist der negative Zusammenhang insgesamt statistisch nicht signifikant; Konjunkturschwäche erklärt deutlich mehr, während einzelne Berufsgruppen Warnsignale zeigen.[76] Das ist keine Entwarnung für sämtliche Branchen oder künftige KI-Folgen.[76]",
+          "category": "business",
+          "impact": 3,
+          "change_type": "research",
+          "candidate_ids": [
+            "9ab40272f6926ab223e1"
+          ],
+          "sources": [
+            {
+              "label": "[76] iab.de",
+              "url": "https://iab.de/presseinfo/ki-bisher-kein-jobkiller-aber-berufseinsteiger-zunehmend-betroffen/"
+            },
+            {
+              "label": "[75] www.heise.de",
+              "url": "https://www.heise.de/news/KI-bisher-kein-Jobkiller-in-Deutschland-11488403.html"
+            }
+          ]
+        },
+        {
+          "n": 5,
+          "title": "ChatGPT: Acht US-Bundesstaaten verklagen OpenAI wegen Sicherheitsvorwürfen",
+          "date": "2026-10-14",
+          "summary": "Acht US-Bundesstaaten verklagen OpenAI jeweils vor eigenen Gerichten wegen behaupteter ChatGPT-Sicherheits- und Verbraucherschutzverstöße, darunter Risiken für Minderjährige.[78][79] Das sind Vorwürfe, keine gerichtlichen Feststellungen; OpenAI verweist gegenüber CNBC auf altersabhängige Schutzmaßnahmen und weitere Sicherheitsarbeit.[78]",
+          "category": "security",
+          "impact": 4,
+          "change_type": "policy",
+          "candidate_ids": [
+            "e3d06c1f3f6618ff4f1c"
+          ],
+          "sources": [
+            {
+              "label": "[78] www.cnbc.com",
+              "url": "https://www.cnbc.com/2026/10/14/openai-sued-by-8-states-over-chatgpt-safety-concerns-.html"
+            },
+            {
+              "label": "[79] www.iowaattorneygeneral.gov",
+              "url": "https://www.iowaattorneygeneral.gov/newsroom/attorney-general-brenna-bird-announces-lawsuit-against-openai-for-deceiving-iowa-parents-and-iowans"
+            }
+          ]
+        }
+      ],
+      "skip": []
+    },
+    {
+      "id": "enterprise",
+      "name": "Enterprise",
+      "group": "Markt & Branchen",
+      "angle": "Unternehmenseinsatz und klar getrennte Rollout-Stufen",
+      "summary": "Workday öffnet Autopilot im Talent Acquisition Agent nur für Early Adopters; die allgemeine Verfügbarkeit ist erst für Anfang 2027 geplant.[35] Honeywell stellt Forge Cognition für Gebäudebetrieb vor, zunächst ohne aktivierten autonomen Modus.[60]",
+      "items": [
+        {
+          "n": 1,
+          "title": "Forge Cognition bringt KI-Agenten in den Gebäudebetrieb unter menschlicher Kontrolle",
+          "date": "2026-10-14",
+          "summary": "Honeywell stellt Forge Cognition mit Nvidia- und Dell-Technik für Gebäudebetrieb vor.[60] Laut CTO-Interview bleibt der autonome Modus ausgeschaltet, bis Kunden ihn aktivieren; identifizierte Einsparpotenziale sind nicht mit realisierten Ergebnissen gleichzusetzen.[60]",
+          "category": "business",
+          "impact": 3,
+          "change_type": "announcement",
+          "candidate_ids": [
+            "cffe3742f88de4460a30"
+          ],
+          "sources": [
+            {
+              "label": "[60] Fortune",
+              "url": "https://fortune.com/2026/10/14/honeywell-technologies-brain-behind-the-bulding-forge-cognition-dell-nvidia/"
+            }
+          ]
+        },
+        {
+          "n": 2,
+          "title": "Workday Talent Acquisition Agent startet Autopilot nur für Early Adopters",
+          "date": "2026-10-13",
+          "summary": "Workday stellt Autopilot-Funktionen des Talent Acquisition Agent zunächst Early-Adopter-Kunden bereit.[35] Die allgemeine Verfügbarkeit ist für Anfang 2027 geplant, nicht bereits erreicht; der Meilenstein ist von Workday Home und der geöffneten Plattform getrennt.[35]",
+          "category": "business",
+          "impact": 3,
+          "change_type": "preview",
+          "candidate_ids": [
+            "d5367a41d28238169847"
+          ],
+          "sources": [
+            {
+              "label": "[35] Computerworld",
+              "url": "https://www.computerworld.com/article/4234434/workday-launches-sana-based-ui-autopilot-agents-as-it-deepens-its-focus-on-ai-2.html"
+            }
+          ]
+        },
+        {
+          "n": 3,
+          "title": "TimesFM und TabFM sollen in Gemini for business integriert werden",
+          "date": "2026-10-14",
+          "summary": "Google kündigt die kommende Integration von TimesFM und TabFM in Gemini for business an.[58] Das ist eine Roadmap für Zeitreihen- und Tabellendatenmodelle, keine bereits allgemein freigegebene neue Gemini-Funktion.[58]",
+          "category": "business",
+          "impact": 2,
+          "change_type": "announcement",
+          "candidate_ids": [
+            "57a9a808eff1407091d8"
+          ],
+          "sources": [
+            {
+              "label": "[58] Google Research",
+              "url": "https://research.google/blog/research-2026-10-ways-were-amplifying-human-ingenuity/"
+            }
+          ]
+        },
+        {
+          "n": 4,
+          "title": "Amazon SageMaker AI übernimmt offene MoE-Kerneloptimierungen",
+          "date": "2026-10-13",
+          "summary": "AWS veröffentlicht mit der vLLM-Community entwickelte Optimierungen für Fused-MoE-Modelle und integriert sie in den LMI Deep Learning Container von Amazon SageMaker AI.[52] Der Anbieter berichtet bis zu zehn Prozent mehr Durchsatz und neun Prozent kürzere Time-to-First-Token; das sind eigene Messungen, keine allgemeine Leistungszusage.[52]",
+          "category": "tools",
+          "impact": 2,
+          "change_type": "update",
+          "candidate_ids": [
+            "a25b568af800f7c518ff"
+          ],
+          "sources": [
+            {
+              "label": "[52] AWS Machine Learning",
+              "url": "https://aws.amazon.com/blogs/machine-learning/mixture-of-experts-kernel-engineering-on-amazon-sagemaker-ai/"
+            }
+          ]
+        },
+        {
+          "n": 5,
+          "title": "Square Kiosk startet mit KI-Sprachbestellung",
+          "date": "2026-10-14",
+          "summary": "Square startet den Square Kiosk mit dialogbasierter KI-Sprachbestellung und 21,5-Zoll-Touchscreen.[27] The Verge nennt 1.999 Dollar Hardwarepreis sowie 99 Dollar monatlich pro Gerät zusätzlich zu einem Plus- oder Premium-Abo; die Aussage vollständigen Menüverständnisses stammt von Square.[27]",
+          "category": "business",
+          "impact": 3,
+          "change_type": "general_availability",
+          "candidate_ids": [
+            "6f721072157461d4fe9d"
+          ],
+          "sources": [
+            {
+              "label": "[27] Square Kiosk startet mit sprachgesteuerter KI-Bestellfunktion",
+              "url": "https://www.theverge.com/tech/1009086/square-kiosk"
+            }
+          ]
+        },
+        {
+          "n": 6,
+          "title": "Sana Concierge startet bei Workday nur für Early Adopters",
+          "date": "2026-10-13",
+          "summary": "Workday öffnet Sana Concierge nur für Early-Adopter-Kunden.[35] Die allgemeine Verfügbarkeit ist erst für das erste Quartal 2027 vorgesehen; der eingeschränkte Zugang ist nicht die bereits erfolgte Freigabe von Workday Home.[35]",
+          "category": "business",
+          "impact": 2,
+          "change_type": "preview",
+          "candidate_ids": [
+            "1ae8074f17373908c70f"
+          ],
+          "sources": [
+            {
+              "label": "[35] Workday Talent Acquisition Agent startet Autopilot nur für Early Adopters",
+              "url": "https://www.computerworld.com/article/4234434/workday-launches-sana-based-ui-autopilot-agents-as-it-deepens-its-focus-on-ai-2.html"
+            }
+          ]
+        },
+        {
+          "n": 7,
+          "title": "Work Intelligence öffnet Aufgabenanalyse für Early-Access-Kunden",
+          "date": "2026-10-13",
+          "summary": "Workday macht Work Intelligence für Early-Access-Kunden von Human Capital Management zugänglich.[35] Die Funktion zerlegt Stellen in Aufgaben und benötigte Fähigkeiten; daraus folgen weder allgemeine Verfügbarkeit noch nachgewiesene Personal- oder Kosteneinsparungen.[35]",
+          "category": "business",
+          "impact": 2,
+          "change_type": "preview",
+          "candidate_ids": [
+            "30f4ea3f087482cba921"
+          ],
+          "sources": [
+            {
+              "label": "[35] Workday Talent Acquisition Agent startet Autopilot nur für Early Adopters",
+              "url": "https://www.computerworld.com/article/4234434/workday-launches-sana-based-ui-autopilot-agents-as-it-deepens-its-focus-on-ai-2.html"
+            }
+          ]
+        },
+        {
+          "n": 8,
+          "title": "TSMC meldet 68,7 Prozent mehr Quartalsgewinn",
+          "date": "2026-10-15",
+          "summary": "TSMC meldet für das dritte Quartal 763,06 Milliarden NT-Dollar Nettogewinn und 1.494,24 Milliarden NT-Dollar Umsatz; der Gewinn steigt gegenüber dem Vorjahr um 68,7 Prozent.[82] CNBC ordnet die Entwicklung der KI-Chipnachfrage zu, TSMC spricht von starker Nachfrage nach führenden Fertigungstechnologien.[81][82] Das belegt keine Rendite einzelner KI-Anwendungen.[82]",
+          "category": "business",
+          "impact": 3,
+          "change_type": "business",
+          "candidate_ids": [
+            "f09a7a359767ea369d35"
+          ],
+          "sources": [
+            {
+              "label": "[82] pr.tsmc.com",
+              "url": "https://pr.tsmc.com/english/news/3346"
+            },
+            {
+              "label": "[81] www.cnbc.com",
+              "url": "https://www.cnbc.com/2026/10/15/tsmc-third-quarter-profit-global-ai-.html"
+            }
+          ]
+        }
+      ],
+      "skip": []
+    }
   ]
 }
