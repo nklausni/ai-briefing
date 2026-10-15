@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI-Briefing — Suche</title>
+<link rel="stylesheet" href="style.css">
+<script src="search.js" defer></script>
+</head>
+<body><main class="sheet">
+<header class="top"><h1>AI-Briefing durchsuchen</h1></header>
+<nav class="nav"><a href="index.html">Zur Übersicht</a></nav>
+<p>Suche in den gespeicherten Meldungen der aktuellen Ausgabe, der Historie und der vorhandenen Monatsarchive. Keine Suche im gesamten Web oder in den Volltexten der verlinkten Originalartikel.</p>
+<form id="search-form" role="search">
+<label for="search-query">Suchbegriffe (alle Wörter müssen vorkommen)</label>
+<div class="search-controls"><input id="search-query" type="search" name="q" autocomplete="off" aria-describedby="search-help" disabled><button type="submit" disabled>Suchen</button></div>
+<p id="search-help" class="sub">Durchsucht Titel, Zusammenfassung, Thema, Originaldatum und Quellen. Groß-/Kleinschreibung und Umlaute werden angeglichen.</p>
+</form>
+<p id="search-status" role="status" aria-live="polite">Die Suche benötigt JavaScript.</p>
+<noscript><p>Die lokale Suche benötigt JavaScript. Alle Übersichts- und Themenseiten funktionieren auch ohne JavaScript. <a href="index.html">Zur Übersicht</a></p></noscript>
+<div id="search-results"></div>
+<button id="search-more" type="button" hidden>Weitere 50 anzeigen</button>
+<footer class="footer">Statische Suche im Browser, ohne Suchdienst oder Analytics.</footer>
+</main></body></html>

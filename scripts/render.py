@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-render.py — erzeugt das AI-Briefing als STATISCHE HTML-Seiten (ohne JavaScript).
+render.py — erzeugt das AI-Briefing als statische HTML-Seiten und eine lokale JavaScript-Suche.
 
 Liest eine einzige Datenquelle (data/briefing.json) und schreibt:
   site/style.css            — gemeinsames Stylesheet aller Seiten
@@ -24,6 +24,7 @@ import json, math, os, html as _html, datetime, re
 from pathlib import Path
 
 import history as history_mod
+from search import build_search_index, build_search_page
 
 # AI_BRIEFING_ROOT biegt Datenquelle und Ausgabe um (Probeläufe, Tests).
 ROOT = Path(os.environ.get("AI_BRIEFING_ROOT")
@@ -331,7 +332,16 @@ CSS = """  :root{
     background:#fff8e6;border:1px solid #e8c766;color:#6b4e00;font-size:14px}
   .ov-stale{display:inline-block;margin:0 0 8px;font-size:12px;font-weight:500;
     color:#6b4e00;background:#fff8e6;border:1px solid #e8c766;
-    border-radius:999px;padding:2px 10px}"""
+    border-radius:999px;padding:2px 10px}
+  .search-controls{display:flex;gap:12px;margin:8px 0;flex-wrap:wrap}
+  #search-form label{font-weight:600}
+  #search-query{min-width:0;flex:1 1 240px;width:100%;font:inherit;padding:12px;border:1px solid var(--wg60);border-radius:8px}
+  button{font:inherit;padding:12px 18px;border:1px solid var(--blue);border-radius:8px;background:var(--blue);color:white;cursor:pointer}
+  button:disabled{opacity:.6;cursor:wait}
+  [hidden]{display:none!important}
+  #search-results{overflow-wrap:anywhere}
+  #search-results .dcard{max-width:90ch}
+  :focus-visible{outline:3px solid var(--blue);outline-offset:3px}"""
 
 SCALE_BLOCK = """  <div class="scale">
     <h3>Wie sich der Impact bestimmt</h3>
@@ -374,12 +384,14 @@ def range_switcher_html(page, active_key, period=""):
     return f'<nav class="range-sw">{"".join(links)}</nav>{period_line}'
 
 
-def nav_html(topics, active_id):
+def nav_html(topics, active_id, range_key="today"):
     ov_cls = ' class="active"' if active_id == "index" else ""
     links = [f'<a href="index.html"{ov_cls}>Übersicht</a>']
     for t in topics:
         cls = ' class="active"' if t["id"] == active_id else ""
         links.append(f'<a href="{t["id"]}.html"{cls}>{esc(t["name"])}</a>')
+    prefix = '' if range_key == 'today' else '../'
+    links.append(f'<a href="{prefix}search.html">Suche</a>')
     return '<nav class="nav">' + "".join(links) + '</nav>'
 
 
@@ -398,6 +410,18 @@ def format_iso_date(value):
     except ValueError:
         return ""
     return f"{date.day}. {GERMAN_MONTHS[date.month - 1]} {date.year}"
+
+
+def edition_label(meta, range_key):
+    if range_key != "today":
+        return meta.get("period", "")
+    date = format_iso_date(meta.get("generated"))
+    return f"Ausgabe vom {date}" if date else "Aktuelle Ausgabe"
+
+
+def edition_note(range_key):
+    return ('<p class="sub">Enthält auch frühere Meldungen; Originaldaten stehen an den Einträgen.</p>'
+            if range_key == "today" else "")
 
 
 def generated_date_text(value):
@@ -465,12 +489,12 @@ def footer_html(meta):
     updated_line = f'<br><span class="footer-updated">{esc(updated)}</span>' if updated else ""
     return (f'<div class="footer">{esc(meta.get("disclaimer", ""))}<br>'
             f'Aufbau nach dem Tech-Radar-Prinzip (Ringe = Impact, Segmente = Kategorie). '
-            f'Statischer Export, kein JavaScript. Auswahl per Recherche — keine Gewähr auf Vollständigkeit.'
+            f'Statischer Export; nur die lokale Suche benötigt JavaScript. Auswahl per Recherche — keine Gewähr auf Vollständigkeit.'
             f'{updated_line}</div>')
 
 
 def build_topic_page(topic, meta, topics, range_key="today"):
-    zeitraum = meta.get("period", "")
+    zeitraum = edition_label(meta, range_key)
     ctx = topic.get("angle", "")
     entries = topic.get("items", [])
     skip = topic.get("skip", [])
@@ -510,8 +534,9 @@ def build_topic_page(topic, meta, topics, range_key="today"):
       </div>
     </div>
   </header>
-  {nav_html(topics, topic["id"])}
+  {nav_html(topics, topic["id"], range_key)}
 
+{edition_note(range_key)}
   <p class="lede">{esc(topic.get("summary", ""))}</p>
 {stale_notice}
   <div class="board">
@@ -597,7 +622,7 @@ def build_overview(briefing, range_key="today"):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{esc(meta.get("title","AI-Briefing"))} Übersicht — {esc(meta.get("period",""))}</title>
+<title>{esc(meta.get("title","AI-Briefing"))} Übersicht — {esc(edition_label(meta, range_key))}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -613,12 +638,13 @@ def build_overview(briefing, range_key="today"):
         <div class="sub">{len(topics)} Themenbereich(e)</div>
       </div>
       <div class="meta-right">
-        {range_switcher_html("index", range_key, meta.get("period", ""))}
+        {range_switcher_html("index", range_key, edition_label(meta, range_key))}
       </div>
     </div>
   </header>
-  {nav_html(topics, "index")}
+  {nav_html(topics, "index", range_key)}
 
+{edition_note(range_key)}
   <p class="lede">{esc(meta.get("intro",""))}</p>
 
 {body}
@@ -685,6 +711,12 @@ def main():
             (outdir / f'{rt["id"]}.html').write_text(
                 build_topic_page(rt, rmeta, rtopics, range_key=key), encoding="utf-8")
 
+    (SITE / "search.html").write_text(build_search_page(), encoding="utf-8")
+    (SITE / "search.js").write_text(
+        Path(__file__).with_name("search.js").read_text(encoding="utf-8"), encoding="utf-8")
+    (SITE / "search-index.json").write_text(
+        json.dumps(build_search_index(briefing, hist, DATA.parent / "archive"),
+                   ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     (SITE / ".nojekyll").write_text("", encoding="utf-8")
     total = sum(len(t.get("items", [])) for t in topics)
     n_hist = len(hist["items"])

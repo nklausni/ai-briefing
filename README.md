@@ -33,8 +33,9 @@ AI Briefing/
 │   ├── validate_research_audit.py ← prüft die vollständige Quellenabdeckung
 │   ├── update.py           ← optionaler Standalone-Weg zur Recherche (siehe unten)
 │   └── test/               ← Unit-Tests (nur Standardbibliothek)
-└── site/                   ← generierte statische Seiten (kein JavaScript)
+└── site/                   ← generierte statische Seiten (JavaScript nur für die lokale Suche)
     ├── 7d/ · 14d/ · 30d/   ← Zeitraum-Ansichten (letzte 7/14/30 Tage)
+    ├── search.html · search.js · search-index.json ← lokale Volltextsuche
     ├── style.css           ← gemeinsames Stylesheet aller Seiten
     ├── index.html
     ├── ai-news.html
@@ -73,14 +74,13 @@ damit nicht mehr verloren.
 
 Meldungen, die älter als 35 Tage sind, wandern beim Render aus dem Pool in
 Monatsdateien unter `data/archive/` (`history.KEEP_DAYS`). Die größte Ansicht
-reicht 30 Tage zurück, ältere Einträge werden also von keiner Seite mehr
-gelesen; ohne die Rotation würde der Pool bei jedem Lauf komplett neu
+reicht 30 Tage zurück; die Suche liest zusätzlich die vorhandenen Archive; ohne die Rotation würde der Pool bei jedem Lauf komplett neu
 geschrieben und immer weiter wachsen.
 
 Die Seite wird in vier Ansichten gerendert, umschaltbar über die Zeile
 „Zeitraum" in der Navigation (reine Links, weiterhin kein JavaScript):
 
-- **Heute** (`site/`) — das aktuelle Tagesbriefing, wie bisher.
+- **Heute** (`site/`) — die aktuelle redaktionelle Ausgabe, beschriftet mit „Ausgabe vom …“ aus `meta.generated`, nicht ein Filter auf das Veröffentlichungsdatum der Meldungen. Frühere geprüfte Entwicklungen dürfen erhalten bleiben; Originaldaten stehen an den Einträgen. `meta.period` und historische Audits bleiben unverändert.
 - **7 / 14 / 30 Tage** (`site/7d/`, `site/14d/`, `site/30d/`) — Meldungen aus
   dem Pool im jeweiligen Zeitfenster, je Topic neu nummeriert (sortiert nach
   Impact, dann Datum). Lede ist die jüngste Tages-Summary; der
@@ -93,6 +93,31 @@ python3 -m unittest discover -s scripts/test -t scripts/test
 ```
 
 Sie laufen zusätzlich bei jedem Push über `.github/workflows/tests.yml`.
+
+## Lokale Suche
+
+„Suche“ ist von jeder Übersicht und Themenseite erreichbar, auch aus 7/14/30 Tagen.
+`render.py` erzeugt einen deterministischen JSON-Index aus aktueller Ausgabe,
+`history.json` und allen vorhandenen JSON-Archiven (Monatspools sowie ältere
+Briefing-Snapshots). Deduplizierung erfolgt je Thema mit der Historien-Identität;
+Titel, Zusammenfassung, Thema, Originaldatum und Quellen sind durchsuchbar.
+Nicht gespeicherte Meldungen und Volltexte externer Artikel werden nicht durchsucht.
+
+Alle Suchwörter müssen vorkommen; Groß-/Kleinschreibung, Leerraum und deutsche
+Umlaute (auch ae/oe/ue und ß/ss) werden angeglichen. Die Anzeige beginnt mit maximal
+50 Treffern und bietet „Weitere 50 anzeigen“ samt genauer Gesamtzahl. Die Suche
+läuft ausschließlich lokal im Browser, ohne Suchanbieter oder Analytics. Daten
+werden als Text gerendert, Quell-Links nur mit HTTP(S) zugelassen. Ladefehler,
+keine Treffer und deaktiviertes JavaScript erhalten eigene Hinweise.
+
+Für die Suche lokal einen HTTP-Server nutzen (Browser blockieren `fetch` bei `file://`):
+
+```bash
+python3 -m http.server 8000 --directory site
+node --test scripts/test/search.test.cjs
+```
+
+Übersichten, Themen und Zeitraum-Umschaltung funktionieren weiterhin ohne JavaScript.
 
 ## Inhalt bearbeiten
 
@@ -226,4 +251,4 @@ vollständige Recherche-Dateien und die bestehenden Qualitätsprüfungen bleiben
 
 Der Workflow `.github/workflows/pages.yml` veröffentlicht bei Änderungen unter `site/`
 die statische Seite über GitHub Pages. Lokal genügt das Öffnen von `site/index.html` im
-Browser.
+Browser; für die Suche ist ein HTTP-Server nötig (siehe oben).

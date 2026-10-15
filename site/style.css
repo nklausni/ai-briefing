@@ -151,3 +151,12 @@
   .ov-stale{display:inline-block;margin:0 0 8px;font-size:12px;font-weight:500;
     color:#6b4e00;background:#fff8e6;border:1px solid #e8c766;
     border-radius:999px;padding:2px 10px}
+  .search-controls{display:flex;gap:12px;margin:8px 0;flex-wrap:wrap}
+  #search-form label{font-weight:600}
+  #search-query{min-width:0;flex:1 1 240px;width:100%;font:inherit;padding:12px;border:1px solid var(--wg60);border-radius:8px}
+  button{font:inherit;padding:12px 18px;border:1px solid var(--blue);border-radius:8px;background:var(--blue);color:white;cursor:pointer}
+  button:disabled{opacity:.6;cursor:wait}
+  [hidden]{display:none!important}
+  #search-results{overflow-wrap:anywhere}
+  #search-results .dcard{max-width:90ch}
+  :focus-visible{outline:3px solid var(--blue);outline-offset:3px}

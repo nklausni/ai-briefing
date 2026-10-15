@@ -83,8 +83,13 @@ class TestRenderVariants(unittest.TestCase):
             # Umschalter samt Periodenzeile steht im meta-right-Block
             meta_block = root.split('class="meta-right"', 1)[1].split("</header>", 1)[0]
             self.assertIn('<nav class="range-sw">', meta_block, page)
-            self.assertIn('<div class="range-period">9.–10. Juni 2026</div>',
+            self.assertIn('<div class="range-period">Ausgabe vom 10. Juni 2026</div>',
                           meta_block, page)
+            self.assertIn('Enthält auch frühere Meldungen; Originaldaten stehen an den Einträgen.', root)
+            self.assertIn('Ausgabe vom 10. Juni 2026</title>', root)
+            self.assertNotIn('9.–10. Juni 2026', root)
+            self.assertIn('09.06.2026', root if page == 'ai-news.html' else
+                          (render.SITE / 'ai-news.html').read_text())
         sub = (render.SITE / "7d" / "index.html").read_text(encoding="utf-8")
         self.assertIn('<div class="range-period">4.–10. Juni 2026</div>', sub)
 

@@ -17,5 +17,10 @@ jobs:
           python-version: "3.12"
       # render.py und history.py brauchen nur die Standardbibliothek,
       # deshalb kein Install-Schritt.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Test local search
+        run: node --test scripts/test/search.test.cjs
       - name: Run tests
         run: python3 -m unittest discover -s scripts/test -t scripts/test -v
