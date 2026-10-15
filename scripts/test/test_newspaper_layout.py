@@ -54,6 +54,17 @@ class NewspaperLayout(unittest.TestCase):
         for marker in ('id="search-form"', 'id="search-status"', 'id="search-more"', '<noscript>'):
             self.assertIn(marker, page)
 
+    def test_overview_search_reserves_space_for_outside_focus_ring(self):
+        # Desktop grid rows used to touch: the 3px outline + 3px offset
+        # painted over the help text. Mobile already has an 8px margin.
+        import re
+        grid_rule = next(rule for rule in re.findall(r'\.overview-search\{([^}]+)\}', render.CSS)
+                         if 'display:grid' in rule)
+        gap = re.search(r'row-gap:(\d+)px', grid_rule)
+        self.assertIsNotNone(gap, 'Reserve a row gap between search controls and help text')
+        self.assertGreaterEqual(int(gap.group(1)), 8)
+        self.assertIn(':focus-visible{outline:3px solid var(--blue);outline-offset:3px}', render.CSS)
+
     def test_topic_desk_uses_balanced_newspaper_columns(self):
         self.assertIn('<div class="edition-sections">', render.build_overview(BRIEFING))
 
