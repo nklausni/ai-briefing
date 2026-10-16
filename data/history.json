@@ -13672,82 +13672,577 @@
    ],
    "first_seen": "2026-10-15",
    "change_type": "business"
-  }
- ],
- "summaries": [
+  },
   {
    "topic_id": "ai-news",
-   "date": "2026-09-11",
-   "summary": "Anthropic veröffentlicht einen neuen Bericht zu beobachtetem KI-Missbrauch, einschließlich koordinierter Cyberoperationen.",
-   "skip": []
+   "title": "Muse Spark Open: Meta veröffentlicht multimodale Gewichte unter eigener Lizenz",
+   "category": "modelle",
+   "impact": 4,
+   "date": "2026-10-15",
+   "summary": "Muse Spark Open hat laut Model Card 816 Milliarden Gesamt- und 42 Milliarden aktive Parameter sowie eine Million Tokens Kontext; Text, Bilder, Video und Audio gehen hinein, Text kommt heraus.[59] Die Muse Model License enthält besondere kommerzielle Bedingungen, und die NVFP4-Variante benötigt laut Meta mindestens 700 GB GPU-Speicher: offene Gewichte sind weder uneingeschränkt Open Source noch ein gewöhnliches Notebook-Modell.[59]",
+   "sources": [
+    {
+     "label": "[59] Meta Model Card und Lizenz",
+     "url": "https://huggingface.co/meta-models/Muse-Spark-Open-816B-A42B"
+    },
+    {
+     "label": "[58] The New Stack",
+     "url": "https://thenewstack.io/meta-muse-spark-open/"
+    }
+   ],
+   "first_seen": "2026-10-16",
+   "change_type": "general_availability"
+  },
+  {
+   "topic_id": "ai-news",
+   "title": "Nemotron 3.5 Super VL erscheint für multimodale Unternehmensagenten",
+   "category": "modelle",
+   "impact": 3,
+   "date": "2026-10-15",
+   "summary": "NVIDIA veröffentlicht das anpassbare multimodale Modell mit 120 Milliarden Gesamt- und zwölf Milliarden aktiven Parametern für Dokumente, Bilder, Video und Werkzeugnutzung.[15] Die Gewichte sind verfügbar; Ergebnisse spezialisierter nachtrainierter Varianten belegen keine allgemeine Überlegenheit des Basismodells gegenüber Frontier-Modellen.[16]",
+   "sources": [
+    {
+     "label": "[15] NVIDIA",
+     "url": "https://developer.nvidia.com/blog/nvidia-nemotron-3-5-super-vl-powers-specialized-agents-with-multimodal-reasoning/"
+    },
+    {
+     "label": "[16] VentureBeat",
+     "url": "https://venturebeat.com/technology/nvidias-new-open-nemotron-3-5-super-vl-with-post-training-beats-claude-opus-5-gpt-6-1-sol-on-specialized-task-benchmarks"
+    }
+   ],
+   "first_seen": "2026-10-16",
+   "change_type": "general_availability"
+  },
+  {
+   "topic_id": "ai-news",
+   "title": "MAI-Base-2: Microsoft legt Pretraining offen, noch keine Gewichtsfreigabe",
+   "category": "modelle",
+   "impact": 3,
+   "date": "2026-10-15",
+   "summary": "Microsoft beschreibt ein MoE-Basismodell mit 2,8 Billionen Gesamt- und 80 Milliarden aktiven Parametern nach abgeschlossenem Pretraining.[27] MAI-Base-2 befindet sich noch im Posttraining; die geplante Lizenzierung an vertrauenswürdige Foundry-Partner ist keine bereits erfolgte offene Veröffentlichung.[27]",
+   "sources": [
+    {
+     "label": "[27] Microsoft AI",
+     "url": "https://microsoft.ai/news/frontier-pre-training-at-microsoft-ai/"
+    }
+   ],
+   "first_seen": "2026-10-16",
+   "change_type": "research"
+  },
+  {
+   "topic_id": "ai-news",
+   "title": "d1-ultra startet als multimodale Entscheidungs-API",
+   "category": "modelle",
+   "impact": 3,
+   "date": "2026-10-15",
+   "summary": "Liquid AI gibt d1-ultra über seine API frei: Text und Bilder werden in Wahrscheinlichkeiten für vorgegebene Entscheidungen überführt, ohne Ausgabetokens zu generieren.[75] Der Anbieter nennt 0,042 US-Dollar je Million Eingabetokens; eine allgemeine Benchmarkführerschaft wird daraus nicht abgeleitet.[75]",
+   "sources": [
+    {
+     "label": "[75] Liquid AI",
+     "url": "https://www.liquid.ai/blog/d1-ultra"
+    }
+   ],
+   "first_seen": "2026-10-16",
+   "change_type": "general_availability"
+  },
+  {
+   "topic_id": "ai-news",
+   "title": "Granite Switch 4.1 bündelt Chat, Entscheidungen und Transkription",
+   "category": "modelle",
+   "impact": 3,
+   "date": "2026-10-15",
+   "summary": "IBM stellt Granite Switch 4.1 in 8B- und 30B-Varianten mit spezialisierten Adaptern und Spracherkennung vor.[32] Ein gemeinsamer Endpoint soll zwischen Sprachantworten, Entscheidungen und Speech-to-Text wechseln; beworbene Vergleichsvorteile bleiben IBM-eigene Messungen.[32]",
+   "sources": [
+    {
+     "label": "[32] IBM / Hugging Face",
+     "url": "https://huggingface.co/blog/ibm-granite/granite-switch-4-1"
+    }
+   ],
+   "first_seen": "2026-10-16",
+   "change_type": "announcement"
   },
   {
    "topic_id": "lokale-llms",
-   "date": "2026-09-11",
-   "summary": "Für lokale LLMs fand sich im Zeitraum keine belastbar datierte, eigenständige Entwicklung mit ausreichender Relevanz.",
-   "skip": [
+   "title": "FLUX 3 Image Klein erhält offene Gewichte mit kommerzieller Umsatzgrenze",
+   "category": "lokal",
+   "impact": 4,
+   "date": "2026-10-15",
+   "summary": "Black Forest Labs veröffentlicht das Bildmodell mit 5,6 Milliarden Parametern unter der FLUX Kommunity License.[12] Kostenlose kommerzielle Nutzung gilt für Personen und Unternehmen unter fünf Millionen Dollar Jahresumsatz; größere Organisationen benötigen andere Bedingungen oder die API.[12][13]",
+   "sources": [
     {
-     "reason": "Keine neue eigenständige Entwicklung im Zeitraum",
-     "text": "Für lokale LLMs fand sich im Zeitraum keine belastbar datierte, eigenständige Entwicklung mit ausreichender Relevanz."
+     "label": "[12] Black Forest Labs",
+     "url": "https://bfl.ai/blog/flux-3-image-klein"
+    },
+    {
+     "label": "[13] VentureBeat",
+     "url": "https://venturebeat.com/technology/black-forest-labs-opens-flux-3-image-klein-weights-with-free-commercial-use-limited-to-smaller-businesses"
     }
-   ]
+   ],
+   "first_seen": "2026-10-16",
+   "change_type": "general_availability"
+  },
+  {
+   "topic_id": "lokale-llms",
+   "title": "Nemotron 3.5 Bolt 74B-A9B 24GB erscheint für lokale Agenten",
+   "category": "lokal",
+   "impact": 3,
+   "date": "2026-10-15",
+   "summary": "NVIDIA veröffentlicht ein multimodales Modell mit 74 Milliarden Gesamt- und neun Milliarden aktiven Parametern sowie nativer Zwei-Bit-Quantisierung.[55][57] Die Model Card nennt 24 GB für das Modell; das ist keine Garantie, dass Laufzeit, KV-Cache und weitere Anwendungen gemeinsam auf jedem 24-GB-Rechner Platz finden.[57]",
+   "sources": [
+    {
+     "label": "[55] The New Stack",
+     "url": "https://thenewstack.io/nvidia-nemotron-bolt-laptop/"
+    },
+    {
+     "label": "[57] NVIDIA Model Card",
+     "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-74B-A9B-24GB"
+    }
+   ],
+   "first_seen": "2026-10-16",
+   "change_type": "general_availability"
+  },
+  {
+   "topic_id": "lokale-llms",
+   "title": "Jais 3 veröffentlicht sechs arabischzentrierte Sprachmodelle",
+   "category": "lokal",
+   "impact": 2,
+   "date": "2026-10-15",
+   "summary": "IFM und Inception42 geben sechs offene Jais-3-Sprachmodelle mit 0,9 bis 375 Milliarden Parametern über Hugging Face frei.[76] Der Anbieter nennt Unterstützung für vLLM und SGLang; eine unabhängig gemessene Überlegenheit oder einheitliche Kontextgröße aller Varianten ist damit nicht belegt.[76]",
+   "sources": [
+    {
+     "label": "[76] IFM / Inception42",
+     "url": "https://ifm.ai/jais3/press-release/"
+    }
+   ],
+   "first_seen": "2026-10-16",
+   "change_type": "general_availability"
+  },
+  {
+   "topic_id": "lokale-llms",
+   "title": "Myna bringt lokale Spracheingabe als Ubuntu-Preview",
+   "category": "lokal",
+   "impact": 2,
+   "date": "2026-10-15",
+   "summary": "Ubuntu 26.10 bietet Myna als nachinstallierbare Preview für Spracheingabe mit lokalem Modell ohne Internetverbindung.[42] Das ist noch keine fertige allgemeine Desktop-Assistenz; ein umfassenderer Assistent ist erst für ein späteres LTS-Release geplant.[42]",
+   "sources": [
+    {
+     "label": "[42] heise online",
+     "url": "https://www.heise.de/news/Ubuntu-26-10-Linux-7-3-und-KI-Assistent-im-Gepaeck-11488457.html"
+    }
+   ],
+   "first_seen": "2026-10-16",
+   "change_type": "preview"
   },
   {
    "topic_id": "agentic-engineering",
-   "date": "2026-09-11",
-   "summary": "Für Agentic Engineering fand sich im Zeitraum keine belastbar datierte, eigenständige Entwicklung mit ausreichender Relevanz.",
-   "skip": [
+   "title": "GPT-Live integriert die Decisions API nativ während laufender Sprache",
+   "category": "agents",
+   "impact": 4,
+   "date": "2026-10-15",
+   "summary": "Der API-Changelog ergänzt native Delegation von GPT-Live an Decisions sowie Entscheidungen auf eingehenden oder ausgehenden Transkript-Deltas.[20] Native Delegation spart gegenüber anwendungsseitiger Weiterleitung einen zusätzlichen Umweg; diese Integration ist nicht erneut die frühere öffentliche Beta der Decisions API.[21]",
+   "sources": [
     {
-     "reason": "Keine neue eigenständige Entwicklung im Zeitraum",
-     "text": "Für Agentic Engineering fand sich im Zeitraum keine belastbar datierte, eigenständige Entwicklung mit ausreichender Relevanz."
+     "label": "[20] OpenAI API-Changelog",
+     "url": "https://developers.openai.com/api/docs/changelog"
+    },
+    {
+     "label": "[21] OpenAI Decisions / Voice",
+     "url": "https://developers.openai.com/api/docs/guides/decisions-voice"
     }
-   ]
+   ],
+   "first_seen": "2026-10-16",
+   "change_type": "integration"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "FDE-Gym prüft Agenten an unvollständigen Kundenanforderungen",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-10-15",
+   "summary": "Der neue Preprint beschreibt 95 Lieferaufgaben aus 20 Kundenszenarien in 18 Branchen.[28] Die beste untersuchte Konfiguration löst nach dem strengen Autorenkriterium nur 14 Aufgaben; das ist ein Forschungsbenchmark und keine allgemeine Ausfallquote produktiver Agenten.[28]",
+   "sources": [
+    {
+     "label": "[28] arXiv / FDE-Gym",
+     "url": "https://arxiv.org/abs/2610.22350"
+    }
+   ],
+   "first_seen": "2026-10-16",
+   "change_type": "research"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "LEASH routet Computer-Aufgaben zwischen kleinen und starken Agenten",
+   "category": "agents",
+   "impact": 2,
+   "date": "2026-10-15",
+   "summary": "LEASH nutzt Unsicherheit für anfängliches Routing, Eskalation während der Ausführung und weitere Beobachtung nach der Übergabe an einen starken Black-Box-Agenten.[30] Die Autoren untersuchen dies auf OSWorld; Übertragbarkeit und unabhängige Replikation ihrer Kosten- und Erfolgswerte bleiben offen.[30]",
+   "sources": [
+    {
+     "label": "[30] arXiv / LEASH",
+     "url": "https://arxiv.org/abs/2610.22280"
+    }
+   ],
+   "first_seen": "2026-10-16",
+   "change_type": "research"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "ToolSmith öffnet Vibe Coding für EmployeeWorks begrenzt",
+   "category": "tools",
+   "impact": 2,
+   "date": "2026-10-15",
+   "summary": "ServiceNow bietet ToolSmith zum dialogischen Erstellen und Überarbeiten von Automationen für EmployeeWorks-Assistenten an.[47] Computerworld nennt ausdrücklich kontrollierte Verfügbarkeit, keine allgemeine Freigabe.[47]",
+   "sources": [
+    {
+     "label": "[47] Computerworld",
+     "url": "https://www.computerworld.com/article/4235892/servicenow-makes-it-easier-to-build-ai-agents-gives-them-verifiable-identities-3.html"
+    }
+   ],
+   "first_seen": "2026-10-16",
+   "change_type": "preview"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "GitHub Copilot arbeitet in Slack und Teams über mehrere Repositories",
+   "category": "agents",
+   "impact": 2,
+   "date": "2026-10-15",
+   "summary": "Copilot unterstützt mehrere Repositories innerhalb einer Unterhaltung in Slack und Microsoft Teams.[53] Das Update verbessert außerdem Kontext aus geteilten Slack-Nachrichten, Repository-Wechsel und die Wiederaufnahme unterbrochener Aufgaben.[53]",
+   "sources": [
+    {
+     "label": "[53] GitHub Changelog",
+     "url": "https://github.blog/changelog/2026-10-15-copilot-in-slack-and-teams-adds-model-and-repository-updates"
+    }
+   ],
+   "first_seen": "2026-10-16",
+   "change_type": "update"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "DigitalOcean Simulations startet als öffentliche Preview für Agententests",
+   "category": "agents",
+   "impact": 2,
+   "date": "2026-10-12",
+   "summary": "Simulations testet mehrstufige Gespräche in einer isolierten Harness-Runtime-Umgebung; schreibende oder kostenpflichtige Werkzeuge können als Mocks laufen.[80] Die öffentliche Preview unterstützt nicht LangChain, Hermes oder CrewAI und ist keine allgemeine Freigabe.[80]",
+   "sources": [
+    {
+     "label": "[80] DigitalOcean",
+     "url": "https://www.digitalocean.com/blog/introducing-signals-and-simulations"
+    },
+    {
+     "label": "[78] DigitalOcean Originalmitteilung",
+     "url": "https://investors.digitalocean.com/news/news-details/2026/DigitalOcean-Launches-Agent-Learning-and-Data-Services-for-Recursively-Self-Improving-AI-Agents/default.aspx"
+    }
+   ],
+   "first_seen": "2026-10-16",
+   "change_type": "public_beta"
   },
   {
    "topic_id": "ai-tools",
-   "date": "2026-09-11",
-   "summary": "Für AI Tools fand sich im Zeitraum keine belastbar datierte, eigenständige Entwicklung mit ausreichender Relevanz.",
-   "skip": [
+   "title": "Krea 3 startet als Beta für regionale Bildbearbeitung",
+   "category": "tools",
+   "impact": 3,
+   "date": "2026-10-15",
+   "summary": "Krea öffnet die Beta von Krea 3; Änderungen lassen sich per Begrenzungsrahmen auf einen Bildbereich richten.[1][2] Der TestingCatalog-Bericht ist gesponsert, die Produktbeschreibung stammt vom Anbieter: Qualitäts- und Geschwindigkeitsversprechen sind keine unabhängigen Tests.[1][2]",
+   "sources": [
     {
-     "reason": "Keine neue eigenständige Entwicklung im Zeitraum",
-     "text": "Für AI Tools fand sich im Zeitraum keine belastbar datierte, eigenständige Entwicklung mit ausreichender Relevanz."
+     "label": "[1] TestingCatalog (gesponsert)",
+     "url": "https://testingcatalog.com/krea-launched-krea-3-for-fast-and-precise-image-editing/"
+    },
+    {
+     "label": "[2] Krea",
+     "url": "https://krea.ai/krea-3"
     }
-   ]
+   ],
+   "first_seen": "2026-10-16",
+   "change_type": "public_beta"
+  },
+  {
+   "topic_id": "ai-tools",
+   "title": "Universal Cart rollt in Google Search und Gemini in den USA aus",
+   "category": "tools",
+   "impact": 3,
+   "date": "2026-10-15",
+   "summary": "Nach einer früheren Preview rollt Google den gemeinsamen Warenkorb für mehrere Händler in den USA in Search und der Gemini-App aus.[26] Universal Cart informiert über Preis- und Bestandsänderungen und bietet Checkout über Google Pay oder beim Händler; eine weltweite Freigabe ist nicht angekündigt.[26]",
+   "sources": [
+    {
+     "label": "[26] Google",
+     "url": "https://blog.google/products-and-platforms/products/shopping/universal-cart-launch/"
+    }
+   ],
+   "first_seen": "2026-10-16",
+   "change_type": "general_availability"
+  },
+  {
+   "topic_id": "ai-tools",
+   "title": "ChatGPT ergänzt Tab-Kontext und Bedienung in Chrome",
+   "category": "tools",
+   "impact": 3,
+   "date": "2026-10-15",
+   "summary": "Mit markiertem Chrome-Kontext kann ChatGPT über die aktualisierte Erweiterung offene Tabs berücksichtigen; die Seitenleiste bietet ChatGPT samt Verlauf.[41] ChatGPT Work kann laut Bericht auch Tabs bedienen, etwa Formulare ausfüllen oder Dateien herunterladen; das ist keine Aussage über fehlerfreie oder risikofreie Ausführung.[41]",
+   "sources": [
+    {
+     "label": "[41] The Verge",
+     "url": "https://www.theverge.com/ai-artificial-intelligence/1012510/openai-chatgpt-google-chrome-tabs"
+    }
+   ],
+   "first_seen": "2026-10-16",
+   "change_type": "update"
+  },
+  {
+   "topic_id": "ai-tools",
+   "title": "Attie erweitert Blueskys KI-Werkzeug um Websites und Spiele",
+   "category": "tools",
+   "impact": 2,
+   "date": "2026-10-15",
+   "summary": "Bluesky erweitert Attie über individuelle Feeds hinaus um Websites, Spiele, Quizze und andere interaktive Angebote.[39] Die Ergebnisse werden mit ATProto-Identitäten und dem sozialen Netzwerk verbunden; das ist eine Funktionsausweitung, kein Nachweis der Qualität erzeugter Anwendungen.[39]",
+   "sources": [
+    {
+     "label": "[39] TechCrunch",
+     "url": "https://techcrunch.com/2026/10/15/bluesky-expands-its-ai-powered-attie-app-to-let-anyone-build-websites-games-and-more/"
+    }
+   ],
+   "first_seen": "2026-10-16",
+   "change_type": "update"
   },
   {
    "topic_id": "context-engineering",
-   "date": "2026-09-11",
-   "summary": "Für Context & Prompt Engineering fand sich im Zeitraum keine belastbar datierte, eigenständige Entwicklung mit ausreichender Relevanz.",
-   "skip": [
+   "title": "Tool Recommendation lädt Arcade-Werkzeuge bedarfsgerecht nach",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-10-15",
+   "summary": "Arcade stellt Cloud-Kunden Tool Recommendation ohne separate Funktionsgebühr bereit, damit Agenten passende Werkzeuge über MCP statt vollständiger Kataloge erhalten.[14] Die beworbenen 37 Prozent betreffen modellierte Eingabekosten; ein vollständigerer Anbietertest meldet 7,6 Prozent weniger Tokenkosten und wurde von VentureBeat nicht unabhängig reproduziert.[14]",
+   "sources": [
     {
-     "reason": "Keine neue eigenständige Entwicklung im Zeitraum",
-     "text": "Für Context & Prompt Engineering fand sich im Zeitraum keine belastbar datierte, eigenständige Entwicklung mit ausreichender Relevanz."
+     "label": "[14] VentureBeat",
+     "url": "https://venturebeat.com/orchestration/new-tool-recommendation-system-cuts-your-firms-input-token-costs-by-37-according-to-arcade-dev"
     }
-   ]
+   ],
+   "first_seen": "2026-10-16",
+   "change_type": "general_availability"
+  },
+  {
+   "topic_id": "context-engineering",
+   "title": "CLiF öffnet Early Access für Lernen aus Agenten- und Nutzerabläufen",
+   "category": "agents",
+   "impact": 2,
+   "date": "2026-10-15",
+   "summary": "CopilotKit startet CLiF im Early Access und erfasst Agentenspuren sowie Nutzeraktionen gemeinsam, um Skills, Evals und Trainingsdaten abzuleiten.[7] Vorgeschlagene Skills benötigen menschliche Freigabe; der gesponserte Bericht belegt keine unabhängig gemessene Selbstverbesserung.[7]",
+   "sources": [
+    {
+     "label": "[7] MarkTechPost (gesponsert, Volltext im RSS)",
+     "url": "https://www.marktechpost.com/2026/10/15/copilotkit-releases-clif-a-continual-learning-platform-that-turns-agent-traces-and-user-actions-into-skills-evals-and-fine-tuning-data/"
+    }
+   ],
+   "first_seen": "2026-10-16",
+   "change_type": "preview"
+  },
+  {
+   "topic_id": "context-engineering",
+   "title": "OmniParseBench veröffentlicht prüfbare Tests für Dokumentparser",
+   "category": "tools",
+   "impact": 2,
+   "date": "2026-10-14",
+   "summary": "Datalab veröffentlicht einen offenen Benchmark mit 16.288 Ja/Nein-Tests auf 2.937 Seiten aus 2.343 Dokumenten in 92 Sprachen.[9] Der Anbieter verkauft selbst einen Parser; die Rangliste ist keine unabhängige universelle Qualitätsgarantie für Dokument-Pipelines.[9]",
+   "sources": [
+    {
+     "label": "[9] MarkTechPost (Volltext im RSS)",
+     "url": "https://www.marktechpost.com/2026/10/14/datalab-omniparsebench-open-ocr-document-parsing-benchmark/"
+    }
+   ],
+   "first_seen": "2026-10-16",
+   "change_type": "general_availability"
+  },
+  {
+   "topic_id": "context-engineering",
+   "title": "Agent Data Services startet bei DigitalOcean als Private Preview",
+   "category": "agents",
+   "impact": 2,
+   "date": "2026-10-12",
+   "summary": "DigitalOcean bündelt Inhalte, strukturierte Daten und Agentensitzungen in einem verwalteten Kontext- und Laufzeitdatenspeicher.[77] Die Private Preview setzt Zulassung voraus und schließt SLA, Supportzusage sowie die Standard-Compliance-Zertifizierungen aus.[77]",
+   "sources": [
+    {
+     "label": "[77] DigitalOcean",
+     "url": "https://www.digitalocean.com/blog/introducing-agent-data-services"
+    },
+    {
+     "label": "[78] DigitalOcean Originalmitteilung",
+     "url": "https://investors.digitalocean.com/news/news-details/2026/DigitalOcean-Launches-Agent-Learning-and-Data-Services-for-Recursively-Self-Improving-AI-Agents/default.aspx"
+    }
+   ],
+   "first_seen": "2026-10-16",
+   "change_type": "preview"
   },
   {
    "topic_id": "ai-security",
-   "date": "2026-09-11",
-   "summary": "Anthropic dokumentiert, wie Angreifer KI für breitere und schnellere Cyberoperationen einsetzen, und meldet unterbrochene Kampagnen.",
-   "skip": []
+   "title": "AI Scan für Pull Requests ist bei GitHub allgemein verfügbar",
+   "category": "security",
+   "impact": 4,
+   "date": "2026-10-15",
+   "summary": "GitHub gibt AI Scan für Pull Requests allgemein frei und ergänzt CodeQL unter anderem bei PHP, Shell, HCL und Dockerfiles.[51] Die KI-Befunde bleiben beratend und blockieren keine Merges; private Organisations-Repositories benötigen Code Security oder Advanced Security, und AI Credits werden verbraucht.[51]",
+   "sources": [
+    {
+     "label": "[51] GitHub Changelog",
+     "url": "https://github.blog/changelog/2026-10-15-ai-scan-for-pull-requests-generally-available"
+    }
+   ],
+   "first_seen": "2026-10-16",
+   "change_type": "general_availability"
+  },
+  {
+   "topic_id": "ai-security",
+   "title": "Agentic autofix erreicht die allgemeine Verfügbarkeit",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-10-15",
+   "summary": "GitHubs Agentic autofix untersucht Code-Scanning-Alerts, entwirft eine Korrektur und prüft sie erneut mit CodeQL, bevor ein Entwurfs-Pull-Request zur menschlichen Prüfung entsteht.[52] Die GA richtet sich an Enterprise-Cloud-Kunden mit Code Security oder Advanced Security; AI Credits und Actions-Minuten werden berechnet.[52]",
+   "sources": [
+    {
+     "label": "[52] GitHub Changelog",
+     "url": "https://github.blog/changelog/2026-10-15-agentic-autofix-for-code-scanning-alerts-general-availability"
+    }
+   ],
+   "first_seen": "2026-10-16",
+   "change_type": "general_availability"
+  },
+  {
+   "topic_id": "ai-security",
+   "title": "Jev: HiddenLayer zeigt Prompt Injection und manipulierte Klassifikation",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-10-15",
+   "summary": "Computerworld berichtet über HiddenLayers Tests vom 14. Oktober: Manipulierte Werbung lenkt einen Jev-basierten Browseragenten vom Auftrag ab, gezielte Textänderungen beeinflussen die Klassifikation.[49][50] Der Browserangriff funktioniert auch gegen das konventionelle Vergleichsmodell; die begrenzten Szenarien belegen keine pauschale Sicherheitsrangfolge aller Modelle.[50]",
+   "sources": [
+    {
+     "label": "[49] Computerworld",
+     "url": "https://www.computerworld.com/article/4236138/typesafes-jev-even-more-susceptible-to-attack-than-llms-says-security-vendor-3.html"
+    },
+    {
+     "label": "[50] HiddenLayer Originaltests",
+     "url": "https://www.hiddenlayer.com/research/system-one-model-security"
+    }
+   ],
+   "first_seen": "2026-10-16",
+   "change_type": "security"
+  },
+  {
+   "topic_id": "ai-security",
+   "title": "AI Passport soll signierte Agentenberechtigungen zur Laufzeit prüfen",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-10-15",
+   "summary": "ServiceNow kündigt AI Passport für kryptografisch signierte, zur Laufzeit überprüfbare Agentenberechtigungen an.[47] Die Verfügbarkeit ist erst für Q4 2026 erwartet; das ist keine bereits ausgelieferte umfassende Sicherheitsgarantie.[48]",
+   "sources": [
+    {
+     "label": "[47] Computerworld",
+     "url": "https://www.computerworld.com/article/4235892/servicenow-makes-it-easier-to-build-ai-agents-gives-them-verifiable-identities-3.html"
+    },
+    {
+     "label": "[48] ServiceNow Originalmitteilung",
+     "url": "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-advances-its-operational-harness-for-enterprise-AI-with-AI-Passport-and-expanded-governance-capabilities/default.aspx"
+    }
+   ],
+   "first_seen": "2026-10-16",
+   "change_type": "announcement"
   },
   {
    "topic_id": "ai-governance",
-   "date": "2026-09-11",
-   "summary": "Anthropic legt neue Fallstudien zu KI-Missbrauch und den eigenen Reaktionsmaßnahmen offen.",
-   "skip": []
+   "title": "METR erhält bei Anthropic internen Zugang ohne Veröffentlichungsveto",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-10-15",
+   "summary": "Anthropic stattet sechs METR-Mitarbeitende mit Hardware, Arbeitsplätzen und internen Zugängen ähnlich den eigenen Risikoprüfern aus.[17] METR darf Ergebnisse ohne Veröffentlichungsveto publizieren; eng definierte vertrauliche Informationen können geschwärzt werden, und freiwillige Evaluation ist keine staatliche Aufsicht oder Sicherheitsgarantie.[17]",
+   "sources": [
+    {
+     "label": "[17] Anthropic",
+     "url": "https://www.anthropic.com/news/an-update-on-independent-evaluators"
+    }
+   ],
+   "first_seen": "2026-10-16",
+   "change_type": "policy"
+  },
+  {
+   "topic_id": "ai-governance",
+   "title": "GitHub Copilot kündigt Modellabschaltungen zum 16. November an",
+   "category": "tools",
+   "impact": 2,
+   "date": "2026-10-15",
+   "summary": "GitHub kündigt die Abschaltung von Claude Opus 4.8, Claude Opus 5 und GPT-5.6 Terra in Copilot für den 16. November 2026 an.[54] Individuelle Copilot-Jahresabonnements sind bei Opus 4.8 ausgenommen; die Abschaltung ist angekündigt, noch nicht vollzogen.[54]",
+   "sources": [
+    {
+     "label": "[54] GitHub Changelog",
+     "url": "https://github.blog/changelog/2026-10-15-upcoming-deprecation-of-selected-github-copilot-models-in-mid-november"
+    }
+   ],
+   "first_seen": "2026-10-16",
+   "change_type": "announcement"
   },
   {
    "topic_id": "enterprise",
-   "date": "2026-09-11",
-   "summary": "Für Enterprise & Vertikalisierung fand sich im Zeitraum keine belastbar datierte, eigenständige Entwicklung mit ausreichender Relevanz.",
-   "skip": [
+   "title": "Timestral: Mistral veröffentlicht Modelle für Zeitreihenprognosen",
+   "category": "modelle",
+   "impact": 3,
+   "date": "2026-10-15",
+   "summary": "Mistrals erste Zeitreihen-Familie umfasst vier Modelle mit fünf bis 209 Millionen Parametern für multivariate, probabilistische Prognosen und bekannte zukünftige Einflussgrößen.[65] Die CPU-tauglichen Modelle stehen unter Modified MIT, nicht unveränderter MIT; es handelt sich nicht um ein neues Sprachmodell.[65]",
+   "sources": [
     {
-     "reason": "Keine neue eigenständige Entwicklung im Zeitraum",
-     "text": "Für Enterprise & Vertikalisierung fand sich im Zeitraum keine belastbar datierte, eigenständige Entwicklung mit ausreichender Relevanz."
+     "label": "[65] Mistral",
+     "url": "https://mistral.ai/news/timestral/"
     }
-   ]
+   ],
+   "first_seen": "2026-10-16",
+   "change_type": "announcement"
   },
+  {
+   "topic_id": "enterprise",
+   "title": "Private Endpoints bindet eigene Deployments in OpenRouter ein",
+   "category": "business",
+   "impact": 3,
+   "date": "2026-10-14",
+   "summary": "OpenRouter führt organisationsinterne Endpoints für eigene feinabgestimmte Modelle, dedizierte Deployments und reservierte Kapazitäten ein.[25] Private Endpoints wird als Zusatz zum Enterprise-Tarif auf Anfrage aktiviert, nicht als pauschal allgemein verfügbare Funktion aller Tarife.[25]",
+   "sources": [
+    {
+     "label": "[25] OpenRouter",
+     "url": "https://openrouter.ai/blog/announcements/private-endpoints/"
+    }
+   ],
+   "first_seen": "2026-10-16",
+   "change_type": "announcement"
+  },
+  {
+   "topic_id": "enterprise",
+   "title": "Modal meldet virtuelle Maschinen in Sandboxes als allgemein verfügbar",
+   "category": "agents",
+   "impact": 2,
+   "date": "2026-10-14",
+   "summary": "Modal meldet im datierten Unternehmensbeitrag die allgemeine Verfügbarkeit virtueller Maschinen in Sandboxes.[60] Das ist ein eigener Produktmeilenstein; der Beitrag liefert damit keine unabhängig geprüfte Isolations- oder Skalierungsgarantie.[60]",
+   "sources": [
+    {
+     "label": "[60] Modal",
+     "url": "https://modal.com/blog/1-billion-annualized-run-rate-series-d"
+    }
+   ],
+   "first_seen": "2026-10-16",
+   "change_type": "general_availability"
+  },
+  {
+   "topic_id": "enterprise",
+   "title": "Veeam Intelligent ResOps for Microsoft 365 ist allgemein verfügbar",
+   "category": "business",
+   "impact": 3,
+   "date": "2026-10-15",
+   "summary": "Veeam gibt das Add-on zu Data Cloud for Microsoft 365 allgemein frei und beschreibt Sichtbarkeit über KI-Agenten, KI-bedingte Dateiänderungen und sensible Daten.[82] Das sind Anbieterfunktionen, kein unabhängiger Nachweis verhinderter Agentenangriffe; die Microsoft-365-GA ist nicht mit den getrennten privaten Previews anderer Plattformen gleichzusetzen.[82]",
+   "sources": [
+    {
+     "label": "[82] Veeam",
+     "url": "https://www.veeam.com/company/press-release/veeam-intelligent-resops-for-microsoft-365-helps-customers-safely-use-ai-cut-storage-costs-and-recover-with-precision.html"
+    }
+   ],
+   "first_seen": "2026-10-16",
+   "change_type": "general_availability"
+  }
+ ],
+ "summaries": [
   {
    "topic_id": "ai-news",
    "date": "2026-09-12",
@@ -15892,40 +16387,88 @@
    "date": "2026-10-15",
    "summary": "Workday öffnet Autopilot im Talent Acquisition Agent nur für Early Adopters; die allgemeine Verfügbarkeit ist erst für Anfang 2027 geplant.[35] Honeywell stellt Forge Cognition für Gebäudebetrieb vor, zunächst ohne aktivierten autonomen Modus.[60]",
    "skip": []
+  },
+  {
+   "topic_id": "ai-news",
+   "date": "2026-10-16",
+   "summary": "Meta veröffentlicht Muse Spark Open mit offenen Gewichten, aber eigener Lizenz und hohen Speicheranforderungen.[59] Microsoft beschreibt MAI-Base-2 noch im Posttraining, nicht als bereits verfügbares Modell.[27]",
+   "skip": []
+  },
+  {
+   "topic_id": "lokale-llms",
+   "date": "2026-10-16",
+   "summary": "FLUX 3 Image Klein erhält herunterladbare Gewichte mit umsatzabhängiger kommerzieller Lizenz.[12] NVIDIA zielt mit dem quantisierten Bolt-Modell auf 24-GB-Systeme; Laufzeit und Kontext können zusätzlichen Speicher benötigen.[57]",
+   "skip": []
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "date": "2026-10-16",
+   "summary": "GPT-Live kann Entscheidungen nativ an die Decisions API delegieren, statt den zusätzlichen Weg durch die Anwendung zu nehmen.[20][21] FDE-Gym untersucht zugleich, wie Agenten mit unklaren Kundenanforderungen zurechtkommen.[28]",
+   "skip": []
+  },
+  {
+   "topic_id": "ai-tools",
+   "date": "2026-10-16",
+   "summary": "Krea öffnet die Beta von Krea 3 für regionale Bildbearbeitung.[1][2] ChatGPTs Chrome-Erweiterung ergänzt Tab-Kontext und Browserbedienung; die beschriebenen Funktionen sind keine Garantie fehlerfreier Ausführung.[41]",
+   "skip": []
+  },
+  {
+   "topic_id": "context-engineering",
+   "date": "2026-10-16",
+   "summary": "Arcade liefert passende Werkzeuge bedarfsgerecht statt vollständiger Kataloge; die berichteten Kostenvorteile sind nicht unabhängig reproduziert.[14] DigitalOcean bündelt Agentenkontext und Laufzeitdaten in einer privaten Preview ohne SLA.[77]",
+   "skip": []
+  },
+  {
+   "topic_id": "ai-security",
+   "date": "2026-10-16",
+   "summary": "GitHub gibt AI Scan und Agentic autofix allgemein frei, mit unterschiedlichen Rollen für Befunde und Korrekturen.[51][52] HiddenLayers Jev-Tests zeigen Prompt-Injection-Risiken in begrenzten Szenarien, keine universelle Verwundbarkeitsrangfolge.[49][50]",
+   "skip": []
+  },
+  {
+   "topic_id": "ai-governance",
+   "date": "2026-10-16",
+   "summary": "Anthropic gibt sechs METR-Forschenden internen Zugang und verzichtet auf ein Veröffentlichungsveto; eng definierte Vertraulichkeitsausnahmen bleiben.[17] GitHub kündigt außerdem Modellabschaltungen in Copilot zum 16. November an.[54]",
+   "skip": []
+  },
+  {
+   "topic_id": "enterprise",
+   "date": "2026-10-16",
+   "summary": "Mistral veröffentlicht Timestral für Zeitreihenprognosen statt als neues Sprachmodell.[65] OpenRouters Private Endpoints bindet eigene Deployments als Enterprise-Zusatz auf Anfrage ein.[25]",
+   "skip": []
   }
  ],
  "fingerprints": {
   "ai-news": {
-   "hash": "473fdcda6d7ade83de1a8c6bd0b19c0744db14e4",
-   "date": "2026-10-15"
+   "hash": "06cf6f68fa6bb90d6e6f783ff5b47144f43e3749",
+   "date": "2026-10-16"
   },
   "lokale-llms": {
-   "hash": "2221c4aefdebd827e9fe6bd4479659423b04c00a",
-   "date": "2026-10-15"
+   "hash": "44ef4481c6f0bd9f0d4fc616d2d4281c2205c3cb",
+   "date": "2026-10-16"
   },
   "agentic-engineering": {
-   "hash": "68e6624abe6b6ca68f39077c2954b607f5013a65",
-   "date": "2026-10-15"
+   "hash": "0a051c25040376101eb7e972c477617cff0feb73",
+   "date": "2026-10-16"
   },
   "ai-tools": {
-   "hash": "f2a0ff9ccd87e8c60666626218f57d319bdc57a3",
-   "date": "2026-10-15"
+   "hash": "fa6848bdcb501f4e4125e83a41db59177c0c26a9",
+   "date": "2026-10-16"
   },
   "context-engineering": {
-   "hash": "c352029d954d336572df8e0c5b5ded239eeb2037",
-   "date": "2026-10-15"
+   "hash": "10a8b789951efc422155ff51d6d49632b6ed90b8",
+   "date": "2026-10-16"
   },
   "ai-security": {
-   "hash": "e848d9f22b1ade1010afe7975f70d13501bd5084",
-   "date": "2026-10-15"
+   "hash": "442d0189a0a219ced25ddbf5f400cc0403a5fda2",
+   "date": "2026-10-16"
   },
   "ai-governance": {
-   "hash": "cd8ae163fbd5209eec3d6530412281e92d7fc17c",
-   "date": "2026-10-15"
+   "hash": "b096298029e2ffeb88a9c05ac81dc8bcb7a65295",
+   "date": "2026-10-16"
   },
   "enterprise": {
-   "hash": "af6c290cc19e72bafccb63c7c46cc3de49065243",
-   "date": "2026-10-15"
+   "hash": "92334bd61236994b88b9a565eb02557ead8433ab",
+   "date": "2026-10-16"
   }
  }
 }

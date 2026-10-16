@@ -1,0 +1,319 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-16",
+  "sources": [
+    {
+      "domain": "simonwillison.net",
+      "name": "Simon Willison",
+      "status": "checked",
+      "checked_url": "https://simonwillison.net/",
+      "result": "Homepage war gegenüber aktuellen Tagesarchiven veraltet (13.10.). Reservierte Datumssuche führte zu den direkt vollständig gelesenen Archiven 14. und 15.10. (simon14.json, simon15.json). Dort Spiel-/Decompilationsexperimente und ein FT-basierter Bericht über Anthropic-Umsatz. Keine eigenen Produktfreigaben; Chirp Pong und Tree Appreciator redaktionell nicht als wichtige Nachrichten aufgenommen. Umsatzbericht nennt anonyme Investorinformationen und stammt aus FT; separate reservierte Suche nach frei prüfbarer unabhängiger Bestätigung blieb leer. Deshalb keine weitreichende Finanzbehauptung als Kandidat übernommen; keine Paywall umgangen. Keine generelle Aussage, dass Anthropic keine Neuigkeiten hätte."
+    },
+    {
+      "domain": "testingcatalog.com",
+      "name": "TestingCatalog",
+      "status": "checked",
+      "checked_url": "https://testingcatalog.com/",
+      "result": "Index, aktueller RSS und Datumssuche 14.–16.10.2026 geprüft. Ein Beitrag im Fenster: Krea 3 am 15.10., ausdrücklich Sponsored. Originalbericht und Krea-Produktseite gelesen und gecacht (krea-report.json, krea-primary.json). Keine unabhängige Bestätigung der Leistungsüberlegenheit; Vergleichswerte nicht übernommen. Quellen widersprechen sich bei Referenzbildanzahl (sechs/acht), daher keine Anzahl übernommen."
+    },
+    {
+      "domain": "the-decoder.com",
+      "name": "The Decoder",
+      "status": "checked",
+      "checked_url": "https://the-decoder.com/",
+      "result": "Übersicht und fünf verlinkte Originalartikel im Fenster 14.–16.10.2026 direkt gelesen/gecacht. FLUX 3 Image Klein und Nemotron mit getrennten Modellentwicklungen gesichert. Historie: bisher FLUX 3 Image nur proprietäre Freigabe/offene Gewichte angekündigt, Nemotron 3.5/Bolt nicht enthalten. Argon-Robotikbericht vom 15.10. verweist auf Entwickleroriginal vom 13.10.; daher keine neue Modellfreigabe im Fenster. TheoPhysEval: Plus/Abonnementhinweis am Original; keine Exklusivbehauptung übernommen, Ersatzsuche liefert keinen ausreichend gelesenen Primärbeleg. Rogue-Fleet-Bericht vom 14.10. gelesen, aber ohne zusätzliche unabhängig geprüfte Sicherheitsbestätigung nicht als Kandidat übernommen. Anbieterbenchmarks und behauptete Preise nicht als unabhängige Messung ausgegeben. Vollständigkeit eingeschränkt für Plus-Inhalte; frei lesbare Artikel bleiben nutzbar."
+    },
+    {
+      "domain": "marktechpost.com",
+      "name": "MarkTechPost",
+      "status": "checked",
+      "checked_url": "https://www.marktechpost.com/feed/",
+      "result": "Verifizierten www-Feed mit Slash direkt als RSS vollständig gelesen (mtp.json, 10 Einträge 14.–16.10.). web_extract hatte einen veralteten Feed geliefert; nur der aktuelle direkte RSS trägt Kandidaten. Artikelabrufe Muse/CLiF/Jev direkt 403; exakte Originale zusätzlich via web_extract gelesen: datierte Metadaten vorhanden, teils Textlücken. Tragende Aussagen daher ausschließlich aus tatsächlich vollständig enthaltenem content:encoded, Methode feed. Muse: Feed-pubDate 16.10. 02:26 UTC, Artikelheader 15.10.; published_at folgt explizitem Artikelheader, nicht erfundenem Releasezeitpunkt. CLiF-Beitrag ist gesponsert, keine unabhängige Wirksamkeitsbestätigung. openKylin beschreibt Veranstaltung 8.10., Gateways ist Ratgeber; ausgeschlossen. LFM2.5 und Drama 3 bereits am 13.10. veröffentlicht (h-503f4b60a46f3742f1d3e1e0, h-2e0a8b0531b0bf086c78d4a7), keine neue Freigabe am Berichtstag. Grok-3-GA bereits xAI-Kandidat/Historie; Jev-Bild-/Langkontext-Previews h-f9607226763b946b321268be und h-8d509d69f88a4652d702bd43 schon bekannt, Box als eigene Entwicklung getrennt."
+    },
+    {
+      "domain": "venturebeat.com",
+      "name": "VentureBeat",
+      "status": "checked",
+      "checked_url": "https://venturebeat.com/category/ai/",
+      "result": "Direkter Indexabruf 429; web_extract-Index erfolgreich mit Artikeln vom 15.10. Trotz älterer Featured-Blöcke verpflichtende Datumssuche und breitere Zeitfenstersuche separat reserviert und ausgeführt; breitere Suche leer, datierte Suche lieferte Originale. Vier redaktionelle Originalartikel vom 15.10. vollständig bis zu ihren Hauptaussagen gelesen; Meta-, BFL- und NVIDIA-Primärquellen zusätzlich geöffnet und direkt gecacht. Sechs atomare Kandidaten: Spark-Open-Gewichte, Klein-Gewichte, Tool Recommendation, Super VL, Bolt 74B und angekündigter Bolt E4B. Benchmarks, Kostenersparnisse und lokale Hardwareversprechen nicht als allgemeine unabhängige Überlegenheit dargestellt. Die FLUX-3-Ankündigung vom 02.10. ist historisch, Klein-Gewichte sind ein eigener neuer Meilenstein. Caches venturebeat-spark.md, venturebeat-arcade.md, venturebeat-nvidia.md und *-original.json."
+    },
+    {
+      "domain": "anthropic.com",
+      "name": "Anthropic",
+      "status": "checked",
+      "checked_url": "https://www.anthropic.com/news",
+      "result": "14.–16.10.2026 geprüft. web_extract ließ die aktuelle Nachrichtenliste aus; gerenderter Desktop-Browser lieferte drei datierte Beiträge vom 14./15.10., am Original vollständig gelesen und als anthropic-evaluators.json, anthropic-midterms.json und anthropic-singapore.json gecacht. Datumssuche ohne Treffer war nicht Grundlage der Entwarnung. Leistungs- und Missbrauchsbehauptungen werden nur als Anbieterangaben berichtet."
+    },
+    {
+      "domain": "openai.com",
+      "name": "OpenAI",
+      "status": "checked",
+      "checked_url": "https://openai.com/news/",
+      "result": "Fenster 14.–16.10.2026. News-web_extract war veraltet (oberste Einträge 07./08.10.); Browser-Newsindex lieferte keine navigierte Seite. Original-RSS per curl erfolgreich abgerufen und nach Datum geparst (openai-rss.xml): acht Einträge im Fenster. Relevante Originale Rosalind Academic Plan, Sullivan & Cromwell, EU-Agentic-Bericht und Amp gelesen. Kundenporträts ohne gesicherten neuen Freigabemeilenstein zurückgestellt. Pflicht-API-Changelog zusätzlich per web_extract UND gerendertem Browser gelesen: nur Browser zeigte den neuen Eintrag vom 15.10. zur nativen Decisions-Integration in GPT-Live. Verlinkte Originaldokumentation decisions-voice vollständig gerendert gelesen (openai-decisions-voice.json). Kein Ersatz durch den alten API-Betastart vom 06.10.; Historie h-d1bf8aa7d9b6a5a38c971915 deckt den früheren Meilenstein, nicht diese Integration. Caches openai-rosalind.json und openai-changelog.json sowie präzise Auszugscaches für Legal/EU vorhanden. Browser-Legal scheiterte, erfolgreicher web_extract bleibt belegter Zugangsweg.",
+      "checks": [
+        {
+          "url": "https://openai.com/news/",
+          "status": "checked",
+          "result": "Newsindex per web_extract gelesen, stale; Browserersatz ohne navigierte Seite. Aktueller Original-RSS mit acht datierten Beiträgen 14./15.10.2026 per direktem HTTP gelesen und relevante Originalbeiträge verifiziert. Kein Schluss aus veraltetem Index auf Nachrichtenfreiheit."
+        },
+        {
+          "url": "https://developers.openai.com/api/docs/changelog",
+          "status": "checked",
+          "result": "Gerenderter Desktop-Browser zeigt Oct 15, 2026: Added native Decisions integration in GPT-Live. Datum und Eintrag im Original gelesen und gecacht; verlinkte Originaldocs https://developers.openai.com/api/docs/guides/decisions-voice gelesen. web_extract-Version ließ diesen Eintrag aus."
+        }
+      ]
+    },
+    {
+      "domain": "openrouter.ai",
+      "name": "OpenRouter Blog",
+      "status": "checked",
+      "checked_url": "https://openrouter.ai/blog/",
+      "result": "Übersicht, datierte Suche und Original vom 14.10.2026 geprüft (Fenster 14.–16.10.). Private Endpoints ist ein Enterprise-Zusatz auf Anfrage, keine allgemeine Freigabe. Volltextcache openrouter-private.json."
+    },
+    {
+      "domain": "blog.google",
+      "name": "Google AI Blog",
+      "status": "checked",
+      "checked_url": "https://blog.google/innovation-and-ai/",
+      "result": "Übersicht via web_extract und direktem HTTP geprüft, Originale mit Datumsmetadaten gecacht. Fenster 14.–16.10.2026: Universal Cart startet 15.10. in den USA. Gemini-4-Argon-App und Entwicklerfreigabe am Original 13.10., EmbeddingGemma 2 am 06.10. und daher außerhalb des Fensters. Gezielte ergänzende Datumssuche durchgeführt. Historie Universal Cart ohne Treffer. Nicht als neue Gemini-Modellfreigabe ausgegeben."
+    },
+    {
+      "domain": "microsoft.ai",
+      "name": "Microsoft AI",
+      "status": "checked",
+      "checked_url": "https://microsoft.ai/blog/",
+      "result": "Web-Extraktion der Übersicht war unvollständig/veraltet gegenüber gerendertem Browser. Isolierter Desktop-Browserindex und verlinktes Original Frontier Pre-training at Microsoft AI vom 15.10.2026 gelesen, Volltext im microsoft-frontier-browser.json. Audioartikel am Original 01.10. datiert, außerhalb 14.–16.10. Keine Gewichts-/API-Freigabe von MAI-Base-2 behauptet; Posttraining läuft noch."
+    },
+    {
+      "domain": "arxiv.org",
+      "name": "arXiv",
+      "status": "checked",
+      "checked_url": "https://arxiv.org/list/cs.AI/recent",
+      "result": "Fenster 14.–16.10.2026. web_extract lieferte veralteten September-Index; gerenderter Desktop-Browser lieferte aktuelle Datumsgruppen 14./15./16.10. und erste 50 Einträge des 16.10. (arxiv-index.json). Thematische Datumssuche blieb unspezifisch. Drei relevante Original-Abstracts mit Einreichungsdatum 15.10. gelesen und vollständig gecacht; HTML-Paper ergänzend geöffnet, MLExpert/LEASH-HTML-Extraktion unvollständig. Dies ist eine thematische Stichprobe, keine Vollerhebung aller 1881 gelisteten Einträge. Benchmarkwerte sind Autorenangaben, keine unabhängige Replikation."
+    },
+    {
+      "domain": "llm-stats.com",
+      "name": "LLM Stats",
+      "status": "checked",
+      "checked_url": "https://llm-stats.com/",
+      "result": "Homepage/Leaderboard direkt und via web_extract geprüft; kein belastbares Veröffentlichungsdatum aus NEW-Badges abgeleitet. Reservierte Suche führte zu /ai-news und /llm-updates. Desktop-UA-Browser lieferte /ai-news gerendert und frei lesbar (llmstats-browser.json), statt der Extraktions-Ladehülle. Geprüft: erste Nachrichtenseite (10 von 109 Aggregatorlinks), New-Releases-Abschnitt und redaktioneller Research-Abschnitt. Jüngste dort datierte Modellfreigaben Muse Wonder/Full 12.10., Research-Artikel 7.10., außerhalb 14.–16.10. Relative Just-now-Titel etwa Apollo/GLM-5.3 oder Accenture nicht als eigene datierte Originalmeldung verifiziert und nicht aufgenommen. Dies ist keine Behauptung vollständiger Originalprüfung sämtlicher Aggregatorlinks."
+    },
+    {
+      "domain": "ollama.com",
+      "name": "Ollama",
+      "status": "checked",
+      "checked_url": "https://ollama.com/blog",
+      "result": "Blogindex am 16.10. direkt vollständig gelesen und gecacht (ollama.json), nachdem web_extract nur Navigation lieferte. Neuester Originaleintrag ist Run AI agents safely with Ollama and Fly.io vom 13.10.2026, außerhalb 14.–16.10.; keine neue Meldung im zugeteilten Fenster."
+    },
+    {
+      "domain": "huggingface.co",
+      "name": "Hugging Face",
+      "status": "checked",
+      "checked_url": "https://huggingface.co/blog",
+      "result": "Web-Index bis September veraltet; gezielte Datumssuche ergab überwiegend Altartikel (Kernels 06.07., Hub-CI 23.06., ausgeschlossen). Aktueller direkter RSS hf-feed.json entdeckt fünf Artikel vom 14.–16.10.; alle fünf Originale direkt gelesen und gecacht (hf-nvidia, hf-granite, hf-meta, hf-flux, hf-weather). NVIDIA-Korpus ausdrücklich releasing soon, nicht als bereits herunterladbar behandelt. Leistungswerte sind jeweils Autoren-/Herstellerbefunde, keine eigenen Tests."
+    },
+    {
+      "domain": "techcrunch.com",
+      "name": "TechCrunch",
+      "status": "checked",
+      "checked_url": "https://techcrunch.com/category/artificial-intelligence/",
+      "result": "Aktuellen KI-Index via web_extract und direkt bis zu datierten Originalen 14./15.10.2026 geprüft/gecacht. Zusätzlich verpflichtende gezielte Datumssuche sowie breitere KI-Fenstersuche durchgeführt (erste zwei Budgetreservierungen), keine bloße Entwarnung aus Suchleere. Fünf relevante Originalartikel gelesen. Figma Specs, Code-Layers-Public-Beta und Payload-Integration bereits konkret in Historie h-f712fe31ae5b89b307cf27ac, h-1b9c22d4f16819c5f1631223 und h-f14b96468461c81137ba85ae: nicht erneut Kandidaten. Original-Metadatum Figma 15.10. UTC, Anzeige 14.10. PDT; beide innerhalb Fenster, kein neuer Meilenstein durch Zeitzonenwechsel. Muse Spark Open durch unabhängigen Verge-Bericht bestätigt, METR durch Anthropic-Original samt Einschränkungen. Keine Reuters-Belege verwendet."
+    },
+    {
+      "domain": "theverge.com",
+      "name": "The Verge",
+      "status": "checked",
+      "checked_url": "https://www.theverge.com/ai-artificial-intelligence",
+      "result": "KI-Übersicht sowie Originale zu Chrome-Erweiterung, Meta/Apple und Staatenklagen direkt gelesen und gecacht, Fenster 14.–16.10.2026. Chrome-Funktionsupdate neu gegenüber Historie (kein Chrome-Treffer). Meta/Apple-Bericht bestätigt TechCrunch-Muse-Spark-Open-Kandidat, kein zweiter identischer Kandidat. Staatenklagen-Artikel nennt Reuters als Ausgangsbericht und enthält eigene OpenAI-Stellungnahme; keine tragenden Reuters-Behauptungen übernommen, ohne separate Primärprüfung keine Klagenmeldung. Keine Behauptung vollständiger Abdeckung aller kurzen Liveblogeinträge."
+    },
+    {
+      "domain": "heise.de",
+      "name": "heise online",
+      "status": "checked",
+      "checked_url": "https://www.heise.de/thema/Kuenstliche-Intelligenz",
+      "result": "Themenindex via web_extract veraltet/verkürzt; aktuellen Atom-Feed https://www.heise.de/thema/Kuenstliche-Intelligenz.xml direkt vollständig gecacht (heise.json), datierte Einträge 14.–16.10. gesichtet. Vier verlinkte freie Originale zu Ubuntu/Myna, Scion, Grok Voice und Snapchat direkt vollständig gelesen/gecacht. Generischer heise+-Overlaytext steht auch nach freien Volltexten; keine Paywall entfernt, als heise+ markierte Test-/Ratgeberstücke nicht beschafft. Scion ist bloßer Folgebericht zur Originalankündigung 13.10., h-994121bc3916d296a4405fbe, deshalb keine neue Freigabe. Snapchat-Aussage zusätzlich am verlinkten Urteils-PDF AZ 33 O 120/24 bestätigt; Urteil bereits September, neu ist verfügbarer Urteilstext/Bericht 15.10., Rechtskraft nicht behauptet. Grok-Benchmarkbericht unabhängig von xAI gelesen; keine pauschale Marktüberlegenheit übernommen."
+    },
+    {
+      "domain": "arstechnica.com",
+      "name": "Ars Technica",
+      "status": "checked",
+      "checked_url": "https://arstechnica.com/ai/",
+      "result": "KI-Index mit Beiträgen vom 14./15.10.2026 gelesen. Zwei Originalartikel per Desktop-Browser vollständig geprüft und gecacht (ars-youtube.json, ars-protein.json), nachdem web_extract teilweise nur Überschriften lieferte. YouTube-Music-Labels zusätzlich an YouTubes frei lesbarem Original bestätigt, aber bereits durch history_id h-e0c5bc1861f23d956f5037cc vom 14.10. abgedeckt: kein neuer Kandidat. Ars-Datum 15.10. ist das Berichtsdatum, nicht neuer Rollout. Protease-Sammelbericht in zwei atomare Forschungsentwicklungen zerlegt. Nature-Originale bestätigen Datum/Titel, Volltexte liegen hinter Aboschranke; keine Umgehung und keine tragenden Aussagen nur aus Teasern, stattdessen frei gelesener unabhängiger Ars-Volltext. FTC-/Spionage-/Nacktbilder- und Replikationsberichte aus dem Index nicht als verifizierte Kandidaten übernommen."
+    },
+    {
+      "domain": "computerworld.com",
+      "name": "Computerworld",
+      "status": "checked",
+      "checked_url": "https://computerworld.com/",
+      "result": "Startseite via web_extract bis August veraltet. Aktuelles direktes RSS (cw-feed.json), KI-Kategorie und gezielte plus breitere Zeitfenstersuche 14.–16.10. geprüft; relevante Originale gelesen und gecacht. Neue Kandidaten: ServiceNow AI Passport, AI Cost Management, ToolSmith, Productivity Routines; HiddenLayer-Sicherheitstest von Jev. ServiceNow-Primärquelle direkt 403, via web_extract erfolgreich; Q4-Erwartung am Original bestätigt. Jev-Forschung 14.10., CW-Bericht 15.10.; RSS 16.10. ist nicht als neues Forschungsdatum verwendet. Keine universelle Verwundbarkeitsrangfolge behauptet. Ausschlüsse: Argon-Freigabe bereits h-6ed7eba506e2f87946104a87 (13.10., GA), Minions h-dcb96543e9520b79cdf46e56 (14.10., research), Torvalds h-d8d097fdf926030b17f98058 (14.10., research), EU-Auskunftsersuchen h-4f97a917e9d8bf1647ea8537 (12.10., policy), Selbstreplikationsstudie h-3bf3fc411c60e8e1c04862b5 (12.10., research) liefern in den gelesenen Folgeberichten keinen neuen Meilenstein. Qwen/iPhone-Analyse ohne zweite belastbare Bestätigung nicht aufgenommen; Copilot-Preisanalyse ohne sicher neu datierbare Änderung zurückgestellt. Arm/Qualcomm-Bericht mit Reuters-Bezug nicht verwendet."
+    },
+    {
+      "domain": "cnbc.com",
+      "name": "CNBC",
+      "status": "checked",
+      "checked_url": "https://cnbc.com/",
+      "result": "Homepage aktuell bis 16.10. via web_extract gelesen; ergänzender AI-Index veraltet auf März, nicht als Entwarnung verwendet. Originale vom 15.10. zu TSMC und Anthropic-Quartalsumsatz via web_extract und direktem HTTP vollständig für die tragenden Aussagen geprüft/gecacht. TSMC durch Primäroriginal https://pr.tsmc.com/english/news/3346 via web_extract bestätigt (direktes HTTP 403), aber identische Entwicklung bereits Geschichte h-cabbe97369222aa8e9ecc963, daher nicht erneut Kandidat. Reuters-Fotocredits sind keine Textsyndizierung; keine Reuters-bezogenen Texas-Behauptungen verwendet. Anthropic-Umsatz basiert auf ungenannten Quellen; ohne zusätzliche frei gelesene unabhängige Bestätigung keine weitreichende Finanzbehauptung als Kandidat. Gezielte Suche liefert außerdem METR-Ankündigung und Apple/Meta-Start, die in TechCrunch/Verge-Kandidaten abgedeckt sind. Keine unbestätigten Umsatz-/IPO-Prognosen übernommen."
+    },
+    {
+      "domain": "github.blog",
+      "name": "GitHub Blog",
+      "status": "checked",
+      "checked_url": "https://github.blog/changelog/",
+      "result": "Changelog und fünf verlinkte Originale vom 14./15.10. via web_extract und direkt gelesen, in github-*.json gecacht. Fenster 14.–16.10. geprüft. Vier neue Entwicklungen getrennt erfasst. HydraFusion Max und Orchestrierungsupdate vom 14.10. sind bereits historisch veröffentlicht (h-80223b22be1cc4b089fb9e90, h-2c1b56953ecd454c1c9b9b85), deshalb nicht erneut vorgeschlagen. Code-Quality-CSV und Push-Mail-Retirement sind keine relevanten KI-Entwicklungen. AI Scan GA ist nicht identisch mit der historischen Metrik-Preview h-f1781778c4eb68ffea5a5577; Agentic Autofix GA nicht identisch mit der September-Memory-Preview h-c0b3cf0006c24f021307dedf."
+    },
+    {
+      "domain": "thenewstack.io",
+      "name": "The New Stack",
+      "status": "checked",
+      "checked_url": "https://thenewstack.io/",
+      "result": "Index mit aktuellen Beiträgen 14./15.10.2026 gelesen; Cookie- und Navigationstext machte web_extract unübersichtlich, daher drei relevante Originale gerendert vollständig gelesen und gecacht: tns-nvidia.json, tns-meta.json, tns-scion.json. Nvidia-Sammelbericht in drei Meilensteine zerlegt; Super-VL- und Bolt-Eigenschaften an offiziellen Model Cards gegengeprüft. Meta-Freigabe an offizieller Model Card samt Lizenz bestätigt. Scion nicht als neuer Release-Kandidat übernommen: Anthropic-Original vom 13.10., Update 15.10. ergänzt Attribution früherer Projekte; späterer TNS-Bericht ist kein neuer Produktmeilenstein. Nvidia-Benchmarkzahlen unterscheiden sich teilweise zwischen Bericht und aktueller Model Card; keine pauschalen Überlegenheits- oder Performancewerte übernommen. Meta-Kandidat entspricht derselben Entwicklung im Meta-Quellenpacket und soll redaktionell zusammengeführt werden, nicht doppelt erscheinen."
+    },
+    {
+      "domain": "semianalysis.com",
+      "name": "SemiAnalysis",
+      "status": "unavailable",
+      "checked_url": "https://newsletter.semianalysis.com/feed",
+      "result": "Korrektes aktuelles Newsletter-RSS direkt verifiziert (semi-feed.json): ein Beitrag im Fenster 14.–16.10., ASML Is Building a Hybrid Bonding Tool!, 15.10.2026 19:27 GMT. web_extract-Feed war irreführend und enthielt alten InferenceX-Text; nicht benutzt. Verlinktes Original frei nur bis Aboschranke lesbar (semi-asml.json); gesperrter Abschnitt nicht beschafft, keine Umgehung. Thematischer Ersatz: freie The-Elec-Meldung https://www.thelec.net/news/articleView.html?idxno=5864 gelesen, tatsächlich 13.03.2026, außerhalb Fenster, mit ASML-Dementi; Patent https://patents.google.com/patent/WO2025201788A1/en ebenfalls historisch. Aktuelle Suche liefert vorwiegend Ableitungen der SemiAnalysis-Analyse und keinen belastbaren neuen unabhängigen Ersatz. Keine bestätigte Produkteinführung ableitbar, deshalb keine Kandidaten. Aktuelle Volltextabdeckung bleibt eingeschränkt."
+    },
+    {
+      "domain": "embracethered.com",
+      "name": "Embrace The Red",
+      "status": "checked",
+      "checked_url": "https://embracethered.com/",
+      "result": "Root-web_extract fehlgeschlagen (500); direkter Originalindex https://embracethered.com/blog/ erfolgreich, Cache embrace-index.json. Jüngster Eintrag Visual Studio Copilot/SSMS CVE-2026-103572 ist vom 13.10.2026, außerhalb 14.–16.10. Zusätzliche reservierte Oktober-Suche bestätigt nur diesen und ältere Beiträge, keine neue Entwicklung im zugeteilten Fenster. Keine Sicherheitsbehauptung aus Snippets übernommen."
+    },
+    {
+      "domain": "importai.substack.com",
+      "name": "Import AI",
+      "status": "checked",
+      "checked_url": "https://importai.substack.com/archive",
+      "result": "Archiv via web_extract und aktueller Original-RSS https://importai.substack.com/feed direkt gelesen (Cache import-feed.json, lastBuildDate 16.10.). Neueste Ausgabe 476 ist vom 12.10.2026, vor dem zugeteilten Fenster 14.–16.10.; keine neue Ausgabe im Feed. Keine Kandidaten aus älteren Ausgaben wiederholt."
+    },
+    {
+      "domain": "interconnects.ai",
+      "name": "Interconnects",
+      "status": "checked",
+      "checked_url": "https://interconnects.ai/",
+      "result": "Zeitraum 2026-10-14 bis 2026-10-16 geprüft: Homepage via web_extract nur Abonnement-Einstieg; RSS via web_extract Content-Type-Fehler, direkter Abruf https://www.interconnects.ai/feed erfolgreich und vollständig im Worker-Cache. Neuester datierter Feedbeitrag 2026-10-09 (I expect rapid progress but not towards general superintelligence), weitere Beiträge 06.10. und älter. Ergänzende Oktober-Websuche lieferte keinen verifizierbaren neuen Beitrag im Fenster. Keine Meldung; keine Behauptung vollständiger Unternehmensnachrichtenabdeckung."
+    },
+    {
+      "domain": "latent.space",
+      "name": "Latent Space",
+      "status": "checked",
+      "checked_url": "https://www.latent.space/feed",
+      "result": "Verifizierter Feed https://www.latent.space/feed direkt als vollständiges XML gecacht (latent-feed.json, lastBuildDate 16.10.05:42 GMT); korrekte KI-Domain, nicht latentspace.com. Fünf Feed-Beiträge vom 14.–16.10. entdeckt, Originale zu Minos, Modal und Goodfire gelesen/gecacht. Minos ist bereits h-a2393ea0c1d952edabf7340a, Gemini-Argon-GA bereits älterer Meilenstein; nicht neu vorgeschlagen. Bei den AINews-Originalen sind Paid-/Trial-Hinweise vorhanden: keine Freischaltung versucht, öffentlich gelesene Teile und Feed nur zur Entdeckung; Modal-Meldung deshalb am frei lesbaren Original https://modal.com/blog/1-billion-annualized-run-rate-series-d (14.10.) geprüft. Zwei atomare Modal-Kandidaten getrennt gesichert. Goodfire-Essay https://already-clean.goodfire.com/ frei gelesen und gecacht; er bezeichnet die starke Interpretierbarkeitsbehauptung selbst als working hypothesis, Begleitpaper ausstehend, Original nennt im sichtbaren Header keinen Tag. Kein Kandidat mit ungesichertem Originaldatum und keine Behauptung, Superposition/Alignment sei gelöst. Verbleibende Einschränkung: bezahlte Newsletter-Archivteile nicht vollständig abgedeckt."
+    },
+    {
+      "domain": "chinatalk.media",
+      "name": "ChinaTalk",
+      "status": "unavailable",
+      "checked_url": "https://chinatalk.media/",
+      "result": "Zeitraum 12.–16.10. recherchiert. Root via web_extract nur Newsletter-Landingpage. Aktueller Original-RSS https://www.chinatalk.media/feed direkt gelesen und als china-feed.json gecacht: Artikel 14.10. (Arbeitsrechte, kein neuer KI-Release) und WarTalk vom 13.10. gefunden. Beide Originale direkt geöffnet (china-workers.json, china-war.json); beide stoppen bei Subscribe for free to continue reading / Sign in, keine Zugangsdaten oder Anmeldung verwendet. Quelle daher nicht vollständig gelesen. Freie thematische Ersatzsuche zu AutoWarCom ergab nur Berichte zur ursprünglichen Ankündigung vom 30.09./01.10., also keine verifizierte neue Entwicklung im Assignment-Fenster. Reuters/syndizierte Treffer nicht übernommen. Keine Kandidaten aus Teasern; verbleibende Originaltextlücke."
+    },
+    {
+      "domain": "artificialanalysis.ai",
+      "name": "Artificial Analysis",
+      "status": "checked",
+      "checked_url": "https://artificialanalysis.ai/",
+      "result": "Aktueller Index und Originalartikel 14.–15.10. direkt gelesen und vollständig gecacht: aa.json, aa-robotics.json, aa-nemotron.json. Research Preview AA-Robotics schon in Historie h-676b1a588f3407397e70b767 (14.10.); zur expliziten Deduplizierung erhalten. Nemotron-Veröffentlichungen getrennt; Benchmarkbefunde nicht mit Herstellerangaben oder produktiver Einsatzreife gleichgesetzt."
+    },
+    {
+      "domain": "ai.meta.com",
+      "name": "Meta AI",
+      "status": "checked",
+      "checked_url": "https://ai.meta.com/blog/",
+      "result": "14.–16.10.2026: alter ai.meta.com-Index zeigte auch im gerenderten Desktop-Browser nur Juli-Beiträge. Verpflichtende gezielte Datumssuche UND breitere Unternehmenssuche reserviert und ausgeführt; letztere führte zum aktuellen research.meta.ai-Auftritt. Dort datierten Gesundheitsforschungsbeitrag vom 14.10. am Original gelesen, gerendert gecacht (meta-health.json). Muse Spark Open zusätzlich über The New Stack entdeckt und an öffentlich lesbarer offizieller Meta-Model-Card samt Lizenz und Tagesdatum 15.10. verifiziert (meta-open-model.json). Gewichtsdownload ist zugangsbeschränkt; ein roher README-Abruf ergab 401, danach keine Login-/Downloadversuche. Ein vermuteter Research-Blogpfad lieferte 404; kein Beleg. Alter Blog bleibt als vollständiger Newsindex ungeeignet, neue Originalquellen liefern jedoch belegte Entwicklungen."
+    },
+    {
+      "domain": "mistral.ai",
+      "name": "Mistral",
+      "status": "checked",
+      "checked_url": "https://mistral.ai/news/",
+      "result": "Index, gezielte Datumssuche und datiertes Original vom 15.10.2026 im Fenster 14.–16.10. gelesen; Cache timestral.json. Large 4 vom 06.10. liegt außerhalb. Timestral ist numerisches Forecasting, kein neues Sprachmodell. Benchmarkführung nur Herstellerbehauptung, nicht unabhängig repliziert."
+    },
+    {
+      "domain": "x.ai",
+      "name": "xAI",
+      "status": "checked",
+      "checked_url": "https://x.ai/news/",
+      "result": "Fenster 14.–16.10.2026: web_extract-Newsindex veraltet (September). Verpflichtender Desktop-UA-Browser lieferte aktuellen Index und Original Grok Voice 3.0, jeweils vollständig gecacht. Datumssuche und breitere Unternehmenssuche ausgeführt (reservierte Queries 1–2). API-Release-Notes zusätzlich direkt gelesen/gecacht; beide Einträge explizit 14.10., nicht nur Monatsangaben. Keine News-Abdeckungslücke nach Browser-Fallback. Historie enthält bereits Voice-3.0-GA h-46340724e76133e69d111918 und 2.0-Deprecation h-af37d613a3e203e37951c0d3; Kandidaten zur expliziten redaktionellen Deduplizierung erhalten. Unbestätigte Amazon-Wettbewerber-Spekulation aus breiter Suche nicht übernommen.",
+      "checks": [
+        {
+          "url": "https://x.ai/news/",
+          "status": "checked",
+          "result": "Desktop-UA Chrome: aktueller Index und verlinktes Original https://x.ai/news/grok-voice-3 mit Datum 14.10.2026 vollständig gelesen; stale web_extract durch Browser ersetzt. Caches xai-browser.json, xai-voice-browser.json."
+        },
+        {
+          "url": "https://docs.x.ai/developers/release-notes",
+          "status": "checked",
+          "result": "Direkter Volltext in xai-notes.json: 14.10. Grok Voice 3.0 verfügbar, latest-Alias umgestellt, API und Preis unverändert; separate Deprecation 2.0. 2.10.-Transcribe-Ende außerhalb Fenster."
+        }
+      ]
+    },
+    {
+      "domain": "openclaw.ai",
+      "name": "OpenClaw Blog",
+      "status": "checked",
+      "checked_url": "https://openclaw.ai/blog/",
+      "result": "Blogübersicht direkt und via web_extract geprüft, Cache openclaw-index.json. web_extract veraltet (18.09.), direkter HTTP-Index aktueller mit jüngstem Blogbeitrag Tencent AIG joins ClawScan vom 02.10.2026. Kein Blogbeitrag im Fenster 14.–16.10.2026. Ergänzende datierte Websuche findet Podcast vom 14.10. und Community-Support, aber keine neue Blogankündigung; Release 2026.10.4 außerhalb Fenster. Keine neue Blogmeldung belegt; nicht als vollständige Prüfung aller GitHub-Änderungen ausgegeben."
+    },
+    {
+      "domain": "shopify.engineering",
+      "name": "Shopify Engineering",
+      "status": "checked",
+      "checked_url": "https://shopify.engineering/",
+      "result": "Zeitfenster 14.–16.10.2026: Startseite und Latest-Archiv per web_extract sowie gerendertem Desktop-Browser geprüft (shopify-latest.json). Neuester gelisteter Beitrag ShopGym ist vom 01.10.2026 und liegt außerhalb des Fensters. Reservierte Datumssuche ohne Treffer; dies allein ist kein Beleg für Nachrichtenfreiheit. Kein datierter neuer Beitrag im gelesenen Archiv gefunden."
+    },
+    {
+      "domain": "technologyreview.com",
+      "name": "MIT Technology Review",
+      "status": "checked",
+      "checked_url": "https://technologyreview.com/",
+      "result": "Homepage via web_extract, aktueller RSS direkt (mit-feed.json) und ergänzende reservierte Datumssuche für 14.–16.10. geprüft. Neueste eigenständige AI-Artikel im Feed vom 13.10., außerhalb des Fensters. Originale The Download vom 14.10. und nuclear-power-upgrade vom 15.10. gelesen/abgerufen (mit-download.json, mit-nuclear.json). Nuklearartikel ist Kontextanalyse zu früheren Google/Constellation- und Vistra-Ankündigungen, keine neue Freigabe am 15.10.; Datum nicht umetikettiert. Download ist gemischter Nachrichtenüberblick; Reuters-Verweise ausdrücklich nicht als Belege übernommen, kein Kandidat allein aus Kurzteasern. Abohinweise respektiert, kein Volltext hinter Schranken nachbeschafft. Kein ausreichend neuer eigenständig belegter Kandidat aus dem zugeteilten Fenster; Quelle mit eingeschränkter Volltextabdeckung, aber lesbarem Index/Feed und freien Teilen geprüft."
+    },
+    {
+      "domain": "cohere.com",
+      "name": "Cohere",
+      "status": "checked",
+      "checked_url": "https://cohere.com/blog",
+      "result": "Index und Datumssuche 14.–16.10.2026, fünf relevante Originalbeiträge gelesen: AISLE-Transaktion 15.10., Coding-Team-Studie 14.10., drei Leitfäden zu Utilities/Agent Sprawl/ROI 15.10. Letztere sind Einordnung ohne neue Produktfreigabe, keine Kandidaten. AISLE bestätigt LoI separat am Original (aisle-primary.json); geplante Übernahme nicht abgeschlossen. Canadian Press nur zugangsbeschränkt, nicht als unabhängiger Volltextbeleg verwendet; Reuters-Syndikationen aus Suchresultaten ausgeschlossen. ProgramBench-Studie bereits konkret in Historie h-bf750940edf9948574f9a120 (14.10., research) enthalten; gleicher Meilenstein, kein neues Ergebnis, daher nicht erneut als Kandidat. Volltexte cohere-aisle/teams/utilities/sprawl/roi.json."
+    },
+    {
+      "domain": "qwen.ai",
+      "name": "Qwen",
+      "status": "checked",
+      "checked_url": "https://qwen.ai/research",
+      "result": "Research-Index via web_extract und verbindlich gerendertem Browser gelesen. Aktuelle Karte @e2 angeklickt; get url ergab exakt https://qwen.ai/blog?id=qwen-image-2.1. Volltext und Datumsheader 2026/09/20 · 965 words am gerenderten Original bestätigt und ungekürzt als qwen-original.json gesichert (method direct). Somit keine neue Oktober-Meldung aus altem September-Beitrag erzeugt. Ergänzende reservierte Oktober-Suche zeigte nur ältere Originale. Sichtbarer Index enthält September-Karten, keine nachgewiesene Veröffentlichung im Fenster 13.–16.10.; vollständige Indexabdeckung bei dynamischem Research-Index nicht garantiert. Browser geschlossen."
+    },
+    {
+      "domain": "aws.amazon.com",
+      "name": "AWS Machine Learning",
+      "status": "checked",
+      "checked_url": "https://aws.amazon.com/blogs/machine-learning/",
+      "result": "14.–16.10.2026: ML-Blogindex, Feed sowie beide datierten Beiträge vom 15.10. gelesen; gerenderte Originalcaches aws-muse.json und aws-trust.json. Muse-Spark-Open-Bereitstellung ist eine eigene Integration, getrennt von Metas Modellfreigabe. Trust in Depth ist ein Architektur-/Thought-Leadership-Beitrag mit existierenden Produktbezügen, kein aus dem Text belegter neuer GA-Meilenstein; deshalb keine separaten Produkt-Releases daraus konstruiert. Im Index weitere Tutorials außerhalb des Fensters nicht aufgenommen."
+    },
+    {
+      "domain": "deepmind.google",
+      "name": "Google DeepMind",
+      "status": "checked",
+      "checked_url": "https://deepmind.google/discover/blog/",
+      "result": "Nach web_extract-429 den aktuellen Blogindex direkt gelesen; Oktoberkarten am datierten Original verifiziert, gezielte Datumssuche ergänzt. Originale vom 14. und 15.10. vollständig gecacht (dm-scam.json, dm-antimicrobial.json). Forschungskandidat und neue Viewer-Integration atomar getrennt. Keine Aussagen über klinisch bestätigte Wirkung oder bereits allgemein ausgerollten Scam-Schutz."
+    },
+    {
+      "domain": "research.google",
+      "name": "Google Research",
+      "status": "checked",
+      "checked_url": "https://research.google/blog/",
+      "result": "Index, alle drei Originalbeiträge vom 14.10. und ergänzende reservierte Suche bis 16.10. geprüft; vollständige direkte Caches google-index/earth/review/roundup.json. Deep Review GA, Geospatial API, Ask Google Earth, Planetary Prediction und TimesFM/TabFM-Integration sind bereits in history-before veröffentlicht (h-8cde55bcfd0adf88f0da885d, h-b0598882d9c8e093ed4589e3, h-7029002e309855444ef1f8b8, h-502886d75ccf485932cd0924, h-ebe1cc4a22135feff1d6caa2). Vier ergänzende atomare Entwicklungen erfasst, jeweils ohne GA-Überdehnung. MedGemma/AMIE-Gesundheitsbehauptungen und rückblickende Groundsource-/Learning-Interactives-Darstellungen ohne zusätzliche Datierungsprüfung nicht als neue Releases übernommen."
+    },
+    {
+      "domain": "nist.gov",
+      "name": "NIST AI",
+      "status": "checked",
+      "checked_url": "https://www.nist.gov/artificial-intelligence",
+      "result": "14.–16.10.2026: zugeteilter Einstieg leitet auf https://www.nist.gov/super-intelligence um, via web_extract und direkt gelesen und als nist-index.json gespeichert. Sichtbare News/Blog-Links September oder älter; das ursprüngliche Seitendatum 2017 ist keine aktuelle Veröffentlichung. Ergänzende Fenstersuche nach AI und gezielte Datumssuche 15.10. ergaben alte Standardsentwürfe und Veranstaltungshinweise, keine belegte neue KI-Veröffentlichung im Fenster. Keine neue Richtlinie aus undatierten Seitenänderungen abgeleitet. Abdeckung auf öffentlichen Themenindex und ergänzende Suche begrenzt."
+    }
+  ],
+  "source_checks_version": 1,
+  "registry_version": 4
+}
