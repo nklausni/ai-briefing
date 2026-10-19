@@ -189,7 +189,8 @@ Prüfung der Aussagen bleibt bei der Schlussredaktion. Die Historie bewahrt getr
 Preview-/Beta-/GA-Schritte, während alte Daten und Audits unverändert prüfbar bleiben.
 OpenAI-News und API-Changelog sowie xAI-News und Release Notes erhalten verpflichtende,
 separat protokollierte `checks`. Teilfehler bleiben transparent und schieben den
-Quellen-Wasserstand nicht vor. Die 41 Quellen, Suchbudgets und Parallelität bleiben gleich.
+Quellen-Wasserstand nicht vor. Suchbudgets und Parallelität bleiben gleich;
+das aktuelle Register 5 enthält 40 Pflichtquellen.
 
 **Aktiver Weg (ohne zusätzlichen Recherche-API-Key):** Ein Hermes-Cronjob
 (`ai-briefing-daily`, täglich um 08:00 Uhr Europe/Berlin) recherchiert die Meldungen
@@ -209,20 +210,38 @@ Bereich aktualisiert werden konnte.
 Jeder Cron-Lauf erzeugt zusätzlich `data/research-audit/YYYY-MM-DD.json`. Das Protokoll
 enthält für jede priorisierte Quelle die tatsächlich geprüfte URL, den Status und ein
 kurzes Ergebnis. `scripts/validate_research_audit.py` akzeptiert den Lauf nur, wenn alle
-41 festgelegten Quellen genau einmal dokumentiert sind und jede URL zur angegebenen
+40 festgelegten Pflichtquellen (Register 5) genau einmal dokumentiert sind und jede URL zur angegebenen
 Quelle gehört. Ein fehlendes oder unvollständiges Protokoll blockiert Commit und
 Veröffentlichung. Die Quellenliste ist versioniert: Die bisherigen 42-Quellen-Audits
 bleiben unverändert und prüfbar; ab Quellenlisten-Version 2 wird Reuters nicht mehr recherchiert
 oder als Beleg für neue Meldungen verwendet.
 Ab Quellenlisten-Version 3 ist Qwens aktuelle Primärquelle `https://qwen.ai/research`
 (`qwen.ai`); der nicht mehr gepflegte Blog `qwenlm.github.io` bleibt ausschließlich
-in historischen Audits der Versionen 1 und 2 erhalten. Die Pflichtliste bleibt bei 41 Quellen.
+in historischen Audits der Versionen 1 und 2 erhalten. Die Versionen 2–4 haben 41 Pflichtquellen.
 Ab Version 4 ist Latent Space korrekt als `latent.space` registriert; Versionen 1–3
 behalten die frühere Domain `latentspace.com` unverändert. Geprüfte Feed-/News-Einstiege
 für Latent Space, SemiAnalysis, MarkTechPost, VentureBeat, Microsoft AI und Qwen sind
 in `URL_OVERRIDES` hinterlegt. Quellenbezogene Alternativabrufe und xAI-Release-Notes
 sind in `docs/briefing-research-worker.md` dokumentiert; Zugriffssperren werden nicht
 als behoben behauptet und verbleibende Lücken in der Abschlussmeldung aufgelistet.
+Ab Register **5** entfällt ausschließlich SemiAnalysis aus der Pflichtliste:
+**40 Pflichtquellen**, optionaler öffentlicher Feed/Headline-Hinweis in der bestehenden
+`discovery`-Aufgabe. Kein erforderlicher Volltext-Checkpoint, kein Abo oder Login,
+keine Wall-Umgehung und kein zusätzliches Budget. Ein daraus entdecktes Thema
+benötigt tatsächlich gelesene freie Originalbelege; deren URL wird zitiert. Ein
+optionaler Ausfall wird im bestehenden Discovery-`result` notiert und blockiert
+nicht die Pflichtabdeckung. Register 1–4 bleiben einschließlich SemiAnalysis exakt erhalten.
+
+Für arXiv gilt [`docs/arxiv-source-policy.md`](docs/arxiv-source-policy.md):
+`scripts/arxiv_discovery.py` gleicht vollständige source-owned Listen-/API-Titel
+mit ihren Gesamtzahlen ab, speichert Cursor und Einschränkungen und liest keine
+Paper pauschal im Volltext. Öffentliche Erstlistung/Ankündigung und substantielle
+Updates werden getrennt von Original-Einreichungszeiten belegt. Neue arXiv-
+Kandidaten verwenden `arxiv_dates` und geprüfte öffentliche Frische; die alten
+Daten bleiben erhalten. Register 5 verlangt kompakte `title_discovery`-Berichte
+im arXiv-Audit. Ehrliche Teilabdeckung bleibt zulässig, schiebt aber den
+Quellen-Wasserstand nicht vor. Audit-Schema 1 bleibt rückwärtskompatibel.
+
 Qwen-Originale mit `blog?id=...` und Microsofts `/blog/` sind im gerenderten Browser
 geprüft; dieser begrenzte Ersatzweg ist verbindlich dokumentiert. Veraltete Indizes
 erfordern zusätzliche Zeitfenstersuchen und Originalprüfungen. Abschlussmeldungen

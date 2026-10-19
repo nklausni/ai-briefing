@@ -80,6 +80,18 @@ Session nach Abschluss mit `npx --yes agent-browser --session "briefing-QWEN-ID"
 schließen. Bei Loginwand stoppen, keine Zugangsdaten raten. Falls weiterhin Datum
 oder Text fehlen, bleibt die Quelle eingeschränkt/unavailable; andere Quellen laufen weiter.
 
+## arXiv: vollständige Titelentdeckung und öffentliche Frische
+
+Bei `arxiv.org` oder einem arXiv-Kandidaten lies zusätzlich
+`docs/arxiv-source-policy.md` vollständig und führe dessen drei begrenzte
+Quellabrufe aus. Alle Titel paginiert sichten, deklarierte Gesamtzahlen und
+deduplizierte Zählung abgleichen; Teilabdeckung ausdrücklich protokollieren.
+Original-Einreichung, öffentliche Erstankündigung und substantielle neue Version
+getrennt belegen. Eine Freitag-Einreichung mit belegter Montag-Erstlistung nicht
+wegen des alten Submission-Datums ausschließen. Ab Register 5 sind
+`title_discovery` im Quellen-Checkpoint und `arxiv_dates` je Kandidat verbindlich.
+Keine Behauptung vollständiger Volltextlektüre aus vollständigen Titellisten.
+
 ## Bewährte Zugangswege je Quelle
 
 Die Assignment-URLs stammen aus `URL_OVERRIDES` in `research_pipeline.py`.
@@ -88,9 +100,16 @@ Verwende diese Einstiege und die folgenden begrenzten Alternativen:
 - **Latent Space:** `https://www.latent.space/feed` und die verlinkten Originale
   unter `https://www.latent.space/`. `latentspace.com` ist eine fremde Kunstseite
   und keine KI-Quelle. Die korrigierte Pflichtdomain ist `latent.space`.
-- **SemiAnalysis:** `https://newsletter.semianalysis.com/feed` ist der aktuelle
-  Newsletter-Einstieg. Verlinkte Originale prüfen; das alte WordPress-Archiv/Feed
-  nicht als aktuellen Nachrichtenindex verwenden. Paywalls nicht umgehen.
+- **SemiAnalysis (ab Register 5 nur optional in `discovery`):**
+  `https://newsletter.semianalysis.com/feed` bleibt ein öffentlicher Themenhinweis,
+  keine Pflicht-Volltextquelle und kein eigener Quellen-Checkpoint. Höchstens ein
+  Feed-/Headline-Abruf und zwei gezielte Ersatzsuchen innerhalb des vorhandenen
+  Discovery-Budgets, kein Zusatzbudget. Bei Ausfall oder Aboschranke ohne weitere
+  Beschaffung fortfahren; Ergebnis im bestehenden Discovery-`result` ehrlich nennen.
+  Nur nach tatsächlich gelesener freier Primärquelle oder unabhängigem Originalbericht
+  einen Kandidaten anlegen und diese freie Original-URL zitieren; Teaser tragen keine
+  Aussagen. Optionaler Ausfall blockiert weder Pflichtaudit noch Discovery-Abschluss.
+  Keine Logins, Abos oder Wall-Umgehung. Historische Register 1–4 bleiben unverändert.
 - **MarkTechPost:** `https://www.marktechpost.com/feed/` zuerst lesen; `www` und
   abschließenden Slash erhalten. Bei Artikel-403 `web_extract` für genau das Original
   versuchen; nur im Feed tatsächlich enthaltene Aussagen können ohne Artikelabruf belegt werden.
@@ -267,6 +286,11 @@ und `candidates: []`. `unavailable` hat ebenfalls keine verifizierten Kandidaten
 `evidence` vorkommen. Weitere Belege können zu anderen Domains gehören.
 
 ## Offene Entdeckung (`kind: discovery`)
+
+Die Assignment-Liste `optional_sources` ist kein Pflichtregister. SemiAnalysis
+nur nach der oben beschriebenen begrenzten Discovery-Regel verwenden; dessen
+Nichtabruf/Ausfall im `result` nennen, nicht als fehlende Pflichtquelle melden.
+Die übrigen acht Themen bleiben vollständig zu bearbeiten.
 
 Suche thematisch über alle acht Themen und außerhalb der Pflichtquellen. Dokumentiere
 Suchanfragen über denselben Budgetbefehl und öffne relevante Originalartikel.

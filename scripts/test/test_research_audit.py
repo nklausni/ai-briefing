@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 import importlib.util
 import unittest
+import sys
+from source_policy_fixtures import title_discovery_fixture
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 SCRIPT = Path(__file__).resolve().parents[1] / "validate_research_audit.py"
 spec = importlib.util.spec_from_file_location("validate_research_audit", SCRIPT)
 if spec is None or spec.loader is None:
@@ -24,6 +27,7 @@ class TestResearchAuditValidation(unittest.TestCase):
                     "status": "checked",
                     "checked_url": f"https://{domain}/ai-news",
                     "result": "Keine neue, verifizierbare AI-Meldung im Zeitraum.",
+                    **({"title_discovery": title_discovery_fixture()} if domain == "arxiv.org" else {}),
                 }
                 for domain, name in validator.SOURCES
             ],
@@ -31,7 +35,8 @@ class TestResearchAuditValidation(unittest.TestCase):
 
     def test_expected_source_set_includes_expanded_coverage(self):
         domains = {domain for domain, _ in validator.SOURCES}
-        self.assertEqual(len(domains), 41)
+        self.assertEqual(len(domains), 40)
+        self.assertNotIn("semianalysis.com", domains)
         self.assertNotIn("reuters.com", domains)
         self.assertTrue(
             {
@@ -62,11 +67,9 @@ class TestResearchAuditValidation(unittest.TestCase):
             elif entry["domain"] == "latent.space":
                 entry["domain"] = "latentspace.com"
                 entry["checked_url"] = "https://latentspace.com/"
-        audit["sources"].append({
-            "domain": "reuters.com", "name": "Reuters AI", "status": "checked",
-            "checked_url": "https://www.reuters.com/technology/",
-            "result": "Historischer Reuters-Check.",
-        })
+        audit["sources"].extend({"domain": d, "name": n, "status": "checked",
+                                 "checked_url": f"https://{d}/", "result": "Historical check."}
+                                for d, n in validator.LEGACY_SOURCES if d in {"reuters.com", "semianalysis.com"})
         self.assertEqual(validator.validate(audit, "2026-09-07"), [])
 
     def test_reuters_is_not_allowed_in_current_audit(self):

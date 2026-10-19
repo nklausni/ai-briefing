@@ -25,7 +25,7 @@ class SourceAccessTests(unittest.TestCase):
     def test_latent_space_migration_preserves_historical_registries(self):
         self.assertIn('latent.space', dict(validator.SOURCES))
         self.assertNotIn('latentspace.com', dict(validator.SOURCES))
-        self.assertEqual(validator.REGISTRY_VERSION, 4)
+        self.assertEqual(validator.REGISTRY_VERSION, 5)
         for version in (1, 2, 3):
             registry = validator.SOURCE_REGISTRIES[version]
             self.assertIn('latentspace.com', dict(registry))

@@ -8,6 +8,23 @@ Reuters ist aus der aktiven Quellenliste entfernt; neue Meldungen dürfen Reuter
 auch über die offene Entdeckung nicht als Quelle verwenden. Historische Einträge
 und Audits werden nicht rückwirkend gelöscht.
 
+Ab Register 5 sind es **40 Pflichtquellen**: Nur SemiAnalysis wurde zur optionalen
+Themenentdeckung im vorhandenen `discovery`-Auftrag zurückgestuft. Kein Pflicht-
+Volltextabruf und kein zusätzlicher Quellen-Checkpoint dafür. Freie, tatsächlich
+gelesene Originalbelege sind Voraussetzung für einen daraus entdeckten Kandidaten;
+keine Abos, Logins oder Wall-Umgehung. Ein optionaler Ausfall bleibt im bestehenden
+Discovery-Ergebnis und blockiert nicht den Abschluss der Pflichtquellen. Qwen,
+Meta AI und alle übrigen Pflichtquellen bleiben verpflichtend. Register 1–4, alte
+Manifeste und Tagesaudits nicht verändern.
+
+Verbindlich für arXiv: `docs/arxiv-source-policy.md` lesen und Worker-Ergebnisse
+dagegen prüfen. Drei begrenzte source-owned Listen-/API-Abrufe; vollständige
+Titelzählung statt erster 50, keine Volltext-Vollabdeckungsbehauptung. Ab Register 5
+`title_discovery`-Berichte und bei Kandidaten `arxiv_dates`/`freshness_date` prüfen.
+Frische ist der belegte öffentliche Schritt, nicht automatisch API-Submissionzeit;
+alte Einreichungs-/Versionsdaten erhalten. Partielle Quelle transparent melden,
+keine globale Laufunterbrechung aus einem dokumentierten Quellenausfall.
+
 ## 1. Lauf vorbereiten
 
 Ermittle das Datum in `Europe/Berlin`. Prüfe Git-Status und führe `git pull --ff-only origin

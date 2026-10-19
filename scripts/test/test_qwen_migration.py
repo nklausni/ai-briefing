@@ -18,7 +18,7 @@ class TestQwenMigration(unittest.TestCase):
             registry = [
                 ("latentspace.com" if domain == "latent.space" else
                  "qwenlm.github.io" if domain == "qwen.ai" else domain, name)
-                for domain, name in validator.SOURCES
+                for domain, name in validator.V4_SOURCES
             ]
             if version == 1:
                 registry.append(("reuters.com", "Reuters AI"))

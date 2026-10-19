@@ -103,6 +103,8 @@ def candidate_view(candidate):
             "summary": short(candidate["summary"], 1200),
             "summary_truncated": len(candidate["summary"]) > 1200,
             "url": short(candidate["url"], 800), "published_at": candidate["published_at"],
+            "freshness_date": candidate.get("freshness_date", candidate["published_at"]),
+            "arxiv_dates": candidate.get("arxiv_dates"),
             "evidence_count": len(candidate["evidence"]),
             "first_excerpt": short(candidate["evidence"][0]["excerpt"], 600)}
 

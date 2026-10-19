@@ -10,6 +10,7 @@ from unittest.mock import patch
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import research_pipeline as p
+from source_policy_fixtures import title_discovery_fixture
 
 
 class PipelineTests(unittest.TestCase):
@@ -24,6 +25,7 @@ class PipelineTests(unittest.TestCase):
 
     def entry(self, domain, candidates=None):
         return {"domain": domain, "name": domain, "status": "checked", "checked_url": "https://" + domain + "/", "result": "Current source checked; no additional news.", "candidates": candidates or [],
+                **({"title_discovery": title_discovery_fixture()} if domain == "arxiv.org" else {}),
                 "checks": [{"url": url, "status": "checked", "result": "Original checked"}
                            for url in p.REQUIRED_SOURCE_CHECKS.get(domain, ())]}
 

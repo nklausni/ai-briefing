@@ -23,9 +23,10 @@ from urllib.request import Request, urlopen
 from urllib.parse import urlparse
 from zoneinfo import ZoneInfo
 
-from validate_research_audit import (LEGACY_SOURCES, REGISTRY_VERSION, SOURCE_REGISTRIES, SOURCES,
+from validate_research_audit import (LEGACY_SOURCES, REGISTRY_VERSION, SOURCE_REGISTRIES, SOURCES, OPTIONAL_SOURCES,
                                      REQUIRED_SOURCE_CHECKS, SOURCE_CHECKS_VERSION, domain_matches, validate)
 from editorial_coverage import validate_coverage, validate_development
+from arxiv_discovery import freshness_date
 
 TOPICS = (
     "AI News", "Lokale LLMs", "Agentic Engineering / Vibe Coding", "AI Tools",
@@ -131,6 +132,8 @@ def source_windows(root, day, sources):
                 checks = entry.get("checks", [])
                 covered = {check.get("url") for check in checks if check.get("status") == "checked"}
                 if entry.get("status") == "checked" and all(
+                        report.get("complete") and (report.get("listing_kind") != "recent" or report.get("window_complete"))
+                        for report in entry.get("title_discovery", [])) and all(
                         check.get("status") == "checked" for check in checks) and set(
                             REQUIRED_SOURCE_CHECKS.get(entry.get("domain"), ())) <= covered:
                     latest[entry["domain"]] = max(when, latest.get(entry["domain"], when))
@@ -225,7 +228,8 @@ def prepare(root, run, day, sources=None):
         weights = historical_source_weights(root, run, date.fromisoformat(day), sources)
         packets = source_packets(specs, weights)
         tasks = [{"id": f"sources-{i + 1:02}", "kind": "sources", "sources": packet, "attempt": 1} for i, packet in enumerate(packets)]
-        tasks.append({"id": "discovery", "kind": "discovery", "topics": list(TOPICS), "since": min(windows.values()), "attempt": 1})
+        tasks.append({"id": "discovery", "kind": "discovery", "topics": list(TOPICS), "since": min(windows.values()), "attempt": 1,
+                      "optional_sources": [{"domain": d, "name": n, "url": URL_OVERRIDES[d]} for d, n in OPTIONAL_SOURCES]})
         manifest = {"schema_version": 2, "source_checks_version": SOURCE_CHECKS_VERSION,
                     "date": day, "root": str(root), "registry": sources, "created_at": stamp(), "max_parallel": MAX_PARALLEL, "search_budget_per_task": SEARCH_BUDGET, "historical_weights_used": len(weights), "tasks": tasks}
         if (root / "data/briefing.json").exists():
@@ -255,11 +259,16 @@ def registry_for_manifest(manifest):
     raise ValueError("Source registry changed during run")
 
 
-def reject_retired_source_candidates(candidates):
+def reject_retired_source_candidates(candidates, registry_version=2):
     for candidate in candidates:
         urls = [candidate["url"]] + [item["url"] for item in candidate["evidence"]]
         require(not any(domain_matches(url, "reuters.com") for url in urls),
                 "Reuters is excluded from new briefing research")
+        if registry_version >= 5 and any(domain_matches(url, "semianalysis.com") for url in urls):
+            require(not domain_matches(candidate["url"], "semianalysis.com") and any(
+                evidence["url"] == candidate["url"] and evidence["method"] in {"direct", "web_extract"}
+                for evidence in candidate["evidence"]),
+                "SemiAnalysis discovery requires a retrieved free corroborating original as candidate URL")
 
 
 def reserve(run, task_id, query):
@@ -275,7 +284,7 @@ def reserve(run, task_id, query):
         return {"allowed": True, "used": len(calls), "remaining": SEARCH_BUDGET - len(calls)}
 
 
-def validate_candidates(candidates, day, since, strict=False):
+def validate_candidates(candidates, day, since, strict=False, arxiv_policy=False):
     require(isinstance(candidates, list), "candidates must be a list")
     normalized = []
     for candidate in candidates:
@@ -284,7 +293,11 @@ def validate_candidates(candidates, day, since, strict=False):
             require(isinstance(candidate.get(field), str) and bool(candidate[field].strip()), f"Candidate missing {field}")
         require(http_url(candidate["url"]), "Invalid candidate URL")
         published = date.fromisoformat(candidate["published_at"])
-        require(date.fromisoformat(since) <= published <= date.fromisoformat(day), "Candidate outside research window")
+        fresh = published
+        if arxiv_policy and domain_matches(candidate["url"], "arxiv.org"):
+            require(isinstance(candidate.get("arxiv_dates"), dict), "arXiv candidate needs arxiv_dates")
+            fresh = date.fromisoformat(freshness_date(candidate["arxiv_dates"], candidate["published_at"]))
+        require(date.fromisoformat(since) <= fresh <= date.fromisoformat(day), "Candidate outside research window")
         evidence = candidate.get("evidence")
         require(isinstance(evidence, list) and bool(evidence), "Candidate needs retrieved evidence")
         for item in evidence:
@@ -293,9 +306,13 @@ def validate_candidates(candidates, day, since, strict=False):
             require(item.get("method") in {"web_extract", "direct", "feed"}, "Search snippets alone are not article evidence")
             require(isinstance(item.get("retrieved_at"), str) and bool(item["retrieved_at"]), "Evidence needs retrieval time")
         require(any(e["url"] == candidate["url"] for e in evidence), "Read the candidate original URL")
+        if arxiv_policy and domain_matches(candidate["url"], "arxiv.org"):
+            require({candidate["arxiv_dates"]["listing_url"], candidate["arxiv_dates"]["announcement_url"]} <= {e["url"] for e in evidence},
+                    "arXiv public release needs retrieved listing and announcement evidence")
         if strict:
             validate_development(candidate)
-        normalized.append({**candidate, "id": fingerprint([candidate["url"], candidate["title"]])[:20]})
+        normalized.append({**candidate, "freshness_date": fresh.isoformat(),
+                           "id": fingerprint([candidate["url"], candidate["title"]])[:20]})
     return normalized
 
 
@@ -305,9 +322,9 @@ def record(run, task_id, entry):
     if task["kind"] == "discovery":
         require(set(entry.get("topics_checked", [])) == set(TOPICS), "Discovery must cover all eight topics")
         require(bool(str(entry.get("result", "")).strip()), "Discovery needs a result, including when empty")
-        candidates = validate_candidates(entry.get("candidates"), manifest["date"], task["since"], manifest.get("schema_version", 1) >= 2)
+        candidates = validate_candidates(entry.get("candidates"), manifest["date"], task["since"], manifest.get("schema_version", 1) >= 2, arxiv_policy=registry_version >= 5)
         if registry_version >= 2:
-            reject_retired_source_candidates(candidates)
+            reject_retired_source_candidates(candidates, registry_version)
         value = {**entry, "candidates": candidates, "task_id": task_id, "completed_at": stamp()}
         destination = Path(run) / "discovery.json"
     else:
@@ -320,9 +337,9 @@ def record(run, task_id, entry):
         errors = [e for e in validate(probe, manifest["date"]) if not e.startswith("fehlende Quellen:")]
         require(not errors, "; ".join(errors))
         require(http_url(entry.get("checked_url")), "Source needs an HTTP(S) URL")
-        candidates = validate_candidates(entry.get("candidates"), manifest["date"], source["since"], manifest.get("schema_version", 1) >= 2)
+        candidates = validate_candidates(entry.get("candidates"), manifest["date"], source["since"], manifest.get("schema_version", 1) >= 2, arxiv_policy=registry_version >= 5)
         if registry_version >= 2:
-            reject_retired_source_candidates(candidates)
+            reject_retired_source_candidates(candidates, registry_version)
         require(entry["status"] != "unavailable" or not candidates, "Unavailable source cannot supply verified candidates")
         value = {**entry, "name": source["name"], "candidates": candidates, "since": source["since"], "task_id": task_id, "completed_at": stamp()}
         destination = checkpoint_path(run, source["domain"])
@@ -517,17 +534,20 @@ def assemble(run):
     source_specs = {s["domain"]: s for t in manifest["tasks"] if t["kind"] == "sources" for s in t["sources"]}
     for (domain, _), entry in zip(sources, entries):
         require(entry.get("domain") == domain, "Checkpoint source ownership changed")
-        validate_candidates(entry.get("candidates"), manifest["date"], source_specs[domain]["since"], manifest.get("schema_version", 1) >= 2)
+        validate_candidates(entry.get("candidates"), manifest["date"], source_specs[domain]["since"], manifest.get("schema_version", 1) >= 2, arxiv_policy=registry_version >= 5)
         if registry_version >= 2:
-            reject_retired_source_candidates(entry["candidates"])
+            reject_retired_source_candidates(entry["candidates"], registry_version)
     discovery = read(run / "discovery.json")
     require(set(discovery.get("topics_checked", [])) == set(TOPICS), "Incomplete discovery topics")
     discovery_task = next(t for t in manifest["tasks"] if t["id"] == "discovery")
-    validate_candidates(discovery.get("candidates"), manifest["date"], discovery_task["since"], manifest.get("schema_version", 1) >= 2)
+    validate_candidates(discovery.get("candidates"), manifest["date"], discovery_task["since"], manifest.get("schema_version", 1) >= 2, arxiv_policy=registry_version >= 5)
     if registry_version >= 2:
-        reject_retired_source_candidates(discovery["candidates"])
+        reject_retired_source_candidates(discovery["candidates"], registry_version)
     audit = {"schema_version": 1, "date": manifest["date"],
              "sources": [{k: e[k] for k in ["domain", "name", "status", "checked_url", "result"]} for e in entries]}
+    for result, entry in zip(audit["sources"], entries):
+        if "title_discovery" in entry:
+            result["title_discovery"] = entry["title_discovery"]
     if manifest.get("schema_version", 1) >= 2:
         audit["source_checks_version"] = SOURCE_CHECKS_VERSION
         for result, entry in zip(audit["sources"], entries):
@@ -550,7 +570,7 @@ def assemble(run):
             require(addition["id"] in candidates, "Editor evidence references an unknown candidate")
             candidates[addition["id"]]["evidence"].extend(addition["evidence"])
     if registry_version >= 2:
-        reject_retired_source_candidates(candidates.values())
+        reject_retired_source_candidates(candidates.values(), registry_version)
     write(run / "candidates.json", list(candidates.values()))
     write(Path(manifest["root"]) / "data/research-audit" / (manifest["date"] + ".json"), audit)
     status_path = run / "research-status.json"
@@ -566,10 +586,11 @@ def add_evidence(run, addition):
     candidate = next((c for c in read(run / "candidates.json") if c["id"] == addition.get("id")), None)
     require(candidate is not None, "Unknown candidate")
     manifest = read(run / "manifest.json")
+    registry_version, _ = registry_for_manifest(manifest)
     updated = {**candidate, "evidence": candidate["evidence"] + addition.get("evidence", [])}
-    validate_candidates([updated], manifest["date"], candidate["published_at"], manifest.get("schema_version", 1) >= 2)
+    validate_candidates([updated], manifest["date"], candidate["published_at"], manifest.get("schema_version", 1) >= 2, arxiv_policy=registry_version >= 5)
     if registry_for_manifest(manifest)[0] >= 2:
-        reject_retired_source_candidates([updated])
+        reject_retired_source_candidates([updated], registry_version)
     path = run / "editor-evidence.json"
     additions = read(path) if path.exists() else []
     additions.append(addition)

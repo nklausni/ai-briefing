@@ -8,8 +8,9 @@ import sys
 from datetime import date
 from pathlib import Path
 from urllib.parse import urlparse
+from arxiv_discovery import validate_title_discovery
 
-SOURCES = (
+V4_SOURCES = (
     ("simonwillison.net", "Simon Willison"),
     ("testingcatalog.com", "TestingCatalog"),
     ("the-decoder.com", "The Decoder"),
@@ -52,14 +53,16 @@ SOURCES = (
     ("research.google", "Google Research"),
     ("nist.gov", "NIST AI"),
 )
-REGISTRY_VERSION = 4
+REGISTRY_VERSION = 5
+SOURCES = tuple(source for source in V4_SOURCES if source[0] != "semianalysis.com")
+OPTIONAL_SOURCES = (("semianalysis.com", "SemiAnalysis"),)
 # Published audits retain their original source domains and source count.
 V3_SOURCES = tuple(("latentspace.com" if domain == "latent.space" else domain, name)
-                   for domain, name in SOURCES)
+                   for domain, name in V4_SOURCES)
 V2_SOURCES = tuple(("qwenlm.github.io" if domain == "qwen.ai" else domain, name)
                    for domain, name in V3_SOURCES)
 LEGACY_SOURCES = V2_SOURCES + (("reuters.com", "Reuters AI"),)
-SOURCE_REGISTRIES = {1: LEGACY_SOURCES, 2: V2_SOURCES, 3: V3_SOURCES, REGISTRY_VERSION: SOURCES}
+SOURCE_REGISTRIES = {1: LEGACY_SOURCES, 2: V2_SOURCES, 3: V3_SOURCES, 4: V4_SOURCES, REGISTRY_VERSION: SOURCES}
 
 VALID_STATUS = {"checked", "unavailable"}
 SOURCE_CHECKS_VERSION = 1
@@ -116,7 +119,7 @@ def validate(audit: dict, expected_date: str | None = None) -> list[str]:
     registry_version = audit.get("registry_version", 1)
     registry = SOURCE_REGISTRIES.get(registry_version)
     if registry is None:
-        errors.append("registry_version muss 1, 2, 3 oder 4 sein")
+        errors.append("registry_version muss 1, 2, 3, 4 oder 5 sein")
         registry = SOURCES
     expected = {domain: name for domain, name in registry}
     seen: set[str] = set()
@@ -143,6 +146,8 @@ def validate(audit: dict, expected_date: str | None = None) -> list[str]:
             errors.append(f"{domain}: result darf nicht leer sein")
         if source_checks_version == SOURCE_CHECKS_VERSION:
             errors.extend(validate_source_checks(entry))
+        if isinstance(registry_version, int) and registry_version >= 5 and domain == "arxiv.org" and status == "checked":
+            errors.extend(validate_title_discovery(entry.get("title_discovery")))
 
     missing = sorted(set(expected) - seen)
     if missing:

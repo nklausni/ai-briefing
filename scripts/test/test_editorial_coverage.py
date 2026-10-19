@@ -9,6 +9,7 @@ import unittest
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import research_pipeline as p
 import editor_context as context
+from source_policy_fixtures import title_discovery_fixture
 
 
 class EditorialCoverageTests(unittest.TestCase):
@@ -43,6 +44,8 @@ class EditorialCoverageTests(unittest.TestCase):
                              "status": "checked", "checked_url": source["url"],
                              "result": "Original sources checked", "candidates":
                              candidates if source["domain"] == "simonwillison.net" else []}
+                    if source["domain"] == "arxiv.org":
+                        entry["title_discovery"] = title_discovery_fixture()
                     entry["checks"] = [{"url": url, "status": "checked", "result": "Original read"}
                                        for url in source.get("required_checks", [])]
                     p.record(self.run, task["id"], entry)
