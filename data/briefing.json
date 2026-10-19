@@ -1,103 +1,23 @@
 {
-  "meta": {
-    "title": "AI-Briefing",
-    "subtitle": "Multi-Briefing · Privates AI-Briefing",
-    "period": "15.–19. Oktober 2026",
-    "generated": "2026-10-19",
-    "intro": "Anthropic kündigt einen Public Benefit Fund mit einer zunächst fünfprozentigen Aktienzusage unter Aktionärsvorbehalt an.[8] Tencent veröffentlicht mit MemHub eine gemeinsame Erinnerungsschicht für KI-Werkzeuge; eine Netflix-Fallstudie zeigt den Einsatz von JetBrains-Codeindizes für Coding-Agenten.[20][17]",
-    "disclaimer": "Hinweis: Alle Infos auf eigene Gefahr. Dies ist ein privates Projekt, automatisch generiert aus Web-Recherche.",
-    "host": "Niko Klausnitzer"
-  },
-  "categories": [
-    {"id":"modelle","label":"Modelle","color":"#3b82f6"},
-    {"id":"tools","label":"Tools & IDEs","color":"#06b6d4"},
-    {"id":"agents","label":"Agents & Frameworks","color":"#8b5cf6"},
-    {"id":"lokal","label":"Open Weight / Lokal","color":"#10b981"},
-    {"id":"security","label":"Security & Governance","color":"#ef4444"},
-    {"id":"business","label":"Business & Markt","color":"#f59e0b"}
-  ],
-  "impact_levels": [
-    {"level":1,"name":"Routine","desc":"kleines Update, Bugfix, inkrementell."},
-    {"level":2,"name":"Nennenswert","desc":"neues Feature, aber eher Nische."},
-    {"level":3,"name":"Relevant","desc":"spürbare Verbesserung, betrifft viele."},
-    {"level":4,"name":"Stark","desc":"verändert, wie man arbeitet, oder eröffnet eine neue Möglichkeit."},
-    {"level":5,"name":"Game-Changer","desc":"grundlegender Sprung."}
-  ],
-  "topics": [
-    {
-      "id":"ai-news","name":"AI News","group":"Überblick","angle":"Modelle, Forschung und Plattformen",
-      "summary":"Artificial Analysis veröffentlicht eine neue Messung von DeepSeek V4.1 Flash 1017 (Max), getrennt von der bereits erfolgten Modellfreigabe.[16]",
-      "items":[{
-        "n":1,"title":"DeepSeek V4.1 Flash 1017 erreicht 45 Punkte im Intelligence Index","date":"2026-10-18",
-        "summary":"Artificial Analysis veröffentlicht am 18. Oktober eine neue Evaluation von DeepSeek V4.1 Flash 1017 (Max) mit 45 Punkten im Intelligence Index.[16] Das ist eine unabhängige Messung nach der Modellfreigabe, kein erneuter Modellstart und keine pauschale Bestätigung der Herstellerbenchmarks.[16]",
-        "category":"modelle","impact":3,"change_type":"research","candidate_ids":["4cf51760b8e5e0d7ced4"],
-        "sources":[{"label":"[16] Artificial Analysis","url":"https://artificialanalysis.ai/changelog"}]
-      }]
-    },
-    {
-      "id":"lokale-llms","name":"Lokale LLMs","group":"Praxis","angle":"Open Weights, lokale Inferenz und Hardware",
-      "summary":"Hy-Memory-30B-A3B ist mit offenen Gewichten als spezialisierter Memory-Writer verfügbar; die Freigabe ist vom vorausgegangenen Forschungsbericht zu unterscheiden.[19][20][21]",
-      "items":[{
-        "n":1,"title":"Hy-Memory-30B-A3B erhält offene Gewichte für Memory-Writer","date":"2026-10-16",
-        "summary":"Tencent gibt Hy-Memory-30B-A3B als spezialisierten Memory-Writer mit etwa 30 Milliarden Gesamt- und drei Milliarden aktiven Parametern über Hugging Face frei.[19][21] Die datierte Startseite ordnet den Open-Source-Start dem 16. Oktober zu; die Gewichtefreigabe ist ein eigener Meilenstein neben dem Preprint.[20][21] Die Model Card beschreibt den Einsatz in externen Memory-Frameworks, nicht den Ersatz eines allgemeinen Chatmodells.[19]",
-        "category":"lokal","impact":3,"change_type":"general_availability","candidate_ids":["fe5241a402888d3911f9"],
-        "sources":[{"label":"[19] Tencent / Hugging Face","url":"https://huggingface.co/tencent/Hy-Memory-30B-A3B"},{"label":"[20] Tencent Hunyuan","url":"https://memory.hunyuan.tencent.com/"},{"label":"[21] Tencent / GitHub","url":"https://github.com/Tencent-Hunyuan/Hy-Memory"}]
-      }]
-    },
-    {
-      "id":"agentic-engineering","name":"Agentic Engineering / Vibe Coding","group":"Praxis","angle":"Coding-Agenten, IDEs und Entwicklungsabläufe",
-      "summary":"Netflix verbindet einen headless JetBrains-Codeindex mit Claude Code und Codex; die Fallstudie bleibt eine begrenzte Anbieter-/Anwender-Evaluation.[17]",
-      "items":[{
-        "n":1,"title":"JetBrains IDE Intelligence: Netflix evaluiert Codeindizes für Coding-Agenten","date":"2026-10-15",
-        "summary":"Die am 15. Oktober veröffentlichte Fallstudie beschreibt, wie Netflix JetBrains IDE Intelligence ohne geöffnete IDE für Claude Code und Codex nutzbar macht.[17] Netflix entwickelte dafür selbst einen Daemon und eine CLI; deren öffentliche Freigabe ist damit nicht belegt.[17] Die Evaluation auf zwei Codebasen stammt aus Juli und August: JetBrains nennt typischerweise 20–30 Prozent weniger Zeit beziehungsweise Tokens, abhängig von Modell und Aufgabe; dies ist keine allgemeine Leistungszusage.[17]",
-        "category":"agents","impact":3,"change_type":"research","candidate_ids":["62cfb8ef6b370423c922"],
-        "sources":[{"label":"[17] JetBrains / Netflix","url":"https://blog.jetbrains.com/ai/2026/10/how-netflix-made-ai-coding-agents-more-efficient/"}]
-      }]
-    },
-    {
-      "id":"ai-tools","name":"AI Tools","group":"Praxis","angle":"Werkzeuge und Anwendungen",
-      "summary":"Jais Speech wird separat von den Jais-3-Sprachmodellen als arabisches Spracherkennungsmodell über Hugging Face verfügbar.[18]",
-      "items":[{
-        "n":1,"title":"Jais Speech startet für arabische Spracherkennung und Dialekte","date":"2026-10-15",
-        "summary":"IFM und Inception42 veröffentlichen Jais Speech am 15. Oktober über Hugging Face, neben den sechs Jais-3-Sprachmodellen.[18] Laut Anbieter transkribiert es Hocharabisch und Dialekte aus 19 arabischen Ländern, erkennt den Dialekt und erhält englische oder französische Wörter bei Sprachwechseln in Originalschrift.[18] Eine unabhängige Leistungsführerschaft wird dadurch nicht belegt.[18]",
-        "category":"tools","impact":2,"change_type":"general_availability","candidate_ids":["e1e59113013703cff669"],
-        "sources":[{"label":"[18] IFM / Inception42","url":"https://ifm.ai/jais3/press-release/"}]
-      }]
-    },
-    {
-      "id":"context-engineering","name":"Context Engineering","group":"Praxis","angle":"Kontext, Memory und Wissenszugriff",
-      "summary":"MemHub bündelt autorisierten Import, Synchronisierung und gemeinsamen Abruf persönlicher Erinnerungen über mehrere KI-Werkzeuge.[20]",
-      "items":[{
-        "n":1,"title":"MemHub veröffentlicht gemeinsame Erinnerungen für KI-Werkzeuge","date":"2026-10-16",
-        "summary":"Tencent veröffentlicht MemHub als Anwendungsschicht seines Hy-Memory-2.0-Stacks am 16. Oktober.[20] Nach Autorisierung sollen Nutzer Gesprächshistorien importieren, neue Sitzungen synchronisieren und Erinnerungen per Plugin in verbundenen KI-Werkzeugen abrufen können; dies ist die Herstellerbeschreibung, kein unabhängiger Produkttest.[20] Lokale Speicherung bedeutet nicht automatisch, dass jede Interaktion auf dem Gerät bleibt.[22]",
-        "category":"agents","impact":3,"change_type":"general_availability","candidate_ids":["8404913f66f92213fb55"],
-        "sources":[{"label":"[20] Tencent Hunyuan","url":"https://memory.hunyuan.tencent.com/"},{"label":"[22] Lapaas Voice","url":"https://lapaasvoice.com/tencent-open-sources-hy-memory-2-0-to-give-ai-agents-shared-memory"}]
-      }]
-    },
-    {
-      "id":"ai-security","name":"AI Security","group":"Verantwortung","angle":"Angriffe, Schutzmaßnahmen und sichere Ausführung",
-      "summary":"",
-      "items":[]
-    },
-    {
-      "id":"ai-governance","name":"AI Governance","group":"Verantwortung","angle":"Regeln, Verantwortung und gesellschaftliche Folgen",
-      "summary":"Anthropic kündigt einen eigenen Public Benefit Fund mit einer Aktienzusage unter Aktionärsvorbehalt an; Details zur Governance sollen erst folgen.[8]",
-      "items":[{
-        "n":1,"title":"Anthropic Public Benefit Fund soll zunächst fünf Prozent der Aktien erhalten","date":"2026-10-18",
-        "summary":"Anthropic kündigt am 18. Oktober den Anthropic Public Benefit Fund als vollständig eigene LLC an.[8] Vorbehaltlich der Aktionärszustimmung sollen zunächst fünf Prozent der Aktien eingebracht werden; bei je 50 Prozent Wertzuwachs oberhalb einer festzulegenden Basis kann der Vorstand weitere zwei Prozent hinzufügen.[8] Details zu Struktur, Governance und Bewertungsmeilensteinen sollen in den kommenden Monaten folgen: Die Zusage ist keine bereits ausgezahlte Spende.[8]",
-        "category":"security","impact":3,"change_type":"announcement","candidate_ids":["8fac8c3664fec2c4326e"],
-        "sources":[{"label":"[8] Anthropic","url":"https://www.anthropic.com/news/public-benefit-fund"}]
-      }]
-    },
-    {
-      "id":"enterprise","name":"Enterprise","group":"Wirtschaft","angle":"Unternehmen, Betrieb und Markt",
-      "summary":"Neue Berichtsdetails zu Disney und Character.AI nennen mindestens 60 Stellenangebote; ein abgeschlossener Unternehmenskauf ist damit nicht belegt.[10]",
-      "items":[{
-        "n":1,"title":"Disney bietet mindestens 60 Character.AI-Beschäftigten Stellen an","date":"2026-10-18",
-        "summary":"TechCrunch berichtet am 18. Oktober auf Basis einer Gerichtsunterlage vom 13. Oktober, Disney habe Beschäftigungsangebote für mindestens 60 Character.AI-Mitarbeiter vereinbart; die große Mehrheit der Angesprochenen habe angenommen.[10] Die neuen Personalangaben ergänzen das bekannte Insolvenz- und Lizenzverfahren, belegen aber keinen abgeschlossenen Unternehmenskauf: Das Stalking-Horse-Angebot kann weiterhin überboten werden.[10]",
-        "category":"business","impact":3,"change_type":"business","candidate_ids":["847ea3fc2d7fac82a13e"],
-        "sources":[{"label":"[10] TechCrunch","url":"https://techcrunch.com/2026/10/18/disney-agrees-to-hire-the-majority-of-character-ais-workforce/"}]
-      }]
-    }
-  ]
+ "meta":{"title":"AI-Briefing","subtitle":"Multi-Briefing · Privates AI-Briefing","period":"15.–19. Oktober 2026","generated":"2026-10-19","intro":"Qwen Code ergänzt schreibgeschützte Snapshot-Unteragenten; neue Forschungsarbeiten untersuchen selbstkonfigurierende Labore und schnellere quantisierte Inferenz auf Hopper.[27][24][25] Der FSB legt zwölf unverbindliche Praktiken für den KI-Einsatz in Finanzinstituten vor.[28][29]","disclaimer":"Hinweis: Alle Infos auf eigene Gefahr. Dies ist ein privates Projekt, automatisch generiert aus Web-Recherche.","host":"Niko Klausnitzer"},
+ "categories":[{"id":"modelle","label":"Modelle","color":"#3b82f6"},{"id":"tools","label":"Tools & IDEs","color":"#06b6d4"},{"id":"agents","label":"Agents & Frameworks","color":"#8b5cf6"},{"id":"lokal","label":"Open Weight / Lokal","color":"#10b981"},{"id":"security","label":"Security & Governance","color":"#ef4444"},{"id":"business","label":"Business & Markt","color":"#f59e0b"}],
+ "impact_levels":[{"level":1,"name":"Routine","desc":"kleines Update, Bugfix, inkrementell."},{"level":2,"name":"Nennenswert","desc":"neues Feature, aber eher Nische."},{"level":3,"name":"Relevant","desc":"spürbare Verbesserung, betrifft viele."},{"level":4,"name":"Stark","desc":"verändert, wie man arbeitet, oder eröffnet eine neue Möglichkeit."},{"level":5,"name":"Game-Changer","desc":"grundlegender Sprung."}],
+ "topics":[
+ {"id":"ai-news","name":"AI News","group":"Überblick","angle":"Modelle, Forschung und Plattformen","summary":"Self-Building Labs demonstriert einen Laboragenten-Prototyp an einer realen Quantendot-Synthese; Artificial Analysis bewertet DeepSeek V4.1 Flash 1017 unabhängig.[24][16]","items":[
+ {"n":1,"title":"Self-Building Labs entwickelt Laborskills für neue Versuchsabläufe","date":"2026-10-19","summary":"Self-Building Labs beschreibt einen Forschungsprototyp, der aus wissenschaftlichen Zielen fehlende digitale Zwillinge, Roboterskills und Versuchsabläufe entwickelt.[24] Die Autoren demonstrieren einen realen Quantendot-Syntheseversuch; das ist keine allgemein verfügbare oder unabhängig validierte autonome Laborplattform.[24] Die Arbeit wurde am 16. Oktober eingereicht und am 19. Oktober in der gelesenen New-Liste öffentlich angekündigt.[24][26]","category":"agents","impact":3,"change_type":"research","candidate_ids":["4936185d8a6626af5124"],"sources":[{"label":"[24] arXiv / Self-Building Labs","url":"https://arxiv.org/abs/2610.23826"},{"label":"[26] arXiv / öffentliche New-Liste","url":"https://arxiv.org/list/cs.AI/new?skip=0&show=2000"}]},
+ {"n":2,"title":"DeepSeek V4.1 Flash 1017 erreicht 45 Punkte im Intelligence Index","date":"2026-10-18","summary":"Artificial Analysis veröffentlicht am 18. Oktober eine neue Evaluation von DeepSeek V4.1 Flash 1017 (Max) mit 45 Punkten im Intelligence Index.[16] Das ist eine unabhängige Messung nach der Modellfreigabe, kein erneuter Modellstart und keine pauschale Bestätigung der Herstellerbenchmarks.[16]","category":"modelle","impact":3,"change_type":"research","candidate_ids":["4cf51760b8e5e0d7ced4"],"sources":[{"label":"[16] Artificial Analysis","url":"https://artificialanalysis.ai/changelog"}]}]},
+ {"id":"lokale-llms","name":"Lokale LLMs","group":"Praxis","angle":"Open Weights, lokale Inferenz und Hardware","summary":"FuTransformer untersucht FP8-Prefill und INT4-Decode auf Hopper mit messbarem Qualitätsverlust; Hy-Memory-30B-A3B bietet offene Gewichte für Memory-Writer.[25][19]","items":[
+ {"n":1,"title":"FuTransformer kombiniert FP8-Prefill und INT4-Decode auf Hopper","date":"2026-10-19","summary":"FuTransformer stellt CUDA-Inferenz für Nvidia Hopper mit FP8-Prefill und INT4-Decode vor.[25] Der Autor meldet auf einer H100 für Llama-3.1-8B bei Batch eins 2,8 statt 8,1 Millisekunden je Decodierschritt gegenüber seiner kompilierten Transformers-Referenz.[25] Die WikiText-2-Perplexity steigt mit GPTQ-Gewichten von 6,24 auf 6,99; der INT4-Cache addiert 0,20 – Geschwindigkeit geht hier mit Qualitätsverlust einher.[25] Das sind autoreneigene Tests, keine allgemeine Serving- oder Hardwarezusage.[25] Einreichung am 16. Oktober, öffentliche New-Ankündigung am 19. Oktober.[25][26]","category":"lokal","impact":3,"change_type":"research","candidate_ids":["f032da5e068733710a3c"],"sources":[{"label":"[25] arXiv / FuTransformer","url":"https://arxiv.org/abs/2610.23796"},{"label":"[26] arXiv / öffentliche New-Liste","url":"https://arxiv.org/list/cs.AI/new?skip=0&show=2000"}]},
+ {"n":2,"title":"Hy-Memory-30B-A3B erhält offene Gewichte für Memory-Writer","date":"2026-10-16","summary":"Tencent gibt Hy-Memory-30B-A3B als spezialisierten Memory-Writer mit etwa 30 Milliarden Gesamt- und drei Milliarden aktiven Parametern über Hugging Face frei.[19][21] Die datierte Startseite ordnet den Open-Source-Start dem 16. Oktober zu; die Gewichtefreigabe ist ein eigener Meilenstein neben dem Preprint.[20][21] Die Model Card beschreibt den Einsatz in externen Memory-Frameworks, nicht den Ersatz eines allgemeinen Chatmodells.[19]","category":"lokal","impact":3,"change_type":"general_availability","candidate_ids":["fe5241a402888d3911f9"],"sources":[{"label":"[19] Tencent / Hugging Face","url":"https://huggingface.co/tencent/Hy-Memory-30B-A3B"},{"label":"[20] Tencent Hunyuan","url":"https://memory.hunyuan.tencent.com/"},{"label":"[21] Tencent / GitHub","url":"https://github.com/Tencent-Hunyuan/Hy-Memory"}]}]},
+ {"id":"agentic-engineering","name":"Agentic Engineering / Vibe Coding","group":"Praxis","angle":"Coding-Agenten, IDEs und Entwicklungsabläufe","summary":"Qwen Code übernimmt statische Skills und fixierte MCP-/Hook-Auswahlen in Managed Sessions; Netflix evaluiert JetBrains-Codeindizes für Coding-Agenten.[27][17]","items":[
+ {"n":1,"title":"JetBrains IDE Intelligence: Netflix evaluiert Codeindizes für Coding-Agenten","date":"2026-10-15","summary":"Die am 15. Oktober veröffentlichte Fallstudie beschreibt, wie Netflix JetBrains IDE Intelligence ohne geöffnete IDE für Claude Code und Codex nutzbar macht.[17] Netflix entwickelte dafür selbst einen Daemon und eine CLI; deren öffentliche Freigabe ist damit nicht belegt.[17] Die Evaluation auf zwei Codebasen stammt aus Juli und August: JetBrains nennt typischerweise 20–30 Prozent weniger Zeit beziehungsweise Tokens, abhängig von Modell und Aufgabe; dies ist keine allgemeine Leistungszusage.[17]","category":"agents","impact":3,"change_type":"research","candidate_ids":["62cfb8ef6b370423c922"],"sources":[{"label":"[17] JetBrains / Netflix","url":"https://blog.jetbrains.com/ai/2026/10/how-netflix-made-ai-coding-agents-more-efficient/"}]},
+ {"n":2,"title":"Qwen Code v0.25.3 übernimmt statische Skills und fixierte MCP-Auswahl","date":"2026-10-19","summary":"Laut offiziellen Release Notes können Managed Sessions aus veröffentlichten AgentDefinitions nun statische Skills laden sowie fixierte MCP-Server- und Hook-Katalogauswahlen an Hosted Runtimes übergeben.[27] Die Neuerung betrifft die Konfiguration des Coding-Agenten, nicht eine neue Qwen-Modellfamilie.[27]","category":"agents","impact":2,"change_type":"integration","candidate_ids":["ffa6a356731550d21ee5"],"sources":[{"label":"[27] Qwen Code / offizielle Release Notes","url":"https://github.com/QwenLM/qwen-code/releases/tag/v0.25.3"}]}]},
+ {"id":"ai-tools","name":"AI Tools","group":"Praxis","angle":"Werkzeuge und Anwendungen","summary":"Jais Speech wird separat von den Jais-3-Sprachmodellen als arabisches Spracherkennungsmodell über Hugging Face verfügbar.[18]","items":[{"n":1,"title":"Jais Speech startet für arabische Spracherkennung und Dialekte","date":"2026-10-15","summary":"IFM und Inception42 veröffentlichen Jais Speech am 15. Oktober über Hugging Face, neben den sechs Jais-3-Sprachmodellen.[18] Laut Anbieter transkribiert es Hocharabisch und Dialekte aus 19 arabischen Ländern, erkennt den Dialekt und erhält englische oder französische Wörter bei Sprachwechseln in Originalschrift.[18] Eine unabhängige Leistungsführerschaft wird dadurch nicht belegt.[18]","category":"tools","impact":2,"change_type":"general_availability","candidate_ids":["e1e59113013703cff669"],"sources":[{"label":"[18] IFM / Inception42","url":"https://ifm.ai/jais3/press-release/"}]}]},
+ {"id":"context-engineering","name":"Context Engineering","group":"Praxis","angle":"Kontext, Memory und Wissenszugriff","summary":"MemHub bündelt autorisierten Import, Synchronisierung und gemeinsamen Abruf persönlicher Erinnerungen über mehrere KI-Werkzeuge.[20]","items":[{"n":1,"title":"MemHub veröffentlicht gemeinsame Erinnerungen für KI-Werkzeuge","date":"2026-10-16","summary":"Tencent veröffentlicht MemHub als Anwendungsschicht seines Hy-Memory-2.0-Stacks am 16. Oktober.[20] Nach Autorisierung sollen Nutzer Gesprächshistorien importieren, neue Sitzungen synchronisieren und Erinnerungen per Plugin in verbundenen KI-Werkzeugen abrufen können; dies ist die Herstellerbeschreibung, kein unabhängiger Produkttest.[20] Lokale Speicherung bedeutet nicht automatisch, dass jede Interaktion auf dem Gerät bleibt.[22]","category":"agents","impact":3,"change_type":"general_availability","candidate_ids":["8404913f66f92213fb55"],"sources":[{"label":"[20] Tencent Hunyuan","url":"https://memory.hunyuan.tencent.com/"},{"label":"[22] Lapaas Voice","url":"https://lapaasvoice.com/tencent-open-sources-hy-memory-2-0-to-give-ai-agents-shared-memory"}]}]},
+ {"id":"ai-security","name":"AI Security","group":"Verantwortung","angle":"Angriffe, Schutzmaßnahmen und sichere Ausführung","summary":"Qwen Code ergänzt laut Release Notes Snapshot-isolierte Unteragenten mit schreibgeschütztem Zugriff auf eine eingefrorene Workspace-Kopie.[27]","items":[{"n":1,"title":"Qwen Code v0.25.3 ergänzt schreibgeschützte Snapshot-Unteragenten","date":"2026-10-19","summary":"Das stabile Coding-Agent-Release v0.25.3 ergänzt laut offiziellen Release Notes Snapshot-isolierte Unteragenten für Hosted-Elternagenten.[27] Sie lesen eine eingefrorene Workspace-Kopie, ohne Dateien zu ändern, Befehle auszuführen oder den Elternagenten zu beeinflussen.[27] Das beschreibt eine begrenzte Ausführungsfunktion, keinen unabhängig geprüften Schutz gegen alle Prompt-Injection-Angriffe.[27]","category":"security","impact":3,"change_type":"security","candidate_ids":["ea54fc2991fcb18f2661"],"sources":[{"label":"[27] Qwen Code / offizielle Release Notes","url":"https://github.com/QwenLM/qwen-code/releases/tag/v0.25.3"}]}]},
+ {"id":"ai-governance","name":"AI Governance","group":"Verantwortung","angle":"Regeln, Verantwortung und gesellschaftliche Folgen","summary":"Der FSB finalisiert zwölf unverbindliche KI-Praktiken für Finanzinstitute; Anthropic kündigt einen Public Benefit Fund mit Aktienzusage unter Aktionärsvorbehalt an.[28][29][8]","items":[
+ {"n":1,"title":"Anthropic Public Benefit Fund soll zunächst fünf Prozent der Aktien erhalten","date":"2026-10-18","summary":"Anthropic kündigt am 18. Oktober den Anthropic Public Benefit Fund als vollständig eigene LLC an.[8] Vorbehaltlich der Aktionärszustimmung sollen zunächst fünf Prozent der Aktien eingebracht werden; bei je 50 Prozent Wertzuwachs oberhalb einer festzulegenden Basis kann der Vorstand weitere zwei Prozent hinzufügen.[8] Details zu Struktur, Governance und Bewertungsmeilensteinen sollen in den kommenden Monaten folgen: Die Zusage ist keine bereits ausgezahlte Spende.[8]","category":"security","impact":3,"change_type":"announcement","candidate_ids":["8fac8c3664fec2c4326e"],"sources":[{"label":"[8] Anthropic","url":"https://www.anthropic.com/news/public-benefit-fund"}]},
+ {"n":2,"title":"FSB veröffentlicht Sound Practices als finalen Leitfaden für verantwortlichen KI-Einsatz","date":"2026-10-15","summary":"Der Financial Stability Board veröffentlicht am 15. Oktober nach seiner Juni-Konsultation zwölf finale Sound Practices für den KI-Einsatz von Finanzinstituten.[28][29] Sie verbinden organisationsweite Governance mit Risikomanagement über den KI-Lebenszyklus und behandeln unter anderem Drittanbieterabhängigkeiten.[29] Die Praktiken sind ein anpassbarer Werkzeugkasten, kein bindender internationaler Standard.[29]","category":"security","impact":3,"change_type":"policy","candidate_ids":["31d43c76658da2bb91ed"],"sources":[{"label":"[28] Financial Stability Board","url":"https://www.fsb.org/2026/10/sound-practices-for-responsible-adoption-of-artificial-intelligence-ai/"},{"label":"[29] Norton Rose Fulbright / Regulation Tomorrow","url":"https://regulationtomorrow.com/2026/10/fsb-issues-sound-practices-for-responsible-adoption-of-ai"}]}]},
+ {"id":"enterprise","name":"Enterprise","group":"Wirtschaft","angle":"Unternehmen, Betrieb und Markt","summary":"Neue Berichtsdetails zu Disney und Character.AI nennen mindestens 60 Stellenangebote; ein abgeschlossener Unternehmenskauf ist damit nicht belegt.[10]","items":[{"n":1,"title":"Disney bietet mindestens 60 Character.AI-Beschäftigten Stellen an","date":"2026-10-18","summary":"TechCrunch berichtet am 18. Oktober auf Basis einer Gerichtsunterlage vom 13. Oktober, Disney habe Beschäftigungsangebote für mindestens 60 Character.AI-Mitarbeiter vereinbart; die große Mehrheit der Angesprochenen habe angenommen.[10] Die neuen Personalangaben ergänzen das bekannte Insolvenz- und Lizenzverfahren, belegen aber keinen abgeschlossenen Unternehmenskauf: Das Stalking-Horse-Angebot kann weiterhin überboten werden.[10]","category":"business","impact":3,"change_type":"business","candidate_ids":["847ea3fc2d7fac82a13e"],"sources":[{"label":"[10] TechCrunch","url":"https://techcrunch.com/2026/10/18/disney-agrees-to-hire-the-majority-of-character-ais-workforce/"}]}]}
+ ]
 }

@@ -1,5 +1,69 @@
 [
  {
+  "title": "FuTransformer kombiniert FP8-Prefill und INT4-Decode auf Hopper",
+  "summary": "FuTransformer stellt CUDA-Inferenz für Nvidia Hopper mit FP8-Prefill und INT4-Decode vor.[25] Der Autor meldet auf einer H100 für Llama-3.1-8B bei Batch eins 2,8 statt 8,1 Millisekunden je Decodierschritt gegenüber seiner kompilierten Transformers-Referenz.[25] Die WikiText-2-Perplexity steigt mit GPTQ-Gewichten von 6,24 auf 6,99; der INT4-Cache addiert 0,20 – Geschwindigkeit geht hier mit Qualitätsverlust einher.[25] Das sind autoreneigene Tests, keine allgemeine Serving- oder Hardwarezusage.[25] Einreichung am 16. Oktober, öffentliche New-Ankündigung am 19. Oktober.[25][26]",
+  "topic_id": "lokale-llms",
+  "topic": "Lokale LLMs",
+  "date": "2026-10-19",
+  "sources": [
+   {
+    "label": "[25] arXiv / FuTransformer",
+    "url": "https://arxiv.org/abs/2610.23796"
+   },
+   {
+    "label": "[26] arXiv / öffentliche New-Liste",
+    "url": "https://arxiv.org/list/cs.AI/new?skip=0&show=2000"
+   }
+  ],
+  "change_type": "research"
+ },
+ {
+  "title": "Qwen Code v0.25.3 ergänzt schreibgeschützte Snapshot-Unteragenten",
+  "summary": "Das stabile Coding-Agent-Release v0.25.3 ergänzt laut offiziellen Release Notes Snapshot-isolierte Unteragenten für Hosted-Elternagenten.[27] Sie lesen eine eingefrorene Workspace-Kopie, ohne Dateien zu ändern, Befehle auszuführen oder den Elternagenten zu beeinflussen.[27] Das beschreibt eine begrenzte Ausführungsfunktion, keinen unabhängig geprüften Schutz gegen alle Prompt-Injection-Angriffe.[27]",
+  "topic_id": "ai-security",
+  "topic": "AI Security",
+  "date": "2026-10-19",
+  "sources": [
+   {
+    "label": "[27] Qwen Code / offizielle Release Notes",
+    "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.25.3"
+   }
+  ],
+  "change_type": "security"
+ },
+ {
+  "title": "Self-Building Labs entwickelt Laborskills für neue Versuchsabläufe",
+  "summary": "Self-Building Labs beschreibt einen Forschungsprototyp, der aus wissenschaftlichen Zielen fehlende digitale Zwillinge, Roboterskills und Versuchsabläufe entwickelt.[24] Die Autoren demonstrieren einen realen Quantendot-Syntheseversuch; das ist keine allgemein verfügbare oder unabhängig validierte autonome Laborplattform.[24] Die Arbeit wurde am 16. Oktober eingereicht und am 19. Oktober in der gelesenen New-Liste öffentlich angekündigt.[24][26]",
+  "topic_id": "ai-news",
+  "topic": "AI News",
+  "date": "2026-10-19",
+  "sources": [
+   {
+    "label": "[24] arXiv / Self-Building Labs",
+    "url": "https://arxiv.org/abs/2610.23826"
+   },
+   {
+    "label": "[26] arXiv / öffentliche New-Liste",
+    "url": "https://arxiv.org/list/cs.AI/new?skip=0&show=2000"
+   }
+  ],
+  "change_type": "research"
+ },
+ {
+  "title": "Qwen Code v0.25.3 übernimmt statische Skills und fixierte MCP-Auswahl",
+  "summary": "Laut offiziellen Release Notes können Managed Sessions aus veröffentlichten AgentDefinitions nun statische Skills laden sowie fixierte MCP-Server- und Hook-Katalogauswahlen an Hosted Runtimes übergeben.[27] Die Neuerung betrifft die Konfiguration des Coding-Agenten, nicht eine neue Qwen-Modellfamilie.[27]",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-10-19",
+  "sources": [
+   {
+    "label": "[27] Qwen Code / offizielle Release Notes",
+    "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.25.3"
+   }
+  ],
+  "change_type": "integration"
+ },
+ {
   "title": "Disney bietet mindestens 60 Character.AI-Beschäftigten Stellen an",
   "summary": "TechCrunch berichtet am 18. Oktober auf Basis einer Gerichtsunterlage vom 13. Oktober, Disney habe Beschäftigungsangebote für mindestens 60 Character.AI-Mitarbeiter vereinbart; die große Mehrheit der Angesprochenen habe angenommen.[10] Die neuen Personalangaben ergänzen das bekannte Insolvenz- und Lizenzverfahren, belegen aber keinen abgeschlossenen Unternehmenskauf: Das Stalking-Horse-Angebot kann weiterhin überboten werden.[10]",
   "topic_id": "enterprise",
@@ -1066,6 +1130,24 @@
    }
   ],
   "change_type": "announcement"
+ },
+ {
+  "title": "FSB veröffentlicht Sound Practices als finalen Leitfaden für verantwortlichen KI-Einsatz",
+  "summary": "Der Financial Stability Board veröffentlicht am 15. Oktober nach seiner Juni-Konsultation zwölf finale Sound Practices für den KI-Einsatz von Finanzinstituten.[28][29] Sie verbinden organisationsweite Governance mit Risikomanagement über den KI-Lebenszyklus und behandeln unter anderem Drittanbieterabhängigkeiten.[29] Die Praktiken sind ein anpassbarer Werkzeugkasten, kein bindender internationaler Standard.[29]",
+  "topic_id": "ai-governance",
+  "topic": "AI Governance",
+  "date": "2026-10-15",
+  "sources": [
+   {
+    "label": "[28] Financial Stability Board",
+    "url": "https://www.fsb.org/2026/10/sound-practices-for-responsible-adoption-of-artificial-intelligence-ai/"
+   },
+   {
+    "label": "[29] Norton Rose Fulbright / Regulation Tomorrow",
+    "url": "https://regulationtomorrow.com/2026/10/fsb-issues-sound-practices-for-responsible-adoption-of-ai"
+   }
+  ],
+  "change_type": "policy"
  },
  {
   "title": "ToolSmith öffnet Vibe Coding für EmployeeWorks begrenzt",

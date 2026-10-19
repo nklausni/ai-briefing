@@ -13,7 +13,7 @@
   <h2 class="topic-heading">Lokale LLMs</h2>
 
 <p class="sub">Enthält auch frühere Meldungen; Originaldaten stehen an den Einträgen.</p>
-  <p class="lede">Hy-Memory-30B-A3B ist mit offenen Gewichten als spezialisierter Memory-Writer verfügbar; die Freigabe ist vom vorausgegangenen Forschungsbericht zu unterscheiden.[19][20][21]</p>
+  <p class="lede">FuTransformer untersucht FP8-Prefill und INT4-Decode auf Hopper mit messbarem Qualitätsverlust; Hy-Memory-30B-A3B bietet offene Gewichte für Memory-Writer.[25][19]</p>
 
   <div class="board">
     <div class="board-left">
@@ -58,8 +58,12 @@
 <text x="400" y="754" class="sector-label" text-anchor="middle" fill="#1f1d1b">Security &amp; Governance</text>
 <text x="96.89" y="579" class="sector-label" text-anchor="end" fill="#1f1d1b">Business &amp; Markt</text>
 <g>
-<circle cx="548.26" cy="485.6" r="13" fill="#1aae39" stroke="#ffffff" stroke-width="2"/>
-<text x="548.26" y="489.6" class="blip-num" text-anchor="middle" fill="#191915">1</text>
+<circle cx="555.25" cy="456.51" r="13" fill="#1aae39" stroke="#ffffff" stroke-width="2"/>
+<text x="555.25" y="460.51" class="blip-num" text-anchor="middle" fill="#191915">1</text>
+</g>
+<g>
+<circle cx="535.73" cy="513.89" r="13" fill="#1aae39" stroke="#ffffff" stroke-width="2"/>
+<text x="535.73" y="517.89" class="blip-num" text-anchor="middle" fill="#191915">2</text>
 </g>
 </svg>
       </div>
@@ -87,6 +91,15 @@
   <div class="detail-list">
   <div class="dcard">
     <span class="dnum" style="background:#1aae39;color:#191915">1</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://arxiv.org/abs/2610.23796" target="_blank" rel="noopener">FuTransformer kombiniert FP8-Prefill und INT4-Decode auf Hopper</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="border-left:3px solid #1aae39;color:var(--ink)">Open Weight / Lokal</span><span class="dmeta-src">[25] arXiv / FuTransformer · 2026-10-19</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>FuTransformer stellt CUDA-Inferenz für Nvidia Hopper mit FP8-Prefill und INT4-Decode vor.[25] Der Autor meldet auf einer H100 für Llama-3.1-8B bei Batch eins 2,8 statt 8,1 Millisekunden je Decodierschritt gegenüber seiner kompilierten Transformers-Referenz.[25] Die WikiText-2-Perplexity steigt mit GPTQ-Gewichten von 6,24 auf 6,99; der INT4-Cache addiert 0,20 – Geschwindigkeit geht hier mit Qualitätsverlust einher.[25] Das sind autoreneigene Tests, keine allgemeine Serving- oder Hardwarezusage.[25] Einreichung am 16. Oktober, öffentliche New-Ankündigung am 19. Oktober.[25][26]</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://arxiv.org/abs/2610.23796" target="_blank" rel="noopener">[25] arXiv / FuTransformer <span class="arw">→</span></a> · <a class="dlink" href="https://arxiv.org/list/cs.AI/new?skip=0&amp;show=2000" target="_blank" rel="noopener">[26] arXiv / öffentliche New-Liste <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#1aae39;color:#191915">2</span>
     <div class="dbody">
       <h3 class="dtitle"><a class="dtitle-link" href="https://huggingface.co/tencent/Hy-Memory-30B-A3B" target="_blank" rel="noopener">Hy-Memory-30B-A3B erhält offene Gewichte für Memory-Writer</a></h3>
       <div class="dmeta"><span class="cat-badge" style="border-left:3px solid #1aae39;color:var(--ink)">Open Weight / Lokal</span><span class="dmeta-src">[19] Tencent / Hugging Face · 2026-10-16</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
