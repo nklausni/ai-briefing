@@ -171,6 +171,11 @@ einem Abbruch können nur offene Quellen einmal gezielt nachbearbeitet werden.
 Die Recherchefenster richten sich pro Quelle nach dem letzten erfolgreichen Check mit
 zeitlicher Überlappung. Ausgefallene Tage verkürzen das Fenster nicht. Zwischenstände
 und Belege liegen außerhalb des Git-Repositories unter `/opt/data/ai-briefing-research/`.
+Qwen-/Meta-Zugänge und deren Abdeckungsgrenzen sind in
+[docs/qwen-meta-source-policy.md](docs/qwen-meta-source-policy.md) dokumentiert:
+Qwen bekommt eine datierte öffentliche Research-API und offizielle Code-Release-
+Notes; Meta beginnt beim offiziell verlinkten `research.meta.ai`-Research-Index.
+Die registrierten Quellenidentitäten und historischen Audits bleiben unverändert.
 Nur der Hauptagent bearbeitet das Briefing und veröffentlicht es. Die Prüfungen vor der
 Veröffentlichung verlangen vollständige Quellenabdeckung, eine abgeschlossene offene
 Suche, eine Auswahlentscheidung zu jedem Kandidaten und belegte URLs. Der

@@ -57,7 +57,7 @@ URL_OVERRIDES = {
     "arstechnica.com": "https://arstechnica.com/ai/",
     "github.blog": "https://github.blog/changelog/",
     "importai.substack.com": "https://importai.substack.com/archive",
-    "ai.meta.com": "https://ai.meta.com/blog/",
+    "ai.meta.com": "https://research.meta.ai/",
     "mistral.ai": "https://mistral.ai/news/",
     "x.ai": "https://x.ai/news/",
     "openclaw.ai": "https://openclaw.ai/blog/",
@@ -66,6 +66,21 @@ URL_OVERRIDES = {
     "deepmind.google": "https://deepmind.google/discover/blog/",
     "research.google": "https://research.google/blog/",
     "nist.gov": "https://www.nist.gov/artificial-intelligence",
+}
+# These are alternate routes for existing source identities, not new registries.
+# The Meta host is cross-linked from ai.meta.com/research/ (2026-10-19).
+SOURCE_ACCESS = {
+    "qwen.ai": {
+        "access_policy": "docs/qwen-meta-source-policy.md",
+        "fetch_helper": "scripts/qwen_source_fetch.py",
+        "alternate_urls": ["https://qwen.ai/api/v2/article/retrieval?type=qwen_ai&language=en-US",
+                           "https://api.github.com/repos/QwenLM/qwen-code/releases?per_page=30"],
+    },
+    "ai.meta.com": {
+        "access_policy": "docs/qwen-meta-source-policy.md",
+        "alternate_urls": ["https://ai.meta.com/research/", "https://ai.meta.com/blog/",
+                           "https://ai.meta.com/results/?content_types[0]=publication"],
+    },
 }
 
 
@@ -224,7 +239,8 @@ def prepare(root, run, day, sources=None):
             return old
         windows = source_windows(root, date.fromisoformat(day), sources)
         specs = [{"domain": d, "name": n, "url": URL_OVERRIDES.get(d, f"https://{d}/"),
-                  "since": windows[d], "required_checks": list(REQUIRED_SOURCE_CHECKS.get(d, ()))} for d, n in sources]
+                  "since": windows[d], "required_checks": list(REQUIRED_SOURCE_CHECKS.get(d, ())),
+                  **SOURCE_ACCESS.get(d, {})} for d, n in sources]
         weights = historical_source_weights(root, run, date.fromisoformat(day), sources)
         packets = source_packets(specs, weights)
         tasks = [{"id": f"sources-{i + 1:02}", "kind": "sources", "sources": packet, "attempt": 1} for i, packet in enumerate(packets)]

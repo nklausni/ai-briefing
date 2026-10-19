@@ -100,6 +100,19 @@ def domain_matches(url: str, domain: str) -> bool:
     return host == domain or host.endswith(f".{domain}")
 
 
+def source_url_matches(url: str, domain: str) -> bool:
+    """An exact, source-specific alternate; never accept the whole meta.ai tree.
+
+    ai.meta.com/research/ links to research.meta.ai originals. The registered
+    source identity stays ai.meta.com, including all historical registries.
+    """
+    if domain_matches(url, domain):
+        return True
+    parsed = urlparse(url)
+    return (domain == "ai.meta.com" and parsed.scheme == "https"
+            and parsed.netloc == "research.meta.ai")
+
+
 def validate(audit: dict, expected_date: str | None = None) -> list[str]:
     errors: list[str] = []
     expected_date = expected_date or date.today().isoformat()
@@ -140,7 +153,7 @@ def validate(audit: dict, expected_date: str | None = None) -> list[str]:
         seen.add(domain)
         if status not in VALID_STATUS:
             errors.append(f"{domain}: status muss checked oder unavailable sein")
-        if not isinstance(checked_url, str) or not domain_matches(checked_url, domain):
+        if not isinstance(checked_url, str) or not source_url_matches(checked_url, domain):
             errors.append(f"{domain}: checked_url muss eine URL der Quelle sein")
         if not isinstance(result, str) or not result.strip():
             errors.append(f"{domain}: result darf nicht leer sein")

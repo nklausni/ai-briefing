@@ -10,6 +10,11 @@ class BrowserSourceTests(unittest.TestCase):
         self.assertNotIn('HeadlessChrome', cmd[cmd.index('--user-agent')+1])
         self.assertIn('batch', cmd)
         self.assertEqual(cmd[-1], 'close')
+    def test_batch_waits_for_client_rendering_before_extracting(self):
+        cmd = b.command('https://qwen.ai/blog?id=qwen-image-2.1', 'test-session')
+        extraction = next(i for i, value in enumerate(cmd) if value.startswith('eval '))
+        self.assertEqual(cmd[extraction - 1], 'wait 3000')
+
     def test_nested_browser_json_is_decoded(self):
         import json
         page = {'url':'https://x.ai/news','text':'News body','ua':b.UA}

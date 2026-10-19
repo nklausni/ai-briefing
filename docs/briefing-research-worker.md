@@ -42,43 +42,22 @@ dient nicht als aktueller Nachrichtenindex. Bei einer JS-Hülle nutze einen ande
 sinnvollen Abrufweg; bestätige Veröffentlichungsdaten am Original und behandle
 ein dynamisches Tagesdatum oder leere Artikel nicht als neue Veröffentlichung.
 
-**Verbindlicher Browser-Ersatzweg:** Wenn HTTP/web_extract nur die JS-Hülle liefert,
-öffne die Research-Seite im gerenderten Browser. Über `terminal` ist hier geprüft:
+Für beide Assignments `qwen.ai` und `ai.meta.com` lies zusätzlich
+**`docs/qwen-meta-source-policy.md` vollständig**. `access_policy`,
+`alternate_urls` und Qwens `fetch_helper` stehen auch im tatsächlichen Assignment.
+Diese Anleitung ersetzt ältere getrennte Browser-CLI-Rezepte: Verwende
+`browser_source_fetch.py` mit EINEM Desktop-Chrome-Batch einschließlich begrenzter
+Render-Wartezeit und Session-Close. Fehlendes Datum oder leerer Artikel bleibt
+ein Fehler; die bloße Navigation ist kein erfolgreicher Originalabruf.
 
-```sh
-npx --yes agent-browser --session "briefing-QWEN-ID" open https://qwen.ai/research
-npx --yes agent-browser --session "briefing-QWEN-ID" snapshot
-```
-
-Ersetze `ID` durch die eindeutige Assignment-/Run-Kennung; jeder Worker nutzt seine
-eigene Session. Klicke die relevante Karte über die Referenz des **aktuellen** Snapshots,
-ermittle danach die tatsächliche Original-URL mit `get url` und lies `snapshot` bzw.
-`eval`. Die Karten führen auf URLs wie `https://qwen.ai/blog?id=qwen-image-2.1`;
-ein geratener Pfad `/blog/qwen-image-2.1` ist kein gleichwertiger Ersatz.
-Ein Datumsheader und ein echter Artikeltext müssen vorhanden sein. Am 06.10.2026
-war Qwen-Image-2.1 so mit Originaldatum 20.09.2026 und Volltext lesbar; dies ist
-kein Beleg für eine neue Oktober-Veröffentlichung oder vollständige Indexabdeckung.
-
-Speichere den Originalabruf ohne Kürzung im Worker-Cache:
-
-```sh
-npx --yes agent-browser --session "briefing-QWEN-ID" eval '({url:location.href,retrieved_at:new Date().toISOString(),text:document.body.innerText,links:Array.from(document.querySelectorAll("article a")).map(a=>({text:a.innerText,url:a.href}))})' > WORKER/qwen-original.json
-```
-
-Ersetze `WORKER` durch deinen eigenen Arbeitsordner. Das Schema ist `url`,
-`retrieved_at`, `text`; Originalstellen später gezielt daraus lesen. Browserabrufe
-als `method: direct` dokumentieren und im `result` den gerenderten Browser nennen.
-Offizielle GitHub-/Hugging-Face-Links **aus dem Original** sind ergänzende Belege:
-Model Card, datierte Releases und README prüfen, nicht Änderungen/Downloads als
-Veröffentlichungsdatum ausgeben. `QwenLM/Qwen/releases` hat keine Releases und
-ist kein Ersatzindex für alle aktuellen Qwen-Modelle.
-
-Maximal ein Browser-Indexabruf und drei relevante Originalartikel pro Quelle,
-Werkzeugbefehle jeweils höchstens 60 Sekunden; eine gescheiterte Browserroute
-nicht endlos wiederholen. Vorhandene funktionierende Extraktionen weiterverwenden.
-Session nach Abschluss mit `npx --yes agent-browser --session "briefing-QWEN-ID" close`
-schließen. Bei Loginwand stoppen, keine Zugangsdaten raten. Falls weiterhin Datum
-oder Text fehlen, bleibt die Quelle eingeschränkt/unavailable; andere Quellen laufen weiter.
+Qwen erhält zwei begrenzte, öffentliche API-Einstiege: datierte Research-Artikel
+sowie die offiziellen **Qwen-Code**-Release-Notes (`--code-releases`). Ein aktuelles
+Code-Release ist keine neue Modellfamilie und heilt keinen veralteten Research-
+Index. Für Meta beginnt das neue Assignment bei `https://research.meta.ai/`,
+dem von `ai.meta.com/research/` verlinkten aktuellen Research-Host. Audit-Identität
+bleibt `ai.meta.com`; nur dieser exakte zusätzliche Host ist zugelassen.
+Volltextzugang, datierte aktuelle Entdeckung und Gesamtquellenabdeckung getrennt
+protokollieren. Verbleibende Lücken melden, keine historischen Audits umschreiben.
 
 ## arXiv: vollständige Titelentdeckung und öffentliche Frische
 

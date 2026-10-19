@@ -15,7 +15,7 @@ def command(url, session):
     if urlparse(url).scheme not in ('http', 'https'):
         raise ValueError('Only public HTTP(S) source URLs are supported')
     return ['npx', '--yes', 'agent-browser', '--session', session, '--user-agent', UA,
-            'batch', 'open '+shlex.quote(url), 'eval '+shlex.quote(EXPR), 'close']
+            'batch', 'open '+shlex.quote(url), 'wait 3000', 'eval '+shlex.quote(EXPR), 'close']
 
 def decode(raw):
     for line in raw.splitlines():

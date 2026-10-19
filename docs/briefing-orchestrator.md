@@ -17,6 +17,13 @@ Discovery-Ergebnis und blockiert nicht den Abschluss der Pflichtquellen. Qwen,
 Meta AI und alle übrigen Pflichtquellen bleiben verpflichtend. Register 1–4, alte
 Manifeste und Tagesaudits nicht verändern.
 
+Für Qwen und Meta zusätzlich `docs/qwen-meta-source-policy.md` prüfen: neue
+Assignments enthalten den öffentlichen Qwen-API-/Code-Release-Ersatzweg und
+Metas offiziell verlinkten Research-Host. Technische Volltextlesbarkeit ist
+keine Garantie aktueller oder vollständiger Unternehmensabdeckung. Ein aktuelles
+Qwen-Code-Release nicht als neues Qwen-Modell ausgeben; offene Entdeckungslücken
+bleiben sichtbar. Bestehende Manifeste nicht nachträglich migrieren.
+
 Verbindlich für arXiv: `docs/arxiv-source-policy.md` lesen und Worker-Ergebnisse
 dagegen prüfen. Drei begrenzte source-owned Listen-/API-Abrufe; vollständige
 Titelzählung statt erster 50, keine Volltext-Vollabdeckungsbehauptung. Ab Register 5
