@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI-Radar — Lokale LLMs — Ausgabe vom 19. Oktober 2026</title>
+<title>AI-Radar — Lokale LLMs — Ausgabe vom 20. Oktober 2026</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <main class="sheet">
-  <header class="top"><div class="edition-kicker">Künstliche Intelligenz · Nachrichten & Einordnung</div><h1 class="masthead"><a href="index.html">AI Briefing</a></h1><p class="masthead-motto">Modelle, Werkzeuge und die Welt im Wandel.</p><div class="subrow"><div class="subs"><div class="sub">Blickwinkel: Open Weights, lokale Inferenz und Hardware</div></div><div class="meta-right"><nav class="range-sw" aria-label="Zeitraum"><a href="lokale-llms.html" class="active">Heute</a><a href="7d/lokale-llms.html">7 Tage</a><a href="14d/lokale-llms.html">14 Tage</a><a href="30d/lokale-llms.html">30 Tage</a></nav><div class="range-period">Ausgabe vom 19. Oktober 2026</div></div></div></header>
+  <header class="top"><div class="edition-kicker">Künstliche Intelligenz · Nachrichten & Einordnung</div><h1 class="masthead"><a href="index.html">AI Briefing</a></h1><p class="masthead-motto">Modelle, Werkzeuge und die Welt im Wandel.</p><div class="subrow"><div class="subs"><div class="sub">Blickwinkel: Open Weights, lokale Inferenz und Hardware</div></div><div class="meta-right"><nav class="range-sw" aria-label="Zeitraum"><a href="lokale-llms.html" class="active">Heute</a><a href="7d/lokale-llms.html">7 Tage</a><a href="14d/lokale-llms.html">14 Tage</a><a href="30d/lokale-llms.html">30 Tage</a></nav><div class="range-period">Ausgabe vom 20. Oktober 2026</div></div></div></header>
   <nav class="nav" aria-label="Themen"><a href="index.html">Übersicht</a><a href="ai-news.html">AI News</a><a href="lokale-llms.html" class="active">Lokale LLMs</a><a href="agentic-engineering.html">Agentic Engineering / Vibe Coding</a><a href="ai-tools.html">AI Tools</a><a href="context-engineering.html">Context Engineering</a><a href="ai-security.html">AI Security</a><a href="ai-governance.html">AI Governance</a><a href="enterprise.html">Enterprise</a><a href="search.html">Suche</a></nav>
   <h2 class="topic-heading">Lokale LLMs</h2>
 
 <p class="sub">Enthält auch frühere Meldungen; Originaldaten stehen an den Einträgen.</p>
-  <p class="lede">FuTransformer untersucht FP8-Prefill und INT4-Decode auf Hopper mit messbarem Qualitätsverlust; Hy-Memory-30B-A3B bietet offene Gewichte für Memory-Writer.[25][19]</p>
+  <p class="lede">Clef wird lokal über Ollama nutzbar; Step 5 Preview erhält BF16- und FP8-Gewichte unter eigener Lizenz.[25][54]</p>
 
   <div class="board">
     <div class="board-left">
@@ -92,26 +92,26 @@
   <div class="dcard">
     <span class="dnum" style="background:#1aae39;color:#191915">1</span>
     <div class="dbody">
-      <h3 class="dtitle"><a class="dtitle-link" href="https://arxiv.org/abs/2610.23796" target="_blank" rel="noopener">FuTransformer kombiniert FP8-Prefill und INT4-Decode auf Hopper</a></h3>
-      <div class="dmeta"><span class="cat-badge" style="border-left:3px solid #1aae39;color:var(--ink)">Open Weight / Lokal</span><span class="dmeta-src">[25] arXiv / FuTransformer · 2026-10-19</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
-      <p>FuTransformer stellt CUDA-Inferenz für Nvidia Hopper mit FP8-Prefill und INT4-Decode vor.[25] Der Autor meldet auf einer H100 für Llama-3.1-8B bei Batch eins 2,8 statt 8,1 Millisekunden je Decodierschritt gegenüber seiner kompilierten Transformers-Referenz.[25] Die WikiText-2-Perplexity steigt mit GPTQ-Gewichten von 6,24 auf 6,99; der INT4-Cache addiert 0,20 – Geschwindigkeit geht hier mit Qualitätsverlust einher.[25] Das sind autoreneigene Tests, keine allgemeine Serving- oder Hardwarezusage.[25] Einreichung am 16. Oktober, öffentliche New-Ankündigung am 19. Oktober.[25][26]</p>
-      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://arxiv.org/abs/2610.23796" target="_blank" rel="noopener">[25] arXiv / FuTransformer <span class="arw">→</span></a> · <a class="dlink" href="https://arxiv.org/list/cs.AI/new?skip=0&amp;show=2000" target="_blank" rel="noopener">[26] arXiv / öffentliche New-Liste <span class="arw">→</span></a></div>
+      <h3 class="dtitle"><a class="dtitle-link" href="https://ollama.com/blog/clef" target="_blank" rel="noopener">Clef ist lokal und in Ollama Cloud verfügbar</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="border-left:3px solid #1aae39;color:var(--ink)">Open Weight / Lokal</span><span class="dmeta-src">[25] Ollama / Originalbeitrag · 2026-10-19</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Ollama integriert Cloudflares multimodales 27B-Entscheidungsmodell Clef für lokale Ausführung und Ollama Cloud.[25] Neu ist die Ollama-Integration, nicht eine erneute Freigabe der bereits verfügbaren Modellfamilie.[25]</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://ollama.com/blog/clef" target="_blank" rel="noopener">[25] Ollama / Originalbeitrag <span class="arw">→</span></a></div>
     </div>
   </div>
   <div class="dcard">
     <span class="dnum" style="background:#1aae39;color:#191915">2</span>
     <div class="dbody">
-      <h3 class="dtitle"><a class="dtitle-link" href="https://huggingface.co/tencent/Hy-Memory-30B-A3B" target="_blank" rel="noopener">Hy-Memory-30B-A3B erhält offene Gewichte für Memory-Writer</a></h3>
-      <div class="dmeta"><span class="cat-badge" style="border-left:3px solid #1aae39;color:var(--ink)">Open Weight / Lokal</span><span class="dmeta-src">[19] Tencent / Hugging Face · 2026-10-16</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
-      <p>Tencent gibt Hy-Memory-30B-A3B als spezialisierten Memory-Writer mit etwa 30 Milliarden Gesamt- und drei Milliarden aktiven Parametern über Hugging Face frei.[19][21] Die datierte Startseite ordnet den Open-Source-Start dem 16. Oktober zu; die Gewichtefreigabe ist ein eigener Meilenstein neben dem Preprint.[20][21] Die Model Card beschreibt den Einsatz in externen Memory-Frameworks, nicht den Ersatz eines allgemeinen Chatmodells.[19]</p>
-      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://huggingface.co/tencent/Hy-Memory-30B-A3B" target="_blank" rel="noopener">[19] Tencent / Hugging Face <span class="arw">→</span></a> · <a class="dlink" href="https://memory.hunyuan.tencent.com/" target="_blank" rel="noopener">[20] Tencent Hunyuan <span class="arw">→</span></a> · <a class="dlink" href="https://github.com/Tencent-Hunyuan/Hy-Memory" target="_blank" rel="noopener">[21] Tencent / GitHub <span class="arw">→</span></a></div>
+      <h3 class="dtitle"><a class="dtitle-link" href="https://pandaily.com/stepfun-step-5-preview-open-weights-technical-blog-92-layer-sparse-gqa" target="_blank" rel="noopener">Step 5 Preview veröffentlicht BF16- und FP8-Modellgewichte</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="border-left:3px solid #1aae39;color:var(--ink)">Open Weight / Lokal</span><span class="dmeta-src">[54] Pandaily / Bericht zur Gewichtefreigabe · 2026-10-15</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>StepFun veröffentlicht am 15. Oktober BF16- und FP8-Gewichte von Step 5 Preview; die Gewichtefreigabe folgt der September-Ankündigung als eigener Meilenstein.[54] Das MoE-Modell hat 600 Milliarden Gesamt- und 27 Milliarden aktive Parameter und ist kein kleines Desktop-LLM.[54] Die StepFun Model License 1.0 ist keine Standard-Open-Source-Lizenz.[54]</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://pandaily.com/stepfun-step-5-preview-open-weights-technical-blog-92-layer-sparse-gqa" target="_blank" rel="noopener">[54] Pandaily / Bericht zur Gewichtefreigabe <span class="arw">→</span></a></div>
     </div>
   </div>
   </div>
 
 
 
-  <div class="footer">Hinweis: Alle Infos auf eigene Gefahr. Dies ist ein privates Projekt, automatisch generiert aus Web-Recherche.<br>Aufbau nach dem Tech-Radar-Prinzip (Ringe = Impact, Segmente = Kategorie). Statischer Export; nur die lokale Suche benötigt JavaScript. Auswahl per Recherche — keine Gewähr auf Vollständigkeit.<br><span class="footer-updated">Zuletzt aktualisiert: 19. Oktober 2026</span></div>
+  <div class="footer">Hinweis: Alle Infos auf eigene Gefahr. Dies ist ein privates Projekt, automatisch generiert aus Web-Recherche.<br>Aufbau nach dem Tech-Radar-Prinzip (Ringe = Impact, Segmente = Kategorie). Statischer Export; nur die lokale Suche benötigt JavaScript. Auswahl per Recherche — keine Gewähr auf Vollständigkeit.<br><span class="footer-updated">Zuletzt aktualisiert: 20. Oktober 2026</span></div>
 </main>
 </body>
 </html>

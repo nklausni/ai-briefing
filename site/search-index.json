@@ -1,5 +1,41 @@
 [
  {
+  "title": "Cache2LoRA erzeugt LoRA-Updates aus wiederverwendbarem Dokumentcache",
+  "summary": "Cache2LoRA aggregiert abfrageabhängige Evidenz aus einem eingefrorenen Dokumentcache, bevor es Low-Rank-Updates erzeugt.[24] Die Autoren erreichen über 17 Aufgaben einen Macro-F1 von 0,663 gegenüber 0,671 mit vollständigem In-Context-Learning; das ist eine begrenzte Forschungsbewertung, keine allgemeine Gleichwertigkeit.[24] Einreichung am 16. Oktober und öffentliche New-Ankündigung am 20. Oktober sind getrennte Daten.[24][22]",
+  "topic_id": "context-engineering",
+  "topic": "Context Engineering",
+  "date": "2026-10-20",
+  "sources": [
+   {
+    "label": "[24] arXiv / Cache2LoRA",
+    "url": "https://arxiv.org/abs/2610.24107"
+   },
+   {
+    "label": "[22] arXiv / öffentliche New-Liste",
+    "url": "https://arxiv.org/list/cs.AI/new?skip=0&show=2000"
+   }
+  ],
+  "change_type": "research"
+ },
+ {
+  "title": "Bud ContextCompact 2.0 hilft langen Sitzungen, nicht unter engem Zeitbudget",
+  "summary": "Die Autoren berichten auf 100 SWE-bench-Verified-Aufgaben mit einem 27B-Agenten bei langen Sitzungen eine Lösungsrate von 53 statt 41 Prozent; kurze Sitzungen profitieren nicht.[20] Unter einem 45-Minuten-Budget verschwindet der Vorteil, weil jede Zusammenfassung im Median 161 Sekunden benötigt.[20] Der Preprint wurde am 18. Oktober eingereicht und am 20. Oktober öffentlich in der New-Liste angekündigt; die begrenzte Autorenstudie ist kein universeller Geschwindigkeitsnachweis.[20][22]",
+  "topic_id": "context-engineering",
+  "topic": "Context Engineering",
+  "date": "2026-10-20",
+  "sources": [
+   {
+    "label": "[20] arXiv / Bud ContextCompact 2.0",
+    "url": "https://arxiv.org/abs/2610.25516"
+   },
+   {
+    "label": "[22] arXiv / öffentliche New-Liste",
+    "url": "https://arxiv.org/list/cs.AI/new?skip=0&show=2000"
+   }
+  ],
+  "change_type": "research"
+ },
+ {
   "title": "FuTransformer kombiniert FP8-Prefill und INT4-Decode auf Hopper",
   "summary": "FuTransformer stellt CUDA-Inferenz für Nvidia Hopper mit FP8-Prefill und INT4-Decode vor.[25] Der Autor meldet auf einer H100 für Llama-3.1-8B bei Batch eins 2,8 statt 8,1 Millisekunden je Decodierschritt gegenüber seiner kompilierten Transformers-Referenz.[25] Die WikiText-2-Perplexity steigt mit GPTQ-Gewichten von 6,24 auf 6,99; der INT4-Cache addiert 0,20 – Geschwindigkeit geht hier mit Qualitätsverlust einher.[25] Das sind autoreneigene Tests, keine allgemeine Serving- oder Hardwarezusage.[25] Einreichung am 16. Oktober, öffentliche New-Ankündigung am 19. Oktober.[25][26]",
   "topic_id": "lokale-llms",
@@ -18,6 +54,186 @@
   "change_type": "research"
  },
  {
+  "title": "Clef ist lokal und in Ollama Cloud verfügbar",
+  "summary": "Ollama integriert Cloudflares multimodales 27B-Entscheidungsmodell Clef für lokale Ausführung und Ollama Cloud.[25] Neu ist die Ollama-Integration, nicht eine erneute Freigabe der bereits verfügbaren Modellfamilie.[25]",
+  "topic_id": "lokale-llms",
+  "topic": "Lokale LLMs",
+  "date": "2026-10-19",
+  "sources": [
+   {
+    "label": "[25] Ollama / Originalbeitrag",
+    "url": "https://ollama.com/blog/clef"
+   }
+  ],
+  "change_type": "integration"
+ },
+ {
+  "title": "TorchNeuron öffnet als öffentliche Beta den nativen PyTorch-Weg zu Trainium",
+  "summary": "Hugging Face kündigt TorchNeuron als natives PyTorch-Backend für AWS Trainium an, mit Eager-Ausführung, torch.compile und nativen verteilten APIs.[26] Laut Original vom 19. Oktober beginnt die öffentliche Beta am 20. Oktober; dynamische Shapes und asynchrones Gewichteladen bleiben eingeschränkt.[26] Das ist keine allgemeine Verfügbarkeit und keine Garantie anpassungsfreier Migration.[26]",
+  "topic_id": "enterprise",
+  "topic": "Enterprise",
+  "date": "2026-10-19",
+  "sources": [
+   {
+    "label": "[26] Hugging Face / Originalbeitrag",
+    "url": "https://huggingface.co/blog/hf-torchneuron"
+   }
+  ],
+  "change_type": "public_beta"
+ },
+ {
+  "title": "Tenstorrent erhält 1,5 Milliarden Dollar bei 6,2 Milliarden Bewertung",
+  "summary": "TechCrunch meldet eine Finanzierungsrunde von 1,5 Milliarden Dollar für den Inferenzchip-Anbieter Tenstorrent bei einer Bewertung von 6,2 Milliarden Dollar.[33] Trace Capital und Innovation X führen die Runde; die Finanzierung belegt keinen technischen Leistungsvorsprung gegenüber Nvidia.[33]",
+  "topic_id": "enterprise",
+  "topic": "Enterprise",
+  "date": "2026-10-19",
+  "sources": [
+   {
+    "label": "[33] TechCrunch / Originalbericht",
+    "url": "https://techcrunch.com/2026/10/19/tenstorrent-hits-6-2b-valuation-to-scale-open-weight-ai-chips/"
+   }
+  ],
+  "change_type": "business"
+ },
+ {
+  "title": "Pax8 kündigt 8os für mandantenfähige Agentenverwaltung an",
+  "summary": "Pax8 stellt 8os als Verwaltungs- und Governance-Schicht für unterschiedliche Agenten und Modelle bei IT-Dienstleistern vor.[59] Laut Bericht lassen sich Zuständigkeiten und Regeln je Kunde festlegen; begrenzter Early Access soll in dieser Woche beginnen, allgemeine Verfügbarkeit ist erst Anfang 2027 geplant.[59]",
+  "topic_id": "enterprise",
+  "topic": "Enterprise",
+  "date": "2026-10-19",
+  "sources": [
+   {
+    "label": "[59] SiliconANGLE / Originalbericht",
+    "url": "https://siliconangle.com/2026/10/19/pax8-launches-8os-to-let-it-partners-govern-ai-agents-and-8bot-as-a-managed-ai-coworker/"
+   }
+  ],
+  "change_type": "announcement"
+ },
+ {
+  "title": "Pax8 kündigt 8bot als verwalteten KI-Assistenten an",
+  "summary": "Mit 8bot kündigt Pax8 ein eigenes Assistentenprodukt an, das IT-Dienstleister über 8os für Geschäftskunden bereitstellen und beaufsichtigen sollen.[59] Beschäftigte sollen Ergebnisse vor Weiterverwendung prüfen; begrenzter Early Access wird für diese Woche und allgemeine Verfügbarkeit für Anfang 2027 angekündigt.[59]",
+  "topic_id": "enterprise",
+  "topic": "Enterprise",
+  "date": "2026-10-19",
+  "sources": [
+   {
+    "label": "[59] SiliconANGLE / Originalbericht",
+    "url": "https://siliconangle.com/2026/10/19/pax8-launches-8os-to-let-it-partners-govern-ai-agents-and-8bot-as-a-managed-ai-coworker/"
+   }
+  ],
+  "change_type": "announcement"
+ },
+ {
+  "title": "Nvidia und Bundesregierung vereinbaren Initiative für Physical AI",
+  "summary": "Beim Invest in Germany Summit unterzeichnen Bundesregierung und Nvidia eine gemeinsame Absichtserklärung zur Zusammenarbeit an Modellen für Physical AI.[44] Der vereinbarte Entwicklungsschritt ist eine Initiative, keine bereits ausgelieferte Modellplattform; der CNBC-Bericht vom 20. Oktober ergänzt die Unternehmensankündigung vom Vortag.[44][43]",
+  "topic_id": "enterprise",
+  "topic": "Enterprise",
+  "date": "2026-10-19",
+  "sources": [
+   {
+    "label": "[44] Nvidia / Originalankündigung",
+    "url": "https://blogs.nvidia.com/blog/germany-wants-to-lead-the-world-in-industrial-ai-how-nvidia-will-help/"
+   },
+   {
+    "label": "[43] CNBC / unabhängiger Bericht",
+    "url": "https://www.cnbc.com/2026/10/20/german-chancellor-urges-businesses-to-embrace-ai.html"
+   }
+  ],
+  "change_type": "announcement"
+ },
+ {
+  "title": "Nvidia kündigt Beteiligungen an vier deutschen KI-Startups an",
+  "summary": "Nvidia kündigt geplante Investitionen in Agile Robots, Avelios Medical, Mirelo und Reflex Aerospace an; Einzelbeträge werden nicht offengelegt.[44][43] Der Anbieter ordnet sie seinem europäischen Engagement von nahezu zehn Milliarden Dollar zu; die Ankündigung belegt keinen Abschluss aller Transaktionen.[44] Das Nvidia-Original ist vom 19. Oktober, der CNBC-Nachbericht vom 20. Oktober.[44][43]",
+  "topic_id": "enterprise",
+  "topic": "Enterprise",
+  "date": "2026-10-19",
+  "sources": [
+   {
+    "label": "[44] Nvidia / Originalankündigung",
+    "url": "https://blogs.nvidia.com/blog/germany-wants-to-lead-the-world-in-industrial-ai-how-nvidia-will-help/"
+   },
+   {
+    "label": "[43] CNBC / unabhängiger Bericht",
+    "url": "https://www.cnbc.com/2026/10/20/german-chancellor-urges-businesses-to-embrace-ai.html"
+   }
+  ],
+  "change_type": "business"
+ },
+ {
+  "title": "GPT-6.1 Sol erzielt höhere Werte in OpenAIs COBOL-Migrationstest",
+  "summary": "OpenAI beschreibt eine eigene Evaluation zur verhaltenserhaltenden Migration von COBOL nach C++, Java, Kotlin, Python und Rust.[18] GPT-6.1 Sol erreicht laut Anbieter 86,6 Prozent bei geringem und bis zu 97,9 Prozent bei höherem Reasoning-Aufwand; produktive Migrationen brauchen weiterhin fachliche Prüfung und Tests.[18] Der Forschungsbericht ist kein neuer Modellstart.[18]",
+  "topic_id": "enterprise",
+  "topic": "Enterprise",
+  "date": "2026-10-19",
+  "sources": [
+   {
+    "label": "[18] OpenAI / Forschungsbeitrag",
+    "url": "https://openai.com/index/low-resource-programming-languages/"
+   }
+  ],
+  "change_type": "research"
+ },
+ {
+  "title": "Amazon Bedrock erhält Structured Outputs für Claude",
+  "summary": "AWS ergänzt JSON-Schema-konforme Claude-Ausgaben über bedrock-runtime und bedrock-mantle, soweit das jeweilige Modell dort verfügbar ist.[52] Structured Outputs erzwingt einen unterstützten Teil von JSON Schema Draft 2020-12; neue Schemata verursachen zunächst Kompilierungsaufwand, und Ablehnungen sowie Tokenlimits bleiben gesondert zu behandeln.[52]",
+  "topic_id": "enterprise",
+  "topic": "Enterprise",
+  "date": "2026-10-19",
+  "sources": [
+   {
+    "label": "[52] AWS / Originalbeitrag",
+    "url": "https://aws.amazon.com/blogs/machine-learning/structured-outputs-for-anthropic-claude-models-on-amazon-bedrock/"
+   }
+  ],
+  "change_type": "update"
+ },
+ {
+  "title": "Gemini Notebook erhält Review vor Folien- und Videogenerierung",
+  "summary": "Google ergänzt einen Co-Creation-Ablauf, der Themen aus Quellen vorschlägt und Inhalt sowie Stil steuern lässt.[19] Ein optionaler Review-Schalter erlaubt die Prüfung von Gliederungs- oder Produzentennotizen vor dem Rendern; der weltweite Rollout an alle Nutzer soll über die kommende Woche erfolgen.[19]",
+  "topic_id": "ai-tools",
+  "topic": "AI Tools",
+  "date": "2026-10-19",
+  "sources": [
+   {
+    "label": "[19] Google / Originalankündigung",
+    "url": "https://blog.google/innovation-and-ai/products/gemini-notebook/co-create-slides-videos/"
+   }
+  ],
+  "change_type": "update"
+ },
+ {
+  "title": "FLUX 3 Max startet bei fal als Video-API",
+  "summary": "fal startet FLUX 3 Max mit öffentlichen Text-zu-Video- und Bild-zu-Video-Endpunkten; dokumentiert sind fünf bis 20 Sekunden Video mit optionaler Audioausgabe.[13] Die behauptete rund 22-fache Beschleunigung gegenüber Seedance 2.5 beruht auf fal-eigenen Tests unter bestimmten Einstellungen, nicht auf einer allgemeinen Produktionsgarantie.[13]",
+  "topic_id": "ai-tools",
+  "topic": "AI Tools",
+  "date": "2026-10-19",
+  "sources": [
+   {
+    "label": "[13] VentureBeat / unabhängiger Originalbericht",
+    "url": "https://venturebeat.com/technology/fal-launches-flux-3-max-claiming-22-faster-ai-video-generation-than-seedance-2-5"
+   }
+  ],
+  "change_type": "general_availability"
+ },
+ {
+  "title": "Drex Max ergänzt Naces Entscheidungs-API um Text und Bilder",
+  "summary": "Nace AI gibt Drex Max als multimodales Entscheidungsmodell frei: Es verarbeitet Text und Bilder und bewertet vorgegebene Antworten statt freien Text zu schreiben.[11][12] Die Docs nennen das Modell drex-max am Endpoint POST /v1/systemone und 0,06 US-Dollar je Million Eingabetokens ohne Ausgabetokenrechnung.[12]",
+  "topic_id": "ai-tools",
+  "topic": "AI Tools",
+  "date": "2026-10-19",
+  "sources": [
+   {
+    "label": "[12] Nace AI / Originaldocs",
+    "url": "https://console.nace.ai/docs/drex/guides/drex-max"
+   },
+   {
+    "label": "[11] MarkTechPost",
+    "url": "https://www.marktechpost.com/2026/10/19/nace-ai-drex-max-multimodal-decision-model/"
+   }
+  ],
+  "change_type": "general_availability"
+ },
+ {
   "title": "Qwen Code v0.25.3 ergänzt schreibgeschützte Snapshot-Unteragenten",
   "summary": "Das stabile Coding-Agent-Release v0.25.3 ergänzt laut offiziellen Release Notes Snapshot-isolierte Unteragenten für Hosted-Elternagenten.[27] Sie lesen eine eingefrorene Workspace-Kopie, ohne Dateien zu ändern, Befehle auszuführen oder den Elternagenten zu beeinflussen.[27] Das beschreibt eine begrenzte Ausführungsfunktion, keinen unabhängig geprüften Schutz gegen alle Prompt-Injection-Angriffe.[27]",
   "topic_id": "ai-security",
@@ -30,6 +246,56 @@
    }
   ],
   "change_type": "security"
+ },
+ {
+  "title": "OpenCode Console: betroffene Provider-Schlüssel widerrufen und ersetzen",
+  "summary": "Neue Berichte beschreiben die Aufarbeitung eines am 17. Oktober gemeldeten Console-Einbruchs; laut OpenCode sind 1,4 Prozent der Console-Nutzer betroffen, die externe Provider verknüpft hatten.[29][30] Betroffene sollen diese Schlüssel beim jeweiligen Anbieter widerrufen und ersetzen.[30] OpenAI und OpenCode berichten über Rückerstattungen; der behauptete Zusammenhang mit Destillation ist nicht unabhängig bewiesen, und Console ist von lokaler CLI und Desktop-App zu unterscheiden.[29]",
+  "topic_id": "ai-security",
+  "topic": "AI Security",
+  "date": "2026-10-19",
+  "sources": [
+   {
+    "label": "[29] TechCrunch / Aufarbeitung",
+    "url": "https://techcrunch.com/2026/10/19/hackers-hit-ai-coding-tool-opencode-running-up-charges-on-users-ai-accounts/"
+   },
+   {
+    "label": "[30] The Hacker News / unabhängiger Bericht",
+    "url": "https://thehackernews.com/2026/10/opencode-console-breach-may-have.html"
+   }
+  ],
+  "change_type": "security"
+ },
+ {
+  "title": "Microsoft Defender ergänzt Erkennung eingesetzter KI-Agenten",
+  "summary": "Laut TechCrunch ergänzt Microsoft Defender eine Erkennungsfunktion für bis zu 60 Agententypen, darunter Claude Code, Codex und OpenClaw.[27] Diese Bestandsaufnahme ist von Guardian Agents zu unterscheiden und belegt nicht, dass sämtliche Agentenaktionen zuverlässig erkannt oder verhindert werden.[27]",
+  "topic_id": "ai-security",
+  "topic": "AI Security",
+  "date": "2026-10-19",
+  "sources": [
+   {
+    "label": "[27] TechCrunch / unabhängiger Originalbericht",
+    "url": "https://techcrunch.com/2026/10/19/microsoft-says-ai-agents-are-like-insider-threats-as-frontier-models-cant-be-trusted/"
+   }
+  ],
+  "change_type": "update"
+ },
+ {
+  "title": "Guardian Agents erweitern Microsoft Project Perception",
+  "summary": "Microsoft kündigt Guardian Agents als Erweiterung von Project Perception zur fortlaufenden Kontrolle von Unternehmensagenten an.[28][27] Modellintelligenz soll von externen Berechtigungs- und Eindämmungskontrollen getrennt werden; das ist eine Architektur- und Produktankündigung, kein unabhängiger Nachweis umfassender Schutzwirkung.[28]",
+  "topic_id": "ai-security",
+  "topic": "AI Security",
+  "date": "2026-10-19",
+  "sources": [
+   {
+    "label": "[28] Microsoft Security / Originalankündigung",
+    "url": "https://www.microsoft.com/en-us/security/blog/2026/10/19/agents-are-your-newest-insiders-security-must-move-at-their-speed/"
+   },
+   {
+    "label": "[27] TechCrunch",
+    "url": "https://techcrunch.com/2026/10/19/microsoft-says-ai-agents-are-like-insider-threats-as-frontier-models-cant-be-trusted/"
+   }
+  ],
+  "change_type": "announcement"
  },
  {
   "title": "Self-Building Labs entwickelt Laborskills für neue Versuchsabläufe",
@@ -50,6 +316,88 @@
   "change_type": "research"
  },
  {
+  "title": "MiniMax-M3.1-Flash erreicht 43 Punkte in neuer unabhängiger Evaluation",
+  "summary": "Artificial Analysis führt am 19. Oktober eine neue Evaluation von MiniMax-M3.1-Flash auf; die Modellseite weist 43 Punkte im Intelligence Index aus.[48][4] Das Profil nennt eine Million Kontexttokens sowie Text- und Bildeingaben; die Messung ist ein eigener Entwicklungsschritt neben der API-Freigabe, keine lokale Leistungszusage.[4]",
+  "topic_id": "ai-news",
+  "topic": "AI News",
+  "date": "2026-10-19",
+  "sources": [
+   {
+    "label": "[4] Artificial Analysis / Modellprofil",
+    "url": "https://artificialanalysis.ai/models/minimax-m3-1-flash"
+   },
+   {
+    "label": "[48] Artificial Analysis / Evaluationsdatum",
+    "url": "https://artificialanalysis.ai/"
+   }
+  ],
+  "change_type": "research"
+ },
+ {
+  "title": "MiniMax M3.1 Flash startet über API, M Plan und MiniMax Code",
+  "summary": "MiniMax gibt M3.1 Flash über seine API, M Plan und MiniMax Code frei; die Listenpreise je Million Tokens betragen 0,15 US-Dollar für Eingaben, 0,60 für Ausgaben und 0,015 für gecachte Eingaben.[15] Modellgewichte sollen erst später folgen: Der API-Start ist keine offene Gewichtefreigabe.[15]",
+  "topic_id": "ai-news",
+  "topic": "AI News",
+  "date": "2026-10-19",
+  "sources": [
+   {
+    "label": "[15] MiniMax / Originalankündigung",
+    "url": "https://www.minimax.io/blog/minimax-m31f"
+   }
+  ],
+  "change_type": "general_availability"
+ },
+ {
+  "title": "Mercury 3 startet als Diffusionsmodell über mehrere API-Plattformen",
+  "summary": "Inception gibt Mercury 3 über die eigene API sowie OpenRouter, Baseten und Vercel frei.[9][10] Der Anbieter nennt eine Million Kontexttokens und 1.068 Tokens pro Sekunde auf NVIDIA-GPUs; diese Geschwindigkeit ist eine Herstellerangabe und keine allgemeine Produktionsgarantie.[10]",
+  "topic_id": "ai-news",
+  "topic": "AI News",
+  "date": "2026-10-19",
+  "sources": [
+   {
+    "label": "[10] Inception / Originalankündigung",
+    "url": "https://www.inceptionlabs.ai/blog/introducing-mercury-3"
+   },
+   {
+    "label": "[9] MarkTechPost",
+    "url": "https://www.marktechpost.com/2026/10/19/inception-mercury-3-diffusion-llm/"
+   }
+  ],
+  "change_type": "general_availability"
+ },
+ {
+  "title": "Finch startet als Beta für Governance-Abfragen in Darwin",
+  "summary": "Darwin AI stellt Finch laut eigener Produktmitteilung als Beta für bestehende Kunden ohne Aufpreis bereit.[58] Der Assistent soll vorhandene KI-Governance-Daten dialogisch abfragen und Berichte als PDF oder HTML erstellen; das Angebot für den öffentlichen Sektor ist keine neue regulatorische Vorgabe oder unabhängige Compliance-Zertifizierung.[58]",
+  "topic_id": "ai-governance",
+  "topic": "AI Governance",
+  "date": "2026-10-19",
+  "sources": [
+   {
+    "label": "[58] Darwin AI / Produktmitteilung bei EIN Presswire",
+    "url": "https://einpresswire.com/article/950588915/darwin-ai-launches-finch-the-first-ai-assistant-built-for-public-sector-ai-governance"
+   }
+  ],
+  "change_type": "public_beta"
+ },
+ {
+  "title": "DeepSeek: DHS macht ältere Ausschluss- und Entfernungsanordnung öffentlich",
+  "summary": "Die nun öffentlich besprochene DHS-Anordnung vom 24. Juli betrifft den Ausschluss beziehungsweise die Entfernung von DeepSeek-Technologie aus ziviler US-Bundes-IT, einschließlich Implementierungen in Drittprodukten.[16][17] Die gelesene Federal-Register-Vorlage nennt den 20. Oktober als geplanten Veröffentlichungstag und Ausnahmen für bestimmte Sicherheitssysteme.[17] Es handelt sich weder um eine neue Oktober-Anordnung noch um ein allgemeines US-Verbot privater Nutzung.[17]",
+  "topic_id": "ai-governance",
+  "topic": "AI Governance",
+  "date": "2026-10-19",
+  "sources": [
+   {
+    "label": "[17] Federal Register / öffentliche Vorlage",
+    "url": "https://public-inspection.federalregister.gov/2026-21447.pdf"
+   },
+   {
+    "label": "[16] VentureBeat / Einordnung",
+    "url": "https://venturebeat.com/security/deepseek-v4-1-flash-1017-arrives-with-improved-benchmarks-just-as-the-u-s-government-bans-it-from-agencies-what-enterprises-should-do"
+   }
+  ],
+  "change_type": "policy"
+ },
+ {
   "title": "Qwen Code v0.25.3 übernimmt statische Skills und fixierte MCP-Auswahl",
   "summary": "Laut offiziellen Release Notes können Managed Sessions aus veröffentlichten AgentDefinitions nun statische Skills laden sowie fixierte MCP-Server- und Hook-Katalogauswahlen an Hosted Runtimes übergeben.[27] Die Neuerung betrifft die Konfiguration des Coding-Agenten, nicht eine neue Qwen-Modellfamilie.[27]",
   "topic_id": "agentic-engineering",
@@ -64,6 +412,76 @@
   "change_type": "integration"
  },
  {
+  "title": "Overexposed-Fallstudie zeigt blinde Flecken KI-generierter Tests",
+  "summary": "Shopify beschreibt beim Scanner Overexposed einen Test, der nur die Existenz eines SQL-Parameters prüfte, nicht dessen tatsächliche Nutzung.[49] Das Team nutzt Mutationstests, bei denen der Fix gezielt entfernt wird, sowie Canary-Ziele mit bekanntem Ergebnis.[49] Die Fallstudie ist eine technische Eigenbeschreibung, kein unabhängiger Wirksamkeitsnachweis für das gesamte Sicherheitssystem.[49]",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-10-19",
+  "sources": [
+   {
+    "label": "[49] Shopify Engineering / Fallstudie",
+    "url": "https://shopify.engineering/overexposed"
+   }
+  ],
+  "change_type": "research"
+ },
+ {
+  "title": "MultiLangBench prüft Datenbankentwicklung in 20 Programmiersprachen",
+  "summary": "OpenAI veröffentlicht Evaluationsaufbau und Testsuite von MultiLangBench: Modelle sollen SQLite-kompatible Datenbank-Engines in 20 Sprachen entwickeln.[18] GPT-6 Astra erreicht laut OpenAIs eigener Evaluation eine mittlere Testbestehensrate von 87,4 Prozent; das ist keine unabhängige Qualitätsgarantie.[18]",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-10-19",
+  "sources": [
+   {
+    "label": "[18] OpenAI / Forschungsbeitrag",
+    "url": "https://openai.com/index/low-resource-programming-languages/"
+   }
+  ],
+  "change_type": "research"
+ },
+ {
+  "title": "GitHub Copilot vollzieht Abschaltung von sechs älteren Modellen",
+  "summary": "GitHub bestätigt den Vollzug der Abschaltung von Gemini 3.7 Flash, GPT-5.5, GPT-5.4, GPT-5.4 mini, GPT-5 mini und Grok 4.5 in den meisten Copilot-Oberflächen.[46] Als Alternativen nennt GitHub Gemini 3.8 Flash, GPT-6.1 Sol, GPT-6 Luna und Grok 4.7; Enterprise-Administratoren müssen Nachfolger gegebenenfalls freischalten.[46] Dies ist der Vollzug der September-Ankündigung, keine neue Modellfreigabe.[46]",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-10-19",
+  "sources": [
+   {
+    "label": "[46] GitHub / offizieller Changelog",
+    "url": "https://github.blog/changelog/2026-10-19-github-copilot-models-deprecated-on-october-19-2026"
+   }
+  ],
+  "change_type": "update"
+ },
+ {
+  "title": "Copilot model policy API ist auf vier Verwaltungsebenen allgemein verfügbar",
+  "summary": "GitHub gibt GET- und PATCH-Endpunkte der Copilot model policy API für Enterprises, Enterprise-Teams, Enterprise-Apps und Organisationen allgemein frei.[45] Enterprise-Richtlinien können die Modellsteuerung an Organisationen oder an Teams und Apps delegieren.[45]",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-10-19",
+  "sources": [
+   {
+    "label": "[45] GitHub / offizieller Changelog",
+    "url": "https://github.blog/changelog/2026-10-19-copilot-model-policy-api-for-enterprise-orgs-and-teams"
+   }
+  ],
+  "change_type": "general_availability"
+ },
+ {
+  "title": "Amazon Bedrock ergänzt Strict Tool Use für Claude",
+  "summary": "AWS ergänzt neben strukturierten Antworten eine strikte Schemaerfüllung für Claude-Toolparameter in Amazon Bedrock.[52] Strict Tool Use mit strict: true erzwingt definierte Feldtypen und Formate; daraus folgt keine Garantie sachlich richtiger Entscheidungen oder sicherer Werkzeugaktionen.[52]",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-10-19",
+  "sources": [
+   {
+    "label": "[52] AWS / Originalbeitrag",
+    "url": "https://aws.amazon.com/blogs/machine-learning/structured-outputs-for-anthropic-claude-models-on-amazon-bedrock/"
+   }
+  ],
+  "change_type": "update"
+ },
+ {
   "title": "Disney bietet mindestens 60 Character.AI-Beschäftigten Stellen an",
   "summary": "TechCrunch berichtet am 18. Oktober auf Basis einer Gerichtsunterlage vom 13. Oktober, Disney habe Beschäftigungsangebote für mindestens 60 Character.AI-Mitarbeiter vereinbart; die große Mehrheit der Angesprochenen habe angenommen.[10] Die neuen Personalangaben ergänzen das bekannte Insolvenz- und Lizenzverfahren, belegen aber keinen abgeschlossenen Unternehmenskauf: Das Stalking-Horse-Angebot kann weiterhin überboten werden.[10]",
   "topic_id": "enterprise",
@@ -76,6 +494,24 @@
    }
   ],
   "change_type": "business"
+ },
+ {
+  "title": "World ID for Zoom wird für Enterprise-Teilnehmernachweise verfügbar",
+  "summary": "World meldet die weltweite Verfügbarkeit von World ID for Zoom für Enterprise-Kunden über den Zoom Marketplace.[38][37] Nach Orb-Registrierung und Selfie kann ein Human Badge im Call erscheinen; laut Anbieter werden Orb-Bild, Live-Selfie und ein Videobild verglichen, nicht Audio oder Transkripte analysiert.[38] Das ist kein unabhängiger Nachweis einer vollständigen Deepfake-Erkennung.[38]",
+  "topic_id": "ai-security",
+  "topic": "AI Security",
+  "date": "2026-10-18",
+  "sources": [
+   {
+    "label": "[38] World / Originalankündigung",
+    "url": "https://world.org/de-de/blog/announcements/world-id-for-zoom-proof-of-human-video-meetings"
+   },
+   {
+    "label": "[37] heise online",
+    "url": "https://www.heise.de/news/Iris-Scan-gegen-Deepfakes-So-will-Sam-Altmans-World-Zoom-Meetings-schuetzen-11492665.html"
+   }
+  ],
+  "change_type": "general_availability"
  },
  {
   "title": "DeepSeek V4.1 Flash 1017 erreicht 45 Punkte im Intelligence Index",
@@ -596,6 +1032,20 @@
    }
   ],
   "change_type": "update"
+ },
+ {
+  "title": "Step 5 Preview veröffentlicht BF16- und FP8-Modellgewichte",
+  "summary": "StepFun veröffentlicht am 15. Oktober BF16- und FP8-Gewichte von Step 5 Preview; die Gewichtefreigabe folgt der September-Ankündigung als eigener Meilenstein.[54] Das MoE-Modell hat 600 Milliarden Gesamt- und 27 Milliarden aktive Parameter und ist kein kleines Desktop-LLM.[54] Die StepFun Model License 1.0 ist keine Standard-Open-Source-Lizenz.[54]",
+  "topic_id": "lokale-llms",
+  "topic": "Lokale LLMs",
+  "date": "2026-10-15",
+  "sources": [
+   {
+    "label": "[54] Pandaily / Bericht zur Gewichtefreigabe",
+    "url": "https://pandaily.com/stepfun-step-5-preview-open-weights-technical-blog-92-layer-sparse-gqa"
+   }
+  ],
+  "change_type": "general_availability"
  },
  {
   "title": "Nemotron 3.5 Bolt 74B-A9B 24GB erscheint für lokale Agenten",
