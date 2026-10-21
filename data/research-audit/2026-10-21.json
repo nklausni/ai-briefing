@@ -1,0 +1,424 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-21",
+  "sources": [
+    {
+      "domain": "simonwillison.net",
+      "name": "Simon Willison",
+      "status": "checked",
+      "checked_url": "https://simonwillison.net/",
+      "result": "Index 19.–21.10.2026 und Original Battle Drones gelesen; eMudhra außerhalb KI-Schwerpunkt, Programmier-Nachruf Kommentar statt Produktentwicklung. Originalartikel nach web_extract-429 direkt erfolgreich mit Roh-HTML und Text gecacht. Historienabfrage Battle Drones ohne Treffer."
+    },
+    {
+      "domain": "testingcatalog.com",
+      "name": "TestingCatalog",
+      "status": "checked",
+      "checked_url": "https://testingcatalog.com/",
+      "result": "Index, reservierte Zeitfenstersuche und beide Originalartikel vom 20.10.2026 gelesen/gecacht. Muse Confidential VM ist beobachtete partielle UI-Implementierung, keine bestätigte Freigabe. GPT-6.1 Terra bleibt ein Bericht über Codehinweise; keine Release-/Preis-/Leistungsaussagen als Tatsachen übernommen. The Information als Bezahlschrankenhinweis nicht beschafft. Keine gesicherte offizielle Terra-Ankündigung im zugeteilten OpenAI-Newsindex."
+    },
+    {
+      "domain": "the-decoder.com",
+      "name": "The Decoder",
+      "status": "checked",
+      "checked_url": "https://the-decoder.com/",
+      "result": "Aktuelles direktes HTML des Index und gezielte Datumssuche 19.–21.10.2026 geprüft. Originale zu Eleven Realtime, DeepInfer, Voxtral 3, Clairic, MiniMax M3.1 Flash und Kling 4.0 vollständig gelesen und datiert. MiniMax bereits Historie h-a933b06f018913095b8eaf6a, kein erneuter API-Launch; Gewichte am 23.10. erst geplant. Sensible indexierte Themen (DeepSeek-Bann/ECHOTRIBBLE/Altman-Interna) ohne unabhängige Nachprüfung nicht als Kandidaten übernommen; GPT-6-COBOL-Detail nicht priorisiert. Kandidaten sind konkrete Produkteinführungen, keine pauschalen Benchmark-/Marktbehauptungen. DeepInfer-Repository als Primärquelle zusätzlich gelesen; dessen Offline-Beschränkung muss bleiben. Roh- und bereinigte Originalcaches decoder-*.json."
+    },
+    {
+      "domain": "marktechpost.com",
+      "name": "MarkTechPost",
+      "status": "checked",
+      "checked_url": "https://www.marktechpost.com/feed/",
+      "result": "Exakte www-Feed-URL mit Slash zuerst gelesen: direkte HTTP-200-XML-Antwort enthielt 10 datierte Artikel vom 19.–21.10. mit vollständigem content:encoded (Rohbeleg marktechpost-feed.json, geparst marktechpost-items.json). Web-Extraktion des Feeds war nachweislich veraltet (September), daher nicht als aktueller Index verwendet. Fünf Originale direkt 403; danach genau diese Originale via web_extract erfolgreich, Volltexte in mtp-*-extract.json gesichert und relevante Artikelabschnitte gelesen. Google-Cloud-Originale zu llm-d und TorchTPU sowie Exa-Original zusätzlich direkt vollständig gelesen. MiniMax/Mercury/Drex bereits Historie; DeepInfer und Clairic separat im Decoder-Checkpoint statt doppelter Kandidaten. Run:ai/Timestral tragen im Pfad 18.10. und werden trotz Feed-Nachlauf am 19.10. nicht als neue Entwicklung dieses Fensters ausgegeben. llm-d-Feedzeit 21.10.04:33Z vs Originalankündigung 20.10.; Kandidat auf Entwicklungsdatum 20.10. Exa-Artikel 20.10., Originalrelease 19.10. Benchmarks nicht als unabhängig bewiesen übernommen."
+    },
+    {
+      "domain": "venturebeat.com",
+      "name": "VentureBeat",
+      "status": "checked",
+      "checked_url": "https://venturebeat.com/category/ai/",
+      "result": "web_extract-Index enthielt ältere Oktober-/Augustansicht. Vorgeschriebene Datumssuche und breitere Fenster-Suche durchgeführt; Desktop-Chrome-Index lieferte aktuelle Originallinks (vb-browser.json). Originale 19.–20.10. zu FLUX 3 Max, MiniMax M3.1 Flash, Synaptics/Coral und Agenten-Context-Governance gelesen. FLUX-Start ist bereits h-878adbd9c81f7e0489b58f90; MiniMax-Start und unabhängige Evaluation bereits h-a933b06f018913095b8eaf6a / h-2a7691626bc39ddbe09628b6. Keine Re-Emission dieser Meldungen; Benchmark-Zahlabweichung 42 im Bericht gegenüber 43 in gespeicherter Historie nicht als neue Entwicklung ausgegeben. Governance-Interview ist Empfehlung, keine neue Produktfreigabe. Synaptics-Primärtext zusätzlich gelesen; zwei eigenständige Hardware-Meilensteine extrahiert. Keine vollständige Lektüre aller Indexartikel behauptet."
+    },
+    {
+      "domain": "anthropic.com",
+      "name": "Anthropic",
+      "status": "checked",
+      "checked_url": "https://www.anthropic.com/news",
+      "result": "Newsroom via web_extract nur bis Haiku 7.10.; Desktop-Chrome ergänzte jüngste echte Nachrichtenkarte Public Benefit Fund 18.10., außerhalb Fenster 19.–21.10. Dynamisches Latest news October 21 nicht als Veröffentlichungsdatum gewertet. Gezielt datierte und breite Unternehmenssuche im Fenster ergänzend durchgeführt. Offiziellen Claude-Code-Changelog (Redirect code.claude.com/docs/en/changelog) für 19.–21.10. tatsächlich gelesen: /auto-mode-setup, Managed-Agents-Sicherheitsvergleich, Review-Level sowie zahlreiche Fehlerbehebungen/verwaltete Berechtigungen. Als Routine-Wartung gegenüber Nachrichten zurückgestellt; keine neue Modellfreigabe im geprüften Fenster belegt. Newsroom-All-news-Tabelle blieb im Browser textlich unvollständig, daher keine Behauptung vollständiger Unternehmens-/Forschungserfassung."
+    },
+    {
+      "domain": "openai.com",
+      "name": "OpenAI",
+      "status": "checked",
+      "checked_url": "https://openai.com/news/",
+      "result": "Newsindex und beide Artikel vom 19./20.10.2026 per web_extract gelesen; direktes HTTP auf openai.com lieferte danach 403, vorhandene erfolgreiche Originalextraktion erhalten. Pflicht-API-Changelog zusätzlich vollständig im Fenster 19.–21.10. gelesen (20.10.: 12-Stunden-Cache); verlinkte Prompt-Caching-Dokumentation ebenfalls gelesen. Zunächst veralteter HTML-Guide mit nur 30m; anschließend offizielle Markdown-Version prompt-caching.md direkt gelesen: bestätigt 12h, GPT-5.6 und neuer, 2,5x totalen Write-Preis und separate TTL pro Breakpoint. Frische Primärdocs lösen den Widerspruch auf; alte Extraktion bleibt erhalten. MultiLangBench bereits Historie h-74efe33a6ac8079be1269591; dennoch als atomarer Forschungskandidat für redaktionelle Duplikatentscheidung gesichert.",
+      "checks": [
+        {
+          "url": "https://openai.com/news/",
+          "status": "checked",
+          "result": "web_extract: datierter Newsindex und Originalartikel Orchestra Bio (20.10.) sowie Low-resource programming (19.10.) gelesen; Fenster 19.–21.10.2026."
+        },
+        {
+          "url": "https://developers.openai.com/api/docs/changelog",
+          "status": "checked",
+          "result": "web_extract und direkter Originalabruf: Änderung vom 20.10.2026 zu 12-hour prompt caching gelesen, danach Einträge vom 16.10. außerhalb Fenster. Verlinkten Guide und seine offizielle .md-Version gelesen/gecacht: die Markdown-Version bestätigt 12h per prompt_cache_options.ttl oder prompt_cache_breakpoint.ttl, Default 30m. Alter HTML-Stand separat erhalten."
+        }
+      ]
+    },
+    {
+      "domain": "openrouter.ai",
+      "name": "OpenRouter Blog",
+      "status": "checked",
+      "checked_url": "https://openrouter.ai/blog/",
+      "result": "Blogübersicht via web_extract gelesen, zusätzlich reservierte Datumssuche für 19.–21.10.2026. Neuester Beitrag Private Endpoints vom 14.10.; keine neue datierte Entwicklung im Fenster gefunden."
+    },
+    {
+      "domain": "blog.google",
+      "name": "Google AI Blog",
+      "status": "checked",
+      "checked_url": "https://blog.google/innovation-and-ai/",
+      "result": "Übersicht plus aktueller /feed mit datierten Einträgen 19.–21.10.2026 geprüft. Drei Originale vom 20.10. vollständig gelesen: Personal Intelligence im Auto, neue Kleinunternehmen-Werkzeuge, AMIE-Interview. Zwei Datum-/Breitsuchen ohne Treffer; Feed lieferte die Entdeckung. AMIE ist Interview zu bereits vorhandenen Studien, kein belegter neuer klinischer Meilenstein. Historie Personal Intelligence und small business geprüft, kein passendes Duplikat. Infrastruktur-Partnerschaft Arkansas als Nicht-Modellthema zurückgestellt."
+    },
+    {
+      "domain": "microsoft.ai",
+      "name": "Microsoft AI",
+      "status": "checked",
+      "checked_url": "https://microsoft.ai/blog/",
+      "result": "Kanonischen Blog via web_extract und isoliertem Desktop-Chrome-Batch gelesen (ms-browser.json). Originale Frontier Pre-training und MAI-Code-1.1-Flash datiert geprüft: 15.10. bzw. 7.10., außerhalb 19.–21.10.2026. Gezielte Datumssuche 19./20.10. und breitere Microsoft-AI-MAI-Suche im Assignment-Fenster durchgeführt; Ergebnisse führen erneut zum Original vom 15.10., nicht zu einem neuen Modell-/Produktmeilenstein. Kein neuer Kandidat aus dem geprüften MAI-Blog und Ersatzsuchen; dies ist kein vollständiger Audit aller Microsoft-Unternehmensblogs."
+    },
+    {
+      "domain": "arxiv.org",
+      "name": "arXiv",
+      "status": "checked",
+      "checked_url": "https://arxiv.org/list/cs.AI/recent",
+      "result": "Alle drei vorgeschriebenen Helfer für since=19.10. bis einschließlich 21.10. ausgeführt. recent: 1547/1547 rollierende Einträge, davon 981 Titel im Fenster (21.10. 321, 20.10. 486, 19.10. 174); changes: 473/473 am 21.10., aber keine Rekonstruktion der Replacement-Ankündigungen vom 19./20.10.; updates: 2018/2018 mit sieben Überlapptagen, zwei API-Seiten. Sämtliche gespeicherten Titel über title_page paginiert bis next_offset=null gesichtet: 981+473+2018 Datensätze, 2169 verschiedene IDs, Überschneidungen nur einmal inhaltlich. Nach ungültigem --limit 200 auf erlaubte 100er-Seiten korrigiert; kein Titelabbruch. Vollständige Titelsichtung ist keine Volltextlektüre. Drei Abstract-/Submission-Originale (PROVISO, Anti-Persistence, AMTP) ausgewählt gelesen. Direkte vollständige recent/new-HTMLs zusätzlich gesichert; alle drei v1 im New-Abschnitt vom 21.10. und in recent belegt. Keine frischen Replacement-Kandidaten ohne substantiellen Versionsvergleich übernommen. Verbleibende Lücke: öffentliche Replacement-Datierung 19./20.10.; API-Zeitstempel sind Einreichung, nicht Ankündigung. Cache arxiv-{recent,changes,updates}.json und arxiv-{new,recent}-evidence.json im Workerordner.",
+      "title_discovery": [
+        {
+          "schema_version": 1,
+          "source_url": "https://arxiv.org/list/cs.AI/recent",
+          "retrieved_at": "2026-10-21T06:01:18.066879+00:00",
+          "since": "2026-10-19",
+          "until": "2026-10-21",
+          "declared_total": 1547,
+          "collected_count": 1547,
+          "window_count": 981,
+          "complete": true,
+          "window_complete": true,
+          "coverage_kind": "titles_only",
+          "listing_kind": "recent",
+          "days": {
+            "2026-10-21": {
+              "declared": 321,
+              "collected": 321
+            },
+            "2026-10-20": {
+              "declared": 486,
+              "collected": 486
+            },
+            "2026-10-19": {
+              "declared": 174,
+              "collected": 174
+            },
+            "2026-10-16": {
+              "declared": 286,
+              "collected": 286
+            },
+            "2026-10-15": {
+              "declared": 280,
+              "collected": 280
+            }
+          },
+          "pages": [
+            {
+              "url": "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000",
+              "skip": 0,
+              "received_count": 1547,
+              "declared_total": 1547
+            }
+          ],
+          "next_skip": null,
+          "limitations": []
+        },
+        {
+          "schema_version": 1,
+          "source_url": "https://arxiv.org/list/cs.AI/new",
+          "retrieved_at": "2026-10-21T06:01:18.512418+00:00",
+          "since": "2026-10-19",
+          "until": "2026-10-21",
+          "declared_total": 473,
+          "collected_count": 473,
+          "window_count": 473,
+          "complete": true,
+          "window_complete": false,
+          "coverage_kind": "titles_only",
+          "listing_kind": "changes",
+          "days": {
+            "2026-10-21": {
+              "declared": 473,
+              "collected": 473
+            }
+          },
+          "pages": [
+            {
+              "url": "https://arxiv.org/list/cs.AI/new?skip=0&show=2000",
+              "skip": 0,
+              "received_count": 473,
+              "declared_total": 473
+            }
+          ],
+          "next_skip": null,
+          "limitations": [
+            "Source listing does not establish the full requested date span; retrieve dated/monthly listings or report a gap"
+          ]
+        },
+        {
+          "schema_version": 1,
+          "source_url": "https://export.arxiv.org/api/query",
+          "listing_kind": "updates",
+          "coverage_kind": "titles_and_submission_metadata_only",
+          "since": "2026-10-19",
+          "until": "2026-10-21",
+          "query": "cat:cs.AI AND lastUpdatedDate:[202610112200 TO 202610212159]",
+          "overlap_days": 7,
+          "retrieved_at": "2026-10-21T06:01:33.985109+00:00",
+          "declared_total": 2018,
+          "collected_count": 2018,
+          "window_count": 2018,
+          "complete": true,
+          "window_complete": true,
+          "pages": [
+            {
+              "url": "https://export.arxiv.org/api/query?search_query=cat%3Acs.AI+AND+lastUpdatedDate%3A%5B202610112200+TO+202610212159%5D&sortBy=lastUpdatedDate&sortOrder=descending&start=0&max_results=2000",
+              "skip": 0,
+              "received_count": 2000,
+              "declared_total": 2018
+            },
+            {
+              "url": "https://export.arxiv.org/api/query?search_query=cat%3Acs.AI+AND+lastUpdatedDate%3A%5B202610112200+TO+202610212159%5D&sortBy=lastUpdatedDate&sortOrder=descending&start=2000&max_results=2000",
+              "skip": 2000,
+              "received_count": 18,
+              "declared_total": 2018
+            }
+          ],
+          "next_skip": null,
+          "limitations": []
+        }
+      ]
+    },
+    {
+      "domain": "llm-stats.com",
+      "name": "LLM Stats",
+      "status": "checked",
+      "checked_url": "https://llm-stats.com/",
+      "result": "Startseite, AI News und datierte LLM Updates direkt gelesen/gecacht (9b75555b5d96.json, 9d0ea901574f.json, 78e4674f2cf6.json), ergänzende Datumssuche. Im Fenster 19.–21.10. neuer Modelleinstieg MiniMax M3.1 Flash vom 19.10.; Primärankündigung MiniMax (b984a5c544e6.json) zusätzlich gelesen: API/M Plan/Code verfügbar, Gewichte erst später. Bereits veröffentlicht als h-a933b06f018913095b8eaf6a, daher kein erneuter Kandidat. Keine datierten neuen Benchmarkänderungen im Fenster nachgewiesen. Ein anfänglich falsch vermuteter Profilslug minimax-m3-1-flash ergab nur Verifikationshülle; nicht als Artikelbeleg verwendet, keine CAPTCHA-Umgehung. Ungeprüfte laufende Rankings sind keine Releasebestätigung."
+    },
+    {
+      "domain": "ollama.com",
+      "name": "Ollama",
+      "status": "checked",
+      "checked_url": "https://ollama.com/blog",
+      "result": "Direktes HTML des aktuellen Blogindex und Original /blog/clef vollständig gelesen, Datum 19.10.2026 bestätigt. Web-Extraktion hatte nur Navigation geliefert; direktes HTML enthielt echte Artikel. Gezielte Suche ergänzt. Fenster 19.–21.10.: Clef ist einzige aktuelle Indexmeldung, bereits konkret in Historie h-4c3c95a6ffa755d77e7c2118 am 19.10. als integration veröffentlicht. Keine zusätzliche neue Entwicklung. Originalcache ollama-clef-clean.json; Indexcache ollama-index.json."
+    },
+    {
+      "domain": "huggingface.co",
+      "name": "Hugging Face",
+      "status": "checked",
+      "checked_url": "https://huggingface.co/blog",
+      "result": "19.–21.10.2026: Übersicht via web_extract und direkt gelesen, danach sieben datierte Originale vollständig als HTML/Text gecacht: TorchTPU, MPS 2.15, ALTK-Evolve, Cosmos3-H-Dreams, FairStress, AnyLanguageModel und Agenten-Curriculum. Index zeigt einige offizielle Beiträge als 19.10., Originale zeigen sichtbar und in JSON-LD 20.10.; Kandidaten behalten Originaldatum. Sechs atomare Kandidaten; Curriculum als Lehrmaterial zurückgestellt. Modelle und Leistungszahlen nicht selbst ausgeführt. ALTK-Vergleich ist Snapshot 12.10., kein gegenwärtig unabhängig bestätigter Spitzenplatz. MPS ist Release Candidate, nicht GA. Fachlich relevante Historienabfragen ohne Entwicklungsduplikat; sämtliche Originalcaches und Ledger im Workerordner."
+    },
+    {
+      "domain": "techcrunch.com",
+      "name": "TechCrunch",
+      "status": "checked",
+      "checked_url": "https://techcrunch.com/category/artificial-intelligence/",
+      "result": "Fenster 19.–21.10.2026: KI-Index diesmal aktuell und direkt lesbar. Zusätzlich verpflichtende exakte Datumssuche und breitere Unternehmenssuche ausgeführt (Budgetabfragen 1 und 2). Originalartikel zu ChatGPT, Orchestra Bio, TorchTPU, TorchNeuron, Anthropic-Gesetzentwurf, DeepSeek, SpaceX, Yelp, Otter, Eka und Gemini im Auto gelesen/gecacht. Freie Google-Cloud-/Amazon-Primärtexte ergänzen technische Meilensteine. TorchNeuron schon h-39fa8698d8fe713eb46e45be, DeepSeek schon h-d2e1f959bd571a491a991fb1; nicht als neue Oktober-Anordnung ausgegeben. Anthropic-Draft-Artikel vom 20.10. stützt sich auf Politico vom 16.10., nicht als frischer Gesetzerlass aufgenommen. SpaceX gesondert unter CNBC mit zwei Quellen nominiert. Keine Reuters-Originale oder syndizierten Texte als Belege. Engere Volltextauswahl statt Behauptung, alle Artikel des Mediums gelesen zu haben."
+    },
+    {
+      "domain": "theverge.com",
+      "name": "The Verge",
+      "status": "checked",
+      "checked_url": "https://www.theverge.com/ai-artificial-intelligence",
+      "result": "19.–21.10.2026: aktueller KI-Index via web_extract und direkt gelesen, verlinkte Originale Perplexity-lokal und Zoom-Deepfake vollständig mit Originaldatum 20.10. direkt gelesen/gecacht. Ein Kandidat zum neuen lokalen Mac-Modus. Perplexity-Primärankündigung direkt HTTP403; einmaliger Desktop-Chrome-Fallback blieb Cloudflare-Sicherheitsprüfung, nicht als erfolgreicher Originalabruf gewertet. Der tatsächlich lesbare unabhängige Verge-Bericht trägt die begrenzte Meldung. Zoom nicht aufgenommen: Dezember-Ankündigung am Verge gelesen, aber zusätzliche reservierte Suche findet ähnlich benannte frühere April-Funktionen; neuer Meilenstein gegenüber diesen nicht zusätzlich geklärt, keine Sicherheitswirksamkeit behauptet. Reuters-verlinkte Index-Kurzmeldungen zu China-Chips, DeepSeek und Nscale ausdrücklich nicht benutzt. Keine vollständige Archivabdeckung behauptet."
+    },
+    {
+      "domain": "heise.de",
+      "name": "heise online",
+      "status": "checked",
+      "checked_url": "https://www.heise.de/thema/Kuenstliche-Intelligenz",
+      "result": "Themenindex via web_extract, aktueller Atom-Feed direkt und datierte Originalartikel 19.–21.10.2026 gelesen/gecacht. Der Feed reicht bis vor den 19.10. zurück. Themenindex übersah bereits einige heutige Feedmeldungen. Reuters-basierte Nvidia-RTX-PRO-5500-Bestellmeldung und China-Exportkontrollmeldung ausdrücklich ausgeschlossen. Heise+-Ratgeber und Webinare nicht als neue Meldungen behandelt. PocketGPT-Bericht vom 19.10. verweist auf Video vom 13.10., daher kein gesicherter frischer Modellrelease; MIT-Erinnerungsbeitrag kein neu datiertes Originalexperiment. Fund-Beitrag ist kommentierend, technische Primärankündigung bei Anthropic separat zuständig. DeepSeek mit unabhängigem Originalbericht The Register gegengeprüft. SpaceX-Zahlen mangels zusätzlicher Finanzprimärquelle zurückgestellt. Keine Vollständigkeitsbehauptung zu Bezahlinhalten."
+    },
+    {
+      "domain": "arstechnica.com",
+      "name": "Ars Technica",
+      "status": "checked",
+      "checked_url": "https://arstechnica.com/ai/",
+      "result": "Aktuellen KI-Index mit Meldungen 19.–20.10. gelesen und zusätzliche Quellensuche ausgeführt. Originale zu Gemini Personal Intelligence, GhostShares, Commercial Terms, Torrent-Discovery-Anordnung, OpenAI-Haftentscheidung, Indie-Klonen und Disney/Character.AI geprüft. Artikel-429 bei Indie-Klonen durch begrenzten Desktop-Chrome-Originalabruf behoben (ars-game-browser.json). GhostShares-Extraktion war älter als gerenderter Originaltext: Browser enthält Metas ausdrückliche Pausierung; Claroc-Original bestätigt am 20.10. Nachtest von 40 nicht mehr zugänglichen Shares. Keine privaten Share-URLs gesucht/geöffnet. Commercial-Terms-Änderung bereits h-99f3caa64cdb151e36bd05e6 (17.10.), Disney-Lizenz/Personal bereits h-1afa696b54b0e4f079dfc4c5 / h-236e5098a34a264acd8e4cdc, nicht als neue Meldung wiederholt. Gerichtliche Vorwürfe ohne zusätzlich selbst geprüfte unabhängige Bestätigung nicht als Kandidat übernommen. Gemini-Auto-Rollout bereits unter Google-Quelle belegt. Indie-Bericht betrifft ältere Ankündigung vom Freitag, daher kein neuer belegter Produktmeilenstein. Nicht-KI-Drohnenrettung nicht vertieft."
+    },
+    {
+      "domain": "computerworld.com",
+      "name": "Computerworld",
+      "status": "checked",
+      "checked_url": "https://computerworld.com/",
+      "result": "19.–21.10.2026: Extraktionsindex war auf August veraltet. Reservierte Datumssuche fand vorwiegend ältere Treffer; Desktop-Chrome-Index erfolgreich aktuell bis 20.10. gelesen und in cw-browser.json gesichert. Meta-Commercial-Terms-Bericht vom sichtbar 19.10. direkt vollständig in cw-meta.json gelesen (JSON-LD enthält abweichend 20.10.). Kein Kandidat: Scraping-Abschnitte widersprechen zeitlich bereits am 17.10. historisch belegter Rücknahme der Trainingsklausel; Haftungsklausel nicht zusätzlich am aktuellen Originalvertrag bestätigt, daher keine gesicherte neue Rechtswirkung behauptet. Shadow-AI-Beitrag ist Praxisberatung, kein verifizierter neuer Meilenstein. Quelle geprüft, keine Behauptung vollständiger Archivabdeckung."
+    },
+    {
+      "domain": "cnbc.com",
+      "name": "CNBC",
+      "status": "checked",
+      "checked_url": "https://cnbc.com/",
+      "result": "19.–21.10.2026: Homepage, KI-Rubrik und Datumsuche; frei lesbare Originalartikel zu Arda, SpaceX-Q3, DeepSeek und NextDC gelesen/gecacht. SpaceX-Zahlen gegen unabhängigen TechCrunch-Bericht geprüft. DeepSeek betrifft Juli-Anordnung/Publikation 19.–20.10. und ist bereits h-d2e1f959bd571a491a991fb1, daher kein neuer Kandidat. CNBC enthält darin Reuters-Zitate; diese weder übernommen noch als Belege verwendet. NextDC-Bericht separat gelesen, ohne unabhängige Bestätigung keine weitreichende Marktfolgerung aufgenommen. Bezahlte PRO-Artikel nicht benötigt, keine Schranke umgangen."
+    },
+    {
+      "domain": "github.blog",
+      "name": "GitHub Blog",
+      "status": "checked",
+      "checked_url": "https://github.blog/changelog/",
+      "result": "Changelog 19.–21.10.2026 und beide aktuellen Copilot-Originale direkt gelesen/gecacht. Zwei atomare Kandidaten; übrige Einträge im Zeitraum betreffen allgemeine Repository-/Supply-Chain-Verwaltung. Caches ed6489056834.json und c4d5caa9ca53.json."
+    },
+    {
+      "domain": "thenewstack.io",
+      "name": "The New Stack",
+      "status": "checked",
+      "checked_url": "https://thenewstack.io/",
+      "result": "Web-Extraktion der Startseite war veraltet (14.10.); direktes HTML lieferte aktuelle 19./20.10.-Links und wurde vollständig als Index gesichtet, gezielte Fenstersuche ergänzt. Originale zu Respan, tsrs, Beam, Datadog/Propolis und Scope-Forschung direkt gelesen. Datadog ist ausdrücklich gesponserte Webinarankündigung, Kauf bereits früher: kein frischer Produktlaunch. Scope-Bericht referiert Studien vom Mai/Juli und unbestätigtes Anthropic-Modell: keine neue Sicherheitsevaluation im Fenster, daher kein Kandidat. MiniMax-API-Launch ist bereits Historie; DeepInfer/Eleven Realtime separat im Decoder-Checkpoint. Respan- und Cloudflare-tsrs-Primärquellen zusätzlich gelesen. Wichtige Abweichung: TNS nennt vorgebaute Respan-Binaries, README sagt 'No release is tagged yet' und Source-Build; konservativ nur experimentellen Quellcode-Start übergeben. Meinungs-/gesponserte Inferenz-/Code-Review-Stücke nicht als neue Produkte ausgegeben. Caches tns-*-clean.json und primäre Rohbelege vorhanden."
+    },
+    {
+      "domain": "embracethered.com",
+      "name": "Embrace The Red",
+      "status": "checked",
+      "checked_url": "https://embracethered.com/",
+      "result": "Zeitraum 19.–21.10.2026: web_extract der Startseite lieferte nur Titel; direkt gelesener vollständiger Blogindex https://embracethered.com/blog/ zeigt als jüngsten Beitrag Visual Studio Copilot/SSMS RCE vom 13.10.2026, danach 30.09.; kein Beitrag im Fenster. Originalindex mit Datum, Text und Links in red-index.json gesichert; keine neue Sicherheitsbehauptung übernommen."
+    },
+    {
+      "domain": "importai.substack.com",
+      "name": "Import AI",
+      "status": "checked",
+      "checked_url": "https://importai.substack.com/archive",
+      "result": "Archiv, RSS und vollständigen frei zugänglichen Originalbeitrag Import AI 477 vom 19.10.2026 gelesen (541b4de5f908.json, 0f90c142536d.json). Ausgabe veröffentlicht eine Rede vom 17.10.2026 beim IMF; Singularitäts- und Wachstumsprognosen sind ausdrücklich Jack Clarks Einschätzungen, keine bestätigten neuen Modellfreigaben. Keine eigenständige neue technische Entwicklung für das Fenster 19.–21.10. isoliert; redaktionell kein Kandidat aus Meinungsrede."
+    },
+    {
+      "domain": "interconnects.ai",
+      "name": "Interconnects",
+      "status": "unavailable",
+      "checked_url": "https://interconnects.ai/",
+      "result": "Homepage nur Subscribe-Hülle; offizieller Feed https://www.interconnects.ai/feed direkt als XML gelesen und alle 20 datierten Titel geprüft. Im Fenster 19.–21.10. nur Latest open artifacts #25 vom 20.10.2026. Original direkt gelesen bis ausdrücklicher Paywall 'This post is for paid subscribers'; keine weiteren Volltextversuche, kein Login/Umgehen. Gesamtbeitrag bleibt ungelesen. Freie thematische Ersatzquelle zu DeepInfer tatsächlich vollständig gelesen: https://the-decoder.com/deepseek-open-sources-the-inference-engine-that-powers-its-fastest-and-cheapest-ai-model/ (20.10.), als eigenständiger Kandidat im Decoder-Checkpoint. Andere Aussagen des gesperrten Sammelbeitrags, insbesondere geopolitische Interpretation und Modellranglisten, nicht übernommen. Caches interconnects-feed.json, interconnects-latest-clean.json; getrennte Ersatzübergabe in interconnects-handoff.json."
+    },
+    {
+      "domain": "latent.space",
+      "name": "Latent Space",
+      "status": "checked",
+      "checked_url": "https://www.latent.space/feed",
+      "result": "Korrekte Domain und RSS vom 20.10. mit vollständigem sfcompute2-Text abgerufen, Original sfcompute2 und durch budgetierte Zeitfenstersuche entdecktes tenex (21.10.) gelesen. SF-Compute-Interview beschreibt physische GPU-Lieferung und programmierbare Netze; verlinktes Original Elastic InfiniBand Partitions zusätzlich gelesen (öffentliche Preview belegt, aber kein verifiziertes Veröffentlichungsdatum im Assignment-Fenster). Tenex-Interview beschreibt MetaHarness, Git-basierte Plan-/Entscheidungsakten und Vergütung nach Output. Kein belegter neuer öffentlicher Produktmeilenstein aus den Interviews extrahiert; nicht als neue GA/Preview zum Podcast-Datum umetikettiert. Historie SF Compute und MetaHarness ohne Treffer. Feed ist umfangreich; aktuelle Artikel gezielt gelesen, keine vollständige Lektüre sämtlicher automatisch zusammengefasster Community-/Social-Einträge behauptet."
+    },
+    {
+      "domain": "chinatalk.media",
+      "name": "ChinaTalk",
+      "status": "checked",
+      "checked_url": "https://chinatalk.media/",
+      "result": "Index und Original Drone Dominance vom 19.10.2026 geprüft. Aktueller Beitrag ist ein Drohnen-Interview; nur Vorspann frei, danach ausdrücklich Subscribe for free to continue reading. Kein Login und keine Schranken-Umgehung. Keine belegte neue KI-Entwicklung aus dem lesbaren Vorspann, daher kein Kandidat. Übrige sichtbare KI-Beiträge vor dem Fenster 19.–21.10.2026. Originalzugang eingeschränkt; kein Volltext behauptet."
+    },
+    {
+      "domain": "artificialanalysis.ai",
+      "name": "Artificial Analysis",
+      "status": "checked",
+      "checked_url": "https://artificialanalysis.ai/",
+      "result": "Startseite, Changelog-Ausschnitt und datierter Artikelindex sowie beide Originalartikel vom 19.10.2026 gelesen. web_extract-429 bei HealthBench durch direkten erfolgreichen Originalabruf ersetzt. AA-PersonalityBench fehlt im Startseiten-Changelog, wurde im Artikelindex entdeckt. Keine neue Modellfreigabe aus bloßer Evaluation von MiniMax abgeleitet. Fenster 19.–21.10.2026."
+    },
+    {
+      "domain": "ai.meta.com",
+      "name": "Meta AI",
+      "status": "unavailable",
+      "checked_url": "https://research.meta.ai/",
+      "result": "web_extract des aktuellen Research-Hosts scheiterte mit 403; isolierter Desktop-Chrome-Batch erfolgreich (meta-browser.json): jüngstes Original im Index 15.10.2026, außerhalb 19.–21.10. Datumssuche Meta AI Muse October 20 2026 und breite Unternehmenssuche im Fenster ausgeführt. Sie liefern externe Unternehmens-/Datenschutzhinweise, aber keinen vollständigen aktuellen Meta-Originalüberblick. Technischer Indexzugang repariert, aktuelle Gesamt-Unternehmens-/Produktabdeckung bleibt offen; keine Entwarnung und keine Kandidaten in diesem Checkpoint. Der konkrete GhostShares-Bericht wurde separat unter Ars Technica mit Claroc als Primärbeleg bearbeitet; kein Oktober-15-Modell als neue Meldung umetikettiert."
+    },
+    {
+      "domain": "mistral.ai",
+      "name": "Mistral",
+      "status": "checked",
+      "checked_url": "https://mistral.ai/news/",
+      "result": "19.–21.10.2026: web_extract-Newsabruf scheiterte an Exa-429; direkter Newsindex und Voxtral-3-Original vollständig als HTML/Text/Links gesichert. Original datePublished 2026-10-20T12:00:22Z, Index 20.10.; jüngster anderer Research-Eintrag Timestral 15.10. Drei getrennte Entwicklungen: Transcribe-Modelle, TTS und Voice-Agent-SDK. Kein pauschales Open-Weights-Versprechen oder unabhängig bestätigte Benchmarkführerschaft. Historie zu Voxtral ohne Treffer."
+    },
+    {
+      "domain": "x.ai",
+      "name": "xAI",
+      "status": "checked",
+      "checked_url": "https://x.ai/news/",
+      "result": "Newsindex und Original IncidentSweep vom 20.10. gelesen; API-Release-Notes zuletzt 15.10. aktualisiert, jüngste datierte Änderung 14.10., keine API-Neuerung im Fenster 19.–21.10.2026. Neuer Anwendungsbericht, kein neuer allgemeiner Grok-Bot-Start. Historie Grok Bot geprüft: bisheriger Supportbericht vom 22.09.; IncidentWatch/IncidentSweep ist konkrete neue Entwicklung.",
+      "checks": [
+        {
+          "url": "https://x.ai/news/",
+          "status": "checked",
+          "result": "web_extract: aktueller Index mit IncidentSweep 20.10.2026, verlinkten Originaltext gelesen."
+        },
+        {
+          "url": "https://docs.x.ai/developers/release-notes",
+          "status": "checked",
+          "result": "web_extract: datierte Oktober-Notes gelesen, neueste Änderung 14.10., Last updated October 15 2026; keine Einträge 19.–21.10."
+        }
+      ]
+    },
+    {
+      "domain": "openclaw.ai",
+      "name": "OpenClaw Blog",
+      "status": "checked",
+      "checked_url": "https://openclaw.ai/blog/",
+      "result": "Blogübersicht via web_extract und reservierte Datumssuche für 19.–21.10.2026 geprüft. Neuester Blogbeitrag vom 16.10.2026; keine neue Meldung im zugeteilten Fenster gefunden."
+    },
+    {
+      "domain": "shopify.engineering",
+      "name": "Shopify Engineering",
+      "status": "checked",
+      "checked_url": "https://shopify.engineering/",
+      "result": "19.–21.10.: Index und drei verlinkte Originale gelesen: task experts (21.10.), catalog clustering (20.10.), Overexposed (19.10.). Overexposed bereits h-6f23c857993afcf7b06812b0, nicht erneut nominiert. Neue technische Anbieter-Fallstudien mit begrenzten, nicht unabhängig bestätigten Ergebnissen. Caches 728e90bee565.json, 2a1df7b556eb.json und 053d54cae2ca.json."
+    },
+    {
+      "domain": "technologyreview.com",
+      "name": "MIT Technology Review",
+      "status": "checked",
+      "checked_url": "https://technologyreview.com/",
+      "result": "19.–21.10.2026: Extraktions-Homepage war unvollständig/veraltet; reservierte gezielte Datumssuche plus direkter aktueller Homepageabruf erschlossen Artikel vom 19./20.10. Originale zu Astrolab/Spaceborne-4 und Eko vollständig frei lesbar im direkten Abruf, mit Datum und Roh-HTML gecacht. Keine Aboschranke umgangen. Zwei Kandidaten, keine anthropomorphe Spiel-/Bewusstseinsbehauptung und kein bereits erfolgter Mondstart. Suchtreffer zum Goodfire-Interview nur Entdeckung, nicht als gelesene Evidenz oder bewiesener Durchbruch verwendet. Datumsfelder am Original bestätigen 19. bzw. 20.10.; Historienabfragen Eko und Astrolab liefern kein Entwicklungsduplikat."
+    },
+    {
+      "domain": "cohere.com",
+      "name": "Cohere",
+      "status": "checked",
+      "checked_url": "https://cohere.com/blog",
+      "result": "Aktuellen Blogindex und datierten Originalbeitrag vom 20.10.2026 direkt gelesen, gezielte Fenstersuche ergänzt. CALIBER ist neue Forschungsmethode, keine Produkt-GA; keine Aussage zur praktischen Wirksamkeit von Abstention oder Retrieval, die ausdrücklich noch ungetestet sind. Historie CALIBER ohne Treffer. Volltext mit Roh-HTML und Abrufzeit in cohere-confidence.json und bereinigter Text cohere-confidence-clean.json."
+    },
+    {
+      "domain": "qwen.ai",
+      "name": "Qwen",
+      "status": "unavailable",
+      "checked_url": "https://qwen.ai/research",
+      "result": "Policy vollständig gelesen. Web-Extraktion nur JS-Hülle; EIN isolierter Desktop-Chrome-Indexbatch mit Render-Wartezeit lieferte echte September-Karten. Beide öffentlichen Helper-Routen erfolgreich: Research-API 40 datierte Artikel, jüngster 20.09.2026, discovery_complete=false ohne Total/Pagination; offizieller Originalartikel qwen-image-2.1 per Browser lesbar mit Datum 2026/09/20, also nicht im Fenster 15.–21.10. Code-Release-API 30 Einträge: stabiles v0.25.3 vom 19.10.06:06:37Z, v0.25.4-preview.1 vom 20.10.22:22:11Z und jüngstes Nightly vom 20.10.23:20:48Z. Stable/Preview/Nightly/SDK/Desktop ausdrücklich unterschieden; keine neue Modellfamilie. Zusätzlich exakte Datumssuche 'Qwen October 20 21 2026 model release' und breite Qwen-Fenstersuche 15.–21.10.; keine tragfähige aktuelle Modell-/Unternehmensabdeckung. Technischer Volltextzugang repariert, Research-Entdeckung veraltet und Gesamtquelle bleibt unvollständig/unavailable. Kein Kandidat hier; separat belegte Qwen-Code-Entwicklung in qwen-handoff.json zur regulären Discovery-Abnahme. Rohantworten, API-Caches und Browseroriginale im Workerordner."
+    },
+    {
+      "domain": "aws.amazon.com",
+      "name": "AWS Machine Learning",
+      "status": "checked",
+      "checked_url": "https://aws.amazon.com/blogs/machine-learning/",
+      "result": "19.–21.10.2026: Übersicht via web_extract und vollständig direkt gelesen; direkte aktuelle Übersicht enthält weitere Einträge, die der Extract ausließ. Originale Kanada-CRIS, Agent Registry und Laplace 3B vollständig direkt mit HTML/Text/Links gesichert. Alle drei sichtbaren Originaldaten 20 OCT 2026; Bildpfade mit 14./16.10. im Extrakt sind kein Publikationsdatum. Datierte Praxisartikel zu Smartsheet, Supply-Chain, GPT-OSS-Finetuning, Octave, PKI, Eon und Denodo nur auf Indexebene gesichtet, nicht als neue Produkte oder umfassend volltextgelesen ausgegeben. Drei begrenzte Kandidaten: regionale Modellintegration, publizierte Discovery-Referenzintegration, Trainium2-Forschungsfall. Kein pauschaler GA- oder Sicherheits-/ROI-Nachweis; Benchmarks sind Autorenmessungen. Historie zu Kanada/Laplace ohne Entwicklungsduplikat."
+    },
+    {
+      "domain": "deepmind.google",
+      "name": "Google DeepMind",
+      "status": "checked",
+      "checked_url": "https://deepmind.google/discover/blog/",
+      "result": "Zeitraum 19.–21.10.2026: web_extract des alten Discover-Einstiegs lieferte veraltete Liste. Direkter Abruf gzip-komprimiert; aktueller /blog/-Index und RSS /blog/rss.xml separat erfolgreich gelesen und gecacht (dd5d9b8662f3.json, 9c92f29eb293.json). Zusätzliche Datums- und breitere Suche. Neuester datierter RSS-Beitrag 15.10.2026 (Antimicrobial Discovery), daher kein neuer Beitrag im Fenster gefunden. Keine Aussage über ungeprüfte externe Google-Produkte."
+    },
+    {
+      "domain": "research.google",
+      "name": "Google Research",
+      "status": "checked",
+      "checked_url": "https://research.google/blog/",
+      "result": "Direktes HTML und Extraktion des Research-Blogs sowie offizieller RSS-Feed geprüft; neuester eigenständiger Indexbeitrag 16.10. außerhalb des Fensters. Gezielt datierte Suche zunächst leer; breitere Datumssuche entdeckte echtes Update vom 20.10. im Sammelbeitrag vom 14.10. Original vollständig gelesen und Update-Header sowie Abschnitt 4 bestätigt. Nur neue SR200-Chipentwicklung als Kandidat, keine Umdatierung der übrigen neun alten Themen. Google-update.json enthält Original-HTML, google-update-clean.json Volltext."
+    },
+    {
+      "domain": "nist.gov",
+      "name": "NIST AI",
+      "status": "checked",
+      "checked_url": "https://www.nist.gov/artificial-intelligence",
+      "result": "19.–21.10.2026: alter extrahierter KI-Einstieg war veraltet; direkter Abruf leitet auf Super-intelligence-Inhalt weiter. Themenübersicht und News-and-Updates-Themenliste direkt gelesen, Datums-/KI-Suche ergänzt. Neuester fachlich einschlägiger Beitrag Key Practices for Incident Readiness and Response am Original auf 16.10.2026 datiert und damit außerhalb des Fensters (403c77b7b039.json). Themen-News-Liste a1eea9b4905a.json enthält keine neuere KI-Ankündigung. Suchtreffer Cybersecurity Career Week vom 21.10. ist Karriereveranstaltung, keine neue KI-Entwicklung. Keine vollständige Abdeckung sämtlicher NIST-Publikationsdatenbanken beansprucht."
+    }
+  ],
+  "source_checks_version": 1,
+  "registry_version": 5
+}
