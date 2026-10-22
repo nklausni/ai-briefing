@@ -1,15 +1,19 @@
 # Hermes-Laufzeitvertrag für das AI-Briefing
 
-Die Pipeline nutzt die zehn gleichzeitig zulässigen Hermes-Kind-Agenten. Bei 41
+Die Pipeline nutzt die zehn gleichzeitig zulässigen Hermes-Kind-Agenten. Bei 40
 Pflichtquellen entstehen fünf Pakete plus Discovery: ein gemeinsamer Batch.
 Weitere Quellen erzeugen automatisch weitere Pakete, ohne Quellen wegzulassen.
 Suchbudget 35 je Recherche-Agent und Hermes-Schutzlimit 50 bleiben unverändert.
 
 Hermes-Cron unterstützt keine verlässlich zustellbare asynchrone Delegation und
-fällt auf synchrone Batches zurück. Der allgemeine 420-Sekunden-Tool-Wächter
-unterbricht diese sonst vor dem Ende der Kinder. Verwende die unterstützte,
-persistente Konfiguration aus `ops/hermes-runtime.yaml` in `/opt/data/config.yaml`:
-beide Tool-Executor-Fristen sind 1800 Sekunden, nicht unbegrenzt. Diese Werte gelten
+fällt auf synchrone Batches zurück. Ältere Hermes-Versionen unterbrachen diese mit
+dem allgemeinen 420-Sekunden-Tool-Wächter vor dem Ende der Kinder. Der installierte
+Executor nimmt `delegate_task` inzwischen von diesem **allgemeinen sequenziellen**
+Wächter aus; Kind-Heartbeats, Stale-Monitor und eigene Delegationsfristen bleiben
+zuständig. Das ist nicht gleichbedeutend mit unbegrenzter Kindlaufzeit. Die
+unterstützte persistente Konfiguration aus `ops/hermes-runtime.yaml` in
+`/opt/data/config.yaml` bleibt unverändert: beide allgemeinen Tool-Executor-Fristen
+sind 1800 Sekunden. Diese Werte gelten
 für das Default-Profil einschließlich seiner anderen Jobs; spezifische HTTP-/Terminal-
 Fristen, Approval-Regeln und Suchbudgets werden nicht geändert. Es gibt keinen Patch
 im Hermes-Installationsverzeichnis, der bei einem Update verloren gehen könnte.
@@ -32,7 +36,8 @@ Die Berliner Gate-Datei `ai-briefing-berlin-gate.py` lässt nur den Lauf um 08:0
 
    ```sh
    /opt/hermes/.venv/bin/python scripts/check_hermes_runtime.py
-   python3 -m unittest discover -s scripts/test -t scripts/test
+   /opt/hermes/.venv/bin/python -m unittest discover -s scripts/test -t scripts/test
+   node --test scripts/test/search.test.cjs
    ```
 
    Der Runtime-Check nutzt die tatsächlichen Hermes-Timeout-Resolver, nicht nur

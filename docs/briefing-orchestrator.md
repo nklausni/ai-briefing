@@ -40,6 +40,23 @@ uncommittete Änderungen; stage später ausschließlich freigegebene Daten/Gener
 Bei Konflikt oder fremden Änderungen an den zu bearbeitenden Daten stoppe mit konkreter
 Fehlermeldung. Arbeitsunterlagen/Skripte werden vom Briefing-Job nicht bearbeitet.
 
+Vor `prepare`, Delegation und Recherche den lokalen Laufzeitvertrag prüfen:
+
+```sh
+/opt/hermes/.venv/bin/python scripts/check_hermes_runtime.py
+/opt/hermes/.venv/bin/python -m unittest discover -s scripts/test -t scripts/test
+node --test scripts/test/search.test.cjs
+```
+
+Alle drei Befehle müssen erfolgreich sein. Bei einem Runtime-/Testfehler stoppen:
+keine Implementierung oder Tests im Cron-Lauf ändern, nichts überspringen und keine
+Fristen, Toolsets oder Freigaben anpassen. Den konkreten Test/Fehler melden und
+vorhandene Recherche erhalten. Die Abschlussprüfungen nach der Redaktion bleiben
+zusätzlich erforderlich. Die Runtime-Tests bilden den historischen 420-Sekunden-
+Wächter ausdrücklich mit deaktivierter Fixture-Ausnahmeliste nach; aktuelle Hermes-
+Versionen nehmen `delegate_task` vom allgemeinen sequenziellen Wächter aus. Das ist
+kein Recherchefehler und kein Grund, einen beendeten Batch erneut zu starten.
+
 Verwende `RUN=/opt/data/ai-briefing-research/YYYY-MM-DD`:
 
 ```sh
@@ -238,7 +255,8 @@ Meldungen und Preview-/GA-Unterschiede bleiben bestehen. Anschließend:
 python3 scripts/research_pipeline.py check-editor --run-dir "$RUN"
 python3 scripts/validate_research_audit.py "data/research-audit/YYYY-MM-DD.json" YYYY-MM-DD
 python3 scripts/render.py
-python3 -m unittest discover -s scripts/test -t scripts/test
+/opt/hermes/.venv/bin/python -m unittest discover -s scripts/test -t scripts/test
+node --test scripts/test/search.test.cjs
 git diff --check
 ```
 

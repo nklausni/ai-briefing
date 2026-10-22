@@ -5,6 +5,20 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 
 class UnattendedCheckpointContractTests(unittest.TestCase):
+    def test_runtime_preflight_runs_before_research_preparation(self):
+        text = (ROOT / 'docs/briefing-orchestrator.md').read_text()
+        preparation = text.index('scripts/research_pipeline.py prepare')
+        for command in (
+            '/opt/hermes/.venv/bin/python scripts/check_hermes_runtime.py',
+            '/opt/hermes/.venv/bin/python -m unittest discover -s scripts/test -t scripts/test',
+            'node --test scripts/test/search.test.cjs',
+        ):
+            with self.subTest(command=command):
+                position = text.find(command)
+                self.assertGreaterEqual(position, 0, 'Missing runtime preflight command')
+                self.assertLess(position, preparation)
+        self.assertIn('keine Implementierung oder Tests im Cron-Lauf ändern', text)
+
     def test_worker_explains_pending_approval_without_disabling_safety(self):
         text = (ROOT / 'docs/briefing-research-worker.md').read_text()
         self.assertIn('pending_approval', text)
