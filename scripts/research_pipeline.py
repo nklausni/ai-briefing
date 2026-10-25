@@ -27,6 +27,8 @@ from validate_research_audit import (LEGACY_SOURCES, REGISTRY_VERSION, SOURCE_RE
                                      REQUIRED_SOURCE_CHECKS, SOURCE_CHECKS_VERSION, domain_matches, validate)
 from editorial_coverage import validate_coverage, validate_development
 from arxiv_discovery import freshness_date
+from research_integrity import (POLICY_DATE, validate_entry as validate_integrity_entry,
+                                validate_candidate_identity)
 
 TOPICS = (
     "AI News", "Lokale LLMs", "Agentic Engineering / Vibe Coding", "AI Tools",
@@ -248,6 +250,8 @@ def prepare(root, run, day, sources=None):
                       "optional_sources": [{"domain": d, "name": n, "url": URL_OVERRIDES[d]} for d, n in OPTIONAL_SOURCES]})
         manifest = {"schema_version": 2, "source_checks_version": SOURCE_CHECKS_VERSION,
                     "date": day, "root": str(root), "registry": sources, "created_at": stamp(), "max_parallel": MAX_PARALLEL, "search_budget_per_task": SEARCH_BUDGET, "historical_weights_used": len(weights), "tasks": tasks}
+        if day >= POLICY_DATE:
+            manifest["integrity_version"] = 1
         if (root / "data/briefing.json").exists():
             write(run / "briefing-before.json", read(root / "data/briefing.json"))
         history = read(root / "data/history.json") if (root / "data/history.json").exists() else {"items": []}
@@ -335,6 +339,8 @@ def validate_candidates(candidates, day, since, strict=False, arxiv_policy=False
 def record(run, task_id, entry):
     manifest, task = task_for(run, task_id)
     registry_version, _ = registry_for_manifest(manifest)
+    if manifest.get("integrity_version"):
+        validate_integrity_entry(run, task, entry)
     if task["kind"] == "discovery":
         require(set(entry.get("topics_checked", [])) == set(TOPICS), "Discovery must cover all eight topics")
         require(bool(str(entry.get("result", "")).strip()), "Discovery needs a result, including when empty")
@@ -366,9 +372,19 @@ def record(run, task_id, entry):
 
 
 def missing(run, task):
-    if task["kind"] == "discovery":
-        return [] if (Path(run) / "discovery.json").exists() else ["discovery"]
-    return [s["domain"] for s in task["sources"] if not checkpoint_path(run, s["domain"]).exists()]
+    manifest = read(Path(run) / "manifest.json")
+    paths = [("discovery", Path(run) / "discovery.json")] if task["kind"] == "discovery" else [
+        (s["domain"], checkpoint_path(run, s["domain"])) for s in task["sources"]]
+    pending = []
+    for identity, path in paths:
+        if not path.exists():
+            pending.append(identity)
+        elif manifest.get("integrity_version"):
+            try:
+                validate_integrity_entry(run, task, read(path))
+            except (ValueError, KeyError, TypeError, OSError):
+                pending.append(identity)
+    return pending
 
 
 def task_payload(run, task):
@@ -540,6 +556,7 @@ def retry(run, task_id):
 
 def assemble(run):
     run = Path(run)
+    require(not (run / "integrity-rejection.json").exists(), "Research run is integrity-rejected; preserve it and use an authorized new recovery run")
     manifest = read(run / "manifest.json")
     registry_version, sources = registry_for_manifest(manifest)
     require(not any(t.get("state") == "running" for t in manifest["tasks"]), "Research agents still running")
@@ -550,12 +567,17 @@ def assemble(run):
     source_specs = {s["domain"]: s for t in manifest["tasks"] if t["kind"] == "sources" for s in t["sources"]}
     for (domain, _), entry in zip(sources, entries):
         require(entry.get("domain") == domain, "Checkpoint source ownership changed")
+        if manifest.get("integrity_version"):
+            task = next(t for t in manifest["tasks"] if t["id"] == entry["task_id"])
+            validate_integrity_entry(run, task, entry)
         validate_candidates(entry.get("candidates"), manifest["date"], source_specs[domain]["since"], manifest.get("schema_version", 1) >= 2, arxiv_policy=registry_version >= 5)
         if registry_version >= 2:
             reject_retired_source_candidates(entry["candidates"], registry_version)
     discovery = read(run / "discovery.json")
     require(set(discovery.get("topics_checked", [])) == set(TOPICS), "Incomplete discovery topics")
     discovery_task = next(t for t in manifest["tasks"] if t["id"] == "discovery")
+    if manifest.get("integrity_version"):
+        validate_integrity_entry(run, discovery_task, discovery)
     validate_candidates(discovery.get("candidates"), manifest["date"], discovery_task["since"], manifest.get("schema_version", 1) >= 2, arxiv_policy=registry_version >= 5)
     if registry_version >= 2:
         reject_retired_source_candidates(discovery["candidates"], registry_version)
@@ -571,6 +593,13 @@ def assemble(run):
                 result["checks"] = entry.get("checks", [])
     if registry_version >= 2:
         audit["registry_version"] = registry_version
+    if manifest.get("integrity_version"):
+        audit["integrity_version"] = manifest["integrity_version"]
+        audit["search_execution"] = {
+            "reserved": sum(len(read(path)) for path in (run / "searches").glob("*.json")),
+            "executed": len(list((run / "receipts").glob("search-*.json"))),
+            "failed": sum(read(path).get("status") != "success" for path in (run / "receipts").glob("search-*.json")),
+        }
     require(not validate(audit, manifest["date"]), "Invalid source audit")
     candidates = {}
     for entry in entries + [discovery]:
@@ -587,6 +616,9 @@ def assemble(run):
             candidates[addition["id"]]["evidence"].extend(addition["evidence"])
     if registry_version >= 2:
         reject_retired_source_candidates(candidates.values(), registry_version)
+    if manifest.get("integrity_version"):
+        for candidate in candidates.values():
+            validate_candidate_identity(candidate)
     write(run / "candidates.json", list(candidates.values()))
     write(Path(manifest["root"]) / "data/research-audit" / (manifest["date"] + ".json"), audit)
     status_path = run / "research-status.json"
@@ -694,10 +726,14 @@ def timings(run):
     publication = read(run / "publication.json") if (run / "publication.json").exists() else {}
     starts = [task["dispatched_at"] for task in manifest["tasks"] if task.get("dispatched_at")]
     searches = sum(len(read(path)) for path in (run / "searches").glob("*.json"))
+    executions = list((run / "receipts").glob("search-*.json"))
     return {
         "date": manifest["date"],
         "sources": len(manifest["registry"]),
-        "searches": searches,
+        "searches": len(executions) if manifest.get("integrity_version") else searches,
+        "reserved_searches": searches,
+        "executed_searches": len(executions),
+        "failed_searches": sum(read(path).get("status") != "success" for path in executions),
         "historical_weights_used": manifest.get("historical_weights_used", 0),
         "research_minutes": elapsed_minutes(min(starts) if starts else None, research.get("completed_at")),
         "editorial_minutes": elapsed_minutes(research.get("completed_at"), editor.get("checked_at")),
@@ -706,6 +742,11 @@ def timings(run):
                    "minutes": elapsed_minutes(task.get("dispatched_at"), task.get("finished_at"))}
                   for task in manifest["tasks"]],
     }
+
+
+def verify_live_bytes(actual, expected):
+    require(actual == expected, "Live site bytes do not match the committed issue")
+    return hashlib.sha256(actual).hexdigest()
 
 
 def verify_publication(run):
@@ -735,7 +776,14 @@ def verify_publication(run):
     url = "https://nklausni.github.io/ai-briefing/"
     with urlopen(Request(url, headers={"User-Agent": "ai-briefing-publication-check"}), timeout=30) as response:
         require(response.status == 200, "Briefing page did not return HTTP 200")
+        live_sha256 = None
+        if manifest.get("integrity_version"):
+            expected = subprocess.run(["git", "-C", root, "show", head + ":site/index.html"], check=True, capture_output=True).stdout
+            live_sha256 = verify_live_bytes(response.read(), expected)
     result = {"status": "published", "date": manifest["date"], "commit": head, "workflow_url": latest["html_url"], "url": url, "verified_at": stamp(), "briefing_sha256": editor["briefing_sha256"]}
+    if live_sha256:
+        result["live_index_sha256"] = live_sha256
+        result["item_count"] = sum(len(topic.get("items", [])) for topic in tracked.get("topics", []))
     write(run / "publication.json", result)
     return result
 

@@ -1,5 +1,10 @@
 # Tägliches AI-Briefing: Recherche koordinieren und verifiziert veröffentlichen
 
+Verbindlich zusätzlich: `docs/research-integrity.md` lesen. Seit 25.10.2026
+prüft die aktive Pipeline ausführbare Such-Receipts und unveränderte Originalcaches,
+nicht nur vorhandene Checkpoint-Dateien. Worker-Errata/partielle Ergebnisse nicht
+als substantielle Abnahme umdeuten. `timings` trennt Reservierungen und Ausführungen.
+
 Arbeitsverzeichnis `/opt/data/ai-briefing`. Du bist Schlussredakteur und koordinierst
 Recherche-Agenten. Implementierung: `scripts/research_pipeline.py`. Die Pflichtliste
 kommt ausschließlich aus `SOURCES` in `scripts/validate_research_audit.py`. Neue

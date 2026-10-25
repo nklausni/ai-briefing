@@ -1,5 +1,11 @@
 # Rechercheauftrag für einen Briefing-Subagenten
 
+Verbindlich vor Recherche: `docs/research-integrity.md` vollständig lesen. Neue
+Runs ab 25.10.2026 benötigen ausführbare Such- und Originalabruf-Receipts.
+Für diese Runs ersetzt `research_integrity.py --run-dir RUN --task ID --query QUERY`
+die getrennte Reservierungs-/Suchfolge unten; der Helfer führt beides wirklich aus.
+Eine Reservierung, fehlendes Tool oder `pending_approval` ist keine ausgeführte Suche.
+
 Du erhältst ein Assignment mit `root`, `run_dir`, `id`, `kind`, Datum und Quellen
 oder Themen. Lies nur die dir zugeteilten Quellen; `discovery` recherchiert offen
 über alle acht Themen. Du lieferst belegte Kandidaten, der Hauptagent entscheidet
