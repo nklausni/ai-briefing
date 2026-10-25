@@ -1,5 +1,97 @@
 [
  {
+  "title": "Ollama unterstützt Phonon-Sprachausgabe lokal auf Apple Silicon",
+  "summary": "Ollama ergänzt lokale Text-to-Speech-Ausgabe mit Gradiums Phonon auf Apple-Silicon-Macs, einschließlich Streaming und OpenAI-kompatiblem Audio-Endpunkt. Windows und Linux sind noch angekündigt. Wichtig für die Nutzung: Das englische phonon-Modell steht unter Apache 2.0, die 40M-Varianten für weitere Sprachen dagegen unter CC BY-NC 4.0. [10]",
+  "topic_id": "lokale-llms",
+  "topic": "Lokale LLMs",
+  "date": "2026-10-24",
+  "sources": [
+   {
+    "label": "[10] Original / ollama.com",
+    "url": "https://ollama.com/blog/speech-models"
+   }
+  ],
+  "change_type": "update"
+ },
+ {
+  "title": "Qwen Code v0.26.1 ergänzt manuelle Kontextkompression für Managed Sessions",
+  "summary": "Das stabile Coding-Agent-Release ergänzt manuelle Kontextkompression für Workspace-gebundene Managed Sessions über API und WebShell. Die Funktion läuft nur im Leerlauf und erhält laut offiziellen Release Notes die Audit-Historie. Es handelt sich um eine Agentenfunktion, nicht um neue Qwen-Modellgewichte. [33]",
+  "topic_id": "context-engineering",
+  "topic": "Context Engineering",
+  "date": "2026-10-24",
+  "sources": [
+   {
+    "label": "[33] Original / github.com",
+    "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.26.1"
+   }
+  ],
+  "change_type": "update"
+ },
+ {
+  "title": "GPT-6.1 Sol und Grok 4.7 geben im Convovo-API-Test gegensätzliche Wahlempfehlungen",
+  "summary": "Convovo vergleicht erzwungene Wahlempfehlungen von GPT-6.1 Sol und Grok 4.7 über APIs mit aktivierter Websuche; TechCrunch berichtet am 24. Oktober über gegenläufige parteipolitische Antwortmuster. Verbraucher-Apps verweigerten laut den gelesenen Quellen die Frage. Das Ergebnis gilt für diesen konkreten Prompt-/API-Aufbau, nicht für alle politischen Antworten. Wegen interner Abweichungen zwischen Analyse- und Methodenzählern werden hier keine exakten Vergleichsquoten übernommen; das Briefing gibt keine Wahlempfehlung. [14][15]",
+  "topic_id": "ai-governance",
+  "topic": "AI Governance",
+  "date": "2026-10-24",
+  "sources": [
+   {
+    "label": "[14] Original / techcrunch.com",
+    "url": "https://techcrunch.com/2026/10/24/forced-to-pick-groks-ai-model-chooses-republicans-openais-picks-democrats/"
+   },
+   {
+    "label": "[15] Original / convovo.ai",
+    "url": "https://convovo.ai/ballot/"
+   }
+  ],
+  "change_type": "research"
+ },
+ {
+  "title": "CNBC All-America Economic Survey: Mehrheit lehnt KI-Rechenzentren in Wohnnähe ab",
+  "summary": "CNBC berichtet am 24. Oktober, dass 63 Prozent der befragten registrierten US-Wähler ein KI-Rechenzentrum im Umkreis von zehn Meilen ablehnen und 13 Prozent es unterstützen. Die Gesamtbefragung von Hart Research Associates und Public Opinion Strategies umfasste 1.000 registrierte Wähler vom 14. bis 18. Oktober; die Standortfrage ging nur an eine Teilstichprobe von ungefähr 500 Personen und hat laut CNBC eine Fehlermarge von ±4,38 Prozentpunkten. Das sind erklärte Einstellungen, kein Nachweis tatsächlicher Projektstopps oder Wahlausgänge. [20]",
+  "topic_id": "ai-governance",
+  "topic": "AI Governance",
+  "date": "2026-10-24",
+  "sources": [
+   {
+    "label": "[20] Original / www.cnbc.com",
+    "url": "https://www.cnbc.com/2026/10/24/trump-ai-data-centers-voter-backlash-midterms.html"
+   }
+  ],
+  "change_type": "research"
+ },
+ {
+  "title": "Qwen Code v0.26.1 verwaltet MCP-Server ohne neue Sitzung",
+  "summary": "Die offiziellen Release Notes führen die Verwaltung von MCP-Servern in Managed Agents ohne Neuerstellung der Sitzung auf. Die Funktion gehört zum stabilen Coding-Agent-Update v0.26.1 vom 24. Oktober; eine neue allgemeine Modellfamilie wird damit nicht veröffentlicht. [33]",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-10-24",
+  "sources": [
+   {
+    "label": "[33] Original / github.com",
+    "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.26.1"
+   }
+  ],
+  "change_type": "update"
+ },
+ {
+  "title": "Agensh veröffentlicht dezentralen Multiagenten-Harness als Open Source",
+  "summary": "Microsoft gibt Agensh am 24. Oktober mit Harness, Experiment-Startskripten und Reproduktionsanleitung unter MIT-Lizenz frei. Die Agenten koordinieren sich ohne zentralen Orchestrator über gemeinsame Arbeitsumgebung, Nachrichten und Kontextboard. Der September-Preprint ist älter; neu ist die Codefreigabe. Versuche bis 1.024 Agenten sind Forschungsbefunde, keine allgemeine Produktions- oder Kostengarantie. [1][2]",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-10-24",
+  "sources": [
+   {
+    "label": "[1] Original / www.marktechpost.com",
+    "url": "https://www.marktechpost.com/2026/10/24/microsoft-agensh-multi-agent-harness-1024-agents/"
+   },
+   {
+    "label": "[2] Original / github.com",
+    "url": "https://github.com/microsoft/Agensh"
+   }
+  ],
+  "change_type": "general_availability"
+ },
+ {
   "title": "ProQuant kombiniert Experten-Pruning und Bitzuweisung für MoE-Quantisierung",
   "summary": "Der neue ProQuant-Preprint kombiniert das Entfernen von Experten mit einer gemischten Bitzuweisung und einer RMSNorm-Anpassung, um MoE-Modelle bei engem Speicherbudget zu quantisieren.[15][13][14] Der Abstract berichtet Vorteile in eigenen Experimenten, ohne damit allgemein bessere lokale Laufzeiten zu belegen.[15][13][14] Öffentliche New-Listung ist der 23. Oktober, Einreichung der v1 der 22. Oktober.[15][13][14]",
   "topic_id": "lokale-llms",
@@ -100,6 +192,34 @@
   "change_type": "business"
  },
  {
+  "title": "SageMaker AI demonstriert Multi-Turn-RL an einem Wordle-Agenten",
+  "summary": "AWS veröffentlicht einen detaillierten Wordle-Trainingsleitfaden für Multi-Turn-RL mit SageMaker AI und AgentCore. Dabei wird ein gpt-oss-20b-Modell anhand des Ergebnisses ganzer Spielverläufe trainiert; der Beitrag zeigt auch Reward-Fehler und getrennte Infrastrukturkosten. Es ist eine neue Trainingsfallstudie, keine neue allgemeine Freigabe des bereits verfügbaren MTRL-Diensts und kein unabhängiger Leistungsvergleich. [25]",
+  "topic_id": "enterprise",
+  "topic": "Enterprise",
+  "date": "2026-10-23",
+  "sources": [
+   {
+    "label": "[25] Original / aws.amazon.com",
+    "url": "https://aws.amazon.com/blogs/machine-learning/multi-turn-reinforcement-learning-on-amazon-sagemaker-ai-a-hands-on-guide/"
+   }
+  ],
+  "change_type": "research"
+ },
+ {
+  "title": "Meta übernimmt die KI-Analyseplattform Sundial",
+  "summary": "The Verge berichtet am 23. Oktober unter Verweis auf Axios und Meta-Datenchef Alex Shultz, dass Meta Sundial übernimmt. Mitgründer Chandra Narayanan soll die Arbeit an Datenanalysewerkzeugen und Agenten leiten. Ein Kaufpreis ist im gelesenen Text nicht belegt; das Axios-Original blieb gesperrt, deshalb stützen sich die Angaben auf die tatsächlich gelesene Verge-Kurzmeldung. [17]",
+  "topic_id": "enterprise",
+  "topic": "Enterprise",
+  "date": "2026-10-23",
+  "sources": [
+   {
+    "label": "[17] Original / www.theverge.com",
+    "url": "https://www.theverge.com/tech/1018103/meta-is-acquiring-an-ai-analytics-company"
+   }
+  ],
+  "change_type": "business"
+ },
+ {
   "title": "MedGemma und MedSigLIP sollen Indonesiens TB-Screening lokal unterstützen",
   "summary": "Google Research berichtet am 23. Oktober, dass Indonesiens Gesundheitsministerium MedGemma und MedSigLIP mit heimischen Thoraxaufnahmen feinabstimmt.[62] Ziel ist lokal betriebene TB-Screening-Infrastruktur mit nationaler Datenhaltung; die genannten 50 Millionen jährlichen Screenings sind ein Programmziel, kein bereits erreichter Einsatzumfang.[62] Kein neues Modellrelease und keine eigenständige klinische Wirksamkeitsprüfung.[62]",
   "topic_id": "enterprise",
@@ -128,6 +248,34 @@
   "change_type": "update"
  },
  {
+  "title": "Bedrock Web Search ergänzt Domainfilter und Standortsteuerung",
+  "summary": "AWS ergänzt Domainfilter und optionale Standortangaben für Web Search in Amazon Bedrock. Pro Anfrage lassen sich bis zu 100 erlaubte oder 100 gesperrte Domains angeben. Die Steuerung erfolgt im web_search-Tool der vorhandenen OpenAI-Responses-kompatiblen Anfrage; verfügbar ist sie in den vier vom Anbieter genannten US-Regionen, nicht automatisch weltweit. [34]",
+  "topic_id": "enterprise",
+  "topic": "Enterprise",
+  "date": "2026-10-23",
+  "sources": [
+   {
+    "label": "[34] Original / aws.amazon.com",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/10/bedrock-web-search-domain-user-location/"
+   }
+  ],
+  "change_type": "update"
+ },
+ {
+  "title": "Bayer dokumentiert Agentic Decision Engine mit 22 Spezialagenten auf AgentCore",
+  "summary": "Bayer und AWS beschreiben die produktive Agentic Decision Engine für Crop Science: Ein Supervisor koordiniert 22 Spezialagenten, während LangGraph-Zustand in DynamoDB liegt und AgentCore Gateway APIs als MCP-Werkzeuge anbietet. Besonders relevant sind die getrennten Identitätsgrenzen, pro Agent begrenzte Werkzeuge sowie die Unterscheidung von HTTP-Erfolg und tatsächlich gelöster Aufgabe. Es handelt sich um eine Hersteller-/Kundenfallstudie; Effizienzangaben sind nicht unabhängig geprüft. [26]",
+  "topic_id": "enterprise",
+  "topic": "Enterprise",
+  "date": "2026-10-23",
+  "sources": [
+   {
+    "label": "[26] Original / aws.amazon.com",
+    "url": "https://aws.amazon.com/blogs/machine-learning/how-bayer-crop-science-built-an-agentic-decision-engine-on-amazon-bedrock-agentcore-with-aws-unified-operations/"
+   }
+  ],
+  "change_type": "research"
+ },
+ {
   "title": "American Express streicht fünf Prozent der Stellen zur Vorbereitung auf KI",
   "summary": "American Express kündigt einen Abbau von rund fünf Prozent seiner weltweiten Belegschaft und eine Restrukturierungsbelastung von 336 Millionen US-Dollar an.[108] Finanzchef Christophe Le Caillec begründet den Umbau gegenüber CNBC mit flacheren Strukturen und der Vorbereitung auf künftige KI-Automatisierung.[108] Dies belegt keinen bereits erreichten Produktivitätsgewinn durch KI.[108]",
   "topic_id": "enterprise",
@@ -140,6 +288,28 @@
    }
   ],
   "change_type": "business"
+ },
+ {
+  "title": "The Value of Memory trennt Informationsbewahrung und nutzbaren Agentenspeicher",
+  "summary": "Der Preprint The Value of Memory in Language Agents entwickelt einen entscheidungstheoretischen Rahmen, der bewahrte Information, tatsächliche Nutzung sowie Wiederherstellungs- und Revisionskosten unterscheidet. Diagnostische Beispiele sollen zeigen, dass gleicher Quellenzugriff nicht dieselben Antworten garantiert und geänderte Evaluatoren Scores verschieben können. Es handelt sich um Theorie und ausgewählte Diagnostik, nicht um eine neue allgemein überlegene Speicherimplementierung. Einreichung war am 22., öffentliche New-Listung am 23. Oktober. [8][6][9]",
+  "topic_id": "context-engineering",
+  "topic": "Context Engineering",
+  "date": "2026-10-23",
+  "sources": [
+   {
+    "label": "[8] Original / arxiv.org",
+    "url": "https://arxiv.org/abs/2610.31303"
+   },
+   {
+    "label": "[6] Original / arxiv.org",
+    "url": "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000"
+   },
+   {
+    "label": "[9] Original / arxiv.org",
+    "url": "https://arxiv.org/list/cs.AI/new?skip=0&show=2000"
+   }
+  ],
+  "change_type": "research"
  },
  {
   "title": "Raw-RAG fordert komplexe Agentenspeicher auf Gesprächsbenchmarks heraus",
@@ -182,6 +352,84 @@
   "change_type": "update"
  },
  {
+  "title": "LitPivot verknüpft Forschungsideen mit ausgewählten Literaturbelegen",
+  "summary": "Ai2 und die University of Pennsylvania stellen LitPivot vor: Das System ordnet Literatur nach Problem, Beitrag und Evaluationsplan einer Idee und schlägt mit Textbelegen gestützte Überarbeitungen vor. In einer Studie mit 17 Forschenden bewerteten zwei verblindete Fachexperten die Literaturfundierung besser als bei einem Editor mit KI-Chat. Das ist eine kleine Studie, kein Nachweis allgemein höherer wissenschaftlicher Qualität. [11]",
+  "topic_id": "ai-tools",
+  "topic": "AI Tools",
+  "date": "2026-10-23",
+  "sources": [
+   {
+    "label": "[11] Original / huggingface.co",
+    "url": "https://huggingface.co/blog/allenai/litpivot"
+   }
+  ],
+  "change_type": "research"
+ },
+ {
+  "title": "Grok Bot kann E-Mails mitsamt Bildern und Anhängen weiterleiten",
+  "summary": "Der Original-Changelog vom 23. Oktober ergänzt die Weiterleitung aus dem eigenen Bot-Posteingang unter Erhalt von Formatierung, Bildern und Anhängen. Die Funktion ist im gebündelten Update 0.75.5 aufgeführt und setzt laut Anbieter mindestens Grok Bot 0.75.2 voraus. Sie ist von Vault und Änderungen an Freigabekarten getrennt. [24]",
+  "topic_id": "ai-tools",
+  "topic": "AI Tools",
+  "date": "2026-10-23",
+  "sources": [
+   {
+    "label": "[24] Original / x.ai",
+    "url": "https://x.ai/changelog/bot"
+   }
+  ],
+  "change_type": "update"
+ },
+ {
+  "title": "Grok Bot ergänzt Vault zum Ausfüllen gespeicherter Anmelde- und Zahlungsdaten",
+  "summary": "Der Grok-Bot-Changelog vom 23. Oktober führt in Version 0.75.5, einschließlich 0.75.3 und 0.75.4, einen Vault in den Einstellungen auf. Bots können dort gespeicherte Logins, Karten- und Kontaktdaten beim Anmelden oder Checkout ausfüllen; laut Release Notes ist mindestens Grok Bot 0.75.2 nötig. Dies belegt eine Produktfunktion, keine unabhängig geprüfte Sicherheitsgarantie für die Speicherung sensibler Daten. [24]",
+  "topic_id": "ai-tools",
+  "topic": "AI Tools",
+  "date": "2026-10-23",
+  "sources": [
+   {
+    "label": "[24] Original / x.ai",
+    "url": "https://x.ai/changelog/bot"
+   }
+  ],
+  "change_type": "update"
+ },
+ {
+  "title": "A5 startet als technische Vorschau mit persistentem Arbeitskontext",
+  "summary": "Das A5-Team bietet eine technische Vorschau für macOS und Linux an. Der Agent kombiniert sitzungsübergreifende Markdown-Erinnerungen, einen Quellenindex und Vorschläge für neue Aufgaben; Nutzer entscheiden im Inbox-Workflow über deren Ausführung. Ein externer LLM-API-Zugang ist erforderlich, Linux ist noch nicht gründlich getestet. Quellcode wird erst angekündigt, nicht als bereits offen verfügbar bestätigt. [13]",
+  "topic_id": "ai-tools",
+  "topic": "AI Tools",
+  "date": "2026-10-23",
+  "sources": [
+   {
+    "label": "[13] Original / huggingface.co",
+    "url": "https://huggingface.co/blog/KYLN24/introducing-a5"
+   }
+  ],
+  "change_type": "preview"
+ },
+ {
+  "title": "Vercel Marketplace setzt Fristen gegen langlebige Zugangsschlüssel",
+  "summary": "The New Stack berichtet am 23. Oktober über Vercels Ankündigung vom 22. Oktober: Marketplace-Anbieter ohne die geforderte sichere Authentifizierung sollen ab 30. November 2026 eine Warnung erhalten und bis Januar 2027 umstellen oder ausgelistet werden. OIDC und kurzlebige Identitätstokens sollen dauerhafte Provider-Keys ersetzen. Die eigene API-/CLI-Migration ist noch nicht abgeschlossen; die gelesene GitHub-Actions-Anleitung verlangt weiterhin VERCEL_TOKEN. [21][22][23]",
+  "topic_id": "ai-security",
+  "topic": "AI Security",
+  "date": "2026-10-23",
+  "sources": [
+   {
+    "label": "[21] Original / thenewstack.io",
+    "url": "https://thenewstack.io/vercel-oidc-static-credentials/"
+   },
+   {
+    "label": "[22] Original / vercel.com",
+    "url": "https://vercel.com/blog/death-to-long-lived-static-credentials"
+   },
+   {
+    "label": "[23] Original / vercel.com",
+    "url": "https://vercel.com/kb/guide/how-can-i-use-github-actions-with-vercel"
+   }
+  ],
+  "change_type": "policy"
+ },
+ {
   "title": "Simulated Control Evals untersucht simulierte Toolantworten für Kontrolltests",
   "summary": "Das neue Preprint-Verfahren Simulated Control Evals ersetzt die Testumgebung durch vom Sprachmodell simulierte Toolantworten und prüft die Vorhersagen auf LinuxArena.[12][13][14] Die Autoren berichten bessere Vorhersagen gegenüber einer separaten BashArena-Testumgebung; das ist ein Forschungsergebnis unter den getesteten Bedingungen, keine Produktionssicherheitsgarantie.[12][13][14] Öffentlich neu gelistet am 23. Oktober, v1 bereits am 22. Oktober eingereicht.[12][13][14]",
   "topic_id": "ai-security",
@@ -220,6 +468,46 @@
    }
   ],
   "change_type": "security"
+ },
+ {
+  "title": "AgentPhishing prüft E-Mail-Agenten gegen angepasste Täuschungsversuche",
+  "summary": "Der AgentPhishing-Preprint führt einen Benchmark ein, der sowohl Phishing-Erkennung als auch das Befolgen schädlicher E-Mail-Anfragen durch Agenten prüft. Die Autoren berichten bei vier von neun Agenten weniger als zehn Prozent Erkennung und mehr als 45 Prozent Befolgung in ihrem synthetischen Test. Das ist keine Messung realer Kontokompromittierungen. Die v1 wurde am 22. Oktober eingereicht und am 23. Oktober in cs.CR erstmals öffentlich gelistet; cs.AI ist eine Kreuzlistung. [4][5][6][7]",
+  "topic_id": "ai-security",
+  "topic": "AI Security",
+  "date": "2026-10-23",
+  "sources": [
+   {
+    "label": "[4] Original / arxiv.org",
+    "url": "https://arxiv.org/abs/2610.31404"
+   },
+   {
+    "label": "[5] Original / arxiv.org",
+    "url": "https://arxiv.org/html/2610.31404v1"
+   },
+   {
+    "label": "[6] Original / arxiv.org",
+    "url": "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000"
+   },
+   {
+    "label": "[7] Original / arxiv.org",
+    "url": "https://arxiv.org/list/cs.CR/new?skip=0&show=2000"
+   }
+  ],
+  "change_type": "research"
+ },
+ {
+  "title": "Mundo verbindet Fotos mit programmierbaren 3D-Simulationen",
+  "summary": "Die Mundo-Forschenden beschreiben ein System, das aus mehreren Ansichten einen expliziten 3D-Proxy erstellt, Objektbewegungen simuliert und die Szene als Video rendert. Das ist keine Echtzeitwelt: Die Autoren nennen zehn bis zwanzig Minuten Rekonstruktion und etwa 1,5 Bilder pro Sekunde auf acht A800-GPUs. Kleine Objekte und längere dynamische Szenen bleiben problematisch. [12]",
+  "topic_id": "ai-news",
+  "topic": "AI News",
+  "date": "2026-10-23",
+  "sources": [
+   {
+    "label": "[12] Original / huggingface.co",
+    "url": "https://huggingface.co/blog/Luo-Yihang/mundo-world-model"
+   }
+  ],
+  "change_type": "research"
  },
  {
   "title": "Kimi K3.1 Pro startet in der API; offene Gewichte erst angekündigt",
@@ -272,6 +560,20 @@
   "change_type": "announcement"
  },
  {
+  "title": "Texas reicht DTPA-Klage gegen OpenAI und Sam Altman ein",
+  "summary": "Die texanische Generalstaatsanwaltschaft meldet am 23. Oktober eine Klage gegen OpenAI, verbundene Gesellschaften und CEO Sam Altman nach dem Texas Deceptive Trade Practices–Consumer Protection Act. Die Behörde wirft dem Anbieter irreführende Angaben und unzureichenden Schutz von ChatGPT-Nutzern vor. Das sind Vorwürfe der klagenden Behörde, keine gerichtlich festgestellten Tatsachen; ein Urteil oder eine Stellungnahme der Beklagten ist im gelesenen Original nicht belegt. [32]",
+  "topic_id": "ai-governance",
+  "topic": "AI Governance",
+  "date": "2026-10-23",
+  "sources": [
+   {
+    "label": "[32] Original / www.texasattorneygeneral.gov",
+    "url": "https://www.texasattorneygeneral.gov/news/releases/attorney-general-ken-paxton-sues-openai-and-ceo-sam-altman-lying-users-and-harming-texans"
+   }
+  ],
+  "change_type": "policy"
+ },
+ {
   "title": "Personal Intelligence: Google-Datenschutzrichtlinie nennt Ausnahme für personalisierte Werbung",
   "summary": "Ars und Android Authority berichten am 23. Oktober über eine seit 16. Oktober geltende Ausnahme in Googles Datenschutzrichtlinie: Freiwillig mit anderen Google-Diensten geteilte Gmail-, Drive- oder Photos-Daten können zur personalisierten Werbung beitragen.[105][106][107] Google betont das Opt-in und bestreitet, Anzeigen direkt auf das Gmail-Postfach oder die Photos-Bibliothek zu stützen.[105][106][107] Die Berichte belegen weder pauschales automatisches Postfach-Scanning noch eine erst am 23. Oktober eingeführte Regel.[105][106][107]",
   "topic_id": "ai-governance",
@@ -294,6 +596,38 @@
   "change_type": "policy"
  },
  {
+  "title": "Meta Commercial Terms werden auf den 20. November verschoben",
+  "summary": "Meta verschiebt das Inkrafttreten seiner umstrittenen Commercial Terms vom 30. Oktober auf den 20. November 2026. The Verge zitiert dazu eine direkte Bestätigung des Meta-Sprechers Daniel Roberts. Die Verschiebung ist ein neuer Verfahrensschritt gegenüber der bereits dokumentierten Streichung einer Trainingsklausel; sie beweist keine Änderung des tatsächlichen Crawlings oder eine rechtliche Erlaubnis zum KI-Training. [16]",
+  "topic_id": "ai-governance",
+  "topic": "AI Governance",
+  "date": "2026-10-23",
+  "sources": [
+   {
+    "label": "[16] Original / www.theverge.com",
+    "url": "https://www.theverge.com/tech/1017450/meta-business-terms-delayed-ai-scraping"
+   }
+  ],
+  "change_type": "policy"
+ },
+ {
+  "title": "Intel erhält einjährige FCC-Ausnahme für ausgewählte Fabrikroboter",
+  "summary": "Ars berichtet am 23. Oktober über eine FCC-Anordnung vom 22. Oktober: Intel darf bestimmte bereits eingesetzte Automated Guided Vehicles ein Jahr weiter nutzen und näher bezeichnete Wartungsänderungen vornehmen. Die Ausnahme soll Unterbrechungen der US-Chipfertigung verhindern. Sie gilt für die im Antrag bezeichneten Fahrzeuge und ist weder eine generelle Aufhebung der Beschränkungen noch eine neue Freigabe aller ausländischen Roboter. [18][19]",
+  "topic_id": "ai-governance",
+  "topic": "AI Governance",
+  "date": "2026-10-23",
+  "sources": [
+   {
+    "label": "[18] Original / arstechnica.com",
+    "url": "https://arstechnica.com/ai/2026/10/intel-gets-waiver-after-worries-fuzzy-us-ban-on-foreign-made-robots-may-hit-fabs/"
+   },
+   {
+    "label": "[19] Original / docs.fcc.gov",
+    "url": "https://docs.fcc.gov/public/attachments/DA-26-1146A1.txt"
+   }
+  ],
+  "change_type": "policy"
+ },
+ {
   "title": "OpenCode 2.1.4 zeigt MCP-Eingabeformulare in Web und Desktop",
   "summary": "OpenCode 2.1.4 behebt das Warten auf MCP-Eingaben: Formulare während Werkzeugaufrufen erscheinen nun in Desktop- und Web-Sitzungen.[104] Unterstützt werden unter anderem strukturierte Angaben und URL-Anfragen.[104] Die Änderung ist unabhängig von der ebenfalls neuen Hintergrund-Komprimierung.[104]",
   "topic_id": "agentic-engineering",
@@ -308,6 +642,20 @@
   "change_type": "update"
  },
  {
+  "title": "Infinity veröffentlicht frühen Agenten-Runtime-Ansatz mit suspendierten Wartezuständen",
+  "summary": "AWS und UC Berkeley veröffentlichen Infinity im Hydro-Projekt unter Apache 2.0. Die Runtime speichert Agentenzustände beim Werkzeugaufruf und setzt sie nach Eingang des Ergebnisses fort, statt einen blockierenden Prozess zu halten. Die Zahl von rund 75.000 wartenden Agenten in 8 GB ist eine Hochrechnung aus einem synthetischen Benchmark mit simuliertem Modell auf AMD-EPYC-Hardware, kein nachgewiesener Raspberry-Pi-Produktionstest. [35]",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-10-23",
+  "sources": [
+   {
+    "label": "[35] Original / aws.amazon.com",
+    "url": "https://aws.amazon.com/blogs/opensource/introducing-infinity-a-runtime-for-extreme-agent-concurrency/"
+   }
+  ],
+  "change_type": "research"
+ },
+ {
   "title": "GitHub Copilot in Teams verbindet Benachrichtigungen mit Pull Requests",
   "summary": "Die konsolidierte GitHub-App in Teams erlaubt, aus einer Issue-Benachrichtigung per Erwähnung Untersuchung, Fix und Pull Request anzustoßen.[111] Review, Tests und Merge bleiben beim Team.[111] Die alte GitHub-App soll am 16. November 2026 eingestellt werden.[111]",
   "topic_id": "agentic-engineering",
@@ -320,6 +668,20 @@
    }
   ],
   "change_type": "integration"
+ },
+ {
+  "title": "Claude Code und mini-SWE-agent zeigen im Harness-Vergleich ähnliche Trefferquoten bei unterschiedlichen Kosten",
+  "summary": "VentureBeat berichtet über einen kontrollierten Vergleich von Claude Code, OpenCode und mini-SWE-agent mit festgehaltenen Modellen. Auf dem größeren Pool von 447 SWE-bench-Aufgaben lagen Claude Code und mini-SWE-agent bei zwei Qwen-Modellen innerhalb einer vorgegebenen Äquivalenzmarge von fünf Prozentpunkten; Kosten unterschieden sich je Kombination um bis zum Dreifachen. Das Ergebnis gilt für die getesteten Modelle und Aufgaben, nicht für alle Harnesses oder Produktionsarbeit. Originalpaper und Versionsdatum sind hier nicht separat geprüft; Veröffentlichungsdatum ist das des Berichts. [3]",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-10-23",
+  "sources": [
+   {
+    "label": "[3] Original / venturebeat.com",
+    "url": "https://venturebeat.com/orchestration/a-coding-agents-harness-can-triple-its-cost-without-making-it-more-accurate-study-finds"
+   }
+  ],
+  "change_type": "research"
  },
  {
   "title": "llama.cpp ergänzt MiniCPM-OCR 1.0 im Build b11826",
@@ -602,6 +964,24 @@
    }
   ],
   "change_type": "general_availability"
+ },
+ {
+  "title": "Arc-Abschaltung für den 22. Dezember angekündigt",
+  "summary": "The Browser Company kündigt an, Arc für macOS und Windows am 22. Dezember 2026 abzuschalten und die Entwicklung auf Dia zu konzentrieren. Neue Konten sind seit 22. Oktober nicht mehr möglich; mobile KI-Funktionen wie Browse for Me sollen am 23. November entfallen. Bestehende Desktop-Nutzer müssen vor dem Abschaltdatum Daten exportieren oder migrieren; es handelt sich um eine angekündigte künftige Abschaltung, nicht um einen bereits stillgelegten Browser. [30][31]",
+  "topic_id": "ai-tools",
+  "topic": "AI Tools",
+  "date": "2026-10-22",
+  "sources": [
+   {
+    "label": "[30] Original / arc.net",
+    "url": "https://arc.net/"
+   },
+   {
+    "label": "[31] Original / www.heise.de",
+    "url": "https://www.heise.de/news/Am-22-Dezember-ist-Schluss-The-Browser-Company-stellt-Arc-Browser-ein-11497895.html"
+   }
+  ],
+  "change_type": "announcement"
  },
  {
   "title": "Amazon Polly Generative engine erhält ein allgemein verfügbares Sprachupgrade",
@@ -1214,6 +1594,20 @@
   "change_type": "announcement"
  },
  {
+  "title": "Nutanix und Supermicro planen gemeinsames System für private KI-Inferenz",
+  "summary": "Nutanix und Supermicro kündigen ein gemeinsam entwickeltes System für private KI-Inferenz an: Supermicro-Server, NVIDIA-GPUs und -Netzwerk sollen mit Nutanix Agentic AI kombiniert werden. Die Verfügbarkeit ist erst für Anfang 2027 geplant. Weniger Integrationsaufwand und niedrigere Kosten pro Token sind Herstellerziele, keine unabhängig gemessenen Ergebnisse oder bereits allgemein verfügbare Funktionen. [37]",
+  "topic_id": "enterprise",
+  "topic": "Enterprise",
+  "date": "2026-10-21",
+  "sources": [
+   {
+    "label": "[37] Original / www.nutanix.com",
+    "url": "https://www.nutanix.com/press-releases/2026/nutanix-and-supermicro-take-on-runaway-ai-costs-with-jointly-engineered-system"
+   }
+  ],
+  "change_type": "announcement"
+ },
+ {
   "title": "NVIDIA Agent Knowledge Foundation verbindet Unternehmensdaten mit Agenten",
   "summary": "NVIDIA erweitert sein Agent Toolkit um Agent Knowledge Foundation für Unternehmensdaten, darunter Retriever, Auto-Ontology und Kumo-Modelle.[53][54] Die Sammlung verbindet Suche, semantische Zuordnung und Vorhersagen; bestehende Zugriffs- und Governancekontrollen bleiben relevant.[53][54]",
   "topic_id": "enterprise",
@@ -1322,6 +1716,20 @@
    }
   ],
   "change_type": "preview"
+ },
+ {
+  "title": "Google Cloud A5X kündigt Vera-Rubin-Infrastruktur mit Start im November an",
+  "summary": "NVIDIA und Google Cloud kündigen A5X-Instanzen auf Basis von Vera Rubin NVL72 an. Entscheidend trotz der GA-Formulierung in der Überschrift: Der Originaltext nennt die allgemeine Verfügbarkeit erst für den Folgemonat November 2026 und Europa als geplante Erweiterung. Bis zu 960.000 Rubin-GPUs sind ein Ausbauplan, keine bereits vollständig bereitgestellte Kapazität. [36]",
+  "topic_id": "enterprise",
+  "topic": "Enterprise",
+  "date": "2026-10-21",
+  "sources": [
+   {
+    "label": "[36] Original / blogs.nvidia.com",
+    "url": "https://blogs.nvidia.com/blog/google-cloud-vera-rubin-infrastructure/"
+   }
+  ],
+  "change_type": "announcement"
  },
  {
   "title": "cognee stellt Codex-Plugin für dauerhaften Sitzungskontext bereit",
@@ -1498,6 +1906,20 @@
    }
   ],
   "change_type": "update"
+ },
+ {
+  "title": "patching-bugs veröffentlicht strukturierten Agentenablauf für Sicherheitskorrekturen",
+  "summary": "Trail of Bits veröffentlicht am 21. Oktober das Plugin patching-bugs. Es reproduziert gemeldete Fehler, entwickelt Korrekturen und testet sie; projektspezifische Vorgaben und menschliche Prüfung bleiben Teil des Ablaufs. Ein unabhängiger Wirksamkeitsnachweis liegt hier nicht vor. [27]",
+  "topic_id": "ai-security",
+  "topic": "AI Security",
+  "date": "2026-10-21",
+  "sources": [
+   {
+    "label": "[27] Original / blog.trailofbits.com",
+    "url": "https://blog.trailofbits.com/2026/10/21/your-ai-agent-fixed-the-bug-but-what-else-did-it-change/"
+   }
+  ],
+  "change_type": "general_availability"
  },
  {
   "title": "Qwen Code v0.26.0 ergänzt schreibgeschützte Deployment-Vorprüfung",
@@ -1846,6 +2268,24 @@
   "change_type": "announcement"
  },
  {
+  "title": "W3C-Strategiepapier fordert klare Autorisierung für Web-Agenten",
+  "summary": "Das W3C-Strategieteam legt Anforderungen an ein agentisches Web zur Diskussion vor: menschliche Kontrolle, ausdrücklich delegierte Befugnisse sowie Schutz vor Prompt Injection und Datenabfluss. Das Original ist als am 20. Oktober finalisiertes Diskussionspapier bezeichnet; heise nennt den 21. Oktober als Veröffentlichung. Die Vorschläge sind keine verabschiedeten Standards, die TPAC-Präsentation ist für den 29. Oktober vorgesehen. [28][29]",
+  "topic_id": "ai-governance",
+  "topic": "AI Governance",
+  "date": "2026-10-21",
+  "sources": [
+   {
+    "label": "[28] Original / www.w3.org",
+    "url": "https://www.w3.org/2026/10/w3c-and-state-of-web-in-ai-era.html"
+   },
+   {
+    "label": "[29] Original / www.heise.de",
+    "url": "https://www.heise.de/news/W3C-Ein-Auftrag-ist-kein-Freibrief-fuer-KI-Agenten-11497919.html"
+   }
+  ],
+  "change_type": "policy"
+ },
+ {
   "title": "Patch the Planet: Koordinationsrahmen für kritische PHP-Lücken vorgeschlagen",
   "summary": "OpenAI legt anhand der PHP-Reaktion einen Vorschlag für die koordinierte Offenlegung kritischer KI-gefundener Schwachstellen vor.[88] Der Rahmen beschreibt die Zusammenarbeit von Maintainern, Forschern, Sicherheitsanbietern und Behörden bis zur Verteilung von Korrekturen.[88] Er ist weder ein neuer Start von Patch the Planet noch ein weiterer PHP-Patch; die PHP-Maintainer führten die Behebung.[88]",
   "topic_id": "ai-governance",
@@ -1918,6 +2358,20 @@
    }
   ],
   "change_type": "policy"
+ },
+ {
+  "title": "regression-hunt veröffentlicht Agentenprüfung für Code-Regressionen",
+  "summary": "Trail of Bits veröffentlicht regression-hunt am 21. Oktober als eigenes Plugin. Es prüft Codeänderungen auf neu eingeführte Fehler und verlangt reproduzierbare Belege. Die im Anbieterbericht beschriebenen niedrigeren Fehlalarmraten gehen mit nicht abschließend bestätigten bekannten Regressionen einher; eine allgemeine Zuverlässigkeitsgarantie folgt daraus nicht. [27]",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-10-21",
+  "sources": [
+   {
+    "label": "[27] Original / blog.trailofbits.com",
+    "url": "https://blog.trailofbits.com/2026/10/21/your-ai-agent-fixed-the-bug-but-what-else-did-it-change/"
+   }
+  ],
+  "change_type": "general_availability"
  },
  {
   "title": "cognee erweitert den Code Graph um Docstrings und Ausführungsabläufe",
