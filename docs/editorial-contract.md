@@ -104,5 +104,38 @@ Beispiel: `"covered_change_type": "preview"`. Weicht er vom neuen Kandidaten ab,
 ist die neue Meldung kein Duplikat. Falls der alte Inhalt nicht sicher feststeht,
 verwende eine sachlich begründete andere Entscheidung statt einer Vermutung.
 
+### Verkürzte historische Überschriften
+
+Neue Meldungen und Kandidaten-Duplikatziele behalten die vollständige
+Überschriftenpflicht. Nur bei einem konkreten `history_id` darf eine verkürzte
+Altmeldungsüberschrift durch einen ausdrücklichen Beleg ergänzt werden:
+
+```json
+{"history_coverage": {
+  "summary_quote": "Anthropic erweitert die GSA-Vereinbarung auf 40 Prozent Rabatt für Claude Enterprise, Claude for Government und die Claude API.[17]",
+  "development_terms": ["GSA-Vereinbarung", "40 Prozent Rabatt"]
+}}
+```
+
+Das ist keine pauschale Text- oder URL-Ähnlichkeitsfreigabe. Der Validator verlangt:
+
+- exakte Kandidaten-Original-URL in den Quellen des eingefrorenen Historienziels;
+- identisches Originaldatum (`published_at`/`date`) und denselben geprüften
+  `change_type`; Preview, Beta und GA bleiben getrennt;
+- einen vollständigen, unveränderten Satz aus dessen `summary`, der **alle**
+  Produktanker gemeinsam enthält; getrennte Produktlisten reichen nicht;
+- zwei bis vier konkrete mehrwortige Entwicklungsphrasen, die wortgetreu nach
+  Leerraum-/Interpunktionsnormalisierung sowohl in diesem Satz als auch in
+  `development`/`summary` des Kandidaten stehen. Sie müssen zusammen mindestens
+  fünf unterschiedliche Wörter **außerhalb** der Produktanker belegen.
+
+Die Redaktion prüft weiter, dass diese Phrasen die tatsächliche Änderung und
+nicht nur allgemeine Firmen-/Produktnennungen bezeichnen. Lässt sich der enge
+Nachweis nicht führen, bleibt die Entscheidung zur konkreten Nachprüfung gesperrt;
+keine Umdeklaration zum Umgehen des Gates. Originalentscheidungen und Fehlerbeleg
+vor einer autorisierten Ergänzung sichern. Historie, Quellen-Checkpoints und
+Suchbudgets bleiben unverändert. Das Belegobjekt gehört nur zur aktuellen
+Redaktionsentscheidung, nicht in historische Daten.
+
 Die Historie erhält `change_type` und bewahrt unterschiedliche Freigabeschritte
 mit ihren Originaldaten. Bestehende Einträge werden nicht rückwirkend klassifiziert.

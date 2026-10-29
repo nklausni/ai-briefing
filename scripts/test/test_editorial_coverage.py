@@ -140,6 +140,84 @@ class EditorialCoverageTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "change_type"):
             p.check_editor(self.run)
 
+    def history_summary_duplicate(self):
+        candidate = self.candidate(
+            "Claude Enterprise und Claude API erhalten 40-Prozent-GSA-Rabatt",
+            ["Claude Enterprise", "Claude API"],
+            "https://www.anthropic.com/news/expanding-partnership-gsa", "business")
+        candidate.update(
+            published_at="2026-10-06",
+            development="Die GSA-Vereinbarung erweitert den Claude-Rabatt auf weitere Verwaltungsebenen.",
+            summary="Die erweiterte GSA-Vereinbarung gibt Behörden 40 Prozent Rabatt auf Claude Enterprise und die Claude API.")
+        quote = ("Anthropic erweitert die GSA-Vereinbarung auf 40 Prozent Rabatt für "
+                 "Claude Enterprise, Claude for Government und die Claude API.[17]")
+        item = {"topic_id": "0", "title": "Claude Enterprise: GSA-Rabatt steigt auf 40 Prozent",
+                "date": "2026-10-06", "change_type": "business", "summary": quote,
+                "sources": [{"url": candidate["url"]}]}
+        p.write(self.run / "history-before.json", {"items": [item]})
+        candidates = self.fill([candidate])
+        self.publish(candidates)
+        self.briefing["topics"][0]["items"] = []
+        p.write(self.root / "data/briefing.json", self.briefing)
+        decision = {"id": candidates[0]["id"], "decision": "duplicate",
+                    "reason": "Same dated GSA agreement, products and discount; no new development.",
+                    "duplicate_of": {"history_id": context.history(self.run)["items"][0]["history_id"]},
+                    "history_coverage": {"summary_quote": quote,
+                                         "development_terms": ["GSA-Vereinbarung", "40 Prozent Rabatt"]}}
+        p.write(self.run / "editor-decisions.json", [decision])
+        return candidate, item, decision
+
+    def test_history_duplicate_can_prove_same_development_beyond_shortened_headline(self):
+        self.history_summary_duplicate()
+        self.assertEqual(p.check_editor(self.run)["status"], "ready_to_publish")
+
+    def test_history_summary_proof_rejects_unrelated_or_unsupported_targets(self):
+        from editorial_coverage import history_id
+        candidate, original, decision = self.history_summary_duplicate()
+        cases = [
+            ("different source", {"sources": [{"url": "https://www.anthropic.com/news/other"}]}, {}, "source URL"),
+            ("different date", {"date": "2026-10-05"}, {}, "date differs"),
+            ("different milestone", {"change_type": "preview"}, {}, "change_type"),
+            ("different product", {"summary": "Claude Enterprise und Codex Security erhalten 40 Prozent Rabatt aus der GSA-Vereinbarung."}, {}, "headline"),
+            ("umbrella product listing", {"summary": "Claude Enterprise und Claude API sind Themen der GSA-Vereinbarung."}, {}, "development terms"),
+            ("different development", {"summary": "Claude Enterprise und Claude API erhalten neue Logging-Funktionen in der GSA-Vereinbarung."}, {}, "development terms"),
+            ("invented quote", {}, {"summary_quote": "Claude Enterprise und Claude API erhalten 40 Prozent Rabatt aus der GSA-Vereinbarung."}, "unchanged"),
+            ("product names only", {}, {"development_terms": ["Claude Enterprise", "Claude API"]}, "beyond product names"),
+            ("repeated development phrase", {}, {"development_terms": ["GSA-Vereinbarung", "GSA Vereinbarung"]}, "beyond product names"),
+            ("missing proof", {}, None, "explicit sentence proof"),
+        ]
+        for name, changes, proof_changes, error in cases:
+            with self.subTest(name=name):
+                item = {**original, **changes}
+                d = copy.deepcopy(decision)
+                d["duplicate_of"] = {"history_id": history_id(item)}
+                if "summary" in changes:
+                    d["history_coverage"]["summary_quote"] = item["summary"]
+                if proof_changes is None:
+                    d["history_coverage"] = None
+                else:
+                    d["history_coverage"].update(proof_changes)
+                with self.assertRaisesRegex(ValueError, error):
+                    p.validate_coverage({d["id"]: candidate}, [d], [], [], [item])
+
+    def test_history_summary_proof_cannot_collect_products_from_separate_sentences(self):
+        from editorial_coverage import history_id
+        candidate, item, decision = self.history_summary_duplicate()
+        item["summary"] = ("Claude Enterprise erhält 40 Prozent Rabatt aus der GSA-Vereinbarung. "
+                           "Die Claude API bleibt unverändert.")
+        decision["duplicate_of"] = {"history_id": history_id(item)}
+        decision["history_coverage"]["summary_quote"] = item["summary"]
+        with self.assertRaisesRegex(ValueError, "one complete unchanged"):
+            p.validate_coverage({decision["id"]: candidate}, [decision], [], [], [item])
+
+    def test_history_summary_proof_cannot_replace_new_item_headline(self):
+        candidates = self.fill([self.candidate()])
+        self.publish(candidates, "Codex Security Cloud startet")
+        self.briefing["topics"][0]["items"][0]["summary"] = candidates[0]["title"]
+        p.write(self.root / "data/briefing.json", self.briefing)
+        with self.assertRaisesRegex(ValueError, "headline"):
+            p.check_editor(self.run)
+
     def test_valid_history_duplicate_and_invalid_history_target(self):
         item = {"topic_id": "0", "title": "Decisions API als öffentliche Beta", "date": "2026-10-06",
                 "change_type": "public_beta", "sources": []}

@@ -47,6 +47,41 @@ def check_headline(candidate, item):
                 f"is missing headline anchor {term!r} in {item.get('title')!r}")
 
 
+def check_history_coverage(candidate, item, proof):
+    """A shortened historical headline needs explicit, source-bound sentence proof.
+
+    This is deliberately conservative, not semantic similarity: the editor names
+    substantive phrases shared by the candidate and one unchanged history sentence.
+    New item headlines and candidate-target duplicates never use this fallback.
+    """
+    require(isinstance(proof, dict), "History coverage needs explicit sentence proof")
+    require(item.get("date") == candidate.get("published_at"),
+            "History coverage date differs from the original candidate date")
+    require(candidate["url"] in {s.get("url") for s in item.get("sources", [])},
+            "History coverage needs the exact candidate source URL")
+    quote = proof.get("summary_quote")
+    sentences = [s.strip() for s in re.findall(
+        r"[^.!?]+(?:[.!?](?:\[\d+\])*)?", item.get("summary", ""))]
+    require(isinstance(quote, str) and quote in sentences and bool(quote.strip()),
+            "History coverage quote must be one complete unchanged summary sentence")
+    check_headline(candidate, {"title": quote})
+    terms = proof.get("development_terms")
+    require(isinstance(terms, list) and 2 <= len(terms) <= 4 and
+            all(isinstance(term, str) and 2 <= len(term) <= 100 and
+                len(normalize(term).split()) >= 2 for term in terms),
+            "History coverage needs 2..4 substantive multiword development terms")
+    candidate_text = " " + normalize(candidate["development"] + " " + candidate.get("summary", "")) + " "
+    quote_text = " " + normalize(quote) + " "
+    for term in terms:
+        phrase = " " + normalize(term) + " "
+        require(phrase in candidate_text and phrase in quote_text,
+                "History coverage development terms must match candidate and summary sentence")
+    anchors = {word for term in candidate["headline_terms"] for word in normalize(term).split()}
+    words = {word for term in terms for word in normalize(term).split()} - anchors
+    require(len(words) >= 5,
+            "History coverage needs substantive development matching beyond product names")
+
+
 def validate_coverage(candidates, decisions, topics, preserved_items, history):
     selected = {d["id"] for d in decisions if d["decision"] == "selected"}
     mapped = {}
@@ -96,5 +131,9 @@ def validate_coverage(candidates, decisions, topics, preserved_items, history):
                     "Legacy history duplicate needs reviewed covered_change_type")
         require(covered_type == candidates[decision["id"]]["change_type"],
                 "Duplicate change_type differs: preview, beta and GA are separate developments")
-        check_headline(candidates[decision["id"]], item)
+        candidate = candidates[decision["id"]]
+        if "history_id" in target and "history_coverage" in decision:
+            check_history_coverage(candidate, item, decision["history_coverage"])
+        else:
+            check_headline(candidate, item)
     return {"mapped": mapped, "duplicates": sum(d["decision"] == "duplicate" for d in decisions)}
