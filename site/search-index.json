@@ -1,5 +1,47 @@
 [
  {
+  "title": "OpenRouter Agent SDK: Always-On-Anleitung verbindet Zustand und Freigaben",
+  "summary": "Eine neue TypeScript-Anleitung zeigt einen zeitgesteuerten Agenten mit persistentem Zustand, Neustart-Wiederaufnahme und Freigaben vor Team-Nachrichten.[18] Der Kostenstopp greift zwischen Tool-Runden und kann durch abschließende Modellaufrufe überschritten werden; neu ist die Anleitung, nicht der SDK-Launch.[18]",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-10-31",
+  "sources": [
+   {
+    "label": "[18] Anleitung / OpenRouter",
+    "url": "https://openrouter.ai/blog/tutorials/build-always-on-ai-agent/"
+   }
+  ],
+  "change_type": "other"
+ },
+ {
+  "title": "nesformer demonstriert eine NES-CPU in Qwen-Modellgewichten",
+  "summary": "Simon Willison beschreibt Drew Breunigs nesformer: Eine NES-6502-CPU-Emulation ist in die Gewichte von Qwen3.5-4B eingebaut.[1] NES-ROMs laufen dabei sehr langsam; die spezielle Gewichtskonstruktion belegt weder spontane Emulation durch ein unverändertes Sprachmodell noch Echtzeitspiele.[1]",
+  "topic_id": "lokale-llms",
+  "topic": "Lokale LLMs",
+  "date": "2026-10-30",
+  "sources": [
+   {
+    "label": "[1] Praxisbericht / Simon Willison",
+    "url": "https://simonwillison.net/2026/Oct/30/nesformer/"
+   }
+  ],
+  "change_type": "research"
+ },
+ {
+  "title": "MonsterHouse verbindet lokale Sprachagenten mit Halloween-Animation",
+  "summary": "Ein NVIDIA-Autor dokumentiert MonsterHouse als interaktive Projektion mit lokaler Spracherkennung, Nemotron-Antworten, Magpie-Sprachausgabe und Audio2Face-Animation auf einer Workstation.[25] Der neue Anwendungsbericht ist keine neue Modellfreigabe und kein unabhängig reproduzierter Latenzbenchmark.[25]",
+  "topic_id": "lokale-llms",
+  "topic": "Lokale LLMs",
+  "date": "2026-10-30",
+  "sources": [
+   {
+    "label": "[25] Anwendungsbericht / NVIDIA auf Hugging Face",
+    "url": "https://huggingface.co/blog/nvidia/nemotron-halloween"
+   }
+  ],
+  "change_type": "integration"
+ },
+ {
   "title": "GAAC untersucht verlustfreie KV-Kompression auf DGX Spark und Apple M4",
   "summary": "GAAC bewahrt KV-Werte bitgenau und dekomprimiert Cache-Kacheln im Attention-Kernel; die Autoren melden rund 1,4-fache BF16-KV-Kompression in fünf Modelltests.[25] Beschleunigungen auf DGX Spark und Apple M4 hängen vom Testaufbau ab.[25] Einreichung am 28. Oktober und öffentliche Erstlistung am 30. Oktober sind getrennt belegt.[25][26][27]",
   "topic_id": "lokale-llms",
@@ -36,6 +78,124 @@
   "change_type": "announcement"
  },
  {
+  "title": "Cohere plant mehr als vier Milliarden CAD und 1.500 zusätzliche Stellen in Kanada",
+  "summary": "Cohere aktualisiert seine seit 2024 laufende Kanada-Zusage: Bis 2031 sollen mehr als vier Milliarden kanadische Dollar in Forschung und KI-Infrastruktur fließen und mehr als 1.500 Stellen entstehen.[48] Die Summe verbindet bestehende und neue Zusagen; sie ist weder bereits vollständig ausgegebenes Kapital noch eine heutige Einstellung aller Beschäftigten.[48]",
+  "topic_id": "enterprise",
+  "topic": "Enterprise",
+  "date": "2026-10-30",
+  "sources": [
+   {
+    "label": "[48] Unternehmenszusage / Cohere",
+    "url": "https://cohere.com/blog/cohere-canada-commitment"
+   }
+  ],
+  "change_type": "business"
+ },
+ {
+  "title": "Claude Max 5x und Max 20x heißen künftig Max und Ultra",
+  "summary": "Anthropic benennt Claude Max 5x in Max und Max 20x in Ultra um; die genannten Monatspreise bleiben bei 100 beziehungsweise 200 US-Dollar.[36] Bestehende Abonnenten müssen laut Ankündigung nichts unternehmen; die Tarifumbenennung ist ein eigener Schritt neben der Änderung des Sitzungslimits.[36]",
+  "topic_id": "enterprise",
+  "topic": "Enterprise",
+  "date": "2026-10-30",
+  "sources": [
+   {
+    "label": "[36] Originalankündigung / Anthropic",
+    "url": "https://x.com/claudeai/status/2116220869479428500"
+   }
+  ],
+  "change_type": "business"
+ },
+ {
+  "title": "ChatGPT Desktop lässt sich über Bedrock in AWS GovCloud betreiben",
+  "summary": "AWS dokumentiert die ChatGPT-Desktop-Integration mit Work und Codex über Amazon Bedrock in AWS GovCloud US-West und nennt Geräte-, Netzwerk- und Identitätsvorgaben.[52] Die Konfiguration allein erteilt ausdrücklich keine behördliche Autorisierung der Arbeitslast und eröffnet keinen allgemein freien GovCloud-Zugang.[52]",
+  "topic_id": "enterprise",
+  "topic": "Enterprise",
+  "date": "2026-10-30",
+  "sources": [
+   {
+    "label": "[52] Konfigurationsleitfaden / AWS",
+    "url": "https://aws.amazon.com/blogs/machine-learning/configure-the-chatgpt-desktop-app-with-amazon-bedrock-in-aws-govcloud-us/"
+   }
+  ],
+  "change_type": "integration"
+ },
+ {
+  "title": "TokenEconomizer lernt repositorybezogene Kostenkontrolle für Coding-Agenten",
+  "summary": "TokenEconomizer nutzt Erfahrungen früherer Repository-Sitzungen, blendet ungenutzte Tools aus und greift bei Fehlerschleifen ein.[6][7] Die Autoren berichten 18,4–30,9 Prozent geringere mittlere Kosten in fünf SWE-Bench-Agent-Modell-Konfigurationen; das ist keine allgemeine Spargarantie.[7]",
+  "topic_id": "context-engineering",
+  "topic": "Context Engineering",
+  "date": "2026-10-30",
+  "sources": [
+   {
+    "label": "[7] Originalrepository / Microsoft",
+    "url": "https://github.com/microsoft/TokenEconomizer"
+   },
+   {
+    "label": "[6] Bericht / MarkTechPost",
+    "url": "https://www.marktechpost.com/2026/10/30/microsoft-tokeneconomizer-coding-agent-cost-control/"
+   }
+  ],
+  "change_type": "announcement"
+ },
+ {
+  "title": "Retrieval as Traversal erprobt zustandsbehafteten lokalen Speicherzugriff",
+  "summary": "Der Preprint untersucht einen persistenten lokalen Traversierungskopf statt wiederholter globaler Speicheradressierung und zeigt einen begrenzten MiniGrid-Memory-Proof-of-Principle.[22] Gelernte Geometrie und wiederholtes Retrieval wurden nicht getestet; ein allgemeiner Vorteil für LLM-Agenten ist nicht nachgewiesen.[22] Einreichung am 29. Oktober und öffentliche New-Listung am 30. Oktober sind getrennt belegt.[22][23][24]",
+  "topic_id": "context-engineering",
+  "topic": "Context Engineering",
+  "date": "2026-10-30",
+  "sources": [
+   {
+    "label": "[22] Original / arXiv",
+    "url": "https://arxiv.org/abs/2610.40545"
+   },
+   {
+    "label": "[23] Öffentliche Liste / arXiv",
+    "url": "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000"
+   },
+   {
+    "label": "[24] New-Ankündigung / arXiv",
+    "url": "https://arxiv.org/list/cs.AI/new?skip=0&show=2000"
+   }
+  ],
+  "change_type": "research"
+ },
+ {
+  "title": "Ollie kündigt Abschaltung seines KI-Assistenten für den 6. November an",
+  "summary": "Ollie kündigt an, seine KI-Assistenten-App am 6. November 2026 einzustellen; Kunden sollen Informationen zu Datenexport und Erstattungen erhalten.[32] Dies ist die Abschaltungsankündigung, nicht eine bereits vollzogene Einstellung des Dienstes.[32]",
+  "topic_id": "ai-tools",
+  "topic": "AI Tools",
+  "date": "2026-10-30",
+  "sources": [
+   {
+    "label": "[32] Originalbericht / TechCrunch",
+    "url": "https://techcrunch.com/2026/10/30/ollie-a-privacy-focused-ai-assistant-is-shutting-down/"
+   }
+  ],
+  "change_type": "business"
+ },
+ {
+  "title": "Claude Ultra: Fünf-Stunden-Limit entfällt für verifizierte Konten",
+  "summary": "Anthropic beginnt, das Fünf-Stunden-Limit für verifizierte Ultra-Konten zu entfernen, zunächst für die meisten Bestandsabonnenten.[36][46] Neuere Konten behalten bis zur Verifikation ein temporäres Limit; Wochenlimits bleiben bestehen, Ultra ist daher nicht generell unbegrenzt nutzbar.[36][46]",
+  "topic_id": "ai-tools",
+  "topic": "AI Tools",
+  "date": "2026-10-30",
+  "sources": [
+   {
+    "label": "[36] Originalankündigung / Anthropic",
+    "url": "https://x.com/claudeai/status/2116220869479428500"
+   },
+   {
+    "label": "[46] Ultra-Bedingungen / Anthropic",
+    "url": "https://support.claude.com/en/articles/17728952-what-is-the-ultra-plan"
+   },
+   {
+    "label": "[45] Bericht / Latent Space",
+    "url": "https://latent.space/p/ainews-google-admits-ai-mode-hurts-search-revenue-15-500b-drop-worst-since-2004-ipo-ai-bear-market-c/"
+   }
+  ],
+  "change_type": "update"
+ },
+ {
   "title": "VeriCUA prüft Computer-Agentenaufgaben durch aktive Evidenzsuche",
   "summary": "VeriCUA sammelt zusätzliche GUI- und Code-Evidenz zu offenen Aufgabenkriterien, statt nur vorgegebene Screenshots zu bewerten.[28] Die Autoren melden bessere Verifikation in ihren Tests; der Preprint bleibt Work in progress, keine allgemeine Korrektheitsgarantie.[28] Einreichung am 29. und öffentliche Erstlistung am 30. Oktober sind separat belegt.[28][26][27]",
   "topic_id": "ai-security",
@@ -56,6 +216,98 @@
    }
   ],
   "change_type": "research"
+ },
+ {
+  "title": "GLM 5.3 nutzt in Epoch-AI-Tests die Patch-Lücke von Firefox",
+  "summary": "Epoch AI beschreibt vorbereitete Offline-Tests, in denen GLM 5.3 öffentliche, noch nicht ausgelieferte Sicherheitskorrekturen zu Firefox-Angriffsketten verarbeitete.[5][4] Rund 1.000 Dollar sind marginale API-Kosten je neuer kompromittierter Version nach Aufbau des Testsystems, nicht die gesamten Forschungskosten.[5] Eine dabei zusätzlich verwendete unveröffentlichte Schwachstelle wurde laut Forschern in Firefox 159.0 am 27. Oktober behoben; ein erfolgreicher Angriff auf diese neue Version ist damit nicht belegt.[5][4]",
+  "topic_id": "ai-security",
+  "topic": "AI Security",
+  "date": "2026-10-30",
+  "sources": [
+   {
+    "label": "[5] Originalstudie / Epoch AI",
+    "url": "https://epoch.ai/publications/open-weight-models-patch-gap"
+   },
+   {
+    "label": "[4] Bericht / The Decoder",
+    "url": "https://the-decoder.com/open-weight-model-glm-5-3-built-full-firefox-exploit-chains-with-zero-human-input-in-under-48-hours/"
+   }
+  ],
+  "change_type": "research"
+ },
+ {
+  "title": "Project Suncatcher liefert erste Gemma-Antwort einer TPU im Orbit",
+  "summary": "Google berichtet erstmals eine Modellantwort von Gemma 4 auf der TPU seines Suncatcher-Prototyps im Orbit.[21] Neu ist die erfolgreiche Inferenz, nicht der schon im Oktober erfolgte Satellitenstart; Tests unter Strahlung und thermischer Belastung stehen noch bevor, ein kommerzielles Weltraum-Rechenzentrum ist damit nicht belegt.[21]",
+  "topic_id": "ai-news",
+  "topic": "AI News",
+  "date": "2026-10-30",
+  "sources": [
+   {
+    "label": "[21] Original / Google",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/google-research/project-suncatcher-satellite-response/"
+   }
+  ],
+  "change_type": "research"
+ },
+ {
+  "title": "GPT-Rosalind-6 erscheint mit beschränktem Forschungszugang",
+  "summary": "OpenAI meldet die neue Rosalind-Version für biologische Forschung; Zugang erhalten nur genehmigte Organisationen und autorisierte Forschungsnutzer.[15] Laut System Card verwendet GPT-Rosalind-6 dieselben Gewichte wie GPT-6 Astra ohne zusätzliches Training; dies ist weder eine allgemeine Freigabe noch ein Nachweis klinischer Wirksamkeit.[16]",
+  "topic_id": "ai-news",
+  "topic": "AI News",
+  "date": "2026-10-30",
+  "sources": [
+   {
+    "label": "[15] API-Changelog / OpenAI",
+    "url": "https://developers.openai.com/api/docs/changelog"
+   },
+   {
+    "label": "[16] System Card / OpenAI",
+    "url": "https://deploymentsafety.openai.com/gpt-rosalind-6"
+   }
+  ],
+  "change_type": "update"
+ },
+ {
+  "title": "OpenAI kündigt gemeinsames robots.txt-Signal für Trainingspräferenzen an",
+  "summary": "OpenAI sagt zu, ein gemeinsames robots.txt-Signal für Website-Präferenzen beim generativen KI-Training zu unterstützen.[14] Die Umsetzung ist erst für die kommenden Monate vorgesehen; bestehende Crawler-Kontrollen bleiben erhalten, eine bereits überall wirksame Trainingssperre ist damit nicht belegt.[14]",
+  "topic_id": "ai-governance",
+  "topic": "AI Governance",
+  "date": "2026-10-30",
+  "sources": [
+   {
+    "label": "[14] Originalzusage / OpenAI",
+    "url": "https://openai.com/index/helping-websites-express-ai-training-preferences/"
+   }
+  ],
+  "change_type": "announcement"
+ },
+ {
+  "title": "ChinaTalk hinterfragt die 55-Prozent-Behauptung über chinesische KI-Tokens",
+  "summary": "Zilan Qian untersucht in ChinaTalk die verbreitete Behauptung, 55 Prozent chinesischer KI-Tokens entfielen auf Kurzdramen und Video, und bezeichnet die zugrunde liegenden Zahlen als unzureichend belegt.[47] Der Essay ist Quellenkritik und kulturelle Einordnung, keine unabhängig bestätigte nationale Nutzungsstatistik.[47]",
+  "topic_id": "ai-governance",
+  "topic": "AI Governance",
+  "date": "2026-10-30",
+  "sources": [
+   {
+    "label": "[47] Autorenanalyse / ChinaTalk",
+    "url": "https://www.chinatalk.media/p/is-half-of-chinas-ai-making-slop"
+   }
+  ],
+  "change_type": "research"
+ },
+ {
+  "title": "AgentCore Session endpoints ermöglichen authentifizierte Live-Webvorschauen",
+  "summary": "AWS dokumentiert authentifizierte Session-URLs, die HTTP- und WebSocket-Verbindungen an erlaubte Ports derselben Coding-Agent-Sitzung weiterleiten.[51] Die Vorschau endet mit der Sitzung und ersetzt kein Produktionshosting; unterstützt werden microVM-Runtimes, aber kein eingehender PrivateLink-Zugang.[51]",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-10-30",
+  "sources": [
+   {
+    "label": "[51] Original / AWS",
+    "url": "https://aws.amazon.com/blogs/machine-learning/preview-web-apps-live-as-your-coding-agent-builds-them-with-amazon-bedrock-agentcore-runtime/"
+   }
+  ],
+  "change_type": "update"
  },
  {
   "title": "joey-1 gibt offene 2B-Gewichte für Routing und Klassifikation frei",
@@ -250,6 +502,20 @@
   "change_type": "announcement"
  },
  {
+  "title": "Memgraph Context Graph verbindet Agentensitzungen und dauerhafte Erinnerungen",
+  "summary": "Memgraph beschreibt Context Graph als implementierbare Architektur, die Rohaktivitäten mit Erinnerungen, Entitäten und Beziehungen verknüpft.[55] GLiNER übernimmt die Entitätsextraktion lokal ohne zusätzlichen externen LLM-Aufruf; der Agent kann weiterhin seinen bisherigen Modellanbieter nutzen und ist deshalb nicht automatisch vollständig lokal.[55]",
+  "topic_id": "context-engineering",
+  "topic": "Context Engineering",
+  "date": "2026-10-29",
+  "sources": [
+   {
+    "label": "[55] Architekturbericht / Memgraph",
+    "url": "https://memgraph.com/blog/ai-memory-persistent-context"
+   }
+  ],
+  "change_type": "research"
+ },
+ {
   "title": "Cohere zeigt AWS-Finanzrecherche-Demo mit Seitenbelegen",
   "summary": "Die AWS-Finanzrecherche-Demo kombiniert Cohere Embed, Rerank und Parse mit Claude auf Bedrock und liefert Antworten mit Seitenzitaten.[71] Die CloudFormation-Anleitung ist ein deploybares Beispiel für Retrieval und Grounding, keine neue Modellfreigabe oder von uns getestete Finanzberatung.[71]",
   "topic_id": "context-engineering",
@@ -354,6 +620,78 @@
    }
   ],
   "change_type": "preview"
+ },
+ {
+  "title": "Gefälschte Anthropic-Preview-Einladungen ködern Firmenkonten",
+  "summary": "Computerworld berichtet neu über Cofenses Untersuchung gefälschter Anthropic-Preview-Einladungen, die über fremdes Meeting-Branding zu Phishingseiten führen.[42][43] Laut Primärbericht sammelt die beobachtete Microsoft-Seite Nutzernamen und Passwörter, die Google-Seite nur Nutzernamen; die Kampagne läuft seit September und belegt keinen Einbruch bei Anthropic.[43]",
+  "topic_id": "ai-security",
+  "topic": "AI Security",
+  "date": "2026-10-29",
+  "sources": [
+   {
+    "label": "[43] Primäranalyse / Cofense",
+    "url": "https://cofense.com/blog/would-your-employees-join-a-fake-anthropic-ai-preview"
+   },
+   {
+    "label": "[42] Bericht / Computerworld",
+    "url": "https://www.computerworld.com/article/4241914/fake-anthropic-ai-previews-lure-in-overeager-employees-2.html"
+   }
+  ],
+  "change_type": "security"
+ },
+ {
+  "title": "EMBRACE dokumentiert Browser-Vertrauensfehler in fünf KI-Werkzeugen",
+  "summary": "Forever Security veröffentlicht technische Nachweise zu Sicherheitsfehlern in eingebetteten Browsern von Cursor, Copilot, Codex, VS Code und Claude Desktop.[58] Cursor und Copilot waren laut Bericht bereits gepatcht, Codex und VS Code zum 29. Oktober noch offen; OpenAI bestätigte The Register, an einer Behebung zu arbeiten.[58][59] Das ist kein Beleg aktiver Ausnutzung und keine Aussage über sämtliche aktuellen Versionen.[58][59]",
+  "topic_id": "ai-security",
+  "topic": "AI Security",
+  "date": "2026-10-29",
+  "sources": [
+   {
+    "label": "[58] Technischer Originalbericht / Forever Security",
+    "url": "https://forever.security/blog/embrace-hacking-5-ai-assistants-embedded-browsers-technical"
+   },
+   {
+    "label": "[59] Anbieterreaktion / The Register",
+    "url": "https://theregister.com/security/2026/10/29/researchers-find-bugs-in-5-ai-developer-tools-with-openai-and-microsoft-flaws-still-unpatched/5306508"
+   }
+  ],
+  "change_type": "security"
+ },
+ {
+  "title": "Cursor Marketplace: Manipulierte Claude-Code-Erweiterungen verbreiteten Backdoor-Code",
+  "summary": "Cursor bestätigt manipulierte Anthropic.claude-code-Pakete 2.1.312 und 2.1.313 für macOS und Windows im eigenen Marketplace am 29. Oktober; die Mitteilung wurde am 30. Oktober präzisiert.[38][41] Der Code sammelte Hostdaten und versuchte SSH-Persistenz einzurichten; Rechte- und Codefehler verhinderten dies auf vielen Systemen, schließen eine Kompromittierung aber nicht aus.[38][39] Bloßes Deinstallieren kann laut Cursor unzureichend sein: Betroffene sollen die offizielle Prüfung und Bereinigung beachten; die offizielle Anthropic-Distribution ist nicht als betroffen belegt.[38]",
+  "topic_id": "ai-security",
+  "topic": "AI Security",
+  "date": "2026-10-29",
+  "sources": [
+   {
+    "label": "[38] Sicherheitsmitteilung / Cursor",
+    "url": "https://cursor.com/blog/claude-code-extension-security-notice"
+   },
+   {
+    "label": "[39] Technische Analyse / OX Security",
+    "url": "https://www.ox.security/blog/malicious-claude-code-extension-cursor-ssh-backdoor/"
+   },
+   {
+    "label": "[41] Bericht / Ars Technica",
+    "url": "https://arstechnica.com/security/2026/10/anthropic-vs-code-extension-on-cursor-backdoored-for-nearly-12-hours/"
+   }
+  ],
+  "change_type": "security"
+ },
+ {
+  "title": "Armor: OpenRouter zeigt Schutzwirkung und Grenzen im Prompt-Injection-Test",
+  "summary": "In OpenRouters eigenem Vier-Modell-Test blockierte Armor alle 73 versuchten Angreifer-E-Mails.[17] Zugleich wurden 55 von 80 legitimen Zustimmungen ohne konkret genannten Empfänger blockiert, und Blockierungsmarker konnten im Textmodus Test-Geheimnisse enthalten.[17] Die begrenzte Anbieteruntersuchung ist keine unabhängig reproduzierte Sicherheitsgarantie und kein taggenau belegter Armor-Neustart.[17]",
+  "topic_id": "ai-security",
+  "topic": "AI Security",
+  "date": "2026-10-29",
+  "sources": [
+   {
+    "label": "[17] Testbericht / OpenRouter",
+    "url": "https://openrouter.ai/blog/tutorials/prevent-prompt-injection/"
+   }
+  ],
+  "change_type": "research"
  },
  {
   "title": "Project ProtoStar soll wissenschaftliche Artefakte KI-tauglicher machen",
@@ -484,6 +822,52 @@
   "change_type": "policy"
  },
  {
+  "title": "Meta AI erweitert Elternwarnungen auf Facebook und Messenger",
+  "summary": "Ein ausdrücklich datiertes Meta-Update erweitert Elternwarnungen bei Hinweisen auf Selbstgefährdung in Meta-AI-Gesprächen auf Facebook und Messenger.[37] Es ist die Ausweitung des im Juli begonnenen Instagram-Angebots, nicht dessen Erststart und kein Nachweis klinisch validierter Erkennungszuverlässigkeit.[37]",
+  "topic_id": "ai-governance",
+  "topic": "AI Governance",
+  "date": "2026-10-29",
+  "sources": [
+   {
+    "label": "[37] Originalupdate / Meta",
+    "url": "https://about.fb.com/news/2026/07/keeping-parents-informed-teens-distress-conversations-meta-ai/"
+   }
+  ],
+  "change_type": "update"
+ },
+ {
+  "title": "ThinkRail 0.3.0 ergänzt pi-Konfiguration und Umgebungsvariablen",
+  "summary": "JetBrains veröffentlicht ThinkRail 0.3.0 mit Auswahl des pi-Konfigurationsordners und Übergabe zusätzlicher Umgebungsvariablen aus den Einstellungen.[56][57] Die Agenten-IDE verwendet isolierte Arbeitsbereiche; das Patch beschreibt nicht die erstmalige Entstehung aller grundlegenden IDE-Funktionen.[57][56]",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-10-29",
+  "sources": [
+   {
+    "label": "[56] Release / JetBrains",
+    "url": "https://github.com/JetBrains/thinkrail/releases/tag/v0.3.0"
+   },
+   {
+    "label": "[57] Repository / JetBrains",
+    "url": "https://github.com/JetBrains/thinkrail"
+   }
+  ],
+  "change_type": "update"
+ },
+ {
+  "title": "Spawn zeigt eine per Agenten veränderbare Multiplayer-Spielwelt",
+  "summary": "Simon Willison erprobt Spawn, dessen In-Game-Agent Savi die Multiplayer-Spielwelt anhand von Prompts verändert.[2] Sein Praxisbericht ist kein kontrollierter Nachweis eines allgemeinen Produktivitätsvorsprungs oder vollständig autonomer Unternehmensführung.[2]",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-10-29",
+  "sources": [
+   {
+    "label": "[2] Praxisbericht / Simon Willison",
+    "url": "https://simonwillison.net/2026/Oct/29/how-i-built-the-most-ai-pilled-company-in-the-world/"
+   }
+  ],
+  "change_type": "other"
+ },
+ {
   "title": "Managed Deep Agents v0.10 erhält Browserzugriff mit Nutzerübergabe",
   "summary": "LangChain ergänzt Managed Deep Agents um einen verwalteten Browser für Aufgaben ohne passende API.[83] Bei Anmeldungen kann der Nutzer das Fenster übernehmen, statt Passwörter in Modellnachrichten zu geben; dies ist eine beschriebene Schutzmaßnahme, keine allgemeine Sicherheitsgarantie.[82]",
   "topic_id": "agentic-engineering",
@@ -514,6 +898,20 @@
    }
   ],
   "change_type": "update"
+ },
+ {
+  "title": "Jules läuft zugunsten einer vereinheitlichten Antigravity-Erfahrung aus",
+  "summary": "Google kündigt an, Jules auslaufen zu lassen und Erkenntnisse aus dem asynchronen Coding-Agenten in Antigravity zu bündeln.[35] Ein konkreter Abschalttermin oder eine bereits vollständig verfügbare Ersatzintegration wird in der gelesenen Mitteilung nicht genannt.[35]",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-10-29",
+  "sources": [
+   {
+    "label": "[35] Bericht mit Google-Mitteilung / The Verge",
+    "url": "https://www.theverge.com/tech/1022729/google-is-sunsetting-its-ai-coding-agent-jules"
+   }
+  ],
+  "change_type": "announcement"
  },
  {
   "title": "Nemotron 3.5 Transcribe veröffentlicht offene Gewichte für Audioaufgaben",
@@ -1219,6 +1617,10 @@
    {
     "label": "[30] Original / Particle",
     "url": "https://particle.ai/blog/introducing-particle-1"
+   },
+   {
+    "label": "[75] Gelesene Discovery-Fassung / Particle",
+    "url": "https://particle.ai/blog/introducing-particle-1?research=20261028"
    },
    {
     "label": "[29] Modellprofil / LLM Stats",
@@ -2200,6 +2602,20 @@
   "change_type": "general_availability"
  },
  {
+  "title": "Logic Pro: Stem Splitter soll getrennte Drum-Bearbeitung erhalten",
+  "summary": "Apple kündigt an, im Logic Pro Stem Splitter einzelne Schlagzeugbestandteile ohne ursprüngliche Mehrspuraufnahmen isolieren, ersetzen oder neu gewichten zu können.[54] Diese Erweiterung ist für das November-Update angekündigt und vom separaten Logic-Assistenten zu unterscheiden.[54]",
+  "topic_id": "ai-tools",
+  "topic": "AI Tools",
+  "date": "2026-10-27",
+  "sources": [
+   {
+    "label": "[54] Originalankündigung / Apple",
+    "url": "https://apple.com/cf/newsroom/2026/10/apple-creator-studio-adds-powerful-new-ai-features-and-even-more-creative-tools"
+   }
+  ],
+  "change_type": "announcement"
+ },
+ {
   "title": "Logic Pro für Mac bekommt angekündigten KI-Assistenten",
   "summary": "Apple kündigt für Logic Pro einen Assistenten an, der unter anderem Projekte beginnen und Gesangsspuren nach Textanweisung einrichten soll.[39] Er verwendet eigene und externe Modelle und wird als Beta beschrieben; das umfassende Creator-Studio-Update ist für November 2026 vorgesehen.[39]",
   "topic_id": "ai-tools",
@@ -2258,6 +2674,20 @@
    }
   ],
   "change_type": "update"
+ },
+ {
+  "title": "Final Cut Pro und Motion kündigen integrierte Bildgenerierung an",
+  "summary": "Apple kündigt Text-zu-Bild-Funktionen direkt in Final-Cut-Pro-Projekten und Motion an.[54] Die Funktionen gehören zu den für November angekündigten Kreativ-App-Updates; die Ankündigung ist keine bereits erfolgte allgemeine Freigabe.[54]",
+  "topic_id": "ai-tools",
+  "topic": "AI Tools",
+  "date": "2026-10-27",
+  "sources": [
+   {
+    "label": "[54] Originalankündigung / Apple",
+    "url": "https://apple.com/cf/newsroom/2026/10/apple-creator-studio-adds-powerful-new-ai-features-and-even-more-creative-tools"
+   }
+  ],
+  "change_type": "announcement"
  },
  {
   "title": "Veeam Intelligent ResOps für Microsoft 365 wird allgemein verfügbar",
@@ -6821,6 +7251,20 @@
    {
     "label": "[115] Original / www.firecrawl.dev",
     "url": "https://www.firecrawl.dev/changelog/google-cloud-launch"
+   }
+  ],
+  "change_type": "integration"
+ },
+ {
+  "title": "Cloudflare OS erweitert Integrationen für Unternehmensanwendungen",
+  "summary": "Cloudflare kündigt neue Anbindungen seines KI-Workspace unter anderem an Asana, Box, Canva, ClickHouse, GitHub, Gong und Notion an.[60] Die Meldung betrifft das Integrations- und Partnerökosystem; beworbene Sicherheits- und Effizienzvorteile sind Herstellerangaben, keine unabhängige Wirksamkeitsmessung.[60]",
+  "topic_id": "enterprise",
+  "topic": "Enterprise",
+  "date": "2026-10-19",
+  "sources": [
+   {
+    "label": "[60] Originalmitteilung / Cloudflare",
+    "url": "https://cloudflare.com/en-au/press/press-releases/2026/cloudflares-ai-workspace-platform-partners-with-leading-applications-and-deployment-teams-to-make-ai-productive-in-the-enterprise"
    }
   ],
   "change_type": "integration"
