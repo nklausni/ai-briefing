@@ -294,17 +294,42 @@ def title_page(path, offset=0, limit=50):
             'next_offset': next_offset if next_offset < len(titles) else None}
 
 
+def export_compact_record(input_path, output_path):
+    """Copy original reports mechanically into a NEW record; never edit evidence."""
+    entry = json.loads(Path(input_path).read_text(encoding='utf-8'))
+    paths = entry.get('title_discovery_files', [])
+    reports = [{key: value for key, value in json.loads(Path(path).read_text(encoding='utf-8')).items()
+                if key != 'titles'} for path in paths]
+    errors = validate_title_discovery(reports)
+    if errors:
+        raise ValueError('; '.join(errors))
+    entry['title_discovery'] = reports
+    with Path(output_path).open('x', encoding='utf-8') as target:
+        json.dump(entry, target, ensure_ascii=False, indent=2)
+        target.write('\n')
+    return str(output_path)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     mode = parser.add_mutually_exclusive_group(required=True)
     mode.add_argument('--since')
     mode.add_argument('--view')
+    mode.add_argument('--compact-input', help='Export a new record from unchanged title_discovery_files; no network calls')
     parser.add_argument('--until')
     parser.add_argument('--output')
     parser.add_argument('--offset', type=int, default=0)
     parser.add_argument('--limit', type=int, default=50)
     parser.add_argument('--kind', choices=('recent', 'changes', 'updates'), default='recent')
     args = parser.parse_args()
+    if args.compact_input:
+        if not args.output:
+            parser.error('--compact-input requires --output')
+        try:
+            print(export_compact_record(args.compact_input, args.output))
+        except (OSError, ValueError, KeyError, TypeError) as exc:
+            parser.exit(1, str(exc) + '\n')
+        return 0
     if args.view:
         print(json.dumps(title_page(args.view, args.offset, args.limit), ensure_ascii=False))
         return 0

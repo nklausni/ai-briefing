@@ -118,7 +118,19 @@ Historische Kandidaten ohne diese Zusatzfelder bleiben nach ihren alten Regeln g
 Im arXiv-Quellenobjekt `title_discovery` als Liste der drei Helferberichte
 (`recent`, `changes`, `updates`) **ohne deren großes `titles`-Feld** speichern.
 Die vollständigen Titeldateien bleiben im Worker-Cache. Mit `write_file` eine
-prüffähige Record-Eingabe erstellen. `result` nennt Zähler, tatsächlich gesichtete
+prüffähige Record-Eingabe mit `title_discovery_files` erstellen; die kompakten
+Berichte nicht aus einer Toolanzeige abtippen (Anzeigen können URL-Ziffern maskieren).
+Exportiere sie mechanisch aus den unveränderten Dateien in eine **neue** Eingabe:
+
+```sh
+python3 ROOT/scripts/arxiv_discovery.py --compact-input WORKER/arxiv-input.json --output WORKER/arxiv-record.json
+```
+
+Der Export benötigt keine Netzabrufe, erhält alle anderen Felder und exakten
+Query-/Seiten-URLs, prüft die Berichtsstruktur und verweigert Überschreiben. Er
+validiert keine Paper-Aussagen und ersetzt nicht `record`/Receipt-Prüfungen. Ein
+bereits zurückgewiesener Run bleibt unverändert; korrigierte Eingaben nur im
+explizit autorisierten neuen Recovery-Run verwenden. `result` nennt Zähler, tatsächlich gesichtete
 Titel, ausgewählte Originallektüre, Dateien/URLs sowie verbleibende Grenzen.
 
 Ein neuer `checked`-Checkpoint ohne diese Berichte oder mit falscher
