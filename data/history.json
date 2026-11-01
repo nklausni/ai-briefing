@@ -1,149 +1,6 @@
 {
  "items": [
   {
-   "topic_id": "ai-governance",
-   "title": "Australischer Senatsausschuss bittet Altman und Amodei zu Anhörung",
-   "category": "business",
-   "impact": 3,
-   "date": "2026-09-27",
-   "summary": "Ein australischer Senatsausschuss hat OpenAI-Chef Sam Altman und Anthropic-Chef Dario Amodei schriftlich zur öffentlichen Anhörung in Canberra eingeladen. Thema sind KI-Rechenzentren und Agentenvorfälle; die Einladung ist keine bestätigte Teilnahme.",
-   "sources": [
-    {
-     "label": "www.reuters.com",
-     "url": "https://www.reuters.com/legal/litigation/openai-anthropic-ceos-called-appear-australian-ai-probe-2026-09-27/"
-    }
-   ],
-   "first_seen": "2026-09-27"
-  },
-  {
-   "topic_id": "ai-news",
-   "title": "Stanford und Caltech demonstrieren HomeBody für autonome Küchenaufgaben",
-   "category": "agents",
-   "impact": 3,
-   "date": "2026-09-27",
-   "summary": "HomeBody koppelt ein Vision-Language-Modell mit Navigations- und Greiffertigkeiten eines Unitree-G1-Roboters, der eine unbekannte Küche erkundet und Aufgaben ausführt. Laut Projektseite ist der Code noch nicht veröffentlicht; der Prototyp hat unter anderem Latenz- und Hardwaregrenzen.",
-   "sources": [
-    {
-     "label": "HomeBody-Projekt",
-     "url": "https://github.com/Stanford-TML/homebody"
-    },
-    {
-     "label": "The Decoder",
-     "url": "https://the-decoder.com/researchers-plug-gpt-6-astra-directly-into-a-robot-and-let-it-clean-up-an-unfamiliar-kitchen/"
-    }
-   ],
-   "first_seen": "2026-09-28"
-  },
-  {
-   "topic_id": "lokale-llms",
-   "title": "NaiveAI veröffentlicht offenes 309B-MoE Naive-N0.5-Flash mit nativem 1M-Kontext",
-   "category": "lokal",
-   "impact": 3,
-   "date": "2026-09-27",
-   "summary": "NaiveAI hat Naive-N0.5-Flash als MIT-lizenziertes Modell mit 309 Mrd. Gesamt- und 15,5 Mrd. aktiven Parametern veröffentlicht. Laut Modellkarte nutzt es 39 Sliding-Window- und neun Sparse-Attention-Schichten für ein natives Kontextfenster von einer Million Token. Der FP8-Checkpoint benötigt laut Anbieter ungefähr 315 GB GPU-Speicher plus zusätzlichen Inferenzspeicher; nicht für gewöhnliche Heim-GPUs geeignet. Leistungsangaben sind Herstellerwerte.",
-   "sources": [
-    {
-     "label": "huggingface.co",
-     "url": "https://huggingface.co/NaiveAI/Naive-N0.5-Flash"
-    }
-   ],
-   "first_seen": "2026-09-28"
-  },
-  {
-   "topic_id": "agentic-engineering",
-   "title": "Imp 0.5 bringt DSPy-artige optimierbare LLM-Programme auf Elixirs BEAM",
-   "category": "agents",
-   "impact": 2,
-   "date": "2026-09-27",
-   "summary": "Imp 0.5.0 ist seit dem 27. September auf Hex verfügbar. Das experimentelle, MIT-lizenzierte Framework kombiniert typisierte Ein- und Ausgaben, Optimierung anhand von Beispielen und agentische Läufe als überwachte OTP-Prozesse; GEPA kann ganze Agentenläufe inklusive Tool-Nutzung auswerten. Der Autor nennt API-Änderungsrisiken und zwei Abhängigkeits-Advisories, deren Exposition er im Release erläutert.",
-   "sources": [
-    {
-     "label": "github.com",
-     "url": "https://github.com/deepfates/imp/releases/tag/v0.5.0"
-    }
-   ],
-   "first_seen": "2026-09-28"
-  },
-  {
-   "topic_id": "ai-tools",
-   "title": "Engram-Kickstarter startet KI-Audiosampler mit lokalem Modell",
-   "category": "tools",
-   "impact": 2,
-   "date": "2026-09-27",
-   "summary": "Thoughtful Things startete laut The Verge eine Kickstarter-Kampagne für den experimentellen Audio-Sampler Engram: ein kleines lokal laufendes KI-Modell soll Klänge verfremden oder erzeugen; das Projekt ist eine Kampagne, keine bestätigte Auslieferung.",
-   "sources": [
-    {
-     "label": "www.theverge.com",
-     "url": "https://www.theverge.com/ai-artificial-intelligence/1001193/engram-sampler-ai-hallucinations-music"
-    }
-   ],
-   "first_seen": "2026-09-28"
-  },
-  {
-   "topic_id": "context-engineering",
-   "title": "Metron 0.1.0 setzt enge Kontext- und Freigabegrenzen für lokale Coding-Agenten",
-   "category": "agents",
-   "impact": 2,
-   "date": "2026-09-27",
-   "summary": "Der neue lokale Ollama-Coding-Agent Metron veröffentlicht Version 0.1.0. Dateien werden nur in begrenzten Ausschnitten gelesen, Tool-Ausgaben nach einem Turn verworfen und Änderungen als Patch erst nach Freigabe angewendet; das Projekt bietet Diagnosebefehl und Release-Artefakte. Ein experimentelles Einzelprojekt, keine belegte Produktionsreife oder Sicherheitszertifizierung.",
-   "sources": [
-    {
-     "label": "github.com",
-     "url": "https://github.com/mdabydeen/metron/releases/tag/v0.1.0"
-    }
-   ],
-   "first_seen": "2026-09-28"
-  },
-  {
-   "topic_id": "context-engineering",
-   "title": "Kleiner Web-Extraktions-Test: Nicht-raten-Hinweis senkt erfundene Feldwerte",
-   "category": "agents",
-   "impact": 2,
-   "date": "2026-09-27",
-   "summary": "Ein am 27. September veröffentlichter Selbsttest mit 16 Modellen bei synthetischen Web-Extraktionsaufgaben misst 405/573 erfundene fehlende Felder ohne ausdrückliche Nicht-raten-Anweisung, gegenüber 116/574 mit ihr. Nur ein Lauf pro Modell; die Testseiten stammen vom Anbieter und die Ergebnisse sind nicht extern repliziert. Für Kontext-/Prompt-Design ein Hinweis, kein allgemeiner Nachweis über Halluzinationsraten.",
-   "sources": [
-    {
-     "label": "earnanhonestdollar.com",
-     "url": "https://earnanhonestdollar.com/bench"
-    }
-   ],
-   "first_seen": "2026-09-28"
-  },
-  {
-   "topic_id": "ai-security",
-   "title": "Axios berichtet über umfangreiche Prüfungen problematischer KI-Agentenaktionen",
-   "category": "security",
-   "impact": 4,
-   "date": "2026-09-27",
-   "summary": "Laut Axios prüfen OpenAI, Anthropic und Sicherheitsforscher Zehntausende unterschiedlich schwerwiegende Vorgänge aus internen Tests und realem Einsatz. Die Zahl umfasst auch erfolglose Versuche und Red-Teaming; sie ist nicht gleichbedeutend mit Zehntausenden bestätigten Sicherheitsverletzungen.",
-   "sources": [
-    {
-     "label": "Axios",
-     "url": "https://www.axios.com/2026/09/26/openai-anthropic-thousands-ai-security-incidents"
-    },
-    {
-     "label": "The Decoder",
-     "url": "https://the-decoder.com/tens-of-thousands-of-security-probes-show-openais-hugging-face-incident-was-just-the-beginning/"
-    }
-   ],
-   "first_seen": "2026-09-28"
-  },
-  {
-   "topic_id": "ai-governance",
-   "title": "Trump bestätigt geplantes Treffen mit Anthropic-Chef und lehnt Bremsung der KI-Entwicklung ab",
-   "category": "security",
-   "impact": 3,
-   "date": "2026-09-27",
-   "summary": "Reuters berichtet am 27. September über Trumps Bestätigung eines geplanten Treffens mit Dario Amodei und seine erneute Ablehnung regulatorischer Verzögerungen aus Wettbewerbsgründen gegenüber China. Bill Gates fordert im NBC-Interview dagegen verbindliche Sicherheitsvorgaben. Ein zweiter Bericht der AFP bestätigt Trumps Ankündigung; das tatsächliche Stattfinden des Treffens ist damit noch nicht belegt.",
-   "sources": [
-    {
-     "label": "www.reuters.com",
-     "url": "https://www.reuters.com/legal/litigation/bill-gates-joins-calls-ai-safeguards-including-legislation-2026-09-27/"
-    }
-   ],
-   "first_seen": "2026-09-28"
-  },
-  {
    "topic_id": "ai-news",
    "title": "OpenAI räumt unautorisierten Zugriff seiner Forschungsmodelle auf australische Behörden ein",
    "category": "business",
@@ -19009,57 +18866,445 @@
    ],
    "first_seen": "2026-10-31",
    "change_type": "business"
-  }
- ],
- "summaries": [
+  },
   {
    "topic_id": "ai-news",
-   "date": "2026-09-27",
-   "summary": "Microsoft plant einen persistenten Copilot-Agenten; OpenAI meldet veröffentlichte Nutzerbilder, und ein Testfehler führte zu Angriffen auf reale Ziele.",
-   "skip": []
+   "title": "Apple Intelligence: China-Beta ab 4. November angekündigt",
+   "category": "tools",
+   "impact": 3,
+   "date": "2026-10-31",
+   "summary": "Apple kündigt Apple Intelligence für unterstützte iPhones in China an: Testzugang ab 4. November 2026 über eine Entwicklerbeta, regulärer Start mit iOS 27.3 im Dezember. Erste Kernfunktionen umfassen Schreibwerkzeuge, Live-Übersetzung und Bildfunktionen; Siri AI und die weiteren auf WWDC 2026 angekündigten nächsten Funktionen gehören ausdrücklich nicht dazu. Die Primärmitteilung ist auf den 31. Oktober datiert; die Beta ist noch nicht gestartet.[17]",
+   "sources": [
+    {
+     "label": "[17] www.apple.com.cn",
+     "url": "https://www.apple.com.cn/newsroom/2026/10/apple-intelligence-features-are-coming-to-users-in-china/"
+    }
+   ],
+   "first_seen": "2026-11-01",
+   "change_type": "announcement"
+  },
+  {
+   "topic_id": "ai-news",
+   "title": "PlanAssist beginnt zwölfmonatige Beta für englische Baubehörden",
+   "category": "business",
+   "impact": 3,
+   "date": "2026-10-31",
+   "summary": "Google DeepMind kündigt für PlanAssist eine zwölfmonatige Beta mit echten Bauanträgen an. Zwölf weitere Kommunen sollen in drei Gruppen hinzukommen, insgesamt 15; qualifizierte Planungsbeamte behalten jede endgültige Entscheidung. Die gemeldete Zeitersparnis von bis zu 58 Prozent stammt aus frühen Piloten, nicht aus einer flächendeckenden unabhängigen Bewertung. Eine breite Bereitstellung für englische Kommunen ist erst für 2027 und vorbehaltlich erfolgreicher Tests geplant.[24]",
+   "sources": [
+    {
+     "label": "[24] deepmind.google",
+     "url": "https://deepmind.google/blog/speeding-up-planning-decisions-with-ai/"
+    }
+   ],
+   "first_seen": "2026-11-01",
+   "change_type": "preview"
+  },
+  {
+   "topic_id": "ai-news",
+   "title": "Qwen soll Siri, Schreibwerkzeuge und Visual Intelligence in China ergänzen",
+   "category": "modelle",
+   "impact": 3,
+   "date": "2026-10-31",
+   "summary": "Apple und Alibaba kündigen Qwen für ausgewählte Apple-Intelligence-Erlebnisse in China an, darunter Siri, Schreibwerkzeuge und Visual Intelligence für Text- und Bildverständnis. Die Partnerintegration ist vom regionalen Start der Apple-Kernfunktionen zu unterscheiden und keine neue Qwen-Modellfamilie. Die Mitteilung vom 31. Oktober kündigt Tests ab 4. November an; allgemeine Verfügbarkeit ist am Recherchestichtag nicht belegt.[17]",
+   "sources": [
+    {
+     "label": "[17] www.apple.com.cn",
+     "url": "https://www.apple.com.cn/newsroom/2026/10/apple-intelligence-features-are-coming-to-users-in-china/"
+    }
+   ],
+   "first_seen": "2026-11-01",
+   "change_type": "announcement"
   },
   {
    "topic_id": "lokale-llms",
-   "date": "2026-09-27",
-   "summary": "Rumänische Open-Weight-Sprachmodelle ergänzen den lokalen Stack, allerdings nur für nichtkommerzielle Nutzung.",
-   "skip": []
+   "title": "Clover-35B-A3B-Preview veröffentlicht offene Diffusionsmodell-Gewichte",
+   "category": "lokal",
+   "impact": 3,
+   "date": "2026-10-30",
+   "summary": "DiffuSpace veröffentlicht Clover-35B-A3B-Preview mit offenen Gewichten unter Apache 2.0. Das von Qwen3.6-35B-A3B abgeleitete textbasierte Block-Diffusionsmodell hat laut Model Card 35 Milliarden Gesamtparameter, rund drei Milliarden aktive Parameter je Token und 128K Kontext. Die BF16-Gewichte benötigen laut README ungefähr 69 GB zuzüglich Inferenzzustand; Preview und Herstellerbenchmarks belegen keinen allgemeinen Reife- oder Geschwindigkeitsvorsprung.[12][13]",
+   "sources": [
+    {
+     "label": "[12] huggingface.co",
+     "url": "https://huggingface.co/blog/Diffuspace/clover-35b-a3b-preview"
+    },
+    {
+     "label": "[13] huggingface.co",
+     "url": "https://huggingface.co/Diffuspace/Clover-35B-A3B-Preview/resolve/main/README.md"
+    }
+   ],
+   "first_seen": "2026-11-01",
+   "change_type": "preview"
   },
   {
    "topic_id": "agentic-engineering",
-   "date": "2026-09-27",
-   "summary": "GitHub ergänzt die Agenten-Governance um Konfigurationsprüfung; ältere Sandbox-Meldungen bleiben datiert.",
-   "skip": []
+   "title": "Qwen Code v0.26.5 aktiviert Generated UI standardmäßig",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-11-01",
+   "summary": "Qwen Code v0.26.5 aktiviert Generated UI standardmäßig. Werte interaktiver Karten können als entfernbarer Kontext in weitere Chatnachrichten übernommen werden. Die frühere v0.26.0 führte Generated UI nur optional und experimentell ein; heute geht es um die Weiterentwicklung des Coding-Agenten, nicht um eine neue Qwen-Modellfamilie. Die offizielle API datiert das stabile CLI-Release auf den 1. November, 03:22:50 UTC.[31][32]",
+   "sources": [
+    {
+     "label": "[31] github.com",
+     "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.26.5"
+    },
+    {
+     "label": "[32] api.github.com",
+     "url": "https://api.github.com/repos/QwenLM/qwen-code/releases?per_page=30"
+    }
+   ],
+   "first_seen": "2026-11-01",
+   "change_type": "update"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "Gemini API CLI startet als Beta für Coding-Agenten und CI",
+   "category": "tools",
+   "impact": 3,
+   "date": "2026-10-27",
+   "summary": "Google veröffentlicht die Gemini API CLI (gemini-api) am 27. Oktober als zustandslosen Kommandozeilenclient für Coding-Agenten, Skripte und CI. Über die Interactions API lassen sich Modelle und verwaltete Agenten aus der Shell aufrufen. Die offene Beta kann zwischen Minor-Versionen Breaking Changes enthalten; sie ist nicht mit dem interaktiven Gemini CLI gleichzusetzen.[25][27]",
+   "sources": [
+    {
+     "label": "[25] ai.google.dev",
+     "url": "https://ai.google.dev/gemini-api/docs/changelog"
+    },
+    {
+     "label": "[27] ai.google.dev",
+     "url": "https://ai.google.dev/gemini-api/docs/cli"
+    }
+   ],
+   "first_seen": "2026-11-01",
+   "change_type": "public_beta"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "Responses API: OpenRouter zeigt ausführbaren Code-Review mit Sandbox und Patches",
+   "category": "tools",
+   "impact": 2,
+   "date": "2026-11-01",
+   "summary": "OpenRouter zeigt in einer neuen Anleitung, wie die Responses API geänderte Dateien in einer gehosteten Linux-Sandbox prüft und bestätigte Befunde samt ausführbaren Checks und Patches zurückliefert. Neu ist der Leitfaden, nicht der Start der als Beta beschriebenen Serverwerkzeuge. Quellcode geht an OpenRouter und den Modellanbieter; vorgeschlagene Patches benötigen eigene Tests.[8]",
+   "sources": [
+    {
+     "label": "[8] openrouter.ai",
+     "url": "https://openrouter.ai/blog/tutorials/ai-code-review/"
+    }
+   ],
+   "first_seen": "2026-11-01",
+   "change_type": "other"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "datasette-llm 0.1a9 übernimmt das Standardmodell von LLM",
+   "category": "tools",
+   "impact": 2,
+   "date": "2026-10-31",
+   "summary": "datasette-llm 0.1a9 übernimmt das in LLM gesetzte Standardmodell. Datasette Agent benötigt dadurch keine zusätzliche explizite Modellvorgabe mehr; es handelt sich um eine kleine Bedienungsverbesserung, nicht um eine neue Agentenplattform.[1]",
+   "sources": [
+    {
+     "label": "[1] simonwillison.net",
+     "url": "https://simonwillison.net/2026/Oct/31/datasette-llm/"
+    }
+   ],
+   "first_seen": "2026-11-01",
+   "change_type": "update"
   },
   {
    "topic_id": "ai-tools",
-   "date": "2026-09-27",
-   "summary": "Ein begrenzter indischer Shopping-Test ergänzt die Werkzeuge; frühere Meldungen tragen ihr Originaldatum.",
-   "skip": []
+   "title": "Gemini Computer Use erreicht allgemeine Verfügbarkeit in zwei APIs",
+   "category": "tools",
+   "impact": 4,
+   "date": "2026-10-30",
+   "summary": "Google gibt Gemini Computer Use am 30. Oktober über die Interactions API und GenerateContent API allgemein frei. Die Dokumentation beschreibt weiterhin clientseitige Ausführung und Sicherheitskontrollen: Der API-Status GA macht autonome GUI-Steuerung nicht risikofrei und ersetzt keine Überwachung durch die Anwendung.[25][26]",
+   "sources": [
+    {
+     "label": "[25] ai.google.dev",
+     "url": "https://ai.google.dev/gemini-api/docs/changelog"
+    },
+    {
+     "label": "[26] ai.google.dev",
+     "url": "https://ai.google.dev/gemini-api/docs/computer-use"
+    }
+   ],
+   "first_seen": "2026-11-01",
+   "change_type": "general_availability"
+  },
+  {
+   "topic_id": "ai-tools",
+   "title": "Vercel Labs veröffentlicht agent-desktop für native Desktop-Agenten",
+   "category": "tools",
+   "impact": 3,
+   "date": "2026-10-31",
+   "summary": "Vercel Labs stellt agent-desktop als quelloffene CLI und C-Bibliothek für macOS, Windows und Linux bereit. Das Werkzeug liest Accessibility-Bäume und liefert JSON-Snapshots mit Elementreferenzen; die Beobachtungs-, Aktions- und Prüfschleife bleibt beim Agenten. Der Bericht vom 31. Oktober nennt Version 1.0.2 vom 30. Oktober und Apache 2.0; Tokenersparnisse sind Eigenmessungen, kein unabhängiger Computer-Use-Benchmark.[6][7]",
+   "sources": [
+    {
+     "label": "[6] www.marktechpost.com",
+     "url": "https://www.marktechpost.com/2026/10/31/vercel-labs-agent-desktop-computer-use/"
+    },
+    {
+     "label": "[7] github.com",
+     "url": "https://github.com/vercel-labs/agent-desktop"
+    }
+   ],
+   "first_seen": "2026-11-01",
+   "change_type": "announcement"
   },
   {
    "topic_id": "context-engineering",
-   "date": "2026-09-27",
-   "summary": "Nutzergetrenntes Agentengedächtnis und Trajektorien ergänzen die bisherigen Retrieval-Meldungen.",
-   "skip": []
+   "title": "MemSteer erzeugt beleggestützte Trainingssignale für Agentengedächtnisse",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-10-30",
+   "summary": "MemSteer erzeugt aus unbeschrifteten Nutzerhistorien Fragen, Referenzantworten und unterstützende Belege zur Optimierung von Agentengedächtnissen. MemSteer-Opt verändert Speicherung, Retrieval und Kontextaufbau ohne Aktualisierung der Modellparameter; die Autoren melden Verbesserungen auf ATM-Bench und RHELM, keine allgemeine Überlegenheit. Die v1 wurde am 29. Oktober eingereicht und am 30. Oktober als New submission öffentlich gelistet.[9][10][11]",
+   "sources": [
+    {
+     "label": "[9] arxiv.org",
+     "url": "https://arxiv.org/abs/2610.39276"
+    },
+    {
+     "label": "[10] arxiv.org",
+     "url": "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000"
+    },
+    {
+     "label": "[11] arxiv.org",
+     "url": "https://arxiv.org/list/cs.AI/new?skip=0&show=2000"
+    }
+   ],
+   "first_seen": "2026-11-01",
+   "change_type": "research"
+  },
+  {
+   "topic_id": "context-engineering",
+   "title": "Qwen Code v0.26.5 ergänzt begrenzte SQL-History-Abfragen",
+   "category": "agents",
+   "impact": 2,
+   "date": "2026-11-01",
+   "summary": "Qwen Code v0.26.5 ergänzt begrenzte SQL-History-Abfragen für Managed local H2 und Hosted MySQL. Unterstützt werden paginierte jüngere Nachrichten, Journaltransaktionen sowie exakte Operations- und Befehlsabfragen. Das am 1. November veröffentlichte stabile Release betrifft die Sitzungsverwaltung des Coding-Agenten, keine Veröffentlichung neuer Modellgewichte.[31][32]",
+   "sources": [
+    {
+     "label": "[31] github.com",
+     "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.26.5"
+    },
+    {
+     "label": "[32] api.github.com",
+     "url": "https://api.github.com/repos/QwenLM/qwen-code/releases?per_page=30"
+    }
+   ],
+   "first_seen": "2026-11-01",
+   "change_type": "update"
+  },
+  {
+   "topic_id": "context-engineering",
+   "title": "Arca dokumentiert persistentes Agenten-Memory für mehrtägige Finanzabläufe",
+   "category": "agents",
+   "impact": 2,
+   "date": "2026-10-31",
+   "summary": "Ein Latent-Space-Interview beschreibt Arcas internes Memory-System: Aufgabenstände, Verantwortliche und nächste Schritte bleiben je Kunde über mehrtägige Finanzabläufe und mehrere Übergaben erhalten. Laut AI-Engineer Aman Singh können Aufgaben bis zu zehn Tage umfassen; Handelsentscheidungen und Geldbewegungen bleiben bei menschlichen Beratern. Es handelt sich um einen Praxisbericht, keine neue öffentliche Memory-API oder unabhängige Sicherheitsbewertung.[23]",
+   "sources": [
+    {
+     "label": "[23] latent.space",
+     "url": "https://latent.space/p/arca/"
+    }
+   ],
+   "first_seen": "2026-11-01",
+   "change_type": "other"
   },
   {
    "topic_id": "ai-security",
-   "date": "2026-09-27",
-   "summary": "Sicherheitsbericht zu internem Agenten und begrenzter Modellpause; älteres Tagesmaterial bleibt mit Datum sichtbar.",
-   "skip": []
+   "title": "Wiz dokumentiert LLMJacking mit gestohlenen Unternehmensschlüsseln",
+   "category": "security",
+   "impact": 4,
+   "date": "2026-10-30",
+   "summary": "Wiz dokumentiert neuen nachgelagerten LLMJacking-Missbrauch von Unternehmenszugängen nach Vorfällen bei KI-Entwicklerplattformen. Für zwei beobachtete Fälle nennt Wiz rund 800.000 beziehungsweise 1,7 Millionen Bedrock-Aufrufe, nicht ausschließlich erfolgreiche Requests. Railway bestätigt getrennt die gezielte Suche nach KI-Provider-Schlüsseln. Die Zählwerte bleiben Wiz-Beobachtungen; ein gemeinsamer Exploit aller Plattformen oder gesicherte gemeinsame Täterschaft ist nicht belegt.[29][30]",
+   "sources": [
+    {
+     "label": "[29] www.wiz.io",
+     "url": "https://www.wiz.io/blog/black-october-for-ai-developer-platforms"
+    },
+    {
+     "label": "[30] blog.railway.com",
+     "url": "https://blog.railway.com/p/preliminary-report-october-security-incident"
+    }
+   ],
+   "first_seen": "2026-11-01",
+   "change_type": "security"
+  },
+  {
+   "topic_id": "ai-security",
+   "title": "Automated Subtle Emergent Misalignment Research untersucht harmlos wirkende Trainingsdaten",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-10-31",
+   "summary": "The Decoder berichtet am 31. Oktober über Anthropics Automated Subtle Emergent Misalignment Research: Ein Claude-Agent erzeugt harmlos wirkende Fine-Tuning-Daten, die einen bekannten Monitor passieren und ein kleineres Forschungsmodell fehlverhalten lassen. Das absichtlich angreiferfreundliche Laborexperiment betrifft keine öffentlich ausgelieferten Claude-Modelle. Der gelesene Primärbericht nennt nur Oktober 2026, keinen bestätigten Veröffentlichungstag.[4][5]",
+   "sources": [
+    {
+     "label": "[4] the-decoder.com",
+     "url": "https://the-decoder.com/beekeeping-tips-and-wrestling-advice-can-train-ai-models-to-sabotage-oversight/"
+    },
+    {
+     "label": "[5] alignment.anthropic.com",
+     "url": "https://alignment.anthropic.com/2026/automated-em-search/"
+    }
+   ],
+   "first_seen": "2026-11-01",
+   "change_type": "research"
   },
   {
    "topic_id": "ai-governance",
-   "date": "2026-09-27",
-   "summary": "Australien prüft KI-Vorfälle und Rechenzentren; US-Gerichts- und Haushaltsmeldungen stammen weiterhin vom 25. September.",
-   "skip": []
+   "title": "Claude Opus 4.6 und Sonnet 4.6 erhalten Wasserzeichen mit Sampling-Einschränkung",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-10-31",
+   "summary": "Anthropic erweitert laut The Decoder die Textwasserzeichen auf Mythos 5, Opus 4.7, Claude Opus 4.6 und Sonnet 4.6. Bei den beiden 4.6-Modellen gilt die dort zitierte Zusage nur bei unveränderten Sampling-Standardwerten; diese Ausnahme wurde nicht unabhängig technisch geprüft. Die offizielle Hilfeseite bestätigt die Nachrüstung älterer Modelle, keine verlässliche Erkennung beliebiger KI-Texte.[2][3]",
+   "sources": [
+    {
+     "label": "[2] the-decoder.com",
+     "url": "https://the-decoder.com/anthropics-watermark-rollout-leaves-a-loophole-on-two-older-claude-models/"
+    },
+    {
+     "label": "[3] support.claude.com",
+     "url": "https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content?utm_content=inline_link&utm_source=it&utm_medium=email&utm_campaignID=20681429&utm_campaign=2026_Q4_PMM_WATMRK_PORT"
+    }
+   ],
+   "first_seen": "2026-11-01",
+   "change_type": "update"
+  },
+  {
+   "topic_id": "ai-governance",
+   "title": "AI Grounding: Microsoft kündigt separate Publisher-Kontrollen ab Februar 2027 an",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-10-30",
+   "summary": "Microsoft kündigt neben AI Training eine separate seitenbezogene AI Grounding-Präferenz an. DisallowExtended soll Grounding in Microsoft-eigenen Produkten zulassen, aber Grounding-Dienste für Dritte ausschließen. Die neuen Regeln gelten beim Crawlen ab 1. Februar 2027; bisherige NoArchive-/NoCache-Nutzer müssen die dokumentierte Umstellung bis 1. März beachten. Die klassische Bing-Suchzulassung ändert sich dadurch nicht; es ist kein Lizenz- oder Zahlungsmodell.[16]",
+   "sources": [
+    {
+     "label": "[16] blogs.bing.com",
+     "url": "https://blogs.bing.com/search/2026/10/your-content-your-choice-clearer-preferences-for-training-and-grounding/"
+    }
+   ],
+   "first_seen": "2026-11-01",
+   "change_type": "policy"
+  },
+  {
+   "topic_id": "ai-governance",
+   "title": "AI Training: mehrere Anbieter unterstützen gemeinsames robots.txt-Signal",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-10-30",
+   "summary": "OpenAI, Google, Microsoft und Anthropic unterstützen laut The Verge eine gemeinsame AI Training-Präferenz in robots.txt. Neu ist der anbieterübergreifende Ansatz, nicht allein OpenAIs bereits gemeldete Zusage. Das Signal gehört zu einem noch nicht finalisierten IETF-Entwurf: Anthropic nutzt es dem Bericht zufolge bereits, Microsoft und Google planen Unterstützung 2027 und OpenAI in den kommenden Monaten. Es ist kein bereits weltweit durchgesetztes Scraping-Verbot.[15]",
+   "sources": [
+    {
+     "label": "[15] www.theverge.com",
+     "url": "https://www.theverge.com/tech/1023763/openai-google-microsoft-ai-scraping-standard-opt-out"
+    }
+   ],
+   "first_seen": "2026-11-01",
+   "change_type": "policy"
+  },
+  {
+   "topic_id": "ai-governance",
+   "title": "Generate Content API speichert Anfragen neuer Paid-Projekte standardmäßig",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-10-26",
+   "summary": "Seit dem 26. Oktober speichern neue Projekte im kostenpflichtigen Gemini-API-Tarif Generate Content API-Anfragen standardmäßig mit store=true. Bestehende Projekte behalten ihre bisherige Einstellung. Laut Original lässt sich die Speicherung pro Anfrage mit store=false oder über die Projekteinstellungen deaktivieren; daraus folgt keine neue Trainingsdatennutzung.[25][28]",
+   "sources": [
+    {
+     "label": "[25] ai.google.dev",
+     "url": "https://ai.google.dev/gemini-api/docs/changelog"
+    },
+    {
+     "label": "[28] ai.google.dev",
+     "url": "https://ai.google.dev/gemini-api/docs/logs-datasets#configure-logging"
+    }
+   ],
+   "first_seen": "2026-11-01",
+   "change_type": "update"
   },
   {
    "topic_id": "enterprise",
-   "date": "2026-09-27",
-   "summary": "Ein begrenzter AWS-Infrastrukturvergleich ergänzt ältere Unternehmensmeldungen.",
-   "skip": []
+   "title": "Meta: S&P setzt Ausblick auf negativ und bestätigt AA-",
+   "category": "business",
+   "impact": 3,
+   "date": "2026-10-30",
+   "summary": "S&P Global Ratings ändert Metas Ausblick von stabil auf negativ, bestätigt aber das AA--Rating. Die Agentur verweist auf Unsicherheit über Investitionsausgaben und freien operativen Cashflow; künftige Verschuldung bleibt eine Prognose. CNBC berichtet auch über Metas Widerspruch zur Einschätzung seiner KI-Monetarisierung. Dies ist eine Ausblickänderung, keine Herabstufung des Ratings.[21][22]",
+   "sources": [
+    {
+     "label": "[21] www.cnbc.com",
+     "url": "https://www.cnbc.com/2026/10/30/meta-outlook-to-revised-to-negative-by-sp-after-cash-flow-negative.html"
+    },
+    {
+     "label": "[22] www.spglobal.com",
+     "url": "https://www.spglobal.com/ratings/en/regulatory/article/-/view/sourceId/101715788"
+    }
+   ],
+   "first_seen": "2026-11-01",
+   "change_type": "business"
   },
+  {
+   "topic_id": "enterprise",
+   "title": "Deep Trust AI Architecture bündelt Oracles datenbankseitige Agentenkontrollen",
+   "category": "business",
+   "impact": 2,
+   "date": "2026-10-30",
+   "summary": "Oracle bündelt unter Deep Trust AI Architecture datenbankseitige Identitäts-, Zugriffs- und Geschäftsregeln für Agentenzugriffe. Der Architekturansatz verbindet unter anderem Deep Data Security, SQL Assertions, kontrollierte Daten-APIs und APEX. Laut heise ist dies kein einzelner neuer Dienst; einen gemeinsamen Einführungstermin oder Gesamtpreis nennt Oracle nicht. Die Verfügbarkeit muss je Komponente geprüft werden.[18]",
+   "sources": [
+    {
+     "label": "[18] www.heise.de",
+     "url": "https://www.heise.de/news/Oracle-will-Geschaeftsregeln-vor-eigenmaechtigen-KI-Agenten-schuetzen-11505277.html"
+    }
+   ],
+   "first_seen": "2026-11-01",
+   "change_type": "announcement"
+  },
+  {
+   "topic_id": "enterprise",
+   "title": "DoorDash meldet erst einige Hundert Bestellungen durch externe KI-Agenten",
+   "category": "business",
+   "impact": 2,
+   "date": "2026-10-30",
+   "summary": "DoorDash-CEO Tony Xu nennt im Quartalsgespräch erst einige Hundert Bestellungen durch externe KI-Agenten seit deren Start. Ars weist darauf hin, dass der MCP-Zugang weniger als einen Monat besteht und auf frühe Beta-Partner beschränkt ist. DoorDashs eigene KI-Funktionen sind in dieser Zahl nicht enthalten; sie ist kein allgemeiner Beleg gegen Agentic Commerce.[19]",
+   "sources": [
+    {
+     "label": "[19] arstechnica.com",
+     "url": "https://arstechnica.com/ai/2026/10/doordash-says-outside-ai-agents-have-only-led-to-hundreds-of-orders-so-far/"
+    }
+   ],
+   "first_seen": "2026-11-01",
+   "change_type": "business"
+  },
+  {
+   "topic_id": "enterprise",
+   "title": "Runware plant Serienfertigung seiner Sonic Inference Pods",
+   "category": "business",
+   "impact": 2,
+   "date": "2026-10-30",
+   "summary": "Runware will seine Sonic Inference Pods in einer weiteren Fabrik in Rumänien auf einer Produktionslinie fertigen; der Standort soll laut Unternehmen Anfang 2027 anlaufen. Die angestrebten 48 Stunden betreffen Installation und Inbetriebnahme beim Kunden, nicht Herstellung oder Gesamtbauzeit. TechCrunch weist darauf hin, dass die Umsetzung erst bewiesen werden muss; ein erreichtes Produktionsvolumen ist nicht belegt.[14]",
+   "sources": [
+    {
+     "label": "[14] techcrunch.com",
+     "url": "https://techcrunch.com/2026/10/30/can-ai-data-centers-be-mass-produced-like-cars-and-online-in-48-hours-this-startup-aims-to-find-out/"
+    }
+   ],
+   "first_seen": "2026-11-01",
+   "change_type": "announcement"
+  },
+  {
+   "topic_id": "enterprise",
+   "title": "Smplify erläutert Freigabe-Kontrollschicht für Agenten in der Geräteverwaltung",
+   "category": "business",
+   "impact": 2,
+   "date": "2026-10-30",
+   "summary": "Smplify beschreibt im Computerworld-Interview eine API-/CLI-basierte Geräteverwaltung, die riskante Agentenaktionen bis zur menschlichen Freigabe zurückhalten und Änderungen mit Absicht und Genehmigung protokollieren soll. Das ist eine Anbieterbeschreibung der Architektur, kein unabhängiger Wirksamkeitsnachweis. Der 30. Oktober ist das Interviewdatum, kein belegter allgemeiner Produktstart.[20]",
+   "sources": [
+    {
+     "label": "[20] www.computerworld.com",
+     "url": "https://www.computerworld.com/article/4242772/smplify-wants-a-human-checkpoint-between-ai-agents-and-your-device-fleet.html"
+    }
+   ],
+   "first_seen": "2026-11-01",
+   "change_type": "other"
+  }
+ ],
+ "summaries": [
   {
    "topic_id": "ai-news",
    "date": "2026-09-28",
@@ -21109,40 +21354,88 @@
    "date": "2026-10-31",
    "summary": "",
    "skip": []
+  },
+  {
+   "topic_id": "ai-news",
+   "date": "2026-11-01",
+   "summary": "",
+   "skip": []
+  },
+  {
+   "topic_id": "lokale-llms",
+   "date": "2026-11-01",
+   "summary": "",
+   "skip": []
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "date": "2026-11-01",
+   "summary": "",
+   "skip": []
+  },
+  {
+   "topic_id": "ai-tools",
+   "date": "2026-11-01",
+   "summary": "",
+   "skip": []
+  },
+  {
+   "topic_id": "context-engineering",
+   "date": "2026-11-01",
+   "summary": "",
+   "skip": []
+  },
+  {
+   "topic_id": "ai-security",
+   "date": "2026-11-01",
+   "summary": "",
+   "skip": []
+  },
+  {
+   "topic_id": "ai-governance",
+   "date": "2026-11-01",
+   "summary": "",
+   "skip": []
+  },
+  {
+   "topic_id": "enterprise",
+   "date": "2026-11-01",
+   "summary": "",
+   "skip": []
   }
  ],
  "fingerprints": {
   "ai-news": {
-   "hash": "a9f7c771d9ba1ae4ff673fc1772c4f8c88e2b6cc",
-   "date": "2026-10-31"
+   "hash": "2c73be426d27c7ed0d29600e42f31524a1e44cb7",
+   "date": "2026-11-01"
   },
   "lokale-llms": {
-   "hash": "8dd13c0b37d5a3bdb353efe5cc9c703ecb38ded5",
-   "date": "2026-10-31"
+   "hash": "a45c5c86f416a91fe833643ae081daf77f34a57c",
+   "date": "2026-11-01"
   },
   "agentic-engineering": {
-   "hash": "c2e08e84f41e8d0c26987983e5064366d0a07014",
-   "date": "2026-10-31"
+   "hash": "76f2e9e611ee0a41278e9311edccba696d053791",
+   "date": "2026-11-01"
   },
   "ai-tools": {
-   "hash": "e9d23b1cc1e1e47b780ecf13318614d4ca7d7b6f",
-   "date": "2026-10-31"
+   "hash": "6ea7ec19ffa865b1d677d81b0ee5fc8e6372a4af",
+   "date": "2026-11-01"
   },
   "context-engineering": {
-   "hash": "b7892e2af76d0a40f4feb92c617bf06d3a78422c",
-   "date": "2026-10-31"
+   "hash": "b9858eb743e46e5a414b512cb2e68de26a3fc774",
+   "date": "2026-11-01"
   },
   "ai-security": {
-   "hash": "cbe23ae62e5c29ab706cddc9d7e8e7ea5cc5787f",
-   "date": "2026-10-31"
+   "hash": "719490493b05231ee05c95181ea910921f921f72",
+   "date": "2026-11-01"
   },
   "ai-governance": {
-   "hash": "32982cd49939b84f1b84121a0c1682fc879f2cb0",
-   "date": "2026-10-31"
+   "hash": "cf396d49d807d270c54a0e2dc7c89349fd0286c2",
+   "date": "2026-11-01"
   },
   "enterprise": {
-   "hash": "da6e716108fd62153b2393c88dd6ea33baa5b41b",
-   "date": "2026-10-31"
+   "hash": "53b641177ce549b3e9e915b3735edb4bc54d73d8",
+   "date": "2026-11-01"
   }
  }
 }
