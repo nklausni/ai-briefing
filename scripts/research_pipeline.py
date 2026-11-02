@@ -371,6 +371,23 @@ def record(run, task_id, entry):
     return {"saved": str(destination), "candidates": len(candidates)}
 
 
+def checkpoint_owner(manifest, task, entry):
+    """Validate a checkpoint against its real executor within one retry family."""
+    owner = next((item for item in manifest["tasks"] if item["id"] == entry.get("task_id")), None)
+    require(owner is not None, "Unknown checkpoint task owner")
+    family = lambda item: item.get("retry_of", item["id"])
+    require(family(owner) == family(task) and owner["kind"] == task["kind"],
+            "Checkpoint belongs to an unrelated task family")
+    if task["kind"] == "sources":
+        expected = next((s for s in task["sources"] if s["domain"] == entry.get("domain")), None)
+        actual = next((s for s in owner["sources"] if s["domain"] == entry.get("domain")), None)
+        require(expected is not None and expected == actual, "Checkpoint source assignment changed")
+    else:
+        require(owner["topics"] == task["topics"] and owner["since"] == task["since"],
+                "Checkpoint discovery assignment changed")
+    return owner
+
+
 def missing(run, task):
     manifest = read(Path(run) / "manifest.json")
     paths = [("discovery", Path(run) / "discovery.json")] if task["kind"] == "discovery" else [
@@ -381,7 +398,9 @@ def missing(run, task):
             pending.append(identity)
         elif manifest.get("integrity_version"):
             try:
-                validate_integrity_entry(run, task, read(path))
+                entry = read(path)
+                owner = checkpoint_owner(manifest, task, entry)
+                validate_integrity_entry(run, owner, entry)
             except (ValueError, KeyError, TypeError, OSError):
                 pending.append(identity)
     return pending
@@ -577,7 +596,8 @@ def assemble(run):
     require(set(discovery.get("topics_checked", [])) == set(TOPICS), "Incomplete discovery topics")
     discovery_task = next(t for t in manifest["tasks"] if t["id"] == "discovery")
     if manifest.get("integrity_version"):
-        validate_integrity_entry(run, discovery_task, discovery)
+        owner = checkpoint_owner(manifest, discovery_task, discovery)
+        validate_integrity_entry(run, owner, discovery)
     validate_candidates(discovery.get("candidates"), manifest["date"], discovery_task["since"], manifest.get("schema_version", 1) >= 2, arxiv_policy=registry_version >= 5)
     if registry_version >= 2:
         reject_retired_source_candidates(discovery["candidates"], registry_version)

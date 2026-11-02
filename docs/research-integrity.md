@@ -65,6 +65,17 @@ Originale, Errata, Worker-Tooltraces und Budgets erhalten; nur in einem ausdrüc
 autorisierten neuen Run korrigierte Recherche und validierte Carry-overs nutzen.
 Nicht dieselbe unveränderliche Datei überschreiben und nicht alles blind neu suchen.
 
+Bei einem regulären `*-retry` bleibt `task_id` der tatsächliche ausführende Auftrag.
+Die Vollständigkeitsprüfung erkennt dessen Checkpoint nur innerhalb derselben
+Manifest-`retry_of`-Familie und bei unverändertem Quellen-/Themenassignment an.
+`assemble` validiert Discovery ebenso gegen den tatsächlichen Checkpoint-Eigentümer;
+Such-Receipts werden niemals auf den ursprünglichen Task umetikettiert. Neue
+Retry-Suchen sind zusätzliche echte Ausführungen; Originalreservierungen/-antworten
+bleiben erhalten und Wiederholungen werden im Recovery-Bericht separat gezählt.
+Unbekannte/fremde Task-Eigentümer, geänderte Assignments und ungültige Hashes bleiben
+gesperrt. Ein bestätigter Retry-Abschluss ist kein automatisches Wiederanlaufen
+nach einem Gateway- oder Container-Neustart.
+
 Grenze: Hashes und Strukturprüfungen verhindern versehentliche unbelegte
 Selbstauskünfte und Identitätsfehler. Sie sind keine Garantie gegen einen
 böswilligen Schreiber mit Dateisystemzugriff und ersetzen keine semantische
