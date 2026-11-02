@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI-Radar — Lokale LLMs — Ausgabe vom 1. November 2026</title>
+<title>AI-Radar — Lokale LLMs — Ausgabe vom 2. November 2026</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <main class="sheet">
-  <header class="top"><div class="edition-kicker">Künstliche Intelligenz · Nachrichten & Einordnung</div><h1 class="masthead"><a href="index.html">AI Briefing</a></h1><p class="masthead-motto">Modelle, Werkzeuge und die Welt im Wandel.</p><div class="subrow"><div class="subs"><div class="sub">Blickwinkel: Open Weights, lokale Inferenz und Hardware</div></div><div class="meta-right"><nav class="range-sw" aria-label="Zeitraum"><a href="lokale-llms.html" class="active">Heute</a><a href="7d/lokale-llms.html">7 Tage</a><a href="14d/lokale-llms.html">14 Tage</a><a href="30d/lokale-llms.html">30 Tage</a></nav><div class="range-period">Ausgabe vom 1. November 2026</div></div></div></header>
+  <header class="top"><div class="edition-kicker">Künstliche Intelligenz · Nachrichten & Einordnung</div><h1 class="masthead"><a href="index.html">AI Briefing</a></h1><p class="masthead-motto">Modelle, Werkzeuge und die Welt im Wandel.</p><div class="subrow"><div class="subs"><div class="sub">Blickwinkel: Open Weights, lokale Inferenz und Hardware</div></div><div class="meta-right"><nav class="range-sw" aria-label="Zeitraum"><a href="lokale-llms.html" class="active">Heute</a><a href="7d/lokale-llms.html">7 Tage</a><a href="14d/lokale-llms.html">14 Tage</a><a href="30d/lokale-llms.html">30 Tage</a></nav><div class="range-period">Ausgabe vom 2. November 2026</div></div></div></header>
   <nav class="nav" aria-label="Themen"><a href="index.html">Übersicht</a><a href="ai-news.html">AI News</a><a href="lokale-llms.html" class="active">Lokale LLMs</a><a href="agentic-engineering.html">Agentic Engineering / Vibe Coding</a><a href="ai-tools.html">AI Tools</a><a href="context-engineering.html">Context Engineering</a><a href="ai-security.html">AI Security</a><a href="ai-governance.html">AI Governance</a><a href="enterprise.html">Enterprise</a><a href="search.html">Suche</a></nav>
   <h2 class="topic-heading">Lokale LLMs</h2>
 
 <p class="sub">Enthält auch frühere Meldungen; Originaldaten stehen an den Einträgen.</p>
-  <p class="lede"></p>
+  <p class="lede">kniv v7 bringt kleine lokale Extraktionsmodelle, Drex Max v1 offene Entscheidungsmodell-Gewichte. Ein llama.cpp-Messbericht untersucht einen noch offenen Fix statt ein bereits ausgeliefertes Release.</p>
 
   <div class="board">
     <div class="board-left">
@@ -58,8 +58,16 @@
 <text x="400" y="754" class="sector-label" text-anchor="middle" fill="#1f1d1b">Security &amp; Governance</text>
 <text x="96.89" y="579" class="sector-label" text-anchor="end" fill="#1f1d1b">Business &amp; Markt</text>
 <g>
-<circle cx="548.26" cy="485.6" r="13" fill="#1aae39" stroke="#ffffff" stroke-width="2"/>
-<text x="548.26" y="489.6" class="blip-num" text-anchor="middle" fill="#191915">4</text>
+<circle cx="555.25" cy="456.51" r="13" fill="#1aae39" stroke="#ffffff" stroke-width="2"/>
+<text x="555.25" y="460.51" class="blip-num" text-anchor="middle" fill="#191915">5</text>
+</g>
+<g>
+<circle cx="535.73" cy="513.89" r="13" fill="#1aae39" stroke="#ffffff" stroke-width="2"/>
+<text x="535.73" y="517.89" class="blip-num" text-anchor="middle" fill="#191915">6</text>
+</g>
+<g>
+<circle cx="596.76" cy="513.6" r="13" fill="#1aae39" stroke="#ffffff" stroke-width="2"/>
+<text x="596.76" y="517.6" class="blip-num" text-anchor="middle" fill="#191915">7</text>
 </g>
 </svg>
       </div>
@@ -86,19 +94,37 @@
   <div class="section"><h2>Die Meldungen im Detail</h2></div>
   <div class="detail-list">
   <div class="dcard">
-    <span class="dnum" style="background:#1aae39;color:#191915">4</span>
+    <span class="dnum" style="background:#1aae39;color:#191915">5</span>
     <div class="dbody">
-      <h3 class="dtitle"><a class="dtitle-link" href="https://huggingface.co/blog/Diffuspace/clover-35b-a3b-preview" target="_blank" rel="noopener">Clover-35B-A3B-Preview veröffentlicht offene Diffusionsmodell-Gewichte</a></h3>
-      <div class="dmeta"><span class="cat-badge" style="border-left:3px solid #1aae39;color:var(--ink)">Open Weight / Lokal</span><span class="dmeta-src">[12] huggingface.co · 2026-10-30</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
-      <p>DiffuSpace veröffentlicht Clover-35B-A3B-Preview mit offenen Gewichten unter Apache 2.0. Das von Qwen3.6-35B-A3B abgeleitete textbasierte Block-Diffusionsmodell hat laut Model Card 35 Milliarden Gesamtparameter, rund drei Milliarden aktive Parameter je Token und 128K Kontext. Die BF16-Gewichte benötigen laut README ungefähr 69 GB zuzüglich Inferenzzustand; Preview und Herstellerbenchmarks belegen keinen allgemeinen Reife- oder Geschwindigkeitsvorsprung.[12][13]</p>
-      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://huggingface.co/blog/Diffuspace/clover-35b-a3b-preview" target="_blank" rel="noopener">[12] huggingface.co <span class="arw">→</span></a> · <a class="dlink" href="https://huggingface.co/Diffuspace/Clover-35B-A3B-Preview/resolve/main/README.md" target="_blank" rel="noopener">[13] huggingface.co <span class="arw">→</span></a></div>
+      <h3 class="dtitle"><a class="dtitle-link" href="https://huggingface.co/blog/dragonscale-ai/how-we-built-kniv-v7" target="_blank" rel="noopener">kniv v7 veröffentlicht lokale Encoder für frei vorgegebene Fakten-Schemata</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="border-left:3px solid #1aae39;color:var(--ink)">Open Weight / Lokal</span><span class="dmeta-src">[13] huggingface.co · 2026-11-02</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Dragonscale veröffentlicht sechs englischsprachige Encoder mit 55 bis 538 Millionen Parametern unter Apache 2.0 samt ONNX-Varianten. Die Modelle extrahieren Entitäten, Relationen und Faktenattribute anhand eines zur Laufzeit vorgegebenen Schemas, ohne LLM-Aufruf oder Neutraining. Fakten werden nur innerhalb eines Textfensters verknüpft; die Autoren nennen Fehler bei Negation, Attribution und übersehenen Relationen. Es handelt sich um Extraktionsmodelle, nicht um ein neues allgemeines Chat-LLM.[13][14]</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://huggingface.co/blog/dragonscale-ai/how-we-built-kniv-v7" target="_blank" rel="noopener">[13] huggingface.co <span class="arw">→</span></a> · <a class="dlink" href="https://huggingface.co/dragonscale-ai/kniv-v7-xlarge-u-en" target="_blank" rel="noopener">[14] huggingface.co <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#1aae39;color:#191915">6</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://huggingface.co/nace-ai/drex-max-v1" target="_blank" rel="noopener">Drex Max v1 erhält offene Gewichte für lokale Inferenz</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="border-left:3px solid #1aae39;color:var(--ink)">Open Weight / Lokal</span><span class="dmeta-src">[28] huggingface.co · 2026-10-30</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>Nace kündigt die Gewichtsfreigabe am 30. Oktober an; der Modell-Card zufolge läuft das 27B-Entscheidungsmodell auch lokal. Apple-Silicon-Pfade unterstützen den Text-Backbone, nicht automatisch Bildverarbeitung. Dies ist ein neuer Freigabeschritt gegenüber der bereits berichteten gehosteten Drex-Max-API vom 19. Oktober; die Lizenz heißt Nace.AI Open RAIL-M, nicht uneingeschränktes Open Source.[28][29]</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://huggingface.co/nace-ai/drex-max-v1" target="_blank" rel="noopener">[28] huggingface.co <span class="arw">→</span></a> · <a class="dlink" href="https://x.com/NaceAI/status/2116163656480428220" target="_blank" rel="noopener">[29] x.com <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#1aae39;color:#191915">7</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://huggingface.co/blog/bytkim/llama-cpp-logprob-loss" target="_blank" rel="noopener">MURPHY dokumentiert Token- und Logprob-Verluste in llama.cpp; Patch bleibt offen</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="border-left:3px solid #1aae39;color:var(--ink)">Open Weight / Lokal</span><span class="dmeta-src">[15] huggingface.co · 2026-10-31</span> · <span class="dots">●●○○○</span> <span class="dmeta-imp">2/5</span></div>
+      <p>Ein neuer MURPHY-Bericht untersucht fehlende oder falsch zugeordnete Token-IDs und Logprob-Datensätze beim UTF-8-Buffering von llama-server. Der Autor vergleicht Baseline und gepatchten Build mit Qwen3.5-9B; im getesteten Patch-Build bestehen die verfügbaren Record-Checks ohne Defekte. Der gelesene Upstream-PR #31244 ist noch offen: Das ist ein Messbericht samt vorgeschlagenem Fix, keine bereits veröffentlichte llama.cpp-Korrektur. Ergebnisse gelten nur für den dokumentierten Modell- und Laufaufbau; Chat-Tokenidentität und unabhängige numerische Logprob-Genauigkeit wurden nicht nachgewiesen.[15][16]</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://huggingface.co/blog/bytkim/llama-cpp-logprob-loss" target="_blank" rel="noopener">[15] huggingface.co <span class="arw">→</span></a> · <a class="dlink" href="https://github.com/ggml-org/llama.cpp/pull/31244" target="_blank" rel="noopener">[16] github.com <span class="arw">→</span></a></div>
     </div>
   </div>
   </div>
 
 
 
-  <div class="footer">Hinweis: Alle Infos auf eigene Gefahr. Dies ist ein privates Projekt, automatisch generiert aus Web-Recherche.<br>Aufbau nach dem Tech-Radar-Prinzip (Ringe = Impact, Segmente = Kategorie). Statischer Export; nur die lokale Suche benötigt JavaScript. Auswahl per Recherche — keine Gewähr auf Vollständigkeit.<br><span class="footer-updated">Zuletzt aktualisiert: 1. November 2026</span></div>
+  <div class="footer">Hinweis: Alle Infos auf eigene Gefahr. Dies ist ein privates Projekt, automatisch generiert aus Web-Recherche.<br>Aufbau nach dem Tech-Radar-Prinzip (Ringe = Impact, Segmente = Kategorie). Statischer Export; nur die lokale Suche benötigt JavaScript. Auswahl per Recherche — keine Gewähr auf Vollständigkeit.<br><span class="footer-updated">Zuletzt aktualisiert: 2. November 2026</span></div>
 </main>
 </body>
 </html>

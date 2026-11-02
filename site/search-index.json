@@ -1,5 +1,139 @@
 [
  {
+  "title": "kniv v7 veröffentlicht lokale Encoder für frei vorgegebene Fakten-Schemata",
+  "summary": "Dragonscale veröffentlicht sechs englischsprachige Encoder mit 55 bis 538 Millionen Parametern unter Apache 2.0 samt ONNX-Varianten. Die Modelle extrahieren Entitäten, Relationen und Faktenattribute anhand eines zur Laufzeit vorgegebenen Schemas, ohne LLM-Aufruf oder Neutraining. Fakten werden nur innerhalb eines Textfensters verknüpft; die Autoren nennen Fehler bei Negation, Attribution und übersehenen Relationen. Es handelt sich um Extraktionsmodelle, nicht um ein neues allgemeines Chat-LLM.[13][14]",
+  "topic_id": "lokale-llms",
+  "topic": "Lokale LLMs",
+  "date": "2026-11-02",
+  "sources": [
+   {
+    "label": "[13] huggingface.co",
+    "url": "https://huggingface.co/blog/dragonscale-ai/how-we-built-kniv-v7"
+   },
+   {
+    "label": "[14] huggingface.co",
+    "url": "https://huggingface.co/dragonscale-ai/kniv-v7-xlarge-u-en"
+   }
+  ],
+  "change_type": "general_availability"
+ },
+ {
+  "title": "Südkoreas KI-Haushalt 2027 sieht mehr Geld für Chips und ein souveränes Modell vor",
+  "summary": "Präsident Lee Jae Myung legt einen Haushaltsvorschlag für 2027 vor: 21,3 Billionen Won sollen Halbleiter, physische KI und KI-Rechenzentren fördern; 4,7 Billionen Won sind für Frontier-KI und ein nationales Modell vorgesehen. CNBC und ein unabhängig gelesener AFP-Bericht bestätigen die Vorhaben. Das Parlament muss dem Budget noch zustimmen; Weltspitzenleistung ist ein politisches Ziel, kein gemessenes Modellergebnis.[20][21]",
+  "topic_id": "enterprise",
+  "topic": "Enterprise",
+  "date": "2026-11-02",
+  "sources": [
+   {
+    "label": "[20] www.cnbc.com",
+    "url": "https://www.cnbc.com/2026/11/02/south-korea-ai-spending-budget.html"
+   },
+   {
+    "label": "[21] www.straitstimes.com",
+    "url": "https://www.straitstimes.com/asia/east-asia/south-korea-to-double-spending-on-ai-and-chips-in-2027"
+   }
+  ],
+  "change_type": "policy"
+ },
+ {
+  "title": "Latent Sparse Attention untersucht effizientere Aufmerksamkeit für sehr lange Kontexte",
+  "summary": "Latent Sparse Attention gruppiert Schlüssel hierarchisch in einem gelernten Raum, statt jede Position einzeln zu bewerten. Das Preprint untersucht eine distillierte und eine nativ trainierte Variante. Die gemeldeten Beschleunigungen beziehen sich auf einzelne Attention-Schichten und bestimmte Testkonfigurationen, nicht pauschal auf komplette Agenten. Einreichung: 30. Oktober; öffentliche New-Erstlistung: 2. November 2026.[8][9][10]",
+  "topic_id": "context-engineering",
+  "topic": "Context Engineering",
+  "date": "2026-11-02",
+  "sources": [
+   {
+    "label": "[8] arxiv.org",
+    "url": "https://arxiv.org/abs/2610.42147"
+   },
+   {
+    "label": "[9] arxiv.org",
+    "url": "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000"
+   },
+   {
+    "label": "[10] arxiv.org",
+    "url": "https://arxiv.org/list/cs.AI/new?skip=0&show=2000"
+   }
+  ],
+  "change_type": "research"
+ },
+ {
+  "title": "ACCT überträgt Kontext-Caches zwischen unterschiedlich großen Modellen einer Familie",
+  "summary": "ACCT wandelt den KV-Cache eines Quellmodells in sparse Zustände für ein anderes Modell derselben Familie um. Das soll erneute Kontextberechnung beim Modellwechsel vermeiden. Die Autoren berichten Tests mit kleinerem Cache; dies ist ein Preprint, kein Nachweis beliebiger Übertragbarkeit zwischen unabhängigen Modellfamilien. Einreichung am 30. Oktober und öffentliche New-Erstlistung am 2. November 2026 sind getrennt belegt.[11][9][10]",
+  "topic_id": "context-engineering",
+  "topic": "Context Engineering",
+  "date": "2026-11-02",
+  "sources": [
+   {
+    "label": "[11] arxiv.org",
+    "url": "https://arxiv.org/abs/2610.42116"
+   },
+   {
+    "label": "[9] arxiv.org",
+    "url": "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000"
+   },
+   {
+    "label": "[10] arxiv.org",
+    "url": "https://arxiv.org/list/cs.AI/new?skip=0&show=2000"
+   }
+  ],
+  "change_type": "research"
+ },
+ {
+  "title": "Cross-Interface Authorization bindet Agentenfreigaben an konkrete Ausführungswege",
+  "summary": "Das neue Preprint beschreibt ein Freigabeprotokoll für Agenten, die GUI, Shell, APIs oder MCP nutzen. Es bindet Vorbereitung, Commit-Prüfung und Ergebnisbeleg an den registrierten Ausführungsweg und Zustand. Die Garantien gelten nur unter expliziten Annahmen für das deklarierte Deploymentprofil; die Referenztests sind keine allgemeine Absicherung beliebiger Agentensysteme. Eingereicht am 30. Oktober, erstmals als New gelistet am 2. November 2026.[12][9][10]",
+  "topic_id": "ai-security",
+  "topic": "AI Security",
+  "date": "2026-11-02",
+  "sources": [
+   {
+    "label": "[12] arxiv.org",
+    "url": "https://arxiv.org/abs/2610.41397"
+   },
+   {
+    "label": "[9] arxiv.org",
+    "url": "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000"
+   },
+   {
+    "label": "[10] arxiv.org",
+    "url": "https://arxiv.org/list/cs.AI/new?skip=0&show=2000"
+   }
+  ],
+  "change_type": "research"
+ },
+ {
+  "title": "Meta erforscht mit Fourier den Haushaltsroboter Max",
+  "summary": "Meta bestätigt gegenüber Heise interne Robotikforschung mit Fourier. Der berichtete humanoide Prototyp Max ist nicht für den Verkauf vorgesehen. Konkrete Prototypdetails stammen aus einem Bericht von The Information und sind keine frei überprüfte Produktankündigung.[19]",
+  "topic_id": "ai-news",
+  "topic": "AI News",
+  "date": "2026-11-02",
+  "sources": [
+   {
+    "label": "[19] www.heise.de",
+    "url": "https://www.heise.de/news/Meta-arbeitet-offenbar-mit-chinesischer-Hilfe-an-humanoidem-Haushaltsroboter-11507414.html"
+   }
+  ],
+  "change_type": "research"
+ },
+ {
+  "title": "GDPx startet als Agentenbenchmark mit 206 Aufgaben in elf Domänen",
+  "summary": "SemiAnalysis startet GDPx mit 206 Agentenaufgaben in elf Domänen und 14 Partnern. Die frei lesbare Originalseite führt Claude Opus 5.5 mit 12,0 Prozent vor Gemini 4 Carbon mit 10,9 Prozent. Die Ergebnisse gelten für diesen Benchmark und die jeweiligen Harnesses, nicht als universelles Modellranking. Der Startbericht ist auf den 2. November datiert.[36][37]",
+  "topic_id": "ai-news",
+  "topic": "AI News",
+  "date": "2026-11-02",
+  "sources": [
+   {
+    "label": "[36] www.unite.ai",
+    "url": "https://www.unite.ai/semianalysis-launches-gdpx-benchmark-spanning-11-agentic-domains/"
+   },
+   {
+    "label": "[37] gdpx.semianalysis.com",
+    "url": "https://gdpx.semianalysis.com/"
+   }
+  ],
+  "change_type": "research"
+ },
+ {
   "title": "Qwen Code v0.26.5 ergänzt begrenzte SQL-History-Abfragen",
   "summary": "Qwen Code v0.26.5 ergänzt begrenzte SQL-History-Abfragen für Managed local H2 und Hosted MySQL. Unterstützt werden paginierte jüngere Nachrichten, Journaltransaktionen sowie exakte Operations- und Befehlsabfragen. Das am 1. November veröffentlichte stabile Release betrifft die Sitzungsverwaltung des Coding-Agenten, keine Veröffentlichung neuer Modellgewichte.[31][32]",
   "topic_id": "context-engineering",
@@ -16,6 +150,56 @@
    }
   ],
   "change_type": "update"
+ },
+ {
+  "title": "ChatGPT und Codex sollen ab Dezember ein gemeinsames Kontingent nutzen",
+  "summary": "OpenAI kündigt für Dezember ein gemeinsames tokenbasiertes Nutzungskontingent für ChatGPT und Codex in Plus, Pro und Business an. Instant-Chats sollen es nicht verbrauchen. The Decoder berichtet am 1. November; die gelesene Anbieterhilfe bestätigt den zukünftigen Schritt. Das ist keine bereits abgeschlossene Zusammenführung oder pauschale Preiserhöhung.[4][5]",
+  "topic_id": "ai-tools",
+  "topic": "AI Tools",
+  "date": "2026-11-01",
+  "sources": [
+   {
+    "label": "[4] the-decoder.com",
+    "url": "https://the-decoder.com/openais-upcoming-chat-and-work-merger-in-chatgpt-signals-the-end-of-all-you-can-prompt-pricing/"
+   },
+   {
+    "label": "[5] help.openai.com",
+    "url": "https://help.openai.com/en/articles/20001625-understanding-chatgpt-and-codex-usage-limits"
+   }
+  ],
+  "change_type": "announcement"
+ },
+ {
+  "title": "Artificial Analysis ergänzt High-Evaluation für DeepSeek V4.1 Flash 1017",
+  "summary": "Artificial Analysis ergänzt am 1. November eine High-Evaluation für DeepSeek V4.1 Flash 1017 mit Intelligence Index 29. Das ist kein neues Modell. Die schon im Oktober berichtete Max-Evaluation nutzt eine andere Reasoning-Einstellung; aus den unterschiedlichen Werten folgt kein neuer Leistungsrückgang.[24]",
+  "topic_id": "ai-news",
+  "topic": "AI News",
+  "date": "2026-11-01",
+  "sources": [
+   {
+    "label": "[24] artificialanalysis.ai",
+    "url": "https://artificialanalysis.ai/changelog"
+   }
+  ],
+  "change_type": "update"
+ },
+ {
+  "title": "ChatGPT dokumentiert Karten- und Gerätelimits für Privatabos",
+  "summary": "The Decoder berichtet am 1. November über Karten- und Gerätelimits; OpenAIs Hilfeseite bestätigt Beschränkungen bei zu vielen zugeordneten Abonnements. Betroffen sind Go-, Plus- und Pro-Pläne, nicht Free oder Business-, Enterprise- und Edu-Workspaces. Ein ursprünglicher Einführungstag und konkrete numerische Grenzen sind nicht belegt.[2][3]",
+  "topic_id": "ai-governance",
+  "topic": "AI Governance",
+  "date": "2026-11-01",
+  "sources": [
+   {
+    "label": "[2] the-decoder.com",
+    "url": "https://the-decoder.com/openai-is-steering-chatgpt-users-toward-more-paid-usage/"
+   },
+   {
+    "label": "[3] help.openai.com",
+    "url": "https://help.openai.com/en/articles/20001559-understanding-card-and-device-limits-in-chatgpt"
+   }
+  ],
+  "change_type": "policy"
  },
  {
   "title": "Responses API: OpenRouter zeigt ausführbaren Code-Review mit Sandbox und Patches",
@@ -48,6 +232,42 @@
    }
   ],
   "change_type": "update"
+ },
+ {
+  "title": "MURPHY dokumentiert Token- und Logprob-Verluste in llama.cpp; Patch bleibt offen",
+  "summary": "Ein neuer MURPHY-Bericht untersucht fehlende oder falsch zugeordnete Token-IDs und Logprob-Datensätze beim UTF-8-Buffering von llama-server. Der Autor vergleicht Baseline und gepatchten Build mit Qwen3.5-9B; im getesteten Patch-Build bestehen die verfügbaren Record-Checks ohne Defekte. Der gelesene Upstream-PR #31244 ist noch offen: Das ist ein Messbericht samt vorgeschlagenem Fix, keine bereits veröffentlichte llama.cpp-Korrektur. Ergebnisse gelten nur für den dokumentierten Modell- und Laufaufbau; Chat-Tokenidentität und unabhängige numerische Logprob-Genauigkeit wurden nicht nachgewiesen.[15][16]",
+  "topic_id": "lokale-llms",
+  "topic": "Lokale LLMs",
+  "date": "2026-10-31",
+  "sources": [
+   {
+    "label": "[15] huggingface.co",
+    "url": "https://huggingface.co/blog/bytkim/llama-cpp-logprob-loss"
+   },
+   {
+    "label": "[16] github.com",
+    "url": "https://github.com/ggml-org/llama.cpp/pull/31244"
+   }
+  ],
+  "change_type": "research"
+ },
+ {
+  "title": "OpenAIs Finanzierungsziel sinkt laut CNBC auf bis zu 20 Milliarden Dollar",
+  "summary": "OpenAI strebt laut CNBC in der noch laufenden Finanzierungsrunde bis zu 20 statt zuvor bis zu 30 Milliarden Dollar an. CNBC beruft sich auf eine eigene Bestätigung durch eine mit der Transaktion vertraute Person; Bloomberg referiert zusätzlich die ursprüngliche FT-Recherche. Die Runde ist nicht abgeschlossen, Beträge können sich ändern. Eine verbindliche Bewertung oder bereits eingegangene Mittel werden nicht behauptet.[22][23]",
+  "topic_id": "enterprise",
+  "topic": "Enterprise",
+  "date": "2026-10-31",
+  "sources": [
+   {
+    "label": "[22] www.cnbc.com",
+    "url": "https://www.cnbc.com/2026/10/31/openai-fundraising-20-billion-valuation.html"
+   },
+   {
+    "label": "[23] finance.yahoo.com",
+    "url": "https://finance.yahoo.com/technology/ai/articles/openai-funding-target-cut-10-050928607.html"
+   }
+  ],
+  "change_type": "business"
  },
  {
   "title": "Arca dokumentiert persistentes Agenten-Memory für mehrtägige Finanzabläufe",
@@ -128,6 +348,20 @@
   "change_type": "preview"
  },
  {
+  "title": "OpenRouter-Auswertung: Open-Weight-Modelle erreichen 72 Prozent der Top-50-Tokens",
+  "summary": "Eine am 31. Oktober veröffentlichte OpenRouter-Auswertung beziffert den Open-Weight-Anteil an den Tokens der 50 volumenstärksten Modelle Ende September 2026 auf 72 Prozent, nach rund 27 Prozent im Oktober 2025. Das ist eine plattformspezifische Rückschau, kein aktueller Marktanteil. Modelle außerhalb der Top 50 sowie nicht klassifizierbare Stealth-Modelle fehlen; Tokenizer unterscheiden sich.[7]",
+  "topic_id": "ai-news",
+  "topic": "AI News",
+  "date": "2026-10-31",
+  "sources": [
+   {
+    "label": "[7] openrouter.ai",
+    "url": "https://openrouter.ai/blog/insights/open-weight-vs-closed-weight-models/"
+   }
+  ],
+  "change_type": "research"
+ },
+ {
   "title": "Apple Intelligence: China-Beta ab 4. November angekündigt",
   "summary": "Apple kündigt Apple Intelligence für unterstützte iPhones in China an: Testzugang ab 4. November 2026 über eine Entwicklerbeta, regulärer Start mit iOS 27.3 im Dezember. Erste Kernfunktionen umfassen Schreibwerkzeuge, Live-Übersetzung und Bildfunktionen; Siri AI und die weiteren auf WWDC 2026 angekündigten nächsten Funktionen gehören ausdrücklich nicht dazu. Die Primärmitteilung ist auf den 31. Oktober datiert; die Beta ist noch nicht gestartet.[17]",
   "topic_id": "ai-news",
@@ -137,6 +371,38 @@
    {
     "label": "[17] www.apple.com.cn",
     "url": "https://www.apple.com.cn/newsroom/2026/10/apple-intelligence-features-are-coming-to-users-in-china/"
+   }
+  ],
+  "change_type": "announcement"
+ },
+ {
+  "title": "NAACP-Klage gegen xAI über Luftverschmutzung darf weitergehen",
+  "summary": "Ein Bundesgericht lehnt den xAI-Antrag auf Abweisung der NAACP-Klage zu Luftgenehmigungen für Rechenzentrums-Turbinen ab, berichten TechCrunch und CNBC. Das Verfahren geht weiter; über die behaupteten Verstöße ist nicht abschließend entschieden. CNBC nennt eine am späten 30. Oktober veröffentlichte Gerichtsmeinung; die Nachrichtenberichte erschienen am 31. Oktober.[17][18]",
+  "topic_id": "ai-governance",
+  "topic": "AI Governance",
+  "date": "2026-10-31",
+  "sources": [
+   {
+    "label": "[17] techcrunch.com",
+    "url": "https://techcrunch.com/2026/10/31/judge-allows-naacp-lawsuit-over-xai-data-center-pollution-to-move-forward/"
+   },
+   {
+    "label": "[18] www.cnbc.com",
+    "url": "https://www.cnbc.com/2026/10/31/xai-naacp-clean-air-act-lawsuit-dismissal.html"
+   }
+  ],
+  "change_type": "policy"
+ },
+ {
+  "title": "Grok-API: Output Watermarking für den 7. November angekündigt",
+  "summary": "Die am 31. Oktober aktualisierte xAI-Dokumentation kündigt unsichtbare Wasserzeichen für Textausgaben unterstützter Grok-Modelle ab 7. November 2026 an. Standardmäßig eingeschaltetes Watermarking soll unter anderem Responses- und Chat-Completions-Ausgaben umfassen; Team-Admins können es modellweise abwählen, einzelne Modelle können gesperrt sein. Das ist eine bevorstehende Änderung, kein schon vollzogener Rollout. Die genannte EU-Rechtsbegründung und Qualitäts-/Geschwindigkeitsversprechen werden nicht als unabhängig geprüfte Fakten übernommen.[25]",
+  "topic_id": "ai-governance",
+  "topic": "AI Governance",
+  "date": "2026-10-31",
+  "sources": [
+   {
+    "label": "[25] docs.x.ai",
+    "url": "https://docs.x.ai/developers/advanced-api-usage/watermarking"
    }
   ],
   "change_type": "announcement"
@@ -158,6 +424,24 @@
    }
   ],
   "change_type": "update"
+ },
+ {
+  "title": "dsh-superagent erscheint als Forschungsprototyp für teamorientierte Coding-Agenten",
+  "summary": "Das DeepSeek-Harness-Team stellt dsh-superagent als MIT-lizenzierten Forschungsprototyp für ein GitHub-Repository mit optionaler Feishu-Anbindung bereit. Das README bezeichnet ihn ausdrücklich nicht als offizielles DeepSeek-Produkt oder produktionsreife Software. Der initiale Commit ist vom 31. Oktober; der genaue Zeitpunkt der ersten öffentlichen Sichtbarkeit ist nicht unabhängig belegt.[26][27]",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-10-31",
+  "sources": [
+   {
+    "label": "[26] github.com",
+    "url": "https://github.com/deepseek-ai/dsh-superagent-prototype"
+   },
+   {
+    "label": "[27] api.github.com",
+    "url": "https://api.github.com/repos/deepseek-ai/dsh-superagent-prototype/commits/6337fc8"
+   }
+  ],
+  "change_type": "research"
  },
  {
   "title": "datasette-llm 0.1a9 übernimmt das Standardmodell von LLM",
@@ -183,6 +467,20 @@
    {
     "label": "[18] Anleitung / OpenRouter",
     "url": "https://openrouter.ai/blog/tutorials/build-always-on-ai-agent/"
+   }
+  ],
+  "change_type": "other"
+ },
+ {
+  "title": "Antigravity: versteckter Local-/Cloud-Umschalter entdeckt",
+  "summary": "TestingCatalog beobachtet einen versteckten Local-/Cloud-Umschalter und einen Entwicklerbereich für laufende Jobs. Cloud-Ausführung ist noch nicht verfügbar. Die UI-Beobachtung ist weder eine offizielle Freigabe noch ein belegter Ersatz für sämtliche Jules-Funktionen.[1]",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-10-31",
+  "sources": [
+   {
+    "label": "[1] www.testingcatalog.com",
+    "url": "https://www.testingcatalog.com/cloud-execution-is-coming-to-antigravity-soon/"
    }
   ],
   "change_type": "other"
@@ -236,6 +534,24 @@
    }
   ],
   "change_type": "research"
+ },
+ {
+  "title": "Drex Max v1 erhält offene Gewichte für lokale Inferenz",
+  "summary": "Nace kündigt die Gewichtsfreigabe am 30. Oktober an; der Modell-Card zufolge läuft das 27B-Entscheidungsmodell auch lokal. Apple-Silicon-Pfade unterstützen den Text-Backbone, nicht automatisch Bildverarbeitung. Dies ist ein neuer Freigabeschritt gegenüber der bereits berichteten gehosteten Drex-Max-API vom 19. Oktober; die Lizenz heißt Nace.AI Open RAIL-M, nicht uneingeschränktes Open Source.[28][29]",
+  "topic_id": "lokale-llms",
+  "topic": "Lokale LLMs",
+  "date": "2026-10-30",
+  "sources": [
+   {
+    "label": "[28] huggingface.co",
+    "url": "https://huggingface.co/nace-ai/drex-max-v1"
+   },
+   {
+    "label": "[29] x.com",
+    "url": "https://x.com/NaceAI/status/2116163656480428220"
+   }
+  ],
+  "change_type": "general_availability"
  },
  {
   "title": "Clover-35B-A3B-Preview veröffentlicht offene Diffusionsmodell-Gewichte",
@@ -314,6 +630,20 @@
    }
   ],
   "change_type": "business"
+ },
+ {
+  "title": "Figma Weave erlaubt interne Veröffentlichung von Tools",
+  "summary": "Organisationen können Weave-Tools innerhalb ihrer Figma-Organisation veröffentlichen. Die interne Verteilung ist auf Organization- und Enterprise-Tarife begrenzt.[31]",
+  "topic_id": "enterprise",
+  "topic": "Enterprise",
+  "date": "2026-10-30",
+  "sources": [
+   {
+    "label": "[31] www.figma.com",
+    "url": "https://www.figma.com/release-notes/"
+   }
+  ],
+  "change_type": "update"
  },
  {
   "title": "DoorDash meldet erst einige Hundert Bestellungen durch externe KI-Agenten",
@@ -448,6 +778,20 @@
   "change_type": "research"
  },
  {
+  "title": "ChatGPT soll frühere Gewaltwarnzeichen in weiteren Chats berücksichtigen",
+  "summary": "Kürzliche Gewaltwarnzeichen sollen spätere Antworten vorsichtiger machen. OpenAI erweitert einen vorhandenen Kontextmechanismus; eine abgeschlossene Auslieferung ist nicht belegt.[6]",
+  "topic_id": "context-engineering",
+  "topic": "Context Engineering",
+  "date": "2026-10-30",
+  "sources": [
+   {
+    "label": "[6] openai.com",
+    "url": "https://openai.com/index/community-safety-report-and-new-protections-for-teens/"
+   }
+  ],
+  "change_type": "announcement"
+ },
+ {
   "title": "Ollie kündigt Abschaltung seines KI-Assistenten für den 6. November an",
   "summary": "Ollie kündigt an, seine KI-Assistenten-App am 6. November 2026 einzustellen; Kunden sollen Informationen zu Datenexport und Erstattungen erhalten.[32] Dies ist die Abschaltungsankündigung, nicht eine bereits vollzogene Einstellung des Dienstes.[32]",
   "topic_id": "ai-tools",
@@ -478,6 +822,20 @@
    }
   ],
   "change_type": "general_availability"
+ },
+ {
+  "title": "Figma agent integriert Google Drive auf allen Tarifen",
+  "summary": "Figma erlaubt dem Figma agent und Make, Google-Drive-Dateien als Kontext einzubinden und neue Drive-Dateien anzulegen. Konnektoren stehen laut Release Notes auch im Starter-Tarif bereit.[31]",
+  "topic_id": "ai-tools",
+  "topic": "AI Tools",
+  "date": "2026-10-30",
+  "sources": [
+   {
+    "label": "[31] www.figma.com",
+    "url": "https://www.figma.com/release-notes/"
+   }
+  ],
+  "change_type": "integration"
  },
  {
   "title": "Claude Ultra: Fünf-Stunden-Limit entfällt für verifizierte Konten",
@@ -560,6 +918,34 @@
   "change_type": "research"
  },
  {
+  "title": "ChatGPT: Chatabbruch und Kontopausen bei Gewaltfixierung geplant",
+  "summary": "OpenAI entwickelt automatische Gesprächsabbrüche bei Gewaltfixierung und mögliche Kontopausen nach wiederholten Abbrüchen. Allgemeine Verfügbarkeit ist noch nicht belegt.[6]",
+  "topic_id": "ai-security",
+  "topic": "AI Security",
+  "date": "2026-10-30",
+  "sources": [
+   {
+    "label": "[6] openai.com",
+    "url": "https://openai.com/index/community-safety-report-and-new-protections-for-teens/"
+   }
+  ],
+  "change_type": "announcement"
+ },
+ {
+  "title": "ChatGPT kündigt strengere Waffeninformationsgrenzen für Minderjährige an",
+  "summary": "Praktische Waffen- und Sicherheitssysteminformationen sollen für Minderjährige stärker begrenzt werden, auch ohne erkennbare Gewaltabsicht. Der Rollout steht noch bevor.[6]",
+  "topic_id": "ai-security",
+  "topic": "AI Security",
+  "date": "2026-10-30",
+  "sources": [
+   {
+    "label": "[6] openai.com",
+    "url": "https://openai.com/index/community-safety-report-and-new-protections-for-teens/"
+   }
+  ],
+  "change_type": "announcement"
+ },
+ {
   "title": "Project Suncatcher liefert erste Gemma-Antwort einer TPU im Orbit",
   "summary": "Google berichtet erstmals eine Modellantwort von Gemma 4 auf der TPU seines Suncatcher-Prototyps im Orbit.[21] Neu ist die erfolgreiche Inferenz, nicht der schon im Oktober erfolgte Satellitenstart; Tests unter Strahlung und thermischer Belastung stehen noch bevor, ein kommerzielles Weltraum-Rechenzentrum ist damit nicht belegt.[21]",
   "topic_id": "ai-news",
@@ -606,6 +992,20 @@
   "change_type": "announcement"
  },
  {
+  "title": "Community Safety Report: Start für Anfang 2027 angekündigt",
+  "summary": "OpenAI plant den ersten Bericht für Anfang 2027, danach halbjährlich. Er soll Gewaltprävention und Schutzmaßnahmen behandeln, ist noch nicht erschienen.[6]",
+  "topic_id": "ai-governance",
+  "topic": "AI Governance",
+  "date": "2026-10-30",
+  "sources": [
+   {
+    "label": "[6] openai.com",
+    "url": "https://openai.com/index/community-safety-report-and-new-protections-for-teens/"
+   }
+  ],
+  "change_type": "announcement"
+ },
+ {
   "title": "ChinaTalk hinterfragt die 55-Prozent-Behauptung über chinesische KI-Tokens",
   "summary": "Zilan Qian untersucht in ChinaTalk die verbreitete Behauptung, 55 Prozent chinesischer KI-Tokens entfielen auf Kurzdramen und Video, und bezeichnet die zugrunde liegenden Zahlen als unzureichend belegt.[47] Der Essay ist Quellenkritik und kulturelle Einordnung, keine unabhängig bestätigte nationale Nutzungsstatistik.[47]",
   "topic_id": "ai-governance",
@@ -618,6 +1018,48 @@
    }
   ],
   "change_type": "research"
+ },
+ {
+  "title": "ChatGPT: fortlaufende Altersschätzung mit neuen Nutzungssignalen",
+  "summary": "OpenAI beschreibt verstärkte laufende Altersschätzung und den Wechsel mutmaßlicher Minderjähriger in die geschützte Erfahrung. Genauigkeit ist nicht unabhängig belegt.[6]",
+  "topic_id": "ai-governance",
+  "topic": "AI Governance",
+  "date": "2026-10-30",
+  "sources": [
+   {
+    "label": "[6] openai.com",
+    "url": "https://openai.com/index/community-safety-report-and-new-protections-for-teens/"
+   }
+  ],
+  "change_type": "update"
+ },
+ {
+  "title": "ChatGPT: engere Grenzen für Rekonstruktionen von Massengewalt angekündigt",
+  "summary": "OpenAI will detaillierte Rekonstruktionen vergangener Massengewalttaten altersunabhängig begrenzen. Der Rollout soll in den kommenden Wochen beginnen.[6]",
+  "topic_id": "ai-governance",
+  "topic": "AI Governance",
+  "date": "2026-10-30",
+  "sources": [
+   {
+    "label": "[6] openai.com",
+    "url": "https://openai.com/index/community-safety-report-and-new-protections-for-teens/"
+   }
+  ],
+  "change_type": "announcement"
+ },
+ {
+  "title": "ChatGPT: Elternhinweise bei gewaltbedingten Kontopausen geplant",
+  "summary": "OpenAI plant zusätzliche Elternbenachrichtigungen nach gewaltbedingten Kontopausen Jugendlicher. Diese Ergänzung vorhandener Elternkontrollen ist noch nicht ausgeliefert.[6]",
+  "topic_id": "ai-governance",
+  "topic": "AI Governance",
+  "date": "2026-10-30",
+  "sources": [
+   {
+    "label": "[6] openai.com",
+    "url": "https://openai.com/index/community-safety-report-and-new-protections-for-teens/"
+   }
+  ],
+  "change_type": "announcement"
  },
  {
   "title": "AI Training: mehrere Anbieter unterstützen gemeinsames robots.txt-Signal",
@@ -868,6 +1310,20 @@
   "change_type": "research"
  },
  {
+  "title": "Hindsight verbindet OpenBot-Agenten mit gemeinsamem persistentem Gedächtnis",
+  "summary": "Die MCP-Integration bindet OpenBot-Agenten an Hindsight-Speicherbanken an. Laut Anbieter bleibt Wissen über Threads, Kompaktierung und Neustarts hinweg erhalten; Agenten derselben Bank teilen den Speicher. Cloud und selbst gehosteter Betrieb sind vorgesehen.[30]",
+  "topic_id": "context-engineering",
+  "topic": "Context Engineering",
+  "date": "2026-10-29",
+  "sources": [
+   {
+    "label": "[30] hindsight.vectorize.io",
+    "url": "https://hindsight.vectorize.io/blog/2026/10/29/openbot-persistent-memory"
+   }
+  ],
+  "change_type": "integration"
+ },
+ {
   "title": "Cohere zeigt AWS-Finanzrecherche-Demo mit Seitenbelegen",
   "summary": "Die AWS-Finanzrecherche-Demo kombiniert Cohere Embed, Rerank und Parse mit Claude auf Bedrock und liefert Antworten mit Seitenzitaten.[71] Die CloudFormation-Anleitung ist ein deploybares Beispiel für Retrieval und Grounding, keine neue Modellfreigabe oder von uns getestete Finanzberatung.[71]",
   "topic_id": "context-engineering",
@@ -1044,6 +1500,20 @@
    }
   ],
   "change_type": "research"
+ },
+ {
+  "title": "Adversa AI gibt Coding Agent Security Platform allgemein frei",
+  "summary": "Adversa AI meldet die allgemeine Verfügbarkeit seiner Plattform für Coding-Agenten und agentische IDEs. Sie soll Agentenaktionen und Richtlinien zentral erfassen und durchsetzen; Latenz-, Fehlalarm- und Schutzversprechen werden mangels unabhängiger Prüfung nicht übernommen.[38]",
+  "topic_id": "ai-security",
+  "topic": "AI Security",
+  "date": "2026-10-29",
+  "sources": [
+   {
+    "label": "[38] adversa.ai",
+    "url": "https://adversa.ai/blog/adversa-ai-launches-coding-agent-security-platform/"
+   }
+  ],
+  "change_type": "general_availability"
  },
  {
   "title": "Project ProtoStar soll wissenschaftliche Artefakte KI-tauglicher machen",
@@ -2660,6 +3130,34 @@
   "change_type": "general_availability"
  },
  {
+  "title": "watsonx Orchestrate startet Discover als technische Vorschau",
+  "summary": "Discover soll Agenten, Modelle und MCP-Server aus Drittplattformen auffinden. IBM nennt Amazon Bedrock, Microsoft Foundry und Google Gemini; die Funktion bleibt technische Vorschau, nicht GA.[35]",
+  "topic_id": "enterprise",
+  "topic": "Enterprise",
+  "date": "2026-10-27",
+  "sources": [
+   {
+    "label": "[35] newsroom.ibm.com",
+    "url": "https://newsroom.ibm.com/2026-10-27-ibm-introduces-identity-and-control-for-ai-agents,-securing-frontier-intelligence-for-the-enterprise"
+   }
+  ],
+  "change_type": "preview"
+ },
+ {
+  "title": "watsonx Orchestrate gibt Evaluate-Funktionen allgemein frei",
+  "summary": "IBM gibt die Evaluate-Funktionen für Agenten, Modelle und MCP-Server allgemein frei. Sie sollen Tests vor der Bereitstellung und Monitoring samt Kostenverfolgung im Betrieb ermöglichen; Discover und Contain bleiben getrennte Vorschauen.[35]",
+  "topic_id": "enterprise",
+  "topic": "Enterprise",
+  "date": "2026-10-27",
+  "sources": [
+   {
+    "label": "[35] newsroom.ibm.com",
+    "url": "https://newsroom.ibm.com/2026-10-27-ibm-introduces-identity-and-control-for-ai-agents,-securing-frontier-intelligence-for-the-enterprise"
+   }
+  ],
+  "change_type": "general_availability"
+ },
+ {
   "title": "Vera Rubin NVL72 und Vera CPUs werden auf OCI allgemein verfügbar",
   "summary": "NVIDIA und Oracle geben Vera Rubin NVL72 sowie eigenständige Vera CPUs auf Oracle Cloud Infrastructure allgemein frei.[15][16] Multi-Gigawatt-Ausbau und HGX-Rubin-NVL8-Systeme sind dagegen Zukunftspläne, keine bereits realisierte Kapazität oder allgemeine Kostengarantie.[16]",
   "topic_id": "enterprise",
@@ -2746,6 +3244,20 @@
   "change_type": "business"
  },
  {
+  "title": "IBM Agent Identity wird allgemein verfügbar",
+  "summary": "IBM gibt Agent Identity für verwaltete Agentenidentitäten allgemein frei. Die Anbindung an Vault soll Eigentümerschaft, Status und Berechtigungen mit Credential-Kontrollen verbinden; die Veröffentlichung belegt keine unabhängige Sicherheitswirkung.[35]",
+  "topic_id": "enterprise",
+  "topic": "Enterprise",
+  "date": "2026-10-27",
+  "sources": [
+   {
+    "label": "[35] newsroom.ibm.com",
+    "url": "https://newsroom.ibm.com/2026-10-27-ibm-introduces-identity-and-control-for-ai-agents,-securing-frontier-intelligence-for-the-enterprise"
+   }
+  ],
+  "change_type": "general_availability"
+ },
+ {
   "title": "Google TPUs für Oracle Cloud ab 2027 angekündigt",
   "summary": "Oracle und Google kündigen Google TPUs auf Oracle Cloud Infrastructure an.[47] Die Primärmitteilung nennt Verfügbarkeit im Kalenderjahr 2027 mit mehrjährigem Kapazitätsaufbau, nicht bereits bestellbare TPU-Instanzen auf OCI.[47]",
   "topic_id": "enterprise",
@@ -2825,6 +3337,20 @@
    {
     "label": "[80] Original / Actian",
     "url": "https://www.actian.com/blog/product-launches/sovereign-infrastructure-agentic-stewardship-and-more/"
+   }
+  ],
+  "change_type": "update"
+ },
+ {
+  "title": "Vercel Agent senkt Sitzungsaufwand durch neue Kontextverwaltung",
+  "summary": "Vercel aktualisiert Kontextverwaltung, Prompt-Caching und CLI-Skills seines Agenten. Die genannten durchschnittlich 67 Prozent geringeren Sitzungskosten sind Anbieterangaben bei unveränderten Abrechnungssätzen, keine allgemeine Preisreduktion.[33]",
+  "topic_id": "context-engineering",
+  "topic": "Context Engineering",
+  "date": "2026-10-27",
+  "sources": [
+   {
+    "label": "[33] vercel.com",
+    "url": "https://vercel.com/changelog/vercel-agent-sessions-now-cost-67-percent-less"
    }
   ],
   "change_type": "update"
@@ -3042,6 +3568,20 @@
   "change_type": "announcement"
  },
  {
+  "title": "watsonx Orchestrate startet Contain als technische Vorschau",
+  "summary": "Contain ergänzt isolierte Sandboxes und einen Kill Switch für Agenten. IBM führt die Funktion als technische Vorschau; beworbene Schutzwirkungen sind nicht unabhängig geprüft.[35]",
+  "topic_id": "ai-security",
+  "topic": "AI Security",
+  "date": "2026-10-27",
+  "sources": [
+   {
+    "label": "[35] newsroom.ibm.com",
+    "url": "https://newsroom.ibm.com/2026-10-27-ibm-introduces-identity-and-control-for-ai-agents,-securing-frontier-intelligence-for-the-enterprise"
+   }
+  ],
+  "change_type": "preview"
+ },
+ {
   "title": "Veeam Intelligent ResOps für Microsoft 365 wird allgemein verfügbar",
   "summary": "Veeam gibt Intelligent ResOps für Microsoft 365 als Data-Cloud-Add-on frei, um Agentenzugriffe zuzuordnen und Änderungen dateiweise zurückzurollen.[55] Die Angebote für Veeam Data Platform und Okta bleiben separate private Vorschauen, nicht ebenfalls GA.[55]",
   "topic_id": "ai-security",
@@ -3126,6 +3666,20 @@
    }
   ],
   "change_type": "update"
+ },
+ {
+  "title": "HashiCorp Vault 2.2 wird mit Agentenkonten allgemein verfügbar",
+  "summary": "IBM meldet Vault 2.2 als allgemein verfügbar. Das Release ergänzt gesicherte Agentenkonten, automatische Credential-Erneuerung und Post-Quanten-Verschlüsselung; dies ist eine Produktfreigabe, kein unabhängiges Sicherheitsaudit.[35]",
+  "topic_id": "ai-security",
+  "topic": "AI Security",
+  "date": "2026-10-27",
+  "sources": [
+   {
+    "label": "[35] newsroom.ibm.com",
+    "url": "https://newsroom.ibm.com/2026-10-27-ibm-introduces-identity-and-control-for-ai-agents,-securing-frontier-intelligence-for-the-enterprise"
+   }
+  ],
+  "change_type": "general_availability"
  },
  {
   "title": "Custom Agent Scanner startet als Beta in Agent Fabric",
@@ -3740,6 +4294,20 @@
   "change_type": "update"
  },
  {
+  "title": "Figma MCP macht Figma-Weave-Bild- und Videomodelle externen Agenten zugänglich",
+  "summary": "Externe Agenten können über Figma MCP die Bild- und Videomodelle von Figma Weave nutzen. Dafür müssen Weave- und Figma-Konto verbunden sein; Generierungen verbrauchen Weave-Credits.[31]",
+  "topic_id": "ai-tools",
+  "topic": "AI Tools",
+  "date": "2026-10-26",
+  "sources": [
+   {
+    "label": "[31] www.figma.com",
+    "url": "https://www.figma.com/release-notes/"
+   }
+  ],
+  "change_type": "integration"
+ },
+ {
   "title": "Code2Video-AA bewertet codegenerierte Produkt- und Markenvideos",
   "summary": "Artificial Analysis veröffentlicht Code2Video-AA mit 114 Designbriefings: Modelle erzeugen HyperFrames-HTML für kurze Produkt- und Markenvideos, die anschließend gerendert und bewertet werden.[48] Dies testet codebasierte Kompositionen, nicht native Text-zu-Video-Modelle oder allgemeine kreative Qualität.[48]",
   "topic_id": "ai-tools",
@@ -4002,6 +4570,20 @@
    }
   ],
   "change_type": "preview"
+ },
+ {
+  "title": "AgentEnv integriert Vercel Sandbox für Agenten-Evaluationen",
+  "summary": "Scale AIs AgentEnv unterstützt Vercel Sandbox ab Version 0.9.1334. Agent und Aufgabenumgebung laufen dabei in getrennten Sandboxes; die Integration protokolliert Aktionen und bewertet Aufgabenresultate.[34]",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-10-26",
+  "sources": [
+   {
+    "label": "[34] vercel.com",
+    "url": "https://vercel.com/changelog/run-scale-ais-agentenv-evals-on-vercel-sandbox"
+   }
+  ],
+  "change_type": "integration"
  },
  {
   "title": "Nanbeige4.3-33B erscheint als offenes Modell für Coding-Agenten",
@@ -7686,6 +8268,20 @@
   "change_type": "preview"
  },
  {
+  "title": "Notion MCP erhält Memory Sync",
+  "summary": "Notion schaltet laut Release Notes vom 19. Oktober Memory Sync für externe Agenten über den überarbeiteten MCP-Zugang frei. Skills über MCP sind dagegen erst angekündigt und nicht als bereits verfügbar belegt.[32]",
+  "topic_id": "context-engineering",
+  "topic": "Context Engineering",
+  "date": "2026-10-19",
+  "sources": [
+   {
+    "label": "[32] www.notion.com",
+    "url": "https://www.notion.com/releases/2026-10-19"
+   }
+  ],
+  "change_type": "update"
+ },
+ {
   "title": "Dynamic Highlights wird mit Exa 3.0 allgemein verfügbar",
   "summary": "Dynamic Highlights wechselt mit Exa 3.0 aus der Research Preview in die allgemeine Verfügbarkeit ohne Zusatzgebühr.[10][11] Die Funktion liefert relevante Textausschnitte statt vollständiger Seiten; behauptete Tokeneinsparungen sind workloadabhängige Anbieterwerte.[11]",
   "topic_id": "context-engineering",
@@ -8050,6 +8646,20 @@
    }
   ],
   "change_type": "research"
+ },
+ {
+  "title": "Notion Agents erhalten Computer, Browser und längere Aufgabenläufe",
+  "summary": "Notions Release Notes vom 19. Oktober beschreiben einen erneuerten Agenten-Harness mit Computer- und Browserzugriff, Kontextverwaltung und dem Prüfmodus „Review for me“. Aufgaben können laut Anbieter bis zu 24 Stunden laufen. Das ist keine Garantie autonomer Fehlerfreiheit.[32]",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-10-19",
+  "sources": [
+   {
+    "label": "[32] www.notion.com",
+    "url": "https://www.notion.com/releases/2026-10-19"
+   }
+  ],
+  "change_type": "update"
  },
  {
   "title": "MultiLangBench prüft Datenbankentwicklung in 20 Programmiersprachen",
