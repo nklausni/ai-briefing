@@ -119,7 +119,8 @@ Altmeldungsüberschrift durch einen ausdrücklichen Beleg ergänzt werden:
 
 Das ist keine pauschale Text- oder URL-Ähnlichkeitsfreigabe. Der Validator verlangt:
 
-- exakte Kandidaten-Original-URL in den Quellen des eingefrorenen Historienziels;
+- exakte Kandidaten-Original-URL in den Quellen des eingefrorenen Historienziels
+  (oder den unten beschriebenen engen, abrufgebundenen Syndikationsbeleg);
 - identisches Originaldatum (`published_at`/`date`) und denselben geprüften
   `change_type`; Preview, Beta und GA bleiben getrennt;
 - einen vollständigen, unveränderten Satz aus dessen `summary`, der **alle**
@@ -136,6 +137,38 @@ keine Umdeklaration zum Umgehen des Gates. Originalentscheidungen und Fehlerbele
 vor einer autorisierten Ergänzung sichern. Historie, Quellen-Checkpoints und
 Suchbudgets bleiben unverändert. Das Belegobjekt gehört nur zur aktuellen
 Redaktionsentscheidung, nicht in historische Daten.
+
+### Identische Publisher-Originale und PRNewswire-Syndikation
+
+Nur für `announcement` darf `history_coverage.source_identity` die Original-URL
+mit einer bereits historisch zitierten PRNewswire-Syndikation verbinden. Das ist
+kein allgemeiner URL-Alias und keine Freigabe für Preview, Beta oder GA:
+
+- `kind: publisher_syndication`, `publisher` und `publisher_domain` binden den
+  HTTPS-Originalhost; die Syndikation muss auf `www.prnewswire.com` liegen und
+  im gelesenen Text ausdrücklich `SOURCE <publisher>` nennen.
+- `original` und `syndicated` enthalten jeweils die **exakte** Ziel-URL, ein gültiges
+  unverändertes Retrieval-`receipt`, `excerpt` und `date_quote`. Receipts werden
+  einschließlich Cachehash und tatsächlicher Textstelle erneut validiert.
+- `release_title` muss in beiden Originaltexten stehen; beide tatsächlichen
+  `date_quote`-Textstellen müssen zum unveränderten Kandidaten-/Historientag passen
+  (ISO-Datum oder ausgeschriebener englischer Monat).
+- Die `excerpt`-Passage muss in beiden Texten wortgleich vorkommen (nur Leerraum
+  normalisiert), mindestens 40 Wörter und sämtliche Kandidaten-Produktanker enthalten.
+- `stage_quote` muss in beiden Texten stehen, den Produktanker und die ausdrückliche
+  Zukunftsverfügbarkeit `will be available` enthalten; `change_type` bleibt
+  `announcement`. Die Redaktion prüft den konkreten Fahrplan am Original.
+- Fehlt der volle Produktanker auch im unveränderten historischen Zusammenfassungssatz,
+  müssen konkrete mehrwortige `development_subjects` in genau diesem Satz, im
+  Kandidaten und in der gemeinsamen Originalpassage stehen (z.B. `AI Discovery`).
+  Alle bisherigen `development_terms`-Prüfungen bleiben zusätzlich aktiv: gemeinsamer
+  Mechanismus, mindestens fünf verschiedene Wörter jenseits der Produktanker,
+  ein vollständiger unveränderter Historien-Satz. Produktlisten allein reichen nicht.
+
+Alte Entscheidungen werden vor Ergänzung unverändert gesichert. Historie, Kandidaten,
+Quellenbelege und Budgets werden nicht umgeschrieben; vorhandene echte Receipts
+werden mit ursprünglichem Abrufdatum verwendet. Ohne diesen eng geführten Beleg
+bleibt die bisherige exakte URL-/Überschriftenregel bestehen.
 
 Die Historie erhält `change_type` und bewahrt unterschiedliche Freigabeschritte
 mit ihren Originaldaten. Bestehende Einträge werden nicht rückwirkend klassifiziert.

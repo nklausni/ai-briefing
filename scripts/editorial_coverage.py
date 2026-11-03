@@ -6,6 +6,10 @@ still verifies the development, release milestone, and equivalence of duplicates
 import hashlib
 import json
 import re
+from datetime import datetime
+from urllib.parse import urlsplit
+
+from research_integrity import normalized, validate_evidence
 
 CHANGE_TYPES = {"announcement", "preview", "public_beta", "general_availability",
                 "update", "integration", "research", "security", "policy", "business", "other"}
@@ -47,6 +51,60 @@ def check_headline(candidate, item):
                 f"is missing headline anchor {term!r} in {item.get('title')!r}")
 
 
+def check_publisher_syndication(candidate, item, identity):
+    """Only read-backed copies of the same dated publisher release are equivalent."""
+    require(isinstance(identity, dict) and identity.get("kind") == "publisher_syndication",
+            "History source identity needs publisher_syndication evidence")
+    require(candidate.get("change_type") == "announcement",
+            "Publisher syndication exception supports announcement only, not preview, beta or GA")
+    original, syndicated = identity.get("original", {}), identity.get("syndicated", {})
+    require(isinstance(original, dict) and isinstance(syndicated, dict),
+            "History source identity needs both retrievals")
+    require(original.get("url") == candidate["url"] and syndicated.get("url") in
+            {s.get("url") for s in item.get("sources", [])},
+            "History source identity URL differs from candidate or frozen history")
+    domain, publisher = identity.get("publisher_domain", ""), identity.get("publisher", "")
+    require(bool(domain) and normalize(publisher) == domain.split(".")[0] and
+            urlsplit(original["url"]).scheme == "https" and
+            urlsplit(original["url"]).hostname in {domain, "www." + domain} and
+            urlsplit(syndicated["url"]).scheme == "https" and
+            urlsplit(syndicated["url"]).hostname == "www.prnewswire.com",
+            "History source identity needs publisher original and supported syndication host")
+    sources = [validate_evidence(e) for e in (original, syndicated)]
+    require(" source " + normalize(publisher) + " " in
+            " " + normalize(sources[1]["text"]) + " ",
+            "Syndicated release must explicitly attribute its publisher")
+    title = identity.get("release_title")
+    require(isinstance(title, str) and 10 <= len(title) <= 300 and
+            all(normalized(title) in normalized(s["text"]) for s in sources),
+            "History source identity release title differs")
+    paragraph = original.get("excerpt", "")
+    require(len(paragraph.split()) >= 40 and normalized(paragraph) == normalized(syndicated.get("excerpt", "")),
+            "History source identity needs one shared substantive release paragraph")
+    check_headline(candidate, {"title": paragraph})
+    for evidence, source in zip((original, syndicated), sources):
+        date_quote = evidence.get("date_quote", "")
+        require(bool(date_quote) and normalized(date_quote) in normalized(source["text"]),
+                "History source identity date quote absent from retrieved release")
+        date_text = date_quote.replace(".", "")
+        parsed = None
+        for fmt in ("%Y-%m-%d", "%b %d, %Y", "%B %d, %Y"):
+            try:
+                parsed = datetime.strptime(date_text, fmt).date().isoformat()
+                break
+            except ValueError:
+                pass
+        require(parsed == candidate["published_at"], "History source identity release date differs")
+    stage = identity.get("stage_quote", "")
+    require(isinstance(stage, str) and len(stage.split()) >= 8 and
+            all(normalized(stage) in normalized(s["text"]) for s in sources) and
+            " will be available " in " " + normalize(stage) + " " and
+            identity.get("change_type") == candidate["change_type"],
+            "History source identity needs shared release-stage evidence")
+    check_headline(candidate, {"title": stage})
+    return paragraph
+
+
 def check_history_coverage(candidate, item, proof):
     """A shortened historical headline needs explicit, source-bound sentence proof.
 
@@ -57,14 +115,29 @@ def check_history_coverage(candidate, item, proof):
     require(isinstance(proof, dict), "History coverage needs explicit sentence proof")
     require(item.get("date") == candidate.get("published_at"),
             "History coverage date differs from the original candidate date")
-    require(candidate["url"] in {s.get("url") for s in item.get("sources", [])},
-            "History coverage needs the exact candidate source URL")
+    shared_paragraph = None
+    if "source_identity" in proof:
+        shared_paragraph = check_publisher_syndication(candidate, item, proof["source_identity"])
+    else:
+        require(candidate["url"] in {s.get("url") for s in item.get("sources", [])},
+                "History coverage needs the exact candidate source URL")
     quote = proof.get("summary_quote")
     sentences = [s.strip() for s in re.findall(
         r"[^.!?]+(?:[.!?](?:\[\d+\])*)?", item.get("summary", ""))]
     require(isinstance(quote, str) and quote in sentences and bool(quote.strip()),
             "History coverage quote must be one complete unchanged summary sentence")
-    check_headline(candidate, {"title": quote})
+    if shared_paragraph is None:
+        check_headline(candidate, {"title": quote})
+    else:
+        subjects = proof.get("development_subjects")
+        require(isinstance(subjects, list) and 1 <= len(subjects) <= 4 and
+                all(isinstance(s, str) and 2 <= len(normalize(s).split()) and len(s) <= 100
+                    for s in subjects), "History coverage needs specific multiword development subjects")
+        for subject in subjects:
+            phrase = " " + normalize(subject) + " "
+            require(all(phrase in " " + normalize(text) + " " for text in
+                        (quote, candidate["development"] + " " + candidate.get("summary", ""), shared_paragraph)),
+                    "History coverage development subject differs from release or frozen summary")
     terms = proof.get("development_terms")
     require(isinstance(terms, list) and 2 <= len(terms) <= 4 and
             all(isinstance(term, str) and 2 <= len(term) <= 100 and
