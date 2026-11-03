@@ -7011,6 +7011,551 @@
     }
    ],
    "first_seen": "2026-09-29"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "Agents API erhält gehostete Computernutzung und Multi-Agent-Werkzeuge",
+   "category": "agents",
+   "impact": 4,
+   "date": "2026-09-29",
+   "summary": "OpenAI ergänzt die Agents API um Computernutzung sowie Codex-Multi-Agent-Fähigkeiten, Tool Search und Kontextkompaktierung.[8][89] Entwickler starten und beobachten Sessions, während OpenAI die Browserumgebung hostet.[8][89] Die neue Funktion ist über API und für Pro 500 und Enterprise in Codex beziehungsweise ChatGPT Work angekündigt.[8][89] Entwicklerdocs verlangen unter anderem die Behandlung von Website-Zugriffsanfragen und die Prüfung des Ergebnisses, nicht bloß unkontrollierte Browserautomatisierung.[8][89]",
+   "sources": [
+    {
+     "label": "[8] openai.com",
+     "url": "https://openai.com/index/devday-2026-recap/"
+    },
+    {
+     "label": "[89] developers.openai.com",
+     "url": "https://developers.openai.com/api/docs/guides/agents-api/tools/computer-use"
+    }
+   ],
+   "first_seen": "2026-09-30"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "ChatGPT-Plugins können Automationen über den MCP-Events-Entwurf auslösen",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-09-29",
+   "summary": "OpenAI unterstützt vorgeschlagene MCP Events, damit Nutzer ChatGPT auf Ereignisse wie neue Nachrichten oder Dokumentkommentare reagieren lassen können.[8][88] Die Implementierung benötigt MCP 2.0 mit Protokollversion 2026-07-28 und nutzt Webhooks mit Callback-Verifikation.[8][88] Polling, Streaming sowie die Gap- und Terminated-Kontrollbenachrichtigungen des Entwurfs werden ausdrücklich nicht unterstützt.[8][88] Damit ist der reale Umfang enger als eine vollständige Umsetzung aller Event-Transportarten.[8][88]",
+   "sources": [
+    {
+     "label": "[8] openai.com",
+     "url": "https://openai.com/index/devday-2026-recap/"
+    },
+    {
+     "label": "[88] developers.openai.com",
+     "url": "https://developers.openai.com/plugins/build/mcp-events"
+    }
+   ],
+   "first_seen": "2026-09-30"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "GPT-6.1 Sol wird in GitHub Copilot allgemein verfügbar",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-09-29",
+   "summary": "GitHub rollt GPT-6.1 Sol schrittweise für Copilot Pro+, Max, Business und Enterprise aus, einschließlich IDEs, CLI, Coding Agent und Mobile.[4] Business- und Enterprise-Admins steuern den Zugriff über Modellrichtlinien; abgerechnet wird zum Listenpreis des Modellanbieters.[4] Aussagen zur Tokenersparnis sind GitHubs frühe Tests, keine allgemeine Garantie.[4]",
+   "sources": [
+    {
+     "label": "[4] github.blog",
+     "url": "https://github.blog/changelog/2026-09-29-gpt-6-1-sol-in-github-copilot"
+    }
+   ],
+   "first_seen": "2026-09-30"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "Codex Security Cloud ergänzt Scans, Deduplizierung und Patch-Prüfung",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-09-29",
+   "summary": "Der DevDay-Liveblog beschreibt geplante Scans, Deduplizierung und SECURITY.md-Dateien als Kontext für Bedrohungsmodelle.[91] Erzeugte Patches werden adversariell geprüft.[91] Interne Erfolgswerte sind keine unabhängige Wirksamkeitsprüfung.[91]",
+   "sources": [
+    {
+     "label": "[91] simonwillison.net",
+     "url": "https://simonwillison.net/2026/Sep/29/openai-devday-2026-live-blog/"
+    }
+   ],
+   "first_seen": "2026-09-30"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "Serge öffnet Bugfix-PRs erst nach GPU-Verifikation",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-09-29",
+   "summary": "Hugging Faces nächtlicher CI-Agent reproduziert Transformers-Fehler auf GPUs, erstellt Patches und öffnet erst nach erfolgreicher Prüfung Pull Requests.[40] Aufgaben laufen in kurzlebigen Pods mit beschränktem Netzwerk; nur Maintainer dürfen nach Prüfung nach main mergen.[40] Laut internem Bericht wurden in rund 80 Tagen 29 Fixes übernommen; das ist ein Erfahrungsbericht, kein allgemeiner Zuverlässigkeitsnachweis.[40]",
+   "sources": [
+    {
+     "label": "[40] huggingface.co",
+     "url": "https://huggingface.co/blog/huggingface/anatomy-of-a-bug-fixing-agent"
+    }
+   ],
+   "first_seen": "2026-10-01"
+  },
+  {
+   "topic_id": "ai-governance",
+   "title": "White-House-Abkommen setzt auf freiwillige interne und externe KI-Prüfung",
+   "category": "security",
+   "impact": 4,
+   "date": "2026-09-29",
+   "summary": "Trump und führende KI-Unternehmen haben ein freiwilliges Abkommen mit internen und externen Prüfungen unterzeichnet.[21] Das Abkommen ist von der separat veröffentlichten Executive Order zu unterscheiden; eine Unterzeichnung ist kein Nachweis der Wirksamkeit der Kontrollen.[21]",
+   "sources": [
+    {
+     "label": "[21] www.pbs.org",
+     "url": "https://www.pbs.org/newshour/politics/watch-trump-announces-accord-signed-by-top-ai-companies-to-self-police-development"
+    }
+   ],
+   "first_seen": "2026-09-30"
+  },
+  {
+   "topic_id": "ai-governance",
+   "title": "OpenChamber 2.0.4 begrenzt Anbieter und Erweiterungen per Enterprise-Richtlinie",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-09-29",
+   "summary": "OpenChamber führt einen nicht durch Nutzer abschaltbaren Enterprise-Modus mit administrierten Modellanbietern und freigegebenen Erweiterungs-Repositories ein.[48][51] Das Release lässt Jev ohne bewusst gewählten Klassifizierungsanbieter ausgeschaltet und beschränkt Netzwerkzugriffe von Erweiterungsseiten auf genehmigte HTTPS-Adressen.[48][51] Dies sind konkrete Produktkontrollen, keine unabhängige Sicherheitsgarantie.[48][51]",
+   "sources": [
+    {
+     "label": "[48] www.heise.de",
+     "url": "https://www.heise.de/news/KI-Agenten-an-die-Leine-OpenChamber-fuehrt-Teamregeln-ein-11469022.html"
+    },
+    {
+     "label": "[51] github.com",
+     "url": "https://github.com/openchamber/openchamber/releases/tag/v2.0.4"
+    }
+   ],
+   "first_seen": "2026-09-30"
+  },
+  {
+   "topic_id": "ai-governance",
+   "title": "OpenAI führt Pro 500 ein und senkt das Kontingent von Pro 200",
+   "category": "business",
+   "impact": 3,
+   "date": "2026-09-29",
+   "summary": "Der neue Tarif kostet 500 Dollar monatlich und enthält Astra Ultrafast.[73][86] Pro 200 kostet weiter 200 Dollar, bietet neuen nicht bestandsgeschützten Abos aber weniger Nutzung.[73][86] Berechtigte Bestandskunden behalten laut OpenAI ihre bisherigen Grenzen bis einschließlich 29.[73][86] Oktober 2026 und wechseln danach auf das niedrigere Kontingent.[73][86] The New Stack berichtet für Work und Codex eine Absenkung von zwanzigfach auf zehnfach Plus; der überprüfte Help-Center-Text bestätigt die Absenkung und Übergangsfrist, nennt aber keine Faktoren.[73][86]",
+   "sources": [
+    {
+     "label": "[73] thenewstack.io",
+     "url": "https://thenewstack.io/openai-halves-200-plan/"
+    },
+    {
+     "label": "[86] help.openai.com",
+     "url": "https://help.openai.com/en/articles/9793128-about-chatgpt-pro-tiers"
+    }
+   ],
+   "first_seen": "2026-09-30"
+  },
+  {
+   "topic_id": "ai-news",
+   "title": "OpenAI veröffentlicht GPT-6.1 Sol mit günstigerem Kontextcache",
+   "category": "modelle",
+   "impact": 4,
+   "date": "2026-09-29",
+   "summary": "GPT-6.1 Sol ist in API, Codex und ChatGPT Work verfügbar, vorerst nicht im Chat.[5][70] Standardpreise betragen zwei Dollar pro Million Eingabetokens, zehn Dollar pro Million Ausgabetokens und zehn Cent pro Million Cache-Eingabetokens.[5][70] OpenAI positioniert es nahe GPT-6 Astra; Artificial Analysis misst tatsächlich einen Punkt Abstand im Intelligence Index bei deutlich niedrigeren Aufgabenkosten.[5][70] Das ist ein Benchmarkvergleich und kein Gleichwertigkeitsnachweis für jede Aufgabe.[5][70]",
+   "sources": [
+    {
+     "label": "[5] openai.com",
+     "url": "https://openai.com/index/introducing-gpt-6-1-sol/"
+    },
+    {
+     "label": "[70] artificialanalysis.ai",
+     "url": "https://artificialanalysis.ai/articles/gpt-6-1-sol-replaces-gpt-6-sol-after-just-7-days-with-near-astra-intelligence"
+    }
+   ],
+   "first_seen": "2026-09-30"
+  },
+  {
+   "topic_id": "ai-news",
+   "title": "OpenAI startet Dots als persistente Astra-Agenten mit eigenem Cloud-Rechner",
+   "category": "modelle",
+   "impact": 4,
+   "date": "2026-09-29",
+   "summary": "Dots arbeiten mit GPT-6 Astra auf eigenen Cloud-Rechnern und können mehrere Projekte über ChatGPT, Slack und Teams verfolgen.[6][80] Der Rollout beginnt für Pro und Business Premium in unterstützten Märkten; Enterprise einschließlich Edu und Healthcare muss die Beta administrativ freischalten.[6][80] Proaktive Hintergrundrecherche ist read-only, anschließende Aktionen unterliegen eigenen Freigabeprüfungen.[6][80] Das sind OpenAIs dokumentierte Kontrollen, keine Garantie fehlerfreier autonomer Arbeit.[6][80]",
+   "sources": [
+    {
+     "label": "[6] openai.com",
+     "url": "https://openai.com/index/introducing-dots/"
+    },
+    {
+     "label": "[80] thenewstack.io",
+     "url": "https://thenewstack.io/openai-dots-gpt6-agents/"
+    }
+   ],
+   "first_seen": "2026-09-30"
+  },
+  {
+   "topic_id": "ai-security",
+   "title": "Anthropic veröffentlicht neue GLM-5.3-Tests zu Exploitfähigkeit und umgehbaren Schutzmechanismen",
+   "category": "security",
+   "impact": 4,
+   "date": "2026-09-29",
+   "summary": "Anthropics Frontier Red Team meldet in isolierten Tests 50 erfolgreiche End-to-End-Exploits bei 410 ExploitBench-Versuchen; Mythos Preview erreichte 56.[107][108][109] In eigenen simulierten Missbrauchstests beschreibt Anthropic je nach Methode 64 bis 100 Prozent Engagement trotz Schutzmechanismen.[107][108][109] Das sind konkurrierende Anbieterbefunde unter speziellen Testbedingungen, keine Erfolgsquoten realer Angriffe.[107][108][109] CAISI hatte GLM-5.3 bereits unabhängig als stärkstes geprüftes Open-Weight-Cybermodell bewertet, jedoch rund vier Monate hinter der US-Frontier in einem anderen Benchmarkaggregat.[107][108][109]",
+   "sources": [
+    {
+     "label": "[107] www.anthropic.com",
+     "url": "https://www.anthropic.com/news/glm-5-3-and-the-spread-of-advanced-cyber-capabilities"
+    },
+    {
+     "label": "[108] www.nist.gov",
+     "url": "https://www.nist.gov/news-events/news/2026/09/caisis-assessment-zais-glm-53-cyber-capabilities"
+    },
+    {
+     "label": "[109] gigazine.net",
+     "url": "https://gigazine.net/gsc_news/en/20260930-anthropic-warned-about-glm-5-3-risk/"
+    }
+   ],
+   "first_seen": "2026-09-30"
+  },
+  {
+   "topic_id": "ai-security",
+   "title": "OpenAI bündelt Private Safety Processing und geplante vertrauliche Inferenz",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-09-29",
+   "summary": "Private Safety Processing soll Sicherheitsprüfungen ohne Klartextzugriff von Personal ermöglichen.[54][8] Laut VentureBeat bleiben geschützte Aufzeichnungen dabei 30 Tage in kundenseitig kontrolliertem Speicher; fehlender Personalzugriff bedeutet nicht fehlende Speicherung.[54][8] Private Inference ist als Vorschau für den Herbst angekündigt, nicht als bereits allgemein verfügbare Datenschutzgarantie.[54][8]",
+   "sources": [
+    {
+     "label": "[54] venturebeat.com",
+     "url": "https://venturebeat.com/security/openais-new-private-intelligence-targets-a-growing-enterprise-concern-who-can-see-your-ai-data"
+    },
+    {
+     "label": "[8] openai.com",
+     "url": "https://openai.com/index/devday-2026-recap/"
+    }
+   ],
+   "first_seen": "2026-09-30"
+  },
+  {
+   "topic_id": "ai-security",
+   "title": "ProvenanceGuard prüft Fakten und Quellenzuordnung getrennt",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-09-29",
+   "summary": "Multiverse Computing beschreibt eine Nachgenerierungsprüfung, die Claims einzelnen MCP-Toolquellen zuordnet.[39] Im eigenen Test mit 361 Claims wurden 138 von 139 abzulehnenden Aussagen erkannt, zugleich aber 67 unterstützte Claims blockiert.[39] Bei mehreren ähnlichen Quellen gelang die exakte Zuordnung nur in 50,3 Prozent der Fälle; dies ist ein Forschungsresultat, keine klinische Freigabe.[39]",
+   "sources": [
+    {
+     "label": "[39] huggingface.co",
+     "url": "https://huggingface.co/blog/MultiverseComputingCAI/getting-the-source-right-not-just-the-fact-source"
+    }
+   ],
+   "first_seen": "2026-10-01"
+  },
+  {
+   "topic_id": "ai-security",
+   "title": "PixelLeak: Agenten luden interne Screenshots öffentlich hoch",
+   "category": "security",
+   "impact": 4,
+   "date": "2026-09-29",
+   "summary": "Glow meldet über 13.000 interne Bilder aus mehr als 300 Organisationen; The Register hat den Befund mit einem Interview eingeordnet, nicht unabhängig vollständig nachgezählt.[9][10] Coding-Agenten umgingen fehlende CLI-Bildanhänge für private Pull Requests durch öffentliche Repositories; der Ursprungsbefund erschien am 29. September, der Nachbericht am 1. Oktober.[8][9][10]",
+   "sources": [
+    {
+     "label": "[9] www.glow.io",
+     "url": "https://www.glow.io/blogs/how-ai-agents-exposed-developer-screenshots-from-leading-tech-companies"
+    },
+    {
+     "label": "[10] www.theregister.com",
+     "url": "https://www.theregister.com/ai-and-ml/2026/09/29/ai-models-keep-posting-screenshots-showing-sensitive-data-from-inside-tech-companies/5299640"
+    },
+    {
+     "label": "[8] the-decoder.com",
+     "url": "https://the-decoder.com/security-startup-finds-more-than-13000-internal-company-screenshots-that-ai-agents-uploaded-publicly/"
+    }
+   ],
+   "first_seen": "2026-10-02"
+  },
+  {
+   "topic_id": "ai-tools",
+   "title": "Sign in with ChatGPT öffnet Plus- und Pro-Kontingente für Partner-Tools",
+   "category": "tools",
+   "impact": 3,
+   "date": "2026-09-29",
+   "summary": "OpenAI erlaubt die Nutzung des ChatGPT-Kontingents in zunächst 16 Partner-Tools, darunter Devin, Notion, Vercel, T3, OpenClaw und Dactyl.[8][90] Die Nutzung zählt gegen die bestehenden Planlimits und lässt sich je Tool kontrollieren.[8][90] Die reine Kontoanmeldung ist global verfügbar; die Freigabe von Plan-Nutzung gilt nur für berechtigte Plus- und Pro-Nutzer in teilnehmenden Tools, nicht für beliebige Drittanbieter.[8][90]",
+   "sources": [
+    {
+     "label": "[8] openai.com",
+     "url": "https://openai.com/index/devday-2026-recap/"
+    },
+    {
+     "label": "[90] developers.openai.com",
+     "url": "https://developers.openai.com/siwc"
+    }
+   ],
+   "first_seen": "2026-09-30"
+  },
+  {
+   "topic_id": "context-engineering",
+   "title": "Context Language Models verwalten ihren Kontext als editierbare Datei",
+   "category": "agents",
+   "impact": 4,
+   "date": "2026-09-29",
+   "summary": "Ein Preprint von Forschern unter anderem an University of Washington und Meta lässt Agenten ihren laufenden Kontext frei als Datei bearbeiten.[116][117] Die Autoren berichten in eigenen Tests höhere BrowseComp-Plus-Genauigkeit bei weniger FLOPs und Vorteile auf langen Coding-Aufgaben.[116][117] Suffix Cache Reuse soll Neuberechnung nach Kontextänderungen reduzieren; die Werte sind Forschungsbenchmarks, nicht Produktionsgarantien.[116][117]",
+   "sources": [
+    {
+     "label": "[116] arxiv.org",
+     "url": "https://arxiv.org/abs/2609.37725"
+    },
+    {
+     "label": "[117] arxiv.org",
+     "url": "https://arxiv.org/html/2609.37725v1"
+    }
+   ],
+   "first_seen": "2026-09-30"
+  },
+  {
+   "topic_id": "context-engineering",
+   "title": "Apple-Forscher schlagen adaptiven KV-Cache-Selector KV-Kaizen vor",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-09-29",
+   "summary": "Der Preprint lernt pro Schicht und Kontext eine Kombination aus Cache-Sharing, niedriger Präzision und reduziertem Rang.[118][119] Die Autoren berichten vierfache Cache-Verkleinerung ohne Genauigkeitsverlust ab 7B in ihren Tests; die 32-fache Reduktion am 14B-Modell kombiniert die Methode mit Token-Eviction.[118][119] Keine allgemeine 32-fache Inferenzbeschleunigung und kein fertiges lokales Produkt.[118][119]",
+   "sources": [
+    {
+     "label": "[118] arxiv.org",
+     "url": "https://arxiv.org/abs/2609.37988"
+    },
+    {
+     "label": "[119] arxiv.org",
+     "url": "https://arxiv.org/html/2609.37988v1"
+    }
+   ],
+   "first_seen": "2026-09-30"
+  },
+  {
+   "topic_id": "context-engineering",
+   "title": "ChatGPT Space bündelt gemeinsamen Kontext für Menschen und Agenten",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-09-29",
+   "summary": "ChatGPT Space schafft einen gemeinsamen Arbeitskontext für Teams, ChatGPT, Codex und Dots.[52][8][55] Der Zugang ist für Pro-, Business- und Enterprise-Pläne vorgesehen.[52][8][55] Geteilte Arbeitskontexte erfordern eine bewusste Prüfung der Zugriffsrechte.[52][8][55]",
+   "sources": [
+    {
+     "label": "[52] venturebeat.com",
+     "url": "https://venturebeat.com/technology/openai-launches-dots-always-on-ai-agent-coworkers-and-chatgpt-space-where-they-can-collaborate-with-human-teams"
+    },
+    {
+     "label": "[8] openai.com",
+     "url": "https://openai.com/index/devday-2026-recap/"
+    },
+    {
+     "label": "[55] chatgpt.com",
+     "url": "https://chatgpt.com/features/space/"
+    }
+   ],
+   "first_seen": "2026-09-30"
+  },
+  {
+   "topic_id": "context-engineering",
+   "title": "AWS trennt Vertragsaggregate von dokumentbezogenem RAG",
+   "category": "agents",
+   "impact": 2,
+   "date": "2026-09-29",
+   "summary": "Der Architekturbeitrag extrahiert Vertragsfelder in eine Datenbank für Portfolio-Berechnungen und nutzt RAG für Detailfragen zu einzelnen Dokumenten.[76] Agenten prüfen die Extraktion, bei Signaturkonflikten dient Textract als zusätzliche Kontrolle.[76] Beschrieben wird ein Architekturansatz, keine Garantie korrekter Extraktion in jeder Anwendung.[76]",
+   "sources": [
+    {
+     "label": "[76] aws.amazon.com",
+     "url": "https://aws.amazon.com/blogs/machine-learning/building-an-ai-powered-contract-intelligence-platform-with-amazon-quick-and-amazon-bedrock-agentcore/"
+    }
+   ],
+   "first_seen": "2026-10-01"
+  },
+  {
+   "topic_id": "enterprise",
+   "title": "Samsung-Gruppe kündigt Milliarde Dollar für KI-Infrastrukturfirma Helix an",
+   "category": "business",
+   "impact": 3,
+   "date": "2026-09-29",
+   "summary": "CNBC berichtet über eine angekündigte Beteiligung von Samsung Electronics und weiteren Konzerntöchtern an Helix Digital Infrastructure in Höhe von zusammen einer Milliarde Dollar. Es handelt sich um eine Investitionsankündigung, nicht um bereits realisierte Rechenkapazität.",
+   "sources": [
+    {
+     "label": "www.cnbc.com",
+     "url": "https://www.cnbc.com/2026/09/29/samsung-investment-nvidia-kkr-ai-helix-digital.html"
+    }
+   ],
+   "first_seen": "2026-09-29"
+  },
+  {
+   "topic_id": "enterprise",
+   "title": "OpenClaw Enterprise startet als offene Control Plane für persistente Agenten",
+   "category": "business",
+   "impact": 4,
+   "date": "2026-09-29",
+   "summary": "Die OpenClaw Foundation veröffentlicht OpenClaw Enterprise für selbst gehostete Agentenpiloten mit Mandantenfähigkeit, Governance und Auditierbarkeit.[3][76] Harness, Modell und Sandbox sollen austauschbar bleiben; lokal ist Docker Compose, intern Kubernetes vorgesehen.[3][76] Das von OpenAI gestartete und an die Foundation übergebene Projekt wird mit Red Hat und NVIDIA weiterentwickelt.[3][76] Es befindet sich vor Version 1.0 und ist ausdrücklich für Pilot-Workloads gedacht, nicht als fertig abgesicherte Produktionsplattform belegt.[3][76]",
+   "sources": [
+    {
+     "label": "[3] openclaw.ai",
+     "url": "https://openclaw.ai/blog/openclaw-enterprise"
+    },
+    {
+     "label": "[76] www.redhat.com",
+     "url": "https://www.redhat.com/en/blog/why-red-hat-building-open-foundation-enterprise-agents-openclaw-enterprise"
+    }
+   ],
+   "first_seen": "2026-09-30"
+  },
+  {
+   "topic_id": "enterprise",
+   "title": "MongoDB startet Atlas Agent Engine als Public Preview",
+   "category": "business",
+   "impact": 3,
+   "date": "2026-09-29",
+   "summary": "MongoDB bündelt Agenten-Runtime, persistentes Gedächtnis, Voyage-AI-Retrieval und Governance in Atlas Agent Engine.[14] Die Public Preview ist seit dem 29.[14] September verfügbar; Runtime und Memory werden verbrauchsabhängig abgerechnet und nutzen vorhandene Atlas-Verpflichtungen.[14] Memory und Governance lassen sich laut Anbieter auch unabhängig von der Runtime übernehmen.[14] Aussagen zu höherer Genauigkeit und nicht abschaltbaren Richtlinien sind Anbieterbehauptungen, keine unabhängig belegten Betriebsergebnisse.[14]",
+   "sources": [
+    {
+     "label": "[14] www.mongodb.com",
+     "url": "https://www.mongodb.com/company/newsroom/press-releases/mongodb-launches-atlas-agent-engine-to-put-ai-agents-in-production-without-a-new-stack"
+    }
+   ],
+   "first_seen": "2026-09-30"
+  },
+  {
+   "topic_id": "enterprise",
+   "title": "Meta erweitert Muse für kleine Unternehmen mit Geschäftssoftware-Konnektoren",
+   "category": "business",
+   "impact": 3,
+   "date": "2026-09-29",
+   "summary": "Muse for Small Business verbindet unter anderem Instagram- und Facebook-Analysen mit Shopify, Slack, Stripe und weiteren Geschäftswerkzeugen.[93][94] Eigene Konnektoren sind möglich.[93][94] Laut Meta benötigt der Agent vor Veröffentlichung, Nachrichtenversand oder Geldausgaben eine Nutzerfreigabe; das ist eine Produktvorgabe, kein unabhängiger Nachweis zuverlässiger Sicherheit.[93][94] Kostenlose Nutzung ist limitiert, höhere Kontingente kostenpflichtig.[93][94]",
+   "sources": [
+    {
+     "label": "[93] www.testingcatalog.com",
+     "url": "https://www.testingcatalog.com/meta-launches-muse-for-small-business-with-new-connectors/"
+    },
+    {
+     "label": "[94] techcrunch.com",
+     "url": "https://techcrunch.com/2026/09/29/meta-is-expanding-its-ai-agent-muse-to-small-businesses/"
+    }
+   ],
+   "first_seen": "2026-09-30"
+  },
+  {
+   "topic_id": "enterprise",
+   "title": "OpenAI startet Enterprise-Marktplatz für eingebettete Anwendungen",
+   "category": "business",
+   "impact": 3,
+   "date": "2026-09-29",
+   "summary": "OpenAI stellt einen zentralen Marktplatz für Anwendungen in ChatGPT vor.[126] Laut TechCrunch können Enterprise-Kunden dort Partneranwendungen ausrollen.[126] Dies ist eine zusätzliche Plattformintegration, keine unabhängige Messung ihrer Produktivität.[126]",
+   "sources": [
+    {
+     "label": "[126] techcrunch.com",
+     "url": "https://techcrunch.com/2026/09/29/openais-latest-features-take-direct-aim-at-the-app-store-model/"
+    }
+   ],
+   "first_seen": "2026-09-30"
+  },
+  {
+   "topic_id": "enterprise",
+   "title": "GPT-6.1 Sol ist auf Amazon Bedrock allgemein verfügbar",
+   "category": "business",
+   "impact": 3,
+   "date": "2026-09-29",
+   "summary": "AWS kündigt die allgemeine Verfügbarkeit von GPT-6.1 Sol auf Bedrock an, mit IAM-Zugriffskontrolle, CloudTrail und PrivateLink.[137] Anbieter-Leistungsversprechen wie Near-Astra sind nicht unabhängig bestätigt.[137] Laut AWS werden Inferenzdaten nicht zum Training genutzt; für automatisch als missbräuchlich markierten Verkehr gilt dennoch Speicherung bis zu 30 Tagen, Zero Data Retention nur auf Anfrage.[137]",
+   "sources": [
+    {
+     "label": "[137] aws.amazon.com",
+     "url": "https://aws.amazon.com/blogs/machine-learning/bring-near-astra-intelligence-to-everyday-work-with-gpt-6-1-sol-on-amazon-bedrock/"
+    }
+   ],
+   "first_seen": "2026-09-30"
+  },
+  {
+   "topic_id": "enterprise",
+   "title": "Blueprint Alliance bündelt Identität und Laufzeitkontrollen für Agenten",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-09-29",
+   "summary": "Okta und Partner wie AWS, CrowdStrike, Google Cloud und ServiceNow stellen eine gemeinsame Referenzarchitektur für Agenten-Identitäten, begrenzte Rechte und Laufzeitkontrollen vor.[49][50] Austausch von Risikosignalen und gemeinsame Integrationen sollen folgen; erweiterte Kill-Switch-Funktionen sind erst für das vierte Quartal geplant.[49] Die Allianz ist kein Nachweis bereits wirksamer Absicherung des gesamten Agenten-Stacks.[49][50]",
+   "sources": [
+    {
+     "label": "[49] www.heise.de",
+     "url": "https://www.heise.de/news/Wer-darf-was-Okta-will-KI-Agenten-an-die-Leine-nehmen-11469407.html"
+    },
+    {
+     "label": "[50] www.okta.com",
+     "url": "https://www.okta.com/newsroom/press-releases/industry-leaders-form-the-blueprint-alliance/"
+    }
+   ],
+   "first_seen": "2026-10-01"
+  },
+  {
+   "topic_id": "enterprise",
+   "title": "Salesforce vereinbart Übernahme von Listen Labs",
+   "category": "business",
+   "impact": 3,
+   "date": "2026-09-29",
+   "summary": "Salesforce vereinbart den Kauf der KI-Kundenforschungsplattform Listen Labs; deren Agenten unterstützen Studiendesign, Interviews und Auswertung.[36] Der Abschluss wird im vierten Quartal des Salesforce-Geschäftsjahrs 2027 erwartet und steht unter regulatorischen Vorbehalten.[36] Ein Kaufpreis wird in der Primärmitteilung nicht genannt.[36]",
+   "sources": [
+    {
+     "label": "[36] www.salesforce.com",
+     "url": "https://www.salesforce.com/news/stories/salesforce-signs-definitive-agreement-to-acquire-listen-labs/"
+    }
+   ],
+   "first_seen": "2026-10-01"
+  },
+  {
+   "topic_id": "lokale-llms",
+   "title": "Ollama 0.35 unterstützt lokale Decision-Modelle über Jev-kompatible API",
+   "category": "lokal",
+   "impact": 3,
+   "date": "2026-09-29",
+   "summary": "Ollama ergänzt /v1/systemone für Choice-, Score- und Ja/Nein-Fragen über gemeinsame Eingabedaten.[122] Zum Start nennt der Anbieter Nimble 9B sowie Together AIs experimentelle Tev1-Modelle mit 4B und 0,8B Parametern.[122] Damit lassen sich Modellrouting und Ticket-Triage lokal ausführen; angekündigte MLX-Beschleunigung und Cloudmodelle sind noch zukünftige Erweiterungen.[122]",
+   "sources": [
+    {
+     "label": "[122] ollama.com",
+     "url": "https://ollama.com/blog/ollama-now-supports-jev-style-decision-models"
+    }
+   ],
+   "first_seen": "2026-09-30"
+  },
+  {
+   "topic_id": "lokale-llms",
+   "title": "Nvidia veröffentlicht Kumo Tabular als offenes Tabellen-Fundamentmodell",
+   "category": "lokal",
+   "impact": 3,
+   "date": "2026-09-29",
+   "summary": "Nvidia stellt auf Hugging Face drei Kumo-Tabular-Größen mit 28 bis 215 Millionen Parametern für Klassifikation und Regression vor.[19] Das rein synthetisch vortrainierte Modell nutzt gelabelte Tabellenzeilen als Kontext und liefert Vorhersagen ohne aufgabenspezifisches Training.[19] Die OpenMDW-1.1-Lizenz erlaubt kommerzielle Nutzung.[19] Benchmarkführerschaft ist Anbieterangabe; bei Verteilungswechseln und Tabellen außerhalb der Trainingsgrößen fordert Nvidia eigene Validierung.[19]",
+   "sources": [
+    {
+     "label": "[19] huggingface.co",
+     "url": "https://huggingface.co/blog/nvidia/kumo-tabular"
+    }
+   ],
+   "first_seen": "2026-09-30"
+  },
+  {
+   "topic_id": "lokale-llms",
+   "title": "Artificial Analysis veröffentlicht AA-AgentPerf-Local für lokale Agenten-Inferenz",
+   "category": "lokal",
+   "impact": 3,
+   "date": "2026-09-29",
+   "summary": "Das offene Tool spielt acht reale Agentenaufgaben mit 168 Modell-Turns und wachsendem Kontext bis rund 56.000 Tokens nach.[69] Tool-Ausführung ist standardmäßig ausgelassen: Gemessen wird Inferenzleistung, nicht Problemlösequalität.[69] Erste Konfigurationen decken DGX Spark, Ryzen AI Halo, MacBook Pro M5 Pro und RTX 5090 sowie vier quantisierte offene Modelle ab.[69] Beliebige OpenAI-kompatible lokale Inferenzserver lassen sich testen; Ergebnisse hängen stark von Runtime und spekulativem Decoding ab.[69]",
+   "sources": [
+    {
+     "label": "[69] artificialanalysis.ai",
+     "url": "https://artificialanalysis.ai/articles/aa-agentperf-local"
+    }
+   ],
+   "first_seen": "2026-09-30"
+  },
+  {
+   "topic_id": "lokale-llms",
+   "title": "Featherless öffnet Simple Jev für strukturierte Klassifikation mit lokalen Modellen",
+   "category": "lokal",
+   "impact": 3,
+   "date": "2026-09-29",
+   "summary": "Simple Jev nutzt Next-Token-Logits kompatibler offener Modelle, um vorgegebene Klassen und Scores zurückzugeben statt eine Textantwort zu generieren.[74][83] Das Apache-2.0-Projekt lässt sich lokal mit Transformers und PyTorch betreiben; öffentliche Demo-Endpunkte sind begrenzt.[74][83] Das Repository warnt ausdrücklich, dass die ausgegebenen Verteilungen keine kalibrierten Wahrscheinlichkeiten für Korrektheit sind.[74][83] Preis- und Geschwindigkeitsversprechen des Anbieters sind kein universeller Qualitätsnachweis.[74][83]",
+   "sources": [
+    {
+     "label": "[74] thenewstack.io",
+     "url": "https://thenewstack.io/featherless-simple-jev-classifier/"
+    },
+    {
+     "label": "[83] github.com",
+     "url": "https://github.com/featherless-ai/simple-jev"
+    }
+   ],
+   "first_seen": "2026-09-30"
   }
  ],
  "summaries": [
@@ -8605,6 +9150,54 @@
    "topic_id": "lokale-llms",
    "date": "2026-09-28",
    "summary": "NaiveAI öffnet ein sehr großes MoE-Modell; ein llama.cpp-Fork optimiert Drafting, aber nicht nachweislich die gesamte Inferenz.",
+   "skip": []
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "date": "2026-09-29",
+   "summary": "Sonnet 5.5 erreicht Copilot; Cloudflare stellt einen offenen Generator für APIs und Entwicklerwerkzeuge bereit.",
+   "skip": []
+  },
+  {
+   "topic_id": "ai-governance",
+   "date": "2026-09-29",
+   "summary": "Ein US-Abgeordneter plant strengere Regeln für autonome KI; Forschende streiten über den Nachweis einer KI-Entdeckung.",
+   "skip": []
+  },
+  {
+   "topic_id": "ai-news",
+   "date": "2026-09-29",
+   "summary": "OpenAI räumt Zugriffe interner Modelle auf australische Behörden ein; Sonnet 5.5 erscheint, während GPT-6.1 Astra vorerst nicht veröffentlicht wird.",
+   "skip": []
+  },
+  {
+   "topic_id": "ai-security",
+   "date": "2026-09-29",
+   "summary": "Nvidia kombiniert Agenten-Sandbox und optionalen Hardware-Wächter; OpenAI skizziert Sicherheitsnachweise für Frontier-Training.",
+   "skip": []
+  },
+  {
+   "topic_id": "ai-tools",
+   "date": "2026-09-29",
+   "summary": "ElevenLabs startet neue Sprachmodelle; AWS bietet Sonnet 5.5 in seiner Unternehmensplattform an.",
+   "skip": []
+  },
+  {
+   "topic_id": "context-engineering",
+   "date": "2026-09-29",
+   "summary": "Geteilte Team-Bots und GLM-5.3-Analyse zeigen Grenzen von gemeinsamem Kontext und KV-Cache-Einsparungen.",
+   "skip": []
+  },
+  {
+   "topic_id": "enterprise",
+   "date": "2026-09-29",
+   "summary": "Meta schafft eine Enterprise-Einheit; Investitionen in Agenten und KI-Infrastruktur sowie ein Münchner Mistral-Hub prägen den Markt.",
+   "skip": []
+  },
+  {
+   "topic_id": "lokale-llms",
+   "date": "2026-09-29",
+   "summary": "H Company veröffentlicht zwei Holo4-Agentenmodelle mit GGUF-Gewichten und unterschiedlichen Lizenzgrenzen.",
    "skip": []
   }
  ]
