@@ -22,7 +22,7 @@ def checks(config, job, sequential_timeout, concurrent_timeout, expected_prompt)
         "cron_toolsets_valid": set(job.get("enabled_toolsets") or []) == {"web", "terminal", "file", "delegation"},
         "cron_workdir": job.get("workdir") == "/opt/data/ai-briefing",
         "cron_schedule_unchanged": (job.get("schedule") or {}).get("expr") == "0 6,7 * * *",
-        "berlin_gate_present": job.get("script") == "ai-briefing-berlin-gate.py",
+        "berlin_gate_present": job.get("script") in {"ai-briefing-berlin-gate.py", "ai_briefing_main_gate.py"},
     }
 
 

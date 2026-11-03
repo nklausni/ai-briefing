@@ -29,6 +29,20 @@ class HermesRuntimeTests(unittest.TestCase):
     def test_real_deployment_contract_accepts_persistent_runtime_values(self):
         self.assertTrue(all(r.checks(self.cfg, self.job, 1800, 1800, "current instruction").values()))
 
+    def test_approved_shared_admission_gate_preserves_berlin_contract(self):
+        for script, expected in [
+            ('ai_briefing_main_gate.py', True),
+            ('ai-briefing-berlin-gate.py', True),
+            ('ai_briefing_recovery_gate.py', False),
+            ('arbitrary.py', False),
+            (None, False),
+        ]:
+            with self.subTest(script=script):
+                job = copy.deepcopy(self.job)
+                job['script'] = script
+                result = r.checks(self.cfg, job, 1800, 1800, 'current instruction')
+                self.assertEqual(result['berlin_gate_present'], expected)
+
     def test_both_old_timeout_paths_are_detected(self):
         result = r.checks(self.cfg, self.job, 420, 420, "current instruction")
         self.assertFalse(result["sequential_timeout_resolves"])

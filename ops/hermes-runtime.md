@@ -21,7 +21,9 @@ im Hermes-Installationsverzeichnis, der bei einem Update verloren gehen könnte.
 Der Cron-Prompt hat eine einzige versionierte Vorlage:
 `ops/ai-briefing-cron-prompt.txt`. Für Job `a4f79267477a` wird sie über `hermes cron
 edit --prompt` eingespielt; Zeitplan, Modell, Skills und Zustellung bleiben erhalten.
-Die Berliner Gate-Datei `ai-briefing-berlin-gate.py` lässt nur den Lauf um 08:00 Uhr zu.
+Die Berliner Gate-Datei lässt nur den Lauf um 08:00 Uhr oder eine ausdrücklich erzwungene manuelle Ausführung zu. Die aktive Variante `ai_briefing_main_gate.py` ergänzt die gemeinsame, dauerhafte Schreibzulassung mit der Wiederherstellung; die ursprüngliche Variante `ai-briefing-berlin-gate.py` bleibt als explizit zugelassener Legacy-Gate-Name erhalten. Andere Skripte, insbesondere das Wiederherstellungs-Gate als Hauptjob-Gate, werden vom Laufzeitvertrag weiterhin abgewiesen.
+
+Die separat aktivierte Publikationskontrolle prüft ab 08:45 Uhr Europe/Berlin alle fünf Minuten den tagesaktuellen Publikationsbeleg, den erfolgreichen Pages-Lauf für exakt dessen Commit und die frisch abgerufene Live-Startseite. Fehlt der Abschluss und läuft kein anderer registrierter Herausgeber, übernimmt ein dauerhafter nativer Wiederherstellungsauftrag vorhandene Recherche und Budgets. Höchstens zwei Versuche pro Tag; keine doppelten Herausgeber, keine erneute Zustellung unklarer Nachrichten. Konfiguration und Freigabegrenzen: `/opt/data/ai-briefing-watchdog/`; Operatorverfahren: Skill `agentic-content-pipelines`. Die Kontrolle kann einen vollständig ausgeschalteten Host nicht beobachten und ersetzt keine extern verfügbare Hostüberwachung.
 
 ## Deployment und Abnahme
 
