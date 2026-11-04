@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI-Radar — Lokale LLMs — Ausgabe vom 3. November 2026</title>
+<title>AI-Radar — Lokale LLMs — Ausgabe vom 4. November 2026</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <main class="sheet">
-  <header class="top"><div class="edition-kicker">Künstliche Intelligenz · Nachrichten & Einordnung</div><h1 class="masthead"><a href="index.html">AI Briefing</a></h1><p class="masthead-motto">Modelle, Werkzeuge und die Welt im Wandel.</p><div class="subrow"><div class="subs"><div class="sub">Blickwinkel: Open Weights, lokale Inferenz und Hardware</div></div><div class="meta-right"><nav class="range-sw" aria-label="Zeitraum"><a href="lokale-llms.html" class="active">Heute</a><a href="7d/lokale-llms.html">7 Tage</a><a href="14d/lokale-llms.html">14 Tage</a><a href="30d/lokale-llms.html">30 Tage</a></nav><div class="range-period">Ausgabe vom 3. November 2026</div></div></div></header>
+  <header class="top"><div class="edition-kicker">Künstliche Intelligenz · Nachrichten & Einordnung</div><h1 class="masthead"><a href="index.html">AI Briefing</a></h1><p class="masthead-motto">Modelle, Werkzeuge und die Welt im Wandel.</p><div class="subrow"><div class="subs"><div class="sub">Blickwinkel: Open Weights, lokale Inferenz und Hardware</div></div><div class="meta-right"><nav class="range-sw" aria-label="Zeitraum"><a href="lokale-llms.html" class="active">Heute</a><a href="7d/lokale-llms.html">7 Tage</a><a href="14d/lokale-llms.html">14 Tage</a><a href="30d/lokale-llms.html">30 Tage</a></nav><div class="range-period">Ausgabe vom 4. November 2026</div></div></div></header>
   <nav class="nav" aria-label="Themen"><a href="index.html">Übersicht</a><a href="ai-news.html">AI News</a><a href="lokale-llms.html" class="active">Lokale LLMs</a><a href="agentic-engineering.html">Agentic Engineering / Vibe Coding</a><a href="ai-tools.html">AI Tools</a><a href="context-engineering.html">Context Engineering</a><a href="ai-security.html">AI Security</a><a href="ai-governance.html">AI Governance</a><a href="enterprise.html">Enterprise</a><a href="search.html">Suche</a></nav>
   <h2 class="topic-heading">Lokale LLMs</h2>
 
 <p class="sub">Enthält auch frühere Meldungen; Originaldaten stehen an den Einträgen.</p>
-  <p class="lede">Hydrogen-1.0 stellt offene Gewichte für wissenschaftliche Aufgaben bereit. Herstellerbenchmarks sind noch kein unabhängig bestätigter Entdeckungsnachweis.</p>
+  <p class="lede">Ein lokales Qwen-Experiment interpretiert Spielnetzgewichte. Eine neue Literaturauswertung mahnt zu vollständigen Qualitäts- und Geschwindigkeitsmessungen; vLLM erweitert GPU-Serving.</p>
 
   <div class="board">
     <div class="board-left">
@@ -58,6 +58,14 @@
 <text x="400" y="754" class="sector-label" text-anchor="middle" fill="#1f1d1b">Security &amp; Governance</text>
 <text x="96.89" y="579" class="sector-label" text-anchor="end" fill="#1f1d1b">Business &amp; Markt</text>
 <g>
+<circle cx="607.54" cy="475.54" r="13" fill="#1aae39" stroke="#ffffff" stroke-width="2"/>
+<text x="607.54" y="479.54" class="blip-num" text-anchor="middle" fill="#191915">1</text>
+</g>
+<g>
+<circle cx="578.9" cy="550.11" r="13" fill="#1aae39" stroke="#ffffff" stroke-width="2"/>
+<text x="578.9" y="554.11" class="blip-num" text-anchor="middle" fill="#191915">2</text>
+</g>
+<g>
 <circle cx="548.26" cy="485.6" r="13" fill="#1aae39" stroke="#ffffff" stroke-width="2"/>
 <text x="548.26" y="489.6" class="blip-num" text-anchor="middle" fill="#191915">3</text>
 </g>
@@ -86,19 +94,37 @@
   <div class="section"><h2>Die Meldungen im Detail</h2></div>
   <div class="detail-list">
   <div class="dcard">
+    <span class="dnum" style="background:#1aae39;color:#191915">1</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/" target="_blank" rel="noopener">Qwen 3.8 27B interpretiert lokal Gewichte kleiner Spielnetze</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="border-left:3px solid #1aae39;color:var(--ink)">Open Weight / Lokal</span><span class="dmeta-src">[1] Simon Willison · 2026-11-03</span> · <span class="dots">●●○○○</span> <span class="dmeta-imp">2/5</span></div>
+      <p>Simon Willison berichtet, dass Qwen 3.8 27B auf seinem Laptop ein kleines Pac-Man-artiges Netz aus als Text vorgelegten Gewichten erkennen konnte.[1] Beim Freeway-Beispiel scheiterte es.[1] Der begrenzte Versuch belegt keine allgemeine Selbstverbesserung.[1]</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/" target="_blank" rel="noopener">[1] Simon Willison <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
+    <span class="dnum" style="background:#1aae39;color:#191915">2</span>
+    <div class="dbody">
+      <h3 class="dtitle"><a class="dtitle-link" href="https://arxiv.org/abs/2611.04380" target="_blank" rel="noopener">Quantized Serving of Mid-Size Open LLMs untersucht Lücken in Benchmarkdaten</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="border-left:3px solid #1aae39;color:var(--ink)">Open Weight / Lokal</span><span class="dmeta-src">[17] arXiv: Paper · 2026-11-04</span> · <span class="dots">●●○○○</span> <span class="dmeta-imp">2/5</span></div>
+      <p>Die Literaturauswertung sammelt öffentlich überprüfbare Qualitäts- und Geschwindigkeitsmessungen für offene Modelle mit 9 bis 20 Milliarden Parametern und findet erhebliche Dokumentationslücken.[17] Sie ist kein eigener universeller Hardwarebenchmark.[17] Eingereicht am 3. November, öffentlich neu gelistet am 4. November.[17][15][16]</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://arxiv.org/abs/2611.04380" target="_blank" rel="noopener">[17] arXiv: Paper <span class="arw">→</span></a> · <a class="dlink" href="https://arxiv.org/list/cs.AI/recent?skip=0&amp;show=2000" target="_blank" rel="noopener">[15] arXiv: recent <span class="arw">→</span></a> · <a class="dlink" href="https://arxiv.org/list/cs.AI/new?skip=0&amp;show=2000" target="_blank" rel="noopener">[16] arXiv: new <span class="arw">→</span></a></div>
+    </div>
+  </div>
+  <div class="dcard">
     <span class="dnum" style="background:#1aae39;color:#191915">3</span>
     <div class="dbody">
-      <h3 class="dtitle"><a class="dtitle-link" href="https://www.marktechpost.com/2026/11/02/deep-principle-hydrogen-1-0-open-weight-scientific-model/" target="_blank" rel="noopener">Deep Principle veröffentlicht Hydrogen-1.0 mit offenen Gewichten für wissenschaftliche Aufgaben</a></h3>
-      <div class="dmeta"><span class="cat-badge" style="border-left:3px solid #1aae39;color:var(--ink)">Open Weight / Lokal</span><span class="dmeta-src">[13] www.marktechpost.com · 2026-11-02</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
-      <p>Deep Principle stellt Hydrogen-1.0 bereit, ein durch wissenschaftliches Post-Training von GLM-5.3 entwickeltes Modell für Chemie, Material- und Lebenswissenschaften. Der frei gelesene Herstellertext nennt Gewichtsdownloads auf Hugging Face und ModelScope sowie API- und Mira-Zugang. Trainingsdaten umfassen Domänenwissen, Laboraufzeichnungen und Agententrajektorien. Benchmarkvorsprünge sind Herstellerangaben, keine unabhängige Bestätigung wissenschaftlicher Entdeckungsfähigkeit; das Tagesdatum stammt aus dem neuen MarkTechPost-Bericht.[13][14]</p>
-      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://www.marktechpost.com/2026/11/02/deep-principle-hydrogen-1-0-open-weight-scientific-model/" target="_blank" rel="noopener">[13] www.marktechpost.com <span class="arw">→</span></a> · <a class="dlink" href="https://blog.deepprinciple.com/introducing-hydrogen-1.0/" target="_blank" rel="noopener">[14] blog.deepprinciple.com <span class="arw">→</span></a></div>
+      <h3 class="dtitle"><a class="dtitle-link" href="https://vllm.ai/blog/2026-10-23-minimax-m31-flash" target="_blank" rel="noopener">vLLM integriert MiniMax-M3.1-Flash für NVIDIA- und AMD-GPUs</a></h3>
+      <div class="dmeta"><span class="cat-badge" style="border-left:3px solid #1aae39;color:var(--ink)">Open Weight / Lokal</span><span class="dmeta-src">[51] vLLM · 2026-10-23</span> · <span class="dots">●●●○○</span> <span class="dmeta-imp">3/5</span></div>
+      <p>vLLM beschreibt Unterstützung für MiniMax-M3.1-Flash auf NVIDIA Blackwell und Rubin sowie AMD MI350 mit vorkonfigurierten Serving-Images.[51] Das Nightly-PyPI-Wheel wird im Beitrag erst nach dem Upstream-Merge erwartet; die Integration ist keine erneute Modell- oder Laptop-Freigabe.[51]</p>
+      <div class="dsources"><span class="dsources-k">Quellen:</span> <a class="dlink" href="https://vllm.ai/blog/2026-10-23-minimax-m31-flash" target="_blank" rel="noopener">[51] vLLM <span class="arw">→</span></a></div>
     </div>
   </div>
   </div>
 
 
 
-  <div class="footer">Hinweis: Alle Infos auf eigene Gefahr. Dies ist ein privates Projekt, automatisch generiert aus Web-Recherche.<br>Aufbau nach dem Tech-Radar-Prinzip (Ringe = Impact, Segmente = Kategorie). Statischer Export; nur die lokale Suche benötigt JavaScript. Auswahl per Recherche — keine Gewähr auf Vollständigkeit.<br><span class="footer-updated">Zuletzt aktualisiert: 3. November 2026</span></div>
+  <div class="footer">Hinweis: Alle Infos auf eigene Gefahr. Dies ist ein privates Projekt, automatisch generiert aus Web-Recherche.<br>Aufbau nach dem Tech-Radar-Prinzip (Ringe = Impact, Segmente = Kategorie). Statischer Export; nur die lokale Suche benötigt JavaScript. Auswahl per Recherche — keine Gewähr auf Vollständigkeit.<br><span class="footer-updated">Zuletzt aktualisiert: 4. November 2026</span></div>
 </main>
 </body>
 </html>

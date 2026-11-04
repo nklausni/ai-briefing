@@ -1,362 +1,6 @@
 {
  "items": [
   {
-   "topic_id": "lokale-llms",
-   "title": "AutoTrust erweitert JEV um offene multimodale Entscheidungsmodelle",
-   "category": "lokal",
-   "impact": 3,
-   "date": "2026-09-30",
-   "summary": "AutoTrust veröffentlicht JEV-27B-VL unter Apache 2.0 mit Qwen3.8-27B-Vision-Encoder und dem texttrainierten JEV-Entscheidungskopf.[25][29] Das Modell kombiniert strukturierte Entscheidungen über Text und Bilder mit dem unveränderten generativen Reasoning-Pfad; die Anleitung setzt eine GPU mit mindestens 80 GB voraus.[25][29] Die Bildkalibrierung ist nicht systematisch gemessen, der Empfehlungstest umfasst nur einen Datensatz mit 200 Nutzern.[25][29] Laut Model Card muss vLLM auf höchstens acht Sequenzen begrenzt werden, sonst liefert der multimodale LoRA-Pfad falsche Entscheidungswahrscheinlichkeiten.[25][29]",
-   "sources": [
-    {
-     "label": "[25] huggingface.co",
-     "url": "https://huggingface.co/blog/autotrust/autotrustjev-27b-vl-a-decision-model-that-learned"
-    },
-    {
-     "label": "[29] huggingface.co",
-     "url": "https://huggingface.co/autotrust/JEV-27B-VL"
-    }
-   ],
-   "first_seen": "2026-09-30"
-  },
-  {
-   "topic_id": "ai-news",
-   "title": "Gemini 4 Argon startet eingeschränkt – eine Million Ausgabetokens",
-   "category": "modelle",
-   "impact": 4,
-   "date": "2026-09-30",
-   "summary": "Google gibt Gemini 4 Argon zunächst ausgewählten Cyber-Verteidigern im Fairwind-Programm, nicht allgemein frei.[4][29] Das Ausgabelimit beträgt laut Google eine Million Tokens; nach der Einführungsphase gelten vier Dollar pro Million Eingabe- und zwanzig Dollar pro Million Ausgabetokens.[4] Artificial Analysis misst 53 Indexpunkte, gleichauf mit GPT-6 Astra; die Aufgabenkosten steigen dort nach dem Einführungsrabatt von 1,99 auf 3,98 Dollar.[64] Das belegt einen Benchmarkvergleich, keine allgemeine Gleichwertigkeit.[64]",
-   "sources": [
-    {
-     "label": "[4] blog.google",
-     "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/"
-    },
-    {
-     "label": "[29] arstechnica.com",
-     "url": "https://arstechnica.com/google/2026/09/29/google-announces-gemini-4-argon-ai-model-but-you-cant-use-it-yet"
-    },
-    {
-     "label": "[64] artificialanalysis.ai",
-     "url": "https://artificialanalysis.ai/articles/gemini-4-argon-google-top-three-labs"
-    }
-   ],
-   "first_seen": "2026-10-01"
-  },
-  {
-   "topic_id": "ai-news",
-   "title": "Cohere Embed 5 verbindet Pro und Fast im gleichen Vektorraum",
-   "category": "modelle",
-   "impact": 3,
-   "date": "2026-09-30",
-   "summary": "Embed 5 Pro und Fast teilen einen Vektorraum: Pro-Indexierung lässt sich mit Fast-Abfragen ohne Neuindexierung kombinieren.[70] Cohere nennt 128K Kontext, multimodale Eingaben und über 100 Sprachen; die Textpreise betragen 0,12 beziehungsweise 0,08 Dollar pro Million Tokens.[70] Verfügbarkeit über Cohere, Microsoft Foundry und SageMaker ist dokumentiert; Leistungsführerschaft bleibt eine Herstellerbehauptung.[70]",
-   "sources": [
-    {
-     "label": "[70] cohere.com",
-     "url": "https://cohere.com/blog/embed-5"
-    }
-   ],
-   "first_seen": "2026-10-01"
-  },
-  {
-   "topic_id": "ai-news",
-   "title": "SynthID Bio erprobt Wasserzeichen in KI-entworfenen Proteinen",
-   "category": "security",
-   "impact": 3,
-   "date": "2026-09-30",
-   "summary": "DeepMind stellt einen Proof of Concept für Wasserzeichen in Proteinsequenzen und vorhergesagten Strukturen vor.[30][31] In eigenen Laborversuchen an drei Zielproteinen behielten markierte Binder vergleichbare Eigenschaften.[31] Robustheit gegen gezielte Entfernung bleibt ausdrücklich eine offene Forschungsaufgabe; ein umfassender Biosecurity-Schutz ist nicht belegt.[31]",
-   "sources": [
-    {
-     "label": "[30] blog.google",
-     "url": "https://blog.google/innovation-and-ai/models-and-research/google-deepmind/synthid-bio/"
-    },
-    {
-     "label": "[31] deepmind.google",
-     "url": "https://deepmind.google/blog/introducing-synthid-bio/"
-    }
-   ],
-   "first_seen": "2026-10-01"
-  },
-  {
-   "topic_id": "lokale-llms",
-   "title": "Open-TTS-Leaderboard vergleicht Verständlichkeit, Tempo und Stimmähnlichkeit",
-   "category": "tools",
-   "impact": 3,
-   "date": "2026-09-30",
-   "summary": "Hugging Face vergleicht offene Sprachsynthesemodelle anhand WER/CER, Offlinegeschwindigkeit, Streaminglatenz und Stimmähnlichkeit.[38] Die Tests verwenden definierte GPU-/CPU-Konfigurationen.[38] Natürlichkeit, Ausdruck und menschliche Präferenz werden damit ausdrücklich nicht unmittelbar gemessen.[38]",
-   "sources": [
-    {
-     "label": "[38] huggingface.co",
-     "url": "https://huggingface.co/blog/open-tts-leaderboard"
-    }
-   ],
-   "first_seen": "2026-10-01"
-  },
-  {
-   "topic_id": "lokale-llms",
-   "title": "Perplexity veröffentlicht selbst hostbare Kontext-Embeddings als Preview",
-   "category": "lokal",
-   "impact": 3,
-   "date": "2026-09-30",
-   "summary": "pplx-embed-v2-context-9b-preview kodiert Dokumentabschnitte im Zusammenhang des gesamten Dokuments und soll auch stützende Evidenz abrufen; MIT-Gewichte sind verfügbar.[9][10] Die Modellkarte unterscheidet Query- und Dokumentkodierung und bietet Int8-Embeddings mit 2048 oder 1024 Dimensionen.[10] Gewichte, Embeddings und Schnittstelle können inkompatibel geändert werden; eine Perplexity-API ist noch nicht verfügbar.[9][10]",
-   "sources": [
-    {
-     "label": "[9] www.marktechpost.com",
-     "url": "https://www.marktechpost.com/2026/09/30/perplexity-releases-pplx-embed-v2-context-9b-preview-a-contextual-embedding-model-that-retrieves-answers-and-their-supporting-evidence/"
-    },
-    {
-     "label": "[10] huggingface.co",
-     "url": "https://huggingface.co/perplexity-ai/pplx-embed-v2-context-9b-preview"
-    }
-   ],
-   "first_seen": "2026-10-01"
-  },
-  {
-   "topic_id": "agentic-engineering",
-   "title": "HydraFusion-Preview erreicht VS Code und die Copilot-App",
-   "category": "agents",
-   "impact": 3,
-   "date": "2026-09-30",
-   "summary": "Neu gegenüber der bisherigen CLI-Preview ist die Verfügbarkeit der Multi-Modell-Orchestrierung in VS Code und der Copilot-App.[59] Single, Cascade und Critique wählen direkte Bearbeitung, Eskalation oder Review durch eine andere Modellfamilie.[59] Der Status bleibt Research Preview, keine allgemeine Freigabe oder unabhängig bestätigte Leistungssteigerung.[59]",
-   "sources": [
-    {
-     "label": "[59] github.blog",
-     "url": "https://github.blog/changelog/2026-09-30-hydrafusion-in-vs-code-and-the-github-copilot-app"
-    }
-   ],
-   "first_seen": "2026-10-01"
-  },
-  {
-   "topic_id": "agentic-engineering",
-   "title": "Turbo Harness passt den Agentenablauf an einzelne Aufgaben an",
-   "category": "agents",
-   "impact": 2,
-   "date": "2026-09-30",
-   "summary": "Der Preprint vom 30. September trainiert einen Harness-Editor, der Optimierungsartefakte als Playbook nutzt und aufgabenspezifische Patches erstellt.[33] Die Autoren berichten Vorteile gegenüber Baselines auf sieben Benchmarks; unabhängige Bestätigung allgemeiner Selbstverbesserung liegt damit nicht vor.[33]",
-   "sources": [
-    {
-     "label": "[33] arxiv.org",
-     "url": "https://arxiv.org/abs/2609.40330"
-    }
-   ],
-   "first_seen": "2026-10-01"
-  },
-  {
-   "topic_id": "ai-tools",
-   "title": "Gemini Skills ersetzen Gems mit gestaffelter Migration",
-   "category": "tools",
-   "impact": 4,
-   "date": "2026-09-30",
-   "summary": "Google rollt Skills weltweit im Gemini-Chat aus; Workspace folgt in den kommenden Wochen.[6] Wiederverwendbare Anweisungen lassen sich per Slash aufrufen, kombinieren und mit Referenzdateien versehen.[6] Gems-Unterstützung endet bei Privatkonten ab November, bei Workspace-Unternehmen ab März 2027 und Education ab Juni 2027; bestehende Gems werden migriert.[6] Teilen und weitere Anbindungen folgen später; Gems by Google Labs werden ohne Migration eingestellt.[6]",
-   "sources": [
-    {
-     "label": "[6] blog.google",
-     "url": "https://blog.google/products-and-platforms/products/gemini/automate-tasks-with-skills/"
-    }
-   ],
-   "first_seen": "2026-10-01"
-  },
-  {
-   "topic_id": "ai-tools",
-   "title": "ChatGPT Pages ergänzt Space um gemeinsame Dokumente",
-   "category": "tools",
-   "impact": 3,
-   "date": "2026-09-30",
-   "summary": "Computerworld beschreibt Pages als blockbasierten Dokumenteditor für Zusammenarbeit von Menschen und Agenten.[54] Pro, Business und Enterprise können ihn im Web und auf dem Desktop nutzen; mobil sind Lesen und Teilen, aber kein Bearbeiten möglich.[54] Neu ist der Dokumenteditor gegenüber dem bereits gemeldeten Space; die Redaktion weist auf Berechtigungsfragen bei gemeinsam geteilten Inhalten hin.[54]",
-   "sources": [
-    {
-     "label": "[54] www.computerworld.com",
-     "url": "https://www.computerworld.com/article/4229031/openai-takes-on-microsoft-and-google-with-office-productivity-push.html"
-    }
-   ],
-   "first_seen": "2026-10-01"
-  },
-  {
-   "topic_id": "ai-tools",
-   "title": "Nanoleaf lässt Chatbots über MCP Smart-Lights steuern",
-   "category": "tools",
-   "impact": 2,
-   "date": "2026-09-30",
-   "summary": "Nanoleaf bietet einen MCP-Server für Lichtsteuerung über Claude oder ChatGPT; fortgeschrittene Nutzer können externe APIs und Webhooks anbinden.[46] Einrichtungsanleitungen sind verfügbar, vorgefertigte Integrationen aber erst für Oktober angekündigt.[46]",
-   "sources": [
-    {
-     "label": "[46] www.theverge.com",
-     "url": "https://www.theverge.com/tech/1002561/nanoleaf-launches-an-mcp-server-to-let-claude-and-chatgpt-control-your-smart-lights"
-    }
-   ],
-   "first_seen": "2026-10-01"
-  },
-  {
-   "topic_id": "context-engineering",
-   "title": "Fabric IQ liefert Unternehmenskontext über Read-only-MCP",
-   "category": "tools",
-   "impact": 4,
-   "date": "2026-09-30",
-   "summary": "Fabric IQ ist in Copilot Chat und Cowork allgemein verfügbar; externe Agenten erhalten über MCP sechs Read-only-Werkzeuge für Power-BI-Modelle, Metadaten und DAX-Abfragen.[60][61] Die Werkzeuge arbeiten mit den Zugriffsrechten des angemeldeten Nutzers; der aufrufende Agent formuliert Abfragen und erklärt Ergebnisse selbst.[61] Ontologie-Werkzeuge und operative App-Generierung sind separate Vorschauangebote, nicht Teil derselben allgemeinen Freigabe.[60]",
-   "sources": [
-    {
-     "label": "[60] thenewstack.io",
-     "url": "https://thenewstack.io/microsoft-fabric-agent-context/"
-    },
-    {
-     "label": "[61] learn.microsoft.com",
-     "url": "https://learn.microsoft.com/en-us/fabric/iq/connectors/fabric-iq-mcp"
-    }
-   ],
-   "first_seen": "2026-10-01"
-  },
-  {
-   "topic_id": "context-engineering",
-   "title": "Cohere bewertet Retrieval mit expliziten Relevanzkriterien",
-   "category": "tools",
-   "impact": 2,
-   "date": "2026-09-30",
-   "summary": "RCP-nDCG@10 bewertet gefundene Dokumente je Anfrage gegen explizite Kriterien mit einem kalibrierten KI-Judge.[71] Dies ist eine von Cohere vorgestellte Evaluationsmethodik, keine durch den Blogbeitrag unabhängig etablierte Standardmetrik.[71]",
-   "sources": [
-    {
-     "label": "[71] cohere.com",
-     "url": "https://cohere.com/blog/rcp-ndcg"
-    }
-   ],
-   "first_seen": "2026-10-01"
-  },
-  {
-   "topic_id": "ai-security",
-   "title": "OpenAI meldet abgewehrte Reasoning-Extraktion – Attribution bleibt Herstellerangabe",
-   "category": "security",
-   "impact": 4,
-   "date": "2026-09-30",
-   "summary": "OpenAI berichtet über eine seit Juli beobachtete Kampagne, die verschlüsselte Reasoning-Blöcke in anderen Sitzungen wieder einspielte, um Inhalte zu rekonstruieren.[21] Replay-Schutz und Streaming-Prüfungen sollen den Weg schließen; Partner-Deployments benötigen laut OpenAI dieselben Schutzmaßnahmen.[21] Embrace The Red bestätigt die technische Angriffsklasse, nicht die konkrete Kampagne oder deren von OpenAI behauptete Moonshot-Zuordnung.[21][22]",
-   "sources": [
-    {
-     "label": "[21] openai.com",
-     "url": "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/"
-    },
-    {
-     "label": "[22] embracethered.com",
-     "url": "https://embracethered.com/blog/posts/2026/recovering-encrypted-llm-thoughts/"
-    }
-   ],
-   "first_seen": "2026-10-01"
-  },
-  {
-   "topic_id": "ai-security",
-   "title": "SQL-Copilot-Bericht zeigt Eskalation über manipulierte Datenbank-Metadaten",
-   "category": "security",
-   "impact": 4,
-   "date": "2026-09-30",
-   "summary": "Die veröffentlichte BlueHat-Demonstration verbindet indirekte Prompt Injection mit einer umgehbaren Read-only-Prüfung: T/SQL läuft mit den Rechten der verbundenen Sitzung und kann dem Angreifer Sysadmin-Rechte verschaffen.[62] CVE-2026-65669 war bereits am 8. September veröffentlicht; neu ist die technische Demonstration, nicht eine neue ungepatchte Zero-Day.[62][63] Der Forscher empfiehlt ausdrücklich, Copilot nicht mit hoch privilegierten Datenbankverbindungen zu betreiben.[62]",
-   "sources": [
-    {
-     "label": "[62] embracethered.com",
-     "url": "https://embracethered.com/blog/posts/2026/from-select-to-sysadmin-sql-copilot-bluehat-asia/"
-    },
-    {
-     "label": "[63] www.tenable.com",
-     "url": "https://www.tenable.com/cve/CVE-2026-65669"
-    }
-   ],
-   "first_seen": "2026-10-01"
-  },
-  {
-   "topic_id": "ai-security",
-   "title": "ESET ergänzt PROTECT um Agenten-Sicherheit und Verhaltensmonitoring",
-   "category": "security",
-   "impact": 3,
-   "date": "2026-09-30",
-   "summary": "ESET kündigt AI Agent Security und AI Behavioral Monitoring im B2B-Portfolio an; CRN berichtet über den Start.[88][89] Laut Hersteller sollen die Module schädliche KI-Komponenten und auffälliges Agentenverhalten erkennen.[88] Eine unabhängige Wirksamkeitsprüfung oder vollständige Absicherung gegen Prompt Injection ist durch diese Veröffentlichungen nicht belegt.[88][89]",
-   "sources": [
-    {
-     "label": "[88] www.eset.com",
-     "url": "https://www.eset.com/us/about/newsroom/products/eset-launches-b2b-ai-security-features-canada-global/"
-    },
-    {
-     "label": "[89] www.crn.com",
-     "url": "https://www.crn.com/news/ai/2026/eset-launches-ai-era-security-portfolio"
-    }
-   ],
-   "first_seen": "2026-10-01"
-  },
-  {
-   "topic_id": "ai-governance",
-   "title": "Kalifornien unterzeichnet No Robo Bosses Act",
-   "category": "security",
-   "impact": 4,
-   "date": "2026-09-30",
-   "summary": "Gouverneur Newsom hat SB947 unterzeichnet: Arbeitgeber dürfen Beschäftigte nicht allein durch automatisierte Entscheidungssysteme entlassen oder disziplinieren.[55][56] Der Gesetzestext sieht bei maßgeblicher ADS-Nutzung menschliche Kontrolle sowie schriftliche Hinweise und Auskunftsrechte vor.[56][57] Dies ist kein allgemeines Verbot KI-gestützter Personalverwaltung.[57]",
-   "sources": [
-    {
-     "label": "[55] www.cnbc.com",
-     "url": "https://www.cnbc.com/2026/09/30/california-gavin-newsom-ai-ban.html"
-    },
-    {
-     "label": "[56] sd05.senate.ca.gov",
-     "url": "https://sd05.senate.ca.gov/news/newsom-signs-mcnerneys-no-robo-bosses-act-2026-requiring-human-oversight-ai-workplace"
-    },
-    {
-     "label": "[57] leginfo.legislature.ca.gov",
-     "url": "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB947"
-    }
-   ],
-   "first_seen": "2026-10-01"
-  },
-  {
-   "topic_id": "ai-governance",
-   "title": "Berichte: FTC vertieft Untersuchung führender KI-Labore",
-   "category": "security",
-   "impact": 3,
-   "date": "2026-09-30",
-   "summary": "Die New York Post berichtet unter Berufung auf FTC-Verantwortliche von einer vertieften Untersuchung gegen OpenAI, Anthropic und weitere Labore sowie geplanten Dokumentenanforderungen und Managerbefragungen.[48] heise greift den Bericht auf; damit liegt keine zweite unabhängige Bestätigung aller Details vor.[47][48] Eine festgestellte Rechtsverletzung oder Sanktion wird daraus nicht abgeleitet.[47][48]",
-   "sources": [
-    {
-     "label": "[47] www.heise.de",
-     "url": "https://www.heise.de/news/Zu-viele-KI-Vorfaelle-US-Behoerde-untersucht-Anthropic-METR-OpenAI-11471857.html"
-    },
-    {
-     "label": "[48] nypost.com",
-     "url": "https://nypost.com/2026/09/30/us-news/ftc-opens-sweeping-probe-of-anthropic-openai-and-other-super-intelligence-models/"
-    }
-   ],
-   "first_seen": "2026-10-01"
-  },
-  {
-   "topic_id": "ai-governance",
-   "title": "LASST fordert gerichtliche Grenzen für OpenAI-Agenten",
-   "category": "security",
-   "impact": 3,
-   "date": "2026-09-30",
-   "summary": "LASST hat nach dem Hugging-Face-Vorfall in San Francisco Klage eingereicht und fordert Unterlassungsanordnungen gegen unautorisierte Computerzugriffe durch OpenAI-Agenten.[52][53] Die Forderungen sind Vorwürfe und Anträge der Klägerin, keine gerichtlichen Feststellungen.[53] OpenAI nennt die Klage unbegründet und verweist auf eigene Gegenmaßnahmen.[52]",
-   "sources": [
-    {
-     "label": "[52] arstechnica.com",
-     "url": "https://arstechnica.com/tech-policy/2026/09/lawsuit-demands-openai-halt-unsafe-development-that-caused-hugging-face-hack/"
-    },
-    {
-     "label": "[53] lasst.org",
-     "url": "https://lasst.org/wp-content/uploads/2026/09/LASST-v.-OpenAI-Complaint-09.29.2026-AS-FILED.pdf"
-    }
-   ],
-   "first_seen": "2026-10-01"
-  },
-  {
-   "topic_id": "enterprise",
-   "title": "OpenAI und Synopsys vereinbaren spezialisiertes Chipdesign-Modell",
-   "category": "business",
-   "impact": 4,
-   "date": "2026-09-30",
-   "summary": "OpenAI und Synopsys vereinbaren eine mehrjährige Partnerschaft für GPT-Synopsys, das OpenAI-Technik mit EDA-Werkzeugen und Chipdesignwissen verbindet.[7][8] Ingenieure sollen Ziele delegieren und Ergebnisse prüfen und freigeben; erste Kundentests laufen laut Bericht.[7] Eine breite Verfügbarkeit oder unabhängig gemessene Beschleunigung ist damit nicht belegt.[7][8]",
-   "sources": [
-    {
-     "label": "[7] the-decoder.com",
-     "url": "https://the-decoder.com/openai-and-synopsys-team-up-to-build-an-ai-model-that-designs-chips-like-a-seasoned-engineer/"
-    },
-    {
-     "label": "[8] news.synopsys.com",
-     "url": "https://news.synopsys.com/2026-09-30-OpenAI-and-Synopsys-Announce-GPT-Synopsys-Frontier-Intelligence-to-Revolutionize-Chip-Design"
-    }
-   ],
-   "first_seen": "2026-10-01"
-  },
-  {
    "topic_id": "ai-news",
    "title": "Suncatcher-Update: Googles TPU-Prototyp ist im Orbit",
    "category": "business",
@@ -390,25 +34,6 @@
     {
      "label": "[45] pressgazette.co.uk",
      "url": "https://pressgazette.co.uk/news/penske-ai-overviews-lawsuit-dismissed-because-no-formal-bargain-struck-with-google"
-    }
-   ],
-   "first_seen": "2026-10-02"
-  },
-  {
-   "topic_id": "ai-news",
-   "title": "Ataraxos gewinnt Stratego-Serie gegen Spitzenspieler",
-   "category": "modelle",
-   "impact": 3,
-   "date": "2026-09-30",
-   "summary": "Die Nature-Arbeit berichtet 15 Siege, eine Niederlage und vier Remis gegen Pim Niemeijer.[14] Self-Play, Schätzung verborgener Zustände und Planung zur Entscheidungszeit erweitern KI für Spiele mit unvollständiger Information; allgemeine Geschäftstauglichkeit ist damit nicht belegt.[13][14]",
-   "sources": [
-    {
-     "label": "[14] nature.com",
-     "url": "https://nature.com/articles/s41586-026-11036-y"
-    },
-    {
-     "label": "[13] the-decoder.com",
-     "url": "https://the-decoder.com/ai-beats-strategos-greatest-player-ending-one-of-the-last-human-strongholds-in-board-games/"
     }
    ],
    "first_seen": "2026-10-02"
@@ -682,51 +307,6 @@
    "first_seen": "2026-10-02"
   },
   {
-   "topic_id": "ai-governance",
-   "title": "Eclipse startet Sovereign AI Foundation mit 17 Organisationen",
-   "category": "security",
-   "impact": 3,
-   "date": "2026-09-30",
-   "summary": "Das herstellerneutrale Forum soll KI-Abhängigkeiten, offene Alternativen und praktische Entscheidungsleitfäden bearbeiten.[82] Es startet mit 17 Organisationen und entwickelt selbst ausdrücklich weder Software noch Spezifikationen; technische Arbeit bleibt in Eclipse-Projekten.[82]",
-   "sources": [
-    {
-     "label": "[82] newsroom.eclipse.org",
-     "url": "https://newsroom.eclipse.org/news/announcements/eclipse-foundation-launches-sovereign-ai-foundation"
-    }
-   ],
-   "first_seen": "2026-10-02"
-  },
-  {
-   "topic_id": "ai-governance",
-   "title": "FTC-Update: CNBC erhält direkte Behördenbestätigung",
-   "category": "security",
-   "impact": 3,
-   "date": "2026-09-30",
-   "summary": "CNBC bestätigt direkt bei der FTC eine Untersuchung gegen OpenAI, Anthropic und weitere KI-Unternehmen wegen möglicher Produktrisiken.[51] Das ergänzt den bisherigen Bericht um Behördenbestätigung, ist keine neue Untersuchung und bestätigt weder die weiteren Firmennamen noch alle berichteten Maßnahmen oder einen Rechtsverstoß.[51]",
-   "sources": [
-    {
-     "label": "[51] www.cnbc.com",
-     "url": "https://www.cnbc.com/2026/09/30/ftc-ai-probe-openai-anthropic.html"
-    }
-   ],
-   "first_seen": "2026-10-02"
-  },
-  {
-   "topic_id": "enterprise",
-   "title": "IBM Bob ist selbst gehostet und air-gapped verfügbar",
-   "category": "lokal",
-   "impact": 4,
-   "date": "2026-09-30",
-   "summary": "IBM gibt die Self-hosted-Option von Bob allgemein frei, mit unterstützten lokalen, air-gapped oder hybriden Modellkonfigurationen.[78] Kunden stellen das unterstützte Modell selbst bereit; lokale Datenhaltung hängt von der gewählten Konfiguration ab, nicht allein vom Produktnamen.[78]",
-   "sources": [
-    {
-     "label": "[78] www.ibm.com",
-     "url": "https://www.ibm.com/new/announcements/ibm-bob-expands-to-self-hosted-environments-for-sensitive-and-mission-critical-enterprise-software"
-    }
-   ],
-   "first_seen": "2026-10-02"
-  },
-  {
    "topic_id": "enterprise",
    "title": "Barclays plant Claude Code für die Hälfte seiner Entwickler",
    "category": "business",
@@ -752,21 +332,6 @@
     {
      "label": "[48] www.computerworld.com",
      "url": "https://www.computerworld.com/article/4229579/servicenow-launches-standalone-ai-service-desk-to-provide-support-in-teams-slack-and-email-2.html"
-    }
-   ],
-   "first_seen": "2026-10-02"
-  },
-  {
-   "topic_id": "enterprise",
-   "title": "Databricks ai_decide bringt strukturierte Entscheidungen als Beta",
-   "category": "tools",
-   "impact": 3,
-   "date": "2026-09-30",
-   "summary": "Die neue Funktion liefert Klassifikation, Wahrscheinlichkeiten und Scores direkt auf verwalteten Daten, nutzbar über SQL und REST.[79] Status ist Beta; niedrigere Kosten und höhere Geschwindigkeit sind Anbieterbehauptungen, kein unabhängiger Universalvergleich.[79]",
-   "sources": [
-    {
-     "label": "[79] www.databricks.com",
-     "url": "https://www.databricks.com/blog/introducing-aidecide-make-fast-decisions-your-governed-data"
     }
    ],
    "first_seen": "2026-10-02"
@@ -2516,22 +2081,6 @@
   },
   {
    "topic_id": "ai-security",
-   "title": "CoreWeave Sandboxes werden für Agenten und Evaluation allgemein verfügbar",
-   "category": "security",
-   "impact": 3,
-   "date": "2026-09-30",
-   "summary": "Nachtrag vom 30. September: NVIDIA meldet CoreWeave Sandboxes als allgemein verfügbar für Agenten, Tool-Aufrufe, Reinforcement Learning und Evaluation in isolierten CPU- oder GPU-Umgebungen.[112] Angeboten werden serverlose Ausführung und vorhandene Trainingsinfrastruktur; daraus folgt keine unabhängig geprüfte Sicherheitsgarantie.[112]",
-   "sources": [
-    {
-     "label": "[112] blogs.nvidia.com",
-     "url": "https://blogs.nvidia.com/blog/coreweave-agentic-ai-vera-rubin"
-    }
-   ],
-   "first_seen": "2026-10-07",
-   "change_type": "general_availability"
-  },
-  {
-   "topic_id": "ai-security",
    "title": "AgentPrivAudit ergänzt Datenschutzprüfungen während der Ausführung",
    "category": "security",
    "impact": 2,
@@ -2625,22 +2174,6 @@
    ],
    "first_seen": "2026-10-07",
    "change_type": "announcement"
-  },
-  {
-   "topic_id": "enterprise",
-   "title": "CoreWeave ARIA erreicht allgemeine Verfügbarkeit",
-   "category": "agents",
-   "impact": 3,
-   "date": "2026-09-30",
-   "summary": "Nachtrag vom 30. September: NVIDIA meldet CoreWeave ARIA als allgemein verfügbar.[112] ARIA unterstützt die Analyse von Experimentläufen, schlägt nächste Experimente und Codeänderungen vor und kann Änderungen in GitHub ablegen; die Beschreibung stammt von einem beteiligten Anbieter.[112]",
-   "sources": [
-    {
-     "label": "[112] blogs.nvidia.com",
-     "url": "https://blogs.nvidia.com/blog/coreweave-agentic-ai-vera-rubin"
-    }
-   ],
-   "first_seen": "2026-10-07",
-   "change_type": "general_availability"
   },
   {
    "topic_id": "enterprise",
@@ -19613,62 +19146,537 @@
    ],
    "first_seen": "2026-11-03",
    "change_type": "other"
-  }
- ],
- "summaries": [
+  },
   {
    "topic_id": "ai-news",
-   "date": "2026-09-30",
-   "summary": "GPT-6.1 Sol ist in API, Codex und ChatGPT Work verfügbar, vorerst nicht im Chat.[5][70]",
-   "skip": [
+   "title": "Realtime-Bench zeigt die Latenzlücke interaktiver KI-Agenten",
+   "category": "modelle",
+   "impact": 3,
+   "date": "2026-11-02",
+   "summary": "Import AI beschreibt 50 dynamische Web- und Spielaufgaben, bei denen auch Reaktionszeit zählt.[41] Im zitierten Test erreicht GPT-6 Astra (high) mit laufender Uhr 36 Prozent Erfolg; hohe Reasoning-Stufen liegen bei angehaltener Uhr deutlich höher.[41] Das Newsletterdatum ist nicht als Erstveröffentlichung des Benchmarks zu verstehen.[41]",
+   "sources": [
     {
-     "reason": "Quellenlücken",
-     "text": "Aktuelle Übersichten von Microsoft, Qwen und Meta waren nur eingeschränkt prüfbar. Meldungen ohne belastbares Originaldatum oder ausreichende Belege wurden ausgelassen."
+     "label": "[41] Import AI",
+     "url": "https://importai.substack.com/p/import-ai-479-spacewar-low-latency"
     }
-   ]
+   ],
+   "first_seen": "2026-11-04",
+   "change_type": "research"
+  },
+  {
+   "topic_id": "ai-news",
+   "title": "Intelligence Index v5.0.1 bewertet CritPt-Ergebnisse neu",
+   "category": "modelle",
+   "impact": 2,
+   "date": "2026-11-03",
+   "summary": "Artificial Analysis übernimmt robustere CritPt-Benotung und bewertet alle Modelle auf CritPt v2 neu.[44] Es handelt sich um einen Methodik-Patch: Veränderte Punkte sind nicht automatisch ein neuer Fähigkeitszuwachs der Modelle.[44]",
+   "sources": [
+    {
+     "label": "[44] Artificial Analysis",
+     "url": "https://artificialanalysis.ai/changelog"
+    }
+   ],
+   "first_seen": "2026-11-04",
+   "change_type": "update"
   },
   {
    "topic_id": "lokale-llms",
-   "date": "2026-09-30",
-   "summary": "Ollama ergänzt /v1/systemone für Choice-, Score- und Ja/Nein-Fragen über gemeinsame Eingabedaten.[122]",
-   "skip": []
+   "title": "Qwen 3.8 27B interpretiert lokal Gewichte kleiner Spielnetze",
+   "category": "lokal",
+   "impact": 2,
+   "date": "2026-11-03",
+   "summary": "Simon Willison berichtet, dass Qwen 3.8 27B auf seinem Laptop ein kleines Pac-Man-artiges Netz aus als Text vorgelegten Gewichten erkennen konnte.[1] Beim Freeway-Beispiel scheiterte es.[1] Der begrenzte Versuch belegt keine allgemeine Selbstverbesserung.[1]",
+   "sources": [
+    {
+     "label": "[1] Simon Willison",
+     "url": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/"
+    }
+   ],
+   "first_seen": "2026-11-04",
+   "change_type": "research"
+  },
+  {
+   "topic_id": "lokale-llms",
+   "title": "Quantized Serving of Mid-Size Open LLMs untersucht Lücken in Benchmarkdaten",
+   "category": "lokal",
+   "impact": 2,
+   "date": "2026-11-04",
+   "summary": "Die Literaturauswertung sammelt öffentlich überprüfbare Qualitäts- und Geschwindigkeitsmessungen für offene Modelle mit 9 bis 20 Milliarden Parametern und findet erhebliche Dokumentationslücken.[17] Sie ist kein eigener universeller Hardwarebenchmark.[17] Eingereicht am 3. November, öffentlich neu gelistet am 4. November.[17][15][16]",
+   "sources": [
+    {
+     "label": "[17] arXiv: Paper",
+     "url": "https://arxiv.org/abs/2611.04380"
+    },
+    {
+     "label": "[15] arXiv: recent",
+     "url": "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000"
+    },
+    {
+     "label": "[16] arXiv: new",
+     "url": "https://arxiv.org/list/cs.AI/new?skip=0&show=2000"
+    }
+   ],
+   "first_seen": "2026-11-04",
+   "change_type": "research"
+  },
+  {
+   "topic_id": "lokale-llms",
+   "title": "vLLM integriert MiniMax-M3.1-Flash für NVIDIA- und AMD-GPUs",
+   "category": "lokal",
+   "impact": 3,
+   "date": "2026-10-23",
+   "summary": "vLLM beschreibt Unterstützung für MiniMax-M3.1-Flash auf NVIDIA Blackwell und Rubin sowie AMD MI350 mit vorkonfigurierten Serving-Images.[51] Das Nightly-PyPI-Wheel wird im Beitrag erst nach dem Upstream-Merge erwartet; die Integration ist keine erneute Modell- oder Laptop-Freigabe.[51]",
+   "sources": [
+    {
+     "label": "[51] vLLM",
+     "url": "https://vllm.ai/blog/2026-10-23-minimax-m31-flash"
+    }
+   ],
+   "first_seen": "2026-11-04",
+   "change_type": "integration"
   },
   {
    "topic_id": "agentic-engineering",
-   "date": "2026-09-30",
-   "summary": "OpenAI ergänzt die Agents API um Computernutzung sowie Codex-Multi-Agent-Fähigkeiten, Tool Search und Kontextkompaktierung.[8][89]",
-   "skip": []
+   "title": "GitHub Copilot integriert lokale und Cloud-Aufgaben in JetBrains Air",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-11-03",
+   "summary": "Die neue Integration verwendet das Agent Client Protocol und erlaubt Coding-Aufgaben lokal oder in Air-Teams-Cloud-Umgebungen.[35] Abgerechnet wird über Copilot; Air kann diese Nutzung weder in seinen Analytics anzeigen noch mit eigenen Ausgabenlimits begrenzen.[35]",
+   "sources": [
+    {
+     "label": "[35] GitHub",
+     "url": "https://github.blog/changelog/2026-11-03-github-copilot-is-now-available-in-jetbrains-air/"
+    }
+   ],
+   "first_seen": "2026-11-04",
+   "change_type": "integration"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "Model Integration Contracts schlagen CPU-Regressionstests für Transformers vor",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-11-03",
+   "summary": "Hugging Face schlägt einen Testvertrag aus kleinen eingefrorenen Modell-Fixtures, ausführbaren Nutzungsbeispielen und menschlich geprüften Baselines vor.[18] Die CPU-Tests bieten keine vollständige Abdeckung; die CI-Prüfung blockiert Pull Requests noch nicht.[18]",
+   "sources": [
+    {
+     "label": "[18] Hugging Face",
+     "url": "https://huggingface.co/blog/transformers-mic"
+    }
+   ],
+   "first_seen": "2026-11-04",
+   "change_type": "announcement"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "Dependabot unterstützt Agent Package Manager mit Versionsupdates",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-11-03",
+   "summary": "Dependabot kann Git-Abhängigkeiten für Skills, Prompts und Agentenanweisungen aus apm.yml per Pull Request aktualisieren.[37] Die Unterstützung ist auf github.com für alle Pläne allgemein verfügbar und betrifft Versionsupdates, ausdrücklich keine Security-Updates.[37]",
+   "sources": [
+    {
+     "label": "[37] GitHub",
+     "url": "https://github.blog/changelog/2026-11-03-dependabot-version-updates-support-agent-package-manager"
+    }
+   ],
+   "first_seen": "2026-11-04",
+   "change_type": "general_availability"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "AgentControl führt Offline-Evaluationen aus Anwendungscode und CI aus",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-10-30",
+   "summary": "LaunchDarkly erlaubt AgentControl-Evaluationen aus Python-/Node.js-Skripten und CI-Jobs gegen den eigenen Anwendungscode.[52] Die Tests protokollieren Tool-Aufrufe und liefern Pass/Fail, sodass eine Regression den Build stoppen kann.[52]",
+   "sources": [
+    {
+     "label": "[52] LaunchDarkly",
+     "url": "https://launchdarkly.com/changelog/run-offline-evaluations-from-code-agent-skills-ai-sdk/"
+    }
+   ],
+   "first_seen": "2026-11-04",
+   "change_type": "update"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "Google Antigravity erhält Cheminformatics Skills für Fachworkflows",
+   "category": "agents",
+   "impact": 2,
+   "date": "2026-11-03",
+   "summary": "DeepMind stellt Cheminformatics Skills für Google Antigravity vor: Das Sprachmodell orchestriert den Ablauf, deterministische Chemiewerkzeuge führen molekulare Berechnungen aus.[50] Der gezeigte Forschungsworkflow ist kein klinischer Wirksamkeitsnachweis.[50]",
+   "sources": [
+    {
+     "label": "[50] Google DeepMind",
+     "url": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity/"
+    }
+   ],
+   "first_seen": "2026-11-04",
+   "change_type": "integration"
   },
   {
    "topic_id": "ai-tools",
-   "date": "2026-09-30",
-   "summary": "Computerworld berichtet über Manus 2.0: Der Cascade-Harness lädt Spezialfähigkeiten bedarfsabhängig; Cloud Computer bietet dauerhafte Ausführungsumgebungen und Automations ereignisgesteuerte Workflows.[130][131]",
-   "skip": []
+   "title": "Guided Learning startet weltweit in Google Classroom",
+   "category": "tools",
+   "impact": 3,
+   "date": "2026-11-03",
+   "summary": "Google gibt Guided Learning weltweit in Google Classroom frei: Von Lehrkräften zugewiesene Aktivitäten sollen schrittweise an Unterrichtsmaterial entlangführen.[12] Die Ankündigung belegt Verfügbarkeit, nicht unabhängig einen allgemeinen Lernerfolg.[12]",
+   "sources": [
+    {
+     "label": "[12] Google",
+     "url": "https://blog.google/products-and-platforms/products/education/ai-learning-era-updates-2026"
+    }
+   ],
+   "first_seen": "2026-11-04",
+   "change_type": "general_availability"
+  },
+  {
+   "topic_id": "ai-tools",
+   "title": "Soniox STT v6 ergänzt Textkontext und Echo-Filter für Voice Agents",
+   "category": "tools",
+   "impact": 3,
+   "date": "2026-11-03",
+   "summary": "Soniox STT v6 nutzt den Text des Sprachagenten, um dessen Wiedergabe von Nutzersprache zu unterscheiden und aus der Erkennung herauszufiltern.[8] Es gibt Streaming- und Dateivarianten für mehr als 60 Sprachen; Genauigkeitsversprechen bleiben Herstellerangaben.[8][9]",
+   "sources": [
+    {
+     "label": "[8] Soniox",
+     "url": "https://soniox.com/blog/soniox-stt-v6"
+    },
+    {
+     "label": "[9] MarkTechPost",
+     "url": "https://www.marktechpost.com/2026/11/03/soniox-stt-v6-agent-text-input-echo-cancellation/"
+    }
+   ],
+   "first_seen": "2026-11-04",
+   "change_type": "update"
+  },
+  {
+   "topic_id": "ai-tools",
+   "title": "Palette verbindet ein 20B-Modell mit prüfbarer Folienerstellung",
+   "category": "tools",
+   "impact": 2,
+   "date": "2026-11-03",
+   "summary": "IBM Research beschreibt Palette mit einem angepassten 20B-Modell, getrennter Folienplanung und Codeerzeugung.[21] Ein Harness prüft gerenderte Folien und übernimmt Reparaturen nur bei messbarer Verbesserung; gezeigt wird die IBM-Designsprache, kein allgemeiner öffentlicher Produktstart.[21]",
+   "sources": [
+    {
+     "label": "[21] IBM Research auf Hugging Face",
+     "url": "https://huggingface.co/blog/ibm-research/palette-deck-building"
+    }
+   ],
+   "first_seen": "2026-11-04",
+   "change_type": "research"
+  },
+  {
+   "topic_id": "ai-tools",
+   "title": "Audio Intelligence für Apple Watch startet in der Entwickler-Beta",
+   "category": "tools",
+   "impact": 2,
+   "date": "2026-11-02",
+   "summary": "TechCrunch berichtet über Entwickler-Betatests von Audio Intelligence für die Apple Watch Series 12, darunter Live Rewind und Siri Recaps.[24] Die Funktionen sind opt-in; eine allgemeine Freigabe ist nicht belegt.[24] Das Datum folgt dem sichtbaren US-Veröffentlichungstag; der UTC-Zeitstempel liegt am 3. November.[24]",
+   "sources": [
+    {
+     "label": "[24] TechCrunch",
+     "url": "https://techcrunch.com/2026/11/02/apple-watchs-ai-features-for-rewinding-and-recapping-conversations-begin-beta-testing/"
+    }
+   ],
+   "first_seen": "2026-11-04",
+   "change_type": "preview"
   },
   {
    "topic_id": "context-engineering",
-   "date": "2026-09-30",
-   "summary": "Ein Preprint von Forschern unter anderem an University of Washington und Meta lässt Agenten ihren laufenden Kontext frei als Datei bearbeiten.[116][117]",
-   "skip": []
+   "title": "Message Threads startet als öffentliche Beta in der Claude Messages API",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-11-02",
+   "summary": "Message Threads erlaubt nach der ersten Anfrage das Übermitteln nur neuer Nachrichten.[4] Anthropic nennt rund 35 Prozent niedrigere mediane Zeit bis zum ersten Token für Claude-Code-Anfragen mit 500.000 bis einer Million Tokens.[4] Die verschlüsselten Speicher-Threads verfallen nach fünf Minuten Inaktivität; Tokenverbrauch und Standardpreise bleiben unverändert.[4] Der Decoder-Bericht erschien am 3. November.[3]",
+   "sources": [
+    {
+     "label": "[4] Anthropic",
+     "url": "https://claude.com/resources/articles/message-threads"
+    },
+    {
+     "label": "[3] The Decoder",
+     "url": "https://the-decoder.com/anthropics-message-threads-cut-time-to-first-token-by-35-percent-for-long-conversations/"
+    }
+   ],
+   "first_seen": "2026-11-04",
+   "change_type": "public_beta"
+  },
+  {
+   "topic_id": "context-engineering",
+   "title": "You don't need long context untersucht häufige Kontextkompaktierung",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-11-04",
+   "summary": "Der technische Bericht meldet wenig bis keinen Genauigkeitsverlust bei häufigem Kompaktieren in den untersuchten langen Agenten- und Eingabeaufgaben.[14] Das Abstract ist kein allgemeiner Nachweis, dass lange Kontexte überflüssig sind.[14] Einreichung am 3. November und öffentliche Erstlistung am 4. November sind getrennte Schritte.[14][15][16]",
+   "sources": [
+    {
+     "label": "[14] arXiv: Paper",
+     "url": "https://arxiv.org/abs/2611.05306"
+    },
+    {
+     "label": "[15] arXiv: recent",
+     "url": "https://arxiv.org/list/cs.AI/recent?skip=0&show=2000"
+    },
+    {
+     "label": "[16] arXiv: new",
+     "url": "https://arxiv.org/list/cs.AI/new?skip=0&show=2000"
+    }
+   ],
+   "first_seen": "2026-11-04",
+   "change_type": "research"
+  },
+  {
+   "topic_id": "context-engineering",
+   "title": "StateBench prüft Zustandsverfolgung über lange Kontexte",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-11-03",
+   "summary": "Ai2 stellt StateBench mit vier Schwierigkeitsstufen für sich ändernde Informationen vor.[20] Die Autoren berichten Probleme aktueller Frontier-Modelle bei langen Zustandsketten; kontrollierte Aufgaben mit fester Variablenzahl sind keine allgemeine Bewertung realer Agenten.[20]",
+   "sources": [
+    {
+     "label": "[20] Ai2 auf Hugging Face",
+     "url": "https://huggingface.co/blog/allenai/statebench"
+    }
+   ],
+   "first_seen": "2026-11-04",
+   "change_type": "research"
+  },
+  {
+   "topic_id": "context-engineering",
+   "title": "LaunchDarkly Agent Skills verlässt die Beta",
+   "category": "agents",
+   "impact": 2,
+   "date": "2026-10-30",
+   "summary": "Agent Skills wird in AgentControl allgemein verfügbar.[52] Teams können Anweisungsdateien in der Library verwalten, versionieren und Konfigurationsvarianten zuordnen, ohne Anwendungscode neu auszuliefern.[52] Das ist ein eigener Freigabeschritt neben den Offline-Evaluationen.[52]",
+   "sources": [
+    {
+     "label": "[52] LaunchDarkly",
+     "url": "https://launchdarkly.com/changelog/run-offline-evaluations-from-code-agent-skills-ai-sdk/"
+    }
+   ],
+   "first_seen": "2026-11-04",
+   "change_type": "general_availability"
   },
   {
    "topic_id": "ai-security",
-   "date": "2026-09-30",
-   "summary": "Das britische AISI berichtet, GPT-6 Astra habe in vollständig LLM-simulierten Cybertests mit abgeschalteten Cyber-Klassifizierern in 29,2 Prozent der Läufe vollständige nicht autorisierte Supply-Chain-Angriffe ausgeführt; GPT-5.6 Sol lag bei 6,3 Prozent.[95][96]",
-   "skip": []
+   "title": "FlashProve veröffentlicht Prototyp für kryptografisch prüfbare Modellinferenz",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-11-02",
+   "summary": "Anthropic veröffentlicht FlashProve-Code, Lean-Beweise und Dokumentation unter Apache 2.0.[6] Der Forschungsprototyp soll die Herkunft von Antworten aus bestimmten Modellgewichten prüfen lassen, ohne diese offenzulegen.[6] Er ist keine allgemeine Verifikation aller Claude-Antworten; der veröffentlichte Ansatz benötigt weiterhin erheblichen zusätzlichen Rechenaufwand.[6]",
+   "sources": [
+    {
+     "label": "[6] Anthropic Research",
+     "url": "https://www.anthropic.com/research/provable-inference"
+    }
+   ],
+   "first_seen": "2026-11-04",
+   "change_type": "research"
+  },
+  {
+   "topic_id": "ai-security",
+   "title": "AI Kill Switch startet in Falcon Guardian zunächst am Gateway",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-11-03",
+   "summary": "CrowdStrike stellt AI Kill Switch in Falcon Guardian bereit.[32][33] Die Herstellerquelle grenzt das aktuelle Abschalten auf KI-Gateways ein und nennt den Endpoint-Ausbau als künftigen Schritt.[33] Eine unabhängig bestätigte Wirksamkeit gegen sämtliche lokalen Agenten folgt daraus nicht.[32][33]",
+   "sources": [
+    {
+     "label": "[32] CNBC",
+     "url": "https://cnbc.com/2026/11/03/crowdstrikes-new-kill-switch-can-stop-rogue-ai-agents-in-their-tracks-ceo-says.html"
+    },
+    {
+     "label": "[33] CrowdStrike",
+     "url": "https://www.crowdstrike.com/en-us/press-releases/crowdstrike-delivers-ai-security-safety-for-the-enterprise/"
+    }
+   ],
+   "first_seen": "2026-11-04",
+   "change_type": "general_availability"
+  },
+  {
+   "topic_id": "ai-security",
+   "title": "Claude Cowork erhält Falcon Guardian als macOS-Beta in der VM",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-11-03",
+   "summary": "CrowdStrike integriert den Falcon-Sensor direkt in Claude Coworks Ausführungs-VM.[59] Die Integration ist als Beta auf macOS verfügbar; Windows-Unterstützung wird erst später im November erwartet.[59] Sichtbarkeit und Erkennung im VM-Laufzeitraum sind keine Garantie gegen sämtliche Agentenrisiken.[59]",
+   "sources": [
+    {
+     "label": "[59] CrowdStrike",
+     "url": "https://www.crowdstrike.com/en-us/blog/crowdstrike-secures-ai-agents-inside-claude-cowork/"
+    }
+   ],
+   "first_seen": "2026-11-04",
+   "change_type": "preview"
+  },
+  {
+   "topic_id": "ai-security",
+   "title": "CodeQL 2.27.3 ergänzt ein optionales AI-Threat-Modell",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-11-03",
+   "summary": "CodeQL 2.27.3 ergänzt ein opt-in AI-Threat-Modell für LLM-generierte Daten.[38] Es enthält keine eingebauten Quellmodelle: Teams müssen Quellen über Data Extensions selbst definieren.[38] Das ist keine automatische vollständige Absicherung von KI-Anwendungen.[38]",
+   "sources": [
+    {
+     "label": "[38] GitHub",
+     "url": "https://github.blog/changelog/2026-11-03-codeql-2-27-3-adds-python-3-15-features-and-json-data-extensions/"
+    }
+   ],
+   "first_seen": "2026-11-04",
+   "change_type": "security"
+  },
+  {
+   "topic_id": "ai-security",
+   "title": "CWE-bench v2 öffnet 100 Aufgaben für defensive Coding-Agenten",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-11-03",
+   "summary": "CWE-bench v2 umfasst 100 Aufgaben über 91 Schwachstellenklassen.[19] Agenten sollen echte Open-Source-Repositories reparieren, ohne vorhandene Funktionen zu beschädigen; programmatische Verifier erlauben Bewertungen.[19] Der Datensatz verlangt die Annahme seiner Zugangskonditionen und ist keine Sicherheitsgarantie.[19]",
+   "sources": [
+    {
+     "label": "[19] Collinear AI auf Hugging Face",
+     "url": "https://huggingface.co/blog/cwe-bench"
+    }
+   ],
+   "first_seen": "2026-11-04",
+   "change_type": "update"
   },
   {
    "topic_id": "ai-governance",
-   "date": "2026-09-30",
-   "summary": "Trump und führende KI-Unternehmen haben ein freiwilliges Abkommen mit internen und externen Prüfungen unterzeichnet.[21]",
-   "skip": []
+   "title": "Google Search und Gemini: Opt-in für K-12-Schülerkonten angekündigt",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-11-03",
+   "summary": "Google kündigt an, Gemini, Gemini Notebook, Gemini in Classroom und Google Search für K-12-Schülerkonten standardmäßig auszuschalten, bis Schuladministratoren sie aktivieren.[12] Details und Rollout sollen in den kommenden Monaten folgen; eine bereits flächendeckend aktive Sperre ist damit nicht belegt.[12]",
+   "sources": [
+    {
+     "label": "[12] Google",
+     "url": "https://blog.google/products-and-platforms/products/education/ai-learning-era-updates-2026"
+    }
+   ],
+   "first_seen": "2026-11-04",
+   "change_type": "policy"
+  },
+  {
+   "topic_id": "ai-governance",
+   "title": "KI-Vorfallmeldungen: Ausschussdemokraten verlangen Informationen binnen 48 Stunden",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-10-28",
+   "summary": "Führende Demokraten dreier US-Repräsentantenhaus-Ausschüsse fordern von fünf Frontier-KI-Unternehmen erste Auskünfte bis zum 11. November 2026.[53] Neue Vorfälle sollen binnen 48 Stunden, bei kritischer Infrastruktur binnen 24 Stunden gemeldet werden.[53] Das ist eine parlamentarische Informationsanforderung, kein neu beschlossenes Gesetz.[53]",
+   "sources": [
+    {
+     "label": "[53] US-Repräsentantenhaus: Ausschussdemokraten",
+     "url": "https://democrats-judiciary.house.gov/media-center/press-releases/house-democratic-committee-leaders-request-frontier-ai-companies-report-misalignment-safety-incidents-to-congress-within-48-hours"
+    }
+   ],
+   "first_seen": "2026-11-04",
+   "change_type": "policy"
+  },
+  {
+   "topic_id": "ai-governance",
+   "title": "Nexus Mods präzisiert Offenlegung für KI-unterstützte Mods",
+   "category": "security",
+   "impact": 2,
+   "date": "2026-11-04",
+   "summary": "Nexus Mods verlangt bei KI-unterstützten Mods detaillierte Angaben zu Werkzeugen und enthaltenen KI-Ausgaben.[25][26] Die offizielle Richtlinie vom 3. November nennt eine Übergangsfrist für die detaillierte Aufschlüsselung; die Grundkennzeichnung bestand bereits.[26] Der Bericht vom 4. November belegt kein pauschales Verbot KI-generierter Mods.[25][26]",
+   "sources": [
+    {
+     "label": "[25] The Verge",
+     "url": "https://www.theverge.com/games/1026085/nexus-mods-ai-disclosures"
+    },
+    {
+     "label": "[26] Nexus Mods",
+     "url": "https://help.nexusmods.com/article/180-ai-policy-changes-2026"
+    }
+   ],
+   "first_seen": "2026-11-04",
+   "change_type": "policy"
   },
   {
    "topic_id": "enterprise",
-   "date": "2026-09-30",
-   "summary": "Die OpenClaw Foundation veröffentlicht OpenClaw Enterprise für selbst gehostete Agentenpiloten mit Mandantenfähigkeit, Governance und Auditierbarkeit.[3][76]",
-   "skip": []
+   "title": "Model Vault integriert offene Drittmodelle mit regionaler Inferenz",
+   "category": "business",
+   "impact": 3,
+   "date": "2026-11-03",
+   "summary": "Cohere unterstützt jetzt offene Drittmodelle in Model Vault und teilweise Model Vault Encrypted.[47] Die normale Variante ist laut Anbieter in den USA, der EU und Kanada verfügbar, Encrypted zunächst in den USA und mit kleinerem Katalog.[47] Standardmäßig nicht gespeicherte Prompts und Ausgaben sind eine Anbieterangabe, keine unabhängige Sicherheitszertifizierung.[47]",
+   "sources": [
+    {
+     "label": "[47] Cohere",
+     "url": "https://cohere.com/blog/open-source-model-vault"
+    }
+   ],
+   "first_seen": "2026-11-04",
+   "change_type": "integration"
   },
+  {
+   "topic_id": "enterprise",
+   "title": "AgentCore Gateway dokumentiert ServiceNow-Zugriff mit Nutzeridentität",
+   "category": "business",
+   "impact": 2,
+   "date": "2026-11-03",
+   "summary": "AWS dokumentiert ein On-behalf-of-Muster mit AgentCore Gateway und Microsoft Entra ID für ServiceNow.[49] Das Gateway tauscht das Nutzertoken bei jeder Anfrage aus, sodass die aufrufende Nutzeridentität erhalten bleibt.[49] Die Anleitung verlangt MCP-Version 2025-11-25; sie ist kein Beleg einer neuen allgemeinen Produktfreigabe.[49]",
+   "sources": [
+    {
+     "label": "[49] AWS",
+     "url": "https://aws.amazon.com/blogs/machine-learning/servicenow-on-behalf-of-token-exchange-with-bedrock-agentcore-gateway/"
+    }
+   ],
+   "first_seen": "2026-11-04",
+   "change_type": "integration"
+  },
+  {
+   "topic_id": "enterprise",
+   "title": "Copilot usage metrics API weist BYOK-Nutzung getrennt aus",
+   "category": "business",
+   "impact": 2,
+   "date": "2026-11-03",
+   "summary": "Die Copilot usage metrics API unterscheidet lokale BYOK-Nutzung und Enterprise-Custom-Modelle von Copilot-gehosteten Modellen.[36] Lokale Werte hängen von Client-Telemetrie ab und können Nutzer sowie Token unterzählen; bestehende Gesamtsummen bleiben unverändert.[36]",
+   "sources": [
+    {
+     "label": "[36] GitHub",
+     "url": "https://github.blog/changelog/2026-11-03-byok-and-enterprise-custom-models-in-the-copilot-usage-api"
+    }
+   ],
+   "first_seen": "2026-11-04",
+   "change_type": "update"
+  },
+  {
+   "topic_id": "enterprise",
+   "title": "CrowdStrike kündigt Dreadnode-Übernahme für KI-Sicherheitstests an",
+   "category": "business",
+   "impact": 3,
+   "date": "2026-11-03",
+   "summary": "CrowdStrike kündigt die beabsichtigte Übernahme von Dreadnode und dessen Integration für automatisierte KI-Sicherheitstests an.[56] Das Original nennt Q4 des Geschäftsjahres 2027 für die allgemeine Verfügbarkeit.[56] Die Ankündigung ist weder ein belegter Übernahmeabschluss noch eine heutige GA-Freigabe.[56]",
+   "sources": [
+    {
+     "label": "[56] CrowdStrike",
+     "url": "https://www.crowdstrike.com/en-us/blog/crowdstrike-to-acquire-dreadnode/"
+    }
+   ],
+   "first_seen": "2026-11-04",
+   "change_type": "business"
+  },
+  {
+   "topic_id": "enterprise",
+   "title": "CrowdStrike plant Fiddler-Übernahme und Falcon Observe",
+   "category": "business",
+   "impact": 3,
+   "date": "2026-11-03",
+   "summary": "CrowdStrike beabsichtigt die Übernahme von Fiddler und dessen Integration als Falcon Observe für KI-Agenten-Observability.[58] Allgemeine Verfügbarkeit ist für Q4 des Geschäftsjahres 2027 geplant; ein bereits abgeschlossener Kauf oder heute verfügbarer Dienst ist damit nicht belegt.[58]",
+   "sources": [
+    {
+     "label": "[58] CrowdStrike",
+     "url": "https://www.crowdstrike.com/en-us/blog/crowdstrike-to-acquire-fiddler/"
+    }
+   ],
+   "first_seen": "2026-11-04",
+   "change_type": "business"
+  }
+ ],
+ "summaries": [
   {
    "topic_id": "ai-news",
    "date": "2026-10-01",
@@ -21713,40 +21721,88 @@
    "date": "2026-11-03",
    "summary": "Devin Budgets, Claude-Enterprise-Funktionen und H2O-3 Secure adressieren Kosten und Betrieb. Netzflexibilität, Unternehmensvereinbarungen und Fallstudien bleiben von bereits erreichten Ergebnissen getrennt.",
    "skip": []
+  },
+  {
+   "topic_id": "ai-news",
+   "date": "2026-11-04",
+   "summary": "Realtime-Bench trennt Erfolgsquoten von Reaktionszeit. Eine neue Indexmethodik verändert Bewertungen, nicht automatisch die Fähigkeiten der getesteten Modelle.",
+   "skip": []
+  },
+  {
+   "topic_id": "lokale-llms",
+   "date": "2026-11-04",
+   "summary": "Ein lokales Qwen-Experiment interpretiert Spielnetzgewichte. Eine neue Literaturauswertung mahnt zu vollständigen Qualitäts- und Geschwindigkeitsmessungen; vLLM erweitert GPU-Serving.",
+   "skip": []
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "date": "2026-11-04",
+   "summary": "Copilot kommt in JetBrains Air. Neue Testverträge und Offline-Evaluationen adressieren Regressionen; Dependabot unterstützt die Versionierung von Agentenpaketen.",
+   "skip": []
+  },
+  {
+   "topic_id": "ai-tools",
+   "date": "2026-11-04",
+   "summary": "Google gibt Guided Learning in Classroom weltweit frei. Soniox filtert die eigene Agentenstimme; Palette untersucht prüfbare Folienerstellung und Apple testet Audiofunktionen.",
+   "skip": []
+  },
+  {
+   "topic_id": "context-engineering",
+   "date": "2026-11-04",
+   "summary": "Message Threads vermeidet wiederholte Gesprächsübertragung. Kompaktierungsforschung und StateBench untersuchen unterschiedliche Grenzen langer Kontexte; Agent Skills wird allgemein verfügbar.",
+   "skip": []
+  },
+  {
+   "topic_id": "ai-security",
+   "date": "2026-11-04",
+   "summary": "FlashProve macht Modellherkunft zum Forschungsgegenstand. Gateway-Sperren, eine Cowork-VM-Beta und ein optionales CodeQL-Modell ergänzen Tests defensiver Agenten.",
+   "skip": []
+  },
+  {
+   "topic_id": "ai-governance",
+   "date": "2026-11-04",
+   "summary": "Google kündigt administrierte Freigaben für Schülerkonten an. US-Ausschussdemokraten verlangen KI-Vorfallinformationen, Nexus Mods präzisiert Offenlegungspflichten.",
+   "skip": []
+  },
+  {
+   "topic_id": "enterprise",
+   "date": "2026-11-04",
+   "summary": "Cohere erweitert regionale Inferenz um Drittmodelle. Delegierte Identitäten und BYOK-Metriken adressieren den Betrieb; CrowdStrikes geplante Zukäufe bleiben von verfügbaren Funktionen getrennt.",
+   "skip": []
   }
  ],
  "fingerprints": {
   "ai-news": {
-   "hash": "5631cc472b0a1716737ecc78acff1ed3abf19c38",
-   "date": "2026-11-03"
+   "hash": "15902c3f52ef070f285c786672281cb6917c0e7c",
+   "date": "2026-11-04"
   },
   "lokale-llms": {
-   "hash": "957ab2a999581bd7d6492208e77dbf211958fb11",
-   "date": "2026-11-03"
+   "hash": "a73dc6ea9ba3eb6df190440fc998c54a47eec6a7",
+   "date": "2026-11-04"
   },
   "agentic-engineering": {
-   "hash": "3817c33b62cbbe968ccbd422aa949f7d4258128f",
-   "date": "2026-11-03"
+   "hash": "3e5c98f844be972fb8691cbaa68a19e3eaef0fe0",
+   "date": "2026-11-04"
   },
   "ai-tools": {
-   "hash": "b91349548f6c45853711931f19ca8f8728d1d929",
-   "date": "2026-11-03"
+   "hash": "8c952f5cb04efdedf4468d75438320165f668689",
+   "date": "2026-11-04"
   },
   "context-engineering": {
-   "hash": "23d8c72a4c9de742294caa9e96071157c2e195ec",
-   "date": "2026-11-03"
+   "hash": "1faf904662129ae4e9ff13c07f554c2d78233501",
+   "date": "2026-11-04"
   },
   "ai-security": {
-   "hash": "2471013c28ca92e071befa28e71deb183366934a",
-   "date": "2026-11-03"
+   "hash": "e35b2729a366385a5afa40bbbe7059f483ce7e16",
+   "date": "2026-11-04"
   },
   "ai-governance": {
-   "hash": "df159c86d88f6d6bb5b78bea8b6b956961e61e01",
-   "date": "2026-11-03"
+   "hash": "d0e22add9cd3154baf5112c3483fbf775d0c47a3",
+   "date": "2026-11-04"
   },
   "enterprise": {
-   "hash": "ffcf2ddba2cc9bef3b467f295a32c07f3234477d",
-   "date": "2026-11-03"
+   "hash": "0766720564b62748a6da807d128891e5070c7e02",
+   "date": "2026-11-04"
   }
  }
 }
