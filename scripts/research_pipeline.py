@@ -25,7 +25,7 @@ from zoneinfo import ZoneInfo
 
 from validate_research_audit import (LEGACY_SOURCES, REGISTRY_VERSION, SOURCE_REGISTRIES, SOURCES, OPTIONAL_SOURCES,
                                      REQUIRED_SOURCE_CHECKS, SOURCE_CHECKS_VERSION, domain_matches, validate)
-from editorial_coverage import validate_coverage, validate_development
+from editorial_coverage import validate_coverage, validate_development, deferred_record
 from arxiv_discovery import freshness_date
 from research_integrity import (POLICY_DATE, validate_entry as validate_integrity_entry,
                                 validate_candidate_identity)
@@ -666,17 +666,76 @@ def add_evidence(run, addition):
     return assemble(run)
 
 
-def check_editor(run):
+def review_queue(run):
+    """Bounded read-only review in the existing editor, never new discovery."""
+    path = Path(run).parent / "editor-review-queue.json"
+    queue = read(path) if path.exists() else {"items": {}}
+    items = [{"event_key": k, **v} for k, v in sorted(queue["items"].items()) if v["state"] == "held"]
+    return {"queue": str(path), "held": len(items), "review": items[:5],
+            "remaining": max(0, len(items) - 5),
+            "policy": "Review only against genuinely new evidence in this daily editor; otherwise retain original hold/date. No extra searches, jobs or freshness claims."}
+
+
+def finalize_editor(run):
+    """Hold only reproduced non-publishing historical conflicts; validate everything."""
+    run = Path(run)
+    assemble(run)  # All source/receipt/budget/freshness gates run BEFORE isolation.
+    manifest = read(run / "manifest.json")
+    require(manifest.get("schema_version", 1) >= 2, "Finalization requires coverage contract v2")
+    candidates = {c["id"]: c for c in read(run / "candidates.json")}
+    original = read(run / "editor-decisions.json")
+    history = read(run / "history-before.json")
+    history = history.get("items", []) if isinstance(history, dict) else history
+    updated = []
+    for d in original:
+        if d.get("decision") == "duplicate" and "history_id" in d.get("duplicate_of", {}):
+            try:
+                validate_coverage(candidates, [d], [], [], history)
+            except ValueError:
+                # This second validator independently bounds eligibility and preserves
+                # the actual error. Any ineligible error propagates, never downgraded.
+                d = deferred_record(candidates[d["id"]], d, history)
+        updated.append(d)
+    held = [d for d in updated if d.get("decision") == "deferred"]
+    require(len(held) <= 5, "Automatic historical deferral limit exceeded (5)")
+    require(not held or any(d.get("decision") == "selected" for d in updated),
+            "Deferral cannot produce an empty publication")
+    result = check_editor(run, updated)
+    archive = run / ("editor-proposals-" + fingerprint(original) + ".json")
+    if updated != original and not archive.exists():
+        write(archive, original)
+    write(run / "editor-decisions.json", updated)
+    write(run / "editor-quarantine.json", {"date": manifest["date"], "items": held,
+                                           "not_verified_duplicates": len(held)})
+    # Stable source/event identity, not today's run/candidate ID. No backlog blocks
+    # tomorrow, changes freshness, or manufactures a new candidate/source checkpoint.
+    queue_path = run.parent / "editor-review-queue.json"
+    queue = read(queue_path) if queue_path.exists() else {"schema_version": 1, "items": {}}
+    for d in held:
+        c = candidates[d["id"]]
+        url = urlparse(c["url"])._replace(query="").geturl()
+        key = fingerprint({"url": url, "date": c["published_at"],
+                           "history_id": d["quarantine"]["proposed_decision"]["duplicate_of"]["history_id"]})
+        queue["items"].setdefault(key, {"source_url": c["url"], "original_date": c["published_at"],
+            "development": c["development"], "first_run": str(run), "state": "held",
+            "quarantine": d["quarantine"]})
+    write(queue_path, queue)
+    return {**result, "deferred": len(held), "queue": str(queue_path)}
+
+
+def check_editor(run, proposed_decisions=None):
     run = Path(run)
     assemble(run)
     manifest = read(run / "manifest.json")
     registry_version, _ = registry_for_manifest(manifest)
     candidates = {c["id"]: c for c in read(run / "candidates.json")}
-    decisions = read(run / "editor-decisions.json")
+    decisions = read(run / "editor-decisions.json") if proposed_decisions is None else proposed_decisions
     require(isinstance(decisions, list), "Editorial decisions must be a list")
     require(len(decisions) == len(candidates) and {d.get("id") for d in decisions} == set(candidates), "Every candidate needs exactly one editorial decision")
+    require(not any(d.get("decision") == "deferred" for d in decisions) or
+            manifest.get("schema_version", 1) >= 2, "Deferral requires coverage contract v2")
     for d in decisions:
-        require(d.get("decision") in {"selected", "duplicate", "unverified", "below_threshold", "out_of_window"} and bool(str(d.get("reason", "")).strip()), "Invalid editorial decision")
+        require(d.get("decision") in {"selected", "duplicate", "unverified", "below_threshold", "out_of_window", "deferred"} and bool(str(d.get("reason", "")).strip()), "Invalid editorial decision")
     briefing = read(Path(manifest["root"]) / "data/briefing.json")
     require(briefing.get("meta", {}).get("generated") == manifest["date"], "Briefing date was not updated")
     topics = briefing.get("topics", [])
@@ -722,6 +781,8 @@ def check_editor(run):
     if coverage is not None:
         result["coverage_version"] = 2
         result["candidates_mapped"] = len(coverage["mapped"])
+        result["deferred"] = coverage["deferred"]
+        result["verified_duplicates"] = coverage["duplicates"]
         write(run / "editor-coverage.json", {**coverage, "briefing_sha256": briefing_sha256,
                                              "decisions_sha256": decisions_sha256})
     write(status_path, result)
@@ -810,7 +871,7 @@ def verify_publication(run):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("action", choices=["prepare", "tasks", "dispatch", "dispatch-next", "dispatch-ready", "release", "complete-and-dispatch", "complete-batch-and-dispatch", "reserve-search", "record", "retry", "assemble", "add-evidence", "check-editor", "verify-publication", "status", "timings"])
+    parser.add_argument("action", choices=["prepare", "tasks", "dispatch", "dispatch-next", "dispatch-ready", "release", "complete-and-dispatch", "complete-batch-and-dispatch", "reserve-search", "record", "retry", "assemble", "add-evidence", "review-queue", "finalize-editor", "check-editor", "verify-publication", "status", "timings"])
     parser.add_argument("--run-dir", type=Path, required=True)
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--date", default=datetime.now(ZoneInfo("Europe/Berlin")).date().isoformat())
@@ -835,6 +896,8 @@ def main():
         elif args.action == "retry": result = retry(args.run_dir, args.task)
         elif args.action == "assemble": result = assemble(args.run_dir)
         elif args.action == "add-evidence": result = add_evidence(args.run_dir, read(args.input))
+        elif args.action == "review-queue": result = review_queue(args.run_dir)
+        elif args.action == "finalize-editor": result = finalize_editor(args.run_dir)
         elif args.action == "check-editor": result = check_editor(args.run_dir)
         elif args.action == "verify-publication": result = verify_publication(args.run_dir)
         elif args.action == "timings": result = timings(args.run_dir)

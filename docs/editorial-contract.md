@@ -172,3 +172,53 @@ bleibt die bisherige exakte URL-/Überschriftenregel bestehen.
 
 Die Historie erhält `change_type` und bewahrt unterschiedliche Freigabeschritte
 mit ihren Originaldaten. Bestehende Einträge werden nicht rückwirkend klassifiziert.
+
+## Nicht veröffentlicht: audited `deferred` statt Gesamtblockade
+
+`deferred` ist ausdrücklich **weder** verifiziertes Duplikat **noch** ein Qualitätsurteil,
+`unverified`, `below_threshold` oder ein neuer veröffentlichter Inhalt. Jeder Kandidat
+bleibt mit genau einer Entscheidung erfasst. Ein Hold zählt nur zur administrativen
+Entscheidungsabrechnung, nie zu `mapped`, verifizierten Duplikaten, vollständiger
+inhaltlicher Kandidaten-/Quellenabdeckung oder einem fortgeschriebenen Wasserzeichen.
+Keine geringe Meldungszahl oder Holds als Beleg eines ruhigen Nachrichtentages verwenden.
+
+Der verbindliche normale Schritt `research_pipeline.py finalize-editor --run-dir RUN`
+führt zuerst das unveränderte `assemble` einschließlich aller Quellen-, Receipt-,
+Budget-, Cache-, arXiv- und Frischeprüfungen aus. Danach isoliert er ausschließlich
+bereits **nicht ausgewählte** historische Duplikatvorschläge mit reproduziertem
+Klassifikations- oder Überschriftenankerfehler. Voraussetzungen:
+
+- konkretes existierendes eingefrorenes `history_id`, identisches Originaldatum;
+- gleiche Source-URL (nur Query-Unterschiede sind zur HOLD-Identifikation zulässig,
+  niemals als Freigabe der strengeren Duplikat-/URL-Regeln);
+- sämtliche konkreten Kandidaten-Produktanker in unveränderter historischer
+  Überschrift/Zusammenfassung; keine bloße Firmen- oder Produktähnlichkeit;
+- weder Kandidat noch Historie noch vorgeschlagener historischer Schritt ist
+  Preview, öffentliche Beta oder GA. Diese Meilensteine bleiben blockierend;
+- genau der tatsächliche lokale `change_type`-/Headlinefehler ist erneut nachweisbar.
+  Receipt-/Cache-/Syndikationsbelege werden außerhalb der Fehlerisolation validiert.
+  Andere Fehler, unbekannte Ziele, falsche Daten oder Quellen bleiben fatal.
+
+Maximal fünf Holds pro Ausgabe; mindestens eine regulär ausgewählte, vollständig
+validierte Meldung. Auch ein direktes `check-editor` erzwingt diese Grenzen und
+reproduziert jeden Hold aus unverändertem Kandidaten und Originalvorschlag. Ein
+Hold kann nicht in `candidate_ids` einer Meldung, als Kandidaten-Duplikatziel oder
+als historischer Inhalt erscheinen. Sämtliche Regeln für ausgewählte Inhalte,
+Quellenqualität, Originaldatum, Approval und Belege bleiben unverändert.
+
+Der Helfer sichert `editor-proposals-SHA.json`, schreibt `editor-quarantine.json`
+und bewahrt je Hold Originalvorschlag, tatsächlichen Validatorfehler, Kandidatenhash,
+Original-URL und Originaldatum im `quarantine`-Objekt der Entscheidung. Erst eine
+vollständig erfolgreiche Schlussprüfung schreibt die neuen Entscheidungen; keine
+verdeckte Umklassifizierung. Historie und Recherchebelege werden nicht repariert.
+
+Die persistente lokale `RUN/../editor-review-queue.json` ist nach Source-Pfad,
+Originaldatum und eingefrorenem historischem Ereignis geschlüsselt, nicht nach dem
+heutigen Datum oder umformuliertem Kandidatentext. Wiederholung ist idempotent.
+`research_pipeline.py review-queue --run-dir RUN` zeigt höchstens fünf offene Holds
+für die vorhandene tägliche Schlussredaktion. Nur tatsächlich neue bereits vorhandene
+Belege können eine erneute Entscheidung begründen; sonst Hold und ursprüngliches
+Datum erhalten. Keine Zusatz-LLM-Cronjobs, Suchbudgetresets oder automatische
+Neuveröffentlichung. Eine alte offene Warteschlange blockiert spätere Ausgaben nicht
+und wird nicht als neue Recherche injiziert. Eine spätere korrigierte Entscheidung
+braucht wiederum alle regulären Gates und einen eigenen auditierten Vorschlag.

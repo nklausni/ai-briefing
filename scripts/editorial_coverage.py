@@ -155,8 +155,61 @@ def check_history_coverage(candidate, item, proof):
             "History coverage needs substantive development matching beyond product names")
 
 
+def historical_conflict(candidate, proposal, history):
+    """Reproduce only a local, non-release historical metadata conflict.
+
+    Query-free URLs here identify a HOLDING event, never a verified duplicate.
+    Retrieval/proof integrity is validated outside the catch boundary.
+    """
+    validate_development(candidate)
+    target = proposal.get("duplicate_of", {})
+    require(proposal.get("decision") == "duplicate" and set(target) == {"history_id"},
+            "Only historical duplicate proposals can be deferred")
+    item = next((i for i in history if history_id(i) == target["history_id"]), None)
+    require(item is not None, "Deferred proposal references unknown history_id")
+    stages = {"preview", "public_beta", "general_availability"}
+    require(candidate["change_type"] not in stages and item.get("change_type") not in stages and
+            proposal.get("covered_change_type") not in stages,
+            "Release milestones cannot be automatically deferred")
+    require(item.get("date") == candidate["published_at"], "Deferred historical date differs")
+    def event_url(url):
+        value = urlsplit(url)
+        return value.scheme, value.netloc, value.path, value.fragment
+    require(event_url(candidate["url"]) in {event_url(s.get("url", "")) for s in item.get("sources", [])},
+            "Deferred event needs the same source path and original date")
+    text = " " + normalize(item.get("title", "") + " " + item.get("summary", "")) + " "
+    require(all(" " + normalize(term) + " " in text for term in candidate["headline_terms"]),
+            "Deferred historical event lacks product identity")
+    identity = (proposal.get("history_coverage") or {}).get("source_identity")
+    if identity is not None:
+        # Never downgrade a bad cache, forged receipt or a malformed identity proof.
+        check_publisher_syndication(candidate, item, identity)
+    try:
+        validate_coverage({candidate["id"]: candidate}, [proposal], [], [], history)
+    except ValueError as exc:
+        error = str(exc)
+        require(error == "Duplicate change_type differs: preview, beta and GA are separate developments" or
+                (error.startswith("Candidate ") and "is missing headline anchor" in error),
+                "Not an eligible historical metadata conflict: " + error)
+        return error
+    raise ValueError("Deferred proposal must reproduce an actual historical conflict")
+
+
+def deferred_record(candidate, proposal, history):
+    error = historical_conflict(candidate, proposal, history)
+    return {"id": candidate["id"], "decision": "deferred",
+            "reason": "Not published: unresolved historical metadata identity; bounded review queue.",
+            "quarantine": {"kind": "historical_metadata_conflict", "proposed_decision": proposal,
+                           "validator_error": error,
+                           "candidate_sha256": hashlib.sha256(json.dumps(candidate, sort_keys=True, ensure_ascii=False).encode()).hexdigest(),
+                           "source_url": candidate["url"], "original_date": candidate["published_at"]}}
+
+
 def validate_coverage(candidates, decisions, topics, preserved_items, history):
     selected = {d["id"] for d in decisions if d["decision"] == "selected"}
+    held_count = sum(d["decision"] == "deferred" for d in decisions)
+    require(held_count <= 5, "Automatic historical deferral limit exceeded (5)")
+    require(not held_count or selected, "Deferral cannot produce an empty publication")
     mapped = {}
     for topic in topics:
         for item in topic.get("items", []):
@@ -183,6 +236,10 @@ def validate_coverage(candidates, decisions, topics, preserved_items, history):
             ", ".join(sorted(selected - set(mapped))))
     history_by_id = {history_id(item): item for item in history}
     for decision in decisions:
+        if decision["decision"] == "deferred":
+            proof = decision.get("quarantine", {})
+            expected = deferred_record(candidates[decision["id"]], proof.get("proposed_decision", {}), history)
+            require(decision == expected, "Deferred record differs from reproduced conflict or immutable candidate")
         if decision["decision"] != "duplicate":
             continue
         target = decision.get("duplicate_of")
@@ -209,4 +266,5 @@ def validate_coverage(candidates, decisions, topics, preserved_items, history):
             check_history_coverage(candidate, item, decision["history_coverage"])
         else:
             check_headline(candidate, item)
-    return {"mapped": mapped, "duplicates": sum(d["decision"] == "duplicate" for d in decisions)}
+    return {"mapped": mapped, "duplicates": sum(d["decision"] == "duplicate" for d in decisions),
+            "deferred": held_count}

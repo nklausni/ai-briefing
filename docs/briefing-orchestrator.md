@@ -236,6 +236,12 @@ zusätzliche unabhängige Originalbelege. Für eigene `web_search`-Nachprüfunge
 20 Aufrufen; umfangreichere offene Fragen werden transparent als unbestätigt zurückgestellt.
 Herstellerbehauptungen müssen als solche erkennbar sein.
 
+Vor den Entscheidungen `python3 scripts/research_pipeline.py review-queue --run-dir "$RUN"`
+ausführen: höchstens fünf bestehende Holds innerhalb dieser Schlussredaktion gegen
+bereits vorliegende neue Belege prüfen, keine Zusatzjobs oder automatische Neurecherche.
+Ohne neue passende Belege bleiben ursprüngliche Entscheidung und Datum erhalten;
+eine offene Altwarteschlange blockiert keine neue Ausgabe und ist keine Frische.
+
 Schreibe `RUN/editor-decisions.json`: genau ein Objekt je Kandidat mit dessen `id`,
 `decision` (`selected`, `duplicate`, `unverified`, `below_threshold`, `out_of_window`) und
 einer konkreten `reason`. So geht kein Kandidat beim Zusammenführen still verloren.
@@ -256,7 +262,14 @@ Betriebsdetails bleiben im Audit. Ohne sinnvolle Zusammenfassung Intro auslassen
 Prüfe auch die Themen-Summaries auf Prozessprosa; sachliche Einschränkungen der
 Meldungen und Preview-/GA-Unterschiede bleiben bestehen. Anschließend:
 
+Die folgende verbindliche Finalisierung prüft zunächst sämtliche unveränderten
+Quellen-/Receipt-/Budget-/Frischegates. Nur reproduzierte historische Metadatenkonflikte
+nicht veröffentlichter Vorschläge werden gemäß `docs/editorial-contract.md` ausdrücklich
+`deferred`, nicht zum Duplikat oder Qualitätsurteil erklärt. Originalvorschlag, Fehler,
+Kandidatenhash und Herkunft bleiben in RUN; alle anderen Fehler bleiben blockierend.
+
 ```sh
+python3 scripts/research_pipeline.py finalize-editor --run-dir "$RUN"
 python3 scripts/research_pipeline.py check-editor --run-dir "$RUN"
 python3 scripts/validate_research_audit.py "data/research-audit/YYYY-MM-DD.json" YYYY-MM-DD
 python3 scripts/render.py
@@ -290,11 +303,19 @@ auf. Der Bericht trennt Recherche, Schlussredaktion und Publikationsprüfung und
 zeigt die Laufzeit jedes Quellenpakets. Nutze ihn zur späteren Optimierung;
 verändere dafür weder die Quellenabdeckung noch die Belegregeln.
 
-Abschlussmeldung auf Deutsch, maximal 600 Zeichen und 5 kurze Zeilen (Ziel: 300–450 Zeichen). Erste Zeile: Veröffentlichung bestätigt oder ehrlich unbestätigter Stand; optional Anzahl neuer Meldungen. Danach höchstens zwei Top-Themen in einer Zeile und der Link https://nklausni.github.io/ai-briefing/. Nur bei verbleibenden Quellenproblemen eine kompakte Zeile „Quellen: …“ mit allen betroffenen Quellennamen und knappem Grund; offene Lücken und Einschränkungen dabei kennzeichnen. Prüfe alle Audit-Ergebnisse einschließlich checked und Teilchecks; ungeprüfte Pflichtquellen zählen als Lücke. Erfolgreich aufgefangene Abruffehler, Domains/URLs, technische Details, Tests, Laufzeiten und Prozessberichte nicht in Telegram aufführen; vollständige Details bleiben im Tagesaudit. Wenn die Quellenliste die Zeichenobergrenze sprengt, hat die vollständige Namensliste Vorrang: Top-Themen zuerst weglassen und Gründe knapp bündeln. Keine neuen Meldungen ist kein Ausfall. Melde dich erst nach abgeschlossener Verarbeitung und Publikationsprüfung.
+Abschlussmeldung auf Deutsch, maximal 600 Zeichen und 5 kurze Zeilen (Ziel: 300–450 Zeichen). Erste Zeile nur bei verifiziertem Erfolg: Veröffentlichung bestätigt; optional Anzahl neuer Meldungen. Danach höchstens zwei Top-Themen in einer Zeile und der Link https://nklausni.github.io/ai-briefing/. Nur bei verbleibenden Quellenproblemen eine kompakte Zeile „Quellen: …“ mit allen betroffenen Quellennamen und knappem Grund; offene Lücken und Einschränkungen dabei kennzeichnen. Prüfe alle Audit-Ergebnisse einschließlich checked und Teilchecks; ungeprüfte Pflichtquellen zählen als Lücke. Erfolgreich aufgefangene Abruffehler, Domains/URLs, technische Details, Tests, Laufzeiten und Prozessberichte nicht in Telegram aufführen; vollständige Details bleiben im Tagesaudit. Wenn die Quellenliste die Zeichenobergrenze sprengt, hat die vollständige Namensliste Vorrang: Top-Themen zuerst weglassen und Gründe knapp bündeln. Keine neuen Meldungen ist kein Ausfall. Melde dich erst nach abgeschlossener Verarbeitung und Publikationsprüfung.
 
-Bei Fehlern sage ausdrücklich, dass kein neues verifiziertes Briefing veröffentlicht
-wurde, und welcher Schritt fehlt. Der Hauptagent meldet sich erst nach beendeten
-Subagenten und abgeschlossenen Prüfungen.
+Bei Abbruch oder fehlender Verifikation dokumentiere den exakten Blocker dauerhaft
+in `RUN/publication-blocker.json` und `RUN/publication-status.md`: letzter erfolgreicher
+Schritt, unveränderte Belege, tatsächlicher Fehler und ausstehende Prüfung/Freigabe.
+Die operative Pipeline/Publikationsprüfung bleibt unbestätigt, niemals Erfolg erfinden.
+Die normale Hauptjob-Antwort an Telegram lautet ausschließlich `[SILENT]`.
+Keine vorzeitige „Veröffentlichung unbestätigt“-Nachricht und keine Aufforderung an
+den Nutzer, die Wiederherstellung anzustoßen. Die aktive Publikationssicherung setzt
+automatisch fort; nur ihr separater Alert meldet einmalig nach terminaler Ausschöpfung
+oder deadline einen verbleibenden Fehler. Ein Freigabeblocker bleibt blockierend;
+keine Umgehung, kein Quellen-checked-Ersatz und kein Verlust des Fehlers im RUN.
+Der Hauptagent beendet sich erst nach terminalen eigenen Kind-Agenten.
 
 ## Abnahme ohne Veröffentlichung
 
