@@ -38,12 +38,12 @@ AI Briefing/
 │   ├── briefing.json       ← Datenquelle des Tages (Inhalt aller Bereiche)
 │   ├── history.json        ← Pool der letzten 35 Tage (Ingest/Dedup je Render)
 │   ├── archive/            ← ausrotierte Monate (history-JJJJ-MM.json)
-│   └── research-audit/     ← tägliche, prüfbare Quellenprotokolle
+│   ├── research-audit/     ← historische Quellenprotokolle der alten Automation
+│   └── n8n-audit/          ← Laufprotokolle der aktuellen Automation
 ├── scripts/
 │   ├── history.py          ← Pool: Ingest/Dedup, Rotation, Zeitraum-Filter
 │   ├── render.py           ← Generator: merged briefing.json in den Pool → schreibt site/
-│   ├── validate_research_audit.py ← prüft die vollständige Quellenabdeckung
-│   ├── update.py           ← optionaler Standalone-Weg zur Recherche (siehe unten)
+│   ├── search.py · search.js ← lokale Archivsuche
 │   └── test/               ← Unit-Tests (nur Standardbibliothek)
 └── site/                   ← generierte statische Seiten (JavaScript nur für die lokale Suche)
     ├── 7d/ · 14d/ · 30d/   ← Zeitraum-Ansichten (letzte 7/14/30 Tage)
@@ -73,8 +73,8 @@ Liest `data/briefing.json` und schreibt alle Seiten sowie `site/style.css` neu
 nach `site/`. Keine Abhängigkeiten außer der Python-Standardbibliothek.
 
 `AI_BRIEFING_ROOT=/pfad` biegt Datenquelle und Ausgabe auf ein anderes
-Verzeichnis um. `update.py --dry-run` nutzt das für einen Probelauf in einem
-Temp-Verzeichnis, ohne `data/` und `site/` anzufassen.
+Verzeichnis um. Für einen Probelauf `data/` in ein temporäres Verzeichnis kopieren
+und dieses als `AI_BRIEFING_ROOT` setzen; die Originaldaten bleiben dann unverändert.
 
 ## Historie & Zeiträume
 
@@ -151,140 +151,34 @@ Impact-Skala: 2 Nennenswert · 3 Relevant · 4 Stark · 5 Game-Changer.
 
 ## Tägliche Aktualisierung
 
-### Recherche mit Subagenten
+Die aktive Automation liegt im privaten Repository
+[ai-briefing-n8n](https://github.com/nklausni/ai-briefing-n8n): drei sichtbare n8n-
+Workflows für Recherche, AI-Redaktion, Veröffentlichung und Fehlerbehandlung.
+Der tägliche Start ist 08:00 Uhr Europe/Berlin, mit Wiederanlauf um 09:00 und 10:00 Uhr.
+Die neue Automation ist ab 5. November 2026 aktiviert; die bisherigen Agent-Crons
+sind pausiert. Manuelle n8n-Starts erzeugen nur eine lokale Vorschau.
 
-Der Hermes-Job folgt `docs/briefing-orchestrator.md`. Der Planner
-`scripts/research_pipeline.py` verteilt die aktuelle Pflichtliste automatisch auf
-Pakete mit maximal neun Quellen plus eine offene Entdeckungssuche über alle Themen.
-Er nutzt die Laufzeiten abgeschlossener Pakete der letzten 14 Tage, um langsame
-Quellen möglichst gleichmäßig zu verteilen; ohne brauchbare Historie bleibt die
-Reihenfolge unverändert. `dispatch-ready` reserviert bis zur aktuell konfigurierten
-Hermes-Delegationsgrenze von zehn Plätzen in einem Schritt. Die derzeit sechs
-Recherche-Aufträge laufen dadurch in **einem** Delegations-Batch parallel.
-Da Hermes Cron-Delegationen synchron ausführt, schließt
-`complete-batch-and-dispatch` die Runde erst nach allen Kindern ab und reserviert
-bei zusätzlichen Aufträgen oder Retries die nächste. Die offene
-Suche startet früh. Jeder Recherche-Agent
-besitzt ein eigenes Suchbudget und speichert abgeschlossene Quellen sofort; nach
-einem Abbruch können nur offene Quellen einmal gezielt nachbearbeitet werden.
+Dieses Repository enthält ausschließlich Webseite, Renderer, Suche, Inhalte und
+Historie. Die alten Agent-Prompts, Recherche-/Review-Orchestratoren, speziellen
+Quellenprüfer und der alternative API-Updater wurden entfernt. Frühere Fassungen
+bleiben über die Git-Historie verfügbar. Die veröffentlichten historischen
+Quellenprotokolle unter `data/research-audit/` bleiben unverändert; neue technische
+Laufprotokolle schreibt n8n nach `data/n8n-audit/`.
 
-Die Recherchefenster richten sich pro Quelle nach dem letzten erfolgreichen Check mit
-zeitlicher Überlappung. Ausgefallene Tage verkürzen das Fenster nicht. Zwischenstände
-und Belege liegen außerhalb des Git-Repositories unter `/opt/data/ai-briefing-research/`.
-Qwen-/Meta-Zugänge und deren Abdeckungsgrenzen sind in
-[docs/qwen-meta-source-policy.md](docs/qwen-meta-source-policy.md) dokumentiert:
-Qwen bekommt eine datierte öffentliche Research-API und offizielle Code-Release-
-Notes; Meta beginnt beim offiziell verlinkten `research.meta.ai`-Research-Index.
-Die registrierten Quellenidentitäten und historischen Audits bleiben unverändert.
-Nur der Hauptagent bearbeitet das Briefing und veröffentlicht es. Die Prüfungen vor der
-Veröffentlichung verlangen vollständige Quellenabdeckung, eine abgeschlossene offene
-Suche, eine Auswahlentscheidung zu jedem Kandidaten und belegte URLs. Der
-`verify-publication`-Befehl bestätigt den Remote-Commit und den erfolgreichen Pages-Build;
-ein technisches Hermes-`ok` allein ist keine Veröffentlichungsbestätigung. Der
-read-only-Befehl `research_pipeline.py timings --run-dir RUN` trennt Recherche,
-Schlussredaktion und Publikationsprüfung für den Laufzeitvergleich.
+Der aktuelle Ablauf lautet: Recherche → AI-Redaktion mit Historienabgleich → kurze
+Format-, Quellen- und Datumsprüfung → Renderer → Git-Push → Pages-/Live-Prüfung.
+Es gibt keine zweite AI-Gegenprüfung jeder Aussage und keine verpflichtenden
+Zitat- oder arXiv-Sonderaudits. Einzelne zurückgestellte Meldungen blockieren
+andere Meldungen nicht. Die Softwaretests laufen bei Codeänderungen und in CI,
+nicht als zusätzliche tägliche Publikationshürde.
 
-Neue Runs verwenden Abdeckungsvertrag Version 2
-([`docs/editorial-contract.md`](docs/editorial-contract.md)): atomare Entwicklungen,
-Überschriftenanker, Freigabeschritte und explizite `candidate_ids` je Meldung.
-Duplikate referenzieren eine konkret veröffentlichte Meldung oder eine stabile ID
-aus der eingefrorenen Historie. Eine gemeinsame URL genügt nicht zur Abnahme.
-`editor-coverage.json` dokumentiert die tatsächliche Zuordnung. Die semantische
-Prüfung der Aussagen bleibt bei der Schlussredaktion. Die Historie bewahrt getrennte
-Preview-/Beta-/GA-Schritte, während alte Daten und Audits unverändert prüfbar bleiben.
-OpenAI-News und API-Changelog sowie xAI-News und Release Notes erhalten verpflichtende,
-separat protokollierte `checks`. Teilfehler bleiben transparent und schieben den
-Quellen-Wasserstand nicht vor. Suchbudgets und Parallelität bleiben gleich;
-das aktuelle Register 5 enthält 40 Pflichtquellen.
+## Versionierung und Deployment
 
-**Aktiver Weg (ohne zusätzlichen Recherche-API-Key):** Ein Hermes-Cronjob
-(`ai-briefing-daily`, täglich um 08:00 Uhr Europe/Berlin) recherchiert die Meldungen
-der letzten 24 Stunden mit den Hermes-Web-Tools. Er aktualisiert ausschließlich
-`data/briefing.json`, führt anschließend `scripts/render.py` aus und pusht die dadurch
-aktualisierten Daten und statischen Seiten auf `main`.
+Quelländerungen, zugehörige Tests und Dokumentation gemeinsam committen und pushen.
+Die n8n-Automation versioniert veröffentlichte Inhalte, Historie und erzeugte Seiten
+hier; ihre Workflows, Konfiguration und Adapter bleiben in `ai-briefing-n8n`.
+Zugangsdaten, private Hermes-Laufdaten und `.hermes/` gehören nicht ins Repository.
 
-`scripts/update.py` ist nur ein optionaler Standalone-Weg und wird von der Hermes-Routine
-nicht verwendet. Er recherchiert die Bereiche parallel (`MAX_PARALLEL`, Default 4), gibt
-jedem Bereich drei Versuche und erzwingt das Antwortformat über Structured Outputs; der
-letzte Versuch fällt bewusst auf freien Text zurück. Ein Bereich, der alle Versuche
-verbraucht, behält seinen vorherigen Stand. Exit-Code 1 gibt es nur, wenn kein einziger
-Bereich aktualisiert werden konnte.
-
-### Quellenprotokoll
-
-Jeder Cron-Lauf erzeugt zusätzlich `data/research-audit/YYYY-MM-DD.json`. Das Protokoll
-enthält für jede priorisierte Quelle die tatsächlich geprüfte URL, den Status und ein
-kurzes Ergebnis. `scripts/validate_research_audit.py` akzeptiert den Lauf nur, wenn alle
-40 festgelegten Pflichtquellen (Register 5) genau einmal dokumentiert sind und jede URL zur angegebenen
-Quelle gehört. Ein fehlendes oder unvollständiges Protokoll blockiert Commit und
-Veröffentlichung. Die Quellenliste ist versioniert: Die bisherigen 42-Quellen-Audits
-bleiben unverändert und prüfbar; ab Quellenlisten-Version 2 wird Reuters nicht mehr recherchiert
-oder als Beleg für neue Meldungen verwendet.
-Ab Quellenlisten-Version 3 ist Qwens aktuelle Primärquelle `https://qwen.ai/research`
-(`qwen.ai`); der nicht mehr gepflegte Blog `qwenlm.github.io` bleibt ausschließlich
-in historischen Audits der Versionen 1 und 2 erhalten. Die Versionen 2–4 haben 41 Pflichtquellen.
-Ab Version 4 ist Latent Space korrekt als `latent.space` registriert; Versionen 1–3
-behalten die frühere Domain `latentspace.com` unverändert. Geprüfte Feed-/News-Einstiege
-für Latent Space, SemiAnalysis, MarkTechPost, VentureBeat, Microsoft AI und Qwen sind
-in `URL_OVERRIDES` hinterlegt. Quellenbezogene Alternativabrufe und xAI-Release-Notes
-sind in `docs/briefing-research-worker.md` dokumentiert; Zugriffssperren werden nicht
-als behoben behauptet und verbleibende Lücken in der Abschlussmeldung aufgelistet.
-Ab Register **5** entfällt ausschließlich SemiAnalysis aus der Pflichtliste:
-**40 Pflichtquellen**, optionaler öffentlicher Feed/Headline-Hinweis in der bestehenden
-`discovery`-Aufgabe. Kein erforderlicher Volltext-Checkpoint, kein Abo oder Login,
-keine Wall-Umgehung und kein zusätzliches Budget. Ein daraus entdecktes Thema
-benötigt tatsächlich gelesene freie Originalbelege; deren URL wird zitiert. Ein
-optionaler Ausfall wird im bestehenden Discovery-`result` notiert und blockiert
-nicht die Pflichtabdeckung. Register 1–4 bleiben einschließlich SemiAnalysis exakt erhalten.
-
-Für arXiv gilt [`docs/arxiv-source-policy.md`](docs/arxiv-source-policy.md):
-`scripts/arxiv_discovery.py` gleicht vollständige source-owned Listen-/API-Titel
-mit ihren Gesamtzahlen ab, speichert Cursor und Einschränkungen und liest keine
-Paper pauschal im Volltext. Öffentliche Erstlistung/Ankündigung und substantielle
-Updates werden getrennt von Original-Einreichungszeiten belegt. Neue arXiv-
-Kandidaten verwenden `arxiv_dates` und geprüfte öffentliche Frische; die alten
-Daten bleiben erhalten. Register 5 verlangt kompakte `title_discovery`-Berichte
-im arXiv-Audit. Ehrliche Teilabdeckung bleibt zulässig, schiebt aber den
-Quellen-Wasserstand nicht vor. Audit-Schema 1 bleibt rückwärtskompatibel.
-
-Qwen-Originale mit `blog?id=...` und Microsofts `/blog/` sind im gerenderten Browser
-geprüft; dieser begrenzte Ersatzweg ist verbindlich dokumentiert. Veraltete Indizes
-erfordern zusätzliche Zeitfenstersuchen und Originalprüfungen. Abschlussmeldungen
-trennen offene Recherchelücken, eingeschränkte Quellen und gebündelte aufgefangene Fehler.
-
-Beispiel für einen historischen Audit mit 42 Quellen:
-
-```bash
-python3 scripts/validate_research_audit.py data/research-audit/2026-09-29.json 2026-09-29
-```
-
-### Wenn ein Bereich nicht aktualisiert wird
-
-`meta.generated` ist das Datum des Laufs, nicht das Datum der Daten. Fällt die Recherche
-für einen Bereich aus, bleiben dessen alte Meldungen stehen, und ohne weitere Angabe
-sähe die Seite trotzdem tagesaktuell aus.
-
-`render.py` vergleicht deshalb je Bereich einen Fingerprint des Inhalts (Titel, Datum,
-Impact, Kategorie der Meldungen) mit dem Stand des letzten Laufs und merkt sich in
-`data/history.json` unter `fingerprints`, seit wann der Inhalt unverändert ist. Weichen
-dieses Datum und `meta.generated` voneinander ab, erscheint der Bereich auf der
-Übersichtskarte und auf seiner Detailseite als unverändert, mit Datum und Anzahl der Tage.
-
-Der Weg über den Inhalt statt über ein Feld in `briefing.json` ist Absicht: die tägliche
-Aktualisierung läuft außerhalb dieses Repos und müsste ein solches Feld sonst selbst
-pflegen. Der Hinweis unterscheidet nicht zwischen „Recherche fehlgeschlagen" und „es gab
-nichts Neues" — beides steht als Möglichkeit im Text, denn von außen ist das nicht
-unterscheidbar.
-
-## Veröffentlichung
-
-Der Hermes-Cron-Laufzeitvertrag und seine Deployment-Abnahme stehen in
-[`ops/hermes-runtime.md`](ops/hermes-runtime.md). Der versionierte Cron-Prompt,
-zehn Delegationsplätze und persistente 30-Minuten-Tool-Fristen werden mit
-`scripts/check_hermes_runtime.py` auf dem VPS geprüft. Die Schlussredaktion nutzt
-`scripts/editor_context.py` für paginierte Kandidaten und gezielte Originalbelege;
-vollständige Recherche-Dateien und die bestehenden Qualitätsprüfungen bleiben erhalten.
-
-Der Workflow `.github/workflows/pages.yml` veröffentlicht bei Änderungen unter `site/`
-die statische Seite über GitHub Pages. Lokal genügt das Öffnen von `site/index.html` im
-Browser; für die Suche ist ein HTTP-Server nötig (siehe oben).
+GitHub Actions testet jeden Push. Der Pages-Workflow veröffentlicht das Verzeichnis
+`site/`, wenn dessen Dateien oder der Pages-Workflow geändert werden. Reine Änderungen
+an Quellcode oder Dokumentation veröffentlichen keine neue Nachrichtenausgabe.
