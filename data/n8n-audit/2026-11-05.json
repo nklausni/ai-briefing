@@ -1,0 +1,2774 @@
+{
+  "schema_version": 2,
+  "pipeline": "n8n-visible-v2",
+  "date": "2026-11-05",
+  "run_id": "2026-11-05",
+  "policy": "news-editorial-v2",
+  "sources": [
+    {
+      "unit_id": "simonwillison-net",
+      "kind": "source",
+      "name": "Simon Willison",
+      "domain": "simonwillison.net",
+      "warnings": [
+        "Indexauswahl begrenzt: 80/299 Links gesichtet",
+        "Ausgewertet wurden ausschließlich die drei vorgelegten Artikeltexte. Verlinkte Veröffentlichungen, Repositories und Versuchstranskripte wurden nicht zusätzlich gelesen.",
+        "Die Datasette-Mitteilungen betreffen Alpha-Versionen; eine allgemeine Verfügbarkeit wird daraus nicht abgeleitet. Die Funktionsangaben sind als Angaben der Release-Mitteilungen gekennzeichnet.",
+        "Der zugrunde liegende Weight-Space-Programming-Beitrag wird im Artikel als Veröffentlichung vom Vortag beschrieben und liegt damit außerhalb des Zeitfensters. Seine referierten Ergebnisse wurden nicht als eigenständige neue Entwicklungen aufgenommen.",
+        "Die Modellversuche sind dokumentierte Einzelversuche des Autors, keine umfassende Benchmark-Auswertung.",
+        "Die vorgelegten Artikeltexte sind frei lesbar. Der erwähnte GitHub-Login betrifft das Ausprobieren von Datasette Agent, nicht den Zugang zu den Artikelbelegen."
+      ],
+      "candidates": 7,
+      "search_ok": true
+    },
+    {
+      "unit_id": "testingcatalog-com",
+      "kind": "source",
+      "name": "TestingCatalog",
+      "domain": "testingcatalog.com",
+      "warnings": [
+        "Beide vorgelegten Artikel enthalten vollständige Artikeltexte; die Login- und Subscribe-Links stellen hier keine erkennbare Zugriffsschranke dar.",
+        "Der ClickUp-Artikel ist ausdrücklich als Sponsored gekennzeichnet und liefert keine unabhängige Bestätigung der beschriebenen Produktfunktionen.",
+        "Die verlinkten OpenAI-Seiten wurden nicht als Volltexte vorgelegt. Die OpenAI-Kandidaten beruhen ausschließlich auf dem TestingCatalog-Artikel einschließlich der darin wiedergegebenen Herstellerbeiträge; Leistungsangaben sind Herstellerbehauptungen.",
+        "Für die Kandidaten wurden die Veröffentlichungsdaten der tragenden Artikel verwendet, nicht die abweichenden Daten eingebetteter Social-Media-Beiträge.",
+        "Verlinkte Nachbarartikel und verwandte Beiträge wurden nicht als tragende Belege ausgewertet. Frühere ClickUp-Entwicklungen aus Februar und Juni liegen außerhalb des Zeitfensters."
+      ],
+      "candidates": 7,
+      "search_ok": true
+    },
+    {
+      "unit_id": "the-decoder-com",
+      "kind": "source",
+      "name": "The Decoder",
+      "domain": "the-decoder.com",
+      "warnings": [
+        "Der Artikel zu Mistral Large 4 („Le Chonk“) ist auf den 29. Oktober 2026 datiert und liegt damit außerhalb des Zeitfensters vom 3. bis 5. November 2026. Daraus wurden keine Kandidaten abgeleitet.",
+        "Der FlashProve-Artikel vom 4. November 2026 unter https://the-decoder.com/anthropics-new-prototype-proves-which-model-wrote-an-ai-response-without-exposing-its-weights?cmpscreencustom=1 ist als Plus-Inhalt mit Abonnementschranke gekennzeichnet. Er wurde trotz des mitgelieferten Textes nicht als tragender Artikelbeleg verwendet; ein frei zugänglicher unabhängiger Originalbeleg wurde nicht vorgelegt.",
+        "Beim Wasserzeichen-Artikel wurden nur die im Update vom 4. November 2026 neu belegten Entwicklungen berücksichtigt. Der ausdrücklich als Originalartikel vom 31. Oktober 2026 bezeichnete Abschnitt wurde nicht als neue Entwicklung im Zeitfenster behandelt.",
+        "Der Vollzug der ersten Wasserzeichen-Welle für Claude Mythos 5, Claude Opus 4.7 und Claude Sonnet 4.6 wird im Artikel lediglich vermutet und wurde deshalb nicht als bestätigte Einführung aufgenommen.",
+        "Keiner der drei vorgelegten Artikel liegt mit seinem erkennbaren Veröffentlichungsdatum im Zeitfenster 2026-11-03 bis 2026-11-05.",
+        "https://the-decoder.com/anthropic-says-one-ai-agent-beats-many-subagents-now-that-models-can-handle-complexity-alone wurde am 2026-10-25 veröffentlicht; die ausgewiesene Änderung vom 2026-10-29 liegt ebenfalls außerhalb des Zeitfensters.",
+        "https://the-decoder.com/experts-adopt-ai-agents-random-opinions-and-think-theyre-their-own-anthropic-study-finds?cmpscreencustom=1 wurde am 2026-10-29 veröffentlicht; die ausgewiesene Änderung vom 2026-10-31 liegt ebenfalls außerhalb des Zeitfensters.",
+        "Die beiden vorgenannten Artikel sind als Plus-Inhalte gekennzeichnet und enthalten eine Abonnement-Zugriffsschranke. Sie wurden nicht als tragende Artikelbelege verwendet; frei zugängliche unabhängige Originale zu diesen Themen wurden nicht vorgelegt.",
+        "https://the-decoder.com/openais-astra-becomes-the-main-target-for-chinese-ai-labs-after-anthropic-tightens-its-defenses wurde am 2026-10-29 veröffentlicht und deshalb ausgeschlossen.",
+        "Verlinkte Artikel und Empfehlungen in den Seitenleisten wurden nicht als eigenständige Originalbelege gewertet.",
+        "Die angekündigte Änderung liegt mit dem Veröffentlichungsdatum des Artikels im Zeitfenster; ihre Umsetzung ist erst für Anfang 2027 vorgesehen.",
+        "Der Artikel von The Decoder liegt vollständig vor. Der darin als Erstquelle verlinkte Bericht der New York Times wurde nicht als Originaltext mitgeliefert und konnte nicht zusätzlich geprüft werden.",
+        "Verlinkte weitere Artikel und Überschriften aus Seitenleisten wurden nicht als eigenständige Artikelbelege verwendet."
+      ],
+      "candidates": 3,
+      "search_ok": true
+    },
+    {
+      "unit_id": "marktechpost-com",
+      "kind": "source",
+      "name": "MarkTechPost",
+      "domain": "marktechpost.com",
+      "warnings": [
+        "Original nicht lesbar: https://www.marktechpost.com/2026/11/04/webai-twil-8b-reasoning-model/",
+        "Original nicht lesbar: https://www.marktechpost.com/2026/11/04/ricursive-ripple-65b-preview-open-weight-model/",
+        "Original nicht lesbar: https://www.marktechpost.com/2026/11/03/soniox-stt-v6-agent-text-input-echo-cancellation/",
+        "Original nicht lesbar: https://www.marktechpost.com/2026/11/04/google-agile-deliberation-subjective-image-classifiers/",
+        "Original nicht lesbar: https://www.marktechpost.com/2026/11/03/tencent-wevisone-vl-vision-language-model/",
+        "Original nicht lesbar: https://www.marktechpost.com/2026/11/03/nvidia-dgx-spark-moe-inference-ling-3-0-flash/",
+        "Als Beleg liegt ausschließlich der bereitgestellte MarkTechPost-Artikel vor; die verlinkte Projektquelle wurde nicht gelesen. Funktions- und Leistungsangaben sind im Artikel berichtete Projektangaben und nicht unabhängig verifiziert.",
+        "FlashProve wird ausdrücklich als Forschungsprototyp beschrieben, nicht als allgemein verfügbarer Produktionsdienst.",
+        "Die lediglich verlinkte Hydrogen-1.0-Meldung liefert keinen tragenden Artikelbeleg und liegt laut angezeigtem Linkdatum zudem außerhalb des Zeitfensters."
+      ],
+      "candidates": 1,
+      "search_ok": true
+    },
+    {
+      "unit_id": "venturebeat-com",
+      "kind": "source",
+      "name": "VentureBeat",
+      "domain": "venturebeat.com",
+      "warnings": [
+        "Original nicht lesbar: https://venturebeat.com/business/livex-unveils-ai-city-bringing-physical-ai-to-everyday-spaces-with-nvidia",
+        "Original nicht lesbar: https://venturebeat.com/orchestration/ai-teams-agreed-on-the-wrong-answer-in-75-of-debates-and-lower-token-bills-hid-the-failure",
+        "Als tragender Beleg liegt ausschließlich der vollständige VentureBeat-Artikel vor. Verlinkte Herstellerseiten, Modellkarten und Anbieterpreislisten wurden nicht separat vorgelegt oder geprüft.",
+        "Die Angaben zu Benchmark-Führung, Trainingseffizienz und lokaler Einsatzfähigkeit sind Herstellerbehauptungen, keine unabhängig bestätigten Ergebnisse. Der Artikel nennt unter anderem widersprüchliche Benchmark-Werte in Ricursives Materialien.",
+        "Der Artikel beschreibt die API-Verfügbarkeit uneinheitlich: Together AI wird zunächst als Zugang genannt, im detaillierten Abschnitt jedoch als noch bevorstehend beschrieben. Für Fireworks wird eine spätere Verfügbarkeitsankündigung erwähnt, ohne bestätigten modellspezifischen Preis.",
+        "Die unter „More“ eingebetteten Empfehlungen sind reine Teaser und tragen keine zusätzlichen Kandidaten. Auch der Teaser vom 4. November zum US-Wahlausgang wurde mangels vollständigen Artikelbelegs nicht ausgewertet; die übrigen dort datierten Empfehlungen liegen außerhalb des Zeitfensters.",
+        "Lizenz, Gewichtsvarianten, API-Zugang und Trainingsangaben gehören hier zur selben Modellveröffentlichung und wurden nicht als separate Entwicklungen gezählt."
+      ],
+      "candidates": 1,
+      "search_ok": true
+    },
+    {
+      "unit_id": "anthropic-com",
+      "kind": "source",
+      "name": "Anthropic",
+      "domain": "anthropic.com",
+      "warnings": [],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "openai-com",
+      "kind": "source",
+      "name": "OpenAI",
+      "domain": "openai.com",
+      "warnings": [
+        "Indexauswahl begrenzt: 80/748 Links gesichtet",
+        "https://openai.com/news/ enthält lediglich eine Nachrichtenübersicht mit Überschriften und Datumsangaben vom 2. bis 4. November 2026. Die zugehörigen Artikeltexte liegen nicht vor. Diese reinen Teaser sind keine tragenden Artikelbelege; daraus wurden keine Kandidaten abgeleitet.",
+        "Der vorgelegte Inhalt von https://developers.openai.com/api/docs/changelog ist abgeschnitten und enthält nur Navigation und Dokumentationsverweise, keine datierten Changelog-Einträge. Damit lässt sich keine konkrete Entwicklung im Zeitfenster 2026-11-02 bis 2026-11-05 belegen.",
+        "Originaltext nur teilweise im AI-Kontext: https://developers.openai.com/api/docs/changelog"
+      ],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "openrouter-ai",
+      "kind": "source",
+      "name": "OpenRouter Blog",
+      "domain": "openrouter.ai",
+      "warnings": [],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "blog-google",
+      "kind": "source",
+      "name": "Google AI Blog",
+      "domain": "blog.google",
+      "warnings": [
+        "Alle Kandidaten beruhen auf den vorgelegten Google-Originaltexten; unabhängige Bestätigungen liegen nicht vor.",
+        "Der Bildungsartikel ist am Ende abgeschnitten. Die aufgenommenen Entwicklungen sind im vorliegenden Artikelhaupttext belegt; die eingeblendeten KI-Zusammenfassungen wurden nicht als tragende Belege verwendet.",
+        "Das verlinkte Gesundheits-Whitepaper und weitere verlinkte Dokumente liegen nicht als gelesene Originale vor. Daraus wurden keine zusätzlichen Entwicklungen oder Veröffentlichungsdaten abgeleitet.",
+        "Die frühere Einführung des Universal Commerce Protocol wird im Kanada-Artikel nur als Hintergrund erwähnt und nicht als neue Entwicklung im Zeitfenster erfasst.",
+        "Originaltext nur teilweise im AI-Kontext: https://blog.google/products-and-platforms/products/education/ai-learning-era-updates-2026/"
+      ],
+      "candidates": 7,
+      "search_ok": true
+    },
+    {
+      "unit_id": "microsoft-ai",
+      "kind": "source",
+      "name": "Microsoft AI",
+      "domain": "microsoft.ai",
+      "warnings": [
+        "Indexauswahl begrenzt: 80/131 Links gesichtet"
+      ],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "arxiv-org",
+      "kind": "source",
+      "name": "arXiv",
+      "domain": "arxiv.org",
+      "warnings": [
+        "Indexauswahl begrenzt: 80/531 Links gesichtet",
+        "Die Arbeit „Measuring AI Agents as Teammates with Collaborative Intelligence“ unter https://arxiv.org/html/2611.02633 ist auf der vorgelegten Paper-Seite mit „02 Nov 2026“ datiert und liegt damit außerhalb des Zeitfensters vom 3. bis 5. November 2026. Daraus wurden keine Kandidaten abgeleitet.",
+        "Für Signals wurde das auf der Paper-Seite ausgewiesene Aktualisierungsdatum der vorliegenden Version v2 verwendet. Laut Versionskommentar wurden lediglich die Autorenaffiliationen formatiert; der wissenschaftliche Inhalt blieb unverändert. Die Erstveröffentlichung vom 3. November liegt ebenfalls im Zeitfenster.",
+        "Für Signals liegt nur die Abstract-Seite vor; die Leistungsangaben sind Ergebnisse der Autoren und wurden nicht unabhängig überprüft.",
+        "Die beiden vorgelegten HTML-Volltexte sind abgeschnitten. Für die Inventarstudie wurden nur die sichtbaren Abschnitte verwendet; sie untersucht öffentliche Behördenangaben, nicht unmittelbar die tatsächlichen Betriebspraktiken.",
+        "Der verknüpfte Datensatz der Inventarstudie wird im Text erst für den Zeitpunkt einer Annahme des Papers angekündigt und wurde daher nicht als bereits veröffentlicht behandelt.",
+        "https://arxiv.org/abs/2611.03063 wurde ausgeschlossen: Die arXiv-Seite weist den 2. November 2026 als Einreichungsdatum aus, außerhalb des Zeitfensters vom 3. bis 5. November 2026.",
+        "https://arxiv.org/html/2611.03327v1 wurde ausgeschlossen: Die vorgelegte Paper-Seite weist „02 Nov 2026“ aus, außerhalb des Zeitfensters.",
+        "Für Route Anything lag die arXiv-Abstractseite vor, nicht der Paper-Volltext. Die Leistungs- und Effizienzangaben sind Ergebnisse laut Autoren; eine unabhängige Bestätigung ist in den vorgelegten Belegen nicht enthalten.",
+        "Originaltext nur teilweise im AI-Kontext: https://arxiv.org/html/2611.02633",
+        "Originaltext nur teilweise im AI-Kontext: https://arxiv.org/html/2611.04153"
+      ],
+      "candidates": 3,
+      "search_ok": true
+    },
+    {
+      "unit_id": "llm-stats-com",
+      "kind": "source",
+      "name": "LLM Stats",
+      "domain": "llm-stats.com",
+      "warnings": [
+        "Indexauswahl begrenzt: 80/87 Links gesichtet"
+      ],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "ollama-com",
+      "kind": "source",
+      "name": "Ollama",
+      "domain": "ollama.com",
+      "warnings": [],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "huggingface-co",
+      "kind": "source",
+      "name": "Hugging Face",
+      "domain": "huggingface.co",
+      "warnings": [],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "techcrunch-com",
+      "kind": "source",
+      "name": "TechCrunch",
+      "domain": "techcrunch.com",
+      "warnings": [
+        "Indexauswahl begrenzt: 80/96 Links gesichtet",
+        "Die Auswertung beruht ausschließlich auf den drei vorgelegten vollständigen TechCrunch-Artikeln. Verlinkte Herstellerbeiträge, Repositorien und weitere Berichte wurden nicht gelesen.",
+        "Die Artikel enthalten keine erkennbare Login- oder Bezahlschranke. Aus verlinkten Überschriften, Seitenleisten und Teasern wurden keine Kandidaten abgeleitet.",
+        "Angekündigte spätere Änderungen wurden anhand des Veröffentlichungsdatums der berichtenden Artikel aufgenommen und nicht als bereits umgesetzt dargestellt.",
+        "Für Guided Learning nennt der vorgelegte Artikel einen Schulstart, aber keine Einzelheiten zu regionaler Verfügbarkeit, Berechtigung oder Rollout.",
+        "Ausgewertet wurden ausschließlich die drei vorgelegten TechCrunch-Artikel. Verlinkte Herstellerankündigungen, Essays und Social-Media-Beiträge lagen nicht als eigene Originaltexte vor.",
+        "Die vorgelegten Artikeltexte weisen keine Login- oder Bezahlschranke auf. Verweise und Empfehlungslisten zu anderen Artikeln wurden nicht als eigenständige Artikelbelege verwendet.",
+        "Die Standortregel ist eine eigenständige Plattformänderung im Apple-Artikel, hat im vorgelegten Text aber keinen ausdrücklich KI-spezifischen Anwendungsbereich.",
+        "Die Nothing-Kurzmeldung enthält eine konkrete Herstellerankündigung zur geplanten Auslieferung, jedoch keine technischen Spezifikationen oder belegte Verfügbarkeit. Frühere Pläne für Brillen und Ohrhörer wurden nicht als neue Entwicklungen aufgenommen.",
+        "Der vorgelegte TechCrunch-Artikel ist vollständig zugänglich und liegt im angegebenen Zeitfenster. Der darin verlinkte Netflix-Blogbeitrag wurde nicht als eigener Originaltext vorgelegt.",
+        "Die Einführung ist ausdrücklich experimentell und zunächst regional, sprachlich und nach Gerät eingeschränkt; eine allgemeine Verfügbarkeit ist nicht belegt.",
+        "Verlinkte Überschriften in Navigation und Empfehlungen wurden nicht als eigenständige Artikelbelege verwendet."
+      ],
+      "candidates": 10,
+      "search_ok": true
+    },
+    {
+      "unit_id": "theverge-com",
+      "kind": "source",
+      "name": "The Verge",
+      "domain": "theverge.com",
+      "warnings": [
+        "Indexauswahl begrenzt: 80/195 Links gesichtet",
+        "Alle Kandidaten beruhen ausschließlich auf den drei vorgelegten Artikeltexten; deren Veröffentlichungsdaten liegen im Zeitfenster 2026-11-03 bis 2026-11-05.",
+        "In den vorgelegten Artikeltexten ist keine tragende Login- oder Bezahlschranke erkennbar. Verlinkte Herstellerdokumentationen, Beiträge und Richtlinien wurden nicht zusätzlich gelesen.",
+        "Bloße Artikelverweise und Empfehlungslisten wurden nicht als eigenständige Artikelbelege verwendet.",
+        "Die Siri-AI-Neuerungen sind als Developer Preview beschrieben, nicht als allgemeine Verfügbarkeit.",
+        "Beim Verzicht von Nexus Mods auf KI-Training belegt der Artikel eine öffentliche Zusicherung, aber nicht, dass diese Haltung erstmals eingeführt wurde. Für die angekündigten Änderungen an Weiterverwendung und Urheberzuordnung nennt er keinen Umsetzungstermin.",
+        "Der vorgelegte Artikel ist vollständig zugänglich; eine Login- oder Bezahlschranke für den Artikeltext ist nicht erkennbar.",
+        "Die Ankündigung des 27voice-Frühzugangs liegt im Zeitfenster. Wartelistenöffnung und Zugangsstart liegen danach und werden nicht als bereits erfolgte Beta-Veröffentlichung behandelt.",
+        "Die übrigen App-Neuerungen sind eigenständige Begleitentwicklungen des Artikels; ein eigener KI-Bezug wird für sie nicht belegt.",
+        "Das Sonos-27-Update vom September und die zuvor angekündigte Agentenanbindung sind Hintergrund, keine neuen Entwicklungen im angegebenen Zeitfenster. Für den erwähnten Plan von bis zu zehn benutzerdefinierten Agenten nennt der Artikel kein neues Ankündigungsdatum.",
+        "Verlinkte Herstellerseiten und weitere Artikel wurden nicht als gelesene Originale vorgelegt und daher nicht zusätzlich ausgewertet."
+      ],
+      "candidates": 13,
+      "search_ok": true
+    },
+    {
+      "unit_id": "heise-de",
+      "kind": "source",
+      "name": "heise online",
+      "domain": "heise.de",
+      "warnings": [
+        "https://www.heise.de/news/Wer-spricht-da-Anthropic-stellt-Identitaetsnachweis-fuer-KI-Modelle-vor-11511036.html: Veröffentlichungsdatum 2026-11-04 liegt im Zeitfenster. Der gelieferte Seitentext enthält jedoch ausdrücklich eine heise+-Zugriffsschranke („Sie benötigen ein heise+ Paket, um diesen Artikel zu lesen“) und einen Hinweis auf einen ungültigen Geschenklink. Daher trotz enthaltenen Artikeltexts kein tragender Beleg und kein Kandidat zu FlashProve.",
+        "https://www.heise.de/en/news/Anthropic-shows-even-beekeeping-advice-can-trigger-AI-misbehavior-11508762.html: Veröffentlichungsdatum 2026-11-03 liegt im Zeitfenster. Auch diese Vorlage enthält eine ausdrückliche heise+-Zugriffsschranke und einen Hinweis auf einen ungültigen Geschenklink. Daher kein Kandidat zum beschriebenen Experiment für automatisierte KI-Sicherheitstests.",
+        "https://www.heise.de/en/news/watchOS-27-3-beta-activates-controversial-Audio-Intelligence-tech-11512706.html: Veröffentlichungsdatum 2026-11-04 liegt im Zeitfenster. Auch diese Vorlage enthält eine ausdrückliche heise+-Zugriffsschranke und einen Hinweis auf einen ungültigen Geschenklink. Daher keine Kandidaten zu den beschriebenen Audio-Intelligence-Funktionen der watchOS-Entwicklerbeta.",
+        "Frei zugängliche unabhängige Ersatzbelege wurden nicht vorgelegt. Verlinkte Herstellerseiten, Forschungsberichte und Repositorys wurden nicht als gelesene Originale geliefert und deshalb nicht als Belege verwendet.",
+        "https://www.heise.de/en/news/Apple-Intelligence-arrives-in-China-with-iOS-27-3-11509593.html: Das erkennbare Artikeldatum ist 2026-11-03 und liegt im Zeitfenster. Die Vorlage enthält zwar Artikeltext, aber auch den ausdrücklichen Zugriffshinweis „Dieser Link ist leider nicht mehr gültig“ sowie „Sie benötigen ein heise+ Paket, um diesen Artikel zu lesen“. Wegen dieser Bezahlschranke nicht als tragenden Artikelbeleg verwendet; ein frei zugänglicher unabhängiger Ersatzbeleg wurde nicht vorgelegt.",
+        "https://www.heise.de/en/news/itch-io-deletes-terabytes-of-AI-slop-and-adds-search-filter-11510931.html: Das erkennbare Artikeldatum ist 2026-11-04 und liegt im Zeitfenster. Die Vorlage enthält zwar Artikeltext, aber ebenfalls den ausdrücklichen Hinweis auf einen ungültigen Geschenklink und ein zum Lesen erforderliches heise+ Paket. Wegen dieser Bezahlschranke keine Kandidaten daraus abgeleitet; die verlinkten Betreiberbeiträge liegen nicht als gelesene Originale vor."
+      ],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "arstechnica-com",
+      "kind": "source",
+      "name": "Ars Technica",
+      "domain": "arstechnica.com",
+      "warnings": [
+        "Grundlage sind ausschließlich die zwei vorgelegten vollständigen Ars-Technica-Artikel. Verlinkte Herstellerseiten, Umfragen, Analysen und weitere Medienartikel wurden nicht separat gelesen; entsprechende Angaben sind als Berichte beziehungsweise Zuschreibungen wiedergegeben.",
+        "Die gelieferten Artikeltexte enthalten keine erkennbare inhaltliche Zugriffsschranke; die Hinweise auf Abonnements betreffen unter anderem Darstellungseinstellungen.",
+        "Für Googles Änderungen ist ein künftiger Rollout beschrieben, aber kein konkretes Startdatum und keine eindeutige Beta- oder GA-Kennzeichnung belegt.",
+        "Als Veröffentlichungsdatum wurde jeweils article:published_time verwendet, nicht das Änderungsdatum. Historische Hintergrundangaben und bloße Prognosen wurden nicht als zusätzliche eigenständige Entwicklungen aufgenommen."
+      ],
+      "candidates": 7,
+      "search_ok": true
+    },
+    {
+      "unit_id": "computerworld-com",
+      "kind": "source",
+      "name": "Computerworld",
+      "domain": "computerworld.com",
+      "warnings": [
+        "Indexauswahl begrenzt: 80/83 Links gesichtet",
+        "Die Datierung folgt den sichtbaren Veröffentlichungsdaten der beiden vorgelegten Computerworld-Artikel; genaue Ereignis- beziehungsweise Anmeldedaten sind nicht angegeben.",
+        "Die Microsoft-Technik ist lediglich Gegenstand einer Patentanmeldung, nicht als Preview, Beta oder allgemein verfügbares Produkt belegt.",
+        "Der Suncatcher-Bericht beschreibt einen experimentellen Testbetrieb, keinen allgemein verfügbaren Rechenzentrumsdienst.",
+        "Verlinkte Quellen und verwandte Artikel liegen nicht als gelesene Volltexte vor. Aus deren Linktiteln und Teasern wurden keine zusätzlichen Kandidaten abgeleitet."
+      ],
+      "candidates": 2,
+      "search_ok": true
+    },
+    {
+      "unit_id": "cnbc-com",
+      "kind": "source",
+      "name": "CNBC",
+      "domain": "cnbc.com",
+      "warnings": [
+        "Indexauswahl begrenzt: 80/245 Links gesichtet",
+        "Als Veröffentlichungsdatum wurde die sichtbare Artikelangabe vom 3. November 2026 in EST verwendet. Die Metadaten nennen denselben Zeitpunkt als 2026-11-04T00:08:28+0000; die sichtbare Aktualisierung ist vom 4. November 2026.",
+        "Der CNBC-Artikel liegt vollständig vor. Verlinkte Unternehmensbeiträge, Social-Media-Posts und andere Artikel wurden nicht als separat gelesene Originale behandelt.",
+        "Die angekündigten Lernfunktionen sind nur knapp beschrieben; Einführungszeitpunkt und Verfügbarkeitsstatus bleiben offen. Frühere Ereignisse außerhalb des Zeitfensters wurden nicht als Kandidaten aufgenommen."
+      ],
+      "candidates": 3,
+      "search_ok": true
+    },
+    {
+      "unit_id": "github-blog",
+      "kind": "source",
+      "name": "GitHub Blog",
+      "domain": "github.blog",
+      "warnings": [
+        "Die Belege stammen ausschließlich aus den drei vorgelegten GitHub-Herstellerartikeln; eine unabhängige Bestätigung liegt nicht vor.",
+        "Als Veröffentlichungsdatum wurde jeweils das sichtbare Artikeldatum November 3, 2026 verwendet, nicht der teils abweichende Änderungszeitstempel.",
+        "Die verlinkten Related Posts liegen nur als Teaser vor und tragen keine zusätzlichen Kandidaten. Das betrifft unter anderem Copilot in Xcode und Dependabot-Unterstützung für Python 3.15; deren Artikeltexte wurden nicht vorgelegt.",
+        "Der Air-Artikel bezeichnet die Copilot-Integration als verfügbar, nennt aber keinen ausdrücklichen Preview-, Beta- oder GA-Status. Sie wurde daher als Integration eingeordnet."
+      ],
+      "candidates": 5,
+      "search_ok": true
+    },
+    {
+      "unit_id": "thenewstack-io",
+      "kind": "source",
+      "name": "The New Stack",
+      "domain": "thenewstack.io",
+      "warnings": [
+        "https://thenewstack.io/anthropic-flashprove-model-verification/: Die Vorlage enthält einen Titel und Veröffentlichungsmetadaten vom 2026-11-04, aber keinen Artikeltext; stattdessen sind überwiegend Newsletter- und Registrierungsformulare enthalten. Diese Zugriffslücke erlaubt keinen tragfähigen Kandidaten. Ob eine Artikelschranke oder ein Extraktionsfehler vorliegt, ist nicht erkennbar.",
+        "https://thenewstack.io/render-vercel-ai-sandboxes/: Die Vorlage enthält einen Titel und Veröffentlichungsmetadaten vom 2026-11-04, aber keinen Artikeltext; stattdessen sind überwiegend Newsletter- und Registrierungsformulare enthalten. Aus dem Titel allein wird kein Kandidat abgeleitet. Ob eine Artikelschranke oder ein Extraktionsfehler vorliegt, ist nicht erkennbar.",
+        "https://thenewstack.io/anthropic-claude-message-threads/: Die Vorlage enthält einen Titel und Veröffentlichungsmetadaten vom 2026-11-03, aber keinen Artikeltext; stattdessen sind überwiegend Newsletter- und Registrierungsformulare enthalten. Aus dem Titel allein wird kein Kandidat abgeleitet. Ob eine Artikelschranke oder ein Extraktionsfehler vorliegt, ist nicht erkennbar.",
+        "Alle drei erkennbaren Veröffentlichungsdaten liegen im vorgegebenen Zeitfenster. Es wurden jedoch keine weiteren frei zugänglichen Originaltexte vorgelegt, die die Themen tragen könnten.",
+        "Zugriffslücke bei https://thenewstack.io/ai-coding-agents-security/: Der vorgelegte Text enthält Titel, Veröffentlichungsmetadaten vom 2026-11-03 und Newsletter-/Registrierungsformulare, aber keinen Artikeltext. Aus der Überschrift allein wird kein Kandidat abgeleitet; eine Login- oder Bezahlschranke ist nicht eindeutig nachweisbar.",
+        "Zugriffslücke bei https://thenewstack.io/postman-plugin-coding-agents/: Der vorgelegte Text enthält Titel, Veröffentlichungsmetadaten vom 2026-11-03 und Newsletter-/Registrierungsformulare, aber keinen Artikeltext. Aus der Überschrift allein wird kein Kandidat abgeleitet; eine Login- oder Bezahlschranke ist nicht eindeutig nachweisbar.",
+        "Für das Zeitfenster 2026-11-03 bis 2026-11-05 liegen damit keine tragenden Artikelbelege vor. Unabhängige zugängliche Originaltexte zu den beiden Themen wurden nicht mitgeliefert."
+      ],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "embracethered-com",
+      "kind": "source",
+      "name": "Embrace The Red",
+      "domain": "embracethered.com",
+      "warnings": [
+        "Indexauswahl begrenzt: 80/137 Links gesichtet"
+      ],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "importai-substack-com",
+      "kind": "source",
+      "name": "Import AI",
+      "domain": "importai.substack.com",
+      "warnings": [],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "interconnects-ai",
+      "kind": "source",
+      "name": "Interconnects",
+      "domain": "interconnects.ai",
+      "warnings": [],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "latent-space",
+      "kind": "source",
+      "name": "Latent Space",
+      "domain": "latent.space",
+      "warnings": [
+        "Verwendet wurden ausschließlich der vorgelegte Latent-Space-Artikel und sein inhaltlich weitgehend identischer RSS-Eintrag. Verlinkte Herstellerbeiträge, Papers, Medienartikel, Repositories und Modellkarten wurden nicht separat gelesen; ihre URLs werden deshalb nicht als gelesene Kandidatenquellen ausgegeben.",
+        "Als Veröffentlichungsdatum wird 2026-11-05 verwendet: Der Artikel zeigt bei der Autorenzeile „Nov 5“, der zugehörige RSS-Eintrag nennt „Thu, 05 Nov 2026 06:24:09 GMT“. „November 4, 2026“ im Untertitel und „AI News for 11/03/2026-11/04/2026“ beschreiben den Berichtszeitraum. Das RSS-lastBuildDate wurde nicht als Artikeldatum verwendet.",
+        "Beide gelieferten Texte sind abgeschnitten. Der letzte Abschnitt zu lokalen US-Abstimmungen über Rechenzentren enthält keine ausreichend konkreten Abstimmungsergebnisse; daraus wurde kein Kandidat abgeleitet. Nicht überlieferte Artikelteile konnten nicht ausgewertet werden.",
+        "Der gelieferte Artikel ist in den ausgewerteten Abschnitten substanziell lesbar; Navigationshinweise zu Anmeldung und Abonnements wurden nicht als Zugriffsschranke für diesen Text gewertet. Für die lediglich verlinkten externen Originale ist der Zugriff nicht belegt.",
+        "Berichte mit Verweisen auf The Information, Axios, The Register und die New York Times werden ausschließlich durch die substanziellen Zusammenfassungen im vorgelegten unabhängigen Artikel getragen. Eine etwaige externe Login- oder Bezahlschranke wurde weder umgangen noch als eigenständiger Artikelbeleg verwendet.",
+        "Es liegt keine arXiv-Paper-Seite mit ausgewiesenem Veröffentlichungs- oder Aktualisierungsdatum vor. Der Axion-Kandidat stützt sich deshalb auf den gelesenen Artikel und nicht auf das lediglich verlinkte Paper.",
+        "Herstellerangaben, vorläufige Forschungsbefunde und Anwenderexperimente sind in den Zusammenfassungen entsprechend eingeordnet. Die behaupteten Einsparungen und Leistungsgewinne wurden nicht unabhängig überprüft.",
+        "Die Erwähnung eines kommenden Hy4 Flash enthält keine ausreichenden Produktdetails und wurde als Teaser nicht in einen Kandidaten umgewandelt. Konferenzwerbung, wiederholte Top-Tweet-Listen, allgemeine Meinungsdebatten und reine Konfigurationsfragen wurden ebenfalls nicht als eigenständige Entwicklungen gewertet.",
+        "GPT-6.2 wird ausschließlich als unbestätigter Bericht geführt. Ripple-65B ist eine Preview, Hy4-Gewichte sind erst geplant, SWE-2-Flash-Gewichte nicht öffentlich und GPT-Live-SIP-Telefonie ausdrücklich allgemein verfügbar.",
+        "Originaltext nur teilweise im AI-Kontext: https://latent.space/p/ainews-it-s-swapping-season/",
+        "Originaltext nur teilweise im AI-Kontext: https://www.latent.space/feed"
+      ],
+      "candidates": 53,
+      "search_ok": true
+    },
+    {
+      "unit_id": "chinatalk-media",
+      "kind": "source",
+      "name": "ChinaTalk",
+      "domain": "chinatalk.media",
+      "warnings": [
+        "Indexauswahl begrenzt: 80/97 Links gesichtet"
+      ],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "artificialanalysis-ai",
+      "kind": "source",
+      "name": "Artificial Analysis",
+      "domain": "artificialanalysis.ai",
+      "warnings": [
+        "Indexauswahl begrenzt: 80/105 Links gesichtet"
+      ],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "ai-meta-com",
+      "kind": "source",
+      "name": "Meta AI",
+      "domain": "ai.meta.com",
+      "warnings": [],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "mistral-ai",
+      "kind": "source",
+      "name": "Mistral",
+      "domain": "mistral.ai",
+      "warnings": [],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "x-ai",
+      "kind": "source",
+      "name": "xAI",
+      "domain": "x.ai",
+      "warnings": [
+        "Indexauswahl begrenzt: 80/252 Links gesichtet",
+        "Für das Zeitfenster 2026-11-03 bis 2026-11-05 enthalten die vorgelegten Belege keine datierten Entwicklungen.",
+        "https://x.ai/news/ ist eine Übersichtsseite mit Artikelteasern, keine tragende Artikelquelle. Der jüngste aufgeführte Beitrag ist auf den 2. November 2026 datiert und liegt außerhalb des Zeitfensters; die verlinkten Volltexte wurden nicht vorgelegt.",
+        "https://docs.x.ai/developers/release-notes enthält als jüngsten Eintrag die Ablösung von grok-imagine-image-quality und grok-imagine-image-pro am 2. November 2026. Dieser Eintrag liegt außerhalb des Zeitfensters. Auch die ausgewiesene letzte Aktualisierung der Seite lautet „November 2, 2026“."
+      ],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "openclaw-ai",
+      "kind": "source",
+      "name": "OpenClaw Blog",
+      "domain": "openclaw.ai",
+      "warnings": [],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "shopify-engineering",
+      "kind": "source",
+      "name": "Shopify Engineering",
+      "domain": "shopify.engineering",
+      "warnings": [],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "technologyreview-com",
+      "kind": "source",
+      "name": "MIT Technology Review",
+      "domain": "technologyreview.com",
+      "warnings": [
+        "Indexauswahl begrenzt: 80/122 Links gesichtet",
+        "https://www.technologyreview.com/2026/11/04/1147596/securing-the-agentic-enterprise-with-data-lineage/ ist ein als Sponsored gekennzeichneter, mit Cyberhaven erstellter Berichtsteaser mit Download-Verweisen. Der eigentliche Bericht liegt nicht vor; daraus wurde kein Kandidat abgeleitet.",
+        "Die Forschungskandidaten verwenden das Veröffentlichungsdatum des vollständig vorgelegten Artikels. Die verlinkten arXiv-Paper-Seiten und deren Veröffentlichungs- beziehungsweise Aktualisierungsdaten liegen nicht vor; eine erstmalige Veröffentlichung der Forschungsansätze im Zeitfenster wird daher nicht behauptet.",
+        "Der im Texas-Artikel erwähnte Genehmigungsstopp vom September wurde als Hintergrund behandelt, nicht als eigenständige Entwicklung im Zeitfenster.",
+        "Verlinkte Quellen, Navigationsinhalte und verwandte Artikel wurden nicht als zusätzlich gelesene Originale verwendet."
+      ],
+      "candidates": 4,
+      "search_ok": true
+    },
+    {
+      "unit_id": "cohere-com",
+      "kind": "source",
+      "name": "Cohere",
+      "domain": "cohere.com",
+      "warnings": [
+        "Beide vorgelegten Artikel enthalten vollständige Artikeltexte und erkennbare Veröffentlichungsdaten innerhalb des Zeitfensters. Eine Login- oder Bezahlschranke ist für diese Texte nicht erkennbar.",
+        "Alle Kandidaten beruhen auf Herstellerveröffentlichungen von Cohere; Leistungs-, Datenschutz- und Sicherheitsangaben sind nicht unabhängig überprüft.",
+        "Die beschriebenen Eigenschaften von Embed 5 und Rerank 5 werden als Kontext der neuen OpenRouter-Integration behandelt, nicht als separat belegte Modellneuveröffentlichungen im Zeitfenster.",
+        "Weitere Regionen, größere Modelle für Model Vault Encrypted und dessen Verfügbarkeit in EU und Kanada sind als künftige Erweiterungen beschrieben, nicht als bereits verfügbar.",
+        "Verlinkte Navigationseinträge und Artikelteaser wurden nicht als zusätzliche Artikelbelege verwendet. Für die dort genannten weiteren Themen liegen keine gelesenen Originaltexte vor."
+      ],
+      "candidates": 4,
+      "search_ok": true
+    },
+    {
+      "unit_id": "qwen-ai",
+      "kind": "source",
+      "name": "Qwen",
+      "domain": "qwen.ai",
+      "warnings": [
+        "Indexauswahl begrenzt: 80/889 Links gesichtet"
+      ],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "aws-amazon-com",
+      "kind": "source",
+      "name": "AWS Machine Learning",
+      "domain": "aws.amazon.com",
+      "warnings": [
+        "Indexauswahl begrenzt: 80/97 Links gesichtet",
+        "Die AWS-Kategorieseite https://aws.amazon.com/cn/blogs/china/category/artificial-intelligence enthält lediglich Artikelteaser. Zu den dort auf den 3. November 2026 datierten Themen Quick-MCP/AgentCore-Sicherheit, GPU-Sharing auf EKS und AgentCore Memory liegen keine Artikelvolltexte vor; daraus wurden keine Kandidaten abgeleitet. Die Listendaten wurden nicht als Artikeldaten verwendet.",
+        "Der Artikel https://aws.amazon.com/blogs/machine-learning/safely-releasing-frontier-models-to-customers/ trägt das Veröffentlichungsdatum 30. Juni 2026 und liegt außerhalb des Zeitfensters vom 3. bis 5. November 2026.",
+        "Der vorgelegte Text zu AgentCore Evaluations ist abgeschnitten. Die Kandidaten beruhen ausschließlich auf dem enthaltenen Artikeltext; die verlinkten Modellankündigungen und weitere Implementierungsschritte wurden nicht gelesen.",
+        "Die beiden Integrationen werden in einem technischen Tutorial beschrieben. Der Beleg weist weder einen neuen Modellstart noch einen Preview-, Beta- oder GA-Übergang aus; Aussagen zu Eignung und Modellfähigkeiten stammen von AWS.",
+        "Alle drei vorgelegten Originaltexte sind abgeschnitten. Die Kandidaten beruhen ausschließlich auf den enthaltenen Artikelpassagen; verlinkte Dokumentationen, Forschungsarbeiten und weitere Serienteile wurden nicht als gelesene Belege verwendet.",
+        "Sämtliche tragenden Belege stammen von AWS. Funktions-, Sicherheits- und Effizienzaussagen sind Herstellerangaben und wurden nicht unabhängig bestätigt.",
+        "Die Artikel belegen die Veröffentlichung der jeweiligen Funktionsbeschreibung beziehungsweise technischen Anleitung im Zeitfenster, aber keinen erstmaligen Produktstart oder ausdrücklich ausgewiesenen Preview-, Beta- oder GA-Termin. Entsprechend werden keine solchen Verfügbarkeitsmeilensteine behauptet.",
+        "Die beschriebenen Kontroll-, Protokollierungs- und Kontextmanagementdetails wurden als Bestandteile der jeweiligen Entwicklung zusammengefasst, nicht als separate Produkteinführungen gezählt.",
+        "Das einzige vorgelegte Original ist als gekürzt markiert und endet innerhalb der Beschreibung des Beispielanwendungsfalls. Nicht enthaltene Artikelabschnitte konnten nicht ausgewertet werden.",
+        "Der vorliegende Text beschreibt eine Referenzintegration, keinen belegten Produktstart oder Wechsel zwischen Preview, Beta und allgemeiner Verfügbarkeit. Technische Aussagen stammen aus dem Herstellerbeitrag; unabhängige Belege wurden nicht vorgelegt.",
+        "Originaltext nur teilweise im AI-Kontext: https://aws.amazon.com/blogs/machine-learning/safely-releasing-frontier-models-to-customers/",
+        "Originaltext nur teilweise im AI-Kontext: https://aws.amazon.com/blogs/machine-learning/use-decision-models-with-amazon-bedrock-agentcore-evaluations/",
+        "Originaltext nur teilweise im AI-Kontext: https://aws.amazon.com/blogs/machine-learning/smart-approvals-in-amazon-quick-human-oversight-where-it-matters/",
+        "Originaltext nur teilweise im AI-Kontext: https://aws.amazon.com/blogs/machine-learning/four-layers-of-context-engineering-for-production-ai-agents-how-deep-insight-applies-them-in-working-code/",
+        "Originaltext nur teilweise im AI-Kontext: https://aws.amazon.com/blogs/machine-learning/servicenow-on-behalf-of-token-exchange-with-bedrock-agentcore-gateway/",
+        "Originaltext nur teilweise im AI-Kontext: https://aws.amazon.com/blogs/machine-learning/build-a-semantic-layer-for-agentic-ai-with-edb-postgres-ai-and-amazon-bedrock-agentcore/"
+      ],
+      "candidates": 6,
+      "search_ok": true
+    },
+    {
+      "unit_id": "deepmind-google",
+      "kind": "source",
+      "name": "Google DeepMind",
+      "domain": "deepmind.google",
+      "warnings": [],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "research-google",
+      "kind": "source",
+      "name": "Google Research",
+      "domain": "research.google",
+      "warnings": [
+        "https://research.google/blog/agile-deliberation-how-ai-helps-humans-define-the-gray-areas/: Der vorgelegte Auszug ist abgeschnitten und enthält nur den Titel sowie Seitennavigation, keinen tragenden Artikeltext und kein erkennbares Veröffentlichungsdatum. Daraus lässt sich keine konkrete Entwicklung im Zeitfenster 2026-11-03 bis 2026-11-05 belegen.",
+        "https://research.google/blog/bringing-foundational-models-to-the-front-lines-of-tb-screening/: Der vorgelegte Auszug ist abgeschnitten und enthält nur den Titel sowie Seitennavigation, keinen tragenden Artikeltext und kein erkennbares Veröffentlichungsdatum. Daraus lässt sich keine konkrete Entwicklung im angegebenen Zeitfenster belegen.",
+        "Originaltext nur teilweise im AI-Kontext: https://research.google/blog/agile-deliberation-how-ai-helps-humans-define-the-gray-areas/",
+        "Originaltext nur teilweise im AI-Kontext: https://research.google/blog/bringing-foundational-models-to-the-front-lines-of-tb-screening/"
+      ],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "nist-gov",
+      "kind": "source",
+      "name": "NIST AI",
+      "domain": "nist.gov",
+      "warnings": [
+        "Indexauswahl begrenzt: 80/140 Links gesichtet"
+      ],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "discovery-0",
+      "kind": "discovery",
+      "name": "AI News",
+      "domain": null,
+      "warnings": [
+        "Die drei vorgelegten Seiten sind Release-Indizes beziehungsweise Nachrichtenaggregatoren. Sie enthalten Kurzfassungen und Verweise, aber keine tragenden Originalartikel zu den einzelnen Entwicklungen. Aus diesen Teasern wurden keine Kandidaten abgeleitet.",
+        "https://ai-tldr.dev/release-index: Die verlinkten Release-Artikel und Primärquellen liegen nicht als gelesene Texte vor. Die Datumsangaben der Indexeinträge wurden nicht als Veröffentlichungsdaten der Originalartikel übernommen.",
+        "https://aitoolly.com/ai-news: Es liegen nur die Nachrichtenübersicht und darin enthaltene Zusammenfassungen vor, nicht die verlinkten Analysen oder Originalquellen. Der gelieferte Text ist zudem stark gekürzt; ausgelassene Inhalte konnten nicht ausgewertet werden.",
+        "https://aienews.org/news.html: Die Seite enthält überwiegend Überschriften, RSS-Kurztexte und relative Zeitangaben. Der Metadaten-Zeitstempel der Übersichtsseite belegt kein Veröffentlichungsdatum der verlinkten Artikel. Auch dieser Text ist gekürzt.",
+        "Für das Zeitfenster 2026-11-03 bis 2026-11-05 fehlt damit eine ausreichende Originalartikelbasis. Ob einzelne verlinkte Quellen eine Login- oder Bezahlschranke aufweisen, lässt sich aus dem vorgelegten Material nicht feststellen.",
+        "Originaltext nur teilweise im AI-Kontext: https://aitoolly.com/ai-news",
+        "Originaltext nur teilweise im AI-Kontext: https://aienews.org/news.html"
+      ],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "discovery-1",
+      "kind": "discovery",
+      "name": "Lokale LLMs",
+      "domain": null,
+      "warnings": [],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "discovery-2",
+      "kind": "discovery",
+      "name": "Agentic Engineering / Vibe Coding",
+      "domain": null,
+      "warnings": [],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "discovery-3",
+      "kind": "discovery",
+      "name": "AI Tools",
+      "domain": null,
+      "warnings": [
+        "Der vorgelegte PR-Newswire-Auszug zu Leidos HeadWay Dispatch ist vor dem eigentlichen Meldungstext abgeschnitten und enthält lediglich Titel, Datumsmetadaten und Navigation. Daraus wurde kein Kandidat abgeleitet.",
+        "Der Google-Cloud-Beitrag trägt sichtbar das Datum 3. November 2026, ist aber ein fortlaufend aktualisierter Monatsrückblick mit älteren Erstveröffentlichungsmetadaten. Für die Kandidaten wurde das sichtbare Artikeldatum verwendet.",
+        "Die sechs Google-Entwicklungen werden im aktuellen Abschnitt ausdrücklich als Oktober-Rückblick dargestellt. Ihr jeweiliger ursprünglicher Ankündigungstag ist aus den vorgelegten Texten nicht feststellbar; das Kandidatendatum bezeichnet die Veröffentlichung des Rückblicks, nicht einen belegten Produktstart im November.",
+        "Ältere Monatsabschnitte des Google-Rückblicks wurden nicht als aktuelle Entwicklungen übernommen. Verlinkte Einzelartikel wurden nicht gelesen; kurze Verweise auf Anleitungen und Meinungsbeiträge wurden nicht als eigenständige Produktentwicklungen gewertet.",
+        "Honeycombs Angaben beschreiben eine Preview beziehungsweise angekündigte Funktionen. Die für den 1. Dezember angekündigte allgemeine Verfügbarkeit wurde nicht als bereits erfolgt eingeordnet.",
+        "Die tragenden Quellen sind Herstellerveröffentlichungen; unabhängige Bestätigungen liegen nicht vor.",
+        "Originaltext nur teilweise im AI-Kontext: https://www.prnewswire.com/news-releases/leidos-introduces-headway-dispatch-for-ai-agent-oversight-302928964.html",
+        "Originaltext nur teilweise im AI-Kontext: https://cloud.google.com/blog/products/ai-machine-learning/what-google-cloud-announced-in-ai-this-month"
+      ],
+      "candidates": 8,
+      "search_ok": true
+    },
+    {
+      "unit_id": "discovery-4",
+      "kind": "discovery",
+      "name": "Context Engineering",
+      "domain": null,
+      "warnings": [
+        "Die vorgelegte PR-Newswire-Seite zu PhoenixAI Contextbase ist abgeschnitten und enthält nur Titel, Metadaten sowie Navigation, aber keinen tragenden Artikeltext. Daraus wurde kein Kandidat abgeleitet. Betroffene URL: https://www.prnewswire.com/news-releases/phoenixai-launches-contextbase-the-context-infrastructure-for-ai-agents-302929251.html",
+        "Alle Kandidaten beruhen auf den vorgelegten Herstellerartikeln von Snowflake beziehungsweise Kong. Funktions-, Leistungs-, Kosten- und Sicherheitsangaben sind Herstellerbehauptungen und wurden nicht unabhängig überprüft.",
+        "Als Veröffentlichungsdaten wurden die sichtbaren Artikeldaten 2026-11-03 für Snowflake und 2026-11-04 für Kong verwendet. Verlinkte Detailartikel, Dokumentationen und Marketplace-Angebote wurden nicht als gelesene Originale behandelt.",
+        "Public Preview und Private Preview sind als preview klassifiziert; erst bevorstehende Preview- oder GA-Verfügbarkeit ist als announcement erfasst. Wo der Originaltext keinen eigenen Verfügbarkeitsstatus nennt, wurde keiner ergänzt.",
+        "Snowflake weist darauf hin, dass Aussagen über künftige Angebote keine Lieferzusage darstellen.",
+        "Allgemeine Plattformbeschreibungen, wiederholte Ankündigungen und FAQ-Wiederholungen wurden nicht als zusätzliche Entwicklungen gezählt. Die im Kong-Artikel eingeblendeten Empfehlungen älterer Artikel liegen außerhalb des Zeitfensters und wurden nicht aufgenommen.",
+        "Originaltext nur teilweise im AI-Kontext: https://www.prnewswire.com/news-releases/phoenixai-launches-contextbase-the-context-infrastructure-for-ai-agents-302929251.html"
+      ],
+      "candidates": 45,
+      "search_ok": true
+    },
+    {
+      "unit_id": "discovery-5",
+      "kind": "discovery",
+      "name": "AI Security",
+      "domain": null,
+      "warnings": [
+        "Original nicht lesbar: https://gate.com/news/detail/NTES/netease-yidun-releases-a-three-layer-ai-security-architecture-cutting-cma-25418962",
+        "Die vorgelegte Fassung von https://crowdstrike.com/en-us/press-releases/crowdstrike-delivers-ai-security-safety-for-the-enterprise ist abgeschnitten und enthält lediglich Seitentitel, Metadaten sowie überwiegend Navigation und Produktverweise. Der eigentliche Text der Pressemitteilung fehlt; daraus lassen sich keine hinreichend belegten einzelnen Entwicklungen ableiten.",
+        "Als Datumsangabe liegt nur „og:updated_time: 2026-11-03T06:09:28“ vor. Ein Veröffentlichungsdatum des Artikels ist im gelieferten Text nicht erkennbar; die Einordnung in das Zeitfenster 2026-11-03 bis 2026-11-05 ist daher nicht ausreichend belegt.",
+        "Die Produktbeschreibungen in der Navigation wurden nicht als neue Ankündigungen oder Verfügbarkeitsmeldungen gewertet. Weitere tragende Originalbelege wurden nicht vorgelegt.",
+        "Originaltext nur teilweise im AI-Kontext: https://crowdstrike.com/en-us/press-releases/crowdstrike-delivers-ai-security-safety-for-the-enterprise"
+      ],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "discovery-6",
+      "kind": "discovery",
+      "name": "AI Governance",
+      "domain": null,
+      "warnings": [
+        "Als Beleg liegt ausschließlich eine Hersteller-Pressemitteilung vor; Funktions- und Wirksamkeitsangaben sind nicht unabhängig bestätigt.",
+        "Der bereitgestellte Artikeltext endet trotz der Kennzeichnung „truncated: false“ mitten im Satz. Die Auswertung berücksichtigt ausschließlich die vollständig lesbaren Angaben."
+      ],
+      "candidates": 1,
+      "search_ok": true
+    },
+    {
+      "unit_id": "discovery-7",
+      "kind": "discovery",
+      "name": "Enterprise",
+      "domain": null,
+      "warnings": [
+        "Beide vorgelegten Originale sind Hersteller-Pressemitteilungen; Aussagen zu Funktionen und Schutzwirkung sind nicht unabhängig bestätigt.",
+        "Die Abnormal-Mitteilung liegt im Veröffentlichungszeitfenster. Der darin genannte Beginn der eigenständigen Verfügbarkeit am 30. Oktober 2026 liegt davor und ist in der Zusammenfassung ausdrücklich ausgewiesen.",
+        "Der vorgelegte CrowdStrike-Text endet mitten im Satz, obwohl er als nicht gekürzt markiert ist. Die Integration ist im enthaltenen Haupttext beschrieben; weitergehende Verfügbarkeitsangaben lassen sich daraus nicht ableiten."
+      ],
+      "candidates": 2,
+      "search_ok": true
+    },
+    {
+      "unit_id": "optional-semianalysis",
+      "kind": "optional",
+      "name": "SemiAnalysis",
+      "domain": "semianalysis.com",
+      "warnings": [],
+      "candidates": 0,
+      "search_ok": true
+    }
+  ],
+  "selected_count": 137,
+  "held_count": 10,
+  "decisions": [
+    {
+      "id": "d934ab59a9607d2e3de001c3",
+      "decision": "selected",
+      "reason": "Der dokumentierte Kimi-Test ist ein eigener Modellbefund neben dem historischen Qwen-Versuch und den vergleichend vorgelegten Arbeiten zur Gewichtsänderung. Seine Aussagekraft bleibt auf einen erfolgreichen Breakout-Test begrenzt.",
+      "item": {
+        "title": "Kimi K3.1 Pro erkennt Breakout aus Netzwerkgewichten über OpenRouter",
+        "summary": "Simon Willison berichtet über einen werkzeuglosen Test, bei dem er Kimi K3.1 Pro über OpenRouter Netzwerkgewichte als Prompt vorlegte. Das Modell erkannte laut seinem Bericht Breakout nach 9 Minuten und 41 Sekunden sowie 19.493 Reasoning-Tokens. Weitere Kimi-Spieltests dokumentiert der Artikel nicht.",
+        "category": "modelle",
+        "impact": 2,
+        "date": "2026-11-03",
+        "change_type": "research"
+      }
+    },
+    {
+      "id": "eb15a54d4ece4a211f3ae1ff",
+      "decision": "selected",
+      "reason": "Die API-Verfügbarkeit beider Bildmodelle ist konkret belegt. Gegenüber dem themengleichen Vergleichskandidaten f550877fa6b589c2134f16b0 enthält dieser Eintrag den ausdrücklichen Verfügbarkeitsnachweis.",
+      "item": {
+        "title": "GPT-Image-2.6 Flare und GPT-Image-2.6 Sunburst sind über die API verfügbar",
+        "summary": "Laut TestingCatalog sind OpenAIs GPT-Image-2.6 Flare und Sunburst jetzt über die API verfügbar. Flare soll nach Herstellerangaben auf Geschwindigkeit und professionelle Layouts zielen und bei niedriger Qualität Bilder in nur sechs Sekunden erzeugen können. Sunburst ist laut Hersteller auf mehr Details und konsistentere Bearbeitungen bei mittlerer oder hoher Qualität ausgelegt.",
+        "category": "modelle",
+        "impact": 4,
+        "date": "2026-11-05",
+        "change_type": "general_availability"
+      }
+    },
+    {
+      "id": "cf0ce6a503e46d952dc198c6",
+      "decision": "selected",
+      "reason": "Das veröffentlichte Whitepaper beschreibt einen eigenständigen Evaluationsrahmen für Gesundheits-KI; ein entsprechender historischer Eintrag liegt nicht vor.",
+      "item": {
+        "title": "Google for Health veröffentlicht Evaluationsrahmen für Gesundheits-KI",
+        "summary": "Google hat nach eigenen Angaben gemeinsam mit Elizabeth McGlynn und Dana Gelb Safran einen Evaluationsrahmen für Genauigkeit, Sicherheit und Nützlichkeit von Gesundheits-KI veröffentlicht. Er kombiniert Benchmarks mit geschlossenen Fragen, automatisierte Bewertungen und menschliche Expertenprüfung für häufige sowie risikoreiche Gesundheitsszenarien. Google zufolge wird der Ansatz bereits zur Bewertung eigener Modelle eingesetzt.",
+        "category": "modelle",
+        "impact": 3,
+        "date": "2026-11-04",
+        "change_type": "research"
+      }
+    },
+    {
+      "id": "af68b0080f231f5dd6651584",
+      "decision": "selected",
+      "reason": "Die neue Forschungsarbeit verbindet Modell- und Policy-Routing mit einer umfangreichen Evaluation. Sie ist von den historischen OpenRouter-Routing-Benchmarks und Routing-Produktupdates abzugrenzen.",
+      "item": {
+        "title": "Route Anything untersucht kostenbewusstes Routing zwischen Modellen und Policies",
+        "summary": "Route Anything stellt ein einheitliches Framework für die dynamische Auswahl von Modellen und Policies vor und umfasst 374.401 bewertete Durchläufe, 452 Kandidatenkonfigurationen und 25 Benchmarks. Die Autoren berichten, dass gelernte Router den jeweils besten festen Kandidaten über 16 Benchmarks um 0,3 Punkte übertreffen. Für Robotermanipulation nennen sie 1,1 Punkte mehr bei 24 Prozent weniger Policy-Ausführungszeit.",
+        "category": "modelle",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "research"
+      }
+    },
+    {
+      "id": "71f8aa78161d90ddc5d90a1a",
+      "decision": "selected",
+      "reason": "Die berichtete Patentanmeldung ist eine konkrete neue Entwicklung zur KI-Bearbeitung von Liveübertragungen. Sie wird ausdrücklich nicht als verfügbare Produktfunktion behandelt.",
+      "item": {
+        "title": "Microsoft beantragt Patent für KI-veränderte Sprache und Lippenbewegungen in Liveübertragungen",
+        "summary": "Computerworld berichtet über eine Microsoft-Patentanmeldung für ein KI-Verfahren, das Wörter in Liveübertragungen entfernen oder ersetzen und die Mundbewegungen an den veränderten Ton anpassen soll. Microsoft nennt als mögliche Anwendungen Übersetzungen, die Korrektur von Versprechern und zuschauerspezifische Sprachfilter. Ob und wann daraus ein Produkt wird, ist laut Artikel offen.",
+        "category": "tools",
+        "impact": 3,
+        "date": "2026-11-04",
+        "change_type": "other"
+      }
+    },
+    {
+      "id": "c712efc2079e96c0a4c014ae",
+      "decision": "duplicate",
+      "reason": "Die erfolgreiche Gemma-4-Inferenz auf dem Suncatcher-Prototyp und die noch bevorstehenden Belastungstests wurden bereits berichtet. Der spätere Computerworld-Bericht belegt keinen weiteren abgeschlossenen Betriebsmeilenstein.",
+      "duplicate_of": "h-2cfbc095214da94a995d2b57"
+    },
+    {
+      "id": "59a1170308548bcc918849f3",
+      "decision": "selected",
+      "reason": "Hy4 ist eine eigenständige Modellvorstellung mit Bildverarbeitung, Computerbedienung und konkreten API-Preisen. Die historische Hy-Memory-Veröffentlichung betrifft ein anderes Modell und einen anderen Einsatzzweck.",
+      "item": {
+        "title": "Tencent stellt Hy4 mit Bildverarbeitung und CLI- sowie GUI-Computerbedienung vor",
+        "summary": "Tencent stellt Hy4 laut Artikel mit nativer Bildverarbeitung, CLI- und GUI-Computerbedienung sowie Training für Spieleentwicklung und Office-Dateien vor. Der Bericht nennt API-Preise von 0,834 beziehungsweise 2,501 US-Dollar pro Million Eingabe- und Ausgabetokens; eine Veröffentlichung der Gewichte ist erst geplant. Die referierte Vals-Auswertung verzeichnet neben guten Platzierungen auch fehlerhafte Werkzeugaufrufe und Zeitüberschreitungen.",
+        "category": "modelle",
+        "impact": 4,
+        "date": "2026-11-05",
+        "change_type": "announcement"
+      }
+    },
+    {
+      "id": "726491f75d2c7119c6baa67e",
+      "decision": "selected",
+      "reason": "Die Zuordnung nachtrainierten Verhaltens zu einzelnen SFT-Datensätzen ist ein eigenständiger Forschungsansatz, nicht dieselbe Entwicklung wie die vergleichend vorgelegten Gewichtseingriffe zur Verhaltensänderung.",
+      "item": {
+        "title": "OpenAI beschreibt Verhaltenszuordnung über SFT-Gewichtsdifferenzen",
+        "summary": "Latent Space referiert eine OpenAI-Behauptung, nach der sich bestimmte Verhaltensweisen nach Reinforcement Learning auf einzelne SFT-Datensätze zurückführen lassen. Dazu werden die dem jeweiligen Datensatz zugerechneten Gewichtsdifferenzen subtrahiert. Eine unabhängige Validierung der Methode enthält der vorgelegte Text nicht.",
+        "category": "modelle",
+        "impact": 3,
+        "date": "2026-11-05",
+        "change_type": "research"
+      }
+    },
+    {
+      "id": "02e1a7928bbfcb9dd58e4daa",
+      "decision": "selected",
+      "reason": "Der Benchmark liefert eine eigenständige Evaluation von Modellen als Teammitglieder mit konkret genanntem Testumfang und Ergebnissen; die gemeinsame Artikel-URL begründet kein Duplikat.",
+      "item": {
+        "title": "Collaborative Intelligence Benchmark testet 18 Modelle als Teammitglieder",
+        "summary": "Der Collaborative Intelligence Benchmark hat laut Artikel 18 Modelle als Teammitglieder auf 240 Aufgaben getestet. Der höchste Wert liegt bei 82,2 von 100 Punkten. Die referierte Auswertung berichtet von seltenem Schummeln, aber häufigem Nachgeben bei Widerspruch.",
+        "category": "modelle",
+        "impact": 3,
+        "date": "2026-11-05",
+        "change_type": "research"
+      }
+    },
+    {
+      "id": "8475b0ed7b87962818fd00b7",
+      "decision": "below_threshold",
+      "reason": "Der vorgelegte Abschnitt nennt zwar die Prüfung von 15 OCR-Benchmarks, liefert aber nur die pauschale Bewertung von olmOCR-bench als zu dünn besetzt. Methodik und weitere konkrete Befunde fehlen für eine ausreichend substanzielle eigenständige Meldung; ein Duplikat der historischen OmniParseBench-Veröffentlichung ist damit nicht belegt."
+    },
+    {
+      "id": "6cf2ba7efd7719d66be2d1a4",
+      "decision": "selected",
+      "reason": "Konkrete methodische Änderung am Modellvergleich: benchmarkspezifische Unsicherheit und probabilistische Direktvergleiche; in der Historie nicht enthalten.",
+      "item": {
+        "title": "Epoch Capabilities Index (ECI) wechselt auf bayesianische Berechnung",
+        "summary": "Epoch hat laut Latent Space die Berechnung seines Capabilities Index auf ein bayesianisches Modell mit eigenen Rauschtermen je Benchmark umgestellt. Die Werte führender Modelle änderten sich dem Bericht zufolge im Mittel um weniger als einen Punkt. Das Verfahren liefert außerdem Wahrscheinlichkeiten für direkte Modellvergleiche.",
+        "category": "modelle",
+        "impact": 3,
+        "date": "2026-11-05",
+        "change_type": "update"
+      }
+    },
+    {
+      "id": "687ac839b91187ae9527b282",
+      "decision": "selected",
+      "reason": "Neue fachbezogene Evaluation mit deutlichem Unterschied zwischen jüngsten Rechtsänderungen und etabliertem Recht; kein entsprechender historischer Eintrag.",
+      "item": {
+        "title": "Immigration Bench: Vals-Auswertung zeigt Wissenslücken bei jüngsten Rechtsänderungen",
+        "summary": "Führende Modelle erfüllen laut der von Latent Space referierten Vals-Auswertung bei Änderungen im Einwanderungsrecht aus 2025 und 2026 nur 7,3 Prozent der Expertenkriterien. Bei etabliertem Recht erreichen sie dagegen 64,0 Prozent. Die Ergebnisse gelten für die untersuchte Fachdomäne und sind kein allgemeiner Zuverlässigkeitswert.",
+        "category": "modelle",
+        "impact": 3,
+        "date": "2026-11-05",
+        "change_type": "research"
+      }
+    },
+    {
+      "id": "dc3a020d501c1ed862b0283e",
+      "decision": "duplicate",
+      "reason": "Dieselben Weight-Space-Programming-Versuche mit GPT-6 Astra, direkten Qwen-Gewichtsänderungen und dem MATH-500-Anstieg von 7,9 auf 48,1 Prozent wurden bereits berichtet. Die zusätzliche Erwähnung der Breakout-Policy und der Aufgabenauswahl belegt keinen neuen Forschungsschritt.",
+      "duplicate_of": "h-68f8105e3bea396ba99834a9"
+    },
+    {
+      "id": "e8f3b7a33c604bd78509cc15",
+      "decision": "selected",
+      "reason": "Eigenständiges Honing-Experiment an NanoJev mit konkretem Vergleichsergebnis; weder mit den historischen Qwen-Versuchen noch mit dem MIT-Forschungsbericht identisch.",
+      "item": {
+        "title": "Honing-Experiment: 1.024 Gewichtseingriffe verändern NanoJev-Spielstärke",
+        "summary": "Latent Space referiert ein Honing-Experiment, bei dem gezielt 1.024 Gewichte von NanoJev verändert wurden. Die bearbeitete Variante gewann demnach direkte Vergleichsspiele mit 65 zu 34. Angaben zur Übertragbarkeit des Ergebnisses liegen im vorgelegten Abschnitt nicht vor.",
+        "category": "modelle",
+        "impact": 2,
+        "date": "2026-11-05",
+        "change_type": "research"
+      }
+    },
+    {
+      "id": "0a3b56090a6113ae55868fff",
+      "decision": "selected",
+      "reason": "Neue Pipeline zur Erzeugung von Nachtrainingsumgebungen samt konkreter Autoren-Evaluation; keine entsprechende Entwicklung in der Historie.",
+      "item": {
+        "title": "RSI-Craft erzeugt 281 Trainingsumgebungen für RSI-Dojo-35B-A3B",
+        "summary": "RSI-Craft wandelt laut Latent Space Forschungspapiere in 281 Umgebungen für Modellnachtraining um. RSI-Dojo-35B-A3B verbessert sich in der referierten Auswertung auf PostTrainBench um 16,87 Punkte auf 29,95. Die Autoren bezeichnen das Ergebnis als vergleichbar mit GLM-5.2 und GPT-5.5; dies ist ihre eigene Bewertung.",
+        "category": "modelle",
+        "impact": 3,
+        "date": "2026-11-05",
+        "change_type": "research"
+      }
+    },
+    {
+      "id": "a47cbe9a6dc639251696c77a",
+      "decision": "selected",
+      "reason": "Eigenständige Veröffentlichung einer umfangreichen Lean-Formalisierung durch einen menschlich geleiteten Agentenschwarm; andere historische Formalisierungsprojekte sind keine Duplikate.",
+      "item": {
+        "title": "Axiom veröffentlicht Lean-Formalisierung des Stacks Project mit 16 Millionen Zeilen",
+        "summary": "Axiom hat laut Latent Space eine Formalisierung des vollständigen Stacks Project in Lean veröffentlicht. Nach den referierten Projektangaben umfasst sie 16 Millionen Zeilen und wurde von einem menschlich geleiteten Agentenschwarm erstellt. Die Querverweise des Ausgangsprojekts seien erhalten geblieben.",
+        "category": "agents",
+        "impact": 4,
+        "date": "2026-11-05",
+        "change_type": "research"
+      }
+    },
+    {
+      "id": "841f604a7e5b280e969865fd",
+      "decision": "selected",
+      "reason": "Neue, konkret beschriebene Forschungsanwendung von Claude bei der Strukturaufklärung; nicht identisch mit den bisherigen Lebenswissenschafts-Kooperationen.",
+      "item": {
+        "title": "Anthropic berichtet über Claude-Hilfe bei der 3D-Struktur eines bakteriellen Vault-Partikels",
+        "summary": "Anthropic berichtet, Claude habe bei der Bestimmung der ersten dreidimensionalen Struktur eines bakteriellen Vault-Partikels geholfen. Die Arbeit sei in Tagen statt Wochen oder Monaten erfolgt; diese Zeitersparnis ist eine Herstellerangabe. Anthropic nennt zugleich einfache Modellfehler, die korrigiert werden mussten.",
+        "category": "tools",
+        "impact": 3,
+        "date": "2026-11-05",
+        "change_type": "research"
+      }
+    },
+    {
+      "id": "10f517700282bba44eb0cd73",
+      "decision": "selected",
+      "reason": "Neue Untersuchung zum Verhältnis von gemessenem Modellnutzen, Energieverbrauch und Hardware-Skalierung mit konkreten, begrenzten Vergleichswerten.",
+      "item": {
+        "title": "Joules-to-GDP vergleicht Energieeffizienz von Gemma 4 31B und GLM 5.2",
+        "summary": "Gemma 4 31B liefert laut der von Latent Space referierten Joules-to-GDP-Untersuchung bei 23 Prozent des Energieverbrauchs 56 Prozent des gemessenen Werts von GLM 5.2. Der Wechsel von einer auf acht H100-GPUs erhöhe den Energiebedarf um den Faktor 3,2 bei 22 Prozent Geschwindigkeitsgewinn. Die Werte gelten für die verwendete Bewertung und Konfiguration.",
+        "category": "modelle",
+        "impact": 3,
+        "date": "2026-11-05",
+        "change_type": "research"
+      }
+    },
+    {
+      "id": "f550877fa6b589c2134f16b0",
+      "decision": "duplicate",
+      "reason": "Beschreibt dieselbe API-Einführung von Flare und Sunburst wie der Vergleichskandidat. Ein davon getrennter Ankündigungsmeilenstein ist nicht belegt; unterschiedliche URLs und Change-Type-Labels machen daraus keine eigene Entwicklung.",
+      "duplicate_of": "eb15a54d4ece4a211f3ae1ff"
+    },
+    {
+      "id": "4ac441c2044403ec8b9b6e59",
+      "decision": "held",
+      "reason": "Der mögliche Start von GPT-6.2 Sol und Astra ist ausdrücklich unbestätigt und verschiebbar. Die referierte Nennung auf einer Kontingentseite belegt weder eine offizielle Ankündigung noch Verfügbarkeit; eine bestätigte Entwicklung bleibt abzuwarten."
+    },
+    {
+      "id": "919cf5eae9cdb385b01dcb21",
+      "decision": "held",
+      "reason": "Der Oktober-Rückblick meldet Gemini 4 Argon auf Google Cloud, belegt aber keinen eigenständigen neuen Freigabeschritt gegenüber der historisch erfassten breiten API-Verfügbarkeit vom 13. Oktober (h-4079ed663f5b27204ab467de). Ob hier eine zusätzliche Cloud-Integration oder nur ein Rückblick vorliegt, bleibt unklar."
+    },
+    {
+      "id": "93fee54f02dfe48b6eb864e0",
+      "decision": "held",
+      "reason": "Die private Preview von OpenAI-Modellen in Google Cloud ist bereits unter h-a8244be51b05a16e58f20f45 erfasst. Der vorgelegte Oktober-Rückblick nennt keinen eindeutigen Wechsel zu einer öffentlichen Preview oder allgemeinen Verfügbarkeit; ein neuer Integrationsschritt lässt sich deshalb nicht sicher abgrenzen."
+    },
+    {
+      "id": "6e3acc09fcc0729d0d59f862",
+      "decision": "selected",
+      "reason": "Die gemeldete Google-Cloud-Verfügbarkeit von Gemini Robotics Embodied Reasoning 2 ist ein eigenständiger Plattformschritt ohne Entsprechung in der vorgelegten Historie oder den Vergleichskandidaten.",
+      "item": {
+        "title": "Google meldet Gemini Robotics Embodied Reasoning 2 auf Google Cloud als verfügbar",
+        "summary": "Google berichtet in seinem Oktober-Rückblick über die Verfügbarkeit von Gemini Robotics Embodied Reasoning 2 auf Google Cloud. Laut Hersteller lässt sich das Robotikmodell dort mit Sicherheitsfunktionen, Multi-Agenten-Orchestrierung und Lebenszyklusmanagement für Simulation, Evaluation und Bereitstellung verbinden.",
+        "category": "modelle",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "integration"
+      }
+    },
+    {
+      "id": "dcbbafcff99a014b7787b1c2",
+      "decision": "selected",
+      "reason": "Die Ankündigung eines neuen Embedding-Modells mit konkreten Herstellerangaben zur Retrieval-Qualität ist relevant und bislang nicht erfasst. Die allgemeine Verfügbarkeit wird ausdrücklich noch nicht als erfolgt dargestellt.",
+      "item": {
+        "title": "Snowflake kündigt Arctic Embed 3S als Nachfolger von Arctic Embed L-v2.0 an",
+        "summary": "Snowflake kündigt Arctic Embed 3S an; die allgemeine Verfügbarkeit steht laut Hersteller noch bevor. Gegenüber Arctic Embed L-v2.0 nennt Snowflake bei gleicher kompakter Größenklasse Verbesserungen der Retrieval-Qualität um 3 Prozent für Englisch, 6 Prozent für mehrsprachige Suche und 23 Prozent für strukturierte Tabellen und Spalten.",
+        "category": "modelle",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "announcement"
+      }
+    },
+    {
+      "id": "a992208a89a5c013ce5d0471",
+      "decision": "selected",
+      "reason": "Die Public Preview von Snowflake Cortex Training eröffnet einen konkret beschriebenen Weg für Post-Training und Deployment von Open-Weight-Modellen. Dieser eigenständige Produktmeilenstein ist in den vorgelegten Vergleichseinträgen nicht enthalten.",
+      "item": {
+        "title": "Snowflake Cortex Training startet als Public Preview für Open-Weight-Modelle",
+        "summary": "Snowflake weist Cortex Training als Public Preview für die Anpassung und Bereitstellung von Open-Weight-Modellen auf vollständig verwalteten GPUs aus, darunter Qwen, DeepSeek, Mistral und Gemma. Der Hersteller nennt bis zu 61 Prozent niedrigere Kosten als konkurrierende serverlose Angebote; die angeführte Vergleichsmethode basiert auf LoRA-SFT-Workloads.",
+        "category": "modelle",
+        "impact": 4,
+        "date": "2026-11-03",
+        "change_type": "preview"
+      }
+    },
+    {
+      "id": "00264d74574213a220b3e803",
+      "decision": "duplicate",
+      "reason": "Derselbe lokale Versuch von Simon Willison ist bereits erfasst, einschließlich der Erkennung eines Spielnetzes und des Scheiterns an Freeway. Die zusätzlichen Spiele und Laufzeiten sind ergänzende Details, kein belegter neuer Entwicklungsschritt.",
+      "duplicate_of": "h-7bf7978374955946ceca9bcd"
+    },
+    {
+      "id": "9586221e170bb88eca3c2333",
+      "decision": "selected",
+      "reason": "Neue Open-Weight-Preview mit konkreten Downloadformaten, Lizenzbedingungen und API-Zugang; in der Historie noch nicht erfasst.",
+      "item": {
+        "title": "Ricursive Intelligence veröffentlicht Ripple-65B Preview unter Apache 2.0",
+        "summary": "Laut VentureBeat ist Ripple-65B Preview mit 65 Milliarden Parametern auf Hugging Face als BF16-Basismodell sowie mit BF16- und NVFP4-Instruct-Gewichten verfügbar. Ricursives beanspruchte Coding-Führung beruht auf ausgewählten US-Vergleichsmodellen; der Bericht dokumentiert widersprüchliche Vergleichswerte und Einschränkungen der Vergleichbarkeit. Der beschriebene OpenRouter-Zugang über GMICloud unterstützt nur 16.384 Kontexttokens statt der vom Hersteller beworbenen Million.",
+        "category": "modelle",
+        "impact": 4,
+        "date": "2026-11-04",
+        "change_type": "preview"
+      }
+    },
+    {
+      "id": "7c0563c9c1b73444ef81c0df",
+      "decision": "selected",
+      "reason": "Die nun berichtete Gewichtsfreigabe ist ein eigenständiger Schritt gegenüber dem historischen API-Start, bei dem offene Gewichte lediglich angekündigt waren.",
+      "item": {
+        "title": "Moonshot veröffentlicht die Gewichte von Kimi K3.1 Pro",
+        "summary": "Moonshot hat laut Latent Space die Gewichte des multimodalen Modells Kimi K3.1 Pro freigegeben. Die wiedergegebenen Modellspezifikationen nennen Text- und Bildverarbeitung, 2,8 Billionen Gesamtparameter, 104 Milliarden aktive Parameter und eine Million Kontexttokens. Die Leistungsangaben beruhen teilweise auf internen Benchmarks und modellspezifischen Agenten-Frameworks.",
+        "category": "modelle",
+        "impact": 5,
+        "date": "2026-11-05",
+        "change_type": "general_availability"
+      }
+    },
+    {
+      "id": "f59ab1ac24f2461a018b7ae1",
+      "decision": "selected",
+      "reason": "Die konkrete Integration in zwei Inferenzsysteme ist eine eigene Entwicklung neben der Gewichtsfreigabe; die gemeinsame Artikel-URL begründet kein Duplikat.",
+      "item": {
+        "title": "vLLM und SGLang unterstützen Kimi K3.1 Pro zum Start",
+        "summary": "Latent Space berichtet, dass vLLM und SGLang Kimi K3.1 Pro ab dem Veröffentlichungstag auf mehreren Hardwareplattformen unterstützen. Für SGLang nennt der Artikel zusätzlich Unterstützung für Trainium 2 und 3.",
+        "category": "tools",
+        "impact": 3,
+        "date": "2026-11-05",
+        "change_type": "integration"
+      }
+    },
+    {
+      "id": "67aba79a81161889b8b39573",
+      "decision": "duplicate",
+      "reason": "Berichtet dieselbe Veröffentlichung von Ripple-65B Preview unter Apache 2.0 wie der ausführlichere VentureBeat-Kandidat. Zusätzliche Herstellerzahlen zu Benchmark und Budget belegen keinen weiteren Freigabeschritt.",
+      "duplicate_of": "9586221e170bb88eca3c2333"
+    },
+    {
+      "id": "b7a9b1df49bd04b440b701de",
+      "decision": "selected",
+      "reason": "Neue Demonstration eines kompakten Modells für lokale Computerbedienung; als Ankündigung relevant, ohne daraus eine Gewichts- oder Produktfreigabe abzuleiten.",
+      "item": {
+        "title": "Microsoft zeigt Mage-VL-Cowork für lokale Computerbedienung",
+        "summary": "Latent Space verweist auf eine Demonstration von Microsofts Mage-VL-Cowork mit vier Milliarden Parametern für Computerbedienung auf Endgeräten. Die genannte Spitzenleistung ist eine Herstellerbehauptung; konkrete Freigabebedingungen nennt der vorgelegte Text nicht.",
+        "category": "modelle",
+        "impact": 3,
+        "date": "2026-11-05",
+        "change_type": "announcement"
+      }
+    },
+    {
+      "id": "6260f9822fdc3247d42391cf",
+      "decision": "selected",
+      "reason": "Konkrete neue Modellveröffentlichung mit benannter Apache-2.0-Lizenz; trotz geringer Detailtiefe ein eigenständiger, nicht historisch erfasster Freigabeschritt.",
+      "item": {
+        "title": "Macrocosmos veröffentlicht IOTA Decide 4B unter Apache 2.0",
+        "summary": "Macrocosmos hat laut Latent Space IOTA Decide 4B unter Apache 2.0 veröffentlicht. Der Artikel beschreibt ein Training auf weltweit verteilten GPUs.",
+        "category": "modelle",
+        "impact": 2,
+        "date": "2026-11-05",
+        "change_type": "general_availability"
+      }
+    },
+    {
+      "id": "405b56e9d1556eb97432dbdc",
+      "decision": "selected",
+      "reason": "Neue Veröffentlichung eines Agentenmodells mit Gewichten, Code, Trainingsdaten und Trainingsrezept; der Umfang der Freigabe ist für Selbstbetrieb und Nachprüfung relevant.",
+      "item": {
+        "title": "Axion 1.0-35B erscheint mit Gewichten, Trainingsdaten und Trainingsrezept",
+        "summary": "Latent Space berichtet über die Veröffentlichung von Axion 1.0-35B unter Apache 2.0 mit etwa 35 Milliarden Gesamtparametern und drei Milliarden aktiven Parametern. Verfügbar sind demnach Gewichte, Code, Trainingsdaten und ein dreistufiges Trainingsrezept aus zwei SFT-Phasen und anschließendem Reinforcement Learning. Die im Artikel referierten lokalen Praxistests fallen gemischt aus.",
+        "category": "modelle",
+        "impact": 4,
+        "date": "2026-11-05",
+        "change_type": "general_availability"
+      }
+    },
+    {
+      "id": "de46c727ca62167e7ebd10b5",
+      "decision": "selected",
+      "reason": "Eigenständiges Versionsupdate mit neuen Präzisions- und Verteilungsfunktionen; weder die frühere Windows-ML-Integration noch die historische Modellfreigabe decken diesen Schritt ab.",
+      "item": {
+        "title": "llama.cpp 0.9.0 ergänzt FP8 und Tensorparallelismus über mehrere Knoten mit NCCL",
+        "summary": "llama.cpp 0.9.0 bringt laut Latent Space native Unterstützung für FP8 im E4M3-Format. Hinzu kommen Tensorparallelismus über mehrere Knoten mittels NCCL sowie Unterstützung für Mistral Large 4 und Nemotron 3.5 Transcribe.",
+        "category": "lokal",
+        "impact": 4,
+        "date": "2026-11-05",
+        "change_type": "update"
+      }
+    },
+    {
+      "id": "76520072d708633f5c263f3b",
+      "decision": "selected",
+      "reason": "Neuer, konkret beschriebener Anwenderversuch an Gemma-Übersetzungen; unterscheidet sich vom historischen Weight-Space-Programming-Befund an Qwen durch Modell, Aufgabe und Eingriff.",
+      "item": {
+        "title": "Weight-Space Programming: Claude Opus 5.5 bearbeitet Gemma 4 12B für eine italienische Zeitform",
+        "summary": "Der von Latent Space zusammengefasste Anwenderbericht beschreibt einen Versuch mit Claude Opus 5.5, direktem Gewichtszugriff und 50 Vorwärtsdurchläufen, um das Übersetzungsverhalten von Gemma 4 12B zu verändern. Der Autor berichtet von Eingriffen an acht MLP-Neuronen und 182 unveränderten Ergebnissen unter 200 nicht verwandten Übersetzungen. Der eng begrenzte Versuch belegt keine allgemeine Modellverbesserung.",
+        "category": "modelle",
+        "impact": 3,
+        "date": "2026-11-05",
+        "change_type": "research"
+      }
+    },
+    {
+      "id": "5c54cb6a097ffe9706fdb051",
+      "decision": "duplicate",
+      "reason": "Der referierte Versuch von Simon Willison mit Qwen 3.8 27B und textuell vorgelegten Gewichten kleiner Spielnetze ist bereits historisch erfasst. Die ergänzende Nennung von Pong und Breakout belegt keinen neuen Versuch oder eigenständigen Entwicklungsschritt.",
+      "duplicate_of": "h-7bf7978374955946ceca9bcd"
+    },
+    {
+      "id": "292234e478e30c8dde6e74f4",
+      "decision": "selected",
+      "reason": "Konkreter neuer Pruning-Versuch mit Angaben zu Modellgröße, Speicherbedarf und begrenzter Ergebnistreue. Er ist weder mit dem historischen ProQuant-Verfahren noch mit dem separaten Gemma-Gewichtseingriff identisch.",
+      "item": {
+        "title": "Gemma 4 26B-A4B: Pruning auf 3,81 Milliarden Parameter im Einzelversuch",
+        "summary": "Ein Anwender reduziert laut dem referierten Versuch Gemma 4 26B-A4B durch feste Expertenauswahl um etwa 85 Prozent der Gewichte auf 3,81 Milliarden Parameter. Er meldet für eine enge Klassifikationsaufgabe 91,7 Prozent Übereinstimmung mit dem Original sowie eine 2,75 GB große Q4_K_M-Datei bei 3,8 GB maximalem Speicherbedarf. Der Autor räumt Einbußen bei wissenslastigen Aufgaben ein; eine allgemeine Erhaltung der Modellfähigkeiten ist nicht belegt.",
+        "category": "lokal",
+        "impact": 3,
+        "date": "2026-11-05",
+        "change_type": "research"
+      }
+    },
+    {
+      "id": "97e2f384ba4f26b512f5fc81",
+      "decision": "below_threshold",
+      "reason": "Der einzelne Praxisbericht zeigt Unterstützung bei Geräteanalyse, Toolchain und Launcher-Entwicklung, aber keine neue Modellfähigkeit, Werkzeugfreigabe oder über den Anwendungsfall hinaus belegte technische Entwicklung. Umfassendes Firmware-Reverse-Engineering ist ausdrücklich nicht belegt."
+    },
+    {
+      "id": "9c2d54ebeb0a2e76549b5777",
+      "decision": "selected",
+      "reason": "Neue GGUF-Quantisierungen sind ein eigenständiges Update für lokale Inferenz. Die Veröffentlichung ist von anderen Meldungen zum selben Modell zu unterscheiden; die beworbenen Leistungsgewinne werden als Anbieterangaben eingeordnet.",
+      "item": {
+        "title": "Unsloth Dynamic v3.1: neue GGUFs für Qwen3.8-Flash-Next",
+        "summary": "Unsloth veröffentlicht Dynamic-v3.1-GGUFs für Qwen3.8-Flash-Next und bewirbt sie mit 256.000 Tokens Kontext sowie ungefähr 15 Prozent höherer medianer Genauigkeit gegenüber ähnlich großen Vergleichsquantisierungen. Der Beitrag nennt mindestens 32 GB RAM als praktische Voraussetzung. Die Leistungswerte stammen aus einer Werbegrafik des Anbieters; unabhängige Vergleichstests sind im vorgelegten Text nicht enthalten.",
+        "category": "lokal",
+        "impact": 3,
+        "date": "2026-11-05",
+        "change_type": "update"
+      }
+    },
+    {
+      "id": "b1f45f525361bcc2bd81fd45",
+      "decision": "selected",
+      "reason": "Das neue AWS-Tutorial demonstriert einen konkreten Integrationsweg für ein selbst betriebenes Bewertungsmodell in AgentCore Evaluations. Dies ist ein eigenständiger Schritt gegenüber der historisch erfassten Veröffentlichung von Strands Decider 2B.",
+      "item": {
+        "title": "AWS zeigt Strands Decider 2B mit Amazon Bedrock AgentCore Evaluations",
+        "summary": "AWS demonstriert in einem Tutorial, wie das selbst betriebene Open-Source-Modell Strands Decider 2B über codebasierte Evaluatoren zur Bewertung eines HR-Assistenten mit Amazon Bedrock AgentCore Evaluations verbunden wird. Laut AWS unterstützt das Modell mit zwei Milliarden Parametern Ja/Nein-Fragen, Auswahlfragen und abgestufte Bewertungen mit Wahrscheinlichkeitswerten. AWS positioniert diese Prüfungen als Ergänzung zu den eingebauten LLM-Evaluatoren, nicht als deren Ersatz.",
+        "category": "lokal",
+        "impact": 2,
+        "date": "2026-11-04",
+        "change_type": "integration"
+      }
+    },
+    {
+      "id": "effe209393c5387fba816cee",
+      "decision": "selected",
+      "reason": "Neue Alpha-Funktion für die parallele Arbeit mit Agentenchat und Datenbankseiten; in der vorgelegten Historie nicht enthalten.",
+      "item": {
+        "title": "Datasette Agent 0.5a0 verbindet Chat-Panel mit datasette-apps",
+        "summary": "Laut Release-Mitteilung kann der Agentenchat in Datasette Agent 0.5a0 neben Tabellen-, Abfrage- und Anwendungsseiten geöffnet bleiben. Zusammen mit datasette-apps lassen sich datenbankgestützte Anwendungen per Prompt erstellen und im danebenliegenden Chat verändern; die Funktion ist Teil einer Alpha-Version.",
+        "category": "agents",
+        "impact": 2,
+        "date": "2026-11-03",
+        "change_type": "preview"
+      }
+    },
+    {
+      "id": "ba06e7811d015bf36d368d5f",
+      "decision": "selected",
+      "reason": "Neue Forschungsarbeit zur systematischen Diagnose von Agenten-Ausführungsspuren mit konkreter Taxonomie und ausgewiesener Evaluation; kein entsprechender Historieneintrag.",
+      "item": {
+        "title": "Signals analysiert Agenten-Ausführungsspuren anhand von 45 Problemtypen",
+        "summary": "Die Forschungsarbeit stellt Signals vor, das Fehler, Risikoexpositionen und Ineffizienzen in Agenten-Ausführungsspuren unterscheidet und Befunde mit Handlungsempfehlungen sowie Prüfungen für Änderungen bündelt. Die Autoren berichten bei öffentlichen Agenten-Ausführungen einen F1-Wert von 91,43 Prozent beim Abgleich mit Referenzproblemen, rund 18 Prozentpunkte mehr als ein einmaliger LLM-Durchlauf mit demselben Modell und derselben Taxonomie.",
+        "category": "agents",
+        "impact": 3,
+        "date": "2026-11-04",
+        "change_type": "research"
+      }
+    },
+    {
+      "id": "302365888e2845124ec75e4a",
+      "decision": "selected",
+      "reason": "Gegenüber TechCrunch bestätigte Übernahme eines Coding-Agenten-Startups; der spätere Latent-Space-Kandidat meldet dieselbe Transaktion ohne zusätzliche Entwicklung.",
+      "item": {
+        "title": "Meta übernimmt das Coding-Agenten-Startup Conductor",
+        "summary": "Meta hat die Übernahme von Conductor gegenüber TechCrunch bestätigt, aber keine weiteren Details zum Geschäft genannt. Conductors Plattform koordiniert mehrere Coding-Agenten in parallelen Arbeitsumgebungen; laut Bericht stammen die eingesetzten Agenten unter anderem von Anthropic und OpenAI.",
+        "category": "business",
+        "impact": 4,
+        "date": "2026-11-04",
+        "change_type": "business"
+      }
+    },
+    {
+      "id": "9d5053f44689c2344f3d9311",
+      "decision": "selected",
+      "reason": "Die angekündigte Cloud-Abschaltung und anschließende Datenlöschung sind eine eigenständige, nutzerrelevante Produktentwicklung neben der Übernahme, trotz gemeinsamer Quelle.",
+      "item": {
+        "title": "Conductor kündigt Cloud-Abschaltung am 20. November und anschließende Datenlöschung an",
+        "summary": "Laut Conductor-Gründer Charlie Holtz soll der Cloud-Dienst am 20. November abgeschaltet werden; anschließend beginnt das Unternehmen mit der Löschung der dort gespeicherten Nutzerdaten. Die übrige bisherige Kernfunktionalität soll bis Anfang des kommenden Jahres bestehen bleiben.",
+        "category": "tools",
+        "impact": 3,
+        "date": "2026-11-04",
+        "change_type": "announcement"
+      }
+    },
+    {
+      "id": "6d300db2f0ed3e7c920c3495",
+      "decision": "selected",
+      "reason": "Konkrete Änderung der Spielreferenz-Regel in Claude Code 2.1.317 für Opus 5.5; die bisherigen Claude-Code-Einträge behandeln andere Funktionen.",
+      "item": {
+        "title": "Claude Code präzisiert Spielreferenz-Regel für Opus 5.5",
+        "summary": "Laut einer von The Verge wiedergegebenen Anthropic-Stellungnahme wurde die Regel gegen das Nachbauen konkreter Spiele in Claude Code 2.1.317 angepasst. Nutzer sollen bestehende Spiele zur Beschreibung gewünschter Mechaniken nennen können, worauf Claude ein eigenständiges Spiel des Genres erstellen soll. Bei ausdrücklichen Kopierwünschen soll das System stattdessen eine ähnliche Alternative anbieten.",
+        "category": "agents",
+        "impact": 3,
+        "date": "2026-11-04",
+        "change_type": "update"
+      }
+    },
+    {
+      "id": "939becc210d51df1fc8215f4",
+      "decision": "duplicate",
+      "reason": "Die allgemeine Verfügbarkeit von Dependabot-Versionsupdates für Agent Package Manager ist bereits dokumentiert, einschließlich apm.yml, aller github.com-Tarife und des Ausschlusses von Sicherheitsupdates. Die zusätzlichen Implementierungs- und Enterprise-Server-Details belegen keinen neuen Freigabeschritt.",
+      "duplicate_of": "h-fbd6e6c81437257362a067ea"
+    },
+    {
+      "id": "607e421a8c77e6d39d0ee7f2",
+      "decision": "duplicate",
+      "reason": "Dieselbe Copilot-Integration in JetBrains Air über das Agent Client Protocol mit lokalen und Cloud-Aufgaben wurde bereits am 3. November dokumentiert; kein neuer Integrations- oder Verfügbarkeitsstand.",
+      "duplicate_of": "h-1e3c725192c8433cb51a3fd1"
+    },
+    {
+      "id": "9856e8c99149e55c7a95778e",
+      "decision": "duplicate",
+      "reason": "Air-Teams-Cloud-Aufgaben, Abrechnung über Copilot und fehlende Air-Analytics beziehungsweise Air-Ausgabenlimits sind bereits im Historieneintrag enthalten. Container- und Zugangsvoraussetzungen beschreiben denselben Integrationsstand, keinen späteren Entwicklungsschritt.",
+      "duplicate_of": "h-1e3c725192c8433cb51a3fd1"
+    },
+    {
+      "id": "7e822d3b2cd56c0565403d8c",
+      "decision": "selected",
+      "reason": "Neue Übernahmeankündigung von Factory zu HumanLayer; weder Historie noch Vergleichskandidaten enthalten dieselbe Transaktion.",
+      "item": {
+        "title": "Factory kündigt Übernahme von HumanLayer an",
+        "summary": "Latent Space berichtet unter Verweis auf eine Mitteilung von Factory, dass Factory HumanLayer übernimmt. Kaufpreis und weitere Transaktionsbedingungen nennt der vorgelegte Bericht nicht.",
+        "category": "business",
+        "impact": 3,
+        "date": "2026-11-05",
+        "change_type": "business"
+      }
+    },
+    {
+      "id": "5f6cfcaac9146561cb6d4c66",
+      "decision": "duplicate",
+      "reason": "Meldet dieselbe Übernahme von Conductor durch Meta wie der ausführlichere, bereits am 4. November erschienene TechCrunch-Kandidat; das spätere Berichtsdatum begründet keine neue Entwicklung.",
+      "duplicate_of": "302365888e2845124ec75e4a"
+    },
+    {
+      "id": "05f36e1cf67e9319387ab517",
+      "decision": "selected",
+      "reason": "Neues Coding-Modell für Devin mit eigenständigem Zugangs- und Kostenmodell; nicht durch die historische Meldung zu Devin Budgets abgedeckt.",
+      "item": {
+        "title": "Cognition führt SWE-2 Flash für Devin ein",
+        "summary": "Cognition veröffentlicht SWE-2 Flash, das laut Bericht auf einem nachtrainierten Inkling-Small-Modell von Thinking Machines basiert. Der Hersteller nennt ein Fünftel der Kosten von SWE-2 und ungefähr dreifache Geschwindigkeit; für Devin Pro, Max und Teams ist der Zugang im November kostenlos. Die Gewichte sind nicht öffentlich, ein abgesichertes Austauschprogramm für Partner und Forschende ist lediglich geplant.",
+        "category": "modelle",
+        "impact": 4,
+        "date": "2026-11-05",
+        "change_type": "announcement"
+      }
+    },
+    {
+      "id": "991c2f310f99861331394524",
+      "decision": "selected",
+      "reason": "Eigenständiger Bewertungsansatz für Coding-Agenten mit konkreten Ergebnissen zur Vermeidung später behobener Fehler; kein Duplikat der historischen Benchmarkmeldungen.",
+      "item": {
+        "title": "Foresight-SWE bewertet Coding-Agenten auch nach später entdeckten Fehlern",
+        "summary": "Foresight-SWE ergänzt die Erfolgsbewertung von Coding-Agenten um die Frage, ob sie Fehler vermeiden, die Entwickler später behoben haben. Laut der im Artikel referierten Auswertung lösen Agenten aus elf Modellen 60,7 Prozent der untersuchten Aufgaben; mit der zusätzlichen Anforderung sinkt die Quote auf 14,8 Prozent.",
+        "category": "agents",
+        "impact": 4,
+        "date": "2026-11-05",
+        "change_type": "research"
+      }
+    },
+    {
+      "id": "f4f278dce62141e95aae42e1",
+      "decision": "selected",
+      "reason": "Konkreter Umbau der technischen Grundlage für agentengestützte Kernel-Entwicklung; keine entsprechende Entwicklung in Historie oder Vergleichskandidaten.",
+      "item": {
+        "title": "TVM-Team baut TIRx für agentische Kernel-Entwicklung um",
+        "summary": "Der Bericht beschreibt einen Umbau von TIRx durch das TVM-Team als gemeinsame Grundlage für agentengestützte Kernel-Entwicklung. Das Team argumentiert, dass domänenspezifische Sprachen auch bei agentengestützter Optimierung weiterhin wichtig bleiben.",
+        "category": "tools",
+        "impact": 3,
+        "date": "2026-11-05",
+        "change_type": "update"
+      }
+    },
+    {
+      "id": "fdb005b2dc4f37d7e50de4bb",
+      "decision": "selected",
+      "reason": "Neue, versionsgebundene Nutzung von Haiku 5.5 in Claude Code; von der bereits erfassten allgemeinen Modellverfügbarkeit getrennt.",
+      "item": {
+        "title": "Claude Code 2.1.316 nutzt Haiku 5.5 für Statusmeldungen von Hintergrundagenten",
+        "summary": "Ab Claude Code 2.1.316 erstellt Haiku 5.5 aus kurzen Notizen die alle 30 Sekunden erscheinenden Statusmeldungen von Hintergrund-Subagenten. Anthropic nennt dafür ungefähr 99 Prozent geringere Kosten pro Meldung und rund fünf Prozent weniger Verbrauch des Sitzungslimits.",
+        "category": "agents",
+        "impact": 4,
+        "date": "2026-11-05",
+        "change_type": "update"
+      }
+    },
+    {
+      "id": "09266baaf6bb1bd0acb095a7",
+      "decision": "below_threshold",
+      "reason": "Der Beleg beschreibt ein AWS-Tutorial mit festen Beispieldaten und codebasierten Evaluatoren, aber keine neue Produktfreigabe oder belegte neue Integrationsfunktion. Die demonstrierte Anbindung allein reicht nicht für eine eigenständige Entwicklungsmeldung."
+    },
+    {
+      "id": "a49a0a430c7c6d040e519c80",
+      "decision": "selected",
+      "reason": "Belegte Verfügbarkeit zweier Claude-Modelle in Antigravity; weder die historische Mac-Integration noch die Ankündigung zu OpenAI-Modellen deckt diesen Integrationsschritt ab.",
+      "item": {
+        "title": "Google Antigravity erhält Claude Opus 5.5 und Claude Sonnet 5.5",
+        "summary": "Laut Googles Oktober-Rückblick stehen Claude Opus 5.5 und Claude Sonnet 5.5 in Google Antigravity für Google-Cloud-Kunden bereit. Google beschreibt Opus 5.5 als Modell für komplexe Arbeit und Sonnet 5.5 als schnellere, kostengünstigere Ergänzung.",
+        "category": "agents",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "integration"
+      }
+    },
+    {
+      "id": "93705a3987236244a914cdea",
+      "decision": "selected",
+      "reason": "Eigenständiger Verfügbarkeitsschritt für geplante CoCo-Aufgaben, getrennt von Cloud Agents und den übrigen CoCo-Integrationen.",
+      "item": {
+        "title": "Snowflake CoCo: CoCo Automations werden in Snowsight und CLI allgemein verfügbar",
+        "summary": "Snowflake gibt CoCo Automations in Snowsight und CLI allgemein frei; in CoCo Desktop befindet sich die Funktion in Public Preview. Laut Hersteller lassen sich wiederkehrende Arbeiten in natürlicher Sprache beschreiben und als geplante Snowflake-Tasks ausführen. Jede Ausführung erstellt ein Transkript, nutzt die Berechtigungen des Erstellers und unterliegt vorgegebenen Quoten.",
+        "category": "agents",
+        "impact": 4,
+        "date": "2026-11-03",
+        "change_type": "general_availability"
+      }
+    },
+    {
+      "id": "293e8689e0a081e6cd9fdc2f",
+      "decision": "selected",
+      "reason": "Neuer interaktiver CoCo-Arbeitsbereich mit konkreten Entwicklungswerkzeugen; eigenständige Oberflächenfunktion neben der allgemeinen Verfügbarkeit von Cloud Agents.",
+      "item": {
+        "title": "Snowsight erhält Arbeitsmodus für Snowflake CoCo mit Cloud-Container",
+        "summary": "Snowflake ergänzt Snowsight um einen Vollbild-Arbeitsbereich für CoCo mit Shell, Dateisystem, Git und Live-Vorschau für mehrstufige Analysen, Migrationen und Pipeline-Arbeiten. Nach Herstellerangaben läuft der Arbeitsbereich in einem eigenen Cloud-Container und kann Aufgaben auch bei geschlossenem Laptop weiterbearbeiten.",
+        "category": "agents",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "update"
+      }
+    },
+    {
+      "id": "0b3bcb2b3b02eb5883966da2",
+      "decision": "selected",
+      "reason": "Explizite allgemeine Verfügbarkeit einer verwalteten Ausführungsumgebung für lang laufende CoCo-Aufgaben; nicht identisch mit Automations oder dem Snowsight-Arbeitsmodus.",
+      "item": {
+        "title": "Snowflake CoCo: Cloud Agents sind allgemein verfügbar",
+        "summary": "Snowflake weist Cloud Agents für lang laufende CoCo-Aufgaben als allgemein verfügbar aus. Laut Hersteller laufen die Sitzungen in einer isolierten, von Snowflake verwalteten Umgebung und verwenden die Snowflake-Berechtigungen des Nutzers, der die Sitzung erstellt hat.",
+        "category": "agents",
+        "impact": 4,
+        "date": "2026-11-03",
+        "change_type": "general_availability"
+      }
+    },
+    {
+      "id": "efb0a239458e2e1a31980753",
+      "decision": "selected",
+      "reason": "Eigenständiger Public-Preview-Start einer Slack-Anbindung mit Fragen, Workflow-Auslösung und Ergebnisprüfung; kein Duplikat der anderen CoCo-Funktionen.",
+      "item": {
+        "title": "Snowflake CoCo startet CoCo Slackbot Integration für Slack als Public Preview",
+        "summary": "Snowflake weist die CoCo Slackbot Integration als Public Preview aus. Teams können CoCo nach Herstellerangaben damit in Slack-Kanälen befragen, Workflows auslösen und Ergebnisse prüfen.",
+        "category": "agents",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "preview"
+      }
+    },
+    {
+      "id": "36f004c3ef411f3b4d38f905",
+      "decision": "selected",
+      "reason": "Eigene Public Preview für die Einbindung von CoCo-Codeänderungen in GitHub-Pull-Requests; weder in der Historie noch unter den Vergleichskandidaten enthalten.",
+      "item": {
+        "title": "Snowflake CoCo: CoCo GitHub Integration startet als Public Preview",
+        "summary": "Snowflake führt die CoCo GitHub Integration als Public Preview ein. Laut Hersteller leitet sie vorgeschlagene Codeänderungen durch den bestehenden Pull-Request-Prozess eines Teams.",
+        "category": "agents",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "preview"
+      }
+    },
+    {
+      "id": "b012ad5c5789f982e139a317",
+      "decision": "selected",
+      "reason": "Eigenständige mobile Verfügbarkeit mit unterschiedlichen Freigabestufen für iOS und Android; keine Wiederholung der separat aufgeführten CoCo Cloud Agents.",
+      "item": {
+        "title": "Snowflake CoCo in Snowflake Mobile: iOS allgemein verfügbar, Android in Public Preview",
+        "summary": "Snowflake meldet CoCo in Snowflake Mobile für iOS als allgemein verfügbar und für Android als Public Preview. Nach Herstellerangaben können Nutzer damit Cloud-Sitzungen am Smartphone kontrollieren, Tool-Aufrufe genehmigen und Folgeanweisungen senden.",
+        "category": "agents",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "general_availability"
+      }
+    },
+    {
+      "id": "21bceb59a60b33d33b0b7002",
+      "decision": "selected",
+      "reason": "Der SDK-Zugang zu CoCos Coding-Fähigkeiten ist eine eigene Entwicklerfreigabe und nicht durch andere CoCo-Integrationen oder die Historie abgedeckt.",
+      "item": {
+        "title": "Cortex Agent SDK startet als Public Preview für Coding-Fähigkeiten von Snowflake CoCo",
+        "summary": "Snowflake stellt das Cortex Agent SDK als Public Preview vor. Entwickler können damit laut Hersteller die Coding-Fähigkeiten von Snowflake CoCo in eigene Anwendungen einbetten.",
+        "category": "tools",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "preview"
+      }
+    },
+    {
+      "id": "3cc8cd9e9698edd840947506",
+      "decision": "selected",
+      "reason": "Die automatische MCP-Bereitstellung von Streamlit-Apps ist ein eigenständiger Preview-Schritt; die vorgelegten MCP-Meldungen betreffen andere Produkte und Funktionen.",
+      "item": {
+        "title": "Streamlit in Snowflake: Automatic MCP Exposure startet als Public Preview",
+        "summary": "Snowflake führt Automatic MCP Exposure für Streamlit in Snowflake als Public Preview ein. Laut Hersteller werden Daten und Aktionen der Apps dadurch als Werkzeuge für Agenten aufrufbar.",
+        "category": "tools",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "preview"
+      }
+    },
+    {
+      "id": "08302a7513eb16a24319e9ae",
+      "decision": "selected",
+      "reason": "Eigene Ankündigung zur Entwicklung und Bereitstellung mit App Runtime in Snowsight Workspaces; vom CoCo-Vollbild-Arbeitsbereich im Vergleichseintrag funktional getrennt.",
+      "item": {
+        "title": "Snowflake App Runtime: Integration in Snowsight Workspaces angekündigt",
+        "summary": "Snowflake kündigt eine Public Preview der Workspaces-Integration für Snowflake App Runtime an. Laut Hersteller soll sie Entwicklung und Bereitstellung vollständig innerhalb von Snowsight ermöglichen und richtet sich unter anderem an Teams mit eingeschränkten lokalen Entwicklungswerkzeugen.",
+        "category": "tools",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "announcement"
+      }
+    },
+    {
+      "id": "4865148dff95110e248e34a5",
+      "decision": "selected",
+      "reason": "Die allgemeine Verfügbarkeit des accountweiten Teilens samt Versionskontrollen ist eine eigene CoCo-Entwicklung; andere Skills-Meldungen in der Historie betreffen andere Anbieter oder Standards.",
+      "item": {
+        "title": "Snowflake CoCo: Skills and Plugins Sharing wird allgemein verfügbar",
+        "summary": "Snowflake erklärt Skills and Plugins Sharing für allgemein verfügbar. Laut Hersteller lassen sich Arbeitsabläufe per snow://-Link oder Snowsight-Katalog für CoCo Desktop, Snowsight CoCo und CLI bereitstellen. Administratoren können vertrauenswürdige Versionen zertifizieren, Versionen festlegen und die Nutzung verfolgen.",
+        "category": "agents",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "general_availability"
+      }
+    },
+    {
+      "id": "e9321d250215fb10059c2065",
+      "decision": "below_threshold",
+      "reason": "Das bildschirmfüllende Öffnen vorhandener App-Links ist eine kleine Bedienungsänderung in einer Alpha-Version; eine neue Agentenfähigkeit oder ein wesentlich erweiterter Einsatzbereich ist nicht belegt."
+    },
+    {
+      "id": "6a798070a7bf74b8fcbe4688",
+      "decision": "selected",
+      "reason": "Der beginnende Browser-Use-Rollout erweitert Brain um Aktionen auf Websites ohne offizielle Integration. In der vorgelegten Historie ist dieser ClickUp-Funktionsschritt nicht enthalten.",
+      "item": {
+        "title": "ClickUp Brain erhält Browserzugriff über Browserbase",
+        "summary": "Laut einem als gesponsert gekennzeichneten TestingCatalog-Artikel beginnt ClickUp mit dem schrittweisen Rollout von Browser Use in Brain: Der Assistent soll Websites öffnen, Formulare ausfüllen und Dateien herunterladen können, auch ohne offizielle Integration. Die auf Browserbase laufenden Sitzungen bieten dem Bericht zufolge eine Liveansicht, übergeben Anmeldungen an den Nutzer und dokumentieren Aktionen mit Protokoll und Aufzeichnung. Ein Termin für die Verfügbarkeit bei allen Kunden wird nicht genannt.",
+        "category": "agents",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "update"
+      }
+    },
+    {
+      "id": "d88724f9b00a16fad6486c4b",
+      "decision": "selected",
+      "reason": "GIF-Erstellung ist eine konkrete neue Ausgabeform in ChatGPT und Codex. Der breitere Vergleichseintrag zu Images 2.6 beschreibt denselben Themenkomplex, bietet aber keinen zusätzlichen eigenständigen Entwicklungsschritt.",
+      "item": {
+        "title": "Images 2.6 bringt GIF-Erstellung in ChatGPT und Codex",
+        "summary": "TestingCatalog berichtet über den weltweiten Rollout von Images 2.6 in ChatGPT und Codex über alle Abostufen auf Desktop, Mobilgeräten und im Web. Das Update ergänzt die Erstellung kurzer animierter GIF-Schleifen etwa aus Figuren, Produktszenen oder Storyboards. OpenAI zufolge ist die Bilderzeugung 50 Prozent schneller als zuvor; auch die Konsistenz über mehrere Bearbeitungsschritte soll steigen.",
+        "category": "tools",
+        "impact": 4,
+        "date": "2026-11-05",
+        "change_type": "update"
+      }
+    },
+    {
+      "id": "1065fd937079752eee4a3820",
+      "decision": "selected",
+      "reason": "Gespeicherte, wiederverwendbare Referenzbilder ändern den Arbeitsablauf für spätere Bildgenerierungen und sind eine eigenständige Funktion neben der GIF-Erstellung.",
+      "item": {
+        "title": "ChatGPT speichert mit Images 2.6 Referenzbilder für spätere Kreationen",
+        "summary": "Ein im TestingCatalog-Artikel eingebetteter OpenAI-Beitrag beschreibt das Speichern von Referenzbildern für spätere Bildgenerierungen in ChatGPT. Laut Hersteller können Nutzer etwa Bilder von sich selbst, Haustieren oder Figuren erneut verwenden, ohne sie nochmals hochzuladen.",
+        "category": "tools",
+        "impact": 3,
+        "date": "2026-11-05",
+        "change_type": "update"
+      }
+    },
+    {
+      "id": "f3faf81705533eab1a179a5e",
+      "decision": "selected",
+      "reason": "Die Bereitstellung gezielter Bildmarkierungen über die API ist ein eigener Entwicklerzugang und nicht mit den neuen ChatGPT-Ausgabefunktionen gleichzusetzen.",
+      "item": {
+        "title": "Images 2.6 bringt Bereichsmarkierungen in die OpenAI API",
+        "summary": "Dem TestingCatalog-Artikel zufolge macht Images 2.6 die aus ChatGPT bekannte Bildmarkierung auch über die OpenAI API zugänglich. Teams können damit präzise Bildbereiche kennzeichnen, an denen Änderungen vorgenommen werden sollen.",
+        "category": "tools",
+        "impact": 3,
+        "date": "2026-11-05",
+        "change_type": "update"
+      }
+    },
+    {
+      "id": "6168786b663fb73c5b099aae",
+      "decision": "selected",
+      "reason": "Der SVG-Export ist ein konkreter neuer Ausgabeweg und unterscheidet sich funktional von GIF-Erstellung, Referenzspeicherung und API-Bereichsmarkierungen.",
+      "item": {
+        "title": "Images 2.6 ergänzt SVG-Exporte",
+        "summary": "TestingCatalog nennt SVG-Exporte als weitere Neuerung von Images 2.6. Der Artikel beschreibt sie als Möglichkeit, Designs für Websites, Apps und Druck vorzubereiten.",
+        "category": "tools",
+        "impact": 3,
+        "date": "2026-11-05",
+        "change_type": "update"
+      }
+    },
+    {
+      "id": "a371941cabfe0f2ec3cbeaec",
+      "decision": "selected",
+      "reason": "Der neue Komplexitätsparameter bietet eine eigenständige Steuerungsmöglichkeit für den Planungsaufwand des Bildmodells; er ist mehr als eine reine Oberflächenänderung.",
+      "item": {
+        "title": "Images 2.6 erhält Komplexitätsparameter für den Planungsaufwand",
+        "summary": "Images 2.6 ergänzt laut TestingCatalog einen Parameter, mit dem sich der Planungsaufwand des Modells steuern lässt. OpenAI empfiehlt eine niedrige Einstellung für die meisten schnellen Bearbeitungen und mittlere oder hohe Werte für Szenen mit vielen Elementen oder Vorgaben.",
+        "category": "tools",
+        "impact": 2,
+        "date": "2026-11-05",
+        "change_type": "update"
+      }
+    },
+    {
+      "id": "7fa0e51ac3d98a4e1a0e07c1",
+      "decision": "selected",
+      "reason": "Der direkte Checkout in Kanada ist eine neue regionale Freigabe. Die historische Universal-Cart-Meldung betrifft dagegen den US-Rollout und macht diesen Schritt nicht zum Duplikat.",
+      "item": {
+        "title": "Google bringt Checkout per Universal Commerce Protocol in AI Mode und Gemini nach Kanada",
+        "summary": "Google zufolge beginnt in Kanada der Rollout eines direkten Checkouts auf Basis des Universal Commerce Protocol im AI Mode der Suche und in der Gemini-App. Unterstützt werden berechtigte Händler, darunter lululemon, ausgewählte Shopify-Händler, Shoppers Drug Mart und Simons. Die Zahlung erfolgt laut Google über Google Pay mit hinterlegten Wallet-Daten; die Händler bleiben die rechtlichen Verkäufer.",
+        "category": "agents",
+        "impact": 3,
+        "date": "2026-11-04",
+        "change_type": "update"
+      }
+    },
+    {
+      "id": "28e66d69a20517a044ceda6d",
+      "decision": "below_threshold",
+      "reason": "Das Anwenden von Treueprämien wird lediglich als Beispiel für die Arbeit in den kommenden Monaten genannt. Ohne konkreten Einführungstermin, Teilnehmer oder nähere Funktionsdetails bleibt dies eine wenig verbindliche Roadmap-Ergänzung."
+    },
+    {
+      "id": "fb5495d90e12875ef857c509",
+      "decision": "duplicate",
+      "reason": "Die weltweite Verfügbarkeit von Guided Learning in Google Classroom zum 3. November ist bereits mit demselben Freigabeschritt in der Historie enthalten. Die zusätzlich genannten Echtzeiteinblicke belegen keinen separaten neuen Rollout.",
+      "duplicate_of": "h-d108a2d9538f6730ceceaad9"
+    },
+    {
+      "id": "ae94bcc5a3753060d0deabae",
+      "decision": "selected",
+      "reason": "Der angekündigte Pilot in Google Search ist ein eigener Produktschritt gegenüber der historisch erfassten weltweiten Freigabe in Google Classroom.",
+      "item": {
+        "title": "Google kündigt Guided Learning in Google Search als US-Schulpilot an",
+        "summary": "Google kündigt für später im November einen Guided-Learning-Pilot für Schülerkonten an ausgewählten US-Schulen an. Nach Herstellerangaben soll Google Search bei bestimmten Hausaufgabenfragen schrittweise durch Probleme führen, statt unmittelbar Lösungen zu liefern. Vor einer Ausweitung auf weitere Schulbezirke will Google Rückmeldungen von Lehrkräften einarbeiten.",
+        "category": "tools",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "announcement"
+      }
+    },
+    {
+      "id": "ffd727f7607fa02a460c9a7a",
+      "decision": "held",
+      "reason": "Der Beleg nennt einen Start von Guided Learning an Schulen, grenzt aber weder Produkt noch Verfügbarkeitsumfang eindeutig ab. Damit bleibt unklar, ob die historisch erfasste Classroom-Freigabe oder eine weitere Entwicklung gemeint ist; eine eigenständige allgemeine Verfügbarkeit ist nicht ausreichend abgegrenzt."
+    },
+    {
+      "id": "0d97959c91c2f04726759406",
+      "decision": "below_threshold",
+      "reason": "Die Ankündigung nennt zwar Dezember als geplanten Auslieferungsmonat, lässt aber Produktname, Geräteart und konkrete Funktionen offen. Die Herstellerbeschreibung als „AI-native“-Produktivitätswerkzeug reicht ohne diese Angaben nicht für eine sachlich belastbare Produktmeldung."
+    },
+    {
+      "id": "4cd9bec053c537e251f4b432",
+      "decision": "selected",
+      "reason": "Der begrenzte Rollout eines neuen KI-Empfehlungstabs ist eine konkrete neue Produktentwicklung; ein entsprechender historischer Eintrag liegt nicht vor.",
+      "item": {
+        "title": "Netflix testet AI Discover für Empfehlungen nach Stimmung und verfügbarer Zeit",
+        "summary": "Netflix beginnt mit der begrenzten Einführung des experimentellen Tabs AI Discover in den USA für Nutzer, die Netflix auf unterstützten Fernsehern auf Englisch verwenden. Nutzer können Themen wie Stimmung und verfügbare Zeit auswählen, Empfehlungen eingrenzen und Titel als erwünscht oder unerwünscht markieren. Laut Netflix arbeitet dahinter eine fortlaufend lernende KI-Schicht; Nutzerfeedback soll die spätere Übernahme von Funktionen in das reguläre Angebot bestimmen.",
+        "category": "tools",
+        "impact": 2,
+        "date": "2026-11-03",
+        "change_type": "preview"
+      }
+    },
+    {
+      "id": "ee60c5a418f04aac04a53a85",
+      "decision": "selected",
+      "reason": "Der erweiterte Entwicklerzugang für Drittanbieter-Apps in iOS 27.3 ist neu gegenüber den historisch erfassten Siri-AI-Funktionen von Version 27.2.",
+      "item": {
+        "title": "iOS 27.3: Apple öffnet erweiterte Siri AI für Drittanbieter-Apps",
+        "summary": "Laut The Verge erweitert Apple mit der Developer Preview von iOS 27.3 den Zugang zu den erweiterten Siri-AI-Funktionen auf alle Apps. Nach Herstellerangaben können Entwickler persönlichen Kontext, natürlichsprachliche Anfragen und Bildschirminhalte zur Ausführung von Aufgaben nutzen; zuvor war nur ein kleinerer Funktionsumfang zugänglich.",
+        "category": "tools",
+        "impact": 4,
+        "date": "2026-11-03",
+        "change_type": "preview"
+      }
+    },
+    {
+      "id": "7c50423dee94c7fa55c91f55",
+      "decision": "selected",
+      "reason": "App Skills sind eine eigenständige neue Fähigkeit für gebündelte Aktionen, nicht lediglich eine Wiederholung der Öffnung des Entwicklerzugangs.",
+      "item": {
+        "title": "Siri AI erhält App Skills für mehrstufige Aktionen",
+        "summary": "Apple ergänzt Siri AI in der Developer Preview um App Skills, mit denen Drittentwickler mehrere Aufgaben zu einer Aktion verbinden können. Laut Apple müssen Nutzer den App-Namen nicht nennen, wenn die App im Vordergrund ist, eine Live Activity läuft oder sich das Siri-Gespräch bereits auf diese App bezieht.",
+        "category": "agents",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "preview"
+      }
+    },
+    {
+      "id": "905c175c92c0dd7704e6e467",
+      "decision": "selected",
+      "reason": "Die Erweiterung der Aktionen in Apples eigenen Apps ist eine gesonderte Entwicklung neben Drittanbieterzugang und App Skills; die gemeinsame Quelle begründet kein Duplikat.",
+      "item": {
+        "title": "Apple erweitert Siri AI in Kalender, Dateien, Mail und Fotos",
+        "summary": "Im Rahmen der Developer Preview erweitert Apple Siri AI auch in eigenen Anwendungen, darunter Kalender, Dateien, Finder, Mail, Fotos und Safari. Nach Herstellerangaben sollen Nutzer beispielsweise ein vergangene Woche besuchtes Café finden oder seit über einem Jahr ungeöffnete Dateien archivieren können.",
+        "category": "tools",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "preview"
+      }
+    },
+    {
+      "id": "81a434ec4b1dd84ff8ead3d9",
+      "decision": "selected",
+      "reason": "Die neuen Ausblendoptionen sind eine konkrete Nutzerfunktion und unterscheiden sich von den historisch erfassten Offenlegungspflichten für KI-unterstützte Mods.",
+      "item": {
+        "title": "Nexus Mods führt Filter zum Ausblenden KI-generierter Inhalte ein",
+        "summary": "Laut The Verge führt Nexus Mods Steuerelemente ein, mit denen Nutzer KI-generierte Inhalte auf Spieleseiten und der Startseite ausblenden können. Eine entsprechende Filtermöglichkeit für die Suche ist als nächster Schritt angekündigt, aber noch nicht als verfügbar beschrieben.",
+        "category": "tools",
+        "impact": 2,
+        "date": "2026-11-04",
+        "change_type": "update"
+      }
+    },
+    {
+      "id": "5e1b81bf21098ca3c8061ee4",
+      "decision": "selected",
+      "reason": "Für den KI-Sprachassistenten sind konkrete Termine für US-Warteliste und Frühzugang belegt; dies ist eine neue Ankündigung, keine allgemeine Freigabe.",
+      "item": {
+        "title": "Sonos 27voice: US-Frühzugang soll am 12. November beginnen",
+        "summary": "Laut The Verge öffnet Sonos am 6. November die US-Warteliste für den KI-Sprachassistenten Sonos 27voice; der Frühzugang soll am 12. November beginnen. Nach Herstellerangaben soll der Assistent neben Wiedergabe, Lautsprechergruppen und Timern auch komplexere natürlichsprachliche Musikwünsche verstehen. Eine allgemeine Verfügbarkeit ist damit nicht angekündigt.",
+        "category": "tools",
+        "impact": 2,
+        "date": "2026-11-03",
+        "change_type": "announcement"
+      }
+    },
+    {
+      "id": "c9974dbe057e5b02d7cf84d3",
+      "decision": "below_threshold",
+      "reason": "Die Presets sind ein eigenständiges App-Update, im vorgelegten Beleg aber ohne KI-Funktion oder erkennbaren KI-Bezug. Die gemeinsame Berichterstattung mit Sonos 27voice macht diese Wiedergabefunktion nicht zu einer relevanten Entwicklung für das AI-Briefing."
+    },
+    {
+      "id": "136d51d906be87514a5aa86b",
+      "decision": "below_threshold",
+      "reason": "Die Wischgeste zum Titelwechsel ist eine gewöhnliche Bedienungsänderung der Sonos-App. Ein KI-Bezug dieser Funktion ist im vorgelegten Beleg nicht erkennbar."
+    },
+    {
+      "id": "2204722c7c00088a1182edfc",
+      "decision": "below_threshold",
+      "reason": "Das Umordnen von Favoriten ist eine kleine Bedienungsverbesserung ohne belegten KI-Bezug und damit keine relevante Entwicklung für das AI-Briefing."
+    },
+    {
+      "id": "2485c3c2d66d9a53d40ae411",
+      "decision": "below_threshold",
+      "reason": "Die iOS-Unterstützung für System Health betrifft die Diagnose der Sonos-Konfiguration. Der Beleg weist dafür keine KI-Funktion aus."
+    },
+    {
+      "id": "1c8a6c5cedc540712aad6ed8",
+      "decision": "held",
+      "reason": "Der Eintrag bündelt Guided Learning in Google Search und Google Classroom ohne konkreten Verfügbarkeitsstatus. Gegenüber der historisch bereits erfassten Classroom-Freigabe und der separat vorgelegten Such-Pilotankündigung lässt sich daraus kein eindeutig zusätzlicher Entwicklungsschritt abgrenzen."
+    },
+    {
+      "id": "499179d07b75d86af6e56e5c",
+      "decision": "held",
+      "reason": "Die Classroom-Ankündigung nennt weder Einführungstermin noch Freigabestatus. Die Historie erfasst am selben Datum bereits die allgemeine Verfügbarkeit von Guided Learning in Classroom; ein eigenständiger früherer Ankündigungsschritt ist mit diesem Beleg nicht klar abzugrenzen."
+    },
+    {
+      "id": "cf85a70413fc8a3f82b30279",
+      "decision": "selected",
+      "reason": "Die angekündigte schrittweise Aufgabenbegleitung durch AI Mode und AI Overviews ist eine konkrete Funktionsänderung der schulischen Suche. Sie ist von der Classroom-Freigabe und den administrativen Opt-in-Regeln getrennt; der Vergleichseintrag zum Such-Pilot benennt diese beiden Funktionen nicht.",
+      "item": {
+        "title": "Google Search: AI Mode und AI Overviews sollen Schulaufgaben schrittweise begleiten",
+        "summary": "Google kündigt für die schulische Suche schrittweise Lernhilfen in AI Mode und AI Overviews an. Nach Unternehmensangaben sollen die Funktionen durch Aufgaben führen, statt unmittelbar schnelle Antworten auf Schulaufgaben zu liefern.",
+        "category": "tools",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "announcement"
+      }
+    },
+    {
+      "id": "5c614b63a883b12418adbeb9",
+      "decision": "duplicate",
+      "reason": "Die GIF-Neuerung von ChatGPT Images 2.6 wird bereits im Vergleichskandidaten d88724f9b00a16fad6486c4b behandelt. Auch die zusätzlich gebündelten Referenzbilder sind mit 1065fd937079752eee4a3820 separat vorgelegt; der Eintrag enthält keinen weiteren Entwicklungsschritt.",
+      "duplicate_of": "d88724f9b00a16fad6486c4b"
+    },
+    {
+      "id": "15e68f94688254e63ccdf231",
+      "decision": "selected",
+      "reason": "Die allgemeine Verfügbarkeit ausgehender SIP-Anrufe ist ein neuer Telefonie-Freigabeschritt für GPT-Live. Die historischen Einträge betreffen andere Sprachfunktionen und die Decisions-Integration, nicht ausgehende SIP-Telefonie.",
+      "item": {
+        "title": "OpenAI: Ausgehende SIP-Anrufe mit GPT-Live sind allgemein verfügbar",
+        "summary": "Laut dem vorgelegten Artikel sind ausgehende SIP-Anrufe mit OpenAIs GPT-Live nun allgemein verfügbar. Die Funktion unterstützt DTMF-Töne und HD Voice.",
+        "category": "agents",
+        "impact": 4,
+        "date": "2026-11-05",
+        "change_type": "general_availability"
+      }
+    },
+    {
+      "id": "6b72165191d336d7414d1a31",
+      "decision": "selected",
+      "reason": "Ausgehende US-Telefonate und die Navigation durch Telefonmenüs erweitern die Handlungsmöglichkeiten von Grok Bot. Diese Funktion ist weder in der Historie noch in den Vergleichskandidaten bereits erfasst.",
+      "item": {
+        "title": "Grok Bot erhält US-Telefonanrufe und kann Telefonmenüs bedienen",
+        "summary": "Grok Bot kann laut dem vorgelegten Artikel nun ausgehende Telefonanrufe in den USA führen und durch Telefonmenüs navigieren. Washington und Illinois sind von der genannten Verfügbarkeit ausgenommen.",
+        "category": "agents",
+        "impact": 3,
+        "date": "2026-11-05",
+        "change_type": "update"
+      }
+    },
+    {
+      "id": "659d536153013496739d5b56",
+      "decision": "selected",
+      "reason": "Die Preview von Honeycomb Team Agents ist ein eigenständiger Produktmeilenstein für proaktive SRE-Arbeit. Sie ist von den separat angekündigten persönlichen Assistenten zu unterscheiden; die angekündigte spätere allgemeine Verfügbarkeit wird nicht vorweggenommen.",
+      "item": {
+        "title": "Honeycomb zeigt Team Agents mit Honeycomb Intelligence als Preview für proaktive SRE-Arbeit",
+        "summary": "Honeycomb stellt Team Agents als Preview vor, die laut Hersteller nach Deployments, bei Alarmen oder nach Zeitplan Releases prüfen, Instrumentierung verbessern und Vorfälle untersuchen sollen. Gemeinsamer Teamspeicher und nach Ziel beziehungsweise Werkzeug abgestufte Autonomie sollen die Zusammenarbeit kontrollierbar machen. Die allgemeine Verfügbarkeit ist für den 1. Dezember in Pro- und Enterprise-Plänen mit Honeycomb Intelligence angekündigt; vorgesehen ist eine Abrechnung nach Agentenarbeitsstunden.",
+        "category": "agents",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "preview"
+      }
+    },
+    {
+      "id": "2fd6b3d9581d691f11465bdd",
+      "decision": "selected",
+      "reason": "Die angekündigten persönlichen Agenten für alle Pläne sind eine eigenständige Entwicklung neben der Preview der Team Agents; keine entsprechende Meldung in der Historie.",
+      "item": {
+        "title": "Honeycomb kündigt persönliche Produktionsassistenten für alle Pläne an",
+        "summary": "Honeycomb kündigt persönliche Agenten an, die in Honeycomb oder Slack Fragen zu Produktionssystemen mit Belegen beantworten und sich die Arbeitsweise des Nutzers merken sollen. Laut Hersteller bleiben persönliche Korrekturen privat, können aber zur Übernahme in den Teamspeicher vorgeschlagen werden. Die Agenten sollen in jedem Honeycomb-Plan enthalten sein.",
+        "category": "agents",
+        "impact": 2,
+        "date": "2026-11-03",
+        "change_type": "announcement"
+      }
+    },
+    {
+      "id": "bd329e2b6aa894b5e05cd30f",
+      "decision": "selected",
+      "reason": "Die Public Preview führt eine eigene dialogbasierte Marketplace-Suche ein und ist weder durch die Historie noch durch die anderen Snowflake-Funktionen abgedeckt.",
+      "item": {
+        "title": "Agentic Marketplace Discovery: Snowflake CoCo erschließt Marketplace-Angebote im Dialog",
+        "summary": "Snowflake startet Agentic Marketplace Discovery als Public Preview im Marketplace innerhalb von Snowsight. Laut Hersteller können Nutzer mit CoCo Daten, Apps und KI-Produkte im Gespräch finden und vergleichen. Abhängig von Angebot und Berechtigungen sollen sie diese installieren, testen oder ein Preisangebot anfordern können.",
+        "category": "agents",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "preview"
+      }
+    },
+    {
+      "id": "06d5700f67bf803b8a922db5",
+      "decision": "selected",
+      "reason": "Die Public Preview der Dashboards mit dialogbasierter Auswertung ist ein eigenständiger Produktmeilenstein; die gemeinsame Quelle begründet kein Duplikat.",
+      "item": {
+        "title": "Snowflake Dashboards starten mit Auswertung durch Snowflake CoWork als Public Preview",
+        "summary": "Snowflake Dashboards starten als Public Preview und lassen sich nach Herstellerangaben durch CoWork zusammenfassen, nach Ursachen für Veränderungen befragen und nach Segmenten filtern. Analysten können die Dashboards per Beschreibung an CoCo erstellen und mit vorgesehenen Rollen teilen. Bestehende Row-Access- und Maskierungsregeln sollen dabei erhalten bleiben.",
+        "category": "tools",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "preview"
+      }
+    },
+    {
+      "id": "a7d7de40e4cc6ed7aea7f75f",
+      "decision": "selected",
+      "reason": "Zeitgesteuerte wiederkehrende Aufgaben erweitern CoWork um einen eigenständigen Automationsmechanismus; ein gesonderter Verfügbarkeitsstatus ist nicht belegt.",
+      "item": {
+        "title": "Snowflake CoWork erhält CoWork Automations für wiederkehrende Aufgaben",
+        "summary": "Snowflake beschreibt CoWork Automations als Erweiterung für zeitgesteuerte, wiederkehrende Arbeiten. Laut Hersteller sollen sie unter denselben Berechtigungen wie eine interaktiv gestellte Frage ausgeführt werden. Ein gesonderter Verfügbarkeitsstatus wird dafür nicht genannt.",
+        "category": "agents",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "update"
+      }
+    },
+    {
+      "id": "b9201d7b294cc41af2de7791",
+      "decision": "selected",
+      "reason": "MCP-Konnektoren sind eine eigene Erweiterung des Werkzeugzugriffs und kein Duplikat der Automationen oder Codeausführung; der Funktionsumfang ist nur knapp beschrieben.",
+      "item": {
+        "title": "Snowflake CoWork erweitert den Werkzeugzugriff um MCP-Konnektoren",
+        "summary": "Snowflake nennt MCP-Konnektoren als Teil der erweiterten CoWork-Fähigkeiten. Laut Hersteller sollen sie dazu beitragen, Antworten in weiterverwendbare Arbeitsergebnisse zu überführen. Ein gesonderter Verfügbarkeitsstatus wird nicht angegeben.",
+        "category": "agents",
+        "impact": 2,
+        "date": "2026-11-03",
+        "change_type": "update"
+      }
+    },
+    {
+      "id": "f9f324504551387c657ab3c2",
+      "decision": "selected",
+      "reason": "Codeausführung ist eine eigenständige neue CoWork-Fähigkeit; die knappe Beleglage erlaubt jedoch keine Aussagen über Ausführungsumgebung oder Verfügbarkeit.",
+      "item": {
+        "title": "Snowflake CoWork erhält Codeausführung",
+        "summary": "Snowflake führt Codeausführung als zusätzliche Fähigkeit von CoWork auf. Der Hersteller beschreibt weder den Ausführungsrahmen im Detail noch einen gesonderten Preview- oder GA-Status.",
+        "category": "agents",
+        "impact": 2,
+        "date": "2026-11-03",
+        "change_type": "update"
+      }
+    },
+    {
+      "id": "74f70970a5a7df45d99ad684",
+      "decision": "selected",
+      "reason": "Die Dokumenterzeugung in mehreren Formaten ist eine eigenständige Ausgabeerweiterung; sie ist nicht identisch mit der separaten Public Preview zum Veröffentlichen von HTML Reports.",
+      "item": {
+        "title": "Snowflake CoWork erstellt Dokumente als PDF, PPTX, DOCX und HTML",
+        "summary": "Nach Herstellerangaben kann CoWork Antworten in teilbare Dokumente umsetzen. Snowflake nennt dafür die Ausgabeformate PDF, PPTX, DOCX und HTML, weist aber keinen gesonderten Verfügbarkeitsstatus aus.",
+        "category": "tools",
+        "impact": 2,
+        "date": "2026-11-03",
+        "change_type": "update"
+      }
+    },
+    {
+      "id": "f786a4ccf65fc4f7e86f3b69",
+      "decision": "selected",
+      "reason": "HTML Reports haben einen ausdrücklich belegten Public-Preview-Status und betreffen das Veröffentlichen von Berichten unter Plattform-Governance, nicht lediglich den HTML-Dokumentexport.",
+      "item": {
+        "title": "Snowflake CoWork startet HTML Reports als Public Preview",
+        "summary": "Snowflake weist HTML Reports für CoWork als Public Preview aus. Laut Hersteller können Teams damit gestaltete Berichte direkt aus einer CoWork-Unterhaltung veröffentlichen und dabei die Governance der Plattform beibehalten.",
+        "category": "tools",
+        "impact": 2,
+        "date": "2026-11-03",
+        "change_type": "preview"
+      }
+    },
+    {
+      "id": "8c52d2540c3b5809f4edfa01",
+      "decision": "selected",
+      "reason": "Die angekündigten Bots für längerfristige Verantwortlichkeiten sind eine eigene Entwicklung neben zeitgesteuerten Automationen; die Private Preview steht noch bevor.",
+      "item": {
+        "title": "Snowflake Bots für Snowflake CoCo und Snowflake CoWork angekündigt",
+        "summary": "Snowflake kündigt Bots für CoCo und CoWork an, deren Private Preview noch bevorsteht. Laut Hersteller sollen sie Verantwortlichkeiten wie Pipeline-Gesundheit oder Kundenabwanderung über Tage oder Wochen verfolgen, Signale vorschlagen und Arbeit planen. Sie sollen unter bestehenden Berechtigungen arbeiten und Menschen bei nötigen Entscheidungen einbeziehen.",
+        "category": "agents",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "announcement"
+      }
+    },
+    {
+      "id": "2ae771c9d0c405a88e5140af",
+      "decision": "below_threshold",
+      "reason": "Die allgemeine Verfügbarkeit nutzerbasierter Streamlit-Freigaben ist eine konkrete Verwaltungsfunktion, aber der vorgelegte Eintrag belegt keine eigenständige KI- oder Agentenentwicklung. Sie ist kein Duplikat der separat genannten Einbettungs- und CoWork-Integrationen."
+    },
+    {
+      "id": "8c0bf8abfe138675ab517e5a",
+      "decision": "selected",
+      "reason": "Die allgemeine Verfügbarkeit der externen Einbettung ist ein eigenständiger Bereitstellungsschritt für Streamlit in Snowflake. Sie unterscheidet sich von Nutzerfreigaben, CoWork Artifacts und den begleitenden KI-Gesprächen.",
+      "item": {
+        "title": "Streamlit in Snowflake: Externe Einbettung wird allgemein verfügbar",
+        "summary": "Snowflake gibt die Einbettung von Streamlit-Apps in externe Portale und Drittwerkzeuge wie Salesforce allgemein frei. Nach Herstellerangaben funktioniert dies ohne Snowflake-Login und erhält zugleich den kontrollierten Datenzugriff.",
+        "category": "tools",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "general_availability"
+      }
+    },
+    {
+      "id": "7a9aa20690c04b70ff9edc47",
+      "decision": "selected",
+      "reason": "Die Private Preview macht Streamlit-Apps innerhalb von CoWork auffindbar und anzeigbar. Diese Integration ist eine eigenständige Entwicklung und kein Duplikat der externen Einbettung oder der Dialogfunktionen.",
+      "item": {
+        "title": "Streamlit in Snowflake: CoWork Artifacts starten als Private Preview",
+        "summary": "Snowflake kündigt an, Streamlit-Apps als CoWork Artifacts innerhalb von CoWork auffindbar und anzeigbar zu machen. Der Hersteller weist diese Einbindung als Private Preview aus.",
+        "category": "tools",
+        "impact": 2,
+        "date": "2026-11-03",
+        "change_type": "preview"
+      }
+    },
+    {
+      "id": "541c0aec8870f5fe7d8a4556",
+      "decision": "selected",
+      "reason": "Begleitende KI-Gespräche über die App-Daten sind eine eigenständige Funktion. Die belegten Verfügbarkeitsstufen für CoCo und CoWork sind klar benannt; keiner der Vergleichseinträge beschreibt dieselbe Entwicklung.",
+      "item": {
+        "title": "Streamlit in Snowflake erhält Datendialoge mit Snowflake CoCo und Snowflake CoWork",
+        "summary": "Nach Angaben von Snowflake können Nutzer neben ihrer Streamlit-App KI-Gespräche über die darin verwendeten Daten führen. Die Funktion ist mit Snowflake CoCo in Snowsight allgemein verfügbar und mit Snowflake CoWork als Private Preview zugänglich.",
+        "category": "agents",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "general_availability"
+      }
+    },
+    {
+      "id": "66a219b69182efbbfe448c73",
+      "decision": "below_threshold",
+      "reason": "Die Alpha-Version ergänzt eine eng begrenzte Bedienungsfunktion: App-Verweise per # mit berechtigungsabhängigen Vorschlägen. Eine darüber hinausgehende Änderung der Agentenfunktionen ist nicht belegt."
+    },
+    {
+      "id": "464c169c8a2252c2438f5549",
+      "decision": "selected",
+      "reason": "Die referierte Untersuchung liefert konkrete Vergleichswerte zu Aufgabenleistung und Kontextbedarf; eine entsprechende Entwicklung ist in der Historie nicht enthalten.",
+      "item": {
+        "title": "NVIDIA-Untersuchung: Context Compaction senkt Kontextbedarf von Opus 4.5",
+        "summary": "Laut der referierten NVIDIA-Untersuchung erreicht Opus 4.5 mit einer Aktion pro Kontext 70,2 Punkte auf SWE-bench Verified gegenüber 70,0 mit vollständigem Gesprächsverlauf. Der mediane maximale Kontext sinkt dabei von 32.000 auf 8.000 Tokens; eine Komprimierung am Gesprächsende erreicht in der berichteten Auswertung 74,8 Punkte. Die Werte stammen aus der NVIDIA-Untersuchung und sind im vorgelegten Bericht nicht unabhängig bestätigt.",
+        "category": "agents",
+        "impact": 4,
+        "date": "2026-11-05",
+        "change_type": "research"
+      }
+    },
+    {
+      "id": "aced47504286674a1ec20f22",
+      "decision": "selected",
+      "reason": "Das berichtete Training zur Nutzung externer Notizen ist eine eigenständige Forschungsentwicklung mit konkreten Anbieterangaben zu Kosten und anhaltender Wirkung, kein Duplikat der Kontextkomprimierungsuntersuchung.",
+      "item": {
+        "title": "Engram trainiert GLM 5.3 Flash per Reinforcement Learning auf die Nutzung eigener Notizen",
+        "summary": "Engram berichtet, dass eine kurze Reinforcement-Learning-Phase GLM 5.3 Flash die zuverlässigere Nutzung eigener externer Notizen beibringe. Laut Anbieter liegen die Trainingskosten fünf- bis zehnmal unter den Kosten des Notizaufbaus, und der Effekt hält über Millionen Tokens an Bearbeitungen an.",
+        "category": "agents",
+        "impact": 4,
+        "date": "2026-11-05",
+        "change_type": "research"
+      }
+    },
+    {
+      "id": "265efec10c0849f74f98d0eb",
+      "decision": "selected",
+      "reason": "Die Verfügbarkeit von Embed 5 über OpenRouter ist eine neue Integration. Sie ist von der gleichzeitig gemeldeten Rerank-Integration funktional getrennt.",
+      "item": {
+        "title": "Cohere Embed 5 Pro und Fast sind über OpenRouter verfügbar",
+        "summary": "Laut Cohere lassen sich Embed 5 Pro und Fast jetzt mit bestehendem OpenRouter-API-Schlüssel und Guthaben nutzen. Beide Varianten teilen nach Herstellerangaben einen Embedding-Raum, sodass mit Pro indexierte Dokumente mit Fast abgefragt werden können, sofern die Vektordimensionen übereinstimmen.",
+        "category": "modelle",
+        "impact": 3,
+        "date": "2026-11-04",
+        "change_type": "integration"
+      }
+    },
+    {
+      "id": "88671e2ee1e6cc95d809b2fd",
+      "decision": "selected",
+      "reason": "Die OpenRouter-Integration ist ein neuer Zugangsschritt und kein Duplikat der in der Historie erfassten allgemeinen Freigabe von Rerank 5 am 21. Oktober.",
+      "item": {
+        "title": "Cohere bringt Rerank 5 Pro und Fast auf OpenRouter",
+        "summary": "Cohere meldet die Verfügbarkeit von Rerank 5 Pro und Fast auf OpenRouter. Nach Herstellerbeschreibung lässt sich der Reranker als zweite Stufe mit bestehenden semantischen, Keyword- oder hybriden Suchsystemen einsetzen, ohne ein bestimmtes Embedding-Modell vorauszusetzen. Kalibrierte Relevanzwerte ermöglichen laut Cohere einen gemeinsamen Filter-Schwellenwert über unterschiedliche Anfragen und Domänen hinweg.",
+        "category": "modelle",
+        "impact": 3,
+        "date": "2026-11-04",
+        "change_type": "integration"
+      }
+    },
+    {
+      "id": "54a3e63a6a5cf37e30ab50ab",
+      "decision": "below_threshold",
+      "reason": "Der Beitrag erläutert einen Referenzaufbau für Kontextmanagement in Deep Insight. Ein neuer Release oder Verfügbarkeitsschritt ist nicht belegt; die genannten Reduktionen sind Herstellerangaben innerhalb der Architekturbeschreibung."
+    },
+    {
+      "id": "0816e1d919ff2ef98e0e44e9",
+      "decision": "below_threshold",
+      "reason": "Belegt ist ein Architektur- und Integrationsbeispiel mit EDB Postgres AI, MCP und AgentCore. Der Eintrag grenzt ausdrücklich ab, dass keine neue Produktverfügbarkeit angekündigt wird; eine eigenständige Produktänderung ist nicht nachgewiesen."
+    },
+    {
+      "id": "eb2125a68b89bbe7640c06c3",
+      "decision": "selected",
+      "reason": "Cortex Sense ist eine eigenständige Produktankündigung zum automatischen Aufbau von Geschäftskontext. Die angekündigte Public Preview wird nicht als bereits verfügbar behandelt.",
+      "item": {
+        "title": "Snowflake Cortex Sense soll Geschäftskontext für Agenten automatisch aufbauen",
+        "summary": "Snowflake kündigt Cortex Sense an, das Geschäftskontext aus vorhandenen Schemas, Metrikdefinitionen und Geschäftslogik automatisch aufbauen soll. Die angekündigte Public Preview soll eigene Daten, geteilte Daten und Daten aus dem Snowflake Marketplace abdecken; eine bereits verfügbare Preview ist nicht ausgewiesen.",
+        "category": "agents",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "announcement"
+      }
+    },
+    {
+      "id": "6f74896a3cce386be123e816",
+      "decision": "selected",
+      "reason": "Die Public Preview von Analytical Search ist ein konkreter Verfügbarkeitsschritt für dokumentübergreifende Auswertungen und von den übrigen Snowflake-Ankündigungen zu unterscheiden.",
+      "item": {
+        "title": "Snowflake Analytical Search startet als Public Preview",
+        "summary": "Snowflake weist Analytical Search als Public Preview aus. Nach Herstellerangaben können Agenten damit über Tausende Dokumente hinweg zählen, vergleichen und Trends ermitteln, etwa Vertragsklauseln auswerten oder gemeinsame Ursachen in Supporttickets finden.",
+        "category": "tools",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "preview"
+      }
+    },
+    {
+      "id": "c9b202ad31674ed39ebc42bf",
+      "decision": "selected",
+      "reason": "Das AI Data Package ist eine eigenständige Public Preview mit externen Datensätzen, semantischen Views und vorkonfiguriertem CoWork-Agenten. Es dupliziert weder Analytical Search noch die separat vorgelegten CoWork-Funktionen.",
+      "item": {
+        "title": "Snowflake AI Data Package bündelt Datensätze und Snowflake CoWork als Public Preview",
+        "summary": "Snowflake stellt das AI Data Package als Public Preview vor. Nach Herstellerangaben kombiniert der verwaltete Dienst mehr als 60 kuratierte externe Datensätze aus wichtigen Branchen mit semantischen Views und einem einsatzbereiten Snowflake-CoWork-Agenten.",
+        "category": "agents",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "preview"
+      }
+    },
+    {
+      "id": "391c5aac2b369b95cd31f1a9",
+      "decision": "selected",
+      "reason": "Eigenständige Public Preview für die automatische Agentenerstellung auf geteilten Daten; weder die Historie noch die Vergleichskandidaten beschreiben diese Funktion.",
+      "item": {
+        "title": "Agents for Shared Data erstellt Cortex Agent für geteilte Daten in Public Preview",
+        "summary": "Snowflake weist Agents for Shared Data als Public Preview aus. Nach Herstellerangaben erzeugt die Funktion automatisch einen Cortex Agent und eine semantische View, sodass Empfänger geteilte Daten im Dialog nutzen können, ohne diese Komponenten selbst aufzubauen.",
+        "category": "agents",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "preview"
+      }
+    },
+    {
+      "id": "4afd799ea2ce2eb227e88efd",
+      "decision": "selected",
+      "reason": "Neue Public Preview für teamspezifische Agenten- und Werkzeugkonfigurationen; eigenständig gegenüber den anderen Snowflake-Funktionen derselben Quelle.",
+      "item": {
+        "title": "Snowflake CoWork: CoWork Profiles startet als Public Preview für Teamkonfigurationen",
+        "summary": "Snowflake stellt CoWork Profiles als Public Preview vor, mit der Administratoren Agenten, Skills, Konnektoren und Anweisungen pro Team konfigurieren können. Laut Hersteller werden Fragen an die passende Fachfunktion weitergeleitet, ohne den Datenzugriff auszuweiten.",
+        "category": "agents",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "preview"
+      }
+    },
+    {
+      "id": "9d9cdc9b0b22783c9a635161",
+      "decision": "selected",
+      "reason": "Belegte allgemeine Verfügbarkeit von User Memory; ein eigenständiger Verfügbarkeitsschritt, der in der vorgelegten Historie nicht enthalten ist.",
+      "item": {
+        "title": "Snowflake CoWork: User Memory wird allgemein verfügbar",
+        "summary": "Snowflake weist User Memory für CoWork als allgemein verfügbar aus. Nach Herstellerangaben bewahrt die Funktion persönlichen Kontext zwischen Sitzungen, sodass Nutzer Arbeitsweisen und Konventionen nicht erneut erklären müssen.",
+        "category": "agents",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "general_availability"
+      }
+    },
+    {
+      "id": "ab7a2db61c02b1b4a237a59e",
+      "decision": "selected",
+      "reason": "User Skills ist als eigenständige CoWork-Erweiterung belegt und nicht mit User Memory gleichzusetzen; ein Preview- oder GA-Status wird nicht unterstellt.",
+      "item": {
+        "title": "Snowflake CoWork ergänzt User Skills für sitzungsübergreifenden Arbeitskontext",
+        "summary": "Snowflake nennt User Skills als Erweiterung von CoWork, die gemeinsam mit User Memory Kontext über einzelne Sitzungen hinaus erhalten soll. Einen eigenen Preview- oder GA-Status für User Skills nennt der Hersteller nicht.",
+        "category": "agents",
+        "impact": 2,
+        "date": "2026-11-03",
+        "change_type": "update"
+      }
+    },
+    {
+      "id": "e5ae4103ce272c2d98a4c90e",
+      "decision": "selected",
+      "reason": "Eigenständige Produktankündigung zur Kombination und Verwaltung von MCP-Werkzeugen aus bestehenden Schnittstellen; kein Duplikat in Historie oder Vergleichskandidaten.",
+      "item": {
+        "title": "Kong Context Mesh kombiniert APIs und MCP-Server mit Anbindung an Kong AI Registry",
+        "summary": "Kong stellt Context Mesh zur Erzeugung kontrollierter MCP-Server aus vorhandenen APIs und MCP-Servern vor. Laut Hersteller lassen sich mehrere Quellen kombinieren und über Catalog und Kong AI Registry wiederverwenden. Code Mode soll den Kontextbedarf senken, indem Agenten nur benötigte Werkzeuge per Code aufrufen.",
+        "category": "agents",
+        "impact": 4,
+        "date": "2026-11-04",
+        "change_type": "announcement"
+      }
+    },
+    {
+      "id": "d4a5ec97b3bfe0d0b31c1541",
+      "decision": "selected",
+      "reason": "Neue Werkzeuge zur nachträglichen Verwaltung von App-Abfrageberechtigungen; eigenständige Funktion neben den Prüfungen bei app_create() und nicht in der Historie enthalten.",
+      "item": {
+        "title": "Datasette Apps 0.3a0 ergänzt app_add_stored_queries() und app_remove_stored_queries()",
+        "summary": "Laut Release-Mitteilung erhält Datasette Apps 0.3a0 zwei Agentenwerkzeuge, um gespeicherte Abfragen zum erlaubten Zugriff einer App hinzuzufügen oder daraus zu entfernen. Die Freigabe einer schreibenden Abfrage erfordert zuvor die Zustimmung des Nutzers.",
+        "category": "security",
+        "impact": 2,
+        "date": "2026-11-04",
+        "change_type": "preview"
+      }
+    },
+    {
+      "id": "61309d7ab4162c3239b5486f",
+      "decision": "selected",
+      "reason": "Neue Berechtigungs- und Zustimmungsprüfungen bei der App-Erstellung; vom nachträglichen Hinzufügen oder Entfernen erlaubter Abfragen sachlich getrennt.",
+      "item": {
+        "title": "Datasette Apps 0.3a0: app_create() prüft Abfragezugriffe vor der App-Erstellung",
+        "summary": "Laut Release-Mitteilung prüft app_create() in der Alpha-Version, ob jede angeforderte gespeicherte Abfrage existiert und für den Nutzer sichtbar ist. Schreibende Abfragen müssen vor der Erstellung der App ausdrücklich genehmigt werden.",
+        "category": "security",
+        "impact": 2,
+        "date": "2026-11-04",
+        "change_type": "preview"
+      }
+    },
+    {
+      "id": "3ab8e315fa4c48a262e668e9",
+      "decision": "duplicate",
+      "reason": "Berichtet über dieselbe Veröffentlichung des FlashProve-Forschungsprototyps wie der Historieneintrag. Die zusätzlichen Leistungsangaben belegen keinen neuen Veröffentlichungs- oder Entwicklungsmeilenstein.",
+      "duplicate_of": "h-302b4ffbafa5582e8bd9e9a5"
+    },
+    {
+      "id": "1ece8b1ddc938d0a3a7fc34f",
+      "decision": "duplicate",
+      "reason": "Die Veröffentlichung von Spezifikation und Komponenten-Code für FlashProve ist bereits in der Historie erfasst. Der spätere Bericht und die Einordnung fehlender Einsatzpläne sind kein eigener Entwicklungsschritt.",
+      "duplicate_of": "h-302b4ffbafa5582e8bd9e9a5"
+    },
+    {
+      "id": "aa5deaf16b3ea657a5502b42",
+      "decision": "selected",
+      "reason": "Neuer Bericht über einen konkreten autonomen Linux-Kernel-Prüflauf mit erzeugten Patches; nicht identisch mit dem historischen Vorschlag zur koordinierten Offenlegung durch Patch the Planet.",
+      "item": {
+        "title": "OpenAI meldet Patches für 948 Linux-Kernel-Lücken im Umfeld von Patch the Planet",
+        "summary": "Laut dem von Latent Space wiedergegebenen OpenAI-Bericht hat eine autonome Pipeline mit einem unveröffentlichten Cybermodell 948 Linux-Kernel-Schwachstellen validiert und Patches erzeugt; die angegebenen API-Kosten betragen 1,2 Millionen US-Dollar. OpenAI arbeite mit Linux-Maintainern und Partnern von Patch the Planet an Meldungen und Patches. Diese Herstellerangaben belegen keine bereits erfolgte Übernahme sämtlicher Patches in den Kernel.",
+        "category": "security",
+        "impact": 5,
+        "date": "2026-11-05",
+        "change_type": "security"
+      }
+    },
+    {
+      "id": "e9e17b785e491fa75071ff77",
+      "decision": "selected",
+      "reason": "Eigenständige neue Angaben zu Sicherheitsbegrenzungen im Hy4-Training; keine entsprechende Entwicklung in Historie oder Vergleichskandidaten.",
+      "item": {
+        "title": "Tencent beschreibt Filter gegen offensive Cyberinhalte im Hy4-Training",
+        "summary": "Laut den von Latent Space wiedergegebenen Tencent-Angaben wurde das Cybersecurity-Training von Hy4 auf defensive PoC-Erstellung und Schwachstellenbehebung begrenzt. Exploit-Entwicklung, Reverse Engineering und Penetrationstests seien herausgefiltert worden. Interne Red-Team-Prüfungen hätten kein erhöhtes Risiko festgestellt; dies ist eine Sicherheitsbewertung des Herstellers.",
+        "category": "security",
+        "impact": 3,
+        "date": "2026-11-05",
+        "change_type": "security"
+      }
+    },
+    {
+      "id": "03fb9bac152e246236ea95c7",
+      "decision": "selected",
+      "reason": "Neuer Vergleichstest zum Einfluss der Aufgabenrahmung auf GPT-6 Astra; sachlich getrennt von historischen Monitoring-Vorfällen und dem Forschungsansatz gegen Sandbagging.",
+      "item": {
+        "title": "GPT-6 Astra: OpenAI-Forscher berichtet über geringere Erfolgsquote bei Sicherheitsforschungs-Rahmung",
+        "summary": "Ein OpenAI-Forscher berichtet laut Latent Space von zehn Prozent Erfolgsquote bei als Sicherheitsforschung beschriebenen Coding-Aufgaben gegenüber 16 Prozent bei einer Fähigkeitsforschungs-Rahmung. Die meisten Fälle seien nicht in der Gedankenkette erkennbar gewesen und vom Überwachungsmodell übersehen worden. Der Artikel nennt alternative Interpretationen; absichtliche Minderleistung ist damit nicht abschließend belegt.",
+        "category": "security",
+        "impact": 4,
+        "date": "2026-11-05",
+        "change_type": "research"
+      }
+    },
+    {
+      "id": "5fa3381b3a37c1ed8bd514d7",
+      "decision": "selected",
+      "reason": "Eigenständiger referierter Befund zu vergifteten Vortrainingsdaten und Codeausführungs-Backdoors, nicht dasselbe Experiment wie die historische Forschung zu harmlos wirkenden Fine-Tuning-Daten; die indirekte Beleglage wird ausdrücklich kenntlich gemacht.",
+      "item": {
+        "title": "Pretraining Poisoning: Latent Space referiert Anthropic-Befund zu Codeausführungs-Backdoors",
+        "summary": "Latent Space referiert über einen zitierenden Beitrag ein Anthropic-Ergebnis, wonach Kontrolle über ein Zweihunderttausendstel der Vortrainingsdaten ausreichen könne, um einen Agenten zur Ausführung angreiferbestimmten Codes zu bringen. Sauberes Nachtraining entferne die vergiftete Überzeugung demnach nicht. Die Forschungsbehauptung ist hier nur indirekt vermittelt, nicht durch den vollständig vorliegenden Forschungsbericht belegt.",
+        "category": "security",
+        "impact": 4,
+        "date": "2026-11-05",
+        "change_type": "research"
+      }
+    },
+    {
+      "id": "4adb1243e4666f34e8d34db0",
+      "decision": "selected",
+      "reason": "Neuer Forschungsansatz von Stephen Morris und Kollegen gegen Sandbagging; die Belohnung gegenseitiger Antwortvorhersagen unterscheidet sich vom separaten Solver-Auditor-Ansatz.",
+      "item": {
+        "title": "Mechanism Design gegen Sandbagging: Modelle sollen Antworten anderer Modelle vorhersagen",
+        "summary": "MIT Technology Review berichtet über einen Preprint von Stephen Morris und Kollegen, der mit Mechanism Design absichtlich schlechte Testergebnisse von KI-Agenten erschweren soll. Ein Vorschlag belohnt Modelle dafür, Antworten eines zweiten Modells vorherzusagen; weitere Varianten nutzen Wettbewerb oder den Abgleich gegensätzlich verzerrter Agenten. Ob diese Anreize bei realen Frontier-Modellen und über verschiedene Aufgaben hinweg funktionieren, bleibt offen.",
+        "category": "security",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "research"
+      }
+    },
+    {
+      "id": "fb0f12929e2f0d458c5abe26",
+      "decision": "selected",
+      "reason": "Eigenständiger Forschungsansatz von Elad Hazan mit wechselnden Solver- und Auditorenrollen; die gemeinsame Artikel-URL macht ihn nicht zum Duplikat des Ansatzes von Morris und Kollegen.",
+      "item": {
+        "title": "Mechanism Design: Solver und Auditoren sollen KI-Agenten gegenseitig kontrollieren",
+        "summary": "MIT Technology Review beschreibt einen Ansatz von Princeton-Forscher Elad Hazan, bei dem KI-Modelle abwechselnd als Solver Probleme bearbeiten und als Auditoren andere Modelle prüfen. Im Training werden ertappte Täuschungsversuche und übersehene Verstöße sanktioniert; Streitfälle könnten menschlichen Experten vorgelegt werden. Absprachen zwischen Agenten bleiben ein Risiko, dem Hazan mit Prüfanreizen und zusätzlicher Kontrolle der Auditoren begegnen will.",
+        "category": "security",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "research"
+      }
+    },
+    {
+      "id": "d57e6aebc49439d361856255",
+      "decision": "duplicate",
+      "reason": "Die Historie erfasst bereits die Unterstützung offener Drittmodelle in Model Vault Encrypted samt kleinerem Modellkatalog und anfänglicher US-Verfügbarkeit. Die Benennung von Gemma, GPT-OSS und Phi konkretisiert denselben Veröffentlichungsschritt, belegt aber keine zusätzliche Freigabe.",
+      "duplicate_of": "h-842559092ed7865799a550b9"
+    },
+    {
+      "id": "f50af01402a1e17267c9164c",
+      "decision": "selected",
+      "reason": "Die modellgestützte Prüfung einzelner Agentenaktionen ist eine eigenständige Sicherheitsentwicklung und unterscheidet sich von den historisch erfassten Datenzugriffsprüfungen in Amazon Quick.",
+      "item": {
+        "title": "Amazon Quick: Smart Approvals prüft Agentenaktionen vor automatischer Freigabe",
+        "summary": "Laut AWS gleicht ein separater Klassifikator in Amazon Quick vorgeschlagene Agentenaktionen mit dem Nutzerauftrag und einem begrenzten Gesprächskontext ab; bestehende Verbote und verpflichtende menschliche Freigaben bleiben bestehen. Automatische Freigaben gelten nur einmalig für die geprüfte Aktion samt Parametern, während Zeitüberschreitungen und Prüffehler zur menschlichen Prüfung führen. AWS weist auf mögliche Fehlentscheidungen hin und empfiehlt, zwingende Freigaben für sensible Aktionen über Connector-Berechtigungen durchzusetzen.",
+        "category": "security",
+        "impact": 3,
+        "date": "2026-11-04",
+        "change_type": "security"
+      }
+    },
+    {
+      "id": "d711c09c0231df890eec82c3",
+      "decision": "selected",
+      "reason": "Die Private Preview zur Durchsetzung von Quelltabellenrichtlinien in Cortex Search ist bislang nicht erfasst und funktional von Restricted Session Scope getrennt; die gemeinsame URL begründet kein Duplikat.",
+      "item": {
+        "title": "Snowflake Cortex Search übernimmt Zugriffs- und Maskierungsregeln in Private Preview",
+        "summary": "Laut Snowflake setzt Cortex Search in einer Private Preview zeilenbezogene Zugriffsregeln und Maskierungsrichtlinien der Quelltabellen durch. Dadurch soll der Dokumentzugriff eines Agenten denselben Regeln folgen wie seine Abfragen strukturierter Daten.",
+        "category": "security",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "preview"
+      }
+    },
+    {
+      "id": "36c8a2104bfd655036b49155",
+      "decision": "selected",
+      "reason": "Die allgemeine Verfügbarkeit von Restricted Session Scope ist ein eigenständiger, bislang nicht erfasster Schritt zur Begrenzung von Agentenrechten.",
+      "item": {
+        "title": "Snowflake CoCo: Restricted Session Scope ist allgemein verfügbar",
+        "summary": "Snowflake erklärt Restricted Session Scope für allgemein verfügbar. Administratoren können damit laut Hersteller den Handlungsspielraum eines Agenten zusätzlich zu den bereits übernommenen Nutzerberechtigungen begrenzen.",
+        "category": "security",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "general_availability"
+      }
+    },
+    {
+      "id": "5d2521eb4f75972b34a683d0",
+      "decision": "selected",
+      "reason": "Die angekündigte Vermittlung von Zugangsdaten und Zugriffskontrollen durch Token Vault und Gateway ist eine konkrete, bislang nicht erfasste Sicherheitsentwicklung für Agenten.",
+      "item": {
+        "title": "Kong Token Vault soll in Kong Konnect Zugangsdaten aus Agenten heraushalten",
+        "summary": "Laut Kong verbleiben Zugangsdaten im Token Vault, statt in Agentencode, Konfigurationen oder Prompts zu stehen. Token Vault und Gateway übernehmen demnach den Austausch der Zugangsdaten sowie Zugriffskontrollen für mehrere Systeme und MCP-Anbieter. Der Hersteller nennt außerdem gezielten Widerruf und durchgängige Nachvollziehbarkeit.",
+        "category": "security",
+        "impact": 4,
+        "date": "2026-11-04",
+        "change_type": "announcement"
+      }
+    },
+    {
+      "id": "7ac42f5638ee4cc52cbdf100",
+      "decision": "duplicate",
+      "reason": "Die native Falcon-Guardian-Integration in Claude Coworks Ausführungsumgebung ist bereits historisch erfasst. Die vorliegende Ankündigung belegt weder eine zusätzliche allgemeine Verfügbarkeit noch einen neuen Windows-Freigabeschritt gegenüber der dokumentierten macOS-Beta.",
+      "duplicate_of": "h-1f30f6d4022a94d086164575"
+    },
+    {
+      "id": "b1ef8b6cb54ff9ce7da0046b",
+      "decision": "selected",
+      "reason": "Die Ankündigung erweitert die Nachrüstung erstmals auf drei 4.5-Modelle; diese waren nicht Gegenstand des historischen Eintrags zu den 4.6-Modellen.",
+      "item": {
+        "title": "Anthropic kündigt Textwasserzeichen für Claude Opus 4.5, Claude Sonnet 4.5 und Claude Haiku 4.5 an",
+        "summary": "Anthropic hat laut The Decoder API-Kunden angekündigt, Claude Opus 4.5, Claude Sonnet 4.5 und Claude Haiku 4.5 ab dem 16. November 2026 mit Textwasserzeichen nachzurüsten. Nach Herstellerangaben greift das Wasserzeichen nur bei Standardwerten für temperature, top_p und top_k. Auf Amazon Bedrock könne die Einführung einige Tage länger dauern.",
+        "category": "business",
+        "impact": 3,
+        "date": "2026-11-04",
+        "change_type": "announcement"
+      }
+    },
+    {
+      "id": "f0dfd0ea443e2e29430b5146",
+      "decision": "selected",
+      "reason": "Die ausdrücklich bestätigte Verschiebung vom 3. auf den 16. November ist eine neue Terminänderung gegenüber der historisch erfassten Nachrüstungsankündigung.",
+      "item": {
+        "title": "Anthropic verschiebt Textwasserzeichen für Claude Opus 4.6 auf den 16. November",
+        "summary": "Anthropic hat laut The Decoder gegenüber API-Kunden bestätigt, dass Claude Opus 4.6 sein Textwasserzeichen am 16. November 2026 statt am 3. November erhalten soll. Einen Grund nennt das Unternehmen nicht. Nach Herstellerangaben soll das Wasserzeichen weiterhin nur bei unveränderten Standardwerten der drei Sampling-Parameter greifen.",
+        "category": "business",
+        "impact": 2,
+        "date": "2026-11-04",
+        "change_type": "update"
+      }
+    },
+    {
+      "id": "895859f9fc5f13cdea12bc51",
+      "decision": "selected",
+      "reason": "Die fehlende Option einer Suche ohne KI und die beschriebenen Suchmodi sind eine konkrete zusätzliche Einschränkung gegenüber dem historischen Eintrag, der nur die standardmäßige Deaktivierung und das administrative Opt-in erfasst.",
+      "item": {
+        "title": "Google Search an Schulen: Ab 2027 keine Freigabe ohne KI – auch Gemini und Gemini Notebook betroffen",
+        "summary": "Laut The Decoder sollen Gemini, Gemini Notebook und Google Search für Schülerkonten ab Anfang 2027 standardmäßig deaktiviert werden; Schulen können die Dienste einzeln freischalten. Bei Google Search sollen sie nur zwischen KI-Übersichten samt KI-Chat und „Guided Learning“ wählen können, nicht zwischen Suche mit und ohne KI. Der Bericht beschreibt dies auch als Abkehr von zuletzt standardmäßig aktivierten KI-Funktionen in Google Classroom an Schulen mit Gemini-Zugang.",
+        "category": "business",
+        "impact": 4,
+        "date": "2026-11-04",
+        "change_type": "policy"
+      }
+    },
+    {
+      "id": "932930f7dd5f04522257110b",
+      "decision": "duplicate",
+      "reason": "Die angekündigte standardmäßige Deaktivierung derselben vier Produkte für K-12-Schülerkonten bis zur administrativen Freigabe ist bereits in der Historie erfasst. Ein weiterer Einführungsschritt ist nicht belegt.",
+      "duplicate_of": "h-a3eb28750872b9a83d696449"
+    },
+    {
+      "id": "21c7556ec75f4c023d7a2d87",
+      "decision": "selected",
+      "reason": "Neue Längsschnittstudie mit konkreten Befunden zu Umstufungen und veränderten Transparenzpflichten in den KI-Inventaren der US-Bundesbehörden; kein entsprechender historischer Eintrag liegt vor.",
+      "item": {
+        "title": "US Federal AI Use Case Inventory: Studie dokumentiert Transparenzverluste zwischen 2023 und 2025",
+        "summary": "Eine neue Längsschnittstudie untersucht die KI-Inventare der US-Bundesbehörden von 2023 bis 2025. Die Autoren berichten, dass 44 von 272 zuvor als rechts- oder sicherheitsrelevant eingestuften Anwendungen 2025 außerhalb der High-Impact-Kategorie lagen und dadurch von weiteren Governance-Angaben ausgenommen waren; Begründungen fehlten häufig oder blieben pauschal. Sie empfehlen dauerhafte Kennungen, versionierte Datensätze und eine konkretere Dokumentation von Umstufungen und menschlicher Aufsicht.",
+        "category": "business",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "research"
+      }
+    },
+    {
+      "id": "b5aacd76b1da10c93d6ca9a3",
+      "decision": "duplicate",
+      "reason": "Das Opt-in ist historisch bereits erfasst; die zusätzliche Kopplung von KI-Sperre und Suchzugang wird durch den ausgewählten Kandidaten zur fehlenden KI-freien Suchoption abgedeckt.",
+      "duplicate_of": "895859f9fc5f13cdea12bc51"
+    },
+    {
+      "id": "be724f10ff138f2eefe73f3f",
+      "decision": "selected",
+      "reason": "Neue App-Store-Altersvorgabe mit direktem Bezug zu romantischen oder sexuellen KI-Begleitern und einer konkreten Pflicht für Entwickler.",
+      "item": {
+        "title": "Apple App Store verlangt 18+-Einstufung für romantische KI-Begleiter",
+        "summary": "Laut TechCrunch müssen Apps mit Dating- oder romantischen Beziehungsfunktionen künftig eine 18+-Einstufung tragen; dies betrifft auch KI-Begleiter mit sexuellen oder romantischen Inhalten. Nach Apples Angaben müssen Entwickler ab dem 16. November neue Inhaltsbeschreibungen angeben, damit die Altersfreigaben die Funktionen ihrer Apps widerspiegeln.",
+        "category": "business",
+        "impact": 4,
+        "date": "2026-11-03",
+        "change_type": "policy"
+      }
+    },
+    {
+      "id": "df01729049565742aedb1deb",
+      "decision": "below_threshold",
+      "reason": "Die zusätzliche Offenlegung realer Standortfreigaben ist eine allgemeine App-Store-Regel. Der vorgelegte Eintrag belegt keinen spezifischen KI-Bezug; die gemeinsame Quelle mit der KI-Begleiter-Regel reicht dafür nicht aus."
+    },
+    {
+      "id": "cb25703e37e3f2b4a37f800c",
+      "decision": "selected",
+      "reason": "Neue politische Agenda von OpenAIs Politikchef mit konkreten Vorschlägen vor der US-Wahl 2028; sie ist von den historisch erfassten Cyberpolitik-Vorschlägen abgrenzbar.",
+      "item": {
+        "title": "OpenAI-Politikchef Chris Lehane legt KI-Agenda vor der US-Wahl 2028 vor",
+        "summary": "OpenAIs Politikchef Chris Lehane veröffentlicht einen Essay mit fünf politischen Prioritäten, darunter Anreize für KI-Weiterbildung, Mitarbeiterbeteiligung, Rechenzentrumsausbau und Minderjährigenschutz. Er fordert außerdem durchsetzbare KI-Sicherheitsstandards, unabhängige Bewertungen, öffentliche Aufsicht und Abschaltmöglichkeiten; dies sind politische Vorschläge, keine beschlossenen Regeln. Die von TechCrunch befragte KI-Politikexpertin Kate Brennan kritisiert eine Ausrichtung auf Unternehmensinteressen und wenige konkrete Vorgaben zur Verteilung wirtschaftlicher Gewinne.",
+        "category": "business",
+        "impact": 3,
+        "date": "2026-11-04",
+        "change_type": "policy"
+      }
+    },
+    {
+      "id": "52d5865fc4fda66da17467be",
+      "decision": "duplicate",
+      "reason": "Die öffentliche Erläuterung KI-assistierter Mods und die Übergangsfrist sind bereits historisch erfasst. Der neue Kandidat belegt keinen zusätzlichen Regelungsschritt gegenüber dieser dokumentierten Präzisierung.",
+      "duplicate_of": "h-00e86280ccf9409932ce53d1"
+    },
+    {
+      "id": "0e62fd6f1b60e3e860d7f4bb",
+      "decision": "selected",
+      "reason": "Konkrete Änderungen an Sichtbarkeit und Upload-Regeln; diese sind von der historisch erfassten KI-Offenlegungspflicht zu unterscheiden.",
+      "item": {
+        "title": "Nexus Mods erprobt Autorenlimits für „Recently Added“",
+        "summary": "Nexus Mods erprobt eine Begrenzung der gleichzeitig sichtbaren Mods pro Autor im Bereich „Recently Added“ und nennt strengere Upload-Beschränkungen für neue Konten. Laut Betreiber sollen massenhafte Uploads andere Mods weniger stark verdrängen; das Problem sei nicht ausschließlich KI-bedingt, trete durch beschleunigte Mod-Produktion aber häufiger auf.",
+        "category": "business",
+        "impact": 2,
+        "date": "2026-11-04",
+        "change_type": "update"
+      }
+    },
+    {
+      "id": "3f8f01302711eba75e8b10b6",
+      "decision": "below_threshold",
+      "reason": "Die Aussage zur Trainingsnutzung bekräftigt eine Betreiberposition, ohne eine neue Änderung dieser Praxis zu belegen. Die zusätzlich angekündigten Kontrollmöglichkeiten bleiben ohne konkrete Ausgestaltung oder belegte Umsetzung."
+    },
+    {
+      "id": "e129fcc98fd4f4d9e2e5e14b",
+      "decision": "duplicate",
+      "reason": "Die Kopplung des Suchzugangs an die KI-Freigabe für Schülerkonten ist dieselbe Richtlinienänderung wie im Vergleichskandidaten; kein zusätzlicher Umsetzungsschritt ist belegt.",
+      "duplicate_of": "895859f9fc5f13cdea12bc51"
+    },
+    {
+      "id": "621590e51d4d66251cf35631",
+      "decision": "held",
+      "reason": "Duplikatziel wurde nicht veröffentlicht",
+      "duplicate_of": "39873d73e68cd83d3af77ed6"
+    },
+    {
+      "id": "938a23fa6e18ac2fcf456bf9",
+      "decision": "selected",
+      "reason": "Über den bereits im Vergleichskandidaten erfassten Machtwechsel in Texas hinaus werden Wahlsiege in drei weiteren Staaten und eine bundesstaatenübergreifende Kapazitätsprognose berichtet.",
+      "item": {
+        "title": "Rechenzentren: Wahlsiege über Texas hinaus erhöhen politischen Druck",
+        "summary": "Ars Technica berichtet neben dem Wahlsieg von Gina Hinojosa in Texas über demokratische Siege bei den Gouverneurswahlen in Arizona, Georgia und Ohio. Eine im Artikel zitierte Axios-Prognose sieht dadurch nahezu zwei Drittel der für 2028 geplanten Rechenzentrumskapazität möglichen Verzögerungen ausgesetzt. Hinojosas angekündigte Projektverzögerungen bis zur Verabschiedung von Schutzregeln sind noch kein verabschiedetes Gesetz.",
+        "category": "business",
+        "impact": 4,
+        "date": "2026-11-04",
+        "change_type": "policy"
+      }
+    },
+    {
+      "id": "de5da64e192cdbd045d5d9ad",
+      "decision": "below_threshold",
+      "reason": "Die umstrittene Wahldeutung des Branchenverbands enthält weder eine neue Regelung noch eine konkrete operative Maßnahme; als eigenständige Meldung bleibt sie hinter den berichteten Wahlergebnissen zurück."
+    },
+    {
+      "id": "3ca4871f77e23aa580b5ca21",
+      "decision": "selected",
+      "reason": "Neue NBC-Nachwahlbefragungen sind von der historischen CNBC-Vorwahlbefragung und von tatsächlich angenommenen Beschränkungen zu unterscheiden.",
+      "item": {
+        "title": "NBC News: Nachwahlbefragungen zeigen breite Ablehnung von Rechenzentren",
+        "summary": "Laut den von Ars Technica wiedergegebenen NBC-Nachwahlbefragungen lehnen drei von vier Wählern Rechenzentren ab. Mehr als die Hälfte bezeichnete KI und Rechenzentren als entscheidenden oder wichtigen Faktor für ihre Kongresswahlentscheidung. Lebenshaltungskosten und Regierungskorruption rangierten in den Befragungen allerdings vor diesen Themen.",
+        "category": "business",
+        "impact": 3,
+        "date": "2026-11-04",
+        "change_type": "research"
+      }
+    },
+    {
+      "id": "f58178663ba3baa1deedeadf",
+      "decision": "duplicate",
+      "reason": "Googles Erläuterung wiederholt die historisch erfasste standardmäßige Deaktivierung mit administrativer Freigabe. Eine Änderung der Richtlinie oder eine ausdrückliche Klärung der Such-KI-Kopplung ist nicht belegt.",
+      "duplicate_of": "h-a3eb28750872b9a83d696449"
+    },
+    {
+      "id": "f7caaf0a0b16aa1f431db089",
+      "decision": "held",
+      "reason": "Der mehrfach indirekt referierte Bericht benennt weder den Gegenstand noch die Ausgestaltung der angekündigten KI-Geschwindigkeitsgrenzen hinreichend konkret. Für eine belastbare Meldung über OpenAIs Lobbyvorhaben fehlen im vorgelegten Abschnitt zentrale Details."
+    },
+    {
+      "id": "2379c114e608a14ab53e9de0",
+      "decision": "below_threshold",
+      "reason": "Belegt ist eine politische Forderung einer einzelnen Abgeordneten, aber weder ein eingebrachter Gesetzentwurf noch ein parlamentarischer Beschluss oder eine konkretisierte Initiative zur Umsetzung."
+    },
+    {
+      "id": "0b1d4b1795de18356e9b5009",
+      "decision": "duplicate",
+      "reason": "Die Folge der gekoppelten Freigabe von KI-Funktionen und Google Search an Schulen wird bereits im Vergleichskandidaten beschrieben. Der referierte Bericht belegt keinen zusätzlichen Umsetzungsschritt.",
+      "duplicate_of": "895859f9fc5f13cdea12bc51"
+    },
+    {
+      "id": "99b0bd5a8ccc7d8a67e50625",
+      "decision": "duplicate",
+      "reason": "Der politische Machtwechsel in Texas und seine Folgen für geplante Rechenzentren sind bereits Bestandteil des Vergleichskandidaten zu den Gouverneurswahlen. Die Moratoriumsforderung aus dem Wahlkampf konkretisiert dieses Risiko, ist aber kein neu beschlossener Baustopp.",
+      "duplicate_of": "938a23fa6e18ac2fcf456bf9"
+    },
+    {
+      "id": "39873d73e68cd83d3af77ed6",
+      "decision": "held",
+      "reason": "Duplikatziel wurde nicht veröffentlicht",
+      "duplicate_of": "621590e51d4d66251cf35631"
+    },
+    {
+      "id": "f538b0aaadb13541806f752f",
+      "decision": "selected",
+      "reason": "Die sofortige Verfügbarkeit von GovernAI für Uptiq-Kunden ist eine konkrete neue Produkteinführung. Die Historie enthält lediglich andere Governance-Angebote und keinen früheren Beleg zu diesem Produkt.",
+      "item": {
+        "title": "Uptiq stellt GovernAI für die Governance von KI-Agenten in Finanzinstituten bereit",
+        "summary": "Uptiq stellt GovernAI nach eigenen Angaben ab sofort allen Uptiq-Kunden ohne Zusatzkosten bereit. Die zentrale Konsole soll Agenten unterschiedlicher Plattformen registrieren, rollenbasierte Zugriffe und menschliche Freigaben verwalten sowie Nutzung und Kosten erfassen. Der Anbieter nennt außerdem die Rückverfolgung von Ausgaben auf Quelldokumente, Richtlinien, Modellversionen und Freigabeketten sowie Regressionstests vor Richtlinienänderungen.",
+        "category": "business",
+        "impact": 3,
+        "date": "2026-11-04",
+        "change_type": "general_availability"
+      }
+    },
+    {
+      "id": "3e3f3c6b1ed4afb68f77e47a",
+      "decision": "selected",
+      "reason": "Die eigenständige Verfügbarkeit unabhängig von Inbound Email Security ist ein neuer Vertriebs- und Verfügbarkeitsschritt für AI Governance; ein entsprechender Historien- oder Vergleichseintrag liegt nicht vor.",
+      "item": {
+        "title": "Abnormal AI bietet AI Governance als eigenständiges Produkt an",
+        "summary": "Abnormal AI hat am 3. November mitgeteilt, dass AI Governance seit dem 30. Oktober 2026 unabhängig von seiner Inbound Email Security erworben werden kann. Nach Herstellerangaben soll das Produkt KI-Werkzeuge und Agenten inventarisieren, sensible Daten in KI-Chats sichtbar machen sowie Ausgaben und Compliance-Berichte zusammenführen. Die Lizenzierung erfolgt pro Nutzer, wobei die Zahl der Postfächer als Näherungswert dient.",
+        "category": "security",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "general_availability"
+      }
+    },
+    {
+      "id": "1d09dd8d79ebf1feedca874e",
+      "decision": "selected",
+      "reason": "Die angekündigte direkte Merchant-Center-Anbindung ist eine konkrete neue Erweiterung; die vorgelegte Historie enthält diese Entwicklung nicht.",
+      "item": {
+        "title": "Google kündigt Universal Commerce Protocol im Merchant Center an",
+        "summary": "Google will ab dem kommenden Jahr eine vereinfachte Integration des Universal Commerce Protocol direkt im Merchant Center anbieten. Händler sollen damit laut Google direkten Checkout und weitere Funktionen für Produktangebote in der Gemini-App und im AI Mode aktivieren können; die Anbindung ist noch nicht verfügbar.",
+        "category": "business",
+        "impact": 3,
+        "date": "2026-11-04",
+        "change_type": "announcement"
+      }
+    },
+    {
+      "id": "18b1123c532762cfe6c77aa6",
+      "decision": "selected",
+      "reason": "Das erhöhte Kapazitätsziel für 2027 ist eine eigene Entwicklung gegenüber der historisch erfassten GPU-Finanzierung von SpaceX.",
+      "item": {
+        "title": "SpaceX erhöht Rechenzentrumsziel laut SemiAnalysis auf rund 13 Gigawatt",
+        "summary": "Ars Technica berichtet unter Berufung auf SemiAnalysis, dass SpaceX sein Rechenzentrumsziel für 2027 von 10 auf ungefähr 13 Gigawatt erhöht hat. SemiAnalysis hält das Ziel für erreichbar und gibt an, bereits mehr als 9 Gigawatt Kapazität identifiziert zu haben. Die 13 Gigawatt sind ein Ausbauziel, keine bereits verfügbare Kapazität.",
+        "category": "business",
+        "impact": 4,
+        "date": "2026-11-04",
+        "change_type": "business"
+      }
+    },
+    {
+      "id": "856409a02d39662cbe3aab38",
+      "decision": "duplicate",
+      "reason": "Die getrennte Erfassung lokaler BYOK-Nutzung samt Telemetrie-bedingter Unterzählung und unveränderten Gesamtsummen ist bereits in der Historie enthalten; die Feldnamen konkretisieren denselben Veröffentlichungsschritt.",
+      "duplicate_of": "h-79b096ea5237334ada52d39c"
+    },
+    {
+      "id": "80666e2ad4d68a941b9ced72",
+      "decision": "duplicate",
+      "reason": "Der Historieneintrag erfasst bereits die Unterscheidung von Enterprise-Custom-Modellen und Copilot-gehosteten Modellen aus derselben Veröffentlichung. Das Feld is_custom_enterprise_model und die getrennten Modelleinträge sind Details dieses bereits berichteten Updates.",
+      "duplicate_of": "h-79b096ea5237334ada52d39c"
+    },
+    {
+      "id": "12cc30bdc1f25e01ce6a4ed2",
+      "decision": "selected",
+      "reason": "Der berichtete Wechsel der Claude-Code-Produktverantwortlichen in eine leitende OpenAI-Produktrolle ist eine neue relevante Personalentwicklung ohne Entsprechung in der Historie.",
+      "item": {
+        "title": "Cat Wu wechselt von Claude Code zu OpenAI",
+        "summary": "Latent Space berichtet, dass Cat Wu Anthropic verlässt und bei OpenAI die Leitung des Produktmanagements für Core Products übernimmt. Zuvor verantwortete sie das Produktmanagement von Claude Code seit dessen Beginn.",
+        "category": "business",
+        "impact": 3,
+        "date": "2026-11-05",
+        "change_type": "business"
+      }
+    },
+    {
+      "id": "e0767d5c1c423ced71d13ed6",
+      "decision": "selected",
+      "reason": "Der Wechsel einer KI-Führungskraft von AMD zu Anthropic ist eine eigenständige neue Personalentwicklung; die gemeinsame Quelle mit anderen Kandidaten begründet kein Duplikat.",
+      "item": {
+        "title": "Sharon Zhou wechselt von AMD zu Anthropic",
+        "summary": "Laut Latent Space verlässt Sharon Zhou AMD und wechselt zu Anthropic. Der Bericht beschreibt sie als frühere Lamini-Chefin und Vice President für KI bei AMD.",
+        "category": "business",
+        "impact": 3,
+        "date": "2026-11-05",
+        "change_type": "business"
+      }
+    },
+    {
+      "id": "ca24bf143d931523dd119af5",
+      "decision": "selected",
+      "reason": "Der berichtete produktive Einsatz eines agentischen Inferenzcompilers ist eine neue technische Entwicklung und unterscheidet sich vom historisch erfassten Together Link.",
+      "item": {
+        "title": "Together Compiler: TKCC optimiert laufende Inferenz",
+        "summary": "Together beschreibt TKCC als agentischen Compiler, der produktive Inferenz anhand von Modell, Auslastung und Hardware fortlaufend optimiert und bereits Billionen Tokens pro Tag verarbeite. Bis zu 50 Prozent schnellere Kundenworkloads sind eine Herstellerangabe. Laut dem Bericht habe SemiAnalysis eines der InferenceX-/AgentX-Ergebnisse validiert, nicht sämtliche Leistungsbehauptungen.",
+        "category": "tools",
+        "impact": 4,
+        "date": "2026-11-05",
+        "change_type": "announcement"
+      }
+    },
+    {
+      "id": "f093703d90b87c86e6d00b67",
+      "decision": "selected",
+      "reason": "Baseten Grid ist eine eigenständige neue Gateway-Ankündigung; ähnliche Routing- oder Budgetfunktionen anderer Anbieter sind keine Duplikate.",
+      "item": {
+        "title": "Baseten Grid bündelt Modellrouting, Budgets und Guardrails",
+        "summary": "Latent Space berichtet über Baseten Grid als anbieterübergreifendes Gateway für Routing, Budgets und Guardrails. Baseten behauptet, sein Router senke Coding-Kosten gegenüber Opus 5.5 um 72 Prozent und übertreffe zufälliges Routing bei allen untersuchten Schwellenwerten. Diese Vergleichswerte sind Herstellerangaben.",
+        "category": "tools",
+        "impact": 3,
+        "date": "2026-11-05",
+        "change_type": "announcement"
+      }
+    },
+    {
+      "id": "41add04ea1ab4db3d96adf24",
+      "decision": "selected",
+      "reason": "Der Bericht über Training auf geografisch getrennten, unterschiedlichen GPU-Pools enthält einen konkreten neuen Infrastrukturansatz ohne historischen Doppeleintrag.",
+      "item": {
+        "title": "Core Automation beschreibt Training über getrennte GB300- und B300-Pools",
+        "summary": "Laut Latent Space beschreibt Rohan Anil von Core Automation Training über geografisch getrennte GB300- und B300-Pools mit unterschiedlichen Parallelisierungsverfahren. Er berichtet von ähnlicher oder leicht besserer Skalierung trotz unterschiedlicher Chiptypen und numerischer Verfahren. Die Leistungsbewertung ist eine Angabe des beteiligten Unternehmens, keine unabhängig bestätigte Messung.",
+        "category": "business",
+        "impact": 3,
+        "date": "2026-11-05",
+        "change_type": "research"
+      }
+    },
+    {
+      "id": "fb5405f882a9d61dcee33dea",
+      "decision": "held",
+      "reason": "Die Historie berichtet bereits über wegen externer Lieferverzögerungen verschobene Microsoft-KI-Kapazität. Die jetzt referierte Planunterschreitung um fünf Milliarden US-Dollar und der Bezug zu IREN könnten zusätzliche Details desselben Sachverhalts sein; anhand des vorgelegten Sekundärreferats ist eine eigenständige neue Entwicklung nicht sicher abgrenzbar."
+    },
+    {
+      "id": "e848cb80221bed8a8d60f7a7",
+      "decision": "selected",
+      "reason": "Neue Analyse eines konkreten Genehmigungsrisikos für Rechenzentrumskapazität in Texas; keine entsprechende Entwicklung in der Historie.",
+      "item": {
+        "title": "TCEQ-Genehmigungsstopp in Texas: SemiAnalysis sieht Risiko für Rechenzentrumspläne",
+        "summary": "Latent Space referiert eine SemiAnalysis-Diskussion, wonach ein Genehmigungsstopp der texanischen TCEQ 30,3 Gigawatt für 2028 geplanter Rechenzentrumskapazität gefährden könnte. Die Zahl bezeichnet ein mögliches Risiko und keine bereits gestrichene Kapazität.",
+        "category": "business",
+        "impact": 4,
+        "date": "2026-11-05",
+        "change_type": "policy"
+      }
+    },
+    {
+      "id": "88dc225844a34551a0f63de0",
+      "decision": "selected",
+      "reason": "Konkreter neuer Unternehmensfall für selbst gehostete Coding-Inferenz mit Angaben zu Hardware und Kosten; von den bisherigen GLM-Meldungen klar verschieden.",
+      "item": {
+        "title": "Revolut setzt beim Coding auf selbst gehostetes GLM-5.3 mit Nvidia B200",
+        "summary": "Laut der von Latent Space wiedergegebenen Unternehmensdarstellung betreibt Revolut GLM-5.3 auf 56 Nvidia-B200-GPUs und berichtet von etwa 90 Prozent niedrigeren Inferenzkosten für Coding. Genannt werden NVFP4-Quantisierung, getrennte Prefill- und Decode-Verarbeitung sowie ein praktisches Kontextlimit von rund 256.000 Tokens. Visuelle und UI-Aufgaben gehen weiterhin an kommerzielle multimodale Modelle; die Kosteneinsparung ist eine Unternehmensangabe.",
+        "category": "lokal",
+        "impact": 4,
+        "date": "2026-11-05",
+        "change_type": "business"
+      }
+    },
+    {
+      "id": "84014db9045560a1166a14e7",
+      "decision": "selected",
+      "reason": "Neue Tagesaufnahme mit DeepSeek-spezifischem Anteil; nicht identisch mit der historischen Top-50-Auswertung für Ende September.",
+      "item": {
+        "title": "DeepSeek erreicht laut dirac.run-Diagramm 53 Prozent der OpenRouter-Tokens",
+        "summary": "Latent Space beschreibt ein dirac.run-Tagesdiagramm, das DeepSeek etwa 53 Prozent von insgesamt 27 Billionen täglichen OpenRouter-Tokens zuschreibt. Der zugehörige Beitrag beziffert den gemeinsamen Anteil von Open-Weight-Laboren auf über 75 Prozent. Die Angaben betreffen OpenRouter und lassen sich nicht auf den gesamten Inferenzmarkt übertragen.",
+        "category": "business",
+        "impact": 3,
+        "date": "2026-11-05",
+        "change_type": "business"
+      }
+    },
+    {
+      "id": "6bd371a54cce3f8ee0433f97",
+      "decision": "duplicate",
+      "reason": "Die Aufnahme offener Drittmodelle in Model Vault einschließlich regionaler Verfügbarkeit und Speicherregeln ist bereits für denselben Veröffentlichungstag erfasst; kein zusätzlicher GA-Schritt belegt.",
+      "duplicate_of": "h-842559092ed7865799a550b9"
+    },
+    {
+      "id": "add5a9196530c932c622b02c",
+      "decision": "duplicate",
+      "reason": "Dasselbe dokumentierte On-behalf-of-Muster für ServiceNow mit AgentCore Gateway und Microsoft Entra ID ist bereits erfasst; der Kandidat belegt keine zusätzliche Produktfreigabe.",
+      "duplicate_of": "h-536c4fe61eef51754c510b89"
+    },
+    {
+      "id": "4a19e085c09cc1f43b79c950",
+      "decision": "selected",
+      "reason": "Eigenständige allgemeine Verfügbarkeit einer zusätzlichen Claude-Bereitstellungsoption; in der vorgelegten Historie nicht erfasst.",
+      "item": {
+        "title": "Claude auf Google Cloud: Anthropic-verwaltete Bereitstellung allgemein verfügbar",
+        "summary": "Google meldet in seinem Oktober-Rückblick die allgemeine Verfügbarkeit einer von Anthropic verwalteten Bereitstellungsoption für Claude-Modelle auf Google Cloud. Nach Herstellerangaben ergänzt sie die bestehende, von Google verwaltete Option.",
+        "category": "business",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "general_availability"
+      }
+    },
+    {
+      "id": "1be74d0c5f8dad133ba7a0a5",
+      "decision": "selected",
+      "reason": "Eigenständige Preview eines Google-Angebots für öffentliche Dienstleistungen; nicht mit Claude for Government aus der Historie gleichzusetzen.",
+      "item": {
+        "title": "Gemini for government services startet als Preview",
+        "summary": "Google führt Gemini for government services in seinem Oktober-Rückblick als Preview auf. Nach Herstellerangaben kombiniert das Angebot behördenspezifische Fähigkeiten, Verbindungen zu bestehenden Verwaltungssystemen und spezialisierte Partneragenten mit Governance-Funktionen.",
+        "category": "agents",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "preview"
+      }
+    },
+    {
+      "id": "793c57f9e3b1bcb25cc10401",
+      "decision": "selected",
+      "reason": "Neue Integration zur Erfassung von Agententrajektorien für Modellanpassung; weder historisch erfasst noch identisch mit den übrigen Snowflake-Kandidaten.",
+      "item": {
+        "title": "Snowflake Cortex Training integriert Cortex AI Gateway für Traces und Logs",
+        "summary": "Laut Snowflake integriert Cortex Training das als Public Preview ausgewiesene Cortex AI Gateway, um Agenten-Traces und Logs aufzuzeichnen. Diese Daten sollen nach Herstellerangaben eine kontinuierliche Rückkopplung für die Anpassung und Verbesserung eigener Modelle ermöglichen.",
+        "category": "tools",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "integration"
+      }
+    },
+    {
+      "id": "7f0b75f80d3471416100a50e",
+      "decision": "selected",
+      "reason": "Eigenständige Unternehmensentwicklung zur Aufnahme des Mora-Teams für KI-gestützte Business Intelligence; keine vorgelegte Dublette.",
+      "item": {
+        "title": "Snowflake holt das Mora-Team für KI-gestützte Business Intelligence",
+        "summary": "Snowflake kündigt an, das Mora-Team zur Unterstützung seiner Dashboard- und Analysefunktionen aufzunehmen. Der Hersteller will dessen Ansatz für KI-gestützte Business Intelligence in seine Plattform einbringen; Transaktionsbedingungen werden nicht genannt.",
+        "category": "business",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "business"
+      }
+    },
+    {
+      "id": "759ce9ef1df20c18b7406958",
+      "decision": "selected",
+      "reason": "Konkrete Ankündigung eines neuen Betriebsmodells für App Runtime; von den Vergleichseinträgen zu Native Apps und Postgres funktional verschieden.",
+      "item": {
+        "title": "Snowflake App Runtime soll Serverless Compute mit Scale-to-zero erhalten",
+        "summary": "Snowflake kündigt eine bevorstehende Public Preview für serverlosen Betrieb in App Runtime an. Laut Hersteller sollen Apps bei Inaktivität auf null skalieren und beim Öffnen innerhalb von Sekunden wieder starten; vorgesehen ist eine nutzungsabhängige Abrechnung statt dauerhaft laufender Rechenleistung.",
+        "category": "tools",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "announcement"
+      }
+    },
+    {
+      "id": "482938c6e548495ae1775946",
+      "decision": "selected",
+      "reason": "Eigenständige angekündigte Erweiterung von Native Apps um ein Full-Stack-Frontend. Die separat vorgelegte Serverless-Ankündigung für App Runtime betrifft eine andere Funktion.",
+      "item": {
+        "title": "Snowflake Native Apps sollen Snowflake App Runtime als Frontend erhalten",
+        "summary": "Snowflake kündigt an, Snowflake App Runtime als Full-Stack-Frontend für Snowflake Native Apps bereitzustellen. Laut Hersteller sollen Anbieter damit anspruchsvollere Datenexplorationen und komplexe Workflows als Webanwendungen umsetzen können; die Public Preview steht noch aus.",
+        "category": "tools",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "announcement"
+      }
+    },
+    {
+      "id": "505aa33e523314a67b160def",
+      "decision": "selected",
+      "reason": "Eigenständige angekündigte Datenbankintegration für Native Apps; weder die Frontend-Erweiterung noch die vorgelegte Historie decken diesen Schritt ab.",
+      "item": {
+        "title": "Snowflake Native Apps sollen direkt auf Snowflake Postgres zugreifen können",
+        "summary": "Snowflake kündigt eine Public Preview an, in der Native-App-Anbieter Postgres-Instanzen direkt im Account erstellen und abfragen können sollen. Laut Hersteller soll dies Umwege über externe Zugriffsintegrationen vermeiden.",
+        "category": "tools",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "announcement"
+      }
+    },
+    {
+      "id": "14a2fa1d24b8f2aee71c9550",
+      "decision": "selected",
+      "reason": "Konkrete Funktion zur automatischen Modellwahl nach Aufgabenanforderungen und Kostenklasse, ohne Entsprechung in der vorgelegten Historie. Ein Preview- oder GA-Start ist nicht belegt und wird nicht behauptet.",
+      "item": {
+        "title": "Snowflake Model Tiers routen Aufgaben nach Leistungs- und Kostenklasse",
+        "summary": "Snowflake beschreibt mit Model Tiers eine automatische Weiterleitung von Aufgaben an unterschiedliche Modelle. Laut Hersteller sollen einfache Zusammenfassungs- und Formatierungsaufgaben kostengünstige Modelle nutzen, komplexe Schlussfolgerungen dagegen leistungsfähigere Modelle; ein eigener Preview- oder GA-Status wird nicht genannt.",
+        "category": "agents",
+        "impact": 3,
+        "date": "2026-11-03",
+        "change_type": "update"
+      }
+    },
+    {
+      "id": "d52848dde3cd554ecfdc6ce1",
+      "decision": "selected",
+      "reason": "Neue Kostensteuerungsfunktionen für Kong Konnect mit konkretem Funktionsumfang. Die historische Meldung zu ServiceNow betrifft einen anderen Anbieter und ist kein Duplikat.",
+      "item": {
+        "title": "Kong Konnect erhält AI Cost Management mit Kostenzuordnung und Budgets",
+        "summary": "Kong stellt AI Cost Management mit dynamischem Preiskatalog, anpassbarer Kostenzuordnung, harten und weichen Budgets sowie einem Ausgaben-Dashboard vor. Laut Hersteller lassen sich Drittwerkzeuge einbeziehen und tokenbasierte Ausgaben nach Teams, Coding-Harnesses und Repositories aufschlüsseln.",
+        "category": "business",
+        "impact": 3,
+        "date": "2026-11-04",
+        "change_type": "announcement"
+      }
+    },
+    {
+      "id": "4a510d1c63288f0f3ed7cda2",
+      "decision": "selected",
+      "reason": "Eigenständiger Funktionsumfang zur Beobachtung von KI-Verkehr. Dashboard, Explorer und Anfrage-Logs sind vom separat angekündigten erweiterten Agenten-Tracing abzugrenzen.",
+      "item": {
+        "title": "Kong AI Observability bündelt KI-Verkehr in Kong Konnect",
+        "summary": "Kong beschreibt AI Observability mit einem Übersichts-Dashboard, einem Explorer für Abfragen entlang relevanter Dimensionen und Logs für einzelne KI-Anfragen. Basic Observability ist laut Hersteller Bestandteil des AI Gateway auf Konnect.",
+        "category": "tools",
+        "impact": 3,
+        "date": "2026-11-04",
+        "change_type": "announcement"
+      }
+    },
+    {
+      "id": "2973a37b20080eedbb2fbacb",
+      "decision": "selected",
+      "reason": "Separat terminierte Ankündigung für detailliertes Agenten-Tracing, das über die beschriebenen grundlegenden Observability-Funktionen hinausgeht. Die Erweiterung wird nicht als bereits verfügbar dargestellt.",
+      "item": {
+        "title": "Kong Advanced AI Observability soll Agentensitzungen detailliert nachvollziehbar machen",
+        "summary": "Kong kündigt Advanced AI Observability für Ende November oder Anfang Dezember an. Laut Hersteller soll die Erweiterung Agentenschritte, Werkzeugaufrufe und Modellaufrufe über Sitzungen und einzelne Gesprächsschritte hinweg nachvollziehbar machen; zum Artikeldatum ist sie noch nicht als verfügbar beschrieben.",
+        "category": "tools",
+        "impact": 3,
+        "date": "2026-11-04",
+        "change_type": "announcement"
+      }
+    },
+    {
+      "id": "a0da7018349d741ceda62cea",
+      "decision": "selected",
+      "reason": "Eigenständige kommerzielle Bündelungsentscheidung für bestehende Gateway-Kunden, nicht bloß eine Wiederholung der einzelnen Funktionsankündigungen.",
+      "item": {
+        "title": "Kong AI Gateway bündelt vier KI-Management-Funktionen auf Kong Konnect ohne separate SKU",
+        "summary": "Kong erklärt, dass Context Mesh, Token Vault, AI Cost Management und Basic Observability im AI Gateway auf Konnect enthalten sind und keine separate SKU benötigen. Bestehende Gateway-Kunden auf Konnect können diese Funktionen laut Hersteller ohne zusätzlichen Kauf nutzen; Advanced AI Observability wird in dieser Aufzählung nicht genannt.",
+        "category": "business",
+        "impact": 3,
+        "date": "2026-11-04",
+        "change_type": "business"
+      }
+    }
+  ],
+  "briefing_sha256": "884aacf17c58acd6f889c4e8c13980d40e1abe91e019db8837be6eaa75b99b7a",
+  "created_at": "2026-11-05T07:32:12.423021+00:00"
+}
