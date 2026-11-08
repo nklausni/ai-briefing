@@ -103,10 +103,10 @@ class TestIngest(unittest.TestCase):
         self.assertEqual(e["date"], "2026-06-09")
         self.assertEqual(e["first_seen"], "2026-06-10")
 
-    def test_unparseable_date_falls_back_to_generated(self):
+    def test_unparseable_date_is_excluded_from_calendar_windows(self):
         h = {"items": [], "summaries": []}
         history.ingest(h, _briefing([_item(date="diese Woche")]))
-        self.assertEqual(h["items"][0]["date"], "2026-06-10")
+        self.assertEqual(h["items"], [])
 
     def test_dedup_by_shared_source_url_and_similar_title(self):
         h = {"items": [], "summaries": []}

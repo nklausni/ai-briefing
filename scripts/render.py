@@ -147,7 +147,7 @@ def build_radar_svg(entries):
             ang = sec_start + SEC_DEG * (k + 1) / (K + 1)
             r_off = (k - (K - 1) / 2) * min(16, band * 0.22)
             x, y = pt(ang, r_mid + r_off)
-            out.append('<g>')
+            out.append(f'<g data-date="{esc(history_mod.parse_date(e["date"]) or "")}">')
             out.append(f'<circle cx="{fmt(x)}" cy="{fmt(y)}" r="13" fill="{color}" stroke="{CARD}" stroke-width="2"/>')
             out.append(f'<text x="{fmt(x)}" y="{fmt(y + 4)}" class="blip-num" '
                        f'text-anchor="middle" fill="{contrast_text(color)}">{esc(e["n"])}</text>')
@@ -179,7 +179,7 @@ def build_detail(entries):
         src_meta = f'<span class="dmeta-src">{esc(primary_src)} · {esc(e["date"])}</span> · ' if primary_src else f'<span class="dmeta-src">{esc(e["date"])}</span> · '
         title_html = (f'<a class="dtitle-link" href="{esc(primary_url)}" target="_blank" rel="noopener">{esc(e["title"])}</a>'
                       if primary_url else esc(e["title"]))
-        cards.append(f'''  <div class="dcard">
+        cards.append(f'''  <div class="dcard" data-date="{esc(history_mod.parse_date(e["date"]) or "")}">
     <span class="dnum" style="background:{color};color:{contrast_text(color)}">{esc(e["n"])}</span>
     <div class="dbody">
       <h3 class="dtitle">{title_html}</h3>
@@ -487,7 +487,7 @@ SCALE_BLOCK = """  <div class="scale">
 
 
 RANGES = [
-    ("today", "Heute", None),
+    ("today", "Heute", 1),
     ("7d", "7 Tage", 7),
     ("14d", "14 Tage", 14),
     ("30d", "30 Tage", 30),
@@ -548,9 +548,11 @@ def edition_label(meta, range_key):
     return f"Ausgabe vom {date}" if date else "Aktuelle Ausgabe"
 
 
-def edition_note(range_key):
-    return ('<p class="sub">Enthält auch frühere Meldungen; Originaldaten stehen an den Einträgen.</p>'
-            if range_key == "today" else "")
+def calendar_script(meta, range_key):
+    prefix = "" if range_key == "today" else "../"
+    days = next(days for key, _, days in RANGES if key == range_key)
+    day = esc(history_mod.parse_date(meta.get("generated")) or "")
+    return f'<script defer src="{prefix}calendar.js" data-edition="{day}" data-days="{days}"></script>'
 
 
 def generated_date_text(value):
@@ -618,7 +620,7 @@ def footer_html(meta):
     updated_line = f'<br><span class="footer-updated">{esc(updated)}</span>' if updated else ""
     return (f'<div class="footer">{esc(meta.get("disclaimer", ""))}<br>'
             f'Aufbau nach dem Tech-Radar-Prinzip (Ringe = Impact, Segmente = Kategorie). '
-            f'Statischer Export; nur die lokale Suche benötigt JavaScript. Auswahl per Recherche — keine Gewähr auf Vollständigkeit.'
+            f'Statischer Export. Auswahl per Recherche — keine Gewähr auf Vollständigkeit.'
             f'{updated_line}</div>')
 
 
@@ -650,6 +652,7 @@ def build_topic_page(topic, meta, topics, range_key="today"):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{calendar_script(meta, range_key)}
 <title>AI-Radar — {esc(topic["name"])} — {esc(zeitraum)}</title>
 <link rel="stylesheet" href="{css_href(range_key)}">
 </head>
@@ -659,7 +662,6 @@ def build_topic_page(topic, meta, topics, range_key="today"):
   {nav_html(topics, topic["id"], range_key)}
   <h2 class="topic-heading">{esc(topic['name'])}</h2>
 
-{edition_note(range_key)}
   <p class="lede">{esc(topic.get("summary", ""))}</p>
 {stale_notice}
   <div class="board">
@@ -678,7 +680,7 @@ def build_topic_page(topic, meta, topics, range_key="today"):
 
   <div class="section"><h2>Die Meldungen im Detail</h2></div>
   <div class="detail-list">
-{build_detail(entries)}
+{build_detail(entries) if entries else '<p class="range-empty">Für diesen Zeitraum liegen keine Meldungen vor.</p>'}
   </div>
 
 {skip_block}
@@ -714,7 +716,7 @@ def front_page_html(topics):
         heading = 'h2' if i == 0 else 'h3'
         cls = 'lead-story' if i == 0 else 'headline'
         title_cls = ' class="lead-title"' if i == 0 else ''
-        rendered.append(f'<article class="{cls}"><div class="edition-label">{esc(topic["name"])} · {esc(CAT_NAME.get(item["category"], item["category"]))}</div>'
+        rendered.append(f'<article class="{cls}" data-date="{esc(history_mod.parse_date(item["date"]) or "")}"><div class="edition-label">{esc(topic["name"])} · {esc(CAT_NAME.get(item["category"], item["category"]))}</div>'
                         f'<{heading}{title_cls}><a href="{esc(url)}">{esc(item["title"])}</a></{heading}>'
                         f'<p>{esc(item["summary"])}</p><div class="dmeta">{esc(item["date"])} · Impact {esc(item["impact"])}/5 · {dots(int(item["impact"]))}</div>'
                         f'{sources_html(item)}<a class="ov-link" href="{esc(topic["id"])}.html">Zum Feld-Report →</a></article>')
@@ -733,7 +735,7 @@ def ov_card(topic, meta=None, range_key="today", featured=()):
                         f'{esc(e["title"])}</a>')
             return f'<span class="ov-item-t">{esc(e["title"])}</span>'
         items = "\n".join(
-            f'      <li><span class="ov-dot" style="background:{CAT_COLOR.get(e["category"], "#0075de")}"></span>'
+            f'      <li data-date="{esc(history_mod.parse_date(e["date"]) or "")}"><span class="ov-dot" style="background:{CAT_COLOR.get(e["category"], "#0075de")}"></span>'
             f'{title_html(e)}'
             f'<span class="ov-item-d">{dots(int(e["impact"]))}</span></li>'
             for e in top)
@@ -741,13 +743,14 @@ def ov_card(topic, meta=None, range_key="today", featured=()):
     else:
         body = ('<p class="ov-empty">Die Schlagzeilen dieses Bereichs stehen oben; alle Meldungen im Feld-Report.</p>'
                 if topic.get('items') else '<p class="ov-empty">In diesem Zeitraum keine eigenständigen Meldungen.</p>')
+    dates = " ".join(history_mod.parse_date(e["date"]) or "" for e in topic.get("items", []))
     count = len(topic.get("items", []))
     count_label = "Meldung" if count == 1 else "Meldungen"
     badge = ""
     if range_key == "today" and meta is not None and is_stale(topic, meta):
         badge = (f'\n    <div class="ov-stale">Unverändert seit '
                  f'{esc(format_iso_date(topic.get("_data_date")))}</div>')
-    return f'''  <div class="ov-card">
+    return f'''  <div class="ov-card" data-dates="{esc(dates)}">
     <div class="ov-card-head">
       <h3>{esc(topic["name"])}</h3>
       <span class="ov-count">{count} {count_label}</span>
@@ -794,6 +797,7 @@ def build_overview(briefing, range_key="today"):
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{calendar_script(meta, range_key)}
 <title>{esc(meta.get("title","AI-Briefing"))} Übersicht — {esc(edition_label(meta, range_key))}</title>
 <link rel="stylesheet" href="{css_href(range_key)}">
 </head>
@@ -811,7 +815,6 @@ def build_overview(briefing, range_key="today"):
     <p id="overview-search-help">Durchsucht alle gespeicherten Meldungen und das Archiv – unabhängig vom gewählten Zeitraum.</p>
   </form>
 
-{edition_note(range_key)}
   {public_intro_html(meta)}
   {front_page}
 
@@ -855,25 +858,29 @@ def main():
 
     topics = briefing["topics"]
 
-    # Heute-Ansicht: aktuelles Briefing unverändert (wie bisher)
-    (SITE / "index.html").write_text(build_overview(briefing), encoding="utf-8")
-    for t in topics:
-        (SITE / f'{t["id"]}.html').write_text(
-            build_topic_page(t, briefing["meta"], topics), encoding="utf-8")
-
-    # Zeitraum-Ansichten aus dem Pool
-    for key, _, days in RANGES[1:]:
-        rmeta = dict(briefing["meta"], period=history_mod.format_period(end_iso, days))
+    for key, _, days in RANGES:
+        first_day = (datetime.date.fromisoformat(end_iso) - datetime.timedelta(days=days - 1)).isoformat()
+        rmeta = dict(briefing["meta"])
+        if key != "today":
+            rmeta["period"] = history_mod.format_period(end_iso, days)
         rtopics = []
         for t in topics:
-            rt = dict(t)
-            rt["items"] = history_mod.items_for_range(hist, t["id"], end_iso, days)
-            rt["summary"] = history_mod.latest_summary(hist, t["id"], end_iso) \
-                or t.get("summary", "")
-            rt["skip"] = []  # Skip-Block ist tagesbezogen → nur in der Heute-Ansicht
+            items = history_mod.items_for_range(hist, t["id"], end_iso, days)
+            # An edition-wide summary can describe a story omitted by this filter.
+            whole_topic = bool(t["items"]) and all(
+                first_day <= (history_mod.parse_date(item["date"]) or "") <= end_iso
+                for item in t["items"])
+            if not whole_topic:
+                rmeta.pop("intro", None)
+            rt = dict(t, items=items, summary=t.get("summary", "") if whole_topic and items else "",
+                      skip=t.get("skip", []) if key == "today" and whole_topic and items else [])
+            if not whole_topic:
+                rt.pop("_data_date", None)
             rtopics.append(rt)
         rbriefing = {"meta": rmeta, "topics": rtopics}
-        outdir = SITE / key
+        outdir = SITE if key == "today" else SITE / key
+        if key == "today":
+            today_topics = rtopics
         (outdir / "index.html").write_text(
             build_overview(rbriefing, range_key=key), encoding="utf-8")
         for rt in rtopics:
@@ -889,14 +896,15 @@ def main():
         json.dumps(build_search_index(briefing, hist, DATA.parent / "archive"),
                    ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     (SITE / ".nojekyll").write_text("", encoding="utf-8")
-    total = sum(len(t.get("items", [])) for t in topics)
+    (SITE / "calendar.js").write_bytes(Path(__file__).with_name("calendar.js").read_bytes())
+    total = sum(len(t["items"]) for t in today_topics)
     n_hist = len(hist["items"])
     print(f"Fertig: 4 Ansichten (Heute/7d/14d/30d), {total} Meldungen heute, "
           f"{n_hist} im Pool.")
     if moved_items or moved_sums:
         print(f"Archiviert: {moved_items} Meldung(en), {moved_sums} Summary(s) "
               f"älter als {history_mod.KEEP_DAYS} Tage.")
-    for t in topics:
+    for t in today_topics:
         suffix = ""
         if is_stale(t, briefing["meta"]):
             suffix = f"  ({stale_age_text(t, briefing['meta'])})"

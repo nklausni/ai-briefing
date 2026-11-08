@@ -45,7 +45,7 @@ AI Briefing/
 │   ├── render.py           ← Generator: merged briefing.json in den Pool → schreibt site/
 │   ├── search.py · search.js ← lokale Archivsuche
 │   └── test/               ← Unit-Tests (nur Standardbibliothek)
-└── site/                   ← generierte statische Seiten (JavaScript nur für die lokale Suche)
+└── site/                   ← generierte statische Seiten
     ├── 7d/ · 14d/ · 30d/   ← Zeitraum-Ansichten (letzte 7/14/30 Tage)
     ├── search.html · search.js · search-index.json ← lokale Volltextsuche
     ├── style.css           ← gemeinsames Stylesheet aller Seiten
@@ -92,11 +92,13 @@ geschrieben und immer weiter wachsen.
 Die Seite wird in vier Ansichten gerendert, umschaltbar über die Zeile
 „Zeitraum" in der Navigation (reine Links, weiterhin kein JavaScript):
 
-- **Heute** (`site/`) — die aktuelle redaktionelle Ausgabe, beschriftet mit „Ausgabe vom …“ aus `meta.generated`, nicht ein Filter auf das Veröffentlichungsdatum der Meldungen. Frühere geprüfte Entwicklungen dürfen erhalten bleiben; Originaldaten stehen an den Einträgen. `meta.period` und historische Audits bleiben unverändert.
-- **7 / 14 / 30 Tage** (`site/7d/`, `site/14d/`, `site/30d/`) — Meldungen aus
-  dem Pool im jeweiligen Zeitfenster, je Topic neu nummeriert (sortiert nach
-  Impact, dann Datum). Lede ist die jüngste Tages-Summary; der
-  „Überspringen"-Block erscheint nur in der Heute-Ansicht.
+- **Heute** zeigt Meldungen mit dem Originaldatum des aktuellen Berliner Kalendertags.
+- **7, 14 und 30 Tage** umfassen heute und die jeweils 6, 13 oder 29 vorhergehenden
+  Kalendertage. Eine Meldung erscheint in jedem passenden Zeitraum.
+
+Der Renderer übergibt dieselbe Auswahl an Übersicht, Themenberichte und Radar.
+Nach einem Datumswechsel passt der Browser die zuletzt gebaute Seite an den
+neuen Kalendertag an. Ohne JavaScript gelten die auf der Seite angegebenen Daten.
 
 Tests:
 

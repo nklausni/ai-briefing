@@ -68,11 +68,11 @@ class TestRenderVariants(unittest.TestCase):
         self.assertIn("Meldung", sub)
         self.assertIn("4.–10. Juni 2026", sub)   # berechnete Periode
 
-    def test_skip_block_only_in_today_view(self):
+    def test_undated_skip_copy_is_hidden_when_articles_fall_outside_today(self):
         # "Überspringen kannst du" ist die Überschrift des Skip-Blocks (das Wort
         # "Überspringen" allein steht auch in der Impact-Skala jeder Seite).
         root = (render.SITE / "ai-news.html").read_text(encoding="utf-8")
-        self.assertIn("Überspringen kannst du", root)
+        self.assertNotIn("Überspringen kannst du", root)
         sub = (render.SITE / "7d" / "ai-news.html").read_text(encoding="utf-8")
         self.assertNotIn("Überspringen kannst du", sub)
 
@@ -85,10 +85,10 @@ class TestRenderVariants(unittest.TestCase):
             self.assertIn('<nav class="range-sw" aria-label="Zeitraum">', meta_block, page)
             self.assertIn('<div class="range-period">Ausgabe vom 10. Juni 2026</div>',
                           meta_block, page)
-            self.assertIn('Enthält auch frühere Meldungen; Originaldaten stehen an den Einträgen.', root)
+            self.assertNotIn('Enthält auch frühere Meldungen', root)
             self.assertIn('Ausgabe vom 10. Juni 2026</title>', root)
             self.assertNotIn('9.–10. Juni 2026', root)
-            self.assertIn('09.06.2026', root if page == 'ai-news.html' else
+            self.assertNotIn('09.06.2026', root if page == 'ai-news.html' else
                           (render.SITE / 'ai-news.html').read_text())
         sub = (render.SITE / "7d" / "index.html").read_text(encoding="utf-8")
         self.assertIn('<div class="range-period">4.–10. Juni 2026</div>', sub)
@@ -108,6 +108,30 @@ class TestRenderVariants(unittest.TestCase):
                 meta["generated"] = generated
             with self.subTest(generated=generated):
                 self.assertNotIn("Zuletzt aktualisiert:", render.footer_html(meta))
+
+    def test_original_dates_apply_to_every_matching_calendar_window(self):
+        issue = json.loads(json.dumps(BRIEFING))
+        topic = issue["topics"][0]
+        base = topic["items"][0]
+        dates = ["10.06.2026", "2026-06-09", "2026-06-04", "2026-06-03",
+                 "2026-05-28", "2026-05-27", "2026-05-12", "2026-05-11",
+                 "2026-06-11", "unbekannt"]
+        topic["items"] = [dict(base, title=f"Story [{day}]", date=day,
+                               sources=[{"label": "Q", "url": f"https://example.com/{n}"}])
+                          for n, day in enumerate(dates)]
+        history.HISTORY.unlink()
+        render.DATA.write_text(json.dumps(issue))
+        render.main()
+        for sub, count in [("", 1), ("7d", 3), ("14d", 5), ("30d", 7)]:
+            detail = (render.SITE / sub / "ai-news.html").read_text()
+            overview = (render.SITE / sub / "index.html").read_text()
+            self.assertEqual(detail.count('class="dcard"'), count)
+            self.assertEqual(detail.count('class="blip-num"'), count)
+            for n, day in enumerate(dates):
+                self.assertEqual(f"Story [{day}]" in detail, n < count)
+                if n >= count:
+                    self.assertNotIn(f"Story [{day}]", overview)
+            self.assertIn(f'class="ov-count">{count} Meldung', overview)
 
     def test_rerender_is_idempotent(self):
         render.main()
@@ -179,18 +203,13 @@ class TestStaleTopicMarking(unittest.TestCase):
         render.DATA, render.SITE, history.HISTORY = self._orig
         shutil.rmtree(self.tmp, ignore_errors=True)
 
-    def test_notice_on_topic_page(self):
-        page = (render.SITE / "ai-news.html").read_text(encoding="utf-8")
-        self.assertIn("Die Meldungen dieses Bereichs sind seit dem 8. Juni 2026 "
-                      "unverändert (seit 2 Tagen).", page)
-
-    def test_badge_on_overview_card(self):
-        page = (render.SITE / "index.html").read_text(encoding="utf-8")
-        self.assertIn('<div class="ov-stale">Unverändert seit 8. Juni 2026</div>', page)
-
-    def test_item_count_stays_visible(self):
-        page = (render.SITE / "index.html").read_text(encoding="utf-8")
-        self.assertIn('<span class="ov-count">1 Meldung</span>', page)
+    def test_empty_today_reports_the_period_with_no_older_stories(self):
+        page = (render.SITE / "ai-news.html").read_text()
+        self.assertIn("Für diesen Zeitraum liegen keine Meldungen vor.", page)
+        self.assertNotIn('class="dcard"', page)
+        overview = (render.SITE / "index.html").read_text()
+        self.assertIn('<span class="ov-count">0 Meldungen</span>', overview)
+        self.assertNotIn("Heute-Lede.", overview)
 
     def test_not_shown_in_range_views(self):
         # Die Zeitraum-Ansichten zeigen Meldungen mehrerer Tage aus dem Pool;

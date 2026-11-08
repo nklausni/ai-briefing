@@ -27,7 +27,7 @@ neuen Dienste. Markenname: **AI Briefing**.
 | Vertrag | Nachweis |
 | --- | --- |
 | 8 Themen × 4 Ansichten; unveränderte URLs | 36 Inhaltsseiten + Suche; alle lokalen Link-/Assetziele geprüft |
-| Heute = Ausgabe; 7/14/30 = Zeiträume | bestehende Datumstests, Browser-Zeitraumwechsel, Originaldatenvergleich |
+| Heute = Berliner Kalendertag; 7/14/30 = Kalendertage einschließlich heute | bestehende Datumstests, Browser-Zeitraumwechsel, Originaldatenvergleich |
 | Vollständige Artikel, Quellen, Impact, Überspringen | Detail-/Skip-HTML vor/nach gleich, nur Badge-/Zahlenfarben geändert |
 | Vollständiges Radar und Legende | SVG-Geometrie, Nummern, Kategorien und Ringfarben vor/nach gleich; nur Zahlenkontrast verbessert |
 | Archivsuche, Dedupe, GET `q`, Normalisierung | unveränderte `search.js` und Indexbytes; bestehende Python-/Node-Tests |

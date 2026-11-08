@@ -150,12 +150,15 @@ def ingest(history, briefing):
     for topic in briefing.get("topics", []):
         tid = topic["id"]
         for item in topic.get("items", []):
+            article_date = parse_date(item.get("date"))
+            if not article_date:
+                continue
             incoming = {
                 "topic_id": tid,
                 "title": item.get("title", ""),
                 "category": item.get("category", ""),
                 "impact": int(item.get("impact", 0)),
-                "date": parse_date(item.get("date")) or generated,
+                "date": article_date,
                 "summary": item.get("summary", ""),
                 "sources": item.get("sources") or [],
                 "first_seen": generated,
