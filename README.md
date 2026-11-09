@@ -92,13 +92,13 @@ geschrieben und immer weiter wachsen.
 Die Seite wird in vier Ansichten gerendert, umschaltbar über die Zeile
 „Zeitraum" in der Navigation (reine Links, weiterhin kein JavaScript):
 
-- **Heute** zeigt Meldungen mit dem Originaldatum des aktuellen Berliner Kalendertags.
+- **Neu** zeigt alle Meldungen, die erstmals in der letzten veröffentlichten Ausgabe ins Briefing aufgenommen wurden (`first_seen`). Am Artikel steht das ursprüngliche Veröffentlichungsdatum.
 - **7, 14 und 30 Tage** umfassen heute und die jeweils 6, 13 oder 29 vorhergehenden
   Kalendertage. Eine Meldung erscheint in jedem passenden Zeitraum.
 
 Der Renderer übergibt dieselbe Auswahl an Übersicht, Themenberichte und Radar.
-Nach einem Datumswechsel passt der Browser die zuletzt gebaute Seite an den
-neuen Kalendertag an. Ohne JavaScript gelten die auf der Seite angegebenen Daten.
+Die Auswahl unter **Neu** gilt bis zur nächsten Ausgabe. Die drei Zeiträume
+rücken im Browser beim Berliner Datumswechsel weiter. Ohne JavaScript gelten die auf der Seite angegebenen Daten.
 
 Tests:
 

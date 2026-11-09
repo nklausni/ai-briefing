@@ -68,11 +68,11 @@ class TestRenderVariants(unittest.TestCase):
         self.assertIn("Meldung", sub)
         self.assertIn("4.–10. Juni 2026", sub)   # berechnete Periode
 
-    def test_undated_skip_copy_is_hidden_when_articles_fall_outside_today(self):
+    def test_skip_copy_shown_for_complete_new_topic(self):
         # "Überspringen kannst du" ist die Überschrift des Skip-Blocks (das Wort
         # "Überspringen" allein steht auch in der Impact-Skala jeder Seite).
         root = (render.SITE / "ai-news.html").read_text(encoding="utf-8")
-        self.assertNotIn("Überspringen kannst du", root)
+        self.assertIn("Überspringen kannst du", root)
         sub = (render.SITE / "7d" / "ai-news.html").read_text(encoding="utf-8")
         self.assertNotIn("Überspringen kannst du", sub)
 
@@ -88,7 +88,9 @@ class TestRenderVariants(unittest.TestCase):
             self.assertNotIn('Enthält auch frühere Meldungen', root)
             self.assertIn('Ausgabe vom 10. Juni 2026</title>', root)
             self.assertNotIn('9.–10. Juni 2026', root)
-            self.assertNotIn('09.06.2026', root if page == 'ai-news.html' else
+            self.assertIn('>Neu</a>', meta_block)
+            self.assertNotIn('calendar.js', root)
+            self.assertIn('09.06.2026', root if page == 'ai-news.html' else
                           (render.SITE / 'ai-news.html').read_text())
         sub = (render.SITE / "7d" / "index.html").read_text(encoding="utf-8")
         self.assertIn('<div class="range-period">4.–10. Juni 2026</div>', sub)
@@ -114,7 +116,7 @@ class TestRenderVariants(unittest.TestCase):
         topic = issue["topics"][0]
         base = topic["items"][0]
         dates = ["10.06.2026", "2026-06-09", "2026-06-04", "2026-06-03",
-                 "2026-05-28", "2026-05-27", "2026-05-12", "2026-05-11",
+                 "2026-05-28", "2026-05-27", "2026-05-12", "2026-04-01",
                  "2026-06-11", "unbekannt"]
         topic["items"] = [dict(base, title=f"Story [{day}]", date=day,
                                sources=[{"label": "Q", "url": f"https://example.com/{n}"}])
@@ -122,7 +124,7 @@ class TestRenderVariants(unittest.TestCase):
         history.HISTORY.unlink()
         render.DATA.write_text(json.dumps(issue))
         render.main()
-        for sub, count in [("", 1), ("7d", 3), ("14d", 5), ("30d", 7)]:
+        for sub, count in [("", 8), ("7d", 3), ("14d", 5), ("30d", 7)]:
             detail = (render.SITE / sub / "ai-news.html").read_text()
             overview = (render.SITE / sub / "index.html").read_text()
             self.assertEqual(detail.count('class="dcard"'), count)
@@ -191,7 +193,8 @@ class TestStaleTopicMarking(unittest.TestCase):
         render.SITE = self.tmp / "site"
         history.HISTORY = self.tmp / "data" / "history.json"
         history.HISTORY.write_text(json.dumps({
-            "items": [], "summaries": [],
+            "items": [dict(BRIEFING["topics"][0]["items"][0], topic_id="ai-news",
+                           date="2026-06-09", first_seen="2026-06-09")], "summaries": [],
             "fingerprints": {"ai-news": {
                 "hash": history.fingerprint(BRIEFING["topics"][0]),
                 "date": "2026-06-08",           # Lauf ist der 10.06.
@@ -203,7 +206,7 @@ class TestStaleTopicMarking(unittest.TestCase):
         render.DATA, render.SITE, history.HISTORY = self._orig
         shutil.rmtree(self.tmp, ignore_errors=True)
 
-    def test_empty_today_reports_the_period_with_no_older_stories(self):
+    def test_carried_over_stories_are_excluded_from_new(self):
         page = (render.SITE / "ai-news.html").read_text()
         self.assertIn("Für diesen Zeitraum liegen keine Meldungen vor.", page)
         self.assertNotIn('class="dcard"', page)
@@ -254,7 +257,7 @@ class TestStaleDetection(unittest.TestCase):
     def test_notice_wording_for_topic_without_items(self):
         html = render.stale_notice_html(
             {"_data_date": "2026-06-08", "items": []},
-            {"generated": "2026-06-10"}, "today")
+            {"generated": "2026-06-10"}, "new")
         self.assertIn("keine Meldungen bekommen (seit 2 Tagen)", html)
         self.assertNotIn("unverändert", html)
 

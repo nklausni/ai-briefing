@@ -487,7 +487,7 @@ SCALE_BLOCK = """  <div class="scale">
 
 
 RANGES = [
-    ("today", "Heute", 1),
+    ("new", "Neu", None),
     ("7d", "7 Tage", 7),
     ("14d", "14 Tage", 14),
     ("30d", "30 Tage", 30),
@@ -496,30 +496,30 @@ RANGES = [
 
 def css_href(range_key):
     """Pfad zum gemeinsamen Stylesheet. Die Zeitraum-Ansichten liegen eine
-    Ebene tiefer als die Heute-Ansicht."""
-    return "style.css" if range_key == "today" else "../style.css"
+    Ebene tiefer als die Neu-Ansicht."""
+    return "style.css" if range_key == "new" else "../style.css"
 
 
 def range_switcher_html(page, active_key, period=""):
     """Zeitraum-Umschalter für den Meta-Block oben rechts: Links auf dieselbe
     Seite in den anderen Ansichten, darunter die konkreten Daten."""
-    to_root = "" if active_key == "today" else "../"
+    to_root = "" if active_key == "new" else "../"
     links = []
     for key, label, _ in RANGES:
         cls = ' class="active"' if key == active_key else ""
-        href = f"{to_root}{page}.html" if key == "today" else f"{to_root}{key}/{page}.html"
+        href = f"{to_root}{page}.html" if key == "new" else f"{to_root}{key}/{page}.html"
         links.append(f'<a href="{href}"{cls}>{label}</a>')
     period_line = f'<div class="range-period">{esc(period)}</div>' if period else ""
     return f'<nav class="range-sw" aria-label="Zeitraum">{"".join(links)}</nav>{period_line}'
 
 
-def nav_html(topics, active_id, range_key="today"):
+def nav_html(topics, active_id, range_key="new"):
     ov_cls = ' class="active"' if active_id == "index" else ""
     links = [f'<a href="index.html"{ov_cls}>Übersicht</a>']
     for t in topics:
         cls = ' class="active"' if t["id"] == active_id else ""
         links.append(f'<a href="{t["id"]}.html"{cls}>{esc(t["name"])}</a>')
-    prefix = '' if range_key == 'today' else '../'
+    prefix = '' if range_key == 'new' else '../'
     links.append(f'<a href="{prefix}search.html">Suche</a>')
     return '<nav class="nav" aria-label="Themen">' + "".join(links) + '</nav>'
 
@@ -542,14 +542,16 @@ def format_iso_date(value):
 
 
 def edition_label(meta, range_key):
-    if range_key != "today":
+    if range_key != "new":
         return meta.get("period", "")
     date = format_iso_date(meta.get("generated"))
     return f"Ausgabe vom {date}" if date else "Aktuelle Ausgabe"
 
 
 def calendar_script(meta, range_key):
-    prefix = "" if range_key == "today" else "../"
+    if range_key == "new":
+        return ""
+    prefix = "../"
     days = next(days for key, _, days in RANGES if key == range_key)
     day = esc(history_mod.parse_date(meta.get("generated")) or "")
     return f'<script defer src="{prefix}calendar.js" data-edition="{day}" data-days="{days}"></script>'
@@ -597,10 +599,10 @@ def stale_age_text(topic, meta):
 def stale_notice_html(topic, meta, range_key):
     """Hinweis über der Meldungsliste, wenn der Bereich nichts Neues hat.
 
-    Nur in der Heute-Ansicht: die Zeitraum-Ansichten speisen sich aus dem Pool
+    Nur in der Neu-Ansicht: die Zeitraum-Ansichten speisen sich aus dem Pool
     und zeigen ohnehin Meldungen mehrerer Tage, dort wäre der Hinweis irreführend.
     """
-    if range_key != "today" or not is_stale(topic, meta):
+    if range_key != "new" or not is_stale(topic, meta):
         return ""
     days = stale_days(topic, meta)
     unit = "Tag" if days == 1 else "Tagen"
@@ -625,13 +627,13 @@ def footer_html(meta):
 
 
 def newspaper_header(meta, page, range_key, context):
-    prefix = '' if range_key == 'today' else '../'
+    prefix = '' if range_key == 'new' else '../'
     metadata = (f'<div class="subrow"><div class="subs"><div class="sub">{esc(context)}</div></div>'
                 f'<div class="meta-right">{range_switcher_html(page, range_key, edition_label(meta, range_key))}</div></div>')
     return masthead_html(prefix + 'index.html', metadata)
 
 
-def build_topic_page(topic, meta, topics, range_key="today"):
+def build_topic_page(topic, meta, topics, range_key="new"):
     zeitraum = edition_label(meta, range_key)
     ctx = topic.get("angle", "")
     entries = topic.get("items", [])
@@ -724,7 +726,7 @@ def front_page_html(topics):
     return '<section class="front-page" aria-label="Schlagzeilen"><div class="front-primary">' + rendered[0] + aside + '</div><div class="headlines">' + ''.join(rendered[1:]) + '</div></section>', [e for _, e in stories]
 
 
-def ov_card(topic, meta=None, range_key="today", featured=()):
+def ov_card(topic, meta=None, range_key="new", featured=()):
     top = [e for e in sorted(topic.get("items", []), key=lambda e: -int(e.get("impact", 0)))[:3]
            if not any(e is shown for shown in featured)]
     if top:
@@ -747,7 +749,7 @@ def ov_card(topic, meta=None, range_key="today", featured=()):
     count = len(topic.get("items", []))
     count_label = "Meldung" if count == 1 else "Meldungen"
     badge = ""
-    if range_key == "today" and meta is not None and is_stale(topic, meta):
+    if range_key == "new" and meta is not None and is_stale(topic, meta):
         badge = (f'\n    <div class="ov-stale">Unverändert seit '
                  f'{esc(format_iso_date(topic.get("_data_date")))}</div>')
     return f'''  <div class="ov-card" data-dates="{esc(dates)}">
@@ -762,7 +764,7 @@ def ov_card(topic, meta=None, range_key="today", featured=()):
   </div>'''
 
 
-def build_overview(briefing, range_key="today"):
+def build_overview(briefing, range_key="new"):
     meta = briefing["meta"]
     topics = briefing["topics"]
     front_page, featured = front_page_html(topics)
@@ -806,7 +808,7 @@ def build_overview(briefing, range_key="today"):
   {newspaper_header(meta, 'index', range_key, meta.get('subtitle', '') + ' · ' + str(len(topics)) + ' Themenbereiche')}
   {nav_html(topics, "index", range_key)}
 
-  <form class="overview-search" role="search" method="get" action="{'' if range_key == 'today' else '../'}search.html">
+  <form class="overview-search" role="search" method="get" action="{'' if range_key == 'new' else '../'}search.html">
     <label for="search-query">Alle Meldungen durchsuchen</label>
     <div class="search-controls">
       <input id="search-query" name="q" type="search" placeholder="Meldungen, Themen oder Quellen suchen" aria-describedby="overview-search-help">
@@ -858,29 +860,31 @@ def main():
 
     topics = briefing["topics"]
 
+    additions = history_mod.additions_for_issue(hist, briefing, end_iso)
     for key, _, days in RANGES:
-        first_day = (datetime.date.fromisoformat(end_iso) - datetime.timedelta(days=days - 1)).isoformat()
         rmeta = dict(briefing["meta"])
-        if key != "today":
+        if key != "new":
             rmeta["period"] = history_mod.format_period(end_iso, days)
         rtopics = []
         for t in topics:
-            items = history_mod.items_for_range(hist, t["id"], end_iso, days)
-            # An edition-wide summary can describe a story omitted by this filter.
-            whole_topic = bool(t["items"]) and all(
-                first_day <= (history_mod.parse_date(item["date"]) or "") <= end_iso
-                for item in t["items"])
+            if key == "new":
+                items = additions.get(t["id"], [])
+            else:
+                items = history_mod.items_for_range(hist, t["id"], end_iso, days)
+            # Keep the editorial summary only when its source stories are visible.
+            visible_titles = {item["title"] for item in items}
+            whole_topic = bool(t["items"]) and all(item["title"] in visible_titles for item in t["items"])
             if not whole_topic:
                 rmeta.pop("intro", None)
             rt = dict(t, items=items, summary=t.get("summary", "") if whole_topic and items else "",
-                      skip=t.get("skip", []) if key == "today" and whole_topic and items else [])
+                      skip=t.get("skip", []) if key == "new" and whole_topic and items else [])
             if not whole_topic:
                 rt.pop("_data_date", None)
             rtopics.append(rt)
         rbriefing = {"meta": rmeta, "topics": rtopics}
-        outdir = SITE if key == "today" else SITE / key
-        if key == "today":
-            today_topics = rtopics
+        outdir = SITE if key == "new" else SITE / key
+        if key == "new":
+            new_topics = rtopics
         (outdir / "index.html").write_text(
             build_overview(rbriefing, range_key=key), encoding="utf-8")
         for rt in rtopics:
@@ -888,7 +892,7 @@ def main():
                 build_topic_page(rt, rmeta, rtopics, range_key=key), encoding="utf-8")
 
     (SITE / "search.html").write_text(build_search_page(
-        newspaper_header(briefing['meta'], 'index', 'today', 'Das Archiv'),
+        newspaper_header(briefing['meta'], 'index', 'new', 'Das Archiv'),
         nav_html(topics, 'search')), encoding="utf-8")
     (SITE / "search.js").write_text(
         Path(__file__).with_name("search.js").read_text(encoding="utf-8"), encoding="utf-8")
@@ -897,18 +901,18 @@ def main():
                    ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     (SITE / ".nojekyll").write_text("", encoding="utf-8")
     (SITE / "calendar.js").write_bytes(Path(__file__).with_name("calendar.js").read_bytes())
-    total = sum(len(t["items"]) for t in today_topics)
+    total = sum(len(t["items"]) for t in new_topics)
     n_hist = len(hist["items"])
-    print(f"Fertig: 4 Ansichten (Heute/7d/14d/30d), {total} Meldungen heute, "
+    print(f"Fertig: 4 Ansichten (Neu/7d/14d/30d), {total} neue Meldungen, "
           f"{n_hist} im Pool.")
     if moved_items or moved_sums:
         print(f"Archiviert: {moved_items} Meldung(en), {moved_sums} Summary(s) "
               f"älter als {history_mod.KEEP_DAYS} Tage.")
-    for t in today_topics:
+    for t in new_topics:
         suffix = ""
         if is_stale(t, briefing["meta"]):
             suffix = f"  ({stale_age_text(t, briefing['meta'])})"
-        print(f"  [{t['id']}] {len(t.get('items', []))} Meldung(en) heute{suffix}")
+        print(f"  [{t['id']}] {len(t.get('items', []))} neue Meldung(en){suffix}")
 
 
 if __name__ == "__main__":

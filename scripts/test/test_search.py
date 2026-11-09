@@ -63,7 +63,7 @@ class SearchGenerationTests(unittest.TestCase):
             def handle_starttag(self, tag, attrs):
                 self.tags.append((tag, dict(attrs)))
 
-        for key in ('today', '7d', '14d', '30d'):
+        for key in ('new', '7d', '14d', '30d'):
             with self.subTest(range=key):
                 page = render.build_overview(BRIEFING, key)
                 parsed = Elements()
@@ -71,7 +71,7 @@ class SearchGenerationTests(unittest.TestCase):
                 forms = [attrs for tag, attrs in parsed.tags if tag == 'form']
                 self.assertEqual(len(forms), 1)
                 self.assertEqual(forms[0]['method'].lower(), 'get')
-                self.assertEqual(forms[0]['action'], ('../' if key != 'today' else '') + 'search.html')
+                self.assertEqual(forms[0]['action'], ('../' if key != 'new' else '') + 'search.html')
                 self.assertEqual(forms[0]['role'], 'search')
                 inputs = [attrs for tag, attrs in parsed.tags if tag == 'input']
                 query = next(attrs for attrs in inputs if attrs.get('name') == 'q')

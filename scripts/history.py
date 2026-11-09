@@ -307,6 +307,27 @@ def items_for_range(history, topic_id, end_iso, days):
     start = (end - datetime.timedelta(days=days - 1)).isoformat()
     picked = [e for e in history["items"]
               if e["topic_id"] == topic_id and start <= e["date"] <= end_iso]
+    return display_items(picked)
+
+
+def additions_for_issue(history, briefing, issue_day):
+    """First appearances in the published edition, including late archived stories."""
+    months = {date[:7] for topic in briefing["topics"] for item in topic["items"]
+              if (date := parse_date(item.get("date")))}
+    records = [item for item in history["items"] if item.get("first_seen") == issue_day]
+    for month in months:
+        path = _archive_path(month, HISTORY.parent / ARCHIVE.name)
+        if path.is_file():
+            records.extend(item for item in _load_archive(path)["items"]
+                           if item.get("first_seen") == issue_day)
+    by_topic = {}
+    for item in records:
+        if item["date"] <= issue_day:
+            by_topic.setdefault(item["topic_id"], []).append(item)
+    return {topic: display_items(items) for topic, items in by_topic.items()}
+
+
+def display_items(picked):
     picked.sort(key=lambda e: e["date"], reverse=True)
     picked.sort(key=lambda e: -int(e.get("impact", 0)))   # stabil → Datum bleibt Tiebreaker
     out = []

@@ -16,7 +16,7 @@ class NewspaperLayout(unittest.TestCase):
                 self.assertIn('class="masthead"', page)
                 self.assertIn('>AI Briefing</a>', page)
                 self.assertIn('href="ai-news.html"', page)
-                self.assertIn('href="' + ('' if key == 'today' else '../') + 'search.html"', page)
+                self.assertIn('href="' + ('' if key == 'new' else '../') + 'search.html"', page)
                 self.assertNotIn('fonts.googleapis.com', page)
         self.assertIn('class="masthead"', build_search_page())
 
@@ -24,7 +24,7 @@ class NewspaperLayout(unittest.TestCase):
     def test_overviews_keep_search_and_detail_pages_keep_complete_payload(self):
         for key, _, _ in render.RANGES:
             overview = render.build_overview(BRIEFING, key)
-            prefix = '' if key == 'today' else '../'
+            prefix = '' if key == 'new' else '../'
             self.assertIn('role="search" method="get" action="' + prefix + 'search.html"', overview)
             self.assertIn('name="q"', overview)
             self.assertIn('href="' + prefix + '30d/index.html"', overview)
@@ -47,7 +47,7 @@ class NewspaperLayout(unittest.TestCase):
         self.assertEqual(briefing, before)
 
     def test_search_page_can_share_edition_and_full_navigation(self):
-        header = render.newspaper_header(BRIEFING['meta'], 'index', 'today', 'Das Archiv')
+        header = render.newspaper_header(BRIEFING['meta'], 'index', 'new', 'Das Archiv')
         page = build_search_page(header, render.nav_html(BRIEFING['topics'], 'search'))
         self.assertIn('Ausgabe vom 10. Juni 2026', page)
         self.assertIn('href="ai-news.html"', page)
