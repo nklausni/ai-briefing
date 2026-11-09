@@ -25,13 +25,15 @@ class SearchIndexTests(unittest.TestCase):
             (archive / '2026-06-08-briefing.json').write_text(json.dumps(legacy))
             hostile = dict(old, title='<img src=x onerror=alert(1)>', sources=[None, {'label': '<script>x</script>', 'url': 'javascript:alert(1)'}, {'label': 'Sicher', 'url': 'https://example.com/safe'}])
             rows = render.build_search_index(b, {'items': [old, hostile]}, archive)
+            self.assertEqual(len(rows), 3)
+            self.assertEqual(rows, render.build_search_index(b, {'items': [old, hostile]}, archive))
+            rows = [item for row in rows for item in [row, *row.get('angles', [])]]
             self.assertEqual(len(rows), 4)
             self.assertEqual({r['title'] for r in rows}, {'Meldung', 'Archivfund', 'Legacyfund', hostile['title']})
             self.assertEqual(next(r for r in rows if r['title'] == 'Meldung')['date'], '2026-06-09')
             attack = next(r for r in rows if r['title'] == hostile['title'])
             self.assertEqual(attack['sources'], [{'label': '<script>x</script>', 'url': ''}, {'label': 'Sicher', 'url': 'https://example.com/safe'}])
             self.assertEqual(attack['topic'], 'AI News')
-            self.assertEqual(rows, render.build_search_index(b, {'items': [old, hostile]}, archive))
 
 
     def test_release_milestones_and_distinct_topics_are_not_collapsed(self):

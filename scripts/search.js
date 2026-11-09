@@ -10,13 +10,20 @@ function matches(row, query) {
     ...(row.sources || []).flatMap(s => [s.label, s.url])].join(' '));
   return normalize(query).split(' ').filter(Boolean).every(term => content.includes(term));
 }
+// Surface the matching angle even when only a detail mentions the search term.
+function matchingResult(row, query) {
+  if (matches(row, query)) return row;
+  const {angles = [], ...lead} = row;
+  const hit = angles.find(angle => matches(angle, query));
+  return hit ? {...hit, angles: [lead, ...angles.filter(angle => angle !== hit)]} : null;
+}
 function safeUrl(value) {
   try {
     const url = new URL(value);
     return ['http:', 'https:'].includes(url.protocol) ? url.href : '';
   } catch { return ''; }
 }
-if (typeof module !== 'undefined') module.exports = {normalize, matches, safeUrl};
+if (typeof module !== 'undefined') module.exports = {normalize, matches, matchingResult, safeUrl};
 
 if (typeof document !== 'undefined') {
   const input = document.getElementById('search-query');
@@ -32,6 +39,21 @@ if (typeof document !== 'undefined') {
     if (className) el.className = className;
     return el;
   }
+  function sourceLinks(row) {
+    const sources = element('div', undefined, 'dsources');
+    for (const source of row.sources || []) {
+      const href = safeUrl(source.url);
+      if (href) {
+        const link = element('a', source.label || 'Quelle', 'dlink');
+        link.href = href;
+        link.target = '_blank';
+        link.rel = 'noopener noreferrer';
+        sources.append(link);
+      } else if (source.label) sources.append(element('span', source.label));
+    }
+    if (!sources.childNodes.length) sources.append(element('span', 'Keine verlinkte Quelle gespeichert.'));
+    return sources;
+  }
   function render() {
     results.replaceChildren();
     const shown = found.slice(0, limit);
@@ -44,26 +66,27 @@ if (typeof document !== 'undefined') {
       body.append(element('h2', row.title, 'dtitle'),
         element('p', `${row.date || 'Datum unbekannt'} · ${row.topic}`, 'dmeta'),
         element('p', row.summary));
-      const sources = element('div', undefined, 'dsources');
-      for (const source of row.sources || []) {
-        const href = safeUrl(source.url);
-        if (href) {
-          const link = element('a', source.label || 'Quelle', 'dlink');
-          link.href = href;
-          link.target = '_blank';
-          link.rel = 'noopener noreferrer';
-          sources.append(link);
-        } else if (source.label) sources.append(element('span', source.label));
+      body.append(sourceLinks(row));
+      if (row.angles?.length) {
+        const details = element('details');
+        details.append(element('summary', `Weitere Details zum Quellenbeitrag (${row.angles.length})`));
+        const list = element('ul');
+        for (const angle of row.angles) {
+          const li = element('li');
+          li.append(element('strong', angle.title), element('span', ' · ' + angle.topic),
+            element('p', angle.summary), sourceLinks(angle));
+          list.append(li);
+        }
+        details.append(list);
+        body.append(details);
       }
-      if (!sources.childNodes.length) sources.append(element('span', 'Keine verlinkte Quelle gespeichert.'));
-      body.append(sources);
       card.append(body);
       results.append(card);
     }
     more.hidden = found.length <= limit;
   }
   function search() {
-    found = index.filter(row => matches(row, input.value));
+    found = index.map(row => matchingResult(row, input.value)).filter(Boolean);
     limit = 50;
     render();
   }

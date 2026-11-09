@@ -100,6 +100,12 @@ Der Renderer übergibt dieselbe Auswahl an Übersicht, Themenberichte und Radar.
 Die Auswahl unter **Neu** gilt bis zur nächsten Ausgabe. Die drei Zeiträume
 rücken im Browser beim Berliner Datumswechsel weiter. Ohne JavaScript gelten die auf der Seite angegebenen Daten.
 
+In jeder Ansicht erscheint ein datierter Quellenbeitrag einmal, mit der am höchsten
+bewerteten Perspektive im zugehörigen Ressort. Weitere Einzelheiten stehen
+aufklappbar im Feld-Report. Maßgeblich sind der konkrete Link zum Hauptbeleg und
+das Originaldatum. Erkennbare getrennte Release-Stufen bleiben eigenständig.
+Die Auswahl für „Neu“ erfolgt vor dem Bündeln über das Aufnahmedatum.
+
 Tests:
 
 ```bash
@@ -113,7 +119,7 @@ Sie laufen zusätzlich bei jedem Push über `.github/workflows/tests.yml`.
 „Suche“ ist von jeder Übersicht und Themenseite erreichbar, auch aus 7/14/30 Tagen.
 `render.py` erzeugt einen deterministischen JSON-Index aus aktueller Ausgabe,
 `history.json` und allen vorhandenen JSON-Archiven (Monatspools sowie ältere
-Briefing-Snapshots). Deduplizierung erfolgt je Thema mit der Historien-Identität;
+Briefing-Snapshots). Der Index gleicht Einträge innerhalb eines Ressorts mit der Historie ab. Anschließend bündelt er ressortübergreifend Perspektiven desselben datierten Quellenbeitrags. Alle Einzelheiten bleiben aufklappbar und durchsuchbar;
 Titel, Zusammenfassung, Thema, Originaldatum und Quellen sind durchsuchbar.
 Nicht gespeicherte Meldungen und Volltexte externer Artikel werden nicht durchsucht.
 

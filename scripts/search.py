@@ -3,6 +3,7 @@ import json
 from urllib.parse import urlsplit
 
 import history
+from source_stories import grouped
 
 
 def text(value):
@@ -59,7 +60,7 @@ def build_search_index(briefing, pool, archive_dir):
             duplicate['sources'] = history._merge_sources(duplicate['sources'], sources)
             continue
         rows.append(row)
-    return sorted(rows, key=lambda r: (r['date'], r['topic_id'], r['title']), reverse=True)
+    return sorted(grouped(rows), key=lambda r: (r['date'], r['topic_id'], r['title']), reverse=True)
 
 
 def masthead_html(home='index.html', metadata=''):

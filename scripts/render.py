@@ -23,6 +23,7 @@ Aufruf:
 import json, math, os, html as _html, datetime, re
 from pathlib import Path
 
+from source_stories import grouped
 import history as history_mod
 from search import build_search_index, build_search_page, masthead_html
 
@@ -167,6 +168,15 @@ def sources_html(item):
     return f'<div class="dsources"><span class="dsources-k">Quellen:</span> {links}</div>'
 
 
+def angles_html(item):
+    angles = item.get("angles", [])
+    if not angles:
+        return ""
+    entries = "".join(f'<li><strong>{esc(a["title"])}</strong> · {esc(a["topic"])}'
+                      f'<p>{esc(a["summary"])}</p>{sources_html(a)}</li>' for a in angles)
+    return f'<details><summary>Weitere Details zum Quellenbeitrag ({len(angles)})</summary><ul>{entries}</ul></details>'
+
+
 def build_detail(entries):
     cards = []
     for e in sorted(entries, key=lambda x: x["n"]):
@@ -185,7 +195,7 @@ def build_detail(entries):
       <h3 class="dtitle">{title_html}</h3>
       <div class="dmeta">{cat_badge}{src_meta}<span class="dots">{dots(int(e["impact"]))}</span> <span class="dmeta-imp">{esc(e["impact"])}/5</span></div>
       <p>{esc(e["summary"])}</p>
-      {sources_html(e)}
+      {sources_html(e)}{angles_html(e)}
     </div>
   </div>''')
     return "\n".join(cards)
@@ -829,6 +839,21 @@ def build_overview(briefing, range_key="new"):
 '''
 
 
+def group_topic_stories(topics):
+    # The most relevant angle determines the main topic and the radar position.
+    rows = (dict(item, topic_id=topic["id"], topic=topic["name"])
+            for topic, item in ranked_stories(topics))
+    by_topic = {topic["id"]: [] for topic in topics}
+    for story in grouped(rows):
+        bucket = by_topic[story["topic_id"]]
+        bucket.append(dict(story, n=len(bucket) + 1))
+    for topic in topics:
+        items = by_topic[topic["id"]]
+        if len(items) != len(topic["items"]):
+            topic.update(summary="", skip=[])
+        topic["items"] = items
+
+
 def main():
     briefing = json.loads(DATA.read_text(encoding="utf-8"))
     public_intro_html(briefing["meta"])  # Fail before history or site writes.
@@ -881,6 +906,7 @@ def main():
             if not whole_topic:
                 rt.pop("_data_date", None)
             rtopics.append(rt)
+        group_topic_stories(rtopics)
         rbriefing = {"meta": rmeta, "topics": rtopics}
         outdir = SITE if key == "new" else SITE / key
         if key == "new":

@@ -67,3 +67,14 @@ test('only absolute HTTP(S) links', () => {
   for (const url of ['javascript:alert(1)', 'data:text/html,x', '//evil.org', '/relative', 'http://[']) assert.equal(safeUrl(url), '');
   assert.equal(safeUrl('https://example.org/a?q=x'), 'https://example.org/a?q=x');
 });
+
+test('a match in a secondary angle returns the article once with the matching detail first', () => {
+  const {matchingResult} = require('../search.js');
+  const detail = {title:'Abrechnung', summary:'AI credits pro Review', topic:'Enterprise'};
+  const article = {title:'Copilot Code Review', summary:'Neue Schnittstelle', angles:[detail]};
+  const result = matchingResult(article, 'Abrechnung credits');
+  assert.equal(result.title,'Abrechnung');
+  assert.equal(result.angles[0].title,'Copilot Code Review');
+  assert.equal(matchingResult(article, 'Copilot'),article);
+  assert.equal(matchingResult(article, 'unrelated'),null);
+});
