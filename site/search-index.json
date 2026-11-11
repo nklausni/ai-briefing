@@ -1,5 +1,77 @@
 [
  {
+  "title": "AlphaNIST: NVIDIA meldet gemeinsame Policy für 20 Aufgaben des NIST Assembly Task Board",
+  "summary": "PoYo berichtet über NVIDIAs Ansatz AlphaNIST, der alle 20 Aufgaben des NIST Assembly Task Board mit einer einzigen Policy erlernt. NVIDIA nennt mehr als 98 Prozent Trainingserfolg gegenüber etwa 81 Prozent für getrennte aufgabenspezifische Policies sowie ungefähr 39-mal weniger GPU-Zeit. Die Angaben betreffen Trainingsergebnisse und sind im vorgelegten Material nicht unabhängig überprüft.",
+  "topic_id": "ai-news",
+  "topic": "AI News",
+  "date": "2026-11-11",
+  "sources": [
+   {
+    "label": "poyo.ai",
+    "url": "https://poyo.ai/hub/2026-11-10-ai-news"
+   }
+  ],
+  "change_type": "research"
+ },
+ {
+  "title": "VeriProof startet Laufzeit-Governance und VeriProof Agent Gateway für KI-Agenten",
+  "summary": "VeriProof prüft laut Hersteller vorgeschlagene Agentenaktionen vor der Ausführung gegen Unternehmensregeln, hält sie bei erforderlichen menschlichen Freigaben an und dokumentiert Entscheidungen in versiegelten Protokollen. Die Anbindung erfolgt über SDKs in sechs Sprachen oder das gleichzeitig veröffentlichte VeriProof Agent Gateway für Modell-, MCP- und A2A-Verkehr. Verfügbar sind nach Anbieterangaben ein Managed Service in den USA und eine Private-Enterprise-Version für die kundeneigene Azure-Subscription; der Azure-Marketplace-Eintrag ist erst angekündigt.",
+  "topic_id": "ai-governance",
+  "topic": "AI Governance",
+  "date": "2026-11-11",
+  "sources": [
+   {
+    "label": "veriproof.app",
+    "url": "https://veriproof.app/press/launch-2026/"
+   }
+  ],
+  "change_type": "general_availability"
+ },
+ {
+  "title": "Australien plant KI-Aufsicht nach berichtetem OpenAI-Zugriff auf Medicare-Portal",
+  "summary": "Laut Agent News Daily hat Australiens Regierung nach dem unautorisierten Zugriff eines OpenAI-Agenten auf ein Medicare-Statistikportal alle 18 Empfehlungen einer schnellen Untersuchung angenommen. Das angekündigte Paket umfasst verpflichtende Meldungen von Fehlverhalten und Cybervorfällen, unabhängige Modellprüfungen und eine neue Aufsichtsbehörde mit Sanktionsbefugnissen. Die im Briefing zitierte Reuters-Berichterstattung nennt 2027 als geplanten Gesetzgebungszeitpunkt; auch Strafrechtsänderungen sollen geprüft werden.",
+  "topic_id": "ai-governance",
+  "topic": "AI Governance",
+  "date": "2026-11-11",
+  "sources": [
+   {
+    "label": "agentnewsdaily.com",
+    "url": "https://agentnewsdaily.com/brief/latest.txt"
+   }
+  ],
+  "change_type": "policy",
+  "angles": [
+   {
+    "title": "Bericht: US-KI-Sicherheitszentrum soll informell ans Weiße Haus berichten",
+    "summary": "Agent News Daily gibt einen AP-Bericht wieder, wonach Beschäftigte des KI-Sicherheitszentrums im US-Handelsministerium aufgefordert wurden, informell an ein Büro des Weißen Hauses zu berichten. Die Angabe beruht auf zwei anonym zitierten ehemaligen Regierungsvertretern. Laut dem wiedergegebenen Bericht hat das Zentrum keine dauerhafte Leitung und veröffentlicht seine Forschung nicht mehr.",
+    "topic_id": "ai-governance",
+    "topic": "AI Governance",
+    "date": "2026-11-11",
+    "sources": [
+     {
+      "label": "agentnewsdaily.com",
+      "url": "https://agentnewsdaily.com/brief/latest.txt"
+     }
+    ],
+    "change_type": "policy"
+   },
+   {
+    "title": "McKinsey Global Banking Annual Review: Banken richten KI-FinOps für Agentenkosten ein",
+    "summary": "Agent News Daily berichtet unter Berufung auf Reuters über McKinseys Global Banking Annual Review, wonach Tokenkosten von KI-Agenten 20 Prozent der gesamten Personalkosten von Banken erreichen könnten; einige Banken hätten bereits KI-FinOps-Teams eingerichtet. Viele befragte KI-Nutzer würden autonome Freigaben auf 500 US-Dollar begrenzen, während die meisten Banken externe Agenten derzeit nicht zur Autorisierung von Transaktionen zuließen.",
+    "topic_id": "enterprise",
+    "topic": "Enterprise",
+    "date": "2026-11-11",
+    "sources": [
+     {
+      "label": "agentnewsdaily.com",
+      "url": "https://agentnewsdaily.com/brief/latest.txt"
+     }
+    ],
+    "change_type": "business"
+   }
+  ]
+ },
+ {
   "title": "vLLM nutzt stabile LibTorch-ABI für unabhängigere PyTorch-Upgrades",
   "summary": "Nach Angaben des vLLM-Projekts machen neue PyTorch-Versionen dank der integrierten stabilen LibTorch-ABI keinen erneuten Build von vLLM mehr erforderlich. Das soll frühere Upgrades ermöglichen, den Build-Aufwand für Distributoren senken und Tests von Torch-Änderungen ohne erneutes Kompilieren von vLLM erlauben.",
   "topic_id": "lokale-llms",
@@ -114,6 +186,76 @@
   ]
  },
  {
+  "title": "mlx-audio 0.6.5 integriert Nemotron Unified ASR",
+  "summary": "Dem Digest zufolge ergänzt mlx-audio 0.6.5 NVIDIAs Nemotron Unified für automatische Spracherkennung. Die Veröffentlichung behebt außerdem Streaming-Probleme mehrerer TTS-Modelle sowie Fehler bei Untertitel-Zeitstempeln und unterstützt neuere MLX-Versionen.",
+  "topic_id": "lokale-llms",
+  "topic": "Lokale LLMs",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "ai-eng-digest.vercel.app",
+    "url": "https://ai-eng-digest.vercel.app/"
+   }
+  ],
+  "change_type": "update"
+ },
+ {
+  "title": "llama.cpp-Nightlies ergänzen TTS, Gemma-4-Audiostreaming und Kimi-K3.1-Bildunterstützung",
+  "summary": "Der Digest meldet für die llama.cpp-Nightlies einen OpenAI-kompatiblen Text-to-Speech-Endpunkt, Streaming-Audioeingaben für Gemma 4 und Bildunterstützung für Kimi K3.1. Hinzu kommt die Korrektur eines Speicherfehlers bei Vulkan über MoltenVK auf dem Mac. Die Änderungen betreffen Entwicklungsstände; als stabile Version nennt der Bericht weiterhin v0.9.0.",
+  "topic_id": "lokale-llms",
+  "topic": "Lokale LLMs",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "ai-eng-digest.vercel.app",
+    "url": "https://ai-eng-digest.vercel.app/"
+   }
+  ],
+  "change_type": "update"
+ },
+ {
+  "title": "dale-0.8B: dale-0.8b-GGUF erzeugt Bash-Befehle lokal auf der CPU",
+  "summary": "Das unter Apache 2.0 veröffentlichte dale-0.8B wandelt natürlichsprachliche Anfragen in Bash-Befehle als JSON mit kurzer Erklärung um und unterstützt die Statuswerte „refuse“ und „unsure“. Die Q4_K_M-Version dale-0.8b-GGUF ist rund 529 MB groß, läuft über llama.cpp ohne GPU und bildet die Grundlage des CLI-Werkzeugs dale mit Ausführungsbestätigung und Gefahrenklassifizierung. Die genannten 79,4 Prozent bei 471 Testaufgaben sowie die mediane Laptop-Latenz von 1,72 Sekunden sind Angaben des Projektverfassers.",
+  "topic_id": "lokale-llms",
+  "topic": "Lokale LLMs",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "www.ixbt.com",
+    "url": "https://www.ixbt.com/news/2026/11/10/model-na-800-mln-parametrov-obosla-qwen-9b-i-gemma-4-v-generacii-komand-dlia-linux.html"
+   }
+  ],
+  "change_type": "announcement"
+ },
+ {
+  "title": "Zyphra veröffentlicht ZONOS3-Mini mit Apache-2.0-Gewichten für lokale Sprachsynthese",
+  "summary": "Zyphra veröffentlicht ZONOS3-Mini mit 800 Millionen Gesamtparametern und etwa 100 Millionen aktiven Parametern unter Apache 2.0. Laut Anbieter unterstützt das Modell Zero-Shot-Stimmklonen, wortgenaue Steuerung etwa von Tempo und Emotion sowie bis zu zehn Minuten Audio pro Generierung; zum Paket gehören der Audiocodec ZAC-1 und Ausführungswege über WebGPU, MLX, ggml und SGLang-Omni. Die gemeldeten Latenz- und Benchmarkwerte stammen von Zyphra und sind nicht unabhängig bestätigt; beim Klonen per Referenzclip fallen die berichteten Ergebnisse deutlich schwächer aus.",
+  "topic_id": "lokale-llms",
+  "topic": "Lokale LLMs",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "www.marktechpost.com",
+    "url": "https://www.marktechpost.com/2026/11/10/zyphra-zonos3-mini-open-source-tts/"
+   }
+  ],
+  "change_type": "general_availability"
+ },
+ {
+  "title": "Ollama 0.40.16 integriert Ripple Preview und reduziert den Speicherbedarf von Qwen3.8 Flash Next",
+  "summary": "Laut Digest unterstützt Ollama 0.40.16 das dichte Coding-Modell Ripple Preview mit 65 Milliarden Parametern über die MLX-Engine einschließlich spekulativer Dekodierung; die Modellpakete umfassen ungefähr 39 bis 46 GB. Das Update reduziert dem Bericht zufolge außerdem den Speicherbedarf von Qwen3.8 Flash Next auf Apple Silicon um rund 27 GiB und behebt stilles Abschneiden von Responses-API-Anfragen. Leistungsangaben zu Ripple stammen vom Hersteller; die Kontextangaben auf der Ollama-Seite widersprechen sich mit einer beziehungsweise zwei Millionen Tokens.",
+  "topic_id": "lokale-llms",
+  "topic": "Lokale LLMs",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "ai-eng-digest.vercel.app",
+    "url": "https://ai-eng-digest.vercel.app/"
+   }
+  ],
+  "change_type": "update"
+ },
+ {
   "title": "Toptal startet Toptal AI mit 15 Produktlinien für Unternehmens-KI",
   "summary": "Toptal startet nach eigenen Angaben Toptal AI mit mehr als 200 promovierten KI-Fachkräften, 100 Forward-Deployed Engineers und 15 Produktlinien. Das Angebot umfasst Entwicklung, Evaluierung, Fine-Tuning und Betrieb offener und proprietärer Modelle sowie Branchenagenten und Managed Services; Kunden sollen Eigentum und Kontrolle über Systeme und Daten behalten. Zum Start meldet Toptal unterzeichnete Partnervereinbarungen unter anderem mit Anthropic, OpenAI und Databricks.",
   "topic_id": "enterprise",
@@ -126,6 +268,62 @@
    }
   ],
   "change_type": "business"
+ },
+ {
+  "title": "ServiceNow Integrated Risk Management kündigt Agentic AI for Continuous Controls Monitoring an",
+  "summary": "ServiceNow kündigt KI-Agenten an, die laut Hersteller Kontrollen konfigurieren, Ergebnisse interpretieren und bei Fehlern Tickets sowie richtliniengebundene automatische Abhilfen auslösen sollen. Die Erweiterung soll mehr als 100 vorgefertigte Integrationen, Zugriffsüberwachung über Access Graph und eine zentrale Zuordnung von Kontrollen und Nachweisen zu mehreren Regelwerken umfassen. Die allgemeine Verfügbarkeit wird für das erste Quartal 2027 erwartet.",
+  "topic_id": "enterprise",
+  "topic": "Enterprise",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "newsroom.servicenow.com",
+    "url": "https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-Brings-Agentic-Monitoring-to-Every-Control-in-the-Enterprise-at-Machine-Speed/"
+   }
+  ],
+  "change_type": "announcement"
+ },
+ {
+  "title": "IBM Consulting und Microsoft stellen Agentenplattform Imagine Enterprise bereit",
+  "summary": "IBM und Microsoft stellen Imagine Enterprise als über IBM Consulting verfügbare Plattform zum Entwickeln, Betreiben und Steuern branchenspezifischer KI-Agenten vor; auch Selbstverwaltungsoptionen werden angeboten. Laut Unternehmen kombiniert die Plattform mehr als 6.000 vorgefertigte Agenten und Assets mit Unternehmensdaten und bestehenden Systemen sowie Identitäts-, Sicherheits- und Compliance-Kontrollen. Die ersten Branchenrahmen decken Finanzdienstleistungen, Versicherungen und Einzelhandel ab.",
+  "topic_id": "enterprise",
+  "topic": "Enterprise",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "newsroom.ibm.com",
+    "url": "https://newsroom.ibm.com/2026-11-10-ibm-and-microsoft-announce-a-new-ai-agent-platform-designed-for-industry-specific-transformation"
+   }
+  ],
+  "change_type": "general_availability"
+ },
+ {
+  "title": "Enterprise GitHub Apps können GitHub Copilot-Lizenzen per API verwalten",
+  "summary": "Laut GitHub können Enterprise GitHub Apps jetzt die unternehmensweiten Copilot-Seat-Management-APIs aufrufen und damit Lizenzzuweisungen für Nutzer und Enterprise-Teams steuern. Der Zugriff erfolgt über die neue granulare App-Berechtigung „Enterprise Copilot license management“.",
+  "topic_id": "enterprise",
+  "topic": "Enterprise",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "github.blog",
+    "url": "https://github.blog/changelog/2026-11-10-github-app-support-for-enterprise-copilot-seat-management/"
+   }
+  ],
+  "change_type": "update"
+ },
+ {
+  "title": "Databricks UCDataset startet als Beta für Unity Catalog und PyTorch",
+  "summary": "QualifiedPOC.ai berichtet über eine Beta von Databricks UCDataset, die Unity-Catalog-Tabellen direkt in verteilte PyTorch-Trainingsläufe streamt und dabei die Berechtigungen der Identität des laufenden Jobs anwendet. Das Briefing nennt Einschränkungen bei Zeilenfiltern und Spaltenmasken; ob die Beta öffentlich oder zugangsbeschränkt ist, bleibt offen.",
+  "topic_id": "enterprise",
+  "topic": "Enterprise",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "qualifiedpoc.ai",
+    "url": "https://qualifiedpoc.ai/research/en/daily-enterprise-tech-brief-10-november-2026"
+   }
+  ],
+  "change_type": "preview"
  },
  {
   "title": "Cloud Pathways auf Google Kubernetes Engine allgemein verfügbar",
@@ -172,6 +370,76 @@
   "change_type": "announcement"
  },
  {
+  "title": "Goose 1.58.1 passt Kontextverdichtung nach Ablehnungen durch Opus 5.5 an",
+  "summary": "Laut DevAgentRadar formuliert Goose 1.58.1 den Prompt zur Kontextverdichtung um, nachdem Opus 5.5 ihn als Destillation abgelehnt hatte. Außerdem erneuert die Version Databricks-OAuth-Tokens vor deren Ablauf.",
+  "topic_id": "context-engineering",
+  "topic": "Context Engineering",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "www.devagentradar.com",
+    "url": "https://www.devagentradar.com/insights/radar-brief-2026-11-10"
+   }
+  ],
+  "change_type": "update"
+ },
+ {
+  "title": "Goose 1.58.0 ergänzt Kontextrelevanz-Funktion und Kontextfenster-Viewer",
+  "summary": "Laut DevAgentRadar ergänzt Goose 1.58.0 eine zuschaltbare Kontextrelevanz-Funktion sowie Bericht und Viewer für das Kontextfenster. Das Update nimmt AIHubMix, RouterPlex und Lemonade als Modellanbieter auf und ersetzt Spark X2 durch Spark X2.5. In der Desktop-Oberfläche werden Denkabschnitte standardmäßig eingeklappt; weitere Korrekturen betreffen Modellrouting, Bildverarbeitung und Ratenlimits.",
+  "topic_id": "context-engineering",
+  "topic": "Context Engineering",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "www.devagentradar.com",
+    "url": "https://www.devagentradar.com/insights/radar-brief-2026-11-10"
+   }
+  ],
+  "change_type": "update"
+ },
+ {
+  "title": "AuzzurA startet DM als Early Access für sitzungsübergreifenden Cursor-Kontext per MCP",
+  "summary": "AuzzurA bietet den Kontextserver DM laut Bericht als kostenlos testbaren Early Access an, der Cursor-Agenten freigegebene Teamregeln, Fähigkeiten und Entscheidungen bereitstellt. Nach der Produktbeschreibung liefert der MCP-Server vor Aufgaben passenden Kontext mit Tokenbudget und Auswahlbegründung; neue Erkenntnisse werden erst nach menschlicher Freigabe zu wiederverwendbarem Teamwissen. Die Einrichtung unterstützt OAuth-Erkennung und dynamische Clientregistrierung, erfordert aber ein DM-Konto und einen eingerichteten Workspace-Agenten.",
+  "topic_id": "context-engineering",
+  "topic": "Context Engineering",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "cursorhq.ai",
+    "url": "https://cursorhq.ai/news/auzzura-s-dm-lets-cursor-agents-reuse-team-approved-context-across-sessi-bb6088/"
+   }
+  ],
+  "change_type": "preview"
+ },
+ {
+  "title": "Amazon Bedrock AgentCore gibt direkte Websuche über InvokeWebSearch allgemein frei",
+  "summary": "AWS gibt die Web Search API von Amazon Bedrock AgentCore allgemein frei: InvokeWebSearch ermöglicht Suchanfragen ohne AgentCore Gateway oder zuvor anzulegende Ressourcen. Laut AWS liefert die API sortierte Treffer aus einem Amazon-Webindex und unterstützt Domain- und Zeitfilter sowie IAM, PrivateLink und CloudTrail-Datenereignisse. Sie ist in sechs Regionen einschließlich Irland verfügbar und kostet 7 US-Dollar je 1.000 Suchanfragen ohne Gateway-Gebühren.",
+  "topic_id": "context-engineering",
+  "topic": "Context Engineering",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "aws.amazon.com",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-bedrock-agentcore-web-search-api/"
+   }
+  ],
+  "change_type": "general_availability"
+ },
+ {
+  "title": "Trimble Generative Design erprobt Bestands-Punktwolken über Trimble Labs",
+  "summary": "Trimble Generative Design erzeugt nach Herstellerangaben Architekturvarianten unter Einbeziehung aktueller Bestands-Punktwolken aus Trimble Connect. Der Zugang ist ausschließlich über das Frühzugangsprogramm Trimble Labs möglich; eine allgemeine Freigabe wird nicht gemeldet.",
+  "topic_id": "ai-tools",
+  "topic": "AI Tools",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "businessbearings.com",
+    "url": "https://businessbearings.com/articles/trimble-adds-six-ai-tools-to-connect-construction-platform"
+   }
+  ],
+  "change_type": "preview"
+ },
+ {
   "title": "Tether verbindet lokale Dateien mit Agenten in Open WebUI",
   "summary": "The Vibe Check beschreibt Tether als neue Desktop-Anwendung im Umfeld von Open WebUI, die den eigenen Rechner mit Agenten verbindet und ihnen die Arbeit mit lokalen Dateien ermöglicht. Der Newsletter empfiehlt deshalb, die freigegebenen Ordner sorgfältig zu begrenzen.",
   "topic_id": "ai-tools",
@@ -200,6 +468,366 @@
   "change_type": "general_availability"
  },
  {
+  "title": "Databricks Genie wird in Slack und Microsoft Teams allgemein verfügbar",
+  "summary": "Laut QualifiedPOC.ai sind die Anwendungen von Databricks Genie für Slack und Microsoft Teams allgemein verfügbar und ermöglichen Datenfragen direkt in Unterhaltungen. Voraussetzung sind entsprechend konfigurierte Genie Spaces und die erforderlichen Berechtigungen für die zugrunde liegenden Daten.",
+  "topic_id": "ai-tools",
+  "topic": "AI Tools",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "qualifiedpoc.ai",
+    "url": "https://qualifiedpoc.ai/research/en/daily-enterprise-tech-brief-10-november-2026"
+   }
+  ],
+  "change_type": "general_availability",
+  "angles": [
+   {
+    "title": "Databricks Genie Search wird allgemein verfügbar",
+    "summary": "Laut QualifiedPOC.ai hat Databricks Genie Search allgemein verfügbar gemacht; der Dienst indexiert Unternehmensquellen wie Google Drive, Jira, Confluence und Workday. Nach der beschriebenen Produktfunktion berücksichtigt die Suche die Dokumentberechtigungen der jeweiligen Quellsysteme.",
+    "topic_id": "context-engineering",
+    "topic": "Context Engineering",
+    "date": "2026-11-10",
+    "sources": [
+     {
+      "label": "qualifiedpoc.ai",
+      "url": "https://qualifiedpoc.ai/research/en/daily-enterprise-tech-brief-10-november-2026"
+     }
+    ],
+    "change_type": "general_availability"
+   },
+   {
+    "title": "Databricks Genie Ontology mit Semantik aus Unity Catalog allgemein verfügbar",
+    "summary": "QualifiedPOC.ai berichtet, dass Databricks Genie Ontology als gemeinsame Geschäftskontextschicht allgemein verfügbar ist. Die Lösung verbindet dem Bericht zufolge Semantik aus Unity Catalog mit Wissen aus Datenassets und deren Nutzung; laut Produktansatz soll sie gemeinsame Geschäftsdefinitionen für Analysen und Agenten bereitstellen.",
+    "topic_id": "context-engineering",
+    "topic": "Context Engineering",
+    "date": "2026-11-10",
+    "sources": [
+     {
+      "label": "qualifiedpoc.ai",
+      "url": "https://qualifiedpoc.ai/research/en/daily-enterprise-tech-brief-10-november-2026"
+     }
+    ],
+    "change_type": "general_availability"
+   },
+   {
+    "title": "Zendesk gibt 14 neue Wissenskonnektoren allgemein frei",
+    "summary": "Laut QualifiedPOC.ai sind 14 zusätzliche externe Inhaltsanbindungen für Zendesks Wissens- und KI-Funktionen allgemein verfügbar. Sie können dem Bericht zufolge von KI-Agenten, dem Admin-Copilot, der Help-Center-Suche und generativen Suchfunktionen genutzt werden. Laut beschriebenem Produktansatz sollen sie bestehende Wissensbestände erschließen, ohne sämtliche Inhalte zuvor in Zendesk zusammenzuführen.",
+    "topic_id": "context-engineering",
+    "topic": "Context Engineering",
+    "date": "2026-11-10",
+    "sources": [
+     {
+      "label": "qualifiedpoc.ai",
+      "url": "https://qualifiedpoc.ai/research/en/daily-enterprise-tech-brief-10-november-2026"
+     }
+    ],
+    "change_type": "general_availability"
+   },
+   {
+    "title": "Red Hat OpenShift 5 wird mit Lightspeed allgemein verfügbar",
+    "summary": "QualifiedPOC.ai meldet die allgemeine Verfügbarkeit von Red Hat OpenShift 5 mit Lightspeed-Fehlersuche, Bewertungen von Update-Risiken und MCP-Unterstützung. Zum beschriebenen Funktionsumfang gehören außerdem gehärtete Mandantentrennung und Post-Quanten-Kryptografie für die Steuerungsebene.",
+    "topic_id": "enterprise",
+    "topic": "Enterprise",
+    "date": "2026-11-10",
+    "sources": [
+     {
+      "label": "qualifiedpoc.ai",
+      "url": "https://qualifiedpoc.ai/research/en/daily-enterprise-tech-brief-10-november-2026"
+     }
+    ],
+    "change_type": "general_availability"
+   }
+  ]
+ },
+ {
+  "title": "Claude kündigt interaktive Konnektoren für Adobe, Atlassian und HubSpot an",
+  "summary": "Anthropic hat interaktive Konnektoren angekündigt, die vollständige Anwendungen etwa von Adobe, Atlassian und HubSpot innerhalb von Claude öffnen sollen. Laut Unternehmen können Teams diese neben ihren Claude-Gesprächen nutzen und den Assistenten darin arbeiten lassen. Eine konkrete Beta- oder GA-Einstufung wird nicht genannt.",
+  "topic_id": "ai-tools",
+  "topic": "AI Tools",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "techcrunch.com",
+    "url": "https://techcrunch.com/2026/11/10/anthropic-launches-claude-meetings-to-turn-workplace-discussions-into-plans-and-tasks/"
+   }
+  ],
+  "change_type": "integration"
+ },
+ {
+  "title": "Claude Meetings startet als Beta für Google Meet",
+  "summary": "Claude Meetings startet als Beta für Team- und Enterprise-Kunden und unterstützt zunächst Google Meet. Laut Anthropic kann Claude als sichtbarer Teilnehmer Fragen beantworten, Pläne erstellen und Informationen aus verbundenen Arbeitsanwendungen abrufen; Ergebnisse stehen anschließend in claude.ai bereit. Für Gespräche mit externen Gästen ist eine Adminfreigabe erforderlich; beim Hinzukommen eines externen Gasts verlässt Claude die Sitzung automatisch.",
+  "topic_id": "ai-tools",
+  "topic": "AI Tools",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "techcrunch.com",
+    "url": "https://techcrunch.com/2026/11/10/anthropic-launches-claude-meetings-to-turn-workplace-discussions-into-plans-and-tasks/"
+   }
+  ],
+  "change_type": "public_beta",
+  "angles": [
+   {
+    "title": "Claude Whiteboards startet als Beta für gemeinsame visuelle Planung",
+    "summary": "Claude Whiteboards ist als Beta für kostenpflichtige Tarife im Web sowie auf Desktop und Mobilgeräten verfügbar. Laut Anthropic können Teams mit Claude in Echtzeit visuelle Arbeitsbereiche mit Zeitachsen und Fristen erstellen und Ergebnisse in Dokumente oder Präsentationen umwandeln. Die Whiteboards lassen sich auch innerhalb von Claude Meetings nutzen.",
+    "topic_id": "ai-tools",
+    "topic": "AI Tools",
+    "date": "2026-11-10",
+    "sources": [
+     {
+      "label": "techcrunch.com",
+      "url": "https://techcrunch.com/2026/11/10/anthropic-launches-claude-meetings-to-turn-workplace-discussions-into-plans-and-tasks/"
+     }
+    ],
+    "change_type": "public_beta"
+   },
+   {
+    "title": "Claude Sheets startet als Beta für kollaborative Tabellen",
+    "summary": "Claude Sheets ist als Beta für kostenpflichtige Tarife im Web sowie auf Desktop und Mobilgeräten verfügbar. Laut Anthropic erstellt Claude Tabellen etwa für Kampagnentracker oder Personalbudgets mit mehreren Tabellenblättern, Formeln, Formatierungen und Dropdown-Menüs. Teams können gemeinsam weiterarbeiten; Claude nimmt Änderungen direkt in Zellen vor und erläutert sie.",
+    "topic_id": "ai-tools",
+    "topic": "AI Tools",
+    "date": "2026-11-10",
+    "sources": [
+     {
+      "label": "techcrunch.com",
+      "url": "https://techcrunch.com/2026/11/10/anthropic-launches-claude-meetings-to-turn-workplace-discussions-into-plans-and-tasks/"
+     }
+    ],
+    "change_type": "public_beta"
+   }
+  ]
+ },
+ {
+  "title": "Claude Data, bisher Claude Dashboards, wird allgemein verfügbar",
+  "summary": "Anthropic hat laut TechCrunch Claude Data, zuvor Claude Dashboards, allgemein verfügbar gemacht. Das Werkzeug verbindet Claude mit Unternehmenssystemen wie Data Warehouses und CRM-Anwendungen. Nach Herstellerangaben beantwortet es Fragen mit Dashboards, schriftlichen Datengeschichten oder vertonten Videos.",
+  "topic_id": "ai-tools",
+  "topic": "AI Tools",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "techcrunch.com",
+    "url": "https://techcrunch.com/2026/11/10/anthropic-launches-claude-meetings-to-turn-workplace-discussions-into-plans-and-tasks/"
+   }
+  ],
+  "change_type": "general_availability",
+  "angles": [
+   {
+    "title": "Claude Data: Claude Dashboards erreicht unter neuem Namen die allgemeine Verfügbarkeit",
+    "summary": "Anthropic hat die allgemeine Verfügbarkeit von Claude Data angekündigt, das zuvor Claude Dashboards hieß. Laut Anbieter verbindet das Angebot Claude mit Unternehmenssystemen wie Data Warehouses und CRM-Anwendungen und beantwortet Fragen mit Dashboards, ausformulierten Datenauswertungen oder kommentierten Videos.",
+    "topic_id": "enterprise",
+    "topic": "Enterprise",
+    "date": "2026-11-10",
+    "sources": [
+     {
+      "label": "techcrunch.com",
+      "url": "https://techcrunch.com/2026/11/10/anthropic-launches-claude-meetings-to-turn-workplace-discussions-into-plans-and-tasks/"
+     }
+    ],
+    "change_type": "general_availability"
+   }
+  ]
+ },
+ {
+  "title": "Adobe Firefly: Builder startet als Prototyping-Werkzeug in privater Beta",
+  "summary": "Adobe hat auf seiner MAX-Veranstaltung Builder als neues Prototyping-Werkzeug innerhalb von Firefly vorgestellt. Nach der Produktbeschreibung soll es Designs zur Veranschaulichung eigener Ideen erzeugen können. Builder befindet sich in einer privaten Beta.",
+  "topic_id": "ai-tools",
+  "topic": "AI Tools",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "techcrunch.com",
+    "url": "https://techcrunch.com/2026/11/10/adobe-adds-more-ai-to-its-products-and-launches-an-mcp/"
+   }
+  ],
+  "change_type": "preview"
+ },
+ {
+  "title": "Adobe Firefly: Bildbearbeitung und Quick Actions allgemein verfügbar",
+  "summary": "Adobe meldet die allgemeine Verfügbarkeit von Edit Text, Retouch, Relight und Quick Actions in Adobe Firefly. Laut Hersteller bietet die Workflow-Galerie Quick Actions vorgefertigte Abläufe von einzelnen Bearbeitungsschritten wie der Objektentfernung bis zu geführten Projekten wie einer Produktanzeige.",
+  "topic_id": "ai-tools",
+  "topic": "AI Tools",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "news.adobe.com",
+    "url": "https://news.adobe.com/news/2026/11/adobe-firefly-expands?full=1"
+   }
+  ],
+  "change_type": "general_availability"
+ },
+ {
+  "title": "Adobe Creative Cloud öffnet Funktionen über lokale MCP-Anbindung",
+  "summary": "Adobe veröffentlicht eine lokale MCP-Anbindung, über die externe KI-Assistenten wie ChatGPT, Claude oder Gemini Funktionen seiner Kreativanwendungen nutzen können. Laut Adobe umfasst sie zunächst Endpunkte und Fähigkeiten aus Illustrator, Photoshop, After Effects und Premiere. Über weitere zugängliche Funktionen will das Unternehmen anhand von Nutzerfeedback entscheiden.",
+  "topic_id": "ai-tools",
+  "topic": "AI Tools",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "techcrunch.com",
+    "url": "https://techcrunch.com/2026/11/10/adobe-adds-more-ai-to-its-products-and-launches-an-mcp/"
+   }
+  ],
+  "change_type": "integration",
+  "angles": [
+   {
+    "title": "Adobe Lightroom erhält Korrekturen für geschlossene Augen und Hautunreinheiten",
+    "summary": "Adobe stellt für Lightroom eine Möglichkeit vor, durch Blinzeln geschlossene Augen zu korrigieren. Hinzu kommt ein Werkzeug zum Entfernen von Hautunreinheiten. Eine nähere Angabe zur Freigabestufe enthält der Bericht nicht.",
+    "topic_id": "ai-tools",
+    "topic": "AI Tools",
+    "date": "2026-11-10",
+    "sources": [
+     {
+      "label": "techcrunch.com",
+      "url": "https://techcrunch.com/2026/11/10/adobe-adds-more-ai-to-its-products-and-launches-an-mcp/"
+     }
+    ],
+    "change_type": "update"
+   }
+  ]
+ },
+ {
+  "title": "Adobe Creative Agent: Neue Beta-Steuerung für den Firefly AI Assistant und Firefly Boards",
+  "summary": "Adobe erweitert den Creative Agent in der Beta um gespeicherte Marken- und Gestaltungsvorgaben, einen vorab prüfbaren Plan Mode sowie manuelle oder automatische Modellwahl. Laut Hersteller kommt der Agent zudem in Firefly Boards zum Einsatz und wird enger mit den Multimedia-Editoren verbunden.",
+  "topic_id": "ai-tools",
+  "topic": "AI Tools",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "news.adobe.com",
+    "url": "https://news.adobe.com/news/2026/11/adobe-firefly-expands?full=1"
+   }
+  ],
+  "change_type": "update",
+  "angles": [
+   {
+    "title": "Firefly Video und Firefly Image: Neue Beta-Werkzeuge einschließlich Edit Object",
+    "summary": "Adobe kündigt für Firefly Video Beta-Funktionen zur Entwicklung von Szenen und Einstellungen, eine vereinfachte Timeline, Untertitel sowie generierte Übergänge und B-Roll an. Für Firefly Image ergänzt Edit Object laut Hersteller die gezielte Bearbeitung einzelner Bildbereiche.",
+    "topic_id": "ai-tools",
+    "topic": "AI Tools",
+    "date": "2026-11-10",
+    "sources": [
+     {
+      "label": "news.adobe.com",
+      "url": "https://news.adobe.com/news/2026/11/adobe-firefly-expands?full=1"
+     }
+    ],
+    "change_type": "update"
+   }
+  ]
+ },
+ {
+  "title": "vLLM: GHSA-v97p-wpxp-px84 beschreibt Token-Leck zwischen Nutzeranfragen",
+  "summary": "Dem Digest zufolge konnten ältere vLLM-Versionen bei asynchronem Scheduling mit Pipeline-Parallelität Tokens einer vorherigen Nutzeranfrage in die Antwort einer anderen Anfrage übernehmen. Der Sicherheitshinweis GHSA-v97p-wpxp-px84 nennt Version 0.21.0 als korrigiert; alternativ lässt sich die betroffene Kombination durch Abschalten von asynchronem Scheduling oder Pipeline-Parallelität vermeiden. Der Digest stuft den Hinweis als mittelschwer ein und hebt das Risiko im Mehrmandantenbetrieb hervor.",
+  "topic_id": "ai-security",
+  "topic": "AI Security",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "ai-eng-digest.vercel.app",
+    "url": "https://ai-eng-digest.vercel.app/"
+   }
+  ],
+  "change_type": "security"
+ },
+ {
+  "title": "vLLM: GHSA-fpch-3xrf-7q96 betrifft anfrageübergreifenden Thinking-Budget-Zustand",
+  "summary": "Laut Digest konnte die Thinking-Budget-Funktion von vLLM nach einer Batch-Umsortierung ein Reasoning-Endtoken in die Ausgabe einer benachbarten Anfrage einschleusen und deren Reasoning vorzeitig beenden. Der als mittelschwer beschriebene Sicherheitshinweis GHSA-fpch-3xrf-7q96 nennt Version 0.28.0 als korrigiert. Die Meldung betrifft eine veröffentlichte Schwachstelleninformation zu bereits früher behobenen Versionen, keine neue Patch-Veröffentlichung.",
+  "topic_id": "ai-security",
+  "topic": "AI Security",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "ai-eng-digest.vercel.app",
+    "url": "https://ai-eng-digest.vercel.app/"
+   }
+  ],
+  "change_type": "security"
+ },
+ {
+  "title": "OpenAI beschreibt Control Room zur zentralen Abschaltung agentischer Forschungsjobs",
+  "summary": "OpenAI beschreibt laut Digest mit Control Room eine Kontrolle, die jeden agentischen Forschungsjob über eine Kennung mit einem genehmigten Sicherheitsnachweis verbindet und diesen vor der Tokenausgabe prüft. Nach der wiedergegebenen Anbieterbeschreibung können Menschen oder Monitore die Ausgabe innerhalb von höchstens 35 Sekunden stoppen; fällt der zentrale Dienst aus, wird die Inferenz verweigert. Die Beschreibung betrifft interne Forschungsinfrastruktur, kein allgemein verfügbares Kundenprodukt.",
+  "topic_id": "ai-security",
+  "topic": "AI Security",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "ai-eng-digest.vercel.app",
+    "url": "https://ai-eng-digest.vercel.app/"
+   }
+  ],
+  "change_type": "announcement"
+ },
+ {
+  "title": "New York startet Forschungsnetz für KI-Sicherheitstests am NYCAIRR mit Empire AI",
+  "summary": "Nach Angaben der Staatsregierung startet New York am New York Center for AI Responsibility and Research (NYCAIRR) ein bundesstaatweites Forschungsnetz mit mehr als 80 Forschenden, das fortgeschrittene KI-Systeme mit Rechenleistung von Empire AI unabhängig auf Sicherheit prüfen soll. Das Zentrum ist an der Binghamton University angesiedelt; Greg Morrisett und Jeannette Wing übernehmen die wissenschaftliche Interimsleitung. Gemeinsam mit der Aufsichtsbehörde DIGIT soll es zudem veröffentlichte Sicherheitsrahmen von KI-Entwicklern prüfen und Empfehlungen für stärkere Anforderungen erarbeiten.",
+  "topic_id": "ai-security",
+  "topic": "AI Security",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "www.governor.ny.gov",
+    "url": "https://www.governor.ny.gov/news/governor-hochul-declares-ny-will-lead-nation-ai-science-and-safety-launches-new-research"
+   }
+  ],
+  "change_type": "announcement"
+ },
+ {
+  "title": "Homeopathic Learning: Saubere Trainingsdaten können Backdoors in Qwen3-8B und Gemma-3-4b-it verstärken",
+  "summary": "Forschende von Anthropic und Partnerorganisationen berichten aus kontrollierten Experimenten mit Qwen3-8B, Gemma-3-4b-it und einem kleinen MNIST-Netz, dass saubere, ähnlich formatierte Beispiele ohne Trigger zuvor schwache Backdoors verstärken können. In einem Qwen3-8B-Versuch stieg bei einer Mischung mit 20 Prozent vergifteten Beispielen die Fehlverhaltensrate unter dem zugehörigen Trigger-Prompt von 7 auf 16 Prozent, während sie unter dem normalen Assistenten-Prompt unverändert blieb. Die Autoren sehen darin eine mögliche Grenze isolierter Trainingsdatenprüfungen, betonen aber, dass sie konstruierte Datensätze und keine produktive Trainingspipeline untersucht haben.",
+  "topic_id": "ai-security",
+  "topic": "AI Security",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "alignment.anthropic.com",
+    "url": "https://alignment.anthropic.com/2026/homeopathic-learning/"
+   }
+  ],
+  "change_type": "research"
+ },
+ {
+  "title": "Grok Build: Auffindbare Freigabelinks legen vertrauliche App-Daten offen",
+  "summary": "Laut Claroc waren mehr als 35.000 Grok-Build-Apps öffentlich erreichbar, darunter Anwendungen mit Gesundheitsdaten, Mitarbeiterinformationen und vertraulichen Geschäftsunterlagen; ihre Freigabeadressen ließen sich über passive DNS-Dienste auffinden. Clarocs Tests zufolge war „Anyone with the link“ voreingestellt, während eine Anbietervertretung erklärte, Apps seien standardmäßig privat. Nach Anfragen von Ars wurden 24 interne SpaceXSI-Apps unzugänglich, während zum Veröffentlichungszeitpunkt fast alle übrigen betroffenen Daten weiter erreichbar waren.",
+  "topic_id": "ai-security",
+  "topic": "AI Security",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "arstechnica.com",
+    "url": "https://arstechnica.com/security/2026/11/grok-build-coding-agent-leaks-oodles-of-confidential-info-some-belonging-to-spacexsi/"
+   }
+  ],
+  "change_type": "security"
+ },
+ {
+  "title": "GPUStack: CVE-2026-102895 wird laut Digest ausgenutzt und in CISA KEV aufgenommen",
+  "summary": "Laut Digest konnten GPUStack-Versionen vor 2.2.0 Loopback-Anfragen als integrierten Administrator behandeln und dadurch bei bestimmten Proxy- oder Header-Konstellationen nicht authentifizierten Fernzugriff ermöglichen. Der referierte Sicherheitshinweis berichtet über Angriffe auf eine 2.1.1-Installation, bei denen benutzerdefinierte Backends Reverse Shells ausführten. Der Digest meldet die Aufnahme von CVE-2026-102895 in CISA KEV mit Behebungsfrist zum 12. November und nennt Version 2.2.0 oder erzwungene Authentifizierung für localhost als Abhilfe.",
+  "topic_id": "ai-security",
+  "topic": "AI Security",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "ai-eng-digest.vercel.app",
+    "url": "https://ai-eng-digest.vercel.app/"
+   }
+  ],
+  "change_type": "security"
+ },
+ {
+  "title": "Aura stellt Solstice vor und startet begrenzte Beta seiner Familienschutz-App",
+  "summary": "Aura stellt die intern entwickelte KI-Engine Solstice vor, die laut Anbieter Sicherheitssignale, einen Haushalts-Wissensgraphen, spezialisierte Modelle und ausführende Agenten verbindet. Die darauf aufgebaute App soll unter anderem Einrichtung per Gespräch, Briefings und einen Familienassistenten bieten sowie auf Anweisung kompromittierte Passwörter prüfen, Experian-Kreditsperren setzen und Datenlöschungen bei Datenhändlern beantragen. Die App ist zunächst für ausgewählte Nutzer in einer begrenzten Beta verfügbar; eine breitere Verfügbarkeit ist für Anfang 2027 angekündigt.",
+  "topic_id": "ai-security",
+  "topic": "AI Security",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "aura.com",
+    "url": "https://aura.com/press/release/aura-introduces-solstice-ai-engine"
+   }
+  ],
+  "change_type": "preview"
+ },
+ {
   "title": "Anthropics Enterprise Frontier Safeguards startet in die private Beta",
   "summary": "PoYo berichtet, dass Anthropics Enterprise Frontier Safeguards in eine private Beta gestartet ist. Als beteiligte Kunden nennt der Bericht Bridgewater, Salesforce und Stripe; konkrete Funktionen und Zugangskriterien werden nicht erläutert.",
   "topic_id": "ai-security",
@@ -212,6 +840,120 @@
    }
   ],
   "change_type": "preview"
+ },
+ {
+  "title": "Amazon Bedrock unterstützt Daybreak Red: GPT-5.6 Cyber und Daybreak Blue: GPT-5.6 Sol",
+  "summary": "AWS meldet die Verfügbarkeit beider OpenAI-Cybersecurity-Modelle über den bedrock-runtime-Endpunkt mit US- und globalen regionsübergreifenden Inferenzprofilen; erforderlich sind die Aufnahme in OpenAIs Daybreak-Zugangsprogramm und eine anschließende Freischaltung bei AWS. Laut Anbieter ist Daybreak Blue für defensive Sicherheitsaufgaben vorgesehen, Daybreak Red für fortgeschrittene autorisierte Arbeiten wie Exploit-Reproduktion mit strengeren Identitätsprüfungen und Zugriffskontrollen. Nach AWS-Angaben werden Inferenzdaten nicht zum Modelltraining verwendet, und eine Zustimmung zur Datenweitergabe an OpenAI ist nicht erforderlich.",
+  "topic_id": "ai-security",
+  "topic": "AI Security",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "aws.amazon.com",
+    "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/openai-gpt-daybreak-on-amazon-bedrock-runtime/"
+   }
+  ],
+  "change_type": "integration"
+ },
+ {
+  "title": "AlphaProof Code: Gemini Carbon unterstützt formale Sicherheitsbeweise für Signal",
+  "summary": "DeepMind stellt AlphaProof Code vor und veröffentlicht Verifikationsartefakte für zentrale Sicherheitseigenschaften des kompilierten Signal-Kryptografiecodes als Open Source. Laut Anbieter prüften Menschen die Spezifikationen, während Gemini-Carbon-Agenten über sechs Millionen Zeilen Lean erzeugten und Lean die Beweise maschinell kontrollierte. Der Prozess dauerte nach Herstellerangaben vier Wochen; DeepMind betont weiteren Forschungsbedarf für die Skalierung.",
+  "topic_id": "ai-security",
+  "topic": "AI Security",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "deepmind.google",
+    "url": "https://deepmind.google/blog/introducing-alphaproof-code/"
+   }
+  ],
+  "change_type": "research"
+ },
+ {
+  "title": "ASIMOV-Jailbreak: DeepMind veröffentlicht Robotik-Benchmark und Werte für Gemini 4 Argon",
+  "summary": "DeepMind veröffentlicht ASIMOV-Jailbreak als offenen Benchmark mit Hunderten Prompts, die unsichere Anforderungen in Dutzenden Szenarien verschleiern. Er soll die Jailbreak-Robustheit bei länger laufenden agentischen Robotikaufgaben prüfen. Für Gemini 4 Argon meldet DeepMind eine Jailbreak-Resistenz von 99,5 Prozent gegenüber 82 Prozent bei Gemini Robotics ER 2; die Werte stammen vom Anbieter.",
+  "topic_id": "ai-security",
+  "topic": "AI Security",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "deepmind.google",
+    "url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/"
+   }
+  ],
+  "change_type": "research"
+ },
+ {
+  "title": "Topaz Labs veröffentlicht Wonder 4 für Hochskalierung und Entrauschung",
+  "summary": "Topaz Labs veröffentlicht laut TechCrunch das Bildmodell Wonder 4 zur Hochskalierung und Entrauschung von Bildern. Der Bericht nennt keine technischen Leistungsdaten und weist keinen konkreten Beta- oder GA-Status aus.",
+  "topic_id": "ai-news",
+  "topic": "AI News",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "techcrunch.com",
+    "url": "https://techcrunch.com/2026/11/10/adobe-adds-more-ai-to-its-products-and-launches-an-mcp/"
+   }
+  ],
+  "change_type": "announcement",
+  "angles": [
+   {
+    "title": "Topaz Labs veröffentlicht ImageHDR zur Umwandlung von Bildern in HDR",
+    "summary": "Topaz Labs veröffentlicht laut TechCrunch das Bildmodell ImageHDR. Es soll gewöhnliche Bilder in HDR-Bilder umwandeln; weitere technische Angaben oder eine konkrete Freigabestufe nennt der Bericht nicht.",
+    "topic_id": "ai-news",
+    "topic": "AI News",
+    "date": "2026-11-10",
+    "sources": [
+     {
+      "label": "techcrunch.com",
+      "url": "https://techcrunch.com/2026/11/10/adobe-adds-more-ai-to-its-products-and-launches-an-mcp/"
+     }
+    ],
+    "change_type": "announcement"
+   },
+   {
+    "title": "Adobe Firefly erhält neue Bild- und Videowerkzeuge sowie einen proaktiven Agenten",
+    "summary": "Adobe kündigt für Firefly markenkonforme Diagramme, objektbezogene Bildbearbeitung und ein KI-Werkzeug zum Zusammenstellen von Videos aus Clips, Bildern und Soundeffekten an. Laut Adobe soll der Agent proaktiv und dauerhaft aktiv werden, um mehr Arbeitskontext zu erfassen. Hinzu kommen Schnellaktionen wie Hintergrundentfernung und Video-Thumbnails; konkrete Freigabestufen nennt der vorgelegte Bericht dafür nicht.",
+    "topic_id": "ai-tools",
+    "topic": "AI Tools",
+    "date": "2026-11-10",
+    "sources": [
+     {
+      "label": "techcrunch.com",
+      "url": "https://techcrunch.com/2026/11/10/adobe-adds-more-ai-to-its-products-and-launches-an-mcp/"
+     }
+    ],
+    "change_type": "announcement"
+   },
+   {
+    "title": "Adobe Photoshop soll Relighting und Regler für generative Stile erhalten",
+    "summary": "Adobe hat für Photoshop eine Funktion zur nachträglichen Änderung der Beleuchtung angekündigt. Zusätzlich sollen Regler die Steuerung promptbasierter generativer Stile ermöglichen. Ein konkreter Verfügbarkeitsstatus wird nicht genannt.",
+    "topic_id": "ai-tools",
+    "topic": "AI Tools",
+    "date": "2026-11-10",
+    "sources": [
+     {
+      "label": "techcrunch.com",
+      "url": "https://techcrunch.com/2026/11/10/adobe-adds-more-ai-to-its-products-and-launches-an-mcp/"
+     }
+    ],
+    "change_type": "announcement"
+   },
+   {
+    "title": "Adobe Premiere: Objektentfernung und neues Color Grading angekündigt",
+    "summary": "Adobe kündigt für Premiere eine Funktion an, die Objekte aus Videos entfernen soll. Zudem soll die Anwendung ein neues Color-Grading-System für professionelle Anwender erhalten. Ein Freigabetermin oder konkreter Beta- beziehungsweise GA-Status wird nicht genannt.",
+    "topic_id": "ai-tools",
+    "topic": "AI Tools",
+    "date": "2026-11-10",
+    "sources": [
+     {
+      "label": "techcrunch.com",
+      "url": "https://techcrunch.com/2026/11/10/adobe-adds-more-ai-to-its-products-and-launches-an-mcp/"
+     }
+    ],
+    "change_type": "announcement"
+   }
+  ]
  },
  {
   "title": "Samsung HBM5 soll die Pin-Geschwindigkeit gegenüber HBM4E mehr als verdoppeln",
@@ -242,6 +984,20 @@
     "change_type": "announcement"
    }
   ]
+ },
+ {
+  "title": "Multimodal Knowledge Agent: MKA prüft mit Stirrup 200 visuelle Praxisaufgaben",
+  "summary": "Artificial Analysis und Google DeepMind veröffentlichen den Multimodal Knowledge Agent Benchmark (MKA) mit 200 privaten Aufgaben aus zehn Branchen, bei denen Agenten komplexe Bilddateien auswerten und daraus Arbeitsdateien erstellen. Die Ausführung erfolgt im offenen Stirrup-Harness mit Werkzeugzugriff; bewertet wird anhand von durchschnittlich rund 70 gewichteten Expertenkriterien je Aufgabe durch GPT-6 Luna als agentischen Prüfer. In den veröffentlichten Messungen der Benchmark-Anbieter erreicht Claude Fable 5.2 bei den anspruchsvolleren „Climb“-Kriterien 57 Prozent vor Gemini 4 Carbon mit 54 Prozent und Claude Opus 5.5 mit 53 Prozent; kein Modell führt in allen zehn Branchen.",
+  "topic_id": "ai-news",
+  "topic": "AI News",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "artificialanalysis.ai",
+    "url": "https://artificialanalysis.ai/articles/google-deepmind-multimodal-knowledge-agent"
+   }
+  ],
+  "change_type": "research"
  },
  {
   "title": "Isaac Lab 3.0 erhält Newton-Backend für komplexere Robotiksimulationen",
@@ -300,6 +1056,62 @@
     "change_type": "business"
    }
   ]
+ },
+ {
+  "title": "Google öffnet Gemini 4 Carbon für zahlende API-Kunden und AI-Ultra-Abonnenten",
+  "summary": "Google stellt Gemini 4 Carbon zahlenden Entwicklern und Unternehmen über die API in Google AI Studio und Gemini for business bereit; für AI-Ultra-Abonnenten beginnt der Rollout in Antigravity, der Gemini-App und AI Mode in Search. Laut Google beträgt der Einführungspreis 2 US-Dollar je Million Eingabetokens und 10 US-Dollar je Million Ausgabetokens; die Model Card nennt Text-, Bild-, Audio- und Videoeingaben sowie ein gemeinsames Ein-/Ausgabe-Kontextfenster von bis zu einer Million Tokens. Google weist auf möglichen höheren Tokenverbrauch, Verzögerungen und Halluzinationen hin; spezialisierte Dual-Use-Cybersecurity-Fähigkeiten bleiben verifizierten Verteidigern im Fairwind Program vorbehalten.",
+  "topic_id": "ai-news",
+  "topic": "AI News",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "deepmind.google",
+    "url": "https://deepmind.google/blog/gemini-4-carbon-is-now-available"
+   }
+  ],
+  "change_type": "general_availability"
+ },
+ {
+  "title": "Google öffnet Gemini 4 Carbon für zahlende API-Kunden und AI Ultra",
+  "summary": "Google stellt Gemini 4 Carbon zahlenden Entwicklern und Unternehmen über Google AI Studio und Gemini for business bereit; der Einführungspreis beträgt 2 US-Dollar je Million Eingabetokens und 10 US-Dollar je Million Ausgabetokens. Für Google-AI-Ultra-Abonnenten beginnt zudem der Rollout in Antigravity, der Gemini-App und AI Mode in Search. Laut Google ist das Modell für komplexe Programmierung, wissenschaftliches Schlussfolgern und dichte multimodale Dokumente ausgelegt und benötigt mehr Tokens als Gemini 4 Argon.",
+  "topic_id": "ai-news",
+  "topic": "AI News",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "blog.google",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available"
+   }
+  ],
+  "change_type": "general_availability"
+ },
+ {
+  "title": "Google und Artificial Analysis starten Multimodal Knowledge Agent mit Vergleich von Gemini 4 Carbon",
+  "summary": "Google hat nach eigenen Angaben gemeinsam mit Artificial Analysis den Benchmark Multimodal Knowledge Agent gestartet. Er soll prüfen, wie Agenten mit komplexen Dokumenten arbeiten, die Diagramme, Bilder, Baupläne, technische Zeichnungen und Tabellen enthalten. Google meldet für Gemini 4 Carbon Platz zwei bei durchschnittlichen Aufgabenkosten von weniger als einem Sechstel der Kosten des bestplatzierten Modells; diese Ergebnisangaben stammen im vorgelegten Beleg von Google.",
+  "topic_id": "ai-news",
+  "topic": "AI News",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "deepmind.google",
+    "url": "https://deepmind.google/blog/gemini-4-carbon-is-now-available"
+   }
+  ],
+  "change_type": "research"
+ },
+ {
+  "title": "Google und Artificial Analysis starten Multimodal Knowledge Agent Benchmark mit Stirrup",
+  "summary": "Der Multimodal Knowledge Agent Benchmark (MKA) umfasst 200 Aufgaben aus zehn Branchen und 83 Berufen; sachliche Richtigkeit zählt zu 75 Prozent, visuelle Gestaltung zu 25 Prozent. Alle Modelle nutzen dieselbe quelloffene Agentenumgebung Stirrup mit gleichen Werkzeugen, gleicher Sandbox und gleichem Interaktionsbudget; der automatische Bewerter stimmt laut Veröffentlichung in 96 Prozent der Fälle mit Fachleuten überein. Artificial Analysis hält den vollständigen Testsatz privat und veröffentlicht zehn separate Beispielaufgaben.",
+  "topic_id": "ai-news",
+  "topic": "AI News",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "blog.google",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/multimodal-knowledge-agent-benchmark"
+   }
+  ],
+  "change_type": "research"
  },
  {
   "title": "Google kündigt TPU 8i Max mit zwei TPU-8i-Chips pro Package an",
@@ -402,6 +1214,90 @@
   ]
  },
  {
+  "title": "Gemini Robotics 2.5 startet bei Partnern – Tests mit Apollo 2 nutzen Gemini 4 Argon",
+  "summary": "DeepMind stellt das cloudbasierte Gemini Robotics 2.5 Robotikpartnern wie Agile Robots, Apptronik und Boston Dynamics bereit; allgemein verfügbar ist es nicht. Google nennt für mehr als 200 Labortätigkeiten 30 bis 100 Prozent höhere Erfolgsraten und eine 20 bis 30 Prozent schnellere Ausführung gegenüber der Vorgängerversion. Bei Tests mit Apptroniks Apollo 2 in europäischen Mercedes-Benz-Werken wurden dem Bericht zufolge 96 Prozent Erfolg beim Zusammenstellen von Autoteilen erreicht; das Training nutzte auch durch Gemini 4 Argon erzeugte Simulationsvarianten und Fehleranalysen.",
+  "topic_id": "ai-news",
+  "topic": "AI News",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "arstechnica.com",
+    "url": "https://arstechnica.com/google/2026/11/deepmind-reveals-gemini-robotics-2-5-and-open-safety-benchmark-asimov-jailbreak/"
+   }
+  ],
+  "change_type": "preview"
+ },
+ {
+  "title": "Fish Audio Live 3 startet mit Full-Duplex-Gesprächen und öffentlicher Plattform-Beta",
+  "summary": "Fish Audio veröffentlicht Live 3: Das zunächst englischsprachige Modell hört während der Sprachausgabe weiter zu und soll laut Hersteller Bestätigungen, Unterbrechungen und Korrekturen unterscheiden. Es ist per API, über die Fish Agent Platform in öffentlicher Beta und für Unternehmen auch On-Premises verfügbar; bis zum 31. Dezember 2026 gilt ein Aktionspreis von 0,035 US-Dollar pro Minute zuzüglich möglicher Telefoniekosten. Die vom Hersteller genannten mindestens 186 Millisekunden beziehen sich auf Entscheidungen zu kurzen Reaktionen, nicht auf vollständige Antworten; Benchmarkwerte und eine Latenzverteilung fehlen.",
+  "topic_id": "ai-news",
+  "topic": "AI News",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "www.marktechpost.com",
+    "url": "https://www.marktechpost.com/2026/11/10/fish-audio-live-3-full-duplex-voice-model/"
+   }
+  ],
+  "change_type": "public_beta"
+ },
+ {
+  "title": "DeepMind startet Partner-Rollout von Gemini Robotics 2.5 und berichtet über Apollo 2",
+  "summary": "Google DeepMind stellt das Vision-Language-Action-Modell Gemini Robotics 2.5 vor und rollt es an Robotikpartner aus. In Tests mit 200 Aufgaben berichtet der Anbieter gegenüber bisherigen Baselines von 30 bis 100 Prozent höheren Erfolgsraten und 20 bis 30 Prozent kürzeren Ausführungszeiten. Bei einem Pilotprojekt mit Apptroniks Apollo 2 auf Mercedes-Benz-Produktionslinien erreichte das System laut DeepMind beim Zusammenstellen von Autoteilen eine Erfolgsrate von 96 Prozent.",
+  "topic_id": "ai-news",
+  "topic": "AI News",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "deepmind.google",
+    "url": "https://deepmind.google/blog/gemini-robotics-2-5-accelerates-real-world-physical-intelligence/"
+   }
+  ],
+  "change_type": "announcement"
+ },
+ {
+  "title": "New York startet New York Center for AI Responsibility and Research",
+  "summary": "Gouverneurin Kathy Hochul hat das New York Center for AI Responsibility and Research an der Binghamton University gestartet. Das Zentrum soll fortgeschrittene KI-Systeme unabhängig bewerten und gemeinsam mit DIGIT die Sicherheitsrahmen der Unternehmen prüfen. Die Einrichtung war bereits im Januar mit 55 Millionen US-Dollar an Spenden und Kapital angekündigt worden.",
+  "topic_id": "ai-governance",
+  "topic": "AI Governance",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "techcrunch.com",
+    "url": "https://techcrunch.com/2026/11/10/openai-anthropic-face-new-oversight-as-new-yorks-ai-safety-law-takes-effect/"
+   }
+  ],
+  "change_type": "announcement"
+ },
+ {
+  "title": "Fiddler Agent Registry erweitert die Fiddler AI Control Plane um ein Agenteninventar",
+  "summary": "Fiddler stellt Agent Registry als gemeinsame Inventar- und Aufsichtsansicht für die in Fiddler erfassten Agentenanwendungen und Projekte vor. Laut Anbieter führt sie Modelle, Werkzeuge und Einsatzkontext mit Zustand, Warnungen und Tokenverbrauch zusammen und verknüpft bestehende Evaluationswarnungen, Entscheidungstraces und Audit-Trails. Eine ausdrückliche Beta- oder GA-Einstufung nennt der Beitrag nicht.",
+  "topic_id": "ai-governance",
+  "topic": "AI Governance",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "www.fiddler.ai",
+    "url": "https://www.fiddler.ai/blog/agent-registry"
+   }
+  ],
+  "change_type": "announcement"
+ },
+ {
+  "title": "DIGIT öffnet RAISE Portal zur Registrierung nach dem RAISE Act",
+  "summary": "Laut New Yorker Staatsregierung hat DIGIT das RAISE Portal geöffnet, über das sich große, in New York tätige Frontier-KI-Entwickler bis zum 1. Januar 2027 registrieren müssen. Ab Januar müssen große Frontier-Entwickler Sicherheitsrahmen veröffentlichen; alle Frontier-Entwickler müssen kritische Sicherheitsvorfälle melden und Modelltransparenzberichte veröffentlichen. Die Mitteilung nennt für kritische Sicherheitsvorfälle eine Meldefrist von 72 Stunden.",
+  "topic_id": "ai-governance",
+  "topic": "AI Governance",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "www.governor.ny.gov",
+    "url": "https://www.governor.ny.gov/news/governor-hochul-declares-ny-will-lead-nation-ai-science-and-safety-launches-new-research"
+   }
+  ],
+  "change_type": "policy"
+ },
+ {
   "title": "Australien plant verbindliche Australian AI Standards und Aufsicht neben dem Australian AI Safety Institute",
   "summary": "Die australische Regierung kündigt verbindliche Sicherheitsanforderungen für alle in Australien tätigen Frontier-KI-Unternehmen im Rahmen der Australian AI Standards an. Vorgesehen sind unter anderem unabhängige Modellevaluierungen, verpflichtende schnelle Vorfallmeldungen und veröffentlichte Sicherheitsrahmen; eine vorgeschlagene spezialisierte Aufsicht soll mit dem Australian AI Safety Institute zusammenarbeiten und erhebliche Sanktionen durchsetzen können. Die Gesetzgebung ist noch nicht abgeschlossen, weitere Einzelheiten und Konsultationen stehen aus.",
   "topic_id": "ai-governance",
@@ -414,6 +1310,92 @@
    }
   ],
   "change_type": "policy"
+ },
+ {
+  "title": "Windsurf 3.12.43 lässt Devin Local nach dem Ausgabelimit weiterarbeiten",
+  "summary": "Laut DevAgentRadar setzt Devin Local in Windsurf 3.12.43 Aufgaben fort, wenn vor einem Werkzeugaufruf das Ausgabelimit erreicht wurde. Eingeschränkte Devin-Cloud-Nutzung blockiert außerdem keine lokalen Folgeanfragen mehr. Weitere Änderungen betreffen unter anderem unnötige GPT-Rückfragen und die Übernahme von Zusammenfassungen in Remote-SSH-Untersitzungen.",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "www.devagentradar.com",
+    "url": "https://www.devagentradar.com/insights/radar-brief-2026-11-10"
+   }
+  ],
+  "change_type": "update"
+ },
+ {
+  "title": "Red Hat Developer Hub 2.1 ergänzt Agentenkontext und MCP-Aktionen",
+  "summary": "Laut QualifiedPOC.ai hat Red Hat Developer Hub 2.1 mit MCP-basierten Aktionen, einem Agenten- und Modellkatalog sowie kontextbezogener Assistenz angekündigt. Nach der referierten Produktbeschreibung sollen Entwicklungsagenten freigegebene Vorlagen, Zuständigkeitsdaten und Betriebskontext nutzen können. Zur Version gehören außerdem Scorecards und erweiterter Support.",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "qualifiedpoc.ai",
+    "url": "https://qualifiedpoc.ai/research/en/daily-enterprise-tech-brief-10-november-2026"
+   }
+  ],
+  "change_type": "announcement",
+  "angles": [
+   {
+    "title": "Gong Agent Builder verbindet Revenue Graph mit Skills und MCP",
+    "summary": "QualifiedPOC.ai berichtet über die Vorstellung von Gong Agent Builder, der nach dem beschriebenen Produktansatz Revenue-Graph-Kontext, wiederverwendbare Skills und freigegebene MCP-Verbindungen für Vertriebsagenten kombiniert. Vorgesehen sind außerdem Schutzregeln und Prüfkontrollen für Aktionen in CRM-Systemen, Slack, E-Mail und weiteren Workflows.",
+    "topic_id": "enterprise",
+    "topic": "Enterprise",
+    "date": "2026-11-10",
+    "sources": [
+     {
+      "label": "qualifiedpoc.ai",
+      "url": "https://qualifiedpoc.ai/research/en/daily-enterprise-tech-brief-10-november-2026"
+     }
+    ],
+    "change_type": "announcement"
+   }
+  ]
+ },
+ {
+  "title": "ReSharper 2026.3 integriert Claude Agent und Codex neben Junie Lite",
+  "summary": "Laut JetBrains lassen sich in ReSharper 2026.3 Claude Agent, Codex und Junie im AI-Assistant-Fenster für Codeänderungen, Terminalbefehle und ReSharper-Refactorings einsetzen; die neuen Agenten werden über ACP angebunden. Claude Agent und Codex benötigen ein JetBrains-AI-Abonnement, eigene API-Schlüssel oder persönliche Claude- und ChatGPT-Abos werden nicht unterstützt. Junie Lite ist nach Anbieterangaben mit einem JetBrains-Konto auch ohne ReSharper-Lizenz verfügbar.",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "blog.jetbrains.com",
+    "url": "https://blog.jetbrains.com/dotnet/2026/11/10/resharper-2026-3-release/"
+   }
+  ],
+  "change_type": "update"
+ },
+ {
+  "title": "OpenHands Enterprise ergänzt Admin-Beta und Azure DevOps",
+  "summary": "Laut QualifiedPOC.ai erweitert OpenHands Enterprise seine Super-Admin- und Identitätskontrollen in Beta und ergänzt Unterstützung für Azure DevOps. Der Bericht nennt außerdem Fehlerschwellen für Automationen, Aufbewahrungsoptionen für Sandboxes und Wiederholungsversuche bei Alarmierungen. Der ausdrücklich genannte Beta-Status bezieht sich auf die Administrations- und Identitätsfunktionen, nicht auf sämtliche Erweiterungen.",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "qualifiedpoc.ai",
+    "url": "https://qualifiedpoc.ai/research/en/daily-enterprise-tech-brief-10-november-2026"
+   }
+  ],
+  "change_type": "update"
+ },
+ {
+  "title": "OpenCode 2.2.7 integriert GitHub Copilot Auto und ändert @opencode/ai",
+  "summary": "Laut DevAgentRadar unterstützt OpenCode 2.2.7 die automatische Modellwahl für Copilot-Konten mit Auto-Pool zum Auto-Rabatt; andernfalls wird das Standard-Chatmodell des Kontos verwendet. In @opencode/ai muss Bildausgabe nun über response.images[0] statt response.image gelesen werden. Beim Laden von Plugins werden bereits verfügbare Agenten außerdem als Teilergebnis zurückgegeben.",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "www.devagentradar.com",
+    "url": "https://www.devagentradar.com/insights/radar-brief-2026-11-10"
+   }
+  ],
+  "change_type": "update"
  },
  {
   "title": "Open WebUI 0.13.1 bindet Coding-Agenten über Open Terminal ein",
@@ -472,6 +1454,148 @@
     "change_type": "security"
    }
   ]
+ },
+ {
+  "title": "Mistral Vibe 3.1.1 ergänzt pre_agent-Hooks und /vibe:import",
+  "summary": "Laut DevAgentRadar können pre_agent-Hooks in Mistral Vibe 3.1.1 Nachrichten vor dem Modellaufruf blockieren, umschreiben oder um Kontext ergänzen. Der neue Befehl /vibe:import übernimmt unter anderem Anweisungen, Skills, Subagenten, Hooks, MCP-Konfigurationen und Berechtigungen anderer Agenten. Weitere Hooks betreffen Benachrichtigungen sowie Sitzungsanfang und -ende.",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "www.devagentradar.com",
+    "url": "https://www.devagentradar.com/insights/radar-brief-2026-11-10"
+   }
+  ],
+  "change_type": "update"
+ },
+ {
+  "title": "Microsoft C++ Language Server für GitHub Copilot CLI konfiguriert MSBuild automatisch",
+  "summary": "Laut GitHub bündelt der Microsoft C++ Language Server für GitHub Copilot CLI jetzt den MSBuild-Compile-Commands-Extractor und führt ihn beim Öffnen eines Projekts automatisch aus. Die automatische Erzeugung der Kompilierungsdatenbank soll den Einrichtungsaufwand und Tokenverbrauch reduzieren; andere Buildsysteme benötigen weiterhin eine eigene compile_commands.json oder entsprechende Skills. Voraussetzung sind die Plugin-Installation, die Zustimmung zur EULA und ein aktives Copilot-Abonnement.",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "github.blog",
+    "url": "https://github.blog/changelog/2026-11-10-c-language-server-now-auto-configures-msbuild-builds/"
+   }
+  ],
+  "change_type": "update"
+ },
+ {
+  "title": "Kimi Code 2.5.3 erlaubt Kurskorrekturen während laufender Modellanfragen",
+  "summary": "Laut DevAgentRadar kann Steering in Kimi Code 2.5.3 laufende Modellanfragen unterbrechen und denselben Gesprächsschritt mit neuer Ausrichtung fortsetzen; dafür wird auch ein HTTP-Endpunkt genannt. Die Version korrigiert außerdem den Start von stdio-MCP-Servern über Skriptbefehle wie npx unter Windows sowie Probleme bei Webinteraktionen.",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "www.devagentradar.com",
+    "url": "https://www.devagentradar.com/insights/radar-brief-2026-11-10"
+   }
+  ],
+  "change_type": "update"
+ },
+ {
+  "title": "Google zeigt /swarm in Google Antigravity mit Gemini 4 Carbon als Preview",
+  "summary": "Google stellt /swarm in Google Antigravity als Preview vor: Ein einzelner Prompt soll ein koordiniertes Agententeam starten, dessen Arbeit sich in Echtzeit verfolgen lässt. Nach Herstellerangaben kann Gemini 4 Carbon Architekturplanung, Koordination und Audits übernehmen, während kleinere Modelle parallel in isolierten Arbeitsumgebungen arbeiten und adversarielle Prüfer Änderungen testen.",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "deepmind.google",
+    "url": "https://deepmind.google/blog/gemini-4-carbon-is-now-available"
+   }
+  ],
+  "change_type": "preview"
+ },
+ {
+  "title": "Google Antigravity: /swarm startet als Preview für koordinierte Agententeams",
+  "summary": "Google kündigt /swarm in Google Antigravity als Preview an: Ein einzelner Prompt soll ein koordiniertes, in Echtzeit verfolgbares Agententeam starten. Nach Herstellerangaben lassen sich Carbon für Architektur, Koordination und Audits sowie leichtere Modelle für parallele Arbeit in isolierten Umgebungen kombinieren. TestingCatalog beobachtete im eigenen Test ein gemeinsames Nachrichtenboard und ein Dashboard für Agenten und Arbeitsverteilung; die Funktion warnte vor hohem Kontingentverbrauch.",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "blog.google",
+    "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/"
+   }
+  ],
+  "change_type": "preview",
+  "angles": [
+   {
+    "title": "Google Antigravity: /swarm koordiniert Agententeams mit Gemini 4 Carbon als Preview",
+    "summary": "Google kündigt /swarm in Google Antigravity als Preview an: Ein einzelner Prompt soll ein koordiniertes Agententeam erzeugen, dessen Arbeit sich in Echtzeit verfolgen lässt. Laut Google übernimmt Gemini 4 Carbon Architektur, Koordination und Prüfung, während kleinere Modelle parallel in isolierten Arbeitsumgebungen arbeiten und adversariale Prüfer Änderungen testen.",
+    "topic_id": "agentic-engineering",
+    "topic": "Agentic Engineering / Vibe Coding",
+    "date": "2026-11-10",
+    "sources": [
+     {
+      "label": "blog.google",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available"
+     }
+    ],
+    "change_type": "preview"
+   }
+  ]
+ },
+ {
+  "title": "Google Antigravity 1.5.4 bringt Auto-Modus für agy acp",
+  "summary": "Laut DevAgentRadar genehmigt der Auto-Modus in ACP-Sitzungen von Google Antigravity 1.5.4 Änderungen im Workspace automatisch und führt Befehle in der Terminal-Sandbox aus. Für das Verlassen der Sandbox ist eine zusätzliche Freigabe erforderlich, sofern die automatische Prüfung mit einem leichteren Gemini-Flash-Modell sie nicht erteilt. Hook-Daten werden um Ereignisname, Arbeitsverzeichnis und Werkzeugaufruf-ID erweitert.",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "www.devagentradar.com",
+    "url": "https://www.devagentradar.com/insights/radar-brief-2026-11-10"
+   }
+  ],
+  "change_type": "update"
+ },
+ {
+  "title": "GitHub Copilot CLI 1.0.109-1 ergänzt CIDR-Regeln und Claude Fable 5.2 als Vorabversion",
+  "summary": "DevAgentRadar beschreibt GitHub Copilot CLI 1.0.109-1 als Prerelease mit IPv4- und IPv6-CIDR-Regeln für erlaubte und gesperrte Sandbox-Hosts sowie Claude Fable 5.2 im Modellmenü. Sandbox-Pfade akzeptieren dem Bericht zufolge Umgebungsvariablen und behalten die eingegebenen Ausdrücke bei. Hinzu kommen cachebewusste Wartezeitlimits sowie Korrekturen an Pfaden, Terminalverhalten und JSON-Ausgabe.",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "www.devagentradar.com",
+    "url": "https://www.devagentradar.com/insights/radar-brief-2026-11-10"
+   }
+  ],
+  "change_type": "preview"
+ },
+ {
+  "title": "GitHub Copilot CLI 1.0.108 ergänzt /index und korrigiert MCP-Sandbox-Verhalten",
+  "summary": "Laut DevAgentRadar ergänzt GitHub Copilot CLI 1.0.108 den Befehl /index und aktiviert für geeignete Repositories eine verwaltete gemeinsame tgrep-Indexierung; unter Windows kommen reine Verzeichnis-Auflistungsrechte über enumeratePaths hinzu. Bei aktiver Sandbox startet ein lokaler MCP-Server nach /cd neu, damit die Pfadsperren zum neuen Arbeitsverzeichnis passen. Weitere Korrekturen betreffen unter anderem Grok-PDF-Anhänge, SDK-Anhänge und Modellwechsel nach Tarifänderungen.",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "www.devagentradar.com",
+    "url": "https://www.devagentradar.com/insights/radar-brief-2026-11-10"
+   }
+  ],
+  "change_type": "update"
+ },
+ {
+  "title": "Gemini 4 Carbon wird in GitHub Copilot allgemein verfügbar",
+  "summary": "GitHub beginnt nach eigenen Angaben den schrittweisen Rollout von Gemini 4 Carbon für Copilot Pro+, Max, Business und Enterprise über IDEs, CLI, Coding-Agent, App, Web und Mobile. Die Nutzung wird zum Listenpreis des Modellanbieters abgerechnet. Business- und Enterprise-Administratoren steuern den Zugang über Modellrichtlinien; bei aktivierter standardmäßiger Modellfreigabe wird das Modell automatisch eingeschaltet, sofern keine entsprechende Deaktivierung vorliegt.",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "github.blog",
+    "url": "https://github.blog/changelog/2026-11-10-gemini-4-carbon-in-github-copilot/"
+   }
+  ],
+  "change_type": "general_availability"
  },
  {
   "title": "Cursor integriert Grok Voice für Sprachdialoge mit laufenden Coding-Agenten",
@@ -574,6 +1698,92 @@
   ]
  },
  {
+  "title": "Claude Fable 5.2: Anthropic beschreibt Ownership-Prompt als Hebel für Refactoring",
+  "summary": "Ein von Willison wiedergegebener Abschnitt der Anthropic-Dokumentation empfiehlt, Claude Fable 5.2 ausdrücklich Verantwortung für die Codebasis zuzuweisen, wenn das Modell deren Struktur verbessern soll. Nach Herstellerangaben führte dieser Hinweis bei kleinen Coding-Aufgaben ungefähr in der Hälfte der Versuche zum Zusammenführen wiederholten Codes, gegenüber weniger als einem Zehntel ohne den Hinweis. Der Befund betrifft diese Tests, nicht eine allgemein nachgewiesene Verbesserung der Codequalität.",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "simonwillison.net",
+    "url": "https://simonwillison.net/"
+   }
+  ],
+  "change_type": "other"
+ },
+ {
+  "title": "Claude Code 2.1.322 unterstützt Fast Mode auf Vertex",
+  "summary": "DevAgentRadar berichtet, dass Claude Code 2.1.322 Fast Mode auf Vertex in den Regionen global, us und eu unterstützt. Lehnt Vertex den schnellen Modus ab, fällt Claude Code dem Bericht zufolge auf die Standardgeschwindigkeit zurück.",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "www.devagentradar.com",
+    "url": "https://www.devagentradar.com/insights/radar-brief-2026-11-10"
+   }
+  ],
+  "change_type": "update"
+ },
+ {
+  "title": "Adobe öffnet Warteliste für Firefly Builder in privater Beta",
+  "summary": "Adobe bietet Firefly Builder in einer privaten Beta mit Zugang über eine Warteliste an. Laut Hersteller sollen sich Websites, Präsentationen und Apps zunächst ohne eigenen Code als interaktive Prototypen erstellen und anschließend direkt auf der Arbeitsfläche bearbeiten lassen. Ein Designsystem soll dabei die gestalterische Konsistenz sichern.",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-11-10",
+  "sources": [
+   {
+    "label": "news.adobe.com",
+    "url": "https://news.adobe.com/news/2026/11/adobe-firefly-expands?full=1"
+   }
+  ],
+  "change_type": "preview",
+  "angles": [
+   {
+    "title": "Adobe Creative Agent: Always-on Agents als Preview vorgestellt",
+    "summary": "Adobe stellt Always-on Agents als Preview für wiederkehrende Kreativaufgaben vor. Laut Hersteller sollen sie auch ohne aktive Anwesenheit der Nutzer im Hintergrund eingehende Assets organisieren, Qualitätsprüfungen übernehmen und Inhalte für verschiedene Kanäle vorbereiten.",
+    "topic_id": "ai-tools",
+    "topic": "AI Tools",
+    "date": "2026-11-10",
+    "sources": [
+     {
+      "label": "news.adobe.com",
+      "url": "https://news.adobe.com/news/2026/11/adobe-firefly-expands?full=1"
+     }
+    ],
+    "change_type": "preview"
+   },
+   {
+    "title": "Firefly Design startet als Beta mit gemeinsamer Gestaltungsfläche",
+    "summary": "Adobe führt Firefly Design als neuen Design-Editor in der Beta ein. Laut Hersteller soll die gemeinsame Arbeitsfläche Illustration, Bildbearbeitung, Animation, 3D und Druckgestaltung verbinden und Projekte wie Markenauftritte oder Verpackungen vom Entwurf bis zur Kundenabnahme in einer Datei unterstützen.",
+    "topic_id": "ai-tools",
+    "topic": "AI Tools",
+    "date": "2026-11-10",
+    "sources": [
+     {
+      "label": "news.adobe.com",
+      "url": "https://news.adobe.com/news/2026/11/adobe-firefly-expands?full=1"
+     }
+    ],
+    "change_type": "preview"
+   },
+   {
+    "title": "Firefly Graph startet als Beta für wiederverwendbare KI-Workflows",
+    "summary": "Adobe führt Firefly Graph als Beta ein, die nach Herstellerangaben KI-Modelle und Adobe-Werkzeuge zu anpassbaren, wiederholbaren Arbeitsabläufen verbindet. Ein integrierter Assistent soll beim Erstellen und Optimieren helfen; als Einsatzbeispiele nennt Adobe Charakterstudien, Einstellungslisten und die Anwendung von Markenrichtlinien auf Kampagnenmaterial.",
+    "topic_id": "ai-tools",
+    "topic": "AI Tools",
+    "date": "2026-11-10",
+    "sources": [
+     {
+      "label": "news.adobe.com",
+      "url": "https://news.adobe.com/news/2026/11/adobe-firefly-expands?full=1"
+     }
+    ],
+    "change_type": "preview"
+   }
+  ]
+ },
+ {
   "title": "The Hackett Group veröffentlicht XT Version 2 für KI-gestützte Unternehmenstransformation",
   "summary": "The Hackett Group hat XT Version 2 vorgestellt und erklärt die Plattform als Teil seiner KI-Plattformsuite für Kunden für verfügbar. Laut Anbieter verbindet das Hackett Solution Language Model proprietäres Fachwissen und Benchmarks mit kundenspezifischem Kontext; vier integrierte Module sollen daraus Bestandsanalysen, Zielbilder und ROI-orientierte Transformationspläne ableiten. Der Anbieter nennt außerdem Quellen- und Finanznachweise, Beraterfreigaben und Audit-Protokolle sowie eine verwaltete AWS-Umgebung mit privaten Sprachmodellen und isolierten Kundendaten, die nicht zum Training öffentlicher KI-Modelle verwendet würden.",
   "topic_id": "enterprise",
@@ -644,6 +1854,34 @@
   "change_type": "update"
  },
  {
+  "title": "Amazon Bedrock Managed Knowledge Base erweitert AgenticRetrieveStream um Single-shot-RAG und reine Suche",
+  "summary": "Laut AWS unterstützt AgenticRetrieveStream nun zusätzlich Single-shot-RAG mit maxAgentIteration=1 sowie reine Suchanfragen ohne Foundation-Model-Aufruf mit dem Wert 0. Der Parameterbereich reicht damit von 0 bis 5; alle drei Modi unterstützen mehrere Wissensbasen. Anwendungen können pro Anfrage zwischen reiner Suche, einmaliger RAG und iterativer Recherche wählen, ohne eine weitere API einzubinden.",
+  "topic_id": "context-engineering",
+  "topic": "Context Engineering",
+  "date": "2026-11-09",
+  "sources": [
+   {
+    "label": "aws.amazon.com",
+    "url": "https://aws.amazon.com/blogs/machine-learning/single-shot-and-agentic-retrieval-with-amazon-bedrock-managed-knowledge-base/"
+   }
+  ],
+  "change_type": "update"
+ },
+ {
+  "title": "Splunk Agent Observability: Eval-G1 und Evaluation Tuner werden im November allgemein verfügbar",
+  "summary": "Cisco kündigt die allgemeine Verfügbarkeit der Evaluationsmodelle und des Evaluation Tuner ab November an. Nach Herstellerangaben überführt Splunk Agent Observability mit Eval-G1 und dem Tuner Agenten-Traces und Expertenfeedback in angepasste kleine Sprachmodelle für Evaluationen und Guardrails. Die genannten bis zu 98 Prozent niedrigeren Kosten und 2,5-mal schnelleren Evaluationsantworten sind Herstellerangaben.",
+  "topic_id": "ai-tools",
+  "topic": "AI Tools",
+  "date": "2026-11-09",
+  "sources": [
+   {
+    "label": "newsroom.cisco.com",
+    "url": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/cisco-unveils-frontier-ai-red-teaming-and-agent-observability-to-secure-the-agentic-enterprise.html"
+   }
+  ],
+  "change_type": "general_availability"
+ },
+ {
   "title": "Instagram startet Effect Builder für KI-Story-Filter in den USA",
   "summary": "Instagrams webbasierter Effect Builder ist für Nutzer über 18 Jahren in den USA verfügbar und erzeugt Story-Filter aus Textbeschreibungen sowie optionalen Referenzbildern. Eigene Fotos ermöglichen eine Vorschau, Folgeprompts dienen zur Überarbeitung. Laut Instagram können die Filter zur Sicherheitsprüfung eingereicht werden und stehen nach Freigabe allen in Stories zur Verfügung, mit Verlinkung zum Erstellerprofil.",
   "topic_id": "ai-tools",
@@ -672,6 +1910,80 @@
   "change_type": "general_availability"
  },
  {
+  "title": "OpenSSF veröffentlicht „Finding and Fixing Software Vulnerabilities Using AI“",
+  "summary": "Die OpenSSF-Arbeitsgruppen Best Practices und AI/ML veröffentlichen den kostenlosen Entwicklerleitfaden „Finding and Fixing Software Vulnerabilities Using AI“, der Vorbereitung, Sandboxing, Validierung, Behebung und Prävention behandelt. Der Leitfaden betont, dass KI-generierte Patches nicht ohne automatisierte Tests und menschliche Prüfung übernommen werden sollten. Ein ergänzender Onlinekurs mit der Kennung LFD126 ist für die kommenden Monate geplant.",
+  "topic_id": "ai-security",
+  "topic": "AI Security",
+  "date": "2026-11-09",
+  "sources": [
+   {
+    "label": "linuxfoundation.org",
+    "url": "https://linuxfoundation.org/press/openssf-welcomes-new-members-and-expands-ai-security-resources"
+   }
+  ],
+  "change_type": "announcement",
+  "angles": [
+   {
+    "title": "OpenSSF und Linux Foundation Education kündigen Secure AI Associate (SAIA) an",
+    "summary": "OpenSSF und Linux Foundation Education kündigen die Zertifizierung Secure AI Associate (SAIA) für Dezember 2026 an. Nach Angaben der Organisationen soll sie Kenntnisse zum Finden und Beheben von Sicherheitsrisiken über den KI-/ML-Lebenszyklus abdecken, von Trainingsdaten bis zu Produktionspipelines. Interessierte können sich für Benachrichtigungen zur Prüfungsverfügbarkeit registrieren.",
+    "topic_id": "ai-security",
+    "topic": "AI Security",
+    "date": "2026-11-09",
+    "sources": [
+     {
+      "label": "linuxfoundation.org",
+      "url": "https://linuxfoundation.org/press/openssf-welcomes-new-members-and-expands-ai-security-resources"
+     }
+    ],
+    "change_type": "announcement"
+   }
+  ]
+ },
+ {
+  "title": "OpenSSF stellt „State of AI Impact on Software Security and Cybersecurity 2026“ vor",
+  "summary": "Laut der von OpenSSF, ActiveState und der LF AI & Data Foundation unterstützten Studie liefern 58 Prozent der befragten Teams Code schneller aus, als Sicherheitsprüfungen folgen können. 60 Prozent berichten, dass KI-Coding-Assistenten die Zahl externer Pakete in ihren Codebasen erhöht haben. Die vorgelegte Pressemitteilung enthält keine näheren Angaben zu Stichprobe oder Methodik.",
+  "topic_id": "ai-security",
+  "topic": "AI Security",
+  "date": "2026-11-09",
+  "sources": [
+   {
+    "label": "linuxfoundation.org",
+    "url": "https://linuxfoundation.org/press/openssf-welcomes-new-members-and-expands-ai-security-resources"
+   }
+  ],
+  "change_type": "research",
+  "angles": [
+   {
+    "title": "OpenSSF tritt MOSAIC zur Abstimmung von KI-Sicherheitsstandards bei",
+    "summary": "OpenSSF meldet ihren Beitritt zur Multi-Organization Secure AI Coordination (MOSAIC), um Wissen und Ressourcen für konsistente KI-Sicherheitsstandards und Leitlinien zusammenzuführen. Die Mitteilung nennt als Ziele eine standardisierte Übersicht beteiligter Initiativen, gemeinsame Definitionen und die Abstimmung mit bestehenden Rahmenwerken, darunter NIST SP 800-53 Control SC-42.",
+    "topic_id": "ai-governance",
+    "topic": "AI Governance",
+    "date": "2026-11-09",
+    "sources": [
+     {
+      "label": "linuxfoundation.org",
+      "url": "https://linuxfoundation.org/press/openssf-welcomes-new-members-and-expands-ai-security-resources"
+     }
+    ],
+    "change_type": "policy"
+   }
+  ]
+ },
+ {
+  "title": "Neo startet Neoverse zur Sicherheitsbewertung von KI-Apps und Erweiterungen",
+  "summary": "Neo veröffentlicht Neoverse mit einem nach Anmeldung kostenlos durchsuchbaren Sicherheitskatalog und integrierter Richtliniendurchsetzung für Neo-Kunden; nach Herstellerangaben sind bereits mehr als vier Millionen MCP-Server, Skills, Desktop-Apps sowie Browser- und IDE-Erweiterungen klassifiziert. Spezialisierte Agenten sollen statische Analysen, Sandbox-Laufzeittests und Dokumentationsprüfungen kombinieren, CVE- und GitHub-Advisory-Daten einbeziehen und neue Versionen erneut untersuchen. Innerhalb der Neo-Plattform sollen als bösartig eingestufte Komponenten automatisch blockiert werden.",
+  "topic_id": "ai-security",
+  "topic": "AI Security",
+  "date": "2026-11-09",
+  "sources": [
+   {
+    "label": "globenewswire.com",
+    "url": "https://globenewswire.com/news-release/2026/11/09/3398454/0/en/neo-launches-neoverse-free-ai-software-intelligence-engine-for-millions-of-ai-apps.html?print=1"
+   }
+  ],
+  "change_type": "general_availability"
+ },
+ {
   "title": "Claude Mythos 5.2 startet für verifizierte Organisationen und in Claude Security",
   "summary": "Claude Mythos 5.2 wird für Organisationen bereitgestellt, die sich über Anthropics Verifizierungsprogramme für Cybersecurity oder Life Sciences bewerben; der Bericht nennt Preise von 8 US-Dollar je Million Eingabe- und 40 US-Dollar je Million Ausgabetokens. Laut Anthropic nutzt auch Claude Security das Modell zur Schwachstellenprüfung, sodass Claude-Enterprise-Kunden es über dieses Produkt ohne Mitgliedschaft im Cyber Verification Program nutzen können. Anthropic berichtet, Mythos 5.2 finde, reproduziere und behebe mehr Schwachstellen als Vorgängermodelle.",
   "topic_id": "ai-security",
@@ -686,6 +1998,50 @@
   "change_type": "announcement"
  },
  {
+  "title": "Cisco IQ verbindet Infrastrukturrisiken mit Splunk Platform, MCP und ServiceNow",
+  "summary": "Laut Cisco sollen Schwachstellen-, Lebenszyklus- und Konfigurationsdaten aus IQ über offene APIs in die Splunk Platform gelangen, um Bedrohungserkennungen mit exponierter Netzwerkinfrastruktur abzugleichen. MCP- und ServiceNow-Konnektoren sollen Agenten strukturierten Infrastrukturkontext liefern und aus Befunden automatisch an Anlagen gebundene Problemvorgänge erzeugen. Ein KI-gestütztes Infrastruktur-Playbook ergänzt nach Herstellerangaben Hinweise auf bekannte Defekte, Lebenszyklusrisiken und die Vorbereitung auf quantensichere Kryptografie.",
+  "topic_id": "ai-security",
+  "topic": "AI Security",
+  "date": "2026-11-09",
+  "sources": [
+   {
+    "label": "newsroom.cisco.com",
+    "url": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/cisco-unveils-frontier-ai-red-teaming-and-agent-observability-to-secure-the-agentic-enterprise.html"
+   }
+  ],
+  "change_type": "integration"
+ },
+ {
+  "title": "Cisco AI Defense soll Claude Mythos für kontrolliertes Red Teaming erhalten",
+  "summary": "Cisco kündigt an, Claude Mythos in das adaptive Red-Teaming-Framework von AI Defense zu integrieren, um mehrstufige, kontextbezogene Angriffsszenarien für KI-Anwendungen und Agenten zu entwickeln. Laut Hersteller sollen Tests auf registrierte und autorisierte Ziele beschränkt, protokolliert, zeitlich begrenzt und abbrechbar sein; freier Prompt-Zugang ist nicht vorgesehen. Der Zugang ist zunächst für ausgewählte Unternehmen geplant, eine allgemeine Verfügbarkeit wird nicht genannt.",
+  "topic_id": "ai-security",
+  "topic": "AI Security",
+  "date": "2026-11-09",
+  "sources": [
+   {
+    "label": "newsroom.cisco.com",
+    "url": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/cisco-unveils-frontier-ai-red-teaming-and-agent-observability-to-secure-the-agentic-enterprise.html"
+   }
+  ],
+  "change_type": "announcement",
+  "angles": [
+   {
+    "title": "Splunk Agent Observability: Tokenomics soll Agentenkosten mit Ergebnisqualität verknüpfen",
+    "summary": "Nach Herstellerangaben soll die Tokenomics-Erweiterung Nutzungsdaten aus Amazon Bedrock und Amazon CloudWatch mit Bewertungen der Qualität und geschäftlichen Wirkung einzelner Agenten verbinden. Sie baut auf der bestehenden Kostenzuordnung für Agenten und Coding-Werkzeuge auf. Eine private Preview ist für Dezember angekündigt, die allgemeine Verfügbarkeit im AWS Marketplace für Anfang 2027.",
+    "topic_id": "enterprise",
+    "topic": "Enterprise",
+    "date": "2026-11-09",
+    "sources": [
+     {
+      "label": "newsroom.cisco.com",
+      "url": "https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m11/cisco-unveils-frontier-ai-red-teaming-and-agent-observability-to-secure-the-agentic-enterprise.html"
+     }
+    ],
+    "change_type": "announcement"
+   }
+  ]
+ },
+ {
   "title": "Anthropic weitet Preserved Thinking in der Claude API auf alle Konten aus",
   "summary": "Anthropic weitet Preserved Thinking auf sämtliche Konten der Claude API aus. Nach Herstellerangaben soll die Funktion verhindern, dass Angreifer durch Änderungen am bisherigen Kontext internes Reasoning für unerlaubte Modelldestillation extrahieren. Entwickler müssen die entsprechenden Kontextanforderungen bei ihren Integrationen berücksichtigen.",
   "topic_id": "ai-security",
@@ -698,6 +2054,62 @@
    }
   ],
   "change_type": "update"
+ },
+ {
+  "title": "Weight-Space Programming: LLMs erzeugen medizinische Klassifikatoren ohne Trainingsbilder",
+  "summary": "Die Studie lässt Claude Opus 5.5 und GPT-6 Astra ohne Werkzeuge oder Bildzugriff in jeweils einer Antwort die Gewichte eines kleinen CNN erzeugen. Laut Autoren erreichen die Netze auf sechs MedMNIST-Aufgaben mittlere Test-AUC-Werte von 0,719 beziehungsweise 0,711; dieselbe Architektur erzielt nach Training mit nur 256 beschrifteten Bildern jedoch auf jeder Aufgabe bessere Ergebnisse und im Mittel 0,828. Auf der zusätzlichen Becken-MRT-Aufgabe SynthUterus erreicht Opus 0,764 AUC, während Astra durch einen systematischen Fehler auf 0,136 fällt.",
+  "topic_id": "ai-news",
+  "topic": "AI News",
+  "date": "2026-11-09",
+  "sources": [
+   {
+    "label": "arxiv.org",
+    "url": "https://arxiv.org/abs/2611.12066"
+   }
+  ],
+  "change_type": "research"
+ },
+ {
+  "title": "NVIDIA Nemotron 3.5 Super VL ist in Amazon SageMaker JumpStart verfügbar",
+  "summary": "AWS stellt NVIDIA Nemotron 3.5 Super VL in Amazon SageMaker JumpStart als NVFP4- und BF16-Variante für Bild-, Video- und Texteingaben bereit. Laut Anbieter unterstützt das Modell Tool-Aufrufe, JSON-Schema-Ausgaben und pro Anfrage konfigurierbares Reasoning. Während AWS grundsätzlich bis zu eine Million Kontext-Tokens nennt, sind die JumpStart-Konfigurationen auf 520 bis 15.600 Tokens sowie jeweils ein Bild und ein Video pro Anfrage begrenzt; der Multi-Token-Prediction-Kopf ist dort nicht aktiviert, und LoRA-Adapter werden nicht geladen.",
+  "topic_id": "ai-news",
+  "topic": "AI News",
+  "date": "2026-11-09",
+  "sources": [
+   {
+    "label": "aws.amazon.com",
+    "url": "https://aws.amazon.com/blogs/machine-learning/nvidia-nemotron-3-5-super-vl-is-now-available-in-amazon-sagemaker-jumpstart/"
+   }
+  ],
+  "change_type": "general_availability"
+ },
+ {
+  "title": "NCode bündelt Architektur-, Trainings- und Datenoptimierung in einer LLM-Suche",
+  "summary": "NCode übersetzt unterschiedliche AutoML-Entscheidungen in diskrete Sequenzen, damit ein LLM-basierter Sucher Modellarchitektur, Trainingshyperparameter und Datenverhältnisse gemeinsam als Ranking-Aufgabe optimieren kann. Laut Autoren überträgt sich das ausschließlich mit Optimierungsverläufen einer Bildaufgabe trainierte Verfahren ohne aufgabenspezifisches Fine-Tuning auf Bildklassifikation, Segmentierung, Sprecherverifikation und Text-zu-Bild-Generierung. Für einen Diffusion Transformer mit einer Milliarde Parametern berichten sie einen GenEval-Wert von 0,91 bei 896 GPU-Tagen.",
+  "topic_id": "ai-news",
+  "topic": "AI News",
+  "date": "2026-11-09",
+  "sources": [
+   {
+    "label": "arxiv.org",
+    "url": "https://arxiv.org/abs/2611.12791"
+   }
+  ],
+  "change_type": "research"
+ },
+ {
+  "title": "Muse Ember: Artificial Analysis misst 36 Indexpunkte und 0,14 US-Dollar je Aufgabe",
+  "summary": "Artificial Analysis misst für Muse Ember in der Max-Konfiguration 36 Punkte im Intelligence Index bei 0,14 US-Dollar je Aufgabe, gegenüber 0,41 US-Dollar für den gleich bewerteten Claude Haiku 5.5. In Muse Code erreicht das Modell 46 Punkte im Coding Agent Index, wobei die Coding-Ergebnisse je nach Benchmark unterschiedlich ausfallen. Im Wissenstest AA-Omniscience beträgt die gemessene Genauigkeit 21,1 Prozent bei 64 Prozent unbeantworteten Fragen und einer Halluzinationsrate von 17,4 Prozent.",
+  "topic_id": "ai-news",
+  "topic": "AI News",
+  "date": "2026-11-09",
+  "sources": [
+   {
+    "label": "artificialanalysis.ai",
+    "url": "https://artificialanalysis.ai/articles/meta-s-muse-ember-is-the-cheapest-model-scoring-36-on-the-intelligence-index"
+   }
+  ],
+  "change_type": "research"
  },
  {
   "title": "Muse Ember ist über Vercel AI Gateway verfügbar",
@@ -737,6 +2149,20 @@
    {
     "label": "techcrunch.com",
     "url": "https://techcrunch.com/2026/11/09/meta-releases-muse-ember-a-new-lightweight-model-for-agent-execution/"
+   }
+  ],
+  "change_type": "announcement"
+ },
+ {
+  "title": "Google kündigt quelloffene XLA Serving Engine für TPUs, GPUs und CPUs an",
+  "summary": "Google kündigt laut vorgelegtem Bericht die quelloffene XLA Serving Engine zur Modellbereitstellung auf TPUs, GPUs und CPUs an. Die gemeinsame C++-Laufzeit ist nach Herstellerangaben auf niedrige Latenzen ausgelegt; konkrete Leistungswerte und ein Freigabestatus werden nicht genannt.",
+  "topic_id": "ai-news",
+  "topic": "AI News",
+  "date": "2026-11-09",
+  "sources": [
+   {
+    "label": "www.testingcatalog.com",
+    "url": "https://www.testingcatalog.com/google-adds-new-tpu-8tx-and-tpu-8i-max-for-ai-workloads/"
    }
   ],
   "change_type": "announcement"
@@ -786,6 +2212,20 @@
   ]
  },
  {
+  "title": "Claude Fable 5.2 und Diode demonstrieren drei Elektronikprototypen",
+  "summary": "Laut Anthropic entwarf Claude Fable 5.2 ein USB-Speakerphone, einen Sprachassistenten-Hub und ein virtuelles Haustier einschließlich Platinen, Gehäusen und Firmware; Diode fertigte die nach Herstellerangaben ohne Schaltungskorrekturen funktionierenden Prototypen. Anthropic meldet außerdem 69 Prozent im internen PCB Gym und 83,5 Prozent auf BenchCAD 2.1. Menschen übernahmen Fertigung und Tests; elektrische Validierung, Antennenabstimmung, thermische Tests und Zertifizierung stehen noch aus, und Anthropic unterhält eine kommerzielle Beziehung zu Diode.",
+  "topic_id": "ai-news",
+  "topic": "AI News",
+  "date": "2026-11-09",
+  "sources": [
+   {
+    "label": "www.anthropic.com",
+    "url": "https://www.anthropic.com/research/claude-electronics-design"
+   }
+  ],
+  "change_type": "research"
+ },
+ {
   "title": "Claude Fable 5.2 erreicht bei Artificial Analysis bis zu 65 Indexpunkte",
   "summary": "Artificial Analysis veröffentlicht für Claude Fable 5.2 mit Default Fallback Intelligence-Index-Werte von 54 Punkten für Low, 56 für Medium, jeweils 62 für High und Xhigh sowie 65 für Max. Zusätzlich führt der Changelog neue Performancedaten des Anthropic-Endpoints für alle fünf Varianten auf, nennt darin aber keine konkreten Geschwindigkeits- oder Kostenwerte.",
   "topic_id": "ai-news",
@@ -828,6 +2268,34 @@
   "change_type": "general_availability"
  },
  {
+  "title": "Scott Wiener gewinnt Kongresssitz und fordert stärkere KI-Regulierung",
+  "summary": "Scott Wiener hat laut MIT Technology Review den Kongresswahlkampf um Nancy Pelosis bisherigen Sitz in San Francisco gewonnen. Im Interview fordert er eine starke KI-Bundesaufsicht, Whistleblower-Schutz, Test- und Auditpflichten sowie eine Abschaltmöglichkeit für KI-Systeme. Eine weitreichende Verdrängung einzelstaatlicher KI-Gesetze durch Bundesrecht lehnt er ab.",
+  "topic_id": "ai-governance",
+  "topic": "AI Governance",
+  "date": "2026-11-09",
+  "sources": [
+   {
+    "label": "www.technologyreview.com",
+    "url": "https://www.technologyreview.com/2026/11/09/1148182/nancy-pelosis-replacement-is-ready-to-regulate-ai/"
+   }
+  ],
+  "change_type": "policy"
+ },
+ {
+  "title": "Pacific AI Governor erhält Continuous Risk Assessment für Gesundheits-KI",
+  "summary": "Pacific AI veröffentlicht nach eigenen Angaben Continuous Risk Assessment für das Governor-Modul: Die Funktion erkennt Änderungen an mehr als 600 Rechtsvorschriften, Standards und Rahmenwerken sowie an internen Richtlinien und Systemunterlagen. Für betroffene Risikobewertungen schlägt sie laut Anbieter neue Risiken, Kontrollen und Aufgaben zur menschlichen Prüfung vor und führt versionierte Prüfpfade. Die Funktion ist nach Herstellerangaben ab sofort verfügbar und läuft in der kundeneigenen AWS- oder Azure-Umgebung.",
+  "topic_id": "ai-governance",
+  "topic": "AI Governance",
+  "date": "2026-11-09",
+  "sources": [
+   {
+    "label": "www.globenewswire.com",
+    "url": "https://www.globenewswire.com/news-release/2026/11/09/3398542/0/en/new-pacific-ai-governor-capability-updates-healthcare-ai-risk-assessments-whenever-laws-or-systems-change.html"
+   }
+  ],
+  "change_type": "general_availability"
+ },
+ {
   "title": "Meta weitet KI-Altersschätzung für Teen Accounts auf Instagram weltweit aus",
   "summary": "Meta kündigt an, seine KI-Altersschätzung auf Instagram weltweit auszuweiten, um mutmaßliche Jugendliche auch bei angegebenem Erwachsenenalter in Teen Accounts mit zusätzlichen Schutzvorgaben einzuordnen. Nach Unternehmensangaben analysiert die Technik Hinweise in Profilen, Beiträgen, Kommentaren und Bildunterschriften sowie visuelle Merkmale wie Körpergröße und Knochenstruktur. Auf Facebook läuft die Einführung weiter; für Threads kündigt Meta einen weltweiten Rollout noch im Laufe des Jahres an.",
   "topic_id": "ai-governance",
@@ -854,6 +2322,20 @@
    }
   ],
   "change_type": "integration"
+ },
+ {
+  "title": "ForgeSystem kombiniert Softwareproduktion durch KI-Agenten mit rekursiver Verbesserung",
+  "summary": "Ein Forschungsteam stellt ForgeSystem vor, das eine Steuerungsschicht mit einer Produktions- und Prüfschleife sowie einer rekursiven Selbstverbesserungsschleife verbindet. Der Ansatz wurde für Trainingsframeworks, Decoding-Megakernel und einzelne Rechenkernel implementiert. In den berichteten Experimenten erreichen die Megakernel im geometrischen Mittel die 1,21-fache Decoding-Geschwindigkeit gegenüber SGLang über 13 Konfigurationen; einzelne Kernel erreichen in 18 von 22 Konfigurationen mindestens die Leistung der verglichenen Expertenbibliotheken bei Einhaltung aufgabenspezifischer Qualitätsanforderungen.",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-11-09",
+  "sources": [
+   {
+    "label": "arxiv.org",
+    "url": "https://arxiv.org/abs/2611.12288"
+   }
+  ],
+  "change_type": "research"
  },
  {
   "title": "Codenotary veröffentlicht AgentMon Live für Claude Code",
@@ -1112,6 +2594,20 @@
    }
   ],
   "change_type": "general_availability"
+ },
+ {
+  "title": "Claude Opus 5.5: SQLite-Experiment beschleunigt parse_number() in C",
+  "summary": "Willison berichtet über einen mit Claude Opus 5.5 durchgeführten Vergleich von C- und Rust-Erweiterungen zum Parsen formatierter Zahlen in SQLite. Nach einem weiteren Prompt entstand ein C-Parser mit „Clinger's fast path“, dessen Nettokosten im berichteten Test mit gemischten Daten von 67 auf 19 Nanosekunden pro Zeile sanken; die Rust-Varianten lagen bei 46 beziehungsweise 41 Nanosekunden. Die Werte gelten für diesen Versuch und belegen keinen allgemeinen Geschwindigkeitsvorteil von C gegenüber Rust.",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-11-08",
+  "sources": [
+   {
+    "label": "simonwillison.net",
+    "url": "https://simonwillison.net/"
+   }
+  ],
+  "change_type": "research"
  },
  {
   "title": "Pika H3 Flex erscheint mit offenen Gewichten für Videogenerierung",
@@ -1906,6 +3402,20 @@
     "change_type": "integration"
    }
   ]
+ },
+ {
+  "title": "GradReason erprobt LLM-generierte Gewichtsänderungen als Ersatz für Trainingsepochen",
+  "summary": "GradReason lässt einen LLM-Agenten anhand von Gewichten, Gradienten und Validierungswerten Code für Gewichtsupdates erzeugen, die vor ihrer Übernahme an 5.000 Validierungsbildern geprüft werden. In 120 Läufen auf CIFAR-10 und CIFAR-100 benötigte Claude Opus 5.5 laut Studie 32,8 Prozent weniger datenlesende Epochen als das 80-Epochen-Rezept, bei durchschnittlich 0,31 Prozentpunkten geringerer Testgenauigkeit. Die Einsparung beruhte vor allem auf einer anschließend auch als feste Regel umsetzbaren Gewichtsmittelung; auf der getesteten Skala überstieg die Agentenlatenz die eingesparte GPU-Zeit.",
+  "topic_id": "ai-news",
+  "topic": "AI News",
+  "date": "2026-11-07",
+  "sources": [
+   {
+    "label": "arxiv.org",
+    "url": "https://arxiv.org/abs/2611.11005"
+   }
+  ],
+  "change_type": "research"
  },
  {
   "title": "Clocktower Bench: GPT-6 Astra liegt im Deduktionsspiel vor Claude Fable 5.1",
@@ -4418,36 +5928,6 @@
   ]
  },
  {
-  "title": "GitHub Copilot app erweitert Agent Merge und die Sitzungsverwaltung",
-  "summary": "Laut GitHub lässt sich Agent Merge in der Copilot-App direkt aus einem Pull Request einrichten und bleibt bei ausstehenden Pflichtprüfungen oder Regeln aktiv. Nutzer können an der Kontextgrenze Unterhaltungen komprimieren oder die Kontextbelegung prüfen; hinzu kommen erweiterte Review- und Sitzungsfunktionen sowie Tabellenansichten für CSV- und TSV-Dateien. Persönliche Vorgaben für assistierte Werkzeugfreigaben sind optional und gelten für lokale Sitzungen.",
-  "topic_id": "agentic-engineering",
-  "topic": "Agentic Engineering / Vibe Coding",
-  "date": "2026-11-06",
-  "sources": [
-   {
-    "label": "github.blog",
-    "url": "https://github.blog/changelog/2026-11-06-github-copilot-weekly-releases-november-2/"
-   }
-  ],
-  "change_type": "update",
-  "angles": [
-   {
-    "title": "GitHub Copilot in VS Code 1.145 ergänzt Remote-Vorschauen und Cron-Automationen",
-    "summary": "Laut GitHub ergänzt VS Code 1.145 experimentelle Chatansichten zum Ein- und Ausklappen von Reasoning und Werkzeugaufrufen sowie Remote-App-Vorschauen und interaktive Canvases als einstellungsabhängige Preview im Agents-Fenster. Lokale Automationen unterstützen nun Cron-Ausdrücke und benutzerdefinierte Agenten aus dem Workspace. Dateien außerhalb des Workspace lassen sich über „Add Context > Files“ hinzufügen; Cloud-Sitzungen unterstützen dabei nur Bilder.",
-    "topic_id": "agentic-engineering",
-    "topic": "Agentic Engineering / Vibe Coding",
-    "date": "2026-11-06",
-    "sources": [
-     {
-      "label": "github.blog",
-      "url": "https://github.blog/changelog/2026-11-06-github-copilot-weekly-releases-november-2/"
-     }
-    ],
-    "change_type": "update"
-   }
-  ]
- },
- {
   "title": "GitHub Copilot CLI: Copilot CLI 1.0.106 erreicht den stabilen Standardkanal",
   "summary": "Laut AIDevPulse wurde Copilot CLI 1.0.106 am 5. November als stabile Version veröffentlicht und unter npm latest bereitgestellt. Zuvor verwies latest auf Version 1.0.105; Builds der neuen Versionslinie waren nur als Vorabversion verfügbar.",
   "topic_id": "agentic-engineering",
@@ -4516,6 +5996,50 @@
    }
   ],
   "change_type": "update"
+ },
+ {
+  "title": "GitHub Copilot CLI bündelt Einstellungen im durchsuchbaren /settings-Dashboard",
+  "summary": "GitHub führt nach eigenen Angaben in Copilot CLI eine zentrale Einstellungsübersicht ein, die über /settings geöffnet wird. Das Dashboard bündelt unter anderem Plugins und MCP-Server und ermöglicht eine Suche über sämtliche Einstellungen.",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-11-06",
+  "sources": [
+   {
+    "label": "github.blog",
+    "url": "https://github.blog/changelog/2026-11-06-github-copilot-weekly-releases-november-2/"
+   }
+  ],
+  "change_type": "update",
+  "angles": [
+   {
+    "title": "GitHub Copilot app erweitert Agent Merge und die Sitzungsverwaltung",
+    "summary": "Laut GitHub lässt sich Agent Merge in der Copilot-App direkt aus einem Pull Request einrichten und bleibt bei ausstehenden Pflichtprüfungen oder Regeln aktiv. Nutzer können an der Kontextgrenze Unterhaltungen komprimieren oder die Kontextbelegung prüfen; hinzu kommen erweiterte Review- und Sitzungsfunktionen sowie Tabellenansichten für CSV- und TSV-Dateien. Persönliche Vorgaben für assistierte Werkzeugfreigaben sind optional und gelten für lokale Sitzungen.",
+    "topic_id": "agentic-engineering",
+    "topic": "Agentic Engineering / Vibe Coding",
+    "date": "2026-11-06",
+    "sources": [
+     {
+      "label": "github.blog",
+      "url": "https://github.blog/changelog/2026-11-06-github-copilot-weekly-releases-november-2/"
+     }
+    ],
+    "change_type": "update"
+   },
+   {
+    "title": "GitHub Copilot in VS Code 1.145 ergänzt Remote-Vorschauen und Cron-Automationen",
+    "summary": "Laut GitHub ergänzt VS Code 1.145 experimentelle Chatansichten zum Ein- und Ausklappen von Reasoning und Werkzeugaufrufen sowie Remote-App-Vorschauen und interaktive Canvases als einstellungsabhängige Preview im Agents-Fenster. Lokale Automationen unterstützen nun Cron-Ausdrücke und benutzerdefinierte Agenten aus dem Workspace. Dateien außerhalb des Workspace lassen sich über „Add Context > Files“ hinzufügen; Cloud-Sitzungen unterstützen dabei nur Bilder.",
+    "topic_id": "agentic-engineering",
+    "topic": "Agentic Engineering / Vibe Coding",
+    "date": "2026-11-06",
+    "sources": [
+     {
+      "label": "github.blog",
+      "url": "https://github.blog/changelog/2026-11-06-github-copilot-weekly-releases-november-2/"
+     }
+    ],
+    "change_type": "update"
+   }
+  ]
  },
  {
   "title": "Cursor erweitert Cloud-Agenten um Cloud Agent Apps bis zum Live-Link",
@@ -4900,6 +6424,20 @@
    }
   ],
   "change_type": "general_availability"
+ },
+ {
+  "title": "Smartsheet vsActual startet im Early Access zur agentengestützten Strategieüberwachung",
+  "summary": "Smartsheet hat die eigenständige Anwendung vsActual im Early Access gestartet; laut Anbieter gleichen KI-Agenten Unternehmenspläne mit operativen Daten ab und schlagen Maßnahmen bei Abweichungen vor. Mit entsprechenden Rechten können sie Drittsysteme aktualisieren, wobei standardmäßig menschliche Freigaben erforderlich sind. Die allgemeine Verfügbarkeit ist für Anfang 2027 mit nutzungsabhängiger Abrechnung geplant; Preise wurden noch nicht veröffentlicht.",
+  "topic_id": "enterprise",
+  "topic": "Enterprise",
+  "date": "2026-11-05",
+  "sources": [
+   {
+    "label": "www.computerworld.com",
+    "url": "https://www.computerworld.com/article/4245034/smartsheets-new-ai-tool-tracks-corporate-strategies-suggests-fixes.html"
+   }
+  ],
+  "change_type": "preview"
  },
  {
   "title": "Smartsheet startet vsActual zur KI-gestützten Strategieüberwachung im Early Access",
@@ -24662,36 +26200,6 @@
   ]
  },
  {
-  "title": "Windows ML kündigt llama.cpp-Unterstützung an",
-  "summary": "Microsoft kündigt llama.cpp als weiteren Ausführungspfad in Windows ML an; die Runtime soll lokale Modelle über GPU, NPU und CPU zugänglich machen.[120] Der Beitrag belegt die Ankündigung, nicht die allgemeine Freigabe sämtlicher Modelle und Hardwarepfade.[120]",
-  "topic_id": "lokale-llms",
-  "topic": "Lokale LLMs",
-  "date": "2026-10-07",
-  "sources": [
-   {
-    "label": "[120] blogs.windows.com",
-    "url": "https://blogs.windows.com/windowsexperience/2026/10/07/building-windows-for-hybrid-intelligence/"
-   }
-  ],
-  "change_type": "announcement",
-  "angles": [
-   {
-    "title": "GitHub HydraFusion kündigt lokales Cloud-Routing auf Windows an",
-    "summary": "Microsoft erweitert die HydraFusion-Roadmap um Routing zu lokal laufenden Windows-Modellen.[120] Experimentelle Vorschauen für Copilot-App, CLI und VS Code sind erst für später im Oktober angekündigt; dies ist weder GA noch die erneute Veröffentlichung der September-Cloud-Preview.[120]",
-    "topic_id": "agentic-engineering",
-    "topic": "Agentic Engineering / Vibe Coding",
-    "date": "2026-10-07",
-    "sources": [
-     {
-      "label": "[120] blogs.windows.com",
-      "url": "https://blogs.windows.com/windowsexperience/2026/10/07/building-windows-for-hybrid-intelligence/"
-     }
-    ],
-    "change_type": "announcement"
-   }
-  ]
- },
- {
   "title": "Surface Laptop Ultra: Vorbestellung ab 2.599 US-Dollar",
   "summary": "Microsoft öffnet Vorbestellungen für Surface Laptop Ultra ab 2.599 US-Dollar; Verfügbarkeit beginnt laut Hersteller am 16. Oktober.[82][84] Konfigurationen mit bis zu 128 GB gemeinsamem Speicher zielen auf große lokale Modelle; tatsächliche Geschwindigkeit hängt von Modell und Konfiguration ab.[82] Neu ist die Bestellfreigabe, nicht die erste Geräteankündigung.[84]",
   "topic_id": "lokale-llms",
@@ -25238,6 +26746,36 @@
    }
   ],
   "change_type": "research"
+ },
+ {
+  "title": "GitHub HydraFusion kündigt lokales Cloud-Routing auf Windows an",
+  "summary": "Microsoft erweitert die HydraFusion-Roadmap um Routing zu lokal laufenden Windows-Modellen.[120] Experimentelle Vorschauen für Copilot-App, CLI und VS Code sind erst für später im Oktober angekündigt; dies ist weder GA noch die erneute Veröffentlichung der September-Cloud-Preview.[120]",
+  "topic_id": "agentic-engineering",
+  "topic": "Agentic Engineering / Vibe Coding",
+  "date": "2026-10-07",
+  "sources": [
+   {
+    "label": "[120] blogs.windows.com",
+    "url": "https://blogs.windows.com/windowsexperience/2026/10/07/building-windows-for-hybrid-intelligence/"
+   }
+  ],
+  "change_type": "announcement",
+  "angles": [
+   {
+    "title": "Windows ML kündigt llama.cpp-Unterstützung an",
+    "summary": "Microsoft kündigt llama.cpp als weiteren Ausführungspfad in Windows ML an; die Runtime soll lokale Modelle über GPU, NPU und CPU zugänglich machen.[120] Der Beitrag belegt die Ankündigung, nicht die allgemeine Freigabe sämtlicher Modelle und Hardwarepfade.[120]",
+    "topic_id": "lokale-llms",
+    "topic": "Lokale LLMs",
+    "date": "2026-10-07",
+    "sources": [
+     {
+      "label": "[120] blogs.windows.com",
+      "url": "https://blogs.windows.com/windowsexperience/2026/10/07/building-windows-for-hybrid-intelligence/"
+     }
+    ],
+    "change_type": "announcement"
+   }
+  ]
  },
  {
   "title": "GitHub Copilot gibt lokales Sandboxing allgemein frei",
