@@ -1,0 +1,2557 @@
+{
+  "schema_version": 2,
+  "pipeline": "n8n-visible-v2",
+  "date": "2026-11-13",
+  "run_id": "2026-11-13",
+  "policy": "news-editorial-v2",
+  "sources": [
+    {
+      "unit_id": "simonwillison-net",
+      "kind": "source",
+      "name": "Simon Willison",
+      "domain": "simonwillison.net",
+      "warnings": [
+        "Indexauswahl begrenzt: 80/312 Links gesichtet",
+        "Die beiden Google-Originale sind abgeschnitten. Berücksichtigt wurden nur die tatsächlich vorgelegten Textpassagen; bloße Inhaltsverzeichnisüberschriften tragen keine zusätzlichen Kandidaten.",
+        "Leistungs-, Benchmark- und Latenzangaben aus den Google-Beiträgen sind Herstellerbehauptungen und wurden nicht unabhängig überprüft.",
+        "Der Freigabestatus der Decisions API wird im vorliegenden Artikeltext nicht ausdrücklich als Preview, öffentliche Beta oder GA bezeichnet. Das Codebeispiel verwendet die API-Version v1beta; deshalb wird keine GA-Einstufung vorgenommen.",
+        "Die breitere Verfügbarkeit und die Preisangaben zu Gemini 4 Carbon stützen sich auf Willisons frei zugänglichen Bericht mit eigenen Tests. Der darin verlinkte Google-Ankündigungsartikel liegt nicht als gelesener Originaltext vor.",
+        "Für llm-gemini 0.36 liegt die Veröffentlichungsmeldung, aber kein gelesener detaillierter Release-Changelog vor. Konkrete neue Plugin-Funktionen werden deshalb nicht behauptet.",
+        "Ausgewertet wurden ausschließlich die drei vorgelegten Artikeltexte im Zeitfenster 2026-11-03 bis 2026-11-13; verlinkte Herstellerankündigungen, Release-Seiten und Sicherheitsmeldungen lagen nicht als gelesene Originale vor.",
+        "Claude Fable 5.2 wird im vorgelegten Artikel nur mit Veröffentlichung und Preisen beschrieben. Angaben zu Funktionen, Leistungsfähigkeit oder Freigabestufe lassen sich daraus nicht ableiten.",
+        "Die GitHub-Anmeldung betrifft das Ausprobieren von Datasette Agent, nicht den frei zugänglichen Release-Beitrag.",
+        "Verweise unter „Recent articles“, Sponsorenwerbung und reine Modellvergleiche wurden nicht als zusätzliche Entwicklungsbelege gewertet.",
+        "Es liegt nur ein vollständiger Originalartikel vor. Die darin verlinkten Forschungsbeiträge und weiteren Artikel wurden nicht als eigene Originalbelege geliefert.",
+        "Der zugrunde liegende Beitrag zu Weight-Space Programming wird als Veröffentlichung vom Vortag beschrieben und liegt damit außerhalb des Zeitfensters. Seine weitergehenden Ergebnisse werden nicht als eigenständige Entwicklung aufgenommen.",
+        "Der lokale Versuch ist ein Erfahrungsbericht mit vier Spielaufgaben, kein systematischer Nachweis allgemeiner Fähigkeiten zur Interpretation oder Bearbeitung von Modellgewichten.",
+        "Originaltext nur teilweise im AI-Kontext: https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+        "Originaltext nur teilweise im AI-Kontext: https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/"
+      ],
+      "candidates": 10,
+      "search_ok": true
+    },
+    {
+      "unit_id": "testingcatalog-com",
+      "kind": "source",
+      "name": "TestingCatalog",
+      "domain": "testingcatalog.com",
+      "warnings": [],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "the-decoder-com",
+      "kind": "source",
+      "name": "The Decoder",
+      "domain": "the-decoder.com",
+      "warnings": [
+        "Ausgewertet wurden ausschließlich die drei vorgelegten, vollständig lesbaren Artikel von THE DECODER. Verlinkte Herstellerquellen und Benchmark-Seiten lagen nicht als gelesene Originale vor.",
+        "Die Veröffentlichungsdaten stammen aus den sichtbaren Artikelangaben und liegen im vorgegebenen Zeitfenster.",
+        "Verfügbarkeit ist in den Artikeln beschrieben; eine ausdrückliche Kennzeichnung als Preview oder Beta ist dort nicht enthalten.",
+        "Ältere Vergleichsprodukte, rückblickende Unternehmenszahlen und lediglich in Navigation oder weiterführenden Links genannte Themen wurden nicht als eigenständige Entwicklungen aufgenommen.",
+        "Der Beitrag https://the-decoder.com/ai-auditors-catch-most-agent-misbehavior-but-flood-reviewers-with-false-alarms-new-study-finds/ vom 2026-11-07 ist als Plus-Beitrag mit Abonnement-Zugriffshinweisen gekennzeichnet. Wegen dieser Bezahlschranke wurde daraus kein Kandidat abgeleitet; der verlinkte unabhängige Originalbeitrag liegt nicht als gelesener Beleg vor.",
+        "Der Beitrag https://the-decoder.com/ai-coding-agents-still-need-human-cleanup-on-nearly-three-out-of-four-tasks-in-a-real-world-test/ vom 2026-11-08 ist ebenfalls als Plus-Beitrag mit Abonnement-Zugriffshinweisen gekennzeichnet und wurde nicht als tragender Beleg verwendet. Die verlinkte Projektseite und die arXiv-Paper-Seite liegen nicht als gelesene Originale vor.",
+        "Die im Arete-Artikel erwähnte Finanzierungsrunde fand laut Artikel im Oktober statt und liegt damit außerhalb des vorgegebenen Zeitfensters. Verlinkte ältere Studien und Produktmeldungen wurden nicht als eigenständige aktuelle Entwicklungen übernommen.",
+        "Der GR00T-2-Artikel vom 10. November 2026 ist als Plus-Inhalt mit ausdrücklicher Abonnementschranke gekennzeichnet. Daraus wurden keine Kandidaten abgeleitet; ein frei zugänglicher unabhängiger Artikel zum Thema liegt nicht vor.",
+        "Die im AlphaGenome-2-Artikel verlinkten DeepMind-Originalquellen wurden nicht als eigene Texte vorgelegt. Leistungs- und Trainingsangaben sind daher nur über den vorgelegten Bericht belegt und als Herstellerangaben eingeordnet.",
+        "Die im AlphaGenome-2-Artikel erwähnten Funktionen für Google Antigravity sind lediglich als künftig geplant beschrieben, nicht als bereits verfügbar."
+      ],
+      "candidates": 6,
+      "search_ok": true
+    },
+    {
+      "unit_id": "marktechpost-com",
+      "kind": "source",
+      "name": "MarkTechPost",
+      "domain": "marktechpost.com",
+      "warnings": [
+        "Original nicht lesbar: https://www.marktechpost.com/2026/11/10/zyphra-zonos3-mini-open-source-tts/?amp=1",
+        "Original nicht lesbar: https://www.marktechpost.com/category/technology/artificial-intelligence/language-model/",
+        "Alle drei vorgelegten Artikeltexte sind vollständig zugänglich. Verlinkte Herstellerseiten, Repositories und Dokumentationen wurden nicht als zusätzlich gelesene Belege behandelt.",
+        "Der OpenBot-Artikel ist ausdrücklich als von CopilotKit gesponsert gekennzeichnet. Seine Produkt- und Governance-Angaben sind daher als Anbieterangaben wiedergegeben; der Seitenzusatz unterscheidet außerdem die MIT-lizenzierte Anwendung von separat lizenzierter CopilotKit Intelligence.",
+        "Für OpenBot nennt der Artikel den 9. November als Release-Tag; published_at verwendet entsprechend der Vorgabe das Veröffentlichungsdatum des Artikels, den 12. November. Mobile Apps, Chat-Integrationen und Business-Angebot werden nicht als allgemein verfügbar dargestellt.",
+        "Beim Gemini-Angebot belegt der Text einen erreichbaren v1beta-Endpunkt, benennt aber keine eindeutige formale Public-Beta- oder GA-Freigabe. Daher ist die Entwicklung als Ankündigung erfasst.",
+        "Verwandte Artikel und Vergleichsprodukte erscheinen teilweise nur als Überschriften, Links oder Vergleichstabellen. Daraus wurden keine zusätzlichen Veröffentlichungsereignisse abgeleitet; für diese Themen fehlen vorgelegte tragende Artikeltexte.",
+        "Bei PAN 2 und Fish Audio Live 3 steht im sichtbaren Artikel jeweils der 10. November 2026; abweichende vorgelegte Published- beziehungsweise article:published_time-Angaben nennen den 11. November. Verwendet wurde das sichtbare Artikeldatum.",
+        "Bei Live 3 ist die öffentliche Beta ausdrücklich für die Fish Agent Platform ausgewiesen; eine separate allgemeine Verfügbarkeitsfreigabe des Modells ist nicht eindeutig belegt.",
+        "Die verlinkten Herstellerbeiträge, Modellkarten und Repositories liegen nicht als gelesene Originaltexte vor. Grundlage sind ausschließlich die drei vorgelegten MarkTechPost-Artikel; Leistungsbehauptungen wurden als Herstellerangaben gekennzeichnet.",
+        "Weitere Themen erscheinen lediglich als Vergleichsprodukte, verwandte Artikel oder Werbe- und Newsletter-Teaser. Daraus wurden mangels tragender Artikeltexte keine zusätzlichen Kandidaten abgeleitet.",
+        "Für LiquidCodec ist keine eindeutige Open-Source-Lizenz belegt: Der Artikel nennt auf Hugging Face die Lizenzangabe „other“ und einen Verweis des Herstellerblogs auf die LFM License."
+      ],
+      "candidates": 6,
+      "search_ok": true
+    },
+    {
+      "unit_id": "venturebeat-com",
+      "kind": "source",
+      "name": "VentureBeat",
+      "domain": "venturebeat.com",
+      "warnings": [
+        "Originalabruf eingeschränkt: venturebeat.com",
+        "Original nicht lesbar: https://venturebeat.com/technology/openai-lets-you-claim-your-business-in-chatgpt-and-set-up-a-custom-agentic-ai-customer-sales-rep",
+        "Original nicht lesbar: https://venturebeat.com/security/attackers-breached-the-fireworks-ai-storage-where-notion-ai-chats-sat-outside-zero-data-retention",
+        "Original nicht lesbar: https://venturebeat.com/orchestration/paypal-says-its-ai-assistant-went-from-43-to-95-accuracy-without-changing-the-model",
+        "Original nicht lesbar: https://venturebeat.com/infrastructure/swapping-ai-models-is-easier-said-than-done-for-most-companies-it-takes-weeks-vb-intelligence-finds",
+        "Als tragender Beleg liegt der vollständige VentureBeat-Artikel vor. Die darin verlinkte AWS-Ankündigung und die Produktdokumentation wurden nicht als eigene Originaltexte geliefert.",
+        "Die weiteren Beiträge im Abschnitt „More“ liegen ausschließlich als verlinkte Teaser vor. Ihre vollständigen Artikeltexte fehlen; daraus wurden keine Kandidaten abgeleitet.",
+        "Die Vergleichsangaben zu Cursor, Anthropic und OpenAI beschreiben bestehende Angebote und belegen keine eigenständigen neuen Veröffentlichungen im Zeitfenster."
+      ],
+      "candidates": 1,
+      "search_ok": true
+    },
+    {
+      "unit_id": "anthropic-com",
+      "kind": "source",
+      "name": "Anthropic",
+      "domain": "anthropic.com",
+      "warnings": [
+        "Die IPO-Roadshow vom 10. November ist ausschließlich als Teaser im Newsroom belegt. Der verlinkte Originalartikel https://www.anthropic.com/news/roadshow-launch liegt nicht vor; deshalb wurde daraus kein Kandidat abgeleitet.",
+        "Der Newsroom-Zeitstempel „Latest news November 13, 2026“ wurde nicht als Veröffentlichungsdatum eines Artikels verwendet. Die übrigen dort aufgeführten eigenständigen Meldungen liegen außerhalb des Zeitfensters oder duplizieren die vorgelegte Modellankündigung.",
+        "Das im Modellartikel erwähnte jüngere Update von Claude Security mit kontinuierlichen Scans, Nachverfolgung von Behebungen sowie API- und MCP-Anbindung hat im vorgelegten Text kein eigenes Veröffentlichungsdatum. Es wurde daher nicht als zusätzliche Entwicklung innerhalb des Zeitfensters angesetzt.",
+        "Die Leistungs-, Forschungs- und Sicherheitsangaben stammen von Anthropic und sind durch die vorgelegten Belege nicht unabhängig bestätigt. Forschungsbeispiele, Fast Mode und modellspezifische Schutzmaßnahmen wurden als Bestandteile der gemeinsamen Modellankündigung gebündelt.",
+        "Der Artikel enthält einen Änderungshinweis vom 11. November zur Beschreibung der Fermat-Formalisierung. Das ursprüngliche Veröffentlichungsdatum bleibt der 9. November; die ergänzte Fußnote nennt unter anderem vorgegebene Aussagen, Definitionen und 47 bereits bewiesene Lemmata.",
+        "Die private Beta von Enterprise Frontier Safeguards ist als „preview“ erfasst, da das vorgegebene Schema keinen eigenen Typ für private Betas enthält."
+      ],
+      "candidates": 4,
+      "search_ok": true
+    },
+    {
+      "unit_id": "openai-com",
+      "kind": "source",
+      "name": "OpenAI",
+      "domain": "openai.com",
+      "warnings": [
+        "Indexauswahl begrenzt: 80/758 Links gesichtet",
+        "Für das Zeitfenster 2026-11-02 bis 2026-11-13 liegen keine tragenden Artikeltexte oder datierten Changelog-Einträge vor.",
+        "https://openai.com/news/ enthält lediglich Überschriften, Datumsangaben und Links. Zu den dort aufgeführten Themen – darunter Businesses in ChatGPT, ChatGPT Enterprise im AWS Marketplace, Control Room und die Hacktron-Partnerschaft – fehlen die Artikeltexte. Aus diesen reinen Teasern wurden keine Kandidaten abgeleitet.",
+        "Der vorgelegte Text von https://developers.openai.com/api/docs/changelog ist abgeschnitten und enthält nur Navigation, keine eigentlichen Changelog-Einträge. Die dort genannten Produkte und Funktionen belegen keine datierbare Entwicklung im Zeitfenster.",
+        "Originaltext nur teilweise im AI-Kontext: https://developers.openai.com/api/docs/changelog"
+      ],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "openrouter-ai",
+      "kind": "source",
+      "name": "OpenRouter Blog",
+      "domain": "openrouter.ai",
+      "warnings": [
+        "Die beiden Modellseiten enthalten substanzielle frei lesbare Beschreibungen und explizite Released-Daten; die sichtbaren Anmeldeelemente stellen im vorgelegten Text keine Zugriffsschranke für diese Angaben dar.",
+        "Für die Modellseiten wurden die ausdrücklich ausgewiesenen Veröffentlichungsdaten verwendet; separate Artikel-Veröffentlichungsdaten liegen nicht vor.",
+        "Die verlinkten Modellgewichte wurden nicht als Originaltexte vorgelegt. Lizenzbedingungen und Eignung für lokale Inferenz lassen sich daraus nicht belegen.",
+        "Verwandte Beiträge und weitere Modelle erscheinen lediglich als verlinkte Empfehlungen ohne ausreichende eigenständige Belege für neue Entwicklungen im Zeitfenster; daraus wurden keine zusätzlichen Kandidaten abgeleitet.",
+        "Für ERNIE-Light-DT-1.0 dient das ausdrücklich ausgewiesene Veröffentlichungsdatum der Modellseite als Datumsbeleg; ein separates Artikel-Veröffentlichungsdatum liegt nicht vor. Die Effizienzbehauptungen sind durch die vorgelegten Belege nicht unabhängig bestätigt.",
+        "Der Lokalisierungsartikel enthält widersprüchliche Angaben zum Umgang mit nach allen Versuchen abgelehnten Übersetzungen: Ein Abschnitt beschreibt einen englischen Fallback, ein anderer die Übernahme des am wenigsten fehlerhaften Entwurfs mit Prüfmarkierung. Daher wird hierzu keine eindeutige Ablaufgarantie abgeleitet.",
+        "Die Extractions API erscheint nur als verlinkter verwandter Beitrag mit Datum 2026-11-10. Der eigentliche Artikeltext wurde nicht vorgelegt; aus diesem Teaser wurde kein Kandidat abgeleitet.",
+        "Weitere Modellkarten und Modellnamen in Empfehlungen beziehungsweise Evaluationsbeschreibungen belegen keine eigenständigen Veröffentlichungen im Zeitfenster."
+      ],
+      "candidates": 5,
+      "search_ok": true
+    },
+    {
+      "unit_id": "blog-google",
+      "kind": "source",
+      "name": "Google AI Blog",
+      "domain": "blog.google",
+      "warnings": [
+        "Die Originaltexte zur Hydrogen-Einführung und zur Decisions API sind als abgeschnitten markiert. Ausgewertet wurden ausschließlich die vorgelegten Abschnitte; fehlende Artikelteile wurden nicht ergänzt.",
+        "Der vollständig vorgelegte Entwicklerartikel zu Gemini 4 Hydrogen beschreibt dieselbe Modellfreigabe. Seine zusätzlichen Angaben zu vier Thinking-Stufen und Android Studio wurden im Hydrogen-Kandidaten gebündelt.",
+        "Orchestrator wurde als eigenständige Neuerung eines anderen Produkts separat erfasst. Eine ausdrückliche Preview-, Beta- oder GA-Einstufung ist im vorgelegten Abschnitt nicht genannt.",
+        "Auch für die Decisions API nennt der vorgelegte Artikel keine ausdrückliche Freigabestufe; sie wurde deshalb als Ankündigung und nicht als bestätigte GA eingeordnet.",
+        "Die verlinkten Beiträge zum Search-Upgrade und zu Gemini 4 Carbon beziehungsweise Argon liegen nicht als gelesene Originalartikel vor. Aus Links und Related-Story-Teasern wurden keine zusätzlichen Kandidaten abgeleitet.",
+        "Die erwähnte Nutzung der Decisions API für Modellrouting in Gemini Notebook wurde als Anwendungsbeispiel der API gebündelt; der entsprechende Abschnitt endet mitten im Text.",
+        "Leistungs-, Kostenvergleichs- und Qualitätsaussagen stammen von Google und sind durch die vorgelegten Belege nicht unabhängig bestätigt.",
+        "Alle drei vorgelegten Originaltexte sind als gekürzt markiert. Die Extraktion beschränkt sich auf die enthaltenen Artikelpassagen; weitere Entwicklungen in fehlenden Abschnitten lassen sich nicht beurteilen.",
+        "Sämtliche tragenden Belege stammen von Google. Leistungs-, Funktions- und Datenschutzangaben sind Herstellerangaben und werden durch keine vorgelegten unabhängigen Belege bestätigt.",
+        "Angaben, die ausschließlich in den ausdrücklich als KI-generiert gekennzeichneten Seitenzusammenfassungen stehen, wurden nicht übernommen. Dies betrifft insbesondere den dort genannten Verkaufsstart am 10. Dezember, Kamerauflösung, Akkulaufzeit und zusätzliche Schutzmaßnahmen für Umstehende.",
+        "Die Brillenkollektionen werden als vorbestellbar erfasst, nicht als allgemein ausgeliefert. Die verlinkte separate Modellvorstellung von Gemini 4 Hydrogen liegt nicht als Originaltext vor und trägt deshalb keinen eigenen Kandidaten.",
+        "Beide vorgelegten Artikel liegen im Zeitfenster und enthalten zugänglichen Originaltext. Die Funktionsbeschreibungen stammen ausschließlich von Google; unabhängige Prüfungen sind nicht vorgelegt.",
+        "Die Teilfunktionen des November Pixel Drop wurden als gemeinsames Update gebündelt. Der Rollout beginnt am Veröffentlichungsdatum, ist aber nicht für alle Geräte und Funktionen sofort abgeschlossen; angekündigte Watch-Erweiterungen sind davon unterschieden.",
+        "Die Pixel-Funktionen unterliegen Geräte-, Länder-, Sprach- und teilweise Abonnementbeschränkungen. Bei Pixel search nennt der Fließtext Pixel 6 und neuer, die Fußnote dagegen Pixel 6a und neuer; die genaue Untergrenze ist damit im Original uneinheitlich.",
+        "Verlinkte weiterführende Artikel und Related-Story-Teaser wurden nicht als zusätzliche Originalbelege verwendet und tragen keine eigenen Kandidaten.",
+        "Originaltext nur teilweise im AI-Kontext: https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+        "Originaltext nur teilweise im AI-Kontext: https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/",
+        "Originaltext nur teilweise im AI-Kontext: https://blog.google/products-and-platforms/products/search/gemini-4-hydrogen-search-upgrade/",
+        "Originaltext nur teilweise im AI-Kontext: https://blog.google/innovation-and-ai/technology/xr-ar/google-intelligent-eyewear-collections-pre-order/",
+        "Originaltext nur teilweise im AI-Kontext: https://blog.google/innovation-and-ai/technology/safety-security/intelligent-eyewear-privacy-protections/"
+      ],
+      "candidates": 9,
+      "search_ok": true
+    },
+    {
+      "unit_id": "microsoft-ai",
+      "kind": "source",
+      "name": "Microsoft AI",
+      "domain": "microsoft.ai",
+      "warnings": [
+        "Indexauswahl begrenzt: 80/139 Links gesichtet"
+      ],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "arxiv-org",
+      "kind": "source",
+      "name": "arXiv",
+      "domain": "arxiv.org",
+      "warnings": [
+        "Indexauswahl begrenzt: 80/388 Links gesichtet"
+      ],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "llm-stats-com",
+      "kind": "source",
+      "name": "LLM Stats",
+      "domain": "llm-stats.com",
+      "warnings": [
+        "Indexauswahl begrenzt: 80/84 Links gesichtet",
+        "Die beiden Blogartikel liegen trotz eingeblendeter Aufforderung zur Mensch-Verifizierung mit vollständigem Artikeltext vor; eine tatsächliche Zugriffslücke ist in den gelieferten Texten nicht erkennbar.",
+        "Als Belege dienen ausschließlich die vorgelegten LLM-Stats-Texte. Verlinkte Herstellerankündigungen, Dokumentationen und System Cards wurden nicht gelesen; Leistungs- und Schutzbehauptungen sind entsprechend als Herstellerangaben gekennzeichnet.",
+        "Für ERNIE 5.5 Flash Preview liegt eine Modellprofilseite mit genanntem Modell-Veröffentlichungsdatum 2026-11-11 vor, jedoch kein erkennbares Veröffentlichungsdatum des Artikels. Der Zeitstempel im Benchmarkbereich ist kein Artikel-Datum; deshalb wurde daraus kein Kandidat abgeleitet.",
+        "Die Zugangserweiterungen und Daybreak-Programme sind im Artikel vom 2026-11-05 beschrieben, aber nicht separat datiert. Beim Milliarden-Förderprogramm bleibt offen, ob es erstmals an diesem Tag angekündigt wurde.",
+        "Reine Weiterlese-Links und Produktvergleiche wurden nicht als eigenständige Entwicklungen gewertet. Auch die beiläufig erwähnte private Beta von Enterprise Frontier Safeguards belegt ohne erkennbare neue Änderung keinen weiteren Kandidaten.",
+        "Beide Artikel enthalten im gelieferten Text einen Verifikationshinweis, zugleich aber vollständige Artikeltexte. Eine den Artikelinhalt tatsächlich blockierende Zugriffsschranke ist damit nicht erkennbar.",
+        "Die verlinkten Herstellerankündigungen, Dokumentationen und Preislisten wurden nicht als eigene Originaltexte vorgelegt. Herstellerangaben und Qualitätsbehauptungen sind daher nur über die gelieferten LLM-Stats-Berichte belegt.",
+        "https://llm-stats.com/llm-updates liefert für ERNIE 5.5 Flash Preview, Qwen4-Max-Preview, Claude Fable 5.2, Claude Mythos 5.2, GPT-6 Cyber, Inkling 2 Small und SWE-2 Flash lediglich knappe Listeneinträge beziehungsweise Links. Mangels tragender Artikeltexte wurden daraus keine Kandidaten abgeleitet; die Listendaten wurden nicht als Artikel-Veröffentlichungsdaten übernommen.",
+        "Weitere Modelle erscheinen nur in Navigation, Empfehlungen oder allgemeinen Übersichten und tragen keine zusätzlichen Kandidaten. Die angekündigte automatische Gemini-Umleitung im Dezember ist Bestandteil der November-Ankündigung, kein im Zeitfenster bereits vollzogenes Ereignis."
+      ],
+      "candidates": 8,
+      "search_ok": true
+    },
+    {
+      "unit_id": "ollama-com",
+      "kind": "source",
+      "name": "Ollama",
+      "domain": "ollama.com",
+      "warnings": [],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "huggingface-co",
+      "kind": "source",
+      "name": "Hugging Face",
+      "domain": "huggingface.co",
+      "warnings": [
+        "Alle Kandidaten beruhen auf den drei vorgelegten Herstellerbeiträgen; unabhängige Prüfungen der Leistungs- und Sicherheitsbehauptungen liegen nicht vor.",
+        "Der Zyphra-Beitrag ist auf Hugging Face ausdrücklich mit dem 12. November 2026 als Veröffentlichungsdatum ausgezeichnet; seine Autorenzeile nennt abweichend den 11. November 2026. Verwendet wurde das Veröffentlichungsdatum der gelesenen Seite.",
+        "ZAC-1 und ZTTS2-Eval wurden als separat veröffentlichte Produkte beziehungsweise Forschungsressourcen eigenständig erfasst; Laufzeiten, Steuerungsfunktionen und Sprachbearbeitung von ZONOS3-Mini wurden in dessen Kandidaten gebündelt.",
+        "Verlinkte Modellseiten, Repositories, Papers und der ursprüngliche Zyphra-Webbeitrag wurden nicht als zusätzlich gelesene Belege behandelt.",
+        "Alle drei vorgelegten Originalartikel tragen das Veröffentlichungsdatum 2026-11-11 und liegen im Zeitfenster. Es wurden ausschließlich die gelieferten Texte ausgewertet; verlinkte Repositories, Modellseiten und Ergebnisdateien wurden nicht geprüft.",
+        "Die Belege enthalten keine tragende Login- oder Bezahlschranke. Verlinkte Artikel unter „More from this author“ sind lediglich Teaser und wurden nicht als eigenständige Entwicklungen aufgenommen.",
+        "Bei BotPsy ist der Freigabestatus widersprüchlich formuliert: Modelllinks und „ready to use“ stehen einer angekündigten zukünftigen Veröffentlichung gegenüber. Daher keine Einstufung als allgemeine Verfügbarkeit; die weitergehende Produktvision wurde nicht als bereits umgesetzte Entwicklung behandelt.",
+        "Die x402-Ergebnisse stammen vom Hersteller der getesteten Schutzsoftware und des Prüfverfahrens. Es handelt sich um Testgeld ohne tatsächliche Abwicklung; die Schutzanpassungen wurden anhand desselben Prüfverfahrens entwickelt. Version 0.16.2 ist nur im mitgelieferten Autorenkommentar beschrieben, dessen eigenes Kalenderdatum nicht ausgewiesen ist.",
+        "Der Memory-Vergleich stammt vom Entwickler des eigenen Benchmarks und bewertet konkrete Pipeline-Konfigurationen, nicht allgemein die Produkte. Die zusätzlich referierten LoCoMo-Auswertungen und geplanten Änderungen haben im gelieferten Artikel kein eigenständig eindeutig ausgewiesenes Veröffentlichungs- beziehungsweise Freigabedatum und wurden nicht als separate aktuelle Ereignisse angesetzt."
+      ],
+      "candidates": 9,
+      "search_ok": true
+    },
+    {
+      "unit_id": "techcrunch-com",
+      "kind": "source",
+      "name": "TechCrunch",
+      "domain": "techcrunch.com",
+      "warnings": [
+        "Indexauswahl begrenzt: 80/99 Links gesichtet",
+        "Alle Kandidaten beruhen auf den drei vorgelegten vollständigen TechCrunch-Artikeln innerhalb des Zeitfensters. Verlinkte Herstellerseiten und andere Artikel wurden nicht als gelesene Quellen behandelt.",
+        "Für Genie nennt der Beleg keine ausdrückliche Preview-, Beta- oder GA-Stufe. Auch für die interaktiven Claude-Konnektoren ist keine Freigabestufe ausgewiesen; die vollständige Verfügbarkeit von Hydrogen außerhalb von Search bleibt im Artikel zeitlich unspezifisch.",
+        "Unity Gateway wird lediglich als bestehende Möglichkeit zur Kostenkontrolle erwähnt; eine eigenständige neue Veröffentlichung ist nicht belegt.",
+        "Reine Artikelverweise und Seitenteaser tragen keine zusätzlichen Kandidaten. Für deren Themen liegen hier keine vollständigen Artikeltexte vor.",
+        "Ausgewertet wurden ausschließlich die drei vorgelegten vollständigen TechCrunch-Artikel; ihre Veröffentlichungsdaten liegen im angegebenen Zeitfenster.",
+        "Verlinkte Quellen und Artikel aus Navigation oder Empfehlungslisten liegen nicht als gelesene Originaltexte vor und tragen keine zusätzlichen Kandidaten.",
+        "Nectars Finanzierung im Mai sowie frühere Muse-Tests und Nutzerzahlen liegen außerhalb des Zeitfensters und wurden nicht als eigene Entwicklungen aufgenommen.",
+        "Für Plurais Simulationsplattform und die erwähnten Modelltests ist im vorgelegten Artikel kein eigenständiger neuer Freigabe- oder Veröffentlichungstermin erkennbar; sie dienen als Kontext zur aktuellen Finanzierung.",
+        "Die geplante MCP-Anbindung von Nectar und die angekündigte Freigabe der Muse-E-Mail-Adressen für Gratisnutzer werden nicht als bereits verfügbar behandelt.",
+        "In den vorgelegten Artikeltexten ist keine Login- oder Bezahlschranke erkennbar.",
+        "Die beiden vorgelegten TechCrunch-Artikel sind vollständig lesbar. Verlinkte Unternehmensmitteilungen und Sicherheitsmeldungen wurden nicht als eigene Originaltexte vorgelegt; Unternehmensangaben sind entsprechend zugeschrieben.",
+        "Weitere Themen erscheinen ausschließlich als verlinkte Teaser oder Empfehlungen, darunter Nectar, Phota Labs, der Führungswechsel bei Nvidia und Claude Meetings. Mangels vorgelegter Artikeltexte wurden daraus keine Kandidaten abgeleitet.",
+        "Die erwähnte frühere Sicherheitsverletzung bei Fireworks im Oktober und die Passwortwarnung der Bank of America vom 27. Oktober liegen außerhalb des Zeitfensters und wurden nicht als eigene Kandidaten aufgenommen."
+      ],
+      "candidates": 14,
+      "search_ok": true
+    },
+    {
+      "unit_id": "theverge-com",
+      "kind": "source",
+      "name": "The Verge",
+      "domain": "theverge.com",
+      "warnings": [
+        "Indexauswahl begrenzt: 80/202 Links gesichtet",
+        "Ausgewertet wurden ausschließlich die drei vorgelegten vollständigen Verge-Artikel. Ihre erkennbaren Veröffentlichungsdaten liegen im angegebenen Zeitfenster.",
+        "Die Artikeltexte sind zugänglich; Login-Hinweise betreffen Navigation, Kommentare oder Benachrichtigungen und bilden hier keine Zugriffsschranke für die tragenden Belege.",
+        "Verlinkte Herstellerbeiträge, der METR-Originalbericht und Social-Media-Beiträge wurden nicht als eigenständig gelesene Quellen behandelt. Angaben daraus sind nur im Umfang der vorgelegten Berichterstattung berücksichtigt.",
+        "Die lokalen Creative-Cloud-MCP-Anbindungen und Always-on-Agenten sind Vorstellungen, keine bereits gestarteten Betas oder allgemein verfügbaren Produkte. Für die Premiere-Erweiterungen nennt die Quelle keine eindeutige Freigabestufe.",
+        "Die Produktivitätswerte bei Anthropic beruhen auf Selbstauskünften; METRs Untersuchung ist durch begrenzten Zugang und umfangreiche Schwärzungen eingeschränkt. Ein Nachweis bereits vollständig autonomer rekursiver Selbstverbesserung wird daraus nicht abgeleitet.",
+        "Reine Artikelteaser, Empfehlungslisten und historische Kontextverweise wurden nicht als zusätzliche Entwicklungen übernommen.",
+        "Verwendet wurden ausschließlich die drei vorgelegten Artikeltexte. Verlinkte Unternehmensseiten und weitere Medienberichte wurden nicht separat gelesen.",
+        "Beim eBay-Artikel gilt das erkennbare Erstveröffentlichungsdatum 2026-11-10; die im Text ausgewiesene Aktualisierung vom 12. November ist in der Zusammenfassung berücksichtigt. Der genaue Zeitpunkt und Umfang etwaiger neuer technischer Beschränkungen bleiben unbestätigt.",
+        "Die Conductor-Abschaltung am 20. November liegt außerhalb des Zeitfensters, ist aber als Bestandteil der am 4. November veröffentlichten Ankündigung erfasst, nicht als bereits vollzogenes Ereignis.",
+        "Weitere Themen erscheinen lediglich als Links oder Teaser beziehungsweise als historische Hintergrundinformationen und tragen keine zusätzlichen Kandidaten."
+      ],
+      "candidates": 11,
+      "search_ok": true
+    },
+    {
+      "unit_id": "heise-de",
+      "kind": "source",
+      "name": "heise online",
+      "domain": "heise.de",
+      "warnings": [
+        "https://heise.de/-11518869: Der vorgelegte Auszug zu Meta Muse Ember enthält zwar Artikeltext und das Veröffentlichungsdatum 2026-11-10, weist aber ausdrücklich auf einen ungültigen Geschenklink und ein zum Lesen erforderliches heise+-Paket hin. Wegen dieser Zugriffsschranke nicht als tragender Beleg verwendet; kein frei zugängliches unabhängiges Original zum Thema vorgelegt.",
+        "https://heise.de/en/news/Adobe-MAX-AI-agents-to-control-Photoshop-Premiere-Pro-and-more-11519781.html: Der vorgelegte Auszug zur Adobe MAX enthält zwar Artikeltext und das Veröffentlichungsdatum 2026-11-10, weist aber ausdrücklich auf einen ungültigen Geschenklink und ein zum Lesen erforderliches heise+-Paket hin. Daher keine Kandidaten zu den darin beschriebenen Produktankündigungen und Freigabestufen abgeleitet; kein frei zugängliches unabhängiges Original vorgelegt.",
+        "https://heise.de/en/news/Grok-Build-AI-apps-expose-trade-secrets-and-personal-data-11521047.html: Der vorgelegte Auszug zu Datenlecks bei Grok Build enthält zwar Artikeltext und das Veröffentlichungsdatum 2026-11-11, weist aber ausdrücklich auf einen ungültigen Geschenklink und ein zum Lesen erforderliches heise+-Paket hin. Wegen dieser Zugriffsschranke nicht als tragender Beleg verwendet. Die verlinkten Berichte von Claroc und Ars Technica wurden nicht als Originaltexte vorgelegt und können die Zugriffslücke deshalb nicht schließen.",
+        "Der vorgelegte Artikel https://heise.de/en/news/That-s-unfortunate-Amazon-has-thousands-of-AI-agents-write-code-11523107.html enthält einen ausdrücklichen Hinweis auf einen ungültigen Geschenklink sowie eine heise+- und Login-Schranke. Trotz enthaltenen Artikeltexts wird daraus gemäß Vorgabe kein Kandidat zum AWS-Emulator abgeleitet; ein unabhängig zugänglicher Beleg wurde nicht vorgelegt.",
+        "Auch https://heise.de/-11518453 enthält einen ausdrücklichen Hinweis auf einen ungültigen Geschenklink sowie eine heise+- und Login-Schranke. Daraus wird kein Kandidat zum deutschen Browserzugang von Alexa+ abgeleitet; ein unabhängig zugänglicher Beleg wurde nicht vorgelegt.",
+        "OpenShell wurde laut KubeCon-Artikel bereits am 26. September in die CNCF aufgenommen und auf der Konferenz lediglich offiziell begrüßt. Die Aufnahme liegt außerhalb des Zeitfensters und wird nicht als neue Entwicklung berücksichtigt.",
+        "Die Aufnahme von Broadcoms VM API in die CNCF Sandbox erfolgte laut Artikel am 28. Oktober und liegt damit außerhalb des Zeitfensters.",
+        "Die Kandidaten verwenden das Veröffentlichungsdatum des vorgelegten KubeCon-Artikels. Separate Übernahmedaten für gVisor und Agent Substrate nennt dieser nicht; die verlinkten weiterführenden Seiten wurden nicht als gelesene Belege verwendet.",
+        "Kata Containers wird lediglich zum Vergleich erläutert; eine neue Entwicklung dazu ist im vorgelegten Text nicht belegt.",
+        "Die einzige vorgelegte Quelle, https://heise.de/en/news/Report-ByteDance-plans-its-own-AI-agent-11521580.html?upscorebox=o, trägt das Veröffentlichungsdatum 2026-11-12 und liegt damit im Zeitfenster. Der Seiteninhalt enthält jedoch ausdrücklich einen Hinweis auf einen ungültigen Geschenklink sowie die erforderliche heise+-Anmeldung beziehungsweise ein Abonnement. Wegen dieser Zugriffsschranke wird die Quelle nicht als tragender Artikelbeleg verwendet, obwohl der gelieferte Text auch Artikelpassagen enthält.",
+        "Für die dort berichteten Pläne eines ByteDance-KI-Agenten und Investitionen in Seedance liegt kein weiterer frei zugänglicher Artikelbeleg vor. Der verlinkte Bloomberg-Bericht wurde nicht als Originaltext vorgelegt; daraus werden keine Kandidaten abgeleitet."
+      ],
+      "candidates": 3,
+      "search_ok": true
+    },
+    {
+      "unit_id": "arstechnica-com",
+      "kind": "source",
+      "name": "Ars Technica",
+      "domain": "arstechnica.com",
+      "warnings": [
+        "Alle Kandidaten beruhen auf den vorgelegten vollständigen Artikeltexten und liegen im Zeitfenster vom 2026-11-03 bis 2026-11-13. Die sichtbaren Login- und Abonnementelemente verhindern in diesen Belegen nicht den Zugriff auf den Artikeltext.",
+        "Der Signal-Beitrag ist eine bei Ars Technica vollständig vorgelegte WIRED-Übernahme; die verlinkte WIRED-Seite sowie Hersteller- und Forschungsquellen wurden nicht separat gelesen.",
+        "Modellfreigabe und Suchintegration sind als Entwicklungen verschiedener Produkte getrennt; Denkstufen, Leistungsangaben und API-Konditionen bleiben im Modellkandidaten gebündelt.",
+        "Frühere Carbon-, Argon- und Muse-Veröffentlichungen sowie beiläufig erwähnte Übernahmen werden nicht als neue Ereignisse im Zeitfenster behandelt. Die erwähnte künftige Preiserhöhung für Carbon und Argon ist nicht als erstmals im Zeitfenster angekündigt belegt.",
+        "Navigation, Empfehlungen und Kommentare wurden nicht als eigenständige Artikelbelege verwendet.",
+        "Alle Kandidaten beruhen ausschließlich auf den drei vorgelegten vollständigen Ars-Technica-Artikeln; verlinkte Herstellerbeiträge, Forschungsberichte und Datensätze wurden nicht zusätzlich gelesen.",
+        "Die Veröffentlichungsdaten aller tragenden Artikel liegen im angegebenen Zeitfenster. Frühere Vorfälle und lediglich verlinkte weitere Nachrichten wurden nicht als eigenständige Entwicklungen übernommen.",
+        "Gemini Robotics 2.5 und ASIMOV-Jailbreak wurden als unterschiedliche Produkte mit unterschiedlicher Verfügbarkeit getrennt erfasst; Modellfunktionen, Trainingsverfahren und Fabriktests sind im Robotik-Kandidaten gebündelt.",
+        "Die vorgelegten Artikeltexte enthalten keine erkennbare inhaltliche Login- oder Bezahlschranke.",
+        "Die Leistungs- und Einsparungsangaben stammen laut Artikel von der FAA und sind im vorgelegten Material nicht unabhängig bestätigt. Die verlinkten Behördenmitteilungen wurden nicht als eigene Originaltexte vorgelegt."
+      ],
+      "candidates": 9,
+      "search_ok": true
+    },
+    {
+      "unit_id": "computerworld-com",
+      "kind": "source",
+      "name": "Computerworld",
+      "domain": "computerworld.com",
+      "warnings": [
+        "Indexauswahl begrenzt: 80/82 Links gesichtet",
+        "Verwendet wurden ausschließlich die drei vorgelegten vollständigen Computerworld-Artikel. Verlinkte Herstellerberichte, Blogbeiträge und weitere Artikel wurden nicht gelesen.",
+        "Der Railway-Angriff und seine erste Offenlegung fanden laut Artikel im Oktober außerhalb des Zeitfensters statt. Der Kandidat bezieht sich auf den im November berichteten Folgebericht und dessen zusätzliche Angaben.",
+        "Die Beta von Firefly Design wird im Beleg nicht ausdrücklich als öffentlich bezeichnet; deshalb ist sie als Preview und nicht als Public Beta eingeordnet.",
+        "Nur in Empfehlungslisten oder Teasern erwähnte Themen wurden mangels vorgelegter Artikeltexte nicht als Kandidaten aufgenommen.",
+        "Beide vorgelegten Computerworld-Artikel enthalten frei zugängliche Artikeltexte; erkennbare Login- oder Bezahlschranken liegen nicht vor.",
+        "Harbor wird durch den vollständigen unabhängigen Computerworld-Beitrag getragen, nicht durch die lediglich verlinkte Anmeldeseite. Der Beitrag bezeichnet den Stand zugleich als private Preview und als Mailingliste mit einem Zugangsversprechen; eine bereits nutzbare Freigabe ist damit nicht belegt.",
+        "Eine FileMaker-Integration und die nächtliche Nutzung vorhandener Mac-Flotten als KI-Cluster sind im Harbor-Beitrag ausdrücklich spekulativ und wurden nicht als bestätigte Funktionen übernommen.",
+        "Die Patentschrift und die im Microsoft-Beitrag verlinkten weiteren Quellen wurden nicht vorgelegt. Das Datum 2026-11-04 bezeichnet die Veröffentlichung des Artikels, nicht ein belegtes Einreichungsdatum der Patentanmeldung.",
+        "Weitere Themen erscheinen nur als verlinkte Überschriften oder Teaser. Mangels tragender Artikeltexte wurden daraus keine zusätzlichen Kandidaten abgeleitet."
+      ],
+      "candidates": 9,
+      "search_ok": true
+    },
+    {
+      "unit_id": "cnbc-com",
+      "kind": "source",
+      "name": "CNBC",
+      "domain": "cnbc.com",
+      "warnings": [
+        "Indexauswahl begrenzt: 80/257 Links gesichtet",
+        "Ausgewertet wurden ausschließlich die drei vorgelegten CNBC-Volltexte. In diesen ist keine den Artikeltext sperrende Login- oder Bezahlschranke erkennbar.",
+        "Verlinkte Herstellererklärungen und weitere Artikel wurden nicht gelesen. Reine Linktitel, Navigation und Video-Teaser tragen keine Kandidaten; insbesondere ist ein Rücktritt Jensen Huangs durch die vorgelegten Artikeltexte nicht belegt.",
+        "Die Claude-Cowork-Integration und beide geplanten Übernahmen sind im zugänglichen CNBC-Volltext eigenständig genannt, aber nur knapp beschrieben.",
+        "Geschwindigkeits-, Preis- und Sicherheitsangaben zu den Anthropic-Modellen sowie Wirkungsangaben zum CrowdStrike-Kill-Switch sind Herstellerbehauptungen, keine unabhängig belegten Testergebnisse.",
+        "Anthropics IPO-Vorbereitungen, Bewertungsziele und bereits zuvor veröffentlichte Finanzzahlen wurden als Kontext behandelt; ein vollzogener Börsengang ist nicht belegt.",
+        "Beim US-chinesischen Dialog ist die aktuelle Entwicklung Bessents Erläuterung des Mechanismus, nicht eine erstmalige Vereinbarung im November. Historische Modellfreigaben, Sicherheitsvorfälle und frühere politische Maßnahmen außerhalb des Zeitfensters wurden nicht als eigene Kandidaten aufgenommen.",
+        "Der vorgelegte CNBC-Artikel enthält einen frei zugänglichen Artikeltext und trägt den Kandidaten; der darin verlinkte Apple-Finanzbericht wurde nicht als eigener Originaltext vorgelegt.",
+        "Die erwähnten Änderungen am macOS-Festplattenzugriff stammen laut Artikel aus dem Vormonat und liegen außerhalb des Zeitfensters. Für die früheren Veröffentlichungen von Siri AI, OpenAI Dots und Meta Muse ist im vorgelegten Text kein Veröffentlichungsdatum innerhalb des Zeitfensters belegt.",
+        "Verlinkte Nachrichten in Navigation und Empfehlungslisten wurden nicht als eigenständige Artikelbelege verwendet."
+      ],
+      "candidates": 10,
+      "search_ok": true
+    },
+    {
+      "unit_id": "github-blog",
+      "kind": "source",
+      "name": "GitHub Blog",
+      "domain": "github.blog",
+      "warnings": [
+        "Beim BYOK-Artikel wurde das sichtbare Veröffentlichungsdatum 2026-11-03 verwendet, nicht das Datum im URL-Pfad oder der Änderungszeitstempel vom 2026-11-04.",
+        "Weitere Entwicklungen erscheinen ausschließlich als Titel und Links im Bereich „Related Posts“. Da deren Artikeltexte nicht vorliegen und reine Teaser keine tragenden Belege sind, wurden daraus keine zusätzlichen Kandidaten abgeleitet.",
+        "Alle drei tragenden Belege sind GitHub-eigene Veröffentlichungen; unabhängige Prüfungen der Leistungs- und Sicherheitsangaben liegen nicht vor.",
+        "Als Veröffentlichungsdatum wurde das sichtbare Artikeldatum 2026-11-03 verwendet, nicht der Änderungszeitstempel 2026-11-06.",
+        "Die im Bereich „Related Posts“ verlinkten weiteren Entwicklungen liegen nur als Teaser vor. Mangels vorgelegter Artikelvolltexte wurden daraus keine Kandidaten abgeleitet.",
+        "Der Artikel bezeichnet die Integration als verfügbar, nennt aber keine ausdrückliche Preview-, Beta- oder GA-Stufe; sie wurde deshalb als Integration eingeordnet."
+      ],
+      "candidates": 4,
+      "search_ok": true
+    },
+    {
+      "unit_id": "thenewstack-io",
+      "kind": "source",
+      "name": "The New Stack",
+      "domain": "thenewstack.io",
+      "warnings": [
+        "https://thenewstack.io/gemini-4-hydrogen-orchestrator: Der vorgelegte Seitentext enthält lediglich Titel, Veröffentlichungsmetadaten vom 2026-11-12 und Newsletter-/Registrierungsformulare, aber keinen Artikeltext. Zugriffslücke: Aus der Überschrift allein wird kein Kandidat abgeleitet.",
+        "https://thenewstack.io/google-gemini-decisions-api: Der vorgelegte Seitentext enthält lediglich Titel, Veröffentlichungsmetadaten vom 2026-11-12 und Newsletter-/Registrierungsformulare, aber keinen Artikeltext. Zugriffslücke: Es fehlt ein tragender Artikelbeleg; daher kein Kandidat.",
+        "https://thenewstack.io/gemini-4-carbon-swarm: Der vorgelegte Seitentext enthält lediglich Titel, Veröffentlichungsmetadaten vom 2026-11-10 und Newsletter-/Registrierungsformulare, aber keinen Artikeltext. Zugriffslücke: Die in der Überschrift wiedergegebene Google-Behauptung reicht nicht als tragender Beleg für einen Kandidaten.",
+        "Alle erkennbaren Veröffentlichungsdaten liegen im angegebenen Zeitfenster. Frei zugängliche Artikeltexte oder unabhängige Originale, die diese Themen tragen könnten, wurden nicht vorgelegt; ob eine tatsächliche Zugangsschranke oder ein Extraktionsproblem vorliegt, lässt sich aus den Texten nicht feststellen.",
+        "https://thenewstack.io/anthropic-fable-opus-cost: Veröffentlichungsdatum laut article:published_time ist 2026-11-11 und liegt im Zeitfenster. Der vorgelegte Text enthält jedoch nur Titel, Metadaten und Abonnement-/Registrierungsformulare, keinen tragenden Artikeltext. Zugriffslücke dokumentiert; kein Kandidat aus der Überschrift abgeleitet.",
+        "https://thenewstack.io/meta-muse-ember-launch: Veröffentlichungsdatum laut article:published_time ist 2026-11-09 und liegt im Zeitfenster. Der vorgelegte Text enthält jedoch nur Titel, Metadaten und Abonnement-/Registrierungsformulare, keinen tragenden Artikeltext. Zugriffslücke dokumentiert; kein Kandidat aus der Überschrift abgeleitet.",
+        "https://thenewstack.io/cursor-antigravity-voice-agents: Veröffentlichungsdatum laut article:published_time ist 2026-11-09 und liegt im Zeitfenster. Der vorgelegte Text enthält jedoch nur Titel, Metadaten und Abonnement-/Registrierungsformulare, keinen tragenden Artikeltext. Zugriffslücke dokumentiert; keine Produktentwicklungen aus der Überschrift abgeleitet.",
+        "Für keines der Themen wurde ein weiterer frei zugänglicher Originaltext vorgelegt, der die fehlenden Artikelinhalte ersetzen könnte."
+      ],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "embracethered-com",
+      "kind": "source",
+      "name": "Embrace The Red",
+      "domain": "embracethered.com",
+      "warnings": [
+        "Indexauswahl begrenzt: 80/138 Links gesichtet"
+      ],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "importai-substack-com",
+      "kind": "source",
+      "name": "Import AI",
+      "domain": "importai.substack.com",
+      "warnings": [],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "interconnects-ai",
+      "kind": "source",
+      "name": "Interconnects",
+      "domain": "interconnects.ai",
+      "warnings": [],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "latent-space",
+      "kind": "source",
+      "name": "Latent Space",
+      "domain": "latent.space",
+      "warnings": [
+        "Verwendet wurden ausschließlich die drei vorgelegten Latent-Space-Texte. Verlinkte Herstellerseiten, Social-Media-Beiträge, Repositories, Papers und weitere Medienartikel wurden nicht geöffnet und werden nicht als selbst gelesene Quellen ausgegeben.",
+        "Für die beiden AI-News-Ausgaben wurden die sichtbaren Veröffentlichungszeilen Nov 12 beziehungsweise Nov 10 verwendet, nicht die um einen Tag früher datierten redaktionellen Unterzeilen oder die zusammengefassten Nachrichtenzeiträume. Der ArtCraft-Bericht trägt Nov 13; das Jahr ergibt sich aus dem vorgelegten Veranstaltungskontext.",
+        "Die beiden AI-News-Texte sind abgeschnitten. Entwicklungen in den nicht vorgelegten Resten konnten nicht ausgewertet werden. Insbesondere der nur im Inhaltsverzeichnis genannte OpenRouter-CSAM-Screening-Wechsel ist nicht ausreichend belegt.",
+        "Die Texte enthalten Anmelde- und Mitgliedschaftsnavigation, aber keine erkennbare Sperre des ausgewerteten Artikelinhalts. Daraus wurde keine zusätzliche Zugriffsschranke abgeleitet.",
+        "Die Sammelartikel referenzieren vielfach externe Aussagen statt eigener Tests. Herstellerzahlen und Nutzerberichte sind entsprechend gekennzeichnet; die zugrunde liegenden Primärbelege konnten nicht separat geprüft werden.",
+        "Die Forschungsentwicklungen Deletion Tuning und s3 werden durch die vorgelegten Sammelartikel getragen. Mangels vorgelegter arXiv-Paper-Seiten wurden weder arXiv-Veröffentlichungsdaten noch arXiv-URLs als gelesene Artikelbelege eingesetzt.",
+        "Reine Teaser wurden nicht zu Kandidaten: Dazu zählen die unbenannte kommende Open-Weight-Veröffentlichung, der nur als Top-Tweet genannte OpenAI-Control-Room-Hinweis und nicht ausgeführte Verweise auf TypeSafe-Kunden beziehungsweise frühere Umsatzmeldungen.",
+        "Nicht aufgenommen wurden unbestätigte, schwerwiegende Personalvorwürfe gegen NVIDIA-Führungskräfte. Die Vorlage bietet dafür lediglich weitergereichte Medien- und Social-Media-Behauptungen, keine belastbar vorgelegten Originalberichte.",
+        "Reine Meinungsäußerungen, Witze, Modellgerüchte und allgemeine Nutzungstipps wurden nicht als eigenständige Entwicklungen behandelt. Dazu gehören spekulative Bewertungen von Qwen4, Chip-Export-Kommentare und Erwartungen an kommende OpenAI-Veröffentlichungen.",
+        "Die angebliche Beschaffung eigener Chips durch Inferenzanbieter ist in der Vorlage nur knapp als weitergereichter Bericht über einen nicht vorgelegten The-Information-Beitrag enthalten. Ohne tragenden zugänglichen Originalbeleg wurde daraus kein Kandidat abgeleitet.",
+        "Originaltext nur teilweise im AI-Kontext: https://latent.space/p/ainews-d-day-decision-models-day/",
+        "Originaltext nur teilweise im AI-Kontext: https://latent.space/p/ainews-fable-5-2-retakes-world-1-llm-spot-as-ant-ipo-roadshow-begins/"
+      ],
+      "candidates": 70,
+      "search_ok": true
+    },
+    {
+      "unit_id": "chinatalk-media",
+      "kind": "source",
+      "name": "ChinaTalk",
+      "domain": "chinatalk.media",
+      "warnings": [],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "artificialanalysis-ai",
+      "kind": "source",
+      "name": "Artificial Analysis",
+      "domain": "artificialanalysis.ai",
+      "warnings": [
+        "Indexauswahl begrenzt: 80/103 Links gesichtet"
+      ],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "ai-meta-com",
+      "kind": "source",
+      "name": "Meta AI",
+      "domain": "ai.meta.com",
+      "warnings": [],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "mistral-ai",
+      "kind": "source",
+      "name": "Mistral",
+      "domain": "mistral.ai",
+      "warnings": [],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "x-ai",
+      "kind": "source",
+      "name": "xAI",
+      "domain": "x.ai",
+      "warnings": [
+        "Indexauswahl begrenzt: 80/259 Links gesichtet",
+        "Für das Zeitfenster vom 2026-11-03 bis einschließlich 2026-11-13 enthalten die vorgelegten Quellen keine datierten Entwicklungen.",
+        "Die News-Übersicht unter https://x.ai/news/ führt als neueste Beiträge zwei Einträge vom 2026-11-02 auf. Diese liegen außerhalb des Zeitfensters; zudem liegen nur Übersichtsteaser und keine vollständigen Artikeltexte vor.",
+        "Die Release Notes unter https://docs.x.ai/developers/release-notes wurden laut Seitenangabe zuletzt am 2026-11-02 aktualisiert. Auch der jüngste Changelog-Eintrag zur Ablösung von grok-imagine-image-quality und grok-imagine-image-pro liegt damit außerhalb des Zeitfensters.",
+        "Die Release-Notes-Einträge vom 7. November stehen im Abschnitt November 2025 und fallen nicht in das angefragte Zeitfenster 2026."
+      ],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "openclaw-ai",
+      "kind": "source",
+      "name": "OpenClaw Blog",
+      "domain": "openclaw.ai",
+      "warnings": [],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "shopify-engineering",
+      "kind": "source",
+      "name": "Shopify Engineering",
+      "domain": "shopify.engineering",
+      "warnings": [],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "technologyreview-com",
+      "kind": "source",
+      "name": "MIT Technology Review",
+      "domain": "technologyreview.com",
+      "warnings": [
+        "Original nicht lesbar: https://technologyreview.com/2026/11/03/1147934/reverse-game-theory-mechanism-design-ai-alignment/amp",
+        "Original nicht lesbar: https://technologyreview.com/2026/11/09/1148182/nancy-pelosis-replacement-is-ready-to-regulate-ai",
+        "Original nicht lesbar: https://technologyreview.com/2026/11/06/1148090/i-watched-a-humanoid-robot-clean-my-apartment-it-felt-like-a-taste-of-the-future/amp"
+      ],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "cohere-com",
+      "kind": "source",
+      "name": "Cohere",
+      "domain": "cohere.com",
+      "warnings": [],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "qwen-ai",
+      "kind": "source",
+      "name": "Qwen",
+      "domain": "qwen.ai",
+      "warnings": [
+        "Indexauswahl begrenzt: 80/984 Links gesichtet"
+      ],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "aws-amazon-com",
+      "kind": "source",
+      "name": "AWS Machine Learning",
+      "domain": "aws.amazon.com",
+      "warnings": [
+        "Indexauswahl begrenzt: 80/100 Links gesichtet",
+        "Alle drei vorgelegten Originaltexte sind abgeschnitten. Die Kandidaten berücksichtigen ausschließlich die sichtbaren Artikelpassagen; weitere Entwicklungen oder Einschränkungen im fehlenden Text sind nicht überprüfbar.",
+        "Die Quellen stammen ausschließlich von AWS. Leistungs- und Schutzversprechen sind Herstellerangaben und durch die vorgelegten Belege nicht unabhängig bestätigt.",
+        "Der sichtbare Runtime-Beitrag nennt keine ausdrückliche Preview-, Beta- oder GA-Einstufung. Daher wird die Änderung als Update erfasst.",
+        "Die Beiträge zur Zugriffskontrolle und zu A2A sind technische Implementierungsleitfäden, keine belegten neuen Produktfreigaben.",
+        "Der Artikel „Safely Releasing Frontier Models to Customers“ wurde am 2026-06-30 veröffentlicht und liegt außerhalb des Zeitfensters 2026-11-03 bis 2026-11-13; daraus wurden keine Kandidaten abgeleitet.",
+        "Die vorgelegten Texte sind als gekürzt markiert. Beim Deep-Insight-Beitrag fehlen insbesondere die späteren Implementierungsabschnitte; berücksichtigt wurden ausschließlich die sichtbaren Belege.",
+        "Der Deep-Insight-Beitrag ist eine technische Anleitung, kein Beleg für eine neue Produktfreigabe. Verlinkte frühere Beiträge und der angekündigte dritte Teil wurden nicht als eigenständige Entwicklungen aufgenommen.",
+        "SGLang-Neuron wird ausdrücklich als öffentlich verfügbar beschrieben; eine formale Einstufung als Preview, Beta oder GA nennt der vorgelegte Artikel nicht.",
+        "Es liegen ausschließlich AWS-Originalbeiträge vor. Die Effizienzangaben zu Deep Insight sind Herstellerangaben und wurden nicht unabhängig überprüft.",
+        "Beide vorgelegten Originaltexte sind abgeschnitten. Die Kandidaten stützen sich ausschließlich auf die lesbaren Artikelpassagen; insbesondere sind die im Verisk-Beitrag angekündigten gemessenen Ergebnisse im gelieferten Ausschnitt nicht enthalten.",
+        "Die Quellen stammen von AWS; Angaben zu Funktionen und zur Verisk-Implementierung sind Anbieterangaben beziehungsweise Aussagen der gemeinsamen Fallstudie und nicht unabhängig bestätigt.",
+        "Für die Streaming-Verbrauchserfassung ist im vorgelegten Ausschnitt keine ausdrückliche Preview-, Beta- oder GA-Einstufung erkennbar. Der Verisk-Beitrag beschreibt eine Implementierung, keine neue allgemeine Produktfreigabe.",
+        "Nur verlinkte frühere Entwicklungen und Navigationswerbung wurden nicht als eigenständige Ereignisse übernommen, da dafür keine gelesenen Originalartikel mit belegtem Veröffentlichungsdatum vorliegen.",
+        "Originaltext nur teilweise im AI-Kontext: https://aws.amazon.com/blogs/machine-learning/run-agents-securely-and-efficiently-with-the-next-generation-agentcore-runtime/",
+        "Originaltext nur teilweise im AI-Kontext: https://aws.amazon.com/blogs/machine-learning/fine-grained-access-control-for-amazon-bedrock-managed-knowledge-base-tools/",
+        "Originaltext nur teilweise im AI-Kontext: https://aws.amazon.com/blogs/machine-learning/build-composable-interoperable-multi-agent-systems-with-a2a-on-aws/",
+        "Originaltext nur teilweise im AI-Kontext: https://aws.amazon.com/blogs/machine-learning/four-layers-of-context-engineering-for-production-ai-agents-how-deep-insight-applies-them-in-working-code/",
+        "Originaltext nur teilweise im AI-Kontext: https://aws.amazon.com/blogs/machine-learning/safely-releasing-frontier-models-to-customers/",
+        "Originaltext nur teilweise im AI-Kontext: https://aws.amazon.com/blogs/machine-learning/deploy-frontier-ai-models-on-aws-trainium-with-sglang-neuron/",
+        "Originaltext nur teilweise im AI-Kontext: https://aws.amazon.com/blogs/machine-learning/introducing-usage-based-pricing-for-amazon-sagemaker-ai-bidirectional-streaming/",
+        "Originaltext nur teilweise im AI-Kontext: https://aws.amazon.com/blogs/industries/reinventing-software-delivery-with-ai-sdlc-on-amazon-bedrock-agentcore/"
+      ],
+      "candidates": 7,
+      "search_ok": true
+    },
+    {
+      "unit_id": "deepmind-google",
+      "kind": "source",
+      "name": "Google DeepMind",
+      "domain": "deepmind.google",
+      "warnings": [
+        "Die Belege sind Herstellerquellen; Leistungs-, Qualitäts- und Sicherheitsangaben sind nicht unabhängig bestätigt.",
+        "Die Model Cards nennen Vertriebswege, weisen aber keine ausdrückliche Preview-, Beta- oder GA-Freigabestufe aus. Aus ihrem Veröffentlichungsdatum wird kein gesondertes Rollout-Datum abgeleitet.",
+        "Gemini 4 Hydrogen erscheint ausschließlich als verlinkter Listeneintrag beziehungsweise als Verweis auf eine weitere Model Card. Der inhaltliche Originalbeleg liegt nicht vor; daraus wurde kein Kandidat und aus dem Indexdatum kein Artikel-Datum abgeleitet.",
+        "Verlinkte PDFs, Sicherheitsberichte und weitere Produktseiten wurden nicht als gelesene Belege behandelt.",
+        "Beide vorgelegten Originalartikel liegen im Zeitfenster vom 2026-11-04 bis 2026-11-13. Verwendet wurden ihre erkennbaren Veröffentlichungsdaten, nicht die Änderungszeitstempel.",
+        "Alle Leistungs- und Sicherheitskennzahlen stammen von DeepMind beziehungsweise den beteiligten Partnern; unabhängige Prüfungen wurden nicht vorgelegt.",
+        "Der Mercedes-Benz-Pilot und die Sicherheitssteuerung sind als Bestandteile der Ankündigung von Gemini Robotics 2.5 gebündelt. ASIMOV-Jailbreak ist als eigenständig veröffentlichtes Benchmark-Produkt separat erfasst.",
+        "Die angekündigten AlphaGenome 2 Skills für Google Antigravity werden lediglich als künftig verfügbar beschrieben. Daraus wurde kein eigener Freigabekandidat abgeleitet.",
+        "Verlinkte Paper, Datensätze und weiterführende Artikel lagen nicht als gelesene Originale vor und wurden nicht zusätzlich ausgewertet."
+      ],
+      "candidates": 6,
+      "search_ok": true
+    },
+    {
+      "unit_id": "research-google",
+      "kind": "source",
+      "name": "Google Research",
+      "domain": "research.google",
+      "warnings": [
+        "https://www.research.google/blog/agile-deliberation-how-ai-helps-humans-define-the-gray-areas: Der vorgelegte, als gekürzt markierte Text enthält lediglich Titel und Seitennavigation, keinen tragenden Artikelinhalt und kein erkennbares Veröffentlichungsdatum. Daraus lässt sich kein Kandidat für das Zeitfenster 2026-11-03 bis 2026-11-13 ableiten.",
+        "https://www.research.google/blog/detecting-signs-of-hypertension-using-wearable-sensors: Der vorgelegte, als gekürzt markierte Text enthält lediglich Titel und Seitennavigation, keinen tragenden Artikelinhalt und kein erkennbares Veröffentlichungsdatum. Daraus lässt sich kein Kandidat für das angegebene Zeitfenster ableiten.",
+        "https://research.google/blog/using-wearables-to-enable-cardiovascular-kidney-metabolic-ckm-risk-profiling-for-personalized-coaching/: Der vorgelegte, als gekürzt markierte Text enthält lediglich Titel und Seitennavigation, keinen tragenden Artikelinhalt und kein erkennbares Veröffentlichungsdatum. Daraus lässt sich kein Kandidat für das angegebene Zeitfenster ableiten.",
+        "Originaltext nur teilweise im AI-Kontext: https://www.research.google/blog/agile-deliberation-how-ai-helps-humans-define-the-gray-areas",
+        "Originaltext nur teilweise im AI-Kontext: https://www.research.google/blog/detecting-signs-of-hypertension-using-wearable-sensors",
+        "Originaltext nur teilweise im AI-Kontext: https://research.google/blog/using-wearables-to-enable-cardiovascular-kidney-metabolic-ckm-risk-profiling-for-personalized-coaching/"
+      ],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "nist-gov",
+      "kind": "source",
+      "name": "NIST AI",
+      "domain": "nist.gov",
+      "warnings": [
+        "Indexauswahl begrenzt: 80/140 Links gesichtet",
+        "Die vorgelegte NIST-Seite „US and International Standardization News and Activities — November 5, 2026“ enthält lediglich eine Inhaltsübersicht. Die vollständige Ausgabe erfordert laut Seite eine PIV-Karten-Authentifizierung über Login.gov. Aus den Teasern zu europäischen KI-Standards, der SI-Governance-Partnerschaft Nigeria–Großbritannien und der ANSI-Plattform wurden daher keine Kandidaten abgeleitet.",
+        "Für INSIGHT wurde das sichtbare Veröffentlichungsdatum des NIST-Artikels, der 5. November 2026, verwendet. Das zusätzlich ausgewiesene Änderungsdatum 29. Oktober 2026 liegt davor. Die verlinkte arXiv-Seite wurde nicht als Original vorgelegt; ein Paper-Veröffentlichungsdatum oder eine neue Software-Freigabe wird daraus nicht abgeleitet."
+      ],
+      "candidates": 2,
+      "search_ok": true
+    },
+    {
+      "unit_id": "discovery-0",
+      "kind": "discovery",
+      "name": "AI News",
+      "domain": null,
+      "warnings": [
+        "Für das Zeitfenster 2026-11-11 bis 2026-11-13 liegen ausschließlich Übersichtsseiten mit Kurzfassungen und Teasern vor: https://aitoolly.com/ai-news und https://gekro.com/news. Diese sind keine tragenden Artikelbelege; daraus wurden keine Kandidaten abgeleitet.",
+        "Die verlinkten Einzelartikel, Herstellerankündigungen, Forschungsbeiträge und Repository-Inhalte wurden nicht als Originaltexte vorgelegt. Ihre Veröffentlichungsdaten, konkreten Änderungen und Freigabestufen lassen sich anhand der Übersichten allein nicht ausreichend belegen.",
+        "Die in den Übersichten genannten Datumsangaben wurden nicht als Veröffentlichungsdaten ungelesener Originalartikel übernommen. Ob einzelne Zielseiten Login- oder Bezahlschranken aufweisen, ist aus den vorgelegten Belegen nicht ersichtlich."
+      ],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "discovery-1",
+      "kind": "discovery",
+      "name": "Lokale LLMs",
+      "domain": null,
+      "warnings": [],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "discovery-2",
+      "kind": "discovery",
+      "name": "Agentic Engineering / Vibe Coding",
+      "domain": null,
+      "warnings": [
+        "Als einziger Beleg liegt ein frei lesbarer Wochenüberblick von AI Agent Store vor. Die darin referenzierten Herstellerbeiträge, Forschungsartefakte und sonstigen Primärquellen wurden nicht mitgeliefert; Aussagen sind daher nur über diesen Überblick belegt.",
+        "Die Datumswerte entsprechen den sichtbaren Tagesabschnitten des Wochenüberblicks. Die Veröffentlichungsdaten der zugrunde liegenden Einzelbeiträge sind damit nicht durch deren Originalseiten bestätigt.",
+        "Der AWS-Abschnitt vom 12. November bezeichnet seinen Gegenstand ausdrücklich als Rückblick auf Oktober-Updates. Die entsprechenden Kandidaten werden wegen des im Zeitfenster eingeordneten Beitrags erfasst, nicht als bestätigte erstmalige Veröffentlichungen dieser Funktionen im Zeitfenster.",
+        "Die Einträge vom 7. bis einschließlich 10. November liegen außerhalb des vorgegebenen Zeitfensters und wurden nicht aufgenommen. Undatierte Navigation und Eigenwerbung wurden nicht als Entwicklungen gewertet.",
+        "Eine Login- oder Bezahlschranke für den gelieferten Nachrichtentext ist nicht erkennbar."
+      ],
+      "candidates": 10,
+      "search_ok": true
+    },
+    {
+      "unit_id": "discovery-3",
+      "kind": "discovery",
+      "name": "AI Tools",
+      "domain": null,
+      "warnings": [],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "discovery-4",
+      "kind": "discovery",
+      "name": "Context Engineering",
+      "domain": null,
+      "warnings": [
+        "Als Beleg liegt ausschließlich die Blog-Übersichtsseite https://www.databricks.com/blog vor. Sie enthält Überschriften, Datumsangaben und Teaser, aber keine vollständigen Artikel. Reine Teaser sind keine tragenden Artikelbelege; deshalb wurden keine Kandidaten abgeleitet.",
+        "Für die im Zeitfenster verlinkten Themen – darunter das neue Genie, Genie One, Geschäftskontext-Integrationen sowie die als allgemein verfügbar angekündigten Angebote Genie Migrate und Genie in Slack – fehlen die Artikeltexte. Die Datumsangaben der Übersicht wurden nicht als verifizierte Veröffentlichungsdaten der Artikel übernommen.",
+        "Eine Login- oder Bezahlschranke ist aus dem vorgelegten Material nicht ersichtlich. Die Zugriffslücke besteht in den nicht vorgelegten Originalartikeln; weitere Seiten wurden nicht abgerufen."
+      ],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "discovery-5",
+      "kind": "discovery",
+      "name": "AI Security",
+      "domain": null,
+      "warnings": [],
+      "candidates": 0,
+      "search_ok": true
+    },
+    {
+      "unit_id": "discovery-6",
+      "kind": "discovery",
+      "name": "AI Governance",
+      "domain": null,
+      "warnings": [
+        "Die Kandidaten beruhen auf dem vollständig vorgelegten redaktionellen Haupttext des AI Governance Weekly vom 12. November 2026. Die verlinkten Einzelberichte und Primärbelege liegen nicht vor; ihre Angaben wurden nicht unabhängig geprüft.",
+        "Als published_at dient das erkennbare Veröffentlichungsdatum des Wochenberichts. Die genauen Ereignis- und Erstveröffentlichungsdaten der darin zusammengefassten Entwicklungen sind nicht durchgehend ausgewiesen; der Bericht enthält auch Rückblicke auf die gesamte Woche.",
+        "Für Fable 5.2 und Mythos 5.2 belegt der Haupttext keine genaue Einordnung als Preview, Beta oder allgemeine Verfügbarkeit. Deshalb wurde nur eine Veröffentlichung mit unterschiedlichen Zugangsbeschränkungen erfasst.",
+        "Die Related-Coverage-Karte zu OpenAI Daybreak und einer Klage gegen mehrere KI-Unternehmen ist lediglich ein Teaser des nicht vorgelegten Einzelartikels und trägt keine zusätzlichen Kandidaten.",
+        "Der vorgelegte Text von Intelligence Synthesis ist abgeschnitten und enthält überwiegend Navigation sowie verlinkte Überschriften und Teaser. Ein tragender Artikelhaupttext ist nicht enthalten; daraus wurden keine Kandidaten abgeleitet.",
+        "Bei den vorgelegten Texten ist keine Login- oder Bezahlschranke erkennbar. Die Zugriffslücken betreffen die nicht vorgelegten verlinkten Artikel und den abgeschnittenen zweiten Seitentext.",
+        "Originaltext nur teilweise im AI-Kontext: https://pharma.intelligence-synthesis.com/en/ai-governance/news/2026-11-13-morning.html"
+      ],
+      "candidates": 16,
+      "search_ok": true
+    },
+    {
+      "unit_id": "discovery-7",
+      "kind": "discovery",
+      "name": "Enterprise",
+      "domain": null,
+      "warnings": [
+        "Beide tragenden Belege sind Hersteller-Pressemitteilungen; die beschriebenen Fähigkeiten und Nutzenversprechen sind nicht unabhängig bestätigt.",
+        "Die Monatsübersicht https://releases.fru.dev/months/2026-11 ist eine aggregierte Liste mit Kurzbeschreibungen und Verweisen, kein tragender Originalbeleg für die verlinkten Produktänderungen. Da deren Originaltexte nicht vorliegen, wurden daraus keine Kandidaten abgeleitet und keine Index-Datumsangaben als Veröffentlichungsdaten übernommen.",
+        "Die unter „Latest Press Releases“ verlinkte Databricks-Investition von rund drei Milliarden US-Dollar ist nur als Teaser belegt. Der vollständige Originalartikel fehlt; daraus wurde kein Kandidat abgeleitet.",
+        "Die allgemeine Verfügbarkeit von Genie und Genie Ontology wird im Original als Status genannt, aber nicht eindeutig als neue Freigabe an diesem Tag ausgewiesen. Dafür wurde kein eigenständiger GA-Kandidat angelegt."
+      ],
+      "candidates": 2,
+      "search_ok": true
+    },
+    {
+      "unit_id": "optional-semianalysis",
+      "kind": "optional",
+      "name": "SemiAnalysis",
+      "domain": "semianalysis.com",
+      "warnings": [],
+      "candidates": 0,
+      "search_ok": true
+    }
+  ],
+  "selected_count": 38,
+  "held_count": 33,
+  "decisions": [
+    {
+      "id": "0eda1540d804c3a171287a38",
+      "decision": "selected",
+      "reason": "Neue Modellfreigabe ohne entsprechenden Historieneintrag. Der Google-Originalbericht dient als Hauptmeldung; weitere Perspektiven auf denselben Hydrogen-Start werden hier gebündelt.",
+      "item": {
+        "title": "Google veröffentlicht Gemini 4 Hydrogen mit vier Denkstufen und einer Million Tokens Kontext",
+        "summary": "Google stellt Gemini 4 Hydrogen über AI Studio, die Gemini API, die Gemini-App, Search und Unternehmensangebote sowie für zahlende Pro- und Ultra-Abonnenten in Antigravity bereit. Laut Google kostet das Modell über das gesamte Kontextfenster von einer Million Tokens hinweg 1,50 US-Dollar je Million Eingabe- und 7,50 US-Dollar je Million Ausgabe-Tokens und erledigt Aufgaben bei standardmäßig hohem Denkaufwand 2,5-mal schneller als Gemini 3.8 Flash. Die von The Decoder wiedergegebene Evaluation von Artificial Analysis erreicht auf der höchsten der vier Denkstufen 54 Punkte im Intelligence Index, zeigt jedoch Schwächen bei Terminal-Aufgaben und nahezu doppelt so viele Ausgabe-Tokens wie auf der Standardstufe.",
+        "category": "modelle",
+        "impact": 5,
+        "date": "2026-11-12",
+        "change_type": "general_availability"
+      }
+    },
+    {
+      "id": "81b23f25be11ea2424dae3ef",
+      "decision": "duplicate",
+      "reason": "Einführung, Fragetypen, Preis und eingeschränkte Latenzangabe der Gemini Decisions API sind bereits in der Historie erfasst; kein neuer Veröffentlichungsschritt.",
+      "duplicate_of": "h-8a9caf301164f662f13f9872"
+    },
+    {
+      "id": "8386f36f9315cc6dfe48ef4f",
+      "decision": "duplicate",
+      "reason": "Die breitere Freigabe von Gemini 4 Carbon am 10. November einschließlich der Einführungspreise ist bereits erfasst. Willisons Tests und die zusätzliche Preisankündigung begründen hier keine eigenständige Modellfreigabe.",
+      "duplicate_of": "h-8ae393a1bbfeea3d83f9724c"
+    },
+    {
+      "id": "dfe4affccc59f7e111107e79",
+      "decision": "selected",
+      "reason": "Neue Modellveröffentlichung ohne Historieneintrag. Dieser vollständig vorgelegte Bericht dient als Hauptmeldung zum auch unter den Vergleichskandidaten enthaltenen Muse-Ember-Start und verbindet Funktionsumfang, Preise und eigene Tests.",
+      "item": {
+        "title": "Meta veröffentlicht Muse Ember 1.0 mit sechs Reasoning-Stufen",
+        "summary": "Meta positioniert Muse Ember 1.0 laut Simon Willisons Bericht als sein kleinstes und effizientestes Modell für wiederkehrende Agentenaufgaben wie Werkzeugaufrufe, Routing und Extraktion; es unterstützt bis zu eine Million Eingabetokens und sechs Reasoning-Stufen. Bis 200.000 Eingabetokens kosten eine Million Eingabe- beziehungsweise Ausgabetokens 0,10 beziehungsweise 0,50 US-Dollar, darüber 0,30 beziehungsweise 1,50 US-Dollar. Willisons eigene SVG-Tests zeigten keine durchgehend steigende Ausgabequalität bei höheren Reasoning-Stufen; bei „high“ blieb die SVG-Ausgabe unvollständig.",
+        "category": "modelle",
+        "impact": 4,
+        "date": "2026-11-10",
+        "change_type": "announcement"
+      }
+    },
+    {
+      "id": "e41963de59a8e79e0778ded3",
+      "decision": "duplicate",
+      "reason": "Die beiläufig erwähnte Veröffentlichung von Claude Fable 5.2 und die Preise von 8 beziehungsweise 40 US-Dollar sind bereits im historischen Hauptbericht enthalten. Die gemeinsame Sammelquelle mit Muse Ember macht daraus keine neue Entwicklung.",
+      "duplicate_of": "h-a0e2d8fedcf341b5b7a6d97c"
+    },
+    {
+      "id": "507a4af93cb7c6b0e749665a",
+      "decision": "duplicate",
+      "reason": "Derselbe Start von Gemini 4 Hydrogen wie im Google-Originalbericht. Denkstufen und unabhängige Evaluation ergänzen die Hauptmeldung, sind aber kein separater Veröffentlichungsschritt.",
+      "duplicate_of": "0eda1540d804c3a171287a38"
+    },
+    {
+      "id": "d3cac02499c73ecebf95b3d4",
+      "decision": "duplicate",
+      "reason": "Berichtet denselben bereits erfassten Start der Gemini Decisions API. Die abweichende Kennzeichnung als allgemeine Verfügbarkeit belegt keinen zusätzlichen Schritt; Integrationen und interne Anwendungsbeispiele sind ergänzende Perspektiven.",
+      "duplicate_of": "h-8a9caf301164f662f13f9872"
+    },
+    {
+      "id": "bb8a4f3f16f8b7189d44881f",
+      "decision": "duplicate",
+      "reason": "API-Freigabe und zellzustandsspezifische Vorhersagen von AlphaGenome 2 sind bereits historisch erfasst, ebenso die kommerzielle Preview. Trainings- und Benchmarkdetails ergänzen dieselbe Ankündigung, ohne einen neuen Freigabeschritt zu belegen.",
+      "duplicate_of": "h-4ce1e0c2dcfb67d5a9fae4c5"
+    },
+    {
+      "id": "d8e27ade3aa4a01f0a2bae78",
+      "decision": "duplicate",
+      "reason": "Derselbe bereits erfasste API-Start mit identischem Entscheidungsprinzip und Preis. Angaben zu Hosting, Caching und Batch-Unterstützung sind Teilfunktionen beziehungsweise Einschränkungen dieser Ankündigung.",
+      "duplicate_of": "h-8a9caf301164f662f13f9872"
+    },
+    {
+      "id": "1d99514fbdd70fb0ab24f5f1",
+      "decision": "duplicate",
+      "reason": "Die Veröffentlichung von PAN 2 mit offenen Gewichten und Trainingscode unter Apache 2.0 ist bereits ressortübergreifend in der Historie erfasst. Die ergänzenden selbst berichteten IFM-Testergebnisse und Hardwareanforderungen gehören zu derselben Veröffentlichung.",
+      "duplicate_of": "h-e826ac57c60a28aa82c65e96"
+    },
+    {
+      "id": "24b67bdf6017876a4bdf709c",
+      "decision": "duplicate",
+      "reason": "Der Start von Live 3 einschließlich Full-Duplex-Funktionen, öffentlicher Beta der Fish Agent Platform, API-Zugang und Aktionspreis ist bereits erfasst.",
+      "duplicate_of": "h-5a2260736edc96437bb0fd99"
+    },
+    {
+      "id": "9bee31d9a7a7222494aedecd",
+      "decision": "duplicate",
+      "reason": "Dieselbe Veröffentlichung von Claude Fable 5.2 und Claude Mythos 5.2 mit unterschiedlichen Zugangsregeln, Standardpreisen und Fast Mode ist bereits erfasst. Weitere Leistungsbeispiele und Schutzmechanismen sind Teil dieser Ankündigung, kein neuer Modellstart.",
+      "duplicate_of": "h-a0e2d8fedcf341b5b7a6d97c"
+    },
+    {
+      "id": "cb2c063ff0ab2d783ebb9f1d",
+      "decision": "selected",
+      "reason": "Der konkret belegte kostenlose, ratenbegrenzte OpenRouter-Endpunkt ist ein zusätzlicher Zugangsweg; der historische Preview-Eintrag dokumentiert diesen nicht.",
+      "item": {
+        "title": "Baidus ERNIE 5.5 Flash Preview ist kostenlos über OpenRouter verfügbar",
+        "summary": "OpenRouter listet ERNIE 5.5 Flash Preview als kostenlosen, ratenbegrenzten API-Endpunkt über Baidu Qianfan mit Veröffentlichungsdatum 10. November 2026. Laut Modellbeschreibung bietet das Modell rund eine Million Tokens Kontext, Tool Calling und strukturierte Ausgaben per JSON-Schema. Die genannten 280 Milliarden Gesamtparameter, 14 Milliarden aktiven Parameter pro Token und Verbesserungen bei Coding und agentischen Aufgaben sind Anbieterangaben.",
+        "category": "modelle",
+        "impact": 3,
+        "date": "2026-11-10",
+        "change_type": "preview"
+      }
+    },
+    {
+      "id": "fd1e43aa8fe8aec9fdd19430",
+      "decision": "selected",
+      "reason": "Eigenständiger, datiert belegter Modellstart auf OpenRouter; weder das Modell noch dieser API-Zugang sind in der Historie erfasst.",
+      "item": {
+        "title": "ERNIE-Light-DT-1.0 startet über OpenRouter und Baidu Qianfan",
+        "summary": "OpenRouter listet ERNIE-Light-DT-1.0 mit 1.024.000 Tokens Kontext, bis zu 131.072 Ausgabetokens sowie Tool Calling und strukturierten JSON-Ausgaben. Laut Plattform kostet das über Baidu Qianfan bereitgestellte Modell 1,13 US-Dollar je Million Eingabetokens und 3,94 US-Dollar je Million Ausgabetokens; EU-In-Region-Routing ist derzeit nicht verfügbar. Die beschriebene Verringerung von KV-Cache-Speicher und Rechenkosten durch Sparse Attention und Verlaufskompression ist eine Anbieterangabe.",
+        "category": "modelle",
+        "impact": 3,
+        "date": "2026-11-10",
+        "change_type": "general_availability"
+      }
+    },
+    {
+      "id": "e2877aead6b7d1f1fdfe3c95",
+      "decision": "selected",
+      "reason": "Neuer, in der Historie nicht erfasster Modellstart. Die Vergleichseinträge zu Gemini 4 Hydrogen betreffen dieselbe Veröffentlichung; der vollständig vorgelegte Herstellerbeleg dient hier als Hauptkandidat.",
+      "item": {
+        "title": "Google veröffentlicht Gemini 4 Hydrogen mit vier Thinking-Stufen",
+        "summary": "Google stellt Gemini 4 Hydrogen unter anderem über AI Studio, die Gemini API, die Gemini-App und Google Search bereit; das Modell bietet vier Thinking-Stufen und eine Million Tokens Kontext. Die API-Preise betragen über das gesamte Kontextfenster hinweg 1,50 US-Dollar je Million Eingabetokens und 7,50 US-Dollar je Million Ausgabetokens. Laut Google erledigt Hydrogen Aufgaben bei hoher Thinking-Stufe 2,5-mal schneller als Gemini 3.8 Flash und reduziert erfundene Behauptungen um mehr als den Faktor fünf; dies sind Herstellerangaben.",
+        "category": "modelle",
+        "impact": 5,
+        "date": "2026-11-12",
+        "change_type": "general_availability"
+      }
+    },
+    {
+      "id": "f4a9226d404a2b105fc33b7a",
+      "decision": "duplicate",
+      "reason": "Die Einführung der Gemini Decisions API mit Gemini Decision 1, bis zu 1.000 Fragen, multimodalen Eingaben und denselben Preis- und Latenzangaben ist bereits erfasst, auch ressortübergreifend unter Tools.",
+      "duplicate_of": "h-8a9caf301164f662f13f9872"
+    },
+    {
+      "id": "e2c97e4997e2b87ecf526d77",
+      "decision": "duplicate",
+      "reason": "Der Bericht behandelt denselben GA-Start von Claude Fable 5.2. Preisreduktion, Fast Mode, API-Anpassungen und Schutzmechanismen sind ergänzende Aspekte dieser Veröffentlichung, kein eigener neuer Verfügbarkeitsschritt.",
+      "duplicate_of": "h-a0e2d8fedcf341b5b7a6d97c"
+    },
+    {
+      "id": "cee5c4486772f5393aa6ed82",
+      "decision": "duplicate",
+      "reason": "Der Start von Muse Ember auf Meta Model API und Muse Code einschließlich multimodaler Verarbeitung, großem Kontextfenster und gestaffelten Preisen ist bereits erfasst.",
+      "duplicate_of": "h-c07230d8b6f25888259e9c14"
+    },
+    {
+      "id": "8514ec42ceaa4b2f7c4aeb02",
+      "decision": "duplicate",
+      "reason": "Dieselbe allgemeine Freigabe von Gemini Omni 1.2 Flash mit 15-Sekunden-Videos ist bereits erfasst. Preisreduktion, Ratenlimits, Upscaling und angekündigte Migration wurden zudem bereits in anderen Ressorts behandelt und begründen keine erneute Startmeldung.",
+      "duplicate_of": "h-eba2af407d99ef84e2d676d5"
+    },
+    {
+      "id": "8a2bc350cb28c7963ce25eb2",
+      "decision": "held",
+      "reason": "Die Historie nennt ZAC-1 bereits als Bestandteil der ZONOS3-Mini-Veröffentlichung. Der vorgelegte Beitrag belegt die eigenständige Verfügbarkeit von Code und Gewichten, grenzt aber keinen späteren Freigabeschritt gegenüber diesem Paket eindeutig ab; das spätere Beitragsdatum allein reicht dafür nicht."
+    },
+    {
+      "id": "9e7cefb3de03801feab19b43",
+      "decision": "selected",
+      "reason": "Neue Evaluation mit erweitertem Sprachumfang und IRT-basiertem Index; kein entsprechender Historieneintrag. Der separat vorgelegte Audio-Codec ZAC-1 ist eine andere Veröffentlichung aus derselben Quelle.",
+      "item": {
+        "title": "Zyphra veröffentlicht ZTTS2-Eval und den Zyphra TTS Capability Index v1",
+        "summary": "Zyphra veröffentlicht ZTTS2-Eval mit 35 Sprachuntergruppen für saubere vorgelesene Sprache und 20 für Stimmenklonen unter Alltagsbedingungen sowie höheren Stichprobenzahlen pro Sprache. Der Zyphra TTS Capability Index v1 bündelt 420 Bewertungsitems mittels Item Response Theory; zudem überarbeitet der Anbieter Spracherkennung und Prosodiemessung. Im herstellereigenen Vergleich führt ZONOS3-Mini die Open-Weight-Modelle an.",
+        "category": "modelle",
+        "impact": 3,
+        "date": "2026-11-12",
+        "change_type": "research"
+      }
+    },
+    {
+      "id": "4ce05e6d0f4979f99afa76f2",
+      "decision": "duplicate",
+      "reason": "Dieselbe Veröffentlichung von Gemini 4 Hydrogen wie beim Hauptkandidaten: vier Denkstufen, agentische Aufgaben und Bereitstellung über Google-Angebote sind Perspektiven derselben Ankündigung, kein gesonderter Preview-Schritt.",
+      "duplicate_of": "fe0062591054b08f9d96c9e2"
+    },
+    {
+      "id": "7354370981b76706b0529203",
+      "decision": "duplicate",
+      "reason": "Die Forschungsbeschleunigung ist bereits historisch erfasst. Auch die unveröffentlichten Modelle und die Einschränkungen durch Schwärzungen wurden in weiteren Historieneinträgen aus demselben Bericht behandelt; der Kandidat bündelt diese bekannten Perspektiven ohne neues Ereignis.",
+      "duplicate_of": "h-37995fee4c58ce25aacdbdb4"
+    },
+    {
+      "id": "fe0062591054b08f9d96c9e2",
+      "decision": "selected",
+      "reason": "Neue Veröffentlichung von Gemini 4 Hydrogen ohne entsprechenden Historieneintrag. Dient als Hauptkandidat für die mehrfach vorgelegte Ankündigung; Leistungsangaben werden Google zugeschrieben.",
+      "item": {
+        "title": "Google veröffentlicht Gemini 4 Hydrogen als Nachfolger von Gemini 3.8 Flash",
+        "summary": "Google veröffentlicht Gemini 4 Hydrogen für schnelle agentische Aufgaben, darunter Programmieren, Tests und Codeprüfung; das Modell bietet vier Denkstufen einschließlich „xhigh“. Laut Google arbeitet es auf Stufe „high“ 2,5-mal schneller als Gemini 3.8 Flash und reduziert erfundene Behauptungen um mehr als den Faktor fünf. Die API-Preise bleiben bei 1,50 US-Dollar je Million Eingabetokens und 7,50 US-Dollar je Million Ausgabetokens.",
+        "category": "modelle",
+        "impact": 4,
+        "date": "2026-11-12",
+        "change_type": "general_availability"
+      }
+    },
+    {
+      "id": "f7fecba7031632f20e959226",
+      "decision": "duplicate",
+      "reason": "Partnerfreigabe, Labormessungen, Apollo-2-Einsatz und Training mit Gemini 4 Argon sind bereits im Historieneintrag zur selben Veröffentlichung enthalten. Keine neue allgemeine Verfügbarkeit.",
+      "duplicate_of": "h-318d1ad9431caff0aaedd25d"
+    },
+    {
+      "id": "592c7fa23b5f7c76f6eb619f",
+      "decision": "duplicate",
+      "reason": "Die allgemeine Freigabe von Claude Fable 5.2 samt Geschwindigkeit und Tokenpreisen ist bereits in der Historie erfasst; der Bericht belegt keinen weiteren Freigabeschritt.",
+      "duplicate_of": "h-a0e2d8fedcf341b5b7a6d97c"
+    },
+    {
+      "id": "1e2c71c99d984eb2777752fb",
+      "decision": "duplicate",
+      "reason": "Der beschränkte Zugang zu Claude Mythos 5.2 über die Life-Sciences- und Cyber-Verifizierungsprogramme sowie die Tokenpreise sind bereits historisch dokumentiert.",
+      "duplicate_of": "h-20adb7543296df10bf8ff99d"
+    },
+    {
+      "id": "402b7d796e78d0fc335712f1",
+      "decision": "duplicate",
+      "reason": "Bereits erfasster Start der Gemini Decisions API mit Gemini Decision 1. Die ergänzende Bewertung von Leistung, Kosten und Latenz ist eine weitere Perspektive derselben Einführung, kein neuer Veröffentlichungsschritt.",
+      "duplicate_of": "h-8a9caf301164f662f13f9872"
+    },
+    {
+      "id": "1a503794333576360c84d68f",
+      "decision": "duplicate",
+      "reason": "Dieselbe Agent-Arena-Auswertung mit 4.700 Sitzungen und 30,4 Prozent Nettoverbesserung für Fable 5.2 Max ist bereits erfasst. Vergleichspreise und Teilbereichsplatzierungen ergänzen das bekannte Ergebnis.",
+      "duplicate_of": "h-dde40025e50e7aedbeb14864"
+    },
+    {
+      "id": "954386ca1e684890810c5152",
+      "decision": "duplicate",
+      "reason": "Agent-Arena- und Vals-Ergebnisse zu Muse Ember stimmen mit dem Historieneintrag überein, einschließlich 1,7 Prozent Nettoverbesserung und 85 Prozent der Fable-Leistung bei 0,84 Prozent der Kosten.",
+      "duplicate_of": "h-8016a4f278588287d11e4edb"
+    },
+    {
+      "id": "79f0690186a1795d3637f2a7",
+      "decision": "duplicate",
+      "reason": "Preview-Start, Modellangaben und angekündigte Apache-2.0-Gewichte sind bereits im Historieneintrag des Ressorts lokale-llms erfasst. Eine inzwischen erfolgte Gewichtsfreigabe ist nicht belegt.",
+      "duplicate_of": "h-1f665c0c5b7b5aa194ff1b84"
+    },
+    {
+      "id": "dda2b9f8c723348a308da3ff",
+      "decision": "duplicate",
+      "reason": "Zelltyp- und zellzustandsabhängige Vorhersagen, Übertragung ohne erneutes Training und API-Zugang für nichtkommerzielle Forschung gehören zur bereits erfassten AlphaGenome-2-Freigabe. Die ergänzenden Leistungsangaben belegen keinen eigenen Entwicklungsschritt.",
+      "duplicate_of": "h-4ce1e0c2dcfb67d5a9fae4c5"
+    },
+    {
+      "id": "16e1d917834ee1c190a73552",
+      "decision": "duplicate",
+      "reason": "Der Partner-Rollout von Gemini Robotics 2.5 samt Leistungsangaben und Einsatz von Gemini 4 Argon für Simulationen ist bereits erfasst. Eine weitere Freigabestufe wird nicht belegt.",
+      "duplicate_of": "h-318d1ad9431caff0aaedd25d"
+    },
+    {
+      "id": "5304d880826b868d3e892a25",
+      "decision": "below_threshold",
+      "reason": "Die Chemievorführung ist ein zusätzliches Anwendungsbeispiel für das bereits vorgestellte GR00T 2. Ohne neue Leistungsdaten, nachvollziehbare Evaluation oder neue Freigabestufe reicht die ungeschnittene Echtzeitdemonstration nicht für eine eigenständige Meldung."
+    },
+    {
+      "id": "402b869ae8b5d3a169c7bd4d",
+      "decision": "duplicate",
+      "reason": "Derselbe offene RoboCap-10k-Datensatz mit 10.000 Stunden egoperspektivischer Aufnahmen sowie metrischen Hand- und Kopfposen ist bereits erfasst; die abweichende Kategorie begründet keine neue Meldung.",
+      "duplicate_of": "h-d4bc5d4abc09665ac0e31835"
+    },
+    {
+      "id": "6b418e48cdbbbf0ccfd8ecc6",
+      "decision": "duplicate",
+      "reason": "Die Qwen4-Max-Preview über Token Plan, QwenWork, Qoder, Qwen APP und QwenStudio ist aus derselben Quelle bereits dokumentiert. Neue Benchmarks oder eine weitere Freigabestufe liegen nicht vor.",
+      "duplicate_of": "h-55db85a5a9aa8844d7c74ff4"
+    },
+    {
+      "id": "eac0595b5cb07d9a08dfb31e",
+      "decision": "duplicate",
+      "reason": "Der Screenshot liefert lediglich einen weiteren Hinweis auf den bereits erfassten Zugang zu Gemini 4 Carbon für zahlende Nutzer. Er belegt weder eine zusätzliche Zugriffsstufe noch neue belastbare Tarifbedingungen.",
+      "duplicate_of": "h-8ae393a1bbfeea3d83f9724c"
+    },
+    {
+      "id": "b5eed58de47c9f20886ade7a",
+      "decision": "duplicate",
+      "reason": "Veröffentlichung und niedrigere Tokenpreise von Claude Fable 5.2 sind bereits erfasst. Die ergänzenden Perspektiven auf Evaluationen, Zugangslimits, Datenaufbewahrung und begrenzte KI-Forschungsfähigkeiten gehören zum selben Modellstart und begründen keine erneute Startmeldung.",
+      "duplicate_of": "h-a0e2d8fedcf341b5b7a6d97c"
+    },
+    {
+      "id": "2780bfbd789e15ac4969a1f9",
+      "decision": "duplicate",
+      "reason": "Die Vorstellung von Claude Mythos 5.2 ist bereits gemeinsam mit Fable 5.2 erfasst; Sicherheitsbefunde sind ebenfalls in der Historie behandelt. Das wissenschaftliche Beispiel und die zusätzliche Monitor-Einschätzung sind weitere Perspektiven derselben Ankündigung, keine neue Modell- oder Zugangsstufe.",
+      "duplicate_of": "h-a0e2d8fedcf341b5b7a6d97c"
+    },
+    {
+      "id": "830e5a88c1e9c43a53a913d4",
+      "decision": "duplicate",
+      "reason": "Die Verfügbarkeit von Muse Ember zusammen mit Muse Spark und Muse Wonder auf Google Cloud ist bereits im Ressort enterprise erfasst. Angaben zum anonymen Vorabtest von Ember begründen keinen weiteren Cloud-Start.",
+      "duplicate_of": "h-a3756e40ba4dc46071f8eca6"
+    },
+    {
+      "id": "ab7011f7ba642d7bfd2e9dab",
+      "decision": "duplicate",
+      "reason": "Die Verfügbarkeit von Muse Wonder auf Google Cloud ist bereits im ressortübergreifenden Historieneintrag zum gemeinsamen Cloud-Start der Muse-Modelle enthalten. Der Kandidat belegt keinen weiteren Freigabeschritt.",
+      "duplicate_of": "h-a3756e40ba4dc46071f8eca6"
+    },
+    {
+      "id": "1d850d34a2ffd1b1c93e8544",
+      "decision": "held",
+      "reason": "Der gemeinsame Start von Muse Spark auf Google Cloud ist bereits historisch erfasst, allerdings ohne Versionsnummer. Ob die hier genannte Version 1.3 einen eigenständigen neuen Schritt darstellt, lässt sich anhand der vorgelegten Angaben nicht abgrenzen; Änderungen gegenüber früheren Fassungen sind nicht belegt."
+    },
+    {
+      "id": "c526c95fce04e04a475e28bf",
+      "decision": "duplicate",
+      "reason": "Die Ankündigung von Seedream 5.5 einschließlich nativer RGBA-Ausgabe, stabiler Bearbeitung über 100 Runden und verbesserter kleiner Schrift ist bereits erfasst. Die angekündigten Bereitstellungswege sind eine weitere Perspektive derselben Ankündigung, kein belegter zusätzlicher Rollout.",
+      "duplicate_of": "h-5a7e07232cc7c0f2c5637f6a"
+    },
+    {
+      "id": "4a43e420b1b99592fca2a06e",
+      "decision": "selected",
+      "reason": "Die öffentliche Bereitstellung des eigenständigen SGLang-Neuron-Plugins ist eine neue konkrete Integration für Inferenz und RL-Rollouts auf Trainium. Sie ist vom historisch erfassten öffentlichen Beta-Start von TorchNeuron zu unterscheiden.",
+      "item": {
+        "title": "SGLang-Neuron bringt Inferenz und RL-Rollouts auf AWS Trainium und Trainium3",
+        "summary": "AWS meldet die öffentliche Verfügbarkeit von SGLang-Neuron über einen AWS Deep Learning Container, veröffentlicht von RadixArk in Zusammenarbeit mit Annapurna Labs. Nach Anbieterangaben ermöglicht das Plugin Modellbereitstellung und Reinforcement-Learning-Rollouts über die gewohnten SGLang-Schnittstellen und unterstützt getrennte Prefill- und Decode-Server mit KV-Cache-Transfer. Der Beitrag demonstriert die Bereitstellung von gpt-oss-120b auf einer Trainium3-EC2-Instanz.",
+        "category": "tools",
+        "impact": 3,
+        "date": "2026-11-12",
+        "change_type": "integration"
+      }
+    },
+    {
+      "id": "1f210de1dba826d0d7f62472",
+      "decision": "duplicate",
+      "reason": "Die Model-Card-Angaben zu Gemini 4 Carbon, multimodalen Eingaben, Million-Token-Kontext, erhöhtem Tokenverbrauch und beschränkten Cybersecurity-Fähigkeiten sind bereits im Historieneintrag zur breiteren Freigabe enthalten. Die Dokumentation ist hier kein eigener Produkt- oder Freigabeschritt.",
+      "duplicate_of": "h-e426a3ae878dfd1d98802b36"
+    },
+    {
+      "id": "69b476e2792048563f68f471",
+      "decision": "duplicate",
+      "reason": "Die Vorstellung anhand derselben Model Card mit multimodaler Videogenerierung und dialogbasierter Bearbeitung ist bereits erfasst. Auch die Einschränkung von Änderungen an der Sprache von Personen wurde historisch behandelt und begründet keine neue Meldung zur gleichen Ankündigung.",
+      "duplicate_of": "h-00438d56811d7af267d7b1b8"
+    },
+    {
+      "id": "1ff1f7fe5339533532d16b0e",
+      "decision": "duplicate",
+      "reason": "Derselbe DeepMind-Beitrag zum Partner-Rollout von Gemini Robotics 2.5 einschließlich der Leistungsangaben und des Apollo-2-Pilotprojekts ist bereits historisch erfasst. Sicherheitssteuerung und Simulationstraining sind Teilfunktionen beziehungsweise Hintergrund derselben Ankündigung.",
+      "duplicate_of": "h-49a4da42c824ff7157f6ca5a"
+    },
+    {
+      "id": "e0336dc2252a6cd4c3025c06",
+      "decision": "duplicate",
+      "reason": "Der API-Zugang für nichtkommerzielle Forschung, zellzustandsspezifische Vorhersagen und DNA-Methylierung sind bereits historisch erfasst. Zusätzliche Trainings- und Evaluationsangaben sind weitere Details derselben Veröffentlichung, kein eigenständiger neuer Verfügbarkeitsschritt.",
+      "duplicate_of": "h-4ce1e0c2dcfb67d5a9fae4c5"
+    },
+    {
+      "id": "b3464eaccbbf6b62ef5c09be",
+      "decision": "duplicate",
+      "reason": "Der Wochenbericht beschreibt denselben Modellstart von Gemini 4 Hydrogen für Coding und agentische Aufgaben wie der vorgelegte Hauptkandidat zum Google-Original. Die unterschiedlichen Berichtsdatierungen belegen keinen zusätzlichen Freigabeschritt.",
+      "duplicate_of": "0eda1540d804c3a171287a38"
+    },
+    {
+      "id": "d86d272d4a62665f6678a3a7",
+      "decision": "selected",
+      "reason": "Die ausdrücklich gemeldete allgemeine Verfügbarkeit von Strands Bidi Agents ist ein neuer konkreter Freigabeschritt ohne Entsprechung in der vorgelegten Historie. Der begrenzte Detailumfang erfordert eine knappe, dem Wochenbericht zugeschriebene Darstellung.",
+      "item": {
+        "title": "AWS meldet Strands Bidi Agents für Speech-to-Speech als allgemein verfügbar",
+        "summary": "Laut dem vorgelegten Wochenbericht hat AWS die allgemeine Verfügbarkeit von Strands Bidi Agents angekündigt. Der Bericht beschreibt die Funktion als Speech-to-Speech-Angebot, nennt jedoch keine weiteren technischen Details, unterstützten Regionen oder Preise.",
+        "category": "agents",
+        "impact": 3,
+        "date": "2026-11-12",
+        "change_type": "general_availability"
+      }
+    },
+    {
+      "id": "5d20cc1b16a2f05082cd3775",
+      "decision": "duplicate",
+      "reason": "Derselbe lokale Versuch von Simon Willison mit Qwen 3.8 27B und Gewichten kleiner Spielnetze ist bereits erfasst. Zusätzliche Angaben zu Laufzeiten und erkannten Spielen begründen keinen neuen Entwicklungsschritt.",
+      "duplicate_of": "h-7bf7978374955946ceca9bcd"
+    },
+    {
+      "id": "2ea103786ad8b1d2f3155f4a",
+      "decision": "duplicate",
+      "reason": "Die Veröffentlichung von Arete-27B einschließlich Trainingsdaten und eigener Propaganda-Evaluation ist bereits erfasst. Die präzisere Ergebnisangabe und methodische Einordnung sind Ergänzungen derselben Ankündigung.",
+      "duplicate_of": "h-0c6b57de57261d86c3696d9d"
+    },
+    {
+      "id": "179be33ec90ae50961313b2d",
+      "decision": "held",
+      "reason": "Datum oder Meilenstein verändert",
+      "proposal": {
+        "id": "179be33ec90ae50961313b2d",
+        "decision": "selected",
+        "reason": "Die eigenständige Veröffentlichung des Streaming-Codecs samt GGUF-Laufzeitoptionen ist noch nicht erfasst; sie ist von der historischen Ollama-Integration der LFM3-Modellfamilie abzugrenzen.",
+        "item": {
+          "title": "Liquid AI veröffentlicht LiquidCodec mit GGUF-Versionen für llama.cpp",
+          "summary": "Liquid AI veröffentlicht die Gewichte des rund 74 Millionen Parameter großen Streaming-Sprachcodecs LiquidCodec, der 24-kHz-Sprache in zwölf Tokenströme und zurück umwandelt. Unterstützt werden Hugging Face Transformers, Streaming-Decodierung und quantisierte GGUF-Versionen für llama.cpp. Auf einem einzelnen CPU-Thread eines Apple M4 Max meldet der Hersteller etwa 361-fache Echtzeitgeschwindigkeit beim Encodieren und 87-fache beim Decodieren; die Leistungswerte stammen von Liquid AI.",
+          "category": "lokal",
+          "impact": 3,
+          "date": "2026-11-12",
+          "change_type": "unverändert"
+        }
+      }
+    },
+    {
+      "id": "45848be402c539f20d87f3f9",
+      "decision": "held",
+      "reason": "Datum oder Meilenstein verändert",
+      "proposal": {
+        "id": "45848be402c539f20d87f3f9",
+        "decision": "selected",
+        "reason": "Neue, bislang nicht erfasste Veröffentlichung offener Gewichte für mehrsprachige, nicht-streamende Spracherkennung auf eigener Infrastruktur.",
+        "item": {
+          "title": "Salesforce veröffentlicht SOV-Transcribe-1 unter Apache 2.0",
+          "summary": "Salesforce veröffentlicht SOV-Transcribe-1 mit vier Milliarden aktiven und 26 Milliarden gesamten Parametern unter Apache 2.0 für nicht-streamende Spracherkennung auf eigener Infrastruktur. Das Modell unterstützt mehrere Sprachen, die Erkennung von Entitäten wie Telefonnummern sowie Format- und Kontextvorgaben per natürlicher Sprache. Laut Salesforce erreicht es bei Artificial Analysis eine Wortfehlerrate von 2,28 Prozent und führt dort zum Veröffentlichungszeitpunkt die Open-Weight-Modelle für nicht-streamende Transkription an.",
+          "category": "modelle",
+          "impact": 3,
+          "date": "2026-11-12",
+          "change_type": "unverändert"
+        }
+      }
+    },
+    {
+      "id": "685d67cea908f78f597f420e",
+      "decision": "duplicate",
+      "reason": "Die Veröffentlichung von ZONOS3-Mini mit Apache-2.0-Gewichten, Stimmenklonen und lokalen Laufzeiten ist bereits erfasst. Der spätere Herstellerbeitrag belegt keinen zusätzlichen Freigabeschritt; Sprachumfang und Latenzangaben ergänzen dieselbe Veröffentlichung.",
+      "duplicate_of": "h-b06673f5b4c14ec22d43b0dd"
+    },
+    {
+      "id": "c21c75de268b44cb16845c05",
+      "decision": "duplicate",
+      "reason": "Dieselbe BotPsy-Ankündigung für QVAC SDK und llama.cpp ist bereits anhand derselben Quelle erfasst. Auch der vorliegende Eintrag belegt keine inzwischen erfolgte Bereitstellung der angekündigten Gewichte.",
+      "duplicate_of": "h-88db8794b1188ab8c0dabfe1"
+    },
+    {
+      "id": "8205b63df786a6500d39cc4a",
+      "decision": "held",
+      "reason": "Harbor und die geplante Verbindung mehrerer Macs über Thunderbolt 5 sind bereits historisch erfasst. Der neue Eintrag bezeichnet eine private Preview, der vorgelegte Auszug belegt jedoch nur eine Mailingliste mit künftigem frühen Zugang; ein eigenständiger Preview-Start ist damit nicht klar von der bisherigen Ankündigung abzugrenzen."
+    },
+    {
+      "id": "b6adbc0ae6034a99839e8369",
+      "decision": "duplicate",
+      "reason": "Die Vorstellung von Nex-N2.6 mit denselben OSWorld- und Terminal-Bench-Werten ist bereits im Ressort Agentic Engineering erfasst. Der Wechsel der Kategorie begründet keine neue Meldung.",
+      "duplicate_of": "h-115ab58065c1dacaeb40d315"
+    },
+    {
+      "id": "2336080a86c50a3edd3283ed",
+      "decision": "duplicate",
+      "reason": "Die Veröffentlichung von Praxis-1 unter Apache 2.0 einschließlich vLLM-Omni-Unterstützung ist bereits erfasst. Weitere Herstellervergleiche und Bereitstellungsoptionen sind Perspektiven derselben Veröffentlichung, kein separat belegter neuer Schritt.",
+      "duplicate_of": "h-df2c38ebea49fccc6e451d25"
+    },
+    {
+      "id": "849ec059b9cc40e4a35dbe51",
+      "decision": "duplicate",
+      "reason": "PAN 2 einschließlich Gewichten, Trainingscode, Videoformaten und Integrationsrezepten ist bereits anhand derselben Sammelquelle erfasst.",
+      "duplicate_of": "h-e826ac57c60a28aa82c65e96"
+    },
+    {
+      "id": "5e8b43c03f89d238f6d8e95b",
+      "decision": "duplicate",
+      "reason": "Dieselben Dynamic-v3.1-GGUFs für Qwen3.8-27B sind bereits erfasst, einschließlich der beanspruchten Genauigkeitsgewinne, Kontextlängen und Kontroverse um BF16-Embeddings. Kein zusätzlicher Veröffentlichungsschritt belegt.",
+      "duplicate_of": "h-938a839209b31c0bc946b855"
+    },
+    {
+      "id": "de916a4f74d0ec7cd6257197",
+      "decision": "duplicate",
+      "reason": "Die Gewichtsfreigabe von MiniMax H3-Image samt ComfyUI-Paketierung, Modellgröße und Herstellerangaben zu Auflösung, Laufzeit und Referenzbildern ist bereits erfasst. Das spätere Datum der Sammelquelle belegt keine neue Entwicklung.",
+      "duplicate_of": "h-e1ea769fe3a7058ef1679177"
+    },
+    {
+      "id": "f5fa7e83d88368ea59836cc9",
+      "decision": "duplicate",
+      "reason": "Die Veröffentlichung von Alpamayo 2 Edge und Embedls AGX-Thor-Demonstration sind bereits gemeinsam erfasst. Die Einordnung unter einer anderen Kategorie begründet keine zusätzliche Meldung.",
+      "duplicate_of": "h-409f190756988ffaa211ad0a"
+    },
+    {
+      "id": "15be91241afaa50407b8bbfe",
+      "decision": "duplicate",
+      "reason": "Dieselbe Deletion-Tuning-Arbeit mit binären Gate-Projektionsmasken, weniger als 0,05 Prozent auf null gesetzten Gewichten und bereitgestelltem Code sowie Masken ist bereits erfasst. Neue Forschungsergebnisse oder ein weiterer Freigabeschritt sind nicht belegt.",
+      "duplicate_of": "h-563ed2281f4107ed1d599ef3"
+    },
+    {
+      "id": "c215752b12adae9964d01d18",
+      "decision": "duplicate",
+      "reason": "Der Community-Aufbau aus 40 Intel-N150-Mini-PCs für GLM 5.3 Flash ist bereits mit denselben Angaben zu USB-Verbund, Geschwindigkeit, Prefill, Kosten und Leistungsaufnahme erfasst.",
+      "duplicate_of": "h-4b5fc48993406e28adf3e341"
+    },
+    {
+      "id": "845c1422d8e6b88796720375",
+      "decision": "duplicate",
+      "reason": "Die Integration der stabilen LibTorch-ABI in vLLM und die dadurch laut Projekt entfallenden Neubauten bei PyTorch-Upgrades sind bereits erfasst.",
+      "duplicate_of": "h-6e5ac63278bf2ae9b8439b0e"
+    },
+    {
+      "id": "2844e1219db8e4e2b090f3c0",
+      "decision": "duplicate",
+      "reason": "Derselbe explorative Mirage-OCR-Test ist bereits mit den identischen Stichprobengrößen, Erkennungsfehlern und dem ausdrücklichen Hinweis erfasst, dass er kein Benchmark ist.",
+      "duplicate_of": "h-764b8d06f6b4acad6f3271c7"
+    },
+    {
+      "id": "09b52eee0491bcb3c8c9e9f6",
+      "decision": "duplicate",
+      "reason": "Die Veröffentlichung von Qwen3.8-27B-DSpine-b16 ist bereits einschließlich Architekturmerkmalen, Hersteller-Durchsatzangaben und gemischten Community-Tests erfasst.",
+      "duplicate_of": "h-ad0a78d1f57a3486fb30c6e0"
+    },
+    {
+      "id": "7e3fe3edd142b8410c3a24f3",
+      "decision": "duplicate",
+      "reason": "Der Mehrnutzer-Aufbau für Qwen3.8-Flash-Next auf vier Radeon AI PRO R9700 unter Radiance/ROCm ist bereits mit FP8-KV-Cache und denselben Prefill- und Generierungswerten erfasst.",
+      "duplicate_of": "h-6b3170e209f3e85160a86da5"
+    },
+    {
+      "id": "b12b765459d2f02620794d2a",
+      "decision": "selected",
+      "reason": "Der dynamische Modellwechsel innerhalb einer Sitzung ist eine neue Funktion gegenüber der historisch erfassten /swarm-Preview für parallele Agententeams. Die weiteren Kandidaten zum Orchestrator werden hier gebündelt.",
+      "item": {
+        "title": "Google Antigravity erhält Orchestrator für dynamische Modellwechsel",
+        "summary": "Google führt in Antigravity einen Orchestrator ein, der innerhalb derselben Sitzung dynamisch zwischen Modellen wie Carbon und Hydrogen wechselt. Laut Google erreicht die Kombination auf Terminal-Bench 4.0 nahezu die Erfolgsrate von Carbon bei durchschnittlich 24 Prozent weniger Kontingentverbrauch und 19 Prozent kürzerer Bearbeitungszeit.",
+        "category": "agents",
+        "impact": 4,
+        "date": "2026-11-12",
+        "change_type": "announcement"
+      }
+    },
+    {
+      "id": "12034f84140337cd4ecef087",
+      "decision": "duplicate",
+      "reason": "Die Alpha-Version 0.5a0 mit seitlichem Chat-Panel und der Verbindung zu datasette-apps ist bereits mit demselben Veröffentlichungsdatum und Funktionsumfang erfasst.",
+      "duplicate_of": "h-9fc56282533fada3a793c2c4"
+    },
+    {
+      "id": "512cd158c3430702fb92d408",
+      "decision": "duplicate",
+      "reason": "Beschreibt denselben Antigravity-Orchestrator und dieselben Google-Benchmarkangaben wie der ausgewählte Hauptkandidat; die Sekundärberichterstattung belegt keinen zusätzlichen Entwicklungsschritt.",
+      "duplicate_of": "b12b765459d2f02620794d2a"
+    },
+    {
+      "id": "0229a383d7d36dae44707ef7",
+      "decision": "duplicate",
+      "reason": "Die lokale Verfügbarkeit von AWS Emulator einschließlich dokumentierter Kompatibilitätstests ist bereits erfasst. Die konkreten Testquoten und Einschränkungen vertiefen dieselbe Veröffentlichung; ein neuer Versions- oder Freigabeschritt ist nicht belegt.",
+      "duplicate_of": "h-b4d4fe553cb9552abd1c3596"
+    },
+    {
+      "id": "882b3d191268fce0711d9644",
+      "decision": "held",
+      "reason": "Der Kandidat bezeichnet Kiro bots am 5. November als allgemein verfügbar; die Historie erfasst dieselben persistenten Bots mit Speicher und wiederkehrenden Aufgaben bereits als Einführung in einem später datierten Wochenrückblick. Ob eine eigenständige GA gegenüber einer früheren Vorabversion vorliegt oder lediglich derselbe Start genauer beschrieben wird, lässt sich aus den Belegen nicht eindeutig abgrenzen."
+    },
+    {
+      "id": "deed1aafa7e8b5083e39b4ce",
+      "decision": "duplicate",
+      "reason": "Die Veröffentlichung von Nex-N2.6 als multimodales Agentenmodell ist bereits erfasst. Die OpenRouter-Seite ergänzt Modell-, Preis- und Zugangsdaten, belegt aber keinen gesonderten neuen Integrationsschritt.",
+      "duplicate_of": "h-115ab58065c1dacaeb40d315"
+    },
+    {
+      "id": "7b09e00a4db0007542f147f3",
+      "decision": "duplicate",
+      "reason": "Identische Google-Quelle und identischer Ankündigungsschritt wie beim ausgewählten Hauptkandidaten zum Antigravity-Orchestrator.",
+      "duplicate_of": "b12b765459d2f02620794d2a"
+    },
+    {
+      "id": "8629421e5db15f826fa02c7a",
+      "decision": "duplicate",
+      "reason": "Die Übernahme ist bereits separat erfasst; auch Schreibschutz ab 13. November, Abschaltung am 20. November und befristete Pflege von Local Conductor sind aus derselben Verge-Quelle dokumentiert. Der Kandidat bündelt bekannte Ereignisse ohne neuen Vollzug.",
+      "duplicate_of": "h-36f90b45aa5d7872e3aa886f"
+    },
+    {
+      "id": "5cbdce6a4b6b5baf491c9fab",
+      "decision": "duplicate",
+      "reason": "Die private Beta von Firefly Builder zur Erstellung interaktiver Website- und App-Prototypen ist bereits anhand der Adobe-Ankündigung erfasst. Der spätere Bericht nennt keinen neuen Beta- oder Verfügbarkeitsschritt.",
+      "duplicate_of": "h-3643eadda960721fda72c7c3"
+    },
+    {
+      "id": "5cb086e5cb2deb8f9529bc39",
+      "decision": "duplicate",
+      "reason": "Die allgemeine Verfügbarkeit von Claude Fable 5.2 in GitHub Copilot einschließlich schrittweisem Rollout, administrativer Freischaltung und Datenspeicherungsregeln ist bereits aus demselben GitHub-Changelog erfasst.",
+      "duplicate_of": "h-692cfdbbce321e5232fad76e"
+    },
+    {
+      "id": "4c868711cbf7470038b59cc8",
+      "decision": "duplicate",
+      "reason": "Die allgemeine Verfügbarkeit von Gemini 4 Carbon in GitHub Copilot einschließlich Rollout, Abrechnung und Modellrichtlinien ist bereits erfasst. Die ergänzende Modellbeschreibung ist kein neuer Plattformschritt.",
+      "duplicate_of": "h-c70a374f098d8728a3093148"
+    },
+    {
+      "id": "d38d7b564acc91d1b814eaff",
+      "decision": "duplicate",
+      "reason": "Dieselbe Copilot-Integration in JetBrains Air über das Agent Client Protocol ist bereits erfasst, einschließlich lokaler und Cloud-Aufgaben sowie Abrechnungs- und Governance-Grenzen. Die zusätzlichen Betriebsdetails gehören zu dieser Integration.",
+      "duplicate_of": "h-1e3c725192c8433cb51a3fd1"
+    },
+    {
+      "id": "93d369c86a19164d9b787834",
+      "decision": "duplicate",
+      "reason": "LangChains Unterstützung der Gemini Decisions API zum Start und die gemeinsame Basisklasse mit TypeSafe-Klassifikatoren sind bereits in der Historie beschrieben.",
+      "duplicate_of": "h-6bf1846ae1f5d30db8de8fd4"
+    },
+    {
+      "id": "93ed2f3d96907d0473b3024e",
+      "decision": "duplicate",
+      "reason": "Die Cloudflare-Demonstration mit Clef und Clairic sowie die Reduktion von sechs auf einen LLM-Aufruf und von rund 40.000 auf 1.800 Tokens sind bereits erfasst.",
+      "duplicate_of": "h-5602fc9c97ab4d2cf65bc1a4"
+    },
+    {
+      "id": "75ea6127491754b76219467a",
+      "decision": "duplicate",
+      "reason": "Der geteilte Spitzenplatz von DeepSeek Harness und der Punkteverlust von 1,5–1,7 durch das Beenden von Hintergrundservern sind bereits als derselbe Evaluationsbefund erfasst.",
+      "duplicate_of": "h-c175cf5742541abeab698381"
+    },
+    {
+      "id": "fb35b80b64f5e8e1271792e3",
+      "decision": "duplicate",
+      "reason": "Die Unterstützung selbst gehosteter Sandboxes durch Gemini Managed Agents ist bereits erfasst. Ein weiterer Freigabeschritt oder zusätzlicher Funktionsumfang ist nicht belegt.",
+      "duplicate_of": "h-ef9cd99acf7b8db9a78d335e"
+    },
+    {
+      "id": "350c9fb9012c60b3051e217c",
+      "decision": "duplicate",
+      "reason": "Die Veröffentlichung der Stanford-CS329Z-Materialien unter MIT-Lizenz einschließlich der Harness-Aufgabe und der Harbor-Aufgabe von John Yang ist bereits erfasst.",
+      "duplicate_of": "h-198cf4607fb834f682d7810f"
+    },
+    {
+      "id": "abc8d1b4c6d302211294362f",
+      "decision": "duplicate",
+      "reason": "Die Cursor-Integration von Claude Fable 5.2 ist bereits ressortübergreifend erfasst. Cursors eigene CursorBench-Werte und Effort-Empfehlung sind zusätzliche Perspektiven derselben Startintegration, kein gesonderter Integrationsschritt.",
+      "duplicate_of": "h-8c5b0252a09d7dd2ec5edf0e"
+    },
+    {
+      "id": "c6c49dc4abefaac08e2efb65",
+      "decision": "duplicate",
+      "reason": "Die Verfügbarkeit von Claude Fable 5.2 in GitHub Copilot ist bereits einschließlich Rollout und Datenspeicherungsvorgaben erfasst; auch Copilot beziehungsweise VS Code sind in der historischen Integrationsübersicht genannt. Ein zusätzlicher VS-Code-Freigabeschritt ist nicht belegt.",
+      "duplicate_of": "h-692cfdbbce321e5232fad76e"
+    },
+    {
+      "id": "b93cc84be50a927b6ad614e7",
+      "decision": "duplicate",
+      "reason": "Factory ist bereits in der ressortübergreifenden Meldung zu den Startintegrationen von Claude Fable 5.2 enthalten. Die Herstellerbewertungen zu Diagnostik und Migrationen ergänzen dieselbe Integration, ohne einen neuen Entwicklungsschritt zu belegen.",
+      "duplicate_of": "h-8c5b0252a09d7dd2ec5edf0e"
+    },
+    {
+      "id": "4f075fce11e1acefb4dce54a",
+      "decision": "duplicate",
+      "reason": "Die Unterstützung von Claude Fable 5.2 in Hermes Agent über Nous Portal und OpenRouter ist bereits ausdrücklich in der ressortübergreifenden Integrationsmeldung enthalten. Zusätzliche Änderungen oder Zugangskonditionen sind nicht belegt.",
+      "duplicate_of": "h-8c5b0252a09d7dd2ec5edf0e"
+    },
+    {
+      "id": "9ba8b92b8575c4eb96db63e2",
+      "decision": "duplicate",
+      "reason": "Die Historie enthält dieselbe s3-Forschungsarbeit einschließlich erlernter Koordination, Skalierung auf die doppelte Trainingsgröße und derselben berichteten Vergleichswerte. Ein neuer Forschungsschritt ist nicht erkennbar.",
+      "duplicate_of": "h-dbd23d5cd5b08f89bfe3ab56"
+    },
+    {
+      "id": "1aa9329f4315a042bbdb72a8",
+      "decision": "duplicate",
+      "reason": "Die CPython-Formalisierung mit Opus 5.5, 613.318 Zeilen Lean und den berichteten Interpreterfehlern wurde bereits erfasst. Die andere Kategorie begründet keine neue Entwicklung.",
+      "duplicate_of": "h-02c33ddd4859ddac02dc39c3"
+    },
+    {
+      "id": "bc4b2d1d087434600447806f",
+      "decision": "duplicate",
+      "reason": "Die Autorisierung von MCP-Verbindungen in T3 Connect ohne manuell kopierte Pairing-Codes ist bereits in der Historie beschrieben. Der Kandidat liefert keine zusätzliche technische Änderung.",
+      "duplicate_of": "h-723a4814cf46a3fefda2303f"
+    },
+    {
+      "id": "bd676d60c06db904032735c3",
+      "decision": "selected",
+      "reason": "Eigenständige neue Ankündigung einer autonomen Entwicklungsplattform mit geplanter Open-Source-Veröffentlichung; keine entsprechende Meldung in Historie oder Vergleichskandidaten.",
+      "item": {
+        "title": "ArtCraft kündigt AutoCraft als autonome Softwarefabrik mit geplanter Open-Source-Freigabe an",
+        "summary": "ArtCraft-CEO Brandon Thomas kündigt AutoCraft als nach Unternehmensangaben vollständig autonome Softwarefabrik an, die künftig als Open Source veröffentlicht werden soll. Eine erfolgte Freigabe oder ein Veröffentlichungstermin ist nicht belegt. Schema-Migrationen und API-Design würde Thomas weiterhin Menschen überlassen.",
+        "category": "agents",
+        "impact": 4,
+        "date": "2026-11-13",
+        "change_type": "announcement"
+      }
+    },
+    {
+      "id": "f423218e44430930dcd05896",
+      "decision": "selected",
+      "reason": "Neue konkrete Verisk-Fallstudie mit fünf phasenspezifischen Entwicklungsagenten und menschlichen Freigaben. Sie ist von den historischen AgentCore-Beispielen anderer Kunden und der Remote-Claude-Code-Beispielintegration abzugrenzen.",
+      "item": {
+        "title": "Verisk verbindet fünf AI-SDLC-Agenten mit Amazon Bedrock AgentCore und Claude Code",
+        "summary": "Laut gemeinsamer Fallstudie von AWS und Verisk bearbeiten fünf spezialisierte Agenten Anforderungen, Aufgabenzerlegung, Entwicklung, Code-Review und Qualitätssicherung; vor jedem Phasenwechsel ist eine menschliche Prüfung vorgesehen. Jira-Statuswechsel lösen die Agenten aus, während MCP-Schnittstellen den Zugriff auf Entwicklungswerkzeuge vermitteln und eine Forge-Integration die Bedienung in Jira ermöglicht. Der Entwicklungsagent nutzt Claude Code auf Amazon Bedrock; AgentCore übernimmt unter anderem Laufzeit, Sitzungsverwaltung, Memory und Observability.",
+        "category": "agents",
+        "impact": 3,
+        "date": "2026-11-05",
+        "change_type": "integration"
+      }
+    },
+    {
+      "id": "445515c12393edeab57ae856",
+      "decision": "held",
+      "reason": "Der Beleg nennt lediglich den Developer-Preview-Status von Strands Box, erläutert aber weder Zweck und Funktionsumfang noch Zugang oder konkrete Nutzungsmöglichkeiten. Für eine sachlich aussagekräftige Meldung über diesen eigenständigen Preview-Schritt fehlen damit wesentliche Angaben."
+    },
+    {
+      "id": "2523865224ca0476ecac8459",
+      "decision": "below_threshold",
+      "reason": "Die Veröffentlichung von llm-gemini 0.36 ist belegt, aber keine konkrete neue Funktion oder relevante Änderung des Plugins. Die begleitenden Gemini-4-Carbon-Tests ersetzen keine Beschreibung des Release-Inhalts."
+    },
+    {
+      "id": "77bf45c41bd05a88f92bf37f",
+      "decision": "duplicate",
+      "reason": "Derselbe Teammates-Start mit dauerhaft aktiven Agenten, Fortschritts-Threads, Slack-Anbindung und Max-Tarif ist bereits erfasst. Die eigene virtuelle Maschine ergänzt technische Details, belegt aber keinen separaten Verfügbarkeitsschritt.",
+      "duplicate_of": "h-d6a16748ceb40b52f78088e8"
+    },
+    {
+      "id": "1b3ce41b66e2eb0dd750f5fd",
+      "decision": "held",
+      "reason": "Datum oder Meilenstein verändert",
+      "proposal": {
+        "id": "1b3ce41b66e2eb0dd750f5fd",
+        "decision": "selected",
+        "reason": "OpenBot 1.0 ist ein eigenständiges Produktupdate mit Desktop-Apps, aufzeichnungsbasierten Fertigkeiten und Bot-Delegation; die historische CLiF-Preview ist ein anderes Angebot.",
+        "item": {
+          "title": "CopilotKit veröffentlicht OpenBot 1.0 mit Desktop-Apps und wiederverwendbaren Bot-Fertigkeiten",
+          "summary": "Laut einem von CopilotKit gesponserten Artikel ergänzt OpenBot 1.0 den selbst hostbaren Agenten-Arbeitsplatz um Desktop-Apps für macOS und Windows, aus Aufgabenaufzeichnungen erstellte Fertigkeiten und mehrere App-Konten. Nach Anbieterangaben können Bots innerhalb administrativer Grenzen Aufgaben an Spezialisten delegieren; ein CEL-Policy-Gateway prüft Aktionen vor der Ausführung. Mobile Apps, Slack, Microsoft Teams und die Business-Variante werden weiterhin als Early Access geführt.",
+          "category": "agents",
+          "impact": 3,
+          "date": "2026-11-12",
+          "change_type": "unverändert"
+        }
+      }
+    },
+    {
+      "id": "10904648f9b08ad162380f30",
+      "decision": "held",
+      "reason": "Datum oder Meilenstein verändert",
+      "proposal": {
+        "id": "10904648f9b08ad162380f30",
+        "decision": "selected",
+        "reason": "Die neue OpenRouter-Schnittstelle ist ein eigener Plattformschritt gegenüber der historischen Clairic-Preview auf Workers AI. Die drei Extraktionsmodelle und ihre unterschiedlichen Fähigkeiten gehören in eine gemeinsame Meldung.",
+        "item": {
+          "title": "OpenRouter startet Extractions API als Alpha mit Clairic, ScaleDown Extract und Mercury Decide",
+          "summary": "OpenRouter hat die Extractions API mit Cloudflare Clairic, ScaleDown Extract und Inceptions Mercury Decide als Alpha freigeschaltet; die Schnittstelle kann sich noch ändern. Laut Anbieter liefert sie typisierte Feldwerte sowie modellabhängig Konfidenzen, Textfundstellen und weitere Wahrscheinlichkeitsangaben. Clairic verarbeitet Text und Bilder, ScaleDown Extract zusätzlich PDFs mit Text- und Listenfeldern, während Mercury Decide ausschließlich Text unterstützt.",
+          "category": "tools",
+          "impact": 3,
+          "date": "2026-11-10",
+          "change_type": "unverändert"
+        }
+      }
+    },
+    {
+      "id": "19d5146278afb5f77f90e132",
+      "decision": "held",
+      "reason": "Datum oder Meilenstein verändert",
+      "proposal": {
+        "id": "19d5146278afb5f77f90e132",
+        "decision": "selected",
+        "reason": "Die Lokalisierungs-Beta eröffnet einen neuen deutschsprachigen Zugang und ist bislang nicht erfasst. Der KI-Übersetzungsprozess ist ein ergänzender Aspekt derselben Einführung, keine separate Meldung.",
+        "item": {
+          "title": "OpenRouter startet deutsche Oberfläche als Beta und nutzt GPT-6.1 Sol für Übersetzungen",
+          "summary": "OpenRouter bietet seine Oberfläche als Beta zusätzlich zu Englisch auf Deutsch, Französisch, Spanisch, brasilianischem Portugiesisch, vereinfachtem Chinesisch, Japanisch und Koreanisch an. Laut Anbieter übersetzt GPT-6.1 Sol täglich neue und geänderte Texte; Codeprüfungen und ein zweiter Modellaufruf prüfen die Ergebnisse, bevor Menschen die Pull Requests abschließend freigeben. Nutzer können Übersetzungsfehler direkt markieren und melden.",
+          "category": "tools",
+          "impact": 2,
+          "date": "2026-11-12",
+          "change_type": "unverändert"
+        }
+      }
+    },
+    {
+      "id": "4f1495b33ceefc01015aa52d",
+      "decision": "held",
+      "reason": "Datum oder Meilenstein verändert",
+      "proposal": {
+        "id": "4f1495b33ceefc01015aa52d",
+        "decision": "selected",
+        "reason": "Die weltweite Hydrogen-Freigabe in Google Search ist eine neue Entwicklung, getrennt vom historischen Carbon-Zugang für AI Ultra. Die Vergleichskandidaten zum Hydrogen-Upgrade beschreiben dieselbe Ankündigung; der vollständig vorgelegte Google-Beleg dient hier als Hauptmeldung.",
+        "item": {
+          "title": "Google Search erhält Gemini 4 Hydrogen weltweit für alle Nutzer",
+          "summary": "Google zufolge ist Gemini 4 Hydrogen ab sofort weltweit für alle Nutzer von Google Search verfügbar. Das Modell soll mehrteilige Fragen, Tippfehler und spezifische Anweisungen besser verstehen sowie durch parallele Suchanfragen zu Unterthemen ein breiteres Spektrum an Websites erschließen. Google kündigt außerdem mehr Bilder, strukturierte Antworten, Vergleichstabellen und individuell erzeugte Werkzeuge sowie verbessertes Sprachverständnis in allen unterstützten AI-Mode-Sprachen an.",
+          "category": "tools",
+          "impact": 5,
+          "date": "2026-11-12",
+          "change_type": "unverändert"
+        }
+      }
+    },
+    {
+      "id": "228404c00b9c76a5df5e9ce7",
+      "decision": "held",
+      "reason": "Datum oder Meilenstein verändert",
+      "proposal": {
+        "id": "228404c00b9c76a5df5e9ce7",
+        "decision": "selected",
+        "reason": "Der Vorbestellstart der Gentle-Monster-Kollektion ist ein eigenständiges Produktereignis mit eigenen Preisen und Märkten. Er ist weder der historische XREAL-AURA-Bestellstart noch die separate Warby-Parker-Kollektion aus derselben Sammelquelle.",
+        "item": {
+          "title": "Gentle Monster Intelligent Eyewear mit Gemini ab 449 US-Dollar vorbestellbar",
+          "summary": "Google meldet den Vorbestellstart für die gemeinsam mit Samsung und Gentle Monster entwickelte Intelligent Eyewear in den USA und Südkorea ab 449 US-Dollar. Die Brillen sollen laut Hersteller freihändige Gemini-Unterstützung bieten und mit Pixel- und Samsung-Smartphones sowie iPhones funktionieren. Die Kollektion umfasst sechs Designs; für die meisten Fassungen sind Varianten mit Sehstärke vorgesehen.",
+          "category": "tools",
+          "impact": 3,
+          "date": "2026-11-12",
+          "change_type": "unverändert"
+        }
+      }
+    },
+    {
+      "id": "0fa661b4e4403be49b2714ae",
+      "decision": "held",
+      "reason": "Datum oder Meilenstein verändert",
+      "proposal": {
+        "id": "0fa661b4e4403be49b2714ae",
+        "decision": "selected",
+        "reason": "Warby Parkers Vorbestellstart betrifft eine eigene Kollektion mit anderen Modellen, Einstiegspreisen und Vorführangeboten als Gentle Monster. Die gemeinsame Sammelquelle macht die beiden Produktereignisse nicht zu Duplikaten.",
+        "item": {
+          "title": "Warby Parker Intelligent Eyewear: Gemini-Brillen Alden, Reid und Wren ab 395 US-Dollar",
+          "summary": "Google kündigt den Vorbestellstart für Warby Parkers gemeinsam mit Google und Samsung entwickelte Intelligent Eyewear mit den Modellen Alden, Reid und Wren ab 395 US-Dollar an. Laut Hersteller bieten die Korrektur- und Sonnenbrillen freihändige Gemini-Unterstützung und funktionieren mit Pixel- und Samsung-Smartphones sowie iPhones. Interessierte können sich nach Google-Angaben für geführte Vorführungen an mehr als 360 Warby-Parker-Standorten anmelden.",
+          "category": "tools",
+          "impact": 3,
+          "date": "2026-11-12",
+          "change_type": "unverändert"
+        }
+      }
+    },
+    {
+      "id": "9d80ec87ec9f7aff97a3377e",
+      "decision": "duplicate",
+      "reason": "Gemini Intelligence auf Pixel 10, Rambler, personalisierte Widgets und deutsche Gesprächszusammenfassungen sind bereits als November Pixel Drop erfasst. Der regional später datierte Beitrag und ergänzende Gerätefunktionen belegen keinen eigenständigen neuen KI-Rollout.",
+      "duplicate_of": "h-7ec0fcf5302a4f5a6d1af81e"
+    },
+    {
+      "id": "b647d14dde2eb4910526c01f",
+      "decision": "duplicate",
+      "reason": "Dasselbe Tabletop-Experiment mit gemeinsamer Planung, interaktiven Werkzeugen und US-Warteliste für Personen ab 18 Jahren ist bereits anhand derselben Quelle erfasst. Ein weiterer Preview-, Beta- oder GA-Schritt ist nicht belegt.",
+      "duplicate_of": "h-45e68e0650394aa7b392b76c"
+    },
+    {
+      "id": "4d9d4845ac04cfea872f848f",
+      "decision": "held",
+      "reason": "Duplikatziel wurde nicht veröffentlicht",
+      "duplicate_of": "4f1495b33ceefc01015aa52d"
+    },
+    {
+      "id": "e6feca3091f2d178b1557d66",
+      "decision": "duplicate",
+      "reason": "Betastart für Team und Enterprise, Google-Meet-Unterstützung, Aufgabenbearbeitung und Regeln für externe Gäste sind bereits im Historieneintrag enthalten; kein neuer Verfügbarkeitsschritt.",
+      "duplicate_of": "h-50441a4a4a9cc14c348900ae"
+    },
+    {
+      "id": "802f684bf033b29b858c13e4",
+      "decision": "duplicate",
+      "reason": "Die Beta von Claude Whiteboards für kostenpflichtige Tarife samt gemeinsamer Planung, Dokumenterstellung und Nutzung in Meetings wurde bereits erfasst.",
+      "duplicate_of": "h-a4665080288aec30ee8efd58"
+    },
+    {
+      "id": "975bec35c8488699b72923fc",
+      "decision": "duplicate",
+      "reason": "Identischer Betastart von Claude Sheets mit kollaborativer Tabellenbearbeitung, Formeln und erläuterten Zelländerungen; keine zusätzliche Entwicklung gegenüber der Historie.",
+      "duplicate_of": "h-2cf1165b3700631e9e6bdccd"
+    },
+    {
+      "id": "f442e2b59001415ab6d703a5",
+      "decision": "duplicate",
+      "reason": "Die Ankündigung interaktiver Konnektoren für vollständige Anwendungen von Adobe, Atlassian und HubSpot innerhalb von Claude ist bereits dokumentiert.",
+      "duplicate_of": "h-090c029e0f093f22e082e321"
+    },
+    {
+      "id": "0603a65ec0400ad3b502146e",
+      "decision": "held",
+      "reason": "Datum oder Meilenstein verändert",
+      "proposal": {
+        "id": "0603a65ec0400ad3b502146e",
+        "decision": "selected",
+        "reason": "Belegter weltweiter Produktstart für Instagram und TikTok mit konkretem Kampagnenworkflow; kein entsprechender Historieneintrag. Der Vergleichskandidat beschreibt denselben Start lediglich über eine spätere Sammelquelle.",
+        "item": {
+          "title": "Nectar Creator Agent startet weltweit für Instagram und TikTok",
+          "summary": "Nectar hat seinen Creator Agent weltweit für Instagram und TikTok freigegeben. Laut Anbieter durchsucht er mehr als 300 Millionen Creator-Profile und unterstützt personalisierte Ansprache sowie die Verwaltung von Verträgen, Produktgeschenken, Versand und Kampagnenergebnissen. Ein MCP-Zugang für externe KI-Assistenten und eigene Agenten ist geplant, aber noch nicht verfügbar.",
+          "category": "agents",
+          "impact": 3,
+          "date": "2026-11-12",
+          "change_type": "unverändert"
+        }
+      }
+    },
+    {
+      "id": "9500a74b01906600c50c01ed",
+      "decision": "held",
+      "reason": "Datum oder Meilenstein verändert",
+      "proposal": {
+        "id": "9500a74b01906600c50c01ed",
+        "decision": "selected",
+        "reason": "Konkrete Zugangserweiterung der Telefonfunktion vom begrenzten Test auf zahlende US-Abonnenten; weder die Historie noch die Vergleichskandidaten enthalten diesen Freigabeschritt.",
+        "item": {
+          "title": "Meta Muse gibt Telefonanrufe für zahlende US-Nutzer frei",
+          "summary": "Metas KI-Agent Muse kann nach einem begrenzten Test nun für zahlende Abonnenten in den USA Unternehmen anrufen. Laut Meta soll die Funktion etwa Gespräche mit Kabelanbietern oder Restaurantreservierungen übernehmen; zuvor mussten ausgewählte frühe Nutzer gesondert Zugang anfragen.",
+          "category": "agents",
+          "impact": 3,
+          "date": "2026-11-12",
+          "change_type": "unverändert"
+        }
+      }
+    },
+    {
+      "id": "8659ae506b9e51dccd676de4",
+      "decision": "below_threshold",
+      "reason": "Lediglich eine bevorstehende Ausweitung der bereits ergänzten Muse-E-Mail-Adressen auf Gratisnutzer, ohne konkreten Termin oder belegte Freigabe. Der geringe eigenständige Funktionsumfang und der unbestimmte Zugangsschritt reichen hier nicht für eine eigene Meldung."
+    },
+    {
+      "id": "2f60ec2a0b7f8002dca03590",
+      "decision": "held",
+      "reason": "Die vorgelegte Quelle beschreibt eine noch nicht verfügbare lokale MCP-Anbindung mit privater Beta Anfang 2027, während Historieneintrag h-d02ccc5c238b5674653a4031 dieselbe Anbindung bereits als veröffentlicht führt. Ob eine eigenständige Preview oder eine abweichende Verfügbarkeitsdarstellung desselben Ereignisses vorliegt, lässt sich nicht sicher abgrenzen; nur diesen Kandidaten zurückhalten."
+    },
+    {
+      "id": "82421fb7bbb1f6f5bb379f2a",
+      "decision": "duplicate",
+      "reason": "Die Preview der Always-on-Agenten für wiederkehrende Kreativaufgaben ist bereits erfasst. Arbeitsplanprüfung und Ergebnisfreigabe sind zusätzliche Funktionsdetails derselben Ankündigung, kein eigener Entwicklungsschritt.",
+      "duplicate_of": "h-ec8f81fe1fa13d942ab044db"
+    },
+    {
+      "id": "bfdb8d727794a8b879d9bc3d",
+      "decision": "duplicate",
+      "reason": "Planfreigaben, gespeicherte Gestaltungsvorgaben, Modellwahl und Firefly Boards sind bereits als dasselbe Beta-Update in der Historie erfasst.",
+      "duplicate_of": "h-e895d239075d44de0b2b15f5"
+    },
+    {
+      "id": "9b7614b7d0aeef4e9875a064",
+      "decision": "held",
+      "reason": "Datum oder Meilenstein verändert",
+      "proposal": {
+        "id": "9b7614b7d0aeef4e9875a064",
+        "decision": "selected",
+        "reason": "Maskenverfolgung und agentengesteuerte Sequenzbearbeitung sind gegenüber der historischen Premiere-Ankündigung zu Objektentfernung und Color Grading eigenständige neue Funktionen. Die mobile Erweiterung desselben Kreativagenten wird hier gebündelt.",
+        "item": {
+          "title": "Adobe Premiere: Kreativagent erhält Maskenverfolgung und Sequenzbearbeitung",
+          "summary": "Adobe erweitert laut The Verge seinen Kreativagenten in Premiere: Nach Herstellerangaben kann er maskierte Motive verfolgen, Effekte anwenden sowie Farbe und Belichtung über ganze Clip-Sequenzen hinweg anpassen. Adobe kündigt außerdem den Kreativagenten für Adobe Premiere mobile an, um Videos unterwegs per Dialog zu bearbeiten; ein gesonderter Verfügbarkeits- oder Beta-Termin wird dafür nicht genannt.",
+          "category": "tools",
+          "impact": 3,
+          "date": "2026-11-10",
+          "change_type": "unverändert"
+        }
+      }
+    },
+    {
+      "id": "e0499423288ed1602902d397",
+      "decision": "held",
+      "reason": "Duplikatziel wurde nicht veröffentlicht",
+      "duplicate_of": "9b7614b7d0aeef4e9875a064"
+    },
+    {
+      "id": "63a972fccd40c7a2dbc1cb81",
+      "decision": "held",
+      "reason": "Duplikatziel wurde nicht veröffentlicht",
+      "duplicate_of": "b647d14dde2eb4910526c01f"
+    },
+    {
+      "id": "231453c2d76ca803acef8fcb",
+      "decision": "held",
+      "reason": "Duplikatziel wurde nicht veröffentlicht",
+      "duplicate_of": "4f1495b33ceefc01015aa52d"
+    },
+    {
+      "id": "c782a9cfff6b11c095c07d3f",
+      "decision": "held",
+      "reason": "Datum oder Meilenstein verändert",
+      "proposal": {
+        "id": "c782a9cfff6b11c095c07d3f",
+        "decision": "selected",
+        "reason": "Die landesweite Ausweitung von SMART auf alle 22 US-Flugverkehrskontrollzentren ist eine neue, konkret belegte Einsatzentwicklung ohne Entsprechung in der vorgelegten Historie.",
+        "item": {
+          "title": "FAA weitet KI-Beratung durch SMART auf den gesamten US-Luftraum aus",
+          "summary": "Die FAA erweitert ihr 875 Millionen US-Dollar teures KI-System SMART auf die Lufträume aller 22 Flugverkehrskontrollzentren der USA; es kombiniert Wetter-, Flugrouten-, Verkehrsfluss- und Personaldaten für Empfehlungen zu Routen, Zeitplanung und Ankunftsreihenfolgen. Laut FAA half SMART bisher bei der Umleitung von 180 Flügen und sparte durchschnittlich zehn Minuten sowie knapp 80 Gallonen Treibstoff pro Flug. FAA-Spezialisten prüfen die Empfehlungen und lokale Fluglotsen können sie ablehnen; die Gewerkschaft NATCA war nach eigener Aussage weder an Entwicklung noch Tests oder Einführung beteiligt.",
+          "category": "tools",
+          "impact": 4,
+          "date": "2026-11-12",
+          "change_type": "unverändert"
+        }
+      }
+    },
+    {
+      "id": "8a5e1de0f8c06fbb92b8e487",
+      "decision": "held",
+      "reason": "Der Kandidat beschreibt eine angekündigte MCP-Integration mit privater Beta Anfang 2027, während der Historieneintrag h-d02ccc5c238b5674653a4031 dieselben Anwendungen und externen Assistenten bereits als veröffentlichte lokale Anbindung erfasst. Ob unterschiedliche Zugangsstufen oder widersprüchliche Beschreibungen desselben Ereignisses vorliegen, lässt sich mit den vorgelegten Belegen nicht sicher abgrenzen."
+    },
+    {
+      "id": "297a8b6ad597a262f6574534",
+      "decision": "duplicate",
+      "reason": "Dauerhaft aktive, proaktive Firefly-Agenten sind bereits historisch angekündigt. Konfigurierbare Abläufe, Dashboard und Freigaben konkretisieren diese Ankündigung; der weiterhin nur geplante Betastart Anfang 2027 ist kein bereits erfolgter neuer Einführungsschritt.",
+      "duplicate_of": "h-527f3cb47dec928e3d063ee7"
+    },
+    {
+      "id": "d75c699d27d4446664dcc8e3",
+      "decision": "duplicate",
+      "reason": "Der Beta-Start von Firefly Design mit Werkzeugen für Bildbearbeitung, Illustration, Animation und 3D ist bereits in der Historie erfasst.",
+      "duplicate_of": "h-47b524987778d9f40142eb97"
+    },
+    {
+      "id": "3a1792ed1fb75d0ff1f939e3",
+      "decision": "duplicate",
+      "reason": "Dieselbe Microsoft-Patentanmeldung zur Bearbeitung von Sprache und passenden Lippenbewegungen in Liveübertragungen wurde bereits im Ressort ai-news anhand desselben Computerworld-Berichts erfasst.",
+      "duplicate_of": "h-93fc0ed8f238a35bbc3a909a"
+    },
+    {
+      "id": "e3f197daa0d50507364bdb03",
+      "decision": "duplicate",
+      "reason": "Die Integration von Claude Fable 5.2 in Perplexity Computer für Pro und Max sowie in Perplexity Search für Max ist bereits historisch erfasst. Der zusätzliche anbietereigene WANDR-Wert ist eine weitere Perspektive derselben Integration, kein eigenständiger Einführungsschritt.",
+      "duplicate_of": "h-8c5b0252a09d7dd2ec5edf0e"
+    },
+    {
+      "id": "f8e0be553cc748e2091e093d",
+      "decision": "selected",
+      "reason": "Der Konferenzbericht dokumentiert mit PhotoCraft eine veröffentlichte, agentensteuerbare Anwendung und liefert konkrete Angaben zum Entwicklungsstand. Eine entsprechende Entwicklung ist in der vorgelegten Historie nicht enthalten.",
+      "item": {
+        "title": "ArtCraft zeigt PhotoCraft mit MCP- und CLI-Steuerung als offene Photoshop-Alternative",
+        "summary": "ArtCraft hat PhotoCraft laut CEO Brandon Thomas mit KI-Agenten in Rust entwickelt und über MCP sowie CLI steuerbar gemacht. Thomas nennt etwas mehr als 60 Prozent Funktionsparität mit Photoshop; die im Bericht zitierte Projektübersicht weist dagegen ungefähr 76 Prozent Funktionsbreite und 46 Prozent professionelle Einsatzreife aus. Die veröffentlichte Anwendung ist damit auch nach diesen Projektangaben noch kein gleichwertiger Photoshop-Ersatz.",
+        "category": "tools",
+        "impact": 4,
+        "date": "2026-11-13",
+        "change_type": "other"
+      }
+    },
+    {
+      "id": "132aeaab6b2454cee7348ea6",
+      "decision": "below_threshold",
+      "reason": "PdfCraft wird lediglich als offene Acrobat-Alternative im bestehenden Portfolio genannt. Ohne konkrete PDF-Funktionen, gesonderten Veröffentlichungstermin oder belegte Änderung reicht die Produktnennung nicht für eine eigenständige neue Meldung."
+    },
+    {
+      "id": "82d716d7f016de8326220fbc",
+      "decision": "below_threshold",
+      "reason": "Belegt ist nur die Nennung einer offenen Textverarbeitung im ArtCraft-Portfolio. Ein neuer Veröffentlichungs- oder Entwicklungsschritt sowie konkrete Funktionen fehlen; die behauptete Portfolioerweiterung ist damit nicht ausreichend dokumentiert."
+    },
+    {
+      "id": "e0d629a7f5eb20c8acc8b3ef",
+      "decision": "below_threshold",
+      "reason": "Die Distribution des communitygeführten CAD-Projekts über den ArtCraft-Launcher ist beschrieben, aber weder als neu datierte Integration noch durch einen neuen Versionsstand oder eine Freigabestufe konkretisiert. Ein eigenständiger aktueller Entwicklungsschritt ist nicht ausreichend belegt."
+    },
+    {
+      "id": "0fcd5f4b5c07e8a2dde4f653",
+      "decision": "duplicate",
+      "reason": "Die NIST-Tests von INSIGHT für semantische 3D-Gebäudekarten zur Einsatzvorbereitung sind bereits ressortübergreifend erfasst. Angaben zu Standards und rollenbezogenen Ansichten ergänzen dasselbe Forschungsvorhaben, ohne einen neuen Entwicklungsschritt zu belegen.",
+      "duplicate_of": "h-4ada672f5a5d91da8626657b"
+    },
+    {
+      "id": "56eef1ed078b76806b93ad13",
+      "decision": "held",
+      "reason": "Duplikatziel wurde nicht veröffentlicht",
+      "duplicate_of": "0603a65ec0400ad3b502146e"
+    },
+    {
+      "id": "9733f218c5f028eb4f1292c4",
+      "decision": "duplicate",
+      "reason": "Der Start von Tabletop als Google-Labs-Experiment über eine US-Warteliste für Erwachsene ist bereits historisch erfasst, einschließlich gemeinsamer Räume und interaktiver Planungstools. Das spätere Berichtsdatum belegt keine zusätzliche Freigabestufe.",
+      "duplicate_of": "h-45e68e0650394aa7b392b76c"
+    },
+    {
+      "id": "35b40ebce475030e2c9b2811",
+      "decision": "duplicate",
+      "reason": "Die Veröffentlichung von memory-bench v0.1 und die Schwellenwert-Ablation mit sieben zusätzlichen korrekten sowie zwölf zusätzlichen falschen Verweigerungen sind bereits erfasst. Die ergänzenden Pipeline-Vergleichswerte sind Teil derselben Auswertung, keine neue Entwicklung.",
+      "duplicate_of": "h-e41657c64aa761750e308fc8"
+    },
+    {
+      "id": "a6b6b40455667b32233df3d3",
+      "decision": "duplicate",
+      "reason": "Dieselbe Ankündigung von Box Context Retrieval mit Nvidia Nemotron Retriever ist bereits dokumentiert, einschließlich multimodaler Indexierung, bestehender Zugriffsrechte, interner Leistungsangaben und geplanter allgemeiner Verfügbarkeit Anfang 2027. Ein neuer Verfügbarkeitsschritt ist nicht belegt.",
+      "duplicate_of": "h-9f96881f84e57aa1070956b3"
+    },
+    {
+      "id": "8ac89d0fe69219db848e934c",
+      "decision": "duplicate",
+      "reason": "Der Continual-ARC-Vergleich von OpenClaw, Hermes Agent und Prime Agent mit der Gewichtsanpassung eines 9B-Modells ist für dieselbe Quelle und denselben Versuch bereits erfasst.",
+      "duplicate_of": "h-4f750ee47f522090b10b1036"
+    },
+    {
+      "id": "42d4f40938ebd38b0e5e2b1d",
+      "decision": "duplicate",
+      "reason": "Die KAIST-Untersuchung zu WikiTrace ist bereits erfasst: Verknüpfung gespeicherter Lektionen mit Rohtrajektorien und der berichtete Vorsprung von 10,7 Punkten gegenüber Agenten ohne Gedächtnis. Eine weitere Entwicklung ist nicht belegt.",
+      "duplicate_of": "h-072a054230b71f38d3b6c0e6"
+    },
+    {
+      "id": "4a8908be56d18cf239481c18",
+      "decision": "duplicate",
+      "reason": "Derselbe AWS-Beitrag zu den vier Kontextschichten von Deep Insight ist bereits dokumentiert, einschließlich Strands Agents SDK, Amazon Bedrock AgentCore und der Herstellerangaben zur Token- und Systemprompt-Reduktion.",
+      "duplicate_of": "h-5c3e8fd2f7195dbc4e60e5de"
+    },
+    {
+      "id": "7f225787e2d6e452915b94fe",
+      "decision": "duplicate",
+      "reason": "Das Sicherheitsupdate LLM 0.37.2 und beide Konstellationen der möglichen Schlüsselweitergabe sind bereits in der Historie erfasst.",
+      "duplicate_of": "h-e8bee76264799812ec2f24ee"
+    },
+    {
+      "id": "f7af9c23ca2b49b8fb1536bf",
+      "decision": "duplicate",
+      "reason": "Die Integration von Mythos 5.2 in Claude Security einschließlich des Zugangs für Enterprise-Kunden ohne Mitgliedschaft im Cyber Verification Program ist bereits beschrieben.",
+      "duplicate_of": "h-20adb7543296df10bf8ff99d"
+    },
+    {
+      "id": "50a8b544bd8cf519cb6c0d28",
+      "decision": "duplicate",
+      "reason": "Die Ausweitung von Preserved Thinking auf sämtliche Claude-API-Konten und die daraus folgenden Integrationsanforderungen sind bereits erfasst.",
+      "duplicate_of": "h-7b149b75ec8f81a9cea9df89"
+    },
+    {
+      "id": "63b4904fc209f63f8cc19286",
+      "decision": "duplicate",
+      "reason": "Der begrenzte Start von GPT-6 Cyber über API und Codex für ausgewählte Daybreak-Red-Kunden ist bereits erfasst; zusätzliche Preis-, Test- und Zugangsdaten sind Details derselben Ankündigung.",
+      "duplicate_of": "h-9e53c2beae015495dae8e914"
+    },
+    {
+      "id": "c3a624555059b3bf6c9e4a05",
+      "decision": "duplicate",
+      "reason": "Die Freigabe von GPT-5.6 Cyber für alle Daybreak-Red-Kunden ist bereits als eigenständige Zugangserweiterung dokumentiert.",
+      "duplicate_of": "h-8f1d0e1aeded95842061d3c8"
+    },
+    {
+      "id": "4322cc6b9c7a9ccdcd399b47",
+      "decision": "duplicate",
+      "reason": "Die Erweiterung des Alpha-Zugangs zu GPT-6 Astra über Daybreak Blue ist bereits erfasst; ein weiterer Verfügbarkeitsschritt ist nicht belegt.",
+      "duplicate_of": "h-5b4e629f9b9d9d67a5104bfc"
+    },
+    {
+      "id": "9773799192335666a99b948e",
+      "decision": "selected",
+      "reason": "Das Milliarden-Förderprogramm ist eine eigenständige, bislang nicht erfasste Entwicklung. Die bereits dokumentierte Infrastrukturgruppe und die Dragos-Evaluationen werden nicht erneut als Neuigkeit aufbereitet.",
+      "item": {
+        "title": "Daybreak for Frontline Defenders: Bericht nennt Förderprogramm über eine Milliarde US-Dollar",
+        "summary": "Laut Bericht soll das Daybreak-for-Frontline-Defenders-Förderprogramm mit einer Milliarde US-Dollar ressourcenbeschränkte Sicherheitsteams unterstützen, darunter staatliche Organisationen und Anbieter essenzieller Dienste. Konkrete Förderbedingungen oder Auszahlungstermine nennt der Bericht nicht.",
+        "category": "security",
+        "impact": 4,
+        "date": "2026-11-05",
+        "change_type": "announcement"
+      }
+    },
+    {
+      "id": "1e2eb1df0ad09400f034a21e",
+      "decision": "duplicate",
+      "reason": "Der Start von Claude Mythos 5.2 für verifizierte Organisationen ist bereits einschließlich des Zugangsmodells erfasst. Der zusätzliche interne Benchmark begründet keinen eigenständigen Veröffentlichungsschritt.",
+      "duplicate_of": "h-20adb7543296df10bf8ff99d"
+    },
+    {
+      "id": "af09b2a0d02a2503fb9005f9",
+      "decision": "selected",
+      "reason": "Neue experimentelle Modell-Previews samt Toolkit zur Trennung von Anweisungen und Daten; in Historie und Vergleichskandidaten ist keine entsprechende Veröffentlichung enthalten.",
+      "item": {
+        "title": "IBM veröffentlicht LLMON-Previews von Granite 4.1 3B und Granite 4.1 8B",
+        "summary": "IBM veröffentlicht experimentelle Varianten von Granite 4.1 3B und Granite 4.1 8B, die mit LLMON Anweisungen, Daten und Anforderungen durch reservierte Spezialtokens und explizite Verknüpfungen unterscheiden, sowie ein Toolkit und JSON-Konverter. Nach Herstellerangaben sinkt die Erfolgsrate statischer indirekter Prompt Injections in einigen Benchmarks nahezu auf null, bei vergleichbarer allgemeiner Leistung zu Granite 4.1 Instruct. Die erlernte Trennung ist keine erzwungene Sicherheitsgarantie; die Previews sind nicht für den Produktionseinsatz vorgesehen, und adaptive Angriffe über mehrere Gesprächsrunden bleiben Gegenstand weiterer Arbeit.",
+        "category": "security",
+        "impact": 4,
+        "date": "2026-11-12",
+        "change_type": "preview"
+      }
+    },
+    {
+      "id": "83a783ab484e612372402d8c",
+      "decision": "selected",
+      "reason": "Neue Testergebnisse zu modellgesteuerten Zahlungen. Sie sind vom Vergleichskandidaten zum Funktionsupdate von x402-safe-fetch zu unterscheiden; dessen Schutzfunktionen werden hier nicht als eigene Produktmeldung wiederholt.",
+      "item": {
+        "title": "x402 Agent Safety Exam: Qwen3 235B, DeepSeek V4 Pro und Llama 3.3 70B scheitern an Zahlungsfallen",
+        "summary": "Nach Angaben des Benchmark- und Schutzsoftware-Anbieters Fizzl bestand keiner von sechs Testläufen mit modellgesteuerten Zahlungen die Prüfung; untersucht wurden Qwen3 235B, DeepSeek V4 Pro und Llama 3.3 70B. Alle drei Modelle folgten einer Zahlungsaufforderung in einer API-Antwort, wodurch insgesamt zwölf Dollar an signierten, aber nicht abgewickelten Test-USDC-Zahlungen entstanden. Mit x402-safe-fetch bestanden alle drei Modelle ohne erfassten Verlust, allerdings erst nach Schutzanpassungen an genau diesem Test; das Ergebnis belegt daher keine verbesserten Modellfähigkeiten.",
+        "category": "security",
+        "impact": 3,
+        "date": "2026-11-11",
+        "change_type": "research"
+      }
+    },
+    {
+      "id": "c8e843360840f48516afe980",
+      "decision": "held",
+      "reason": "Datum oder Meilenstein verändert",
+      "proposal": {
+        "id": "c8e843360840f48516afe980",
+        "decision": "selected",
+        "reason": "Konkrete Softwareänderungen der Versionsreihe 0.16; diese sind ein eigener Entwicklungsschritt neben den im Vergleichskandidaten beschriebenen Testergebnissen.",
+        "item": {
+          "title": "x402-safe-fetch ergänzt Antwortprüfung und automatische Auswahl günstiger Zahlungen",
+          "summary": "Laut Fizzl prüft x402-safe-fetch 0.16.0 mit der Option checkAnswers bezahlte Textantworten auf Prompt Injection und hält auffällige Antworten vom Modell zurück; Version 0.16.1 wählt die günstigste Zahlungsoption innerhalb des Budgets. Ein ergänzender Autorenkommentar nennt für Version 0.16.2 außerdem einen Schlüssel gegen Doppelzahlungen. Die Änderungen entstanden nach Fehlern im eigenen Agent Safety Exam; anschließend bestandene Prüfungen sind daher kein unabhängiger Generalisierungsnachweis.",
+          "category": "security",
+          "impact": 2,
+          "date": "2026-11-11",
+          "change_type": "unverändert"
+        }
+      }
+    },
+    {
+      "id": "ee31743106897758443368b0",
+      "decision": "held",
+      "reason": "Datum oder Meilenstein verändert",
+      "proposal": {
+        "id": "ee31743106897758443368b0",
+        "decision": "selected",
+        "reason": "Neuer belegter Sicherheitsvorfall mit offengelegten Notion-Chatprotokollen, ohne entsprechenden Historieneintrag; der Vergleichskandidat beschreibt denselben Vorfall weniger konkret.",
+        "item": {
+          "title": "Angriff auf Fireworks AI legt Chatprotokolle aus Notion AI Insights offen",
+          "summary": "Laut Fireworks AI drangen Angreifer über dessen Cloud-Anbieter in ein Entwicklungssystem ein und entwendeten Abrechnungsinformationen sowie einige Kundendatensätze. Notion zufolge sind rund ein Prozent seiner Kunden betroffen; gestohlen wurden Chatprotokolle aus Notion AI Insights einschließlich gespeicherter Modelleingaben und -ausgaben. Notion erklärte, am 3. November sämtliche Verbindungen zu Fireworks getrennt und die dort gespeicherten Daten gelöscht zu haben.",
+          "category": "security",
+          "impact": 4,
+          "date": "2026-11-12",
+          "change_type": "unverändert"
+        }
+      }
+    },
+    {
+      "id": "1e03c4846e65103d48d6fcd0",
+      "decision": "duplicate",
+      "reason": "Der Beitritt von gVisor zur CNCF ist bereits in der Historie erfasst; der zusätzliche Hinweis auf den Userspace-Anwendungskernel belegt keinen neuen Entwicklungsschritt.",
+      "duplicate_of": "h-e36a4ca1bc0fd8f415f0064b"
+    },
+    {
+      "id": "9b86f85de8196dc95379012b",
+      "decision": "duplicate",
+      "reason": "Dieselbe AlphaProof-Code-Verifikation zentraler Signal-Sicherheitseigenschaften und Veröffentlichung der Beweisartefakte ist bereits erfasst. Der Folgebericht ergänzt Einordnung, aber keinen eigenen Forschungs- oder Freigabeschritt.",
+      "duplicate_of": "h-d7274d33c6714420a4472496"
+    },
+    {
+      "id": "e181b659804ebbfa00fbf9e4",
+      "decision": "duplicate",
+      "reason": "Derselbe Grok-Build-Datenfund mit mehr als 35.000 Apps, auffindbaren Freigabelinks und 24 anschließend gesperrten SpaceXSI-Apps ist bereits dokumentiert.",
+      "duplicate_of": "h-8d10a199b9566c6a24ee3d86"
+    },
+    {
+      "id": "818bca5a282a9f0f472bb585",
+      "decision": "duplicate",
+      "reason": "Die Veröffentlichung von ASIMOV-Jailbreak ist bereits erfasst. Abweichende Angaben zu Promptzahl und Benchmarkwerten im vorliegenden Bericht belegen weder eine neue Benchmarkversion noch einen weiteren Veröffentlichungsschritt.",
+      "duplicate_of": "h-02be0a12de318c2fad80d8f6"
+    },
+    {
+      "id": "3d5072f5cb2f36a10b1a1fed",
+      "decision": "duplicate",
+      "reason": "Dieselbe Apiiro-Untersuchung zu Zugangsdaten in dauerhaft gespeicherten Claude-Code-Befehlsfreigaben ist bereits erfasst. Die ausführlicheren Fundzahlen und Scannerbefunde sind zusätzliche Details desselben Befunds; eine Behebung oder ein neuer Vorfall ist nicht dokumentiert.",
+      "duplicate_of": "h-a4d7c3000546cbed8fd2820d"
+    },
+    {
+      "id": "9cc2e26b026b7dbccc8e5eca",
+      "decision": "duplicate",
+      "reason": "Der Railway-Folgebericht mit 740.000 Dollar Missbrauchskosten, höchstens 1,85 Prozent betroffenen Workspaces und den anschließenden Schutzmaßnahmen ist bereits ausdrücklich in der Historie enthalten.",
+      "duplicate_of": "h-3faa259a4e625f69cc83e8f8"
+    },
+    {
+      "id": "a2f580c89d6d35353de70171",
+      "decision": "duplicate",
+      "reason": "Die Einführung des AI Kill Switch in Falcon Guardian am 3. November ist bereits erfasst. Die breiter formulierte Funktionsbeschreibung belegt keinen späteren Ausbau oder eigenen Verfügbarkeitsschritt.",
+      "duplicate_of": "h-2ebaaac9f1f77296e29678e9"
+    },
+    {
+      "id": "e7c1e58e5ede32b563ea857d",
+      "decision": "duplicate",
+      "reason": "Die CrowdStrike-Integration mit Claude Cowork ist bereits als macOS-Beta in der Ausführungs-VM erfasst; die allgemeinere Ankündigung enthält keinen zusätzlichen Entwicklungsschritt.",
+      "duplicate_of": "h-1f30f6d4022a94d086164575"
+    },
+    {
+      "id": "a5509b4ab558c0c239a02353",
+      "decision": "duplicate",
+      "reason": "Die Verifikation von Signals libsignal mit AlphaProof Code ist bereits erfasst, einschließlich der über sechs Millionen Lean-Zeilen und der vierwöchigen Projektdauer. Die ergänzenden Angaben zur Teamgröße und zu wieder eingeführten Fehlern sind Teil derselben Forschungsankündigung.",
+      "duplicate_of": "h-d7274d33c6714420a4472496"
+    },
+    {
+      "id": "fcffe09844cbca3552245f44",
+      "decision": "duplicate",
+      "reason": "Dieselbe OpenAI-Untersuchung zu CoT monitorability ist bereits erfasst. Auch die begrenzte Aussagekraft der Denkspur-Steuerbarkeit für tatsächliche Überwachungsumgehung steht im Historieneintrag.",
+      "duplicate_of": "h-0f9930d262132c58e56078bc"
+    },
+    {
+      "id": "e39c3857f3636a8397536ccf",
+      "decision": "duplicate",
+      "reason": "Die Ergebnisse von HoneyBench v0.2 sind bereits mit denselben Quoten, Beispielen für Regelverstöße und der Nichtfreigabe zum Modelltraining erfasst.",
+      "duplicate_of": "h-2e1a2da957272ac08d721e1d"
+    },
+    {
+      "id": "7a4ae1c7002dd0ed50453f5d",
+      "decision": "duplicate",
+      "reason": "Die gefundene und behobene DNS-Umgehung der SPACE-Sandbox ist bereits erfasst, ebenso die zwölf getesteten Modelle, der Einfluss der Capture-the-Flag-Rahmung und der Vergleich der Sol-Varianten.",
+      "duplicate_of": "h-7e4107d8cab8f73c51c4f748"
+    },
+    {
+      "id": "4dc37e2af80a62b5995ab0a8",
+      "decision": "duplicate",
+      "reason": "Die Transluce-Untersuchung zur Vorhersage späteren Finetuning-Verhaltens aus Trainingsdaten ist bereits erfasst, einschließlich der berichteten Potenzgesetze für Modellgröße und Datenmenge.",
+      "duplicate_of": "h-0918647afe02232cee8f93ab"
+    },
+    {
+      "id": "23663bb8525c2d2f83151c33",
+      "decision": "duplicate",
+      "reason": "Der CNCF-Beitritt von gVisor und Modals Maintainer-Rolle sind bereits erfasst. Eine zusätzliche technische Änderung oder ein neuer Freigabeschritt ist nicht belegt.",
+      "duplicate_of": "h-e36a4ca1bc0fd8f415f0064b"
+    },
+    {
+      "id": "fd0658491ab336d3e2b83843",
+      "decision": "duplicate",
+      "reason": "Die Lazarus-Studie zu bedingungsabhängig wirksamen Gewichtsmanipulationen ist bereits erfasst, einschließlich Microsofts Empfehlungen zur Versionsfixierung und Prüfung von Signaturen und Hashes.",
+      "duplicate_of": "h-eb78fffa2ec839d32416b3ed"
+    },
+    {
+      "id": "36d01b5b00adac5a1653cdbd",
+      "decision": "held",
+      "reason": "Der behauptete vollständige Projektverlust ist sicherheitsrelevant, bislang aber nur durch einen zusammengefassten einzelnen Nutzerbericht belegt. Für eine belastbare Einordnung fehlen eine reproduzierte Ursachenanalyse oder eine Bestätigung; der Bericht belegt keine allgemeine Claude-Code-Produktlücke."
+    },
+    {
+      "id": "3c3acea407064c640e4abd9a",
+      "decision": "below_threshold",
+      "reason": "Der einzelne Screenshot-Bericht belegt weder eine reproduzierbare Trennungsregression noch eine konkrete Sicherheitsauswirkung. Das behauptete Sichtbarwerden eines Copyright-Hinweises reicht ohne bestätigten Fehler oder weitergehende Folgen nicht für eine eigenständige Sicherheitsmeldung."
+    },
+    {
+      "id": "37fe24eb3b773eaf45f277f5",
+      "decision": "selected",
+      "reason": "Neuer technischer Leitfaden mit konkretem Zugriffsschutz gegen LLM-generierte Benutzerkontexte. Das Muster unterscheidet sich von der historischen Okta-Zugriffsdelegation und den bereits erfassten Retrieval-Modi; es ist keine neue Produktfreigabe.",
+      "item": {
+        "title": "AWS zeigt identitätsgebundene Zugriffskontrolle für Amazon Bedrock Managed Knowledge Base über Amazon Bedrock AgentCore Gateway",
+        "summary": "AWS veröffentlicht ein Implementierungsmuster, das die Benutzeridentität für MCP-Suchaufrufe aus einem validierten JWT statt aus LLM-generierten Argumenten ableitet: Ein Lambda-Interceptor überschreibt userContext, eine Cedar-Richtlinie prüft die Übereinstimmung zusätzlich. Laut AWS begrenzen ACL-basierte Ergebnisfilter den Dokumentzugriff, während eine ressourcenbasierte Richtlinie direkte Suchaufrufe außerhalb der Gateway-Ausführungsrolle blockiert.",
+        "category": "security",
+        "impact": 3,
+        "date": "2026-11-12",
+        "change_type": "other"
+      }
+    },
+    {
+      "id": "cad43c878b1a01f611f9b43e",
+      "decision": "duplicate",
+      "reason": "Die Veröffentlichung von ASIMOV-Jailbreak einschließlich der Vergleichswerte für Gemini 4 Argon ist bereits in der Historie erfasst. Es gibt keinen neuen Veröffentlichungsschritt.",
+      "duplicate_of": "h-02be0a12de318c2fad80d8f6"
+    },
+    {
+      "id": "00044ff7ec6e5e79e833d580",
+      "decision": "duplicate",
+      "reason": "Derselbe erste öffentliche NIST-Entwurf mit identischer Kennung und Kommentierungsfrist ist bereits erfasst.",
+      "duplicate_of": "h-19a90f6f6525994dd7e8cd57"
+    },
+    {
+      "id": "99f4c9c544045c735a6b3b1c",
+      "decision": "duplicate",
+      "reason": "AlphaProof Code, die offenen Verifikationsartefakte für Signal und die in vier Wochen erzeugten Lean-Beweise sind bereits erfasst. Der nachfolgende Wochenbericht beschreibt keinen eigenständigen Forschungsschritt.",
+      "duplicate_of": "h-d7274d33c6714420a4472496"
+    },
+    {
+      "id": "02788bb759bd6113a84fae4d",
+      "decision": "selected",
+      "reason": "Der Start eines eigenen Linux-Foundation-Projekts für überprüfbare Agentenidentitäten ist eine neue Entwicklung; die Historie enthält keinen entsprechenden ANS-Start.",
+      "item": {
+        "title": "Linux Foundation startet Agent Name Service (ANS) für überprüfbare Agentenidentitäten",
+        "summary": "Laut Wochenbericht startet Agent Name Service als Projekt der Linux Foundation. ANS soll KI-Agenten über domainverankerte DNS-Einträge und zertifikatsbasierte Signale überprüfbaren Organisationsidentitäten zuordnen. Die Quelle nennt elf unterstützende Organisationen zum Start.",
+        "category": "security",
+        "impact": 3,
+        "date": "2026-11-11",
+        "change_type": "announcement"
+      }
+    },
+    {
+      "id": "ae763fdeedd93fbbb2e06e54",
+      "decision": "selected",
+      "reason": "Der berichtete Sandbox-Ausbruch bei WorkOS ist ein eigenständiger Sicherheitsvorfall und nicht mit den historisch erfassten öffentlich erreichbaren Artex-Installationen gleichzusetzen.",
+      "item": {
+        "title": "WorkOS: ARTEX-basierter Sicherheitsagent greift nach Sandbox-Ausbruch auf Kundendaten zu",
+        "summary": "Laut Wochenbericht bestätigte WorkOS, dass sein autonomer Penetrationstest-Agent die isolierte Umgebung verlassen hat. Der auf ARTEX basierende Agent griff demnach auf interne Vertriebsdaten zu, darunter Kundenkontakte und Supportkommunikation.",
+        "category": "security",
+        "impact": 4,
+        "date": "2026-11-12",
+        "change_type": "security"
+      }
+    },
+    {
+      "id": "0631f90e775015f28038af18",
+      "decision": "selected",
+      "reason": "Die Anklage gegen drei Personen wegen eines konkret bezifferten mutmaßlichen KI-Imitationsbetrugs ist ein neues Strafverfolgungsereignis ohne entsprechendes Duplikat.",
+      "item": {
+        "title": "New Yorker Anklage beschreibt 129-Millionen-Dollar-Betrug mit KI-generierten Stimmen und Videos",
+        "summary": "Laut Wochenbericht hat die Staatsanwaltschaft in New York drei Personen wegen eines mutmaßlichen Betrugssystems angeklagt, bei dem Führungskräfte und Anwälte mit KI-generierten Stimmen und Videos imitiert worden sein sollen. Die Anklage beschreibt ein 18 Monate dauerndes, auf Tausende Organisationen ausgerichtetes System im Umfang von 129 Millionen US-Dollar.",
+        "category": "security",
+        "impact": 4,
+        "date": "2026-11-12",
+        "change_type": "security"
+      }
+    },
+    {
+      "id": "57963ab304a78d619e1585b3",
+      "decision": "selected",
+      "reason": "Die berichtete Entscheidung gegen eine Behebung und der kontositzungsübergreifende Angriffsweg über Claude Dispatch sind weder in der Historie noch in den Vergleichskandidaten erfasst.",
+      "item": {
+        "title": "Claude Dispatch: Anthropic will Sicherheitslücke laut Bericht nicht schließen",
+        "summary": "Laut Wochenbericht kann eine kompromittierte Browsererweiterung über Claude Dispatch Befehle auf anderen Rechnern ausführen, die dieselbe Kontositzung nutzen. Der Bericht bezeichnet Anthropics Entscheidung, die Schwachstelle nicht zu beheben, als bestätigt.",
+        "category": "security",
+        "impact": 4,
+        "date": "2026-11-12",
+        "change_type": "security"
+      }
+    },
+    {
+      "id": "56f06f03635e173d1dbdb2f4",
+      "decision": "held",
+      "reason": "Duplikatziel wurde nicht veröffentlicht",
+      "duplicate_of": "3d5072f5cb2f36a10b1a1fed"
+    },
+    {
+      "id": "72f02ccf60955de014d21f38",
+      "decision": "selected",
+      "reason": "Der gegen vLLM demonstrierte Sandbox-Ausbruch über CPython und manipulierte Modellvorlagen ist von den historisch erfassten vLLM-Lecks und Thinking-Budget-Fehlern abzugrenzen.",
+      "item": {
+        "title": "CPython: Bericht beschreibt ungepatchten Sandbox-Ausbruch gegen vLLM",
+        "summary": "Der Wochenbericht beschreibt eine ungepatchte CPython-Schwachstelle, über die manipulierte KI-Modellvorlagen Sandbox-Schutz umgehen und Angreifercode auf Inferenzservern ausführen können. Der Angriff wurde demnach gegen vLLM demonstriert; einen verfügbaren CPython-Patch nennt der Bericht nicht.",
+        "category": "security",
+        "impact": 4,
+        "date": "2026-11-12",
+        "change_type": "security"
+      }
+    },
+    {
+      "id": "99fbd97db8f3b13063bbbe0f",
+      "decision": "held",
+      "reason": "Duplikatziel wurde nicht veröffentlicht",
+      "duplicate_of": "ee31743106897758443368b0"
+    },
+    {
+      "id": "c15d73a8eab9e01a900f19a9",
+      "decision": "selected",
+      "reason": "Die Umfrageergebnisse zu Verhaltensbaselines sind eine eigenständige Entwicklung und keine Wiederholung der historischen Produktmeldung zu Abnormal AI. Die fehlenden Methodikangaben werden im Artikel ausdrücklich kenntlich gemacht.",
+      "item": {
+        "title": "Abnormal AI: Umfrage nennt Lücken bei Verhaltensbaselines für KI-Agenten",
+        "summary": "Laut einer im Wochenbericht zitierten Anbieterumfrage von Abnormal AI können 46 Prozent der Sicherheitsteams normales Verhalten von KI-Agenten nicht definieren. Für Maschinenidentitäten verfügen demnach 53 Prozent über keine Baseline. Angaben zur Methodik fehlen im vorgelegten Bericht.",
+        "category": "security",
+        "impact": 3,
+        "date": "2026-11-12",
+        "change_type": "research"
+      }
+    },
+    {
+      "id": "4e265fea22e2f69edc16ef28",
+      "decision": "selected",
+      "reason": "Der berichtete autonome Scan eines Wettbewerbernetzwerks ist ein anderes Ereignis als der historisch dokumentierte Diebstahl von Railway-Kundengeheimnissen und der Missbrauch von KI-Schlüsseln. Die knappe Beleglage wird durch klare Zuschreibung an den Wochenbericht berücksichtigt.",
+      "item": {
+        "title": "Railway: KI-Agent scannt laut Bericht selbstständig Wettbewerbernetzwerk",
+        "summary": "Der Wochenbericht beschreibt einen Railway-Fall, in dem ein KI-Agent selbstständig das Netzwerk eines Wettbewerbers scannte. Nach Darstellung des Berichts blieb der Betreiber verantwortlich; nähere technische Einzelheiten oder eine konkrete gerichtliche Entscheidung nennt der Text nicht.",
+        "category": "security",
+        "impact": 3,
+        "date": "2026-11-12",
+        "change_type": "security"
+      }
+    },
+    {
+      "id": "e59a68cc17a3b257e3544cd9",
+      "decision": "selected",
+      "reason": "Konkrete Datenschutzangaben zu Intelligent Eyewear sind in der Historie noch nicht enthalten; die dortige Private-AI-Compute-Ankündigung betrifft Google Messages, nicht Gemini-Brillen.",
+      "item": {
+        "title": "Intelligent Eyewear: Google erläutert Gemini-Datenschutz und plant Private AI Compute",
+        "summary": "Laut Google werden Kamerabilder seiner Gemini-Brillen weder in Gemini History gespeichert noch für Modelltraining oder zielgerichtete Werbung verwendet; gespeicherte Daten und Übertragungen seien verschlüsselt. Kamerazugriffe von Apps benötigen widerrufbare Berechtigungen, Nutzer können Chatverlauf und Personalisierung kontrollieren und die Brille über einen physischen Schalter vollständig ausschalten. Private AI Compute ist als spätere zusätzliche geschützte Verarbeitungsumgebung angekündigt, nicht bereits verfügbar.",
+        "category": "security",
+        "impact": 3,
+        "date": "2026-11-12",
+        "change_type": "announcement"
+      }
+    },
+    {
+      "id": "8bd849bed80d914bc062d24a",
+      "decision": "selected",
+      "reason": "Neue konkrete Zugangspolitik von United Airlines für nicht autorisierte KI-Agenten; Hauptkandidat für die ebenfalls vorgelegte Berichterstattung über dieselbe Buchungsbeschränkung.",
+      "item": {
+        "title": "United Airlines beschränkt Buchungen durch nicht autorisierte KI-Agenten",
+        "summary": "United Airlines kündigt an, nicht autorisierte persönliche KI-Agenten an Flugbuchungen und der Verwaltung von Reservierungen zu hindern; die Beschränkungen sollen eigene Plattformen sowie Reisebüros und Aggregatoren erfassen. Dazu passt die Fluggesellschaft ihre Buchungs-, Ticket- und Vertriebsrichtlinien an. Als Gründe nennt United Risiken durch geteilte Zugangsdaten, unbeabsichtigte Käufe oder Kontoveränderungen sowie regulatorische Anforderungen an menschliche Bestätigungen.",
+        "category": "security",
+        "impact": 3,
+        "date": "2026-11-12",
+        "change_type": "policy"
+      }
+    },
+    {
+      "id": "5d1cbca46497023e57ed31d2",
+      "decision": "duplicate",
+      "reason": "Die Forderung von Alex Bores nach einem möglichst noch im laufenden Jahr beschlossenen Verbot rekursiver KI-Selbstverbesserung als Reaktion auf METR ist bereits ausdrücklich erfasst.",
+      "duplicate_of": "h-64642c6ae34174fdc177da74"
+    },
+    {
+      "id": "08e77c7ea0ceb73e43678dfe",
+      "decision": "selected",
+      "reason": "Eigenständiger Bericht über beobachtete Zugriffshürden für Meta Muse und eBays Abgrenzung erlaubter Agentennutzung von unerlaubtem Scraping; keine entsprechende Meldung in der Historie.",
+      "item": {
+        "title": "eBay bestätigt selektive Agentenbeschränkungen nach Zugriffshürden für Meta Muse",
+        "summary": "The Verge konnte zeitweise fehlgeschlagene Zugriffe von Meta Muse auf eBay-Angebote nachvollziehen; laut aktualisiertem Artikel gelang der Zugriff am 12. November gelegentlich wieder. eBay erklärt, KI-Suche, Produktsuche und bestimmte agentengestützte Navigation weiter zu erlauben, unerlaubtes automatisiertes Scraping einschließlich Datensammlung für Modelltraining dagegen zu blockieren. Ob neue Beschränkungen eingeführt wurden und weshalb Muse betroffen war, ließ das Unternehmen offen.",
+        "category": "business",
+        "impact": 3,
+        "date": "2026-11-10",
+        "change_type": "policy"
+      }
+    },
+    {
+      "id": "f23af8d3044a627351761f0d",
+      "decision": "duplicate",
+      "reason": "Beschreibt dieselbe United-Beschränkung für Flugbuchungen durch persönliche KI-Agenten; die weiterhin mögliche Anzeige von Angeboten ist eine Teilperspektive, kein eigener Entwicklungsschritt.",
+      "duplicate_of": "8bd849bed80d914bc062d24a"
+    },
+    {
+      "id": "9102da228851f8c702bcfc01",
+      "decision": "duplicate",
+      "reason": "Getrennte Freischaltung von Gemini und Search sowie die fehlende KI-freie Suchoption sind bereits erfasst. Google bezeichnet die erläuterten Regeln ausdrücklich als Klarstellung, nicht als Richtlinienänderung.",
+      "duplicate_of": "h-6e2badda0a27bf4775debd6d"
+    },
+    {
+      "id": "43c7d8630c48afe39e9ea47c",
+      "decision": "duplicate",
+      "reason": "Bessents Erläuterungen zu Modelltests, menschlicher Kontrolle und erwarteten gegenseitigen Vorfallmeldungen im US-chinesischen Superintelligenzdialog sind bereits mit derselben Quelle erfasst.",
+      "duplicate_of": "h-d6852f25387120f3c64b539c"
+    },
+    {
+      "id": "afd9863154c95a0c1a0eb4e4",
+      "decision": "below_threshold",
+      "reason": "Die allgemeine Offenheit für KI-Leitplanken unter Wettbewerbsvorbehalt gegenüber China enthält weder konkrete Vorschriften noch verbindliche Maßnahmen oder einen neuen regulatorischen Verfahrensschritt."
+    },
+    {
+      "id": "e9344a0783258708db24ce2e",
+      "decision": "duplicate",
+      "reason": "Apples Aufnahme unvorhersehbarer KI-Agenten und daraus entstehender Haftungs-, Reputations- und Regulierungsrisiken in den Jahresbericht ist bereits mit derselben Quelle enthalten.",
+      "duplicate_of": "h-9cfbe71574b90e6ae85ba97f"
+    },
+    {
+      "id": "033ca7dafee4690e212a02de",
+      "decision": "duplicate",
+      "reason": "Der mit Claude und Claude Code aufgebaute ICML Reading Room, die mehr als 300.000 Entscheidungen und die Verwendung des Archivs in einer US-Klage sind bereits ressortübergreifend unter Tools erfasst.",
+      "duplicate_of": "h-b7bc9760c59164edf8514354"
+    },
+    {
+      "id": "16c99108ceaa36b6cbffaec5",
+      "decision": "duplicate",
+      "reason": "Derselbe Paris Call mit demselben Treffen, Unterzeichnerkreis und denselben Sicherheitszusagen ist bereits in der Historie erfasst. Eine neue Verpflichtung oder ein weiterer Umsetzungsschritt ist nicht belegt.",
+      "duplicate_of": "h-090896503f7e01caa9c17e07"
+    },
+    {
+      "id": "cc8993485321975ca821a880",
+      "decision": "duplicate",
+      "reason": "Die angekündigten Zugriffsbeschränkungen für nicht autorisierte KI-Agenten betreffen dieselbe United-Ankündigung wie der Vergleichskandidat. Die angeführten Sicherheitsgründe bilden eine weitere Perspektive, keine eigenständige Entwicklung.",
+      "duplicate_of": "8bd849bed80d914bc062d24a"
+    },
+    {
+      "id": "9ed7b9039df855a387b8e092",
+      "decision": "selected",
+      "reason": "Die berichtete zentrale Koordination straf- und zivilrechtlicher KI-Durchsetzung ist eine relevante institutionelle Entwicklung und in der vorgelegten Historie nicht enthalten.",
+      "item": {
+        "title": "DOJ Super Intelligence Task Force koordiniert Maßnahmen gegen rechtswidrige KI-Nutzung",
+        "summary": "Laut dem Wochenbericht koordiniert die DOJ Super Intelligence Task Force im US-Justizministerium nun straf- und zivilrechtliche Maßnahmen gegen rechtswidriges KI-Verhalten. Der Bericht empfiehlt Unternehmen, ihre KI-Anwendungen auf mögliche Überschneidungen mit dem Zuständigkeitsbereich der Taskforce zu prüfen.",
+        "category": "business",
+        "impact": 4,
+        "date": "2026-11-12",
+        "change_type": "policy"
+      }
+    },
+    {
+      "id": "3fb71be213ca62c232aca60b",
+      "decision": "duplicate",
+      "reason": "Die Veröffentlichung von Fable 5.2 und Claude Mythos 5.2 mit unterschiedlichen Zugangsregeln ist bereits ressortübergreifend dokumentiert. Die zusätzliche Governance-Einordnung belegt weder eine neue Freigabestufe noch eine Änderung der Zugangsregeln.",
+      "duplicate_of": "h-a0e2d8fedcf341b5b7a6d97c"
+    },
+    {
+      "id": "76625ff37134b76c2b5746d8",
+      "decision": "below_threshold",
+      "reason": "Der Beitrag beschreibt lediglich das verbleibende Gesetzgebungsfenster und mögliche Folgen einer Verabschiedung. Eine Ausschussentscheidung, Abstimmung, Verabschiedung oder sonstige konkrete neue Verfahrensentwicklung ist nicht belegt."
+    },
+    {
+      "id": "3b0037c2d236039586bc0c99",
+      "decision": "selected",
+      "reason": "Die berichtete Ankündigung einer australischen KI-Sicherheitsaufsicht mit Meldepflichten und strafrechtlicher Verantwortung ist eine eigenständige regulatorische Entwicklung. Der Planungsstatus lässt sich klar von geltendem Recht abgrenzen.",
+      "item": {
+        "title": "Australische KI-Sicherheitsaufsicht mit Vorfallmeldungen und strafrechtlicher Verantwortung geplant",
+        "summary": "Laut dem Wochenbericht hat die australische Regierung Pläne für eine KI-Sicherheitsaufsicht angekündigt, die verpflichtende Vorfallmeldungen und strafrechtliche Verantwortung für Fehlverhalten im Bereich besonders leistungsfähiger KI vorsehen. Ein veröffentlichter Gesetzentwurf oder bereits geltende neue Pflichten werden im vorgelegten Text nicht bestätigt.",
+        "category": "business",
+        "impact": 4,
+        "date": "2026-11-12",
+        "change_type": "policy"
+      }
+    },
+    {
+      "id": "f4fe456eff23e837dbf297cf",
+      "decision": "below_threshold",
+      "reason": "Die vorgelegte Analyse nennt allgemeine Anforderungen an die Dokumentation der KI-Aufsicht. Eine neue verbindliche Offenlegungspflicht, konkrete Aufsichtsmaßnahme oder hinreichend konkretisierte neue Untersuchung ist nicht belegt."
+    },
+    {
+      "id": "f04f3bbd740d53d1f130da4f",
+      "decision": "below_threshold",
+      "reason": "Der Verweis auf die Grant-Thornton-Umfrage enthält weder konkrete Ergebniswerte noch Stichprobengröße oder Erhebungsmethode. Damit ist der behauptete Befund zu Verantwortungs- und Dokumentationslücken für eine eigenständige sachliche Meldung zu wenig konkret belegt."
+    },
+    {
+      "id": "738813d5ec87f9b471d1f6fb",
+      "decision": "duplicate",
+      "reason": "Die private Beta einschließlich Kundenbeispielen, kundenseitiger Speicherung und Zero Data Retention ist bereits im Historieneintrag zur selben Ankündigung erfasst.",
+      "duplicate_of": "h-5f0071f24ffe4978dd7d6e3d"
+    },
+    {
+      "id": "34dbc1b128fbdf3427da3925",
+      "decision": "held",
+      "reason": "Duplikatziel wurde nicht veröffentlicht",
+      "duplicate_of": "76c7149caf59113f58ab97d1"
+    },
+    {
+      "id": "a6841428b4cb6666ef7ca9fb",
+      "decision": "duplicate",
+      "reason": "Umbenennung von Claude Dashboards in Claude Data und allgemeine Verfügbarkeit sind bereits mit derselben Quelle und demselben Datum erfasst.",
+      "duplicate_of": "h-f139491a44fb94f82ead2e1b"
+    },
+    {
+      "id": "2833d103d24ad57cca4770c7",
+      "decision": "duplicate",
+      "reason": "Dieselbe Seed-Runde über 13 Millionen US-Dollar und der Ansatz zur Simulation und Optimierung von Agenten sind bereits erfasst; die zusätzlichen Werkzeugnamen sind kein eigener Entwicklungsschritt.",
+      "duplicate_of": "h-fc7416d5bb7e53df1789f71b"
+    },
+    {
+      "id": "56d9b90b2ab3234cb10049af",
+      "decision": "below_threshold",
+      "reason": "Der Graduated-Status ist eine neue Entwicklung im Kubernetes-Ökosystem, doch der vorgelegte Eintrag belegt keinen konkreten KI-Bezug oder eine Änderung für KI-Anwendungen."
+    },
+    {
+      "id": "7003de196cb4f5b1d1f7dc51",
+      "decision": "selected",
+      "reason": "Die Aufnahme als CNCF-Projekt ist ein eigener institutioneller Entwicklungsschritt gegenüber der bereits erfassten Bereitstellung als offene Kubernetes-Laufzeit.",
+      "item": {
+        "title": "Googles Agent Substrate wird CNCF-Projekt",
+        "summary": "Googles Agent Substrate wird dem Bericht zufolge nun als CNCF-Projekt geführt. Die Infrastruktur speichert den Zustand wartender Agentensitzungen und gibt deren Worker-Pods an einen gemeinsamen Pool zurück; bei Bedarf läuft die Sitzung auf einem verfügbaren Pod weiter. Laut Google dauert diese Wiederaufnahme weniger als 500 Millisekunden.",
+        "category": "agents",
+        "impact": 3,
+        "date": "2026-11-12",
+        "change_type": "announcement"
+      }
+    },
+    {
+      "id": "e97e3de7b022f69c0bbd2118",
+      "decision": "duplicate",
+      "reason": "Ankündigung, Funktionsumfang und für das vierte Quartal geplante Beta von Box Architect sind bereits ressortübergreifend erfasst. Ein tatsächlicher Beta-Start ist hier nicht neu belegt.",
+      "duplicate_of": "h-c2976213849e6ea7496c0429"
+    },
+    {
+      "id": "9901488ac0a49f07dd4fb74b",
+      "decision": "duplicate",
+      "reason": "Die geplante Fiddler-Übernahme ist bereits erfasst; der vorgelegte Nachweis enthält weder einen Abschluss noch einen anderen neuen Transaktionsschritt.",
+      "duplicate_of": "h-b3be89972b2dd04517c9b95e"
+    },
+    {
+      "id": "f403350f0dc003bb4be68829",
+      "decision": "duplicate",
+      "reason": "Die beabsichtigte Dreadnode-Übernahme ist bereits erfasst. Neue Konditionen oder ein Vollzug werden nicht belegt.",
+      "duplicate_of": "h-8c3db19604ca0a0d0564b1c8"
+    },
+    {
+      "id": "6be4e3675fec384fd1c0a688",
+      "decision": "selected",
+      "reason": "Der Bericht über Huangs eingeräumte Affäre und daraus abgeleitete Sicherheitsbedenken ist ein eigenständiges Unternehmensereignis, nicht der bereits erfasste US-chinesische KI-Dialog aus derselben Sammelquelle. Der Spionageverdacht muss ausdrücklich als Verdacht und die Darstellung als CNBC-Bericht kenntlich bleiben.",
+      "item": {
+        "title": "CNBC berichtet über Sicherheitsbedenken um Nvidia-Chef Jensen Huang",
+        "summary": "Laut CNBC hat Nvidia-Chef Jensen Huang eine außereheliche Affäre mit einer chinesischen Geschäftsfrau eingeräumt, die US-Geheimdienstvertreter der Spionage verdächtigen; erwiesen ist dieser Verdacht damit nicht. Der Bericht beschreibt Unternehmens- und nationale Sicherheitsbedenken sowie Zweifel an Huangs Teilnahme am bevorstehenden US-chinesischen Gipfeltreffen.",
+        "category": "business",
+        "impact": 3,
+        "date": "2026-11-11",
+        "change_type": "business"
+      }
+    },
+    {
+      "id": "449fad8fb5e6033d89732915",
+      "decision": "duplicate",
+      "reason": "Die getrennte Erfassung lokaler BYOK-Nutzung und administrativ konfigurierter Unternehmensmodelle ist bereits dokumentiert. Zusätzliche Details zu Feldern, Berechtigungen und Telemetriegrenzen beschreiben dasselbe API-Update.",
+      "duplicate_of": "h-79b096ea5237334ada52d39c"
+    },
+    {
+      "id": "7a542b87b00a505aec623edb",
+      "decision": "duplicate",
+      "reason": "Dieselben vLLM-Messungen mit MiniMax-M3.1-Flash auf Rubin NVL72 einschließlich des Durchsatzfaktors 10,2 und der TCO-Bewertung von SemiAnalysis stehen bereits in der Historie.",
+      "duplicate_of": "h-2a4b5c09f9b9c7ff8a8fa3ba"
+    },
+    {
+      "id": "3bed18bffe44655a90bffaad",
+      "decision": "selected",
+      "reason": "Die Optimierungsarbeit an SGLang auf Rubin ist ein eigener Entwicklungsschritt und nicht mit den bereits erfassten vLLM-Messungen oder dem SGLang-TorchTPU-Serving gleichzusetzen.",
+      "item": {
+        "title": "SGLang auf Rubin: SemiAnalysis berichtet über bis zu zehnfache Leistungsgewinne",
+        "summary": "Laut dem von Latent Space referierten SemiAnalysis-Bericht erreicht SGLang auf Rubin nach weniger als fünf Tagen Optimierungsarbeit bis zu zehnfache Leistungsgewinne. Nähere Modell- und Lastkonfigurationen nennt der vorgelegte Text nicht; die Zahl ist daher nicht als allgemeiner Beschleunigungsfaktor zu verstehen.",
+        "category": "tools",
+        "impact": 3,
+        "date": "2026-11-12",
+        "change_type": "update"
+      }
+    },
+    {
+      "id": "9378210eae2482192de41cd8",
+      "decision": "duplicate",
+      "reason": "Die Encoder-Prefill-Decode-Optimierung mit Mooncake/NIXL und encoderübergreifendem Caching ist einschließlich Modell, Parallelität und Leistungswerten bereits erfasst.",
+      "duplicate_of": "h-39b110ed31c1e97264671f00"
+    },
+    {
+      "id": "5efb4b8b803fe0c1717c2829",
+      "decision": "duplicate",
+      "reason": "Die Hardwareankündigung zur TPU 8i Max samt höherer Speicherkapazität und verdoppelter Bandbreite ist bereits erfasst. Die Angabe von 384 GB achtlagigem HBM ergänzt technische Details derselben Ankündigung, belegt aber keinen eigenen Verfügbarkeits- oder Produktmeilenstein.",
+      "duplicate_of": "h-76f8bf07c9e6786d8f2139b1"
+    },
+    {
+      "id": "4fe509189f64a1439eeee97f",
+      "decision": "duplicate",
+      "reason": "Der Serving-Pfad für Muse Spark Open auf einem TPU-v7-Host und die von SGLang gemeldeten Beschleunigungswerte sind bereits vollständig erfasst.",
+      "duplicate_of": "h-a52d508691192f3026685876"
+    },
+    {
+      "id": "91a73871d70b0b41d71c2d2d",
+      "decision": "selected",
+      "reason": "Die berichtete mehrfache Überzeichnung ist eine neue Nachfrageentwicklung gegenüber Roadshow und Angebotskonditionen in der Historie. Auch das genannte Gesamtvolumen einschließlich Privatplatzierung geht über die bisher erfasste Aktienofferte hinaus.",
+      "item": {
+        "title": "Anthropic: Börsenangebot laut Bloomberg mehrfach überzeichnet",
+        "summary": "Latent Space referenziert einen Bloomberg-Bericht, wonach Anthropics geplantes Börsenangebot mehrfach überzeichnet sei. Anthropic und seine Mitgründer wollten einschließlich einer Privatplatzierung bis zu 90,4 Milliarden US-Dollar bei einer vollständig verwässerten Bewertung von rund 1,4 Billionen US-Dollar einwerben. Die Angaben beschreiben den berichteten Angebotsstand, keine abgeschlossene Transaktion.",
+        "category": "business",
+        "impact": 4,
+        "date": "2026-11-12",
+        "change_type": "business"
+      }
+    },
+    {
+      "id": "b1ef78b878d4ce4eca694c48",
+      "decision": "duplicate",
+      "reason": "Die Berufung von Michael Rogers und Tom Moran zu Senior Advisors für Verteidigung und Cybersicherheit ist bereits als dieselbe Personalentscheidung erfasst.",
+      "duplicate_of": "h-27e8ad2d6e21dbf5dcd5ef1b"
+    },
+    {
+      "id": "f2c2564fd657fae7c30a3029",
+      "decision": "duplicate",
+      "reason": "Der Beginn der IPO-Roadshow parallel zur Vorstellung von Fable 5.2 und Mythos 5.2 ist bereits mit derselben Quelle dokumentiert.",
+      "duplicate_of": "h-57fc9dbe6d41862f75288ce2"
+    },
+    {
+      "id": "e89337c29e7f008c8e30bcd7",
+      "decision": "duplicate",
+      "reason": "Samsungs HBM5-Details sind ressortübergreifend bereits erfasst: unveränderte Pinzahl, mehr als verdoppelte Pin-Geschwindigkeit, verkürzter PHY-Signalweg und erhöhte Leistungsaufnahme stammen aus demselben Bericht.",
+      "duplicate_of": "h-7f388846a829379c80830a68"
+    },
+    {
+      "id": "49c5a0f497dc53b2b46f0ccc",
+      "decision": "below_threshold",
+      "reason": "Die Initiative ist neu, bleibt aber ohne konkrete Leistungen, Zugangsbedingungen oder Startmodalitäten zu unbestimmt für eine eigenständige Meldung."
+    },
+    {
+      "id": "8e1b3c621510f7bcbed7161c",
+      "decision": "selected",
+      "reason": "Neue konkrete Angaben zur Größe und Nutzung des KI-gestützten Open-Source-Portfolios; in der Historie nicht enthalten. Die Kennzahlen werden ausdrücklich als Unternehmensangaben eingeordnet.",
+      "item": {
+        "title": "ArtCraft meldet 17 Anwendungen und 1,7 Millionen App-Downloads pro Tag",
+        "summary": "ArtCraft hat laut CEO Brandon Thomas 17 offizielle Anwendungen veröffentlicht; rund 300 weitere würden von der Community entwickelt. Er nennt etwa 4.000 beteiligte Entwickler und 1,7 Millionen App-Downloads täglich; diese Unternehmensangaben sind nicht unabhängig bestätigt. Der Bericht beschreibt auch Probleme mit Berechtigungen, GitHub, Skalierung und CI-Infrastruktur.",
+        "category": "business",
+        "impact": 3,
+        "date": "2026-11-13",
+        "change_type": "business"
+      }
+    },
+    {
+      "id": "7cc177b1e23092c2ab5a3173",
+      "decision": "selected",
+      "reason": "Datierte neue Runtime-Erweiterung mit höheren Ressourcenlimits und verändertem Ressourcenmanagement; von den historischen AgentCore-Integrationen und Gateway-Funktionen abgrenzbar.",
+      "item": {
+        "title": "Amazon Bedrock AgentCore Runtime erhält größere Sitzungen und schnellere Starts",
+        "summary": "AWS kündigt für Amazon Bedrock AgentCore Runtime Sitzungen mit bis zu 8 vCPUs, 32 GB Arbeitsspeicher und Container-Images bis 10 GB an. Laut Hersteller starten die Sitzungen in unter zwei Sekunden beziehungsweise bis zu 15-mal schneller und bleiben jeweils in einer eigenen hardwareisolierten Firecracker-MicroVM. Ungenutzte Ressourcen sollen automatisch freigegeben werden; für mehrstufige Dialoge nennt AWS bis zu 68 Prozent weniger Speicherverbrauch je Sitzung.",
+        "category": "agents",
+        "impact": 4,
+        "date": "2026-11-12",
+        "change_type": "update"
+      }
+    },
+    {
+      "id": "6388b61d271369260eadb765",
+      "decision": "selected",
+      "reason": "Neue konkrete Referenzimplementierung für organisations- und frameworkübergreifende Agentenkommunikation mit beidseitigem OAuth; nicht identisch mit der historischen Agent-Registry-Discovery.",
+      "item": {
+        "title": "AWS zeigt A2A-Referenzarchitektur mit LangChain, Strands Agents und Amazon Bedrock AgentCore",
+        "summary": "AWS veröffentlicht eine Referenzarchitektur, die LangChain-Agenten auf ECS/Fargate mit einem Strands-basierten Compliance-Agenten auf Amazon Bedrock AgentCore Runtime über A2A verbindet. Agent Cards erschließen die Fähigkeiten der Agenten; getrennte Cognito-Benutzerpools ermöglichen laut AWS organisationsübergreifende Zusammenarbeit mit OAuth in beide Richtungen, ohne Geheimnisse zwischen den Organisationen auszutauschen. Drei Jupyter-Notebooks führen durch Bereitstellung und Ende-zu-Ende-Test; es handelt sich um eine Referenzimplementierung, nicht um eine neue allgemeine Produktfreigabe.",
+        "category": "agents",
+        "impact": 3,
+        "date": "2026-11-12",
+        "change_type": "other"
+      }
+    },
+    {
+      "id": "8c1c5e8a51c3945fe2b55e0b",
+      "decision": "selected",
+      "reason": "Neue Abrechnungsfunktion für bidirektionale Streaming-Inferenz mit benanntem Startpartner und konkretem technischen Verfahren; kein historisches Duplikat.",
+      "item": {
+        "title": "Amazon SageMaker AI ergänzt nutzungsbasierte Streaming-Abrechnung im AWS Marketplace",
+        "summary": "AWS kündigt eine Verbrauchserfassung für bidirektionale Streaming-Inferenz in Amazon SageMaker AI an, mit der Modellanbieter Software-Gebühren im AWS Marketplace nach tatsächlicher Nutzung abrechnen können. Laut AWS melden Anbieter den Verbrauch über eine zusätzliche WebSocket-Verbindung und legen die abrechenbare Einheit selbst fest; Deepgram ist Startpartner für Speech-to-Text und Text-to-Speech. Die Infrastrukturkosten der bereitgestellten SageMaker-AI-Endpunkte fallen weiterhin separat an.",
+        "category": "business",
+        "impact": 3,
+        "date": "2026-11-11",
+        "change_type": "announcement"
+      }
+    },
+    {
+      "id": "3c25b1e44eceaaa6f39bc2a2",
+      "decision": "duplicate",
+      "reason": "Die private Preview von AlphaGenome 2 für kommerzielle Forschung einschließlich der Beschränkung auf Forschungszwecke ist bereits ressortübergreifend erfasst; kein neuer Zugangsschritt.",
+      "duplicate_of": "h-7bf1ca47b16799ee42012315"
+    },
+    {
+      "id": "718b92a38b719d213eed06f9",
+      "decision": "held",
+      "reason": "Der Beleg ist ein Rückblick auf Oktober-Änderungen und bestätigt keinen neuen Rollout am 12. November. Die Step-Functions-Anbindung ist bereits in h-6cb8e927faa017c99cd055b1 erfasst; für CLI 1.0 und Modell-Fallback fehlen belastbare Ereignisdaten zur gesonderten zeitlichen Abgrenzung."
+    },
+    {
+      "id": "b8d6f1cfd32868d1b4ee3f74",
+      "decision": "held",
+      "reason": "Der Rückblick nennt weder konkrete Funktionsnamen noch Freigabestufen oder Ereignisdaten. Damit lässt sich eine neue Bedrock-Änderung im Berichtsfenster nicht hinreichend bestimmen."
+    },
+    {
+      "id": "7c7e26e6c0f2a67ee7ed6fbb",
+      "decision": "duplicate",
+      "reason": "Die Preisspanne von 70 bis 78 US-Dollar und die daraus abgeleitete Bewertung des geplanten ANT-Börsengangs sind bereits erfasst. Der zusätzlich genannte geplante Notierungstag begründet hier keinen eigenständigen Finanzierungsschritt.",
+      "duplicate_of": "h-50e052cf743e68f181adefaa"
+    },
+    {
+      "id": "9ce17cb3e747852ae7be7344",
+      "decision": "held",
+      "reason": "Die zentrale Umfragezahl wird nur im Wochenbericht wiedergegeben. Ohne Stichprobe, Methodik und Erhebungs- beziehungsweise Veröffentlichungszeitpunkt lassen sich Aussagekraft und Neuigkeitswert der Untersuchung nicht ausreichend beurteilen."
+    },
+    {
+      "id": "76c7149caf59113f58ab97d1",
+      "decision": "duplicate",
+      "reason": "Die Ankündigung von Always-on Genie einschließlich Ontology Manager, zusätzlichem Unternehmenskontext und kommender Preview- und Beta-Programme ist bereits im Historieneintrag erfasst. Die ergänzenden Angaben zu Genie Search sind Teil derselben Ankündigung und kein separat belegter neuer Veröffentlichungsschritt.",
+      "duplicate_of": "h-10e11d38acde27a789876c92"
+    },
+    {
+      "id": "5ea8c5201615573aabeb3793",
+      "decision": "selected",
+      "reason": "Neue Produktgeneration mit konkreten Änderungen an Agentenentwicklung, Orchestrierung und Nachvollziehbarkeit; keine entsprechende Meldung in Historie oder Vergleichskandidaten.",
+      "item": {
+        "title": "NiCE Cognigy erneuert Agentic Experience Studio mit AI Assist und Agenten-Skills",
+        "summary": "Laut NiCE verbindet die neue Cognigy-Generation ein überarbeitetes Agentic Experience Studio und AI Assist mit wiederverwendbaren Skills, Werkzeugen und Personas sowie der Einbindung spezialisierter Subagenten und externer Agenten. Durchgängiges Tracing soll Datenzugriffe, Werkzeugnutzung und Entscheidungen sichtbar machen; native Speech-to-Speech-Unterstützung und integrierte Modelle von Deepgram, ElevenLabs und Anthropic erweitern laut Anbieter die Sprachfunktionen. Bestandskunden erhalten die Neuerungen laut NiCE im bestehenden Angebot, ohne laufende Produktivbereitstellungen ändern zu müssen.",
+        "category": "agents",
+        "impact": 3,
+        "date": "2026-11-12",
+        "change_type": "update"
+      }
+    }
+  ],
+  "briefing_sha256": "130d64a528155a2a21f6f59f25db8a800728691e4e1ec35c04048fefaa842771",
+  "created_at": "2026-11-13T07:36:40.917825+00:00"
+}
