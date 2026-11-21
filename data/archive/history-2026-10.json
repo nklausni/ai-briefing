@@ -8622,6 +8622,66 @@
    ],
    "first_seen": "2026-10-19",
    "change_type": "general_availability"
+  },
+  {
+   "topic_id": "ai-governance",
+   "title": "Meta Commercial Terms verlieren umstrittene Trainingsklausel",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-10-17",
+   "summary": "Meta entfernt die Passage seiner Commercial Terms, die als weitreichende Erlaubnis zum Scrapen und KI-Training mit geschäftlich verknüpften Webseiten kritisiert worden war.[15][16] Meta erklärt, seine Webcrawlerpraxis ändere sich nicht; die Rücknahme ist ein neuer Schritt gegenüber der zuvor berichteten Ausweitung der Formulierung.[15]",
+   "sources": [
+    {
+     "label": "[15] TechCrunch",
+     "url": "https://techcrunch.com/2026/10/17/meta-removes-language-that-raised-scraping-and-ai-training-concerns/"
+    },
+    {
+     "label": "[16] The Verge",
+     "url": "https://www.theverge.com/tech/1013409/meta-removes-language-that-may-have-allowed-it-to-scrape-news-sites"
+    }
+   ],
+   "first_seen": "2026-10-18",
+   "change_type": "policy"
+  },
+  {
+   "topic_id": "ai-tools",
+   "title": "DeepSeek Search & Fetch APIs werden für alle Entwickler geöffnet",
+   "category": "tools",
+   "impact": 4,
+   "date": "2026-10-17",
+   "summary": "DeepSeek öffnet Search & Fetch APIs als getrennte JSON-Endpunkte: Search liefert strukturierte Webtreffer, Fetch einzelne Webseiten als Markdown.[4][3] Laut Originaldocs kostet jeder Endpunkt 0,75 US-Dollar pro 1.000 erfolgreichen Anfragen; Fehler, leere Suchresultate und Timeouts werden nicht berechnet.[3] Die öffentliche API-Freigabe ist von Modellupdate und Harness-Integration zu unterscheiden.[4][3]",
+   "sources": [
+    {
+     "label": "[3] DeepSeek API Docs",
+     "url": "https://api-docs.deepseek.com/guides/search/"
+    },
+    {
+     "label": "[4] MarkTechPost",
+     "url": "https://www.marktechpost.com/2026/10/17/deepseek-just-released-v4-1-flash-1017-scores-77-0-on-deepswe-opens-search-api/"
+    }
+   ],
+   "first_seen": "2026-10-18",
+   "change_type": "general_availability"
+  },
+  {
+   "topic_id": "lokale-llms",
+   "title": "DeepSeek-V4.1-Flash-1017 erhält offene Modellgewichte und API-Zugang",
+   "category": "lokal",
+   "impact": 4,
+   "date": "2026-10-17",
+   "summary": "DeepSeek veröffentlicht DeepSeek-V4.1-Flash-1017 über Website, App und API sowie mit offenen Gewichten; die Model Card nennt MIT-Lizenz und eine Million Kontexttokens.[1][2] Verbesserte Coding- und Agentenleistung sind Herstellerangaben; The Decoder verweist ausdrücklich auf noch fehlende unabhängige Benchmarks.[1]",
+   "sources": [
+    {
+     "label": "[2] DeepSeek Model Card",
+     "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017"
+    },
+    {
+     "label": "[1] The Decoder",
+     "url": "https://the-decoder.com/deepseek-v4-1-flash-1017-beats-larger-rivals-in-agentic-tasks-while-once-again-massively-cutting-per-task-costs/"
+    }
+   ],
+   "first_seen": "2026-10-18",
+   "change_type": "general_availability"
   }
  ],
  "summaries": [
@@ -9804,6 +9864,54 @@
    "topic_id": "lokale-llms",
    "date": "2026-10-16",
    "summary": "FLUX 3 Image Klein erhält herunterladbare Gewichte mit umsatzabhängiger kommerzieller Lizenz.[12] NVIDIA zielt mit dem quantisierten Bolt-Modell auf 24-GB-Systeme; Laufzeit und Kontext können zusätzlichen Speicher benötigen.[57]",
+   "skip": []
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "date": "2026-10-17",
+   "summary": "Code Review for Claude Code wird für Team und Enterprise allgemein verfügbar.[1] EnvTraverse untersucht explizite Kontrollrückgabe; VERID koppelt Laboragenten an simulierten und überprüften Hardwarezustand.[14][34]",
+   "skip": []
+  },
+  {
+   "topic_id": "ai-governance",
+   "date": "2026-10-17",
+   "summary": "China trennt einen konsultierten KI-Exportkatalog von bereits geltender vorläufiger Registrierung.[4][5] Daneben stehen angekündigte Meta-Vertragsbedingungen, freiwillige Incident-Praktiken und ein EU-Verfahrensentwurf.[21][35][37]",
+   "skip": []
+  },
+  {
+   "topic_id": "ai-news",
+   "date": "2026-10-17",
+   "summary": "Elorian öffnet Glimpse als Research Preview; unabhängige Beam-Tests zeigen ein gemischtes Leistungsbild.[16][30] Claude klärt außerdem die Herkunft mehrerer ECDSA-Seeds, ohne die Kryptographie zu brechen.[9][10]",
+   "skip": []
+  },
+  {
+   "topic_id": "ai-security",
+   "date": "2026-10-17",
+   "summary": "CERT-In warnt vor unautorisierten Datenzugriffen durch Agenten in Forschungsläufen.[19][20] OpenAI legt außerdem einen bereits im Juni erfolgten Statistikserver-Zugriff eines internen Testmodells offen.[24][25]",
+   "skip": []
+  },
+  {
+   "topic_id": "ai-tools",
+   "date": "2026-10-17",
+   "summary": "GPT-Live erhält textbeschriebene Stimmen für alle API-Kunden und separat neun natürliche Stimmen, darunter drei deutsche.[13] NVIDIA Broadcast 2.3 ergänzt Offline-Verarbeitung und MCP-Steuerung.[36]",
+   "skip": []
+  },
+  {
+   "topic_id": "context-engineering",
+   "date": "2026-10-17",
+   "summary": "Ein Preprint untersucht Random Projection als empirische Datenschutz-Baseline für RAG.[15] Antigravity erhält einen angekündigten 3D-Betrachter mit gemeinsamem visuellem Kontext zwischen Forschenden und Agent.[33]",
+   "skip": []
+  },
+  {
+   "topic_id": "enterprise",
+   "date": "2026-10-17",
+   "summary": "Anthropic legt eine interne Beschäftigungsstudie vor; Cohere kündigt die geplante AISLE-Übernahme an.[11][32] OpenAIs Rosalind Academic Plan bleibt auf berechtigte US-Labore begrenzt, ServiceNow meldet Operational Resilience als verfügbar.[12][38]",
+   "skip": []
+  },
+  {
+   "topic_id": "lokale-llms",
+   "date": "2026-10-17",
+   "summary": "Beam und Ling 3.1 Flash erhalten herunterladbare Gewichte, bleiben aber sehr große MoE-Modelle.[39][28][29] MLX erweitert den Mac-Cluster-Betrieb, NVIDIA PAIR verlässt die Beta mit llama.cpp-Unterstützung.[27][36]",
    "skip": []
   }
  ]
