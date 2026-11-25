@@ -4,6 +4,7 @@ on:
   push:
     branches: [main]
     paths:
+      - "scripts/deploy-pages.cjs"
       - "site/**"
       - ".github/workflows/pages.yml"
   workflow_dispatch:
@@ -29,9 +30,31 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
       - name: Upload static site
+        id: upload
         uses: actions/upload-pages-artifact@v3
         with:
           path: site
-      - name: Deploy
+      - name: Create Pages deployment from uploaded artifact
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        env:
+          ARTIFACT_ID: ${{ steps.upload.outputs.artifact_id }}
+        with:
+          script: |
+            const { create } = require(process.env.GITHUB_WORKSPACE + '/scripts/deploy-pages.cjs');
+            await create({ github, context, core }, process.env.ARTIFACT_ID);
+      - name: Wait for Pages deployment
+        id: monitor
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        env:
+          DEPLOYMENT_ID: ${{ steps.deployment.outputs.deployment_id }}
+        with:
+          script: |
+            const { wait } = require(process.env.GITHUB_WORKSPACE + '/scripts/deploy-pages.cjs');
+            await wait({ github, context, core }, process.env.DEPLOYMENT_ID);
+      - name: Cancel unfinished Pages deployment
+        if: ${{ (failure() || cancelled()) && steps.deployment.outputs.deployment_id != '' && steps.monitor.outputs.terminal != 'true' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DEPLOYMENT_ID: ${{ steps.deployment.outputs.deployment_id }}
+        run: gh api --silent --method POST "repos/$GITHUB_REPOSITORY/pages/deployments/$DEPLOYMENT_ID/cancel"
