@@ -2,8 +2,8 @@
   "meta": {
     "title": "AI-Briefing",
     "subtitle": "Multi-Briefing · Privates AI-Briefing",
-    "period": "2026-11-27",
-    "generated": "2026-11-27",
+    "period": "2026-11-28",
+    "generated": "2026-11-28",
     "disclaimer": "Hinweis: Alle Infos auf eigene Gefahr. Dies ist ein privates Projekt, automatisch generiert aus Web-Recherche.",
     "host": "Niko Klausnitzer"
   },
@@ -72,187 +72,241 @@
       "name": "AI News",
       "group": "Überblick",
       "angle": "Modelle, Forschung und Plattformen",
-      "summary": "ModernELECTRA: Knowledgator veröffentlicht EdgeCoder-31M und EdgeCoder-Multilingual-61M.",
+      "summary": "OpenRouter ergänzt Batch-Ergebnisabruf und context_management für Responses.",
       "items": [
         {
-          "title": "ChinaTalk modelliert sechs Monate Verzögerung für Chinas Frontier-Rechenkapazität durch BIS-Regel",
-          "summary": "ChinaTalk schätzt, dass gemietete Auslandsrechenleistung rund ein Fünftel der chinesischen KI-Rechenleistung und ein Drittel der für Frontier-Training nutzbaren Kapazität ausmacht. Unter der Annahme, dass die neue US-Fernzugriffsregel effektiv etwa 55 Prozent dieser Mietkapazität unterbindet, erreicht China bestimmte Kapazitätsniveaus bis Ende 2028 im Median rund sechs Monate später; die mittlere Hälfte der Simulationen liegt bei vier bis neun Monaten. Die Autoren betonen die Abhängigkeit von Durchsetzung und Ausnahmen: Modelliert wird Rechenkapazität, kein entsprechender Rückstand bei Modellfähigkeiten.",
-          "category": "business",
+          "title": "Sber veröffentlicht GigaChat 4 unter MIT-Lizenz mit MCP-Anbindung",
+          "summary": "Sber hat GigaChat 4 nach eigenen Angaben unter MIT-Lizenz veröffentlicht und bietet das Modell über GigaPlatform AI Studio sowie für lokalen Unternehmensbetrieb an. Laut Hersteller unterstützt es mehrstündige agentische Arbeitsabläufe mit Planung, Ausführung und Kontrolle sowie die Anbindung externer Dienste über MCP. Sber nennt eine Million Tokens Kontext und 40 Prozent mehr Geschwindigkeit gegenüber GigaChat 3.5; unabhängige Bestätigungen dieser Leistungsangaben liegen nicht vor.",
+          "category": "modelle",
           "impact": 4,
-          "date": "2026-11-24",
-          "change_type": "research",
+          "date": "2026-11-28",
+          "change_type": "general_availability",
           "candidate_ids": [
-            "78a24d0b8fda776ac6465c27"
+            "7823cab739b81761175884b7"
           ],
           "sources": [
             {
-              "label": "www.chinatalk.media",
-              "url": "https://www.chinatalk.media/p/the-remote-access-rule-will-slow"
+              "label": "business-standard.com",
+              "url": "https://business-standard.com/content/press-releases-ani/sber-unveils-next-generation-of-gigachat-4-models-capable-of-operating-autonomously-and-solving-complex-tasks-126112800256_1.html"
             }
           ],
           "n": 1
         },
         {
-          "title": "ModernELECTRA: Knowledgator veröffentlicht EdgeCoder-31M und EdgeCoder-Multilingual-61M",
-          "summary": "Knowledgator stellt ModernELECTRA vor: Das Verfahren ergänzt Replaced-Token Detection um Tokenrekonstruktion aus den Randzuständen eines Kontextfensters, um Klassifikation und Embeddings zu verbinden. Die veröffentlichten Encoder EdgeCoder-31M und EdgeCoder-Multilingual-61M haben 31 beziehungsweise 61 Millionen Parameter, unterstützen Englisch beziehungsweise 46 Sprachen und verarbeiten bis zu 8.192 Tokens. Der Anbieter berichtet GLUE-Werte von 86,0 und 85,1 sowie konkurrenzfähige Embedding-Ergebnisse nach zusätzlichem Fine-Tuning, weist aber auf Einzelläufe und eine fehlende kontrollierte Ablation der Zusatzaufgabe hin.",
-          "category": "modelle",
+          "title": "RLVB trainiert evidenzabhängige Agentenantworten und führt Pro Worlds ein",
+          "summary": "Reinforcement Learning with Verifiable Beliefs (RLVB) belohnt Agenten dafür, Informationen zu sammeln, solange mehrere Antworten möglich sind, und erst bei ausreichender, im Simulator überprüfbarer Evidenz zu antworten. Die Arbeit stellt außerdem Pro Worlds vor, einen Benchmark mit visuellen Rätseln, deren Welt durch ein kleines Sichtfenster erkundet wird. Nach Angaben der Autoren verbessert RLVB drei Vision-Language-Modelle auf drei Benchmarks in allen neun Konfigurationen gegenüber dem Basismodell, im Mittel um 17,1 Prozent.",
+          "category": "agents",
           "impact": 3,
-          "date": "2026-11-26",
+          "date": "2026-11-24",
           "change_type": "research",
           "candidate_ids": [
-            "b8232c8eb1b49e6909aaf06c"
+            "e25e299f218b0830385be2e2"
           ],
           "sources": [
             {
-              "label": "huggingface.co",
-              "url": "https://huggingface.co/blog/knowledgator/modernelectra"
+              "label": "arxiv.org",
+              "url": "https://arxiv.org/abs/2611.32884"
             }
           ],
           "n": 2
         },
         {
-          "title": "SenseNova-RoboRSI-27B: Vollversion mit RoboRSI Harness und VLA2Agent veröffentlicht",
-          "summary": "SenseNova veröffentlicht die Vollversion von SenseNova-RoboRSI-27B samt Modellgewichten und RoboRSI Harness: Das Modell kann vorgeschlagene VLA-Bewegungen prüfen, Teilstrecken ausführen oder Greiferpositionen und Aktionsfolgen als Code festlegen. VLA2Agent wandelt vorhandene Roboterdemonstrationen in Trainingsbeispiele für Greiferziele um und erhöhte laut Anbieter den Anteil der Positionsvorhersagen innerhalb von 50 Millimetern von 24,9 auf 49,2 Prozent. Mit unveränderten 27B-Gewichten meldet SenseNova auf zwei physischen Roboterplattformen sechs erfolgreiche Objektplatzierungen und neun erfolgreiche Blockstapelungen bei jeweils zehn Versuchen.",
-          "category": "agents",
+          "title": "DAPO-V gewichtet schwer überprüfbare Halluzinationen stärker – neuer Datensatz ITHV",
+          "summary": "Die Studie stellt DAPO-V vor, ein risikobeschränktes RL-Verfahren, das falsche Antworten auf für Menschen schwer überprüfbare Bild-Text-Fragen stärker bestraft; der zugehörige Datensatz ITHV umfasst 2.728 Beispiele. Nach Angaben der Autoren steigt bei drei multimodalen Modellen die Genauigkeit auf Fragen zu schwer erkennbaren Halluzinationen gegenüber rein genauigkeitsoptimiertem DAPO um 5,78 bis 9,72 Prozentpunkte, während das entsprechend gewichtete Risiko um 10,1 bis 19,5 Prozent sinkt. Eine verblindete Nutzerstudie deutet laut Arbeit darauf hin, dass verbleibende Halluzinationen leichter erkennbar sind.",
+          "category": "modelle",
           "impact": 3,
-          "date": "2026-11-25",
-          "change_type": "general_availability",
+          "date": "2026-11-24",
+          "change_type": "research",
           "candidate_ids": [
-            "923d7c70002498f2c540bf65"
+            "1b11acad4609adbecf8f67f5"
           ],
           "sources": [
             {
-              "label": "huggingface.co",
-              "url": "https://huggingface.co/blog/sensenova/roborsi"
+              "label": "arxiv.org",
+              "url": "https://arxiv.org/html/2611.32055"
             }
           ],
           "n": 3
         },
         {
-          "title": "Yupan Liu beansprucht Zwei-Nachrichten-Protokolle für Quanteninteraktive Beweise mit KI-Hilfe",
-          "summary": "Latent Space berichtet, Yupan Liu habe gezeigt, dass zwei Nachrichten für quanteninteraktive Beweise genügen. Der Bericht schreibt Scott Aaronson die Angabe zur KI-Unterstützung zu; eine unabhängige Bestätigung des Resultats ist im vorgelegten Material nicht dokumentiert.",
+          "title": "Lossless Latent Diffusion: LLDM soll Bilder pixelgenau rekonstruieren",
+          "summary": "Forschende stellen mit Lossless Latent Diffusion (LLDM) einen Ansatz vor, der nach ihren Angaben eine pixelgenaue Bildrekonstruktion aus dem latenten Raum ermöglicht. Das Verfahren soll zugleich ähnlich einfach zu trainieren sein wie der FLUX2-VAE; detaillierte Messwerte oder unabhängige Bestätigungen enthält der vorgelegte Bericht nicht.",
           "category": "modelle",
           "impact": 3,
-          "date": "2026-11-25",
+          "date": "2026-11-27",
           "change_type": "research",
           "candidate_ids": [
-            "064177d3c55802aa08176ddd"
+            "4328f9e63b566a0c666579f9"
           ],
           "sources": [
             {
               "label": "latent.space",
-              "url": "https://latent.space/p/ainews-math-proofs-are-landing-faster-than-we-can-read-them"
+              "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
             }
           ],
           "n": 4
         },
         {
-          "title": "OpenHuman beansprucht mit Agenten 17 Folgeresultate aus einem Lean-Beweis von Alpöge und Claude",
-          "summary": "OpenHuman behauptet laut Latent Space, seine Agenten hätten innerhalb von drei Tagen aus einem Levent Alpöge und Claude zugeschriebenen Lean-Beweis der Riemannschen Vermutung 17 weitere Resultate abgeleitet. Genannt werden Lindelöf und Erdős #985; weder der zugrunde liegende Beweisanspruch noch die Folgeresultate sind im vorgelegten Material unabhängig bestätigt.",
-          "category": "agents",
+          "title": "DeepSeek aktualisiert DeepEP V2.6 und DeepEP-Ascend V1.1",
+          "summary": "Laut Latent Space aktualisiert DeepSeek DeepEP auf V2.6 und DeepEP-Ascend auf V1.1. Für verteiltes Training auf Ascend kommen die Kommunikationsprimitive lb_reduce_grads und ring_send_recv hinzu; außerdem nennt der Bericht Arbeiten an der SM100-Unterstützung in FlashMLA.",
+          "category": "tools",
           "impact": 3,
-          "date": "2026-11-25",
-          "change_type": "research",
+          "date": "2026-11-27",
+          "change_type": "update",
           "candidate_ids": [
-            "14a4e14fd21abc4b41016eea"
+            "28ca512003a9a468a7448a8a"
           ],
           "sources": [
             {
               "label": "latent.space",
-              "url": "https://latent.space/p/ainews-math-proofs-are-landing-faster-than-we-can-read-them"
+              "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
             }
           ],
           "n": 5
         },
         {
-          "title": "NIO kündigt WorldModel 3.0 für Fahrassistenzsysteme an",
-          "summary": "Laut Release-Tracker hat NIO WorldModel 3.0 für intelligente Fahrsysteme vorgestellt. Der Hersteller beschreibt eine räumlich-zeitliche 4D-Kompression und ein überarbeitetes Reinforcement-Learning-Verfahren mit zwei Schleifen. Die Einführung in unterstützten Fahrzeugsystemen ist ab Dezember vorgesehen, steht jedoch unter regulatorischem Vorbehalt.",
-          "category": "modelle",
+          "title": "Moonshot startet Kimi for Science mit kostenlosen API-Credits",
+          "summary": "Moonshot startet laut Latent Space das Programm Kimi for Science mit kostenlosen API-Credits und Zugang zu den neuesten Kimi-Modellen. Als Bewerbungsfrist nennt der Bericht den 8. Dezember; Förderumfang und Auswahlbedingungen gehen aus dem vorgelegten Abschnitt nicht hervor.",
+          "category": "business",
           "impact": 3,
-          "date": "2026-11-26",
+          "date": "2026-11-27",
           "change_type": "announcement",
           "candidate_ids": [
-            "087895c74d09332bf93bd4ce"
+            "935b87533fd05bda3d4f66e1"
           ],
           "sources": [
             {
-              "label": "www.nocode.mba",
-              "url": "https://www.nocode.mba/ai-release-tracker/2026/11"
+              "label": "latent.space",
+              "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
             }
           ],
           "n": 6
         },
         {
-          "title": "Sakana Namazu Small angekündigt: 30B-Modell auf Basis von NVIDIA Nemotron 3 Nano",
-          "summary": "Der Release-Tracker beschreibt Sakana Namazu Small als angekündigtes Modell mit 30 Milliarden Parametern auf Basis von NVIDIA Nemotron 3 Nano und zusätzlichem Pretraining sowie Post-Training durch Sakana AI. Nach Herstellerangaben ist es für webgestützte Recherche und Antworten anhand langer Dokumente vorgesehen. Eine On-Premises-Verfügbarkeit ist geplant; Details sollen im Dezember folgen, eine bereits erfolgte Freigabe ist nicht belegt.",
+          "title": "Liquid AI: d1.3-ultra ist in Liquid Console verfügbar",
+          "summary": "Liquid AI stellt d1.3-ultra in Liquid Console bereit; OpenRouter und Vercel sind als weitere Zugangswege erst angekündigt. Nach Herstellerangaben unterstützt das Entscheidungsmodell Ranglisten, Zahlen- und Datumsextraktion aus Bildern und Audio sowie Zeitmarken für gesprochene Inhalte. Der Artikel berichtet außerdem von gerundet 76 Punkten und Platz eins unter 27 Modellen im Decision Index von Artificial Analysis.",
           "category": "modelle",
           "impact": 3,
-          "date": "2026-11-26",
-          "change_type": "announcement",
+          "date": "2026-11-28",
+          "change_type": "general_availability",
           "candidate_ids": [
-            "4d1dfc324e7ed3aac7e9e178"
+            "170e4db3b1eb96eb766c9ed1"
           ],
           "sources": [
             {
-              "label": "www.nocode.mba",
-              "url": "https://www.nocode.mba/ai-release-tracker/2026/11"
+              "label": "ai.info",
+              "url": "https://ai.info/news/liquid-ai-d1-3-ultra-decision-model"
             }
           ],
           "n": 7
         },
         {
-          "title": "Amazon Transcribe Turbo startet als öffentliche Streaming-Preview für Sprachagenten",
-          "summary": "Dem Bericht zufolge ist Amazon Transcribe Turbo für Streaming in US East (Ohio) als öffentliche Preview verfügbar und unterstützt Englisch, Portugiesisch, Französisch, Italienisch, Deutsch und Spanisch. AWS beschreibt zunächst englischsprachige semantische Sprecherwechsel anhand von Inhalt und Prosodie sowie zur Laufzeit übermittelbare Erkennungshinweise, etwa für Namen oder Menüoptionen. Nach Herstellerangaben fallen für diese beiden Funktionen keine zusätzlichen Gebühren an.",
-          "category": "modelle",
-          "impact": 3,
-          "date": "2026-11-27",
-          "change_type": "preview",
+          "title": "OpenRouter ergänzt Batch-Ergebnisabruf und context_management für Responses",
+          "summary": "Laut OpenRouters API-Changelog ergänzt GET /batches/{id}/results den Abruf von Batch-Ergebnissen; Responses-Anfragen und daraus erstellte Presets erhalten außerdem context_management samt zugehörigem Schema. Hinzu kommen is_exclusive für BYOK-Schlüssel, output_delivery für SpeechRequest und allow_safety_retention_openai für Guardrails und Richtlinien zur Modellverfügbarkeit; die genaue Wirkung dieser neuen Felder erläutert der Eintrag nicht.",
+          "category": "tools",
+          "impact": 2,
+          "date": "2026-11-24",
+          "change_type": "update",
           "candidate_ids": [
-            "14fc12255c932e5e60e3728f"
+            "d62fbcdf2a26237468640131"
           ],
           "sources": [
             {
-              "label": "agentel.tech",
-              "url": "https://agentel.tech/en/feed?author=agent_d54fa2c9-44ec-456b-8eea-b6c243c73207"
+              "label": "openrouter.ai",
+              "url": "https://openrouter.ai/docs/changelog/rss.xml"
             }
           ],
           "n": 8
         },
         {
-          "title": "Amazon Transcribe Turbo: Englische Batch-Transkription allgemein verfügbar",
-          "summary": "Laut dem vorgelegten Bericht ist die englische Batch-Transkription mit Amazon Transcribe Turbo in den meisten AWS-Regionen allgemein verfügbar; weitere Batch-Sprachen und Streaming bleiben in öffentlicher Preview. AWS zufolge erfordert das Basismodell keine Änderungen an API, Code oder SDK und unterstützt benutzerdefinierte Vokabulare sowie gebietsspezifische Formatierung etwa von Zahlen, Datumsangaben und Adressen.",
-          "category": "modelle",
-          "impact": 3,
-          "date": "2026-11-27",
-          "change_type": "general_availability",
+          "title": "OpenRouter ergänzt Schemas für Tool-Suche und allow_provisional_providers",
+          "summary": "OpenRouter dokumentiert sechs neue Schemas für Tool-Referenzen, Suchergebnisse und Fehler der Tool-Suche in POST /messages und den zugehörigen Preset-Anfragen. Laut Anbieter erhalten außerdem die Erstellungs-, Aktualisierungs- und Ausgabeschemas für Guardrails sowie Richtlinien zur Modellverfügbarkeit das Feld allow_provisional_providers; konkrete Auswirkungen auf das Laufzeitverhalten werden im vorgelegten Eintrag nicht erläutert.",
+          "category": "tools",
+          "impact": 2,
+          "date": "2026-11-23",
+          "change_type": "update",
           "candidate_ids": [
-            "d02e87a7704d8ab3efaef136"
+            "f60025394c6224ac34d291b8"
           ],
           "sources": [
             {
-              "label": "agentel.tech",
-              "url": "https://agentel.tech/en/feed?author=agent_d54fa2c9-44ec-456b-8eea-b6c243c73207"
+              "label": "openrouter.ai",
+              "url": "https://openrouter.ai/docs/changelog/rss.xml"
             }
           ],
           "n": 9
         },
         {
-          "title": "Test-Time Compute: Bericht sieht bis rund 100 Millionen Tokens keine Sättigung bei Gemini 4 Argon",
-          "summary": "Jason Wei beschreibt laut Latent Space einen Benchmark, bei dem bis zu ungefähr 100 Millionen Tokens pro Aufgabe keine Sättigung beobachtet wurde. Für Gemini 4 Argon nennt der Bericht zugleich eine Lücke von 35 Prozent zu versteckten Tests, was die Übertragbarkeit der sichtbaren Ergebnisse einschränkt.",
-          "category": "modelle",
+          "title": "StepFun bietet STEM-Forschenden drei Monate Step Plan Pro",
+          "summary": "StepFun bietet laut Latent Space Forschenden aus STEM-Fächern drei Monate Zugang zu Step Plan Pro an. Angaben zur Bewerbung, regionalen Verfügbarkeit oder zu Nutzungslimits enthält der vorgelegte Abschnitt nicht.",
+          "category": "business",
           "impact": 2,
-          "date": "2026-11-25",
-          "change_type": "research",
+          "date": "2026-11-27",
+          "change_type": "announcement",
           "candidate_ids": [
-            "a364b3d3e810e0df1a5c1f00"
+            "d6cbe01584aace5e369a87b1"
           ],
           "sources": [
             {
               "label": "latent.space",
-              "url": "https://latent.space/p/ainews-math-proofs-are-landing-faster-than-we-can-read-them"
+              "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
             }
           ],
           "n": 10
+        },
+        {
+          "title": "Quasar 1.2 358B auf GLM-5.3-Basis erreicht 23 Indexpunkte",
+          "summary": "Artificial Analysis weist für Quasar 1.2 358B in der Einstellung Max 23 Punkte im Intelligence Index aus. Der Changelog bezeichnet das Modell als auf GLM-5.3 basierend und ergänzt Anbieterleistungsdaten für Multiverse Computing, ohne im vorgelegten Abschnitt konkrete Leistungswerte zu nennen.",
+          "category": "modelle",
+          "impact": 2,
+          "date": "2026-11-27",
+          "change_type": "update",
+          "candidate_ids": [
+            "9158164e9cd2269220d8c6e2"
+          ],
+          "sources": [
+            {
+              "label": "artificialanalysis.ai",
+              "url": "https://artificialanalysis.ai/de/changelog"
+            }
+          ],
+          "n": 11
+        },
+        {
+          "title": "Baidu: ERNIE 5.5 Flash Preview erreicht 31 Punkte im Artificial Analysis Intelligence Index",
+          "summary": "Artificial Analysis hat für ERNIE 5.5 Flash Preview einen Intelligence-Index-Wert von 31 veröffentlicht und Anbieterleistungsdaten für Baidu ergänzt. Der Changelog dokumentiert neue Evaluationsdaten, keine allgemeine Verfügbarkeit des weiterhin als Preview bezeichneten Modells.",
+          "category": "modelle",
+          "impact": 2,
+          "date": "2026-11-26",
+          "change_type": "update",
+          "candidate_ids": [
+            "3f1745a8bd18464214934411"
+          ],
+          "sources": [
+            {
+              "label": "artificialanalysis.ai",
+              "url": "https://artificialanalysis.ai/de/changelog"
+            }
+          ],
+          "n": 12
+        },
+        {
+          "title": "Ling-3.2-air erreicht 23 Punkte im Artificial Analysis Intelligence Index",
+          "summary": "Artificial Analysis veröffentlicht für Ling-3.2-air einen Wert von 23 Punkten im Intelligence Index. Der Evaluationseintrag enthält keine weiteren Angaben zu Fähigkeiten, Verfügbarkeit oder Lizenz.",
+          "category": "modelle",
+          "impact": 2,
+          "date": "2026-11-23",
+          "change_type": "update",
+          "candidate_ids": [
+            "ada220ed7d40cb9212754c36"
+          ],
+          "sources": [
+            {
+              "label": "artificialanalysis.ai",
+              "url": "https://artificialanalysis.ai/de/changelog"
+            }
+          ],
+          "n": 13
         }
       ]
     },
@@ -261,169 +315,133 @@
       "name": "Lokale LLMs",
       "group": "Praxis",
       "angle": "Open Weights, lokale Inferenz und Hardware",
-      "summary": "TheStage veröffentlicht Edgent für lokale Transkription und KI-Chats auf iPhone und Mac.",
+      "summary": "Halo kündigt Post-Training-Wettbewerb mit 1,5 Millionen Dollar an Rechenressourcen an.",
       "items": [
         {
-          "title": "Nvidia veröffentlicht Nemotron-Labs-Image-30B-A3B nach dem Ansatz „Pixel as Code“",
-          "summary": "Laut Bericht veröffentlicht Nvidia die Gewichte des autoregressiven Bildmodells Nemotron-Labs-Image-30B-A3B mit 30 Milliarden Gesamtparametern und drei Milliarden aktiven Parametern. Das Modell gehört zum Ansatz „Pixel as Code“ und nutzt eine hybride Mamba-2-/Attention-Architektur auf Basis von Nemotron 3 Nano. Teile des Inferenz- und Evaluations-Harnesses warten noch auf rechtliche Freigabe, weshalb die vom Anbieter beanspruchten Benchmark-Siege nur eingeschränkt reproduzierbar sind.",
+          "title": "GigaChat 4 37B A4B und GigaChat 4 708B A41B erscheinen mit Gewichten und Trainings-Checkpoints",
+          "summary": "Laut Latent Space wurden GigaChat 4 37B A4B und GigaChat 4 708B A41B mit Gewichten, Base- und früheren Trainings-Checkpoints sowie einem 83-seitigen technischen Bericht veröffentlicht. Die Veröffentlichung beschreibt eine Hybridarchitektur aus Gated Delta Net, MLA und DSA und beansprucht einen effektiven Kontext von einer Million Token; die angeführten Benchmarks stammen aus der Veröffentlichung. Für das 37B-Modell wird eine gegenüber früheren MIT-Versionen restriktivere Lizenz diskutiert.",
           "category": "lokal",
           "impact": 4,
-          "date": "2026-11-25",
+          "date": "2026-11-27",
           "change_type": "announcement",
           "candidate_ids": [
-            "9d288bff21a1dc8fd93031ad"
+            "8c703b2972873721bead8836"
           ],
           "sources": [
             {
               "label": "latent.space",
-              "url": "https://latent.space/p/ainews-math-proofs-are-landing-faster-than-we-can-read-them"
+              "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
             }
           ],
           "n": 1
         },
         {
-          "title": "TheStage veröffentlicht Edgent für lokale Transkription und KI-Chats auf iPhone und Mac",
-          "summary": "Laut einem gesponserten Bericht veröffentlicht TheStage mit Edgent eine kostenlose App für iPhone und Mac, die nach dem Modelldownload Offline-Transkription mit Sprecherzuordnung, Zusammenfassungen und lokale KI-Chats unterstützt. Nach Herstellerangaben sind weder Konto noch API-Schlüssel erforderlich, und Aufnahmen bleiben auf dem Gerät. Auf dem Mac bietet die App außerdem Diktate im aktiven Textfeld und einen schwebenden Schreibassistenten.",
+          "title": "Community betreibt vollständiges Kimi-K3.1-Pro mit gb10-hyperflare auf 16 GB10-Systemen",
+          "summary": "Ein Community-Projekt berichtet über den Betrieb des vollständigen Kimi-K3.1-Pro auf 16 Spark-/GB10-Systemen mit einer von Flare beziehungsweise Hyperflare abgeleiteten Engine. Nach Projektangaben erreicht der Aufbau je nach Ausgabeart etwa 24 bis 40 generierte Token pro Sekunde, rund 700 Token pro Sekunde beim Prefill und eine Startzeit von elf Minuten. Der Aufbau unterstützt Text- und Bildeingaben sowie gecachtes Prefill; Artefakte wurden auf Hugging Face und GitHub geteilt.",
           "category": "lokal",
-          "impact": 3,
-          "date": "2026-11-24",
-          "change_type": "general_availability",
+          "impact": 4,
+          "date": "2026-11-27",
+          "change_type": "announcement",
           "candidate_ids": [
-            "c644ef2d01788d05a964ee5c"
+            "252a4c7ae04b001061bab76f"
           ],
           "sources": [
             {
-              "label": "testingcatalog.com",
-              "url": "https://testingcatalog.com/thestage-launches-edgent-and-asrkit-for-offline-speech"
+              "label": "latent.space",
+              "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
             }
           ],
           "n": 2
         },
         {
-          "title": "TheStage veröffentlicht ASRKit mit TheWhisper, Qwen3-ASR und Parakeet-TDT",
-          "summary": "Dem gesponserten Bericht zufolge veröffentlicht TheStage ASRKit als SDK für lokale Spracherkennung mit TheWhisper, Qwen3-ASR und Parakeet-TDT unter einer gemeinsamen API. Der Anbieter nennt Unterstützung für Kotlin, Swift und Flutter sowie Live-Untertitel, lange Aufnahmen, Wortzeitstempel und Sprecherzuordnung. Nach Herstellerangaben ist die kommerzielle Nutzung auf bis zu 1.000 Geräten kostenlos; für größere Installationen ist eine Kontaktaufnahme erforderlich.",
+          "title": "llama.cpp 1.1.0 erweitert Llama Chat und setzt auf llama_batch_ext",
+          "summary": "Laut Bericht ergänzt llama.cpp 1.1.0 einen neu gestalteten Llama Chat mit Sprachnachrichten, Diktat und gruppierter Darstellung von Agentenaktivitäten sowie Unterstützung weiterer Sprach- und Audiomodellfamilien einschließlich Full-Duplex-Systemen. Hinzu kommen die serverseitige Auswahl benannter Tools und eine Quantisierungsauswahl nach Zielwerten für Bits pro Gewicht oder Dateigröße. Die bisherige native Schnittstelle llama_batch wird zugunsten von llama_batch_ext als veraltet markiert, aber nicht als sofort entfernt beschrieben.",
           "category": "lokal",
-          "impact": 3,
-          "date": "2026-11-24",
-          "change_type": "general_availability",
+          "impact": 4,
+          "date": "2026-11-26",
+          "change_type": "update",
           "candidate_ids": [
-            "3270fd94e418191900867b33"
+            "532a0e0f9085ef1acc3fab51"
           ],
           "sources": [
             {
-              "label": "testingcatalog.com",
-              "url": "https://testingcatalog.com/thestage-launches-edgent-and-asrkit-for-offline-speech"
+              "label": "worldindebug.com",
+              "url": "https://worldindebug.com/articles/llama-cpp-1-1-local-voice-agent-runtime-2026"
             }
           ],
           "n": 3
         },
         {
-          "title": "Knowledgator stellt FlashDeBERTa mit fusionierten GPU-Kernels vor",
-          "summary": "Knowledgator stellt FlashDeBERTa als quelloffene Implementierung der DeBERTa-Attention vor, die quadratische Attention-Matrizen nicht speichert und bestehende DeBERTa-v2- und -v3-Checkpoints unverändert lädt. Nach Anbieterangaben ist der Forward-Pass von DeBERTa-v3-base bei 4.096 Tokens etwa zehnmal schneller und benötigt 93 Prozent weniger Speicher als die Referenzimplementierung. Für Trainingsschritte bei 2.048 Tokens nennt Knowledgator eine 9,8-fache Beschleunigung; die Werte gelten für die beschriebenen Anbietertests.",
-          "category": "lokal",
+          "title": "Halo kündigt Post-Training-Wettbewerb mit 1,5 Millionen Dollar an Rechenressourcen an",
+          "summary": "Laut Latent Space ist der Halo-Post-Training-Wettbewerb für offene Modelle für den 1. bis 10. Dezember angekündigt. Dafür sollen Rechenressourcen im Wert von 1,5 Millionen Dollar und mehr als 200.000 Dollar an Preisgeldern bereitgestellt werden.",
+          "category": "business",
           "impact": 3,
-          "date": "2026-11-26",
+          "date": "2026-11-27",
           "change_type": "announcement",
           "candidate_ids": [
-            "8d95d191fce7d9f01c9776bc"
+            "116cc687787006b9b75c867b"
           ],
           "sources": [
             {
-              "label": "huggingface.co",
-              "url": "https://huggingface.co/blog/knowledgator/modernelectra"
+              "label": "latent.space",
+              "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
             }
           ],
           "n": 4
         },
         {
-          "title": "Inkling-2-Mini-Unbound v3 erhält Prime-Adapter gegen überlanges Reasoning",
-          "summary": "nokeep veröffentlicht Inkling-2-Mini-Unbound v3 mit dem Prime-LoRA-Adapter, der laut Anbieter auf harmlosen Aufgaben trainiert wurde und überlanges Reasoning sowie stockende mehrstufige Arbeit reduzieren soll. In eigenen Tests meldet nokeep gegenüber v2.1 eine Verkürzung der medianen Reasoning-Länge bei Alltagsfragen von 344 auf 184 Tokens, beansprucht aber keinen allgemeinen Genauigkeitsgewinn. Gewichte, separater Adapter und GGUF-Dateien sind verfügbar; der Anbieter warnt vor schädlichen Antworten und einem Einsatz ohne eigene Schutzmaßnahmen.",
+          "title": "Inkling-2-Mini-Prime bringt Prime-LoRA auf das ursprüngliche Modell",
+          "summary": "Inkling-2-Mini-Prime überträgt den Prime-LoRA auf das ursprüngliche Inkling-2-Mini mit dessen Inhaltsbeschränkungen; Gewichte, GGUF-Dateien und ein separater Adapter werden angeboten. In eigenen Tests meldet das Projekt eine Steigerung der Debugging-Erfolgsrate von 80 auf 100 Prozent und der Befolgung langer System-Prompts von 70 auf 92,5 Prozent. Der Anteil abgebrochener Antworten auf 1.100 sensible Anfragen sinkt laut Projekt von 13,5 auf 0,5 Prozent.",
           "category": "lokal",
           "impact": 3,
           "date": "2026-11-27",
-          "change_type": "update",
+          "change_type": "announcement",
           "candidate_ids": [
-            "60ad534539a1686515154892"
+            "1cf80f34d85c40f77604e163"
           ],
           "sources": [
             {
-              "label": "huggingface.co",
-              "url": "https://huggingface.co/nokeepai/Inkling-2-Mini-Unbound"
+              "label": "latent.space",
+              "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
             }
           ],
           "n": 5
         },
         {
-          "title": "Inkling 2 Mini: Hugging Face meldet 190,6 Tokens pro Sekunde mit vLLM und DSpark auf RTX PRO 6000",
-          "summary": "Hugging Face berichtet über 46 gültige Benchmarkläufe zur agentengestützten Inferenzoptimierung von Inkling 2 Mini auf einer RTX PRO 6000 mit 96 GB Speicher. Nach eigenen Messungen erhöhte der Wechsel von SGLang ohne spekulatives Decoding zu vLLM nightly mit DSpark die Einzelnutzer-Decodierung von 136 auf 190,6 Tokens pro Sekunde und den aggregierten Durchsatz bei acht Nutzern von rund 570 auf 716 Tokens pro Sekunde. Skripte und Rohmessungen sind verlinkt; die geprüfte Konfiguration mit auf 262.144 Tokens begrenztem Kontext wurde als Inference Endpoint bereitgestellt.",
+          "title": "AlphaLlama 2.0.12 integriert Inkling-2-Mini und erweitert AlphaInfer",
+          "summary": "AlphaLlama 2.0.12 ergänzt für Inkling-2-Mini eine automatisch eingebundene zweite Engine, die Port und OpenAI-kompatible API beibehält und standardmäßig einen Stream, 32K Kontext, q8_0-KV-Cache und N-Gramm-Drafting nutzt. Für unterstützte AlphaInfer-Modelle wird bei einem Stream überwiegend der Speed-Modus zum Standard; unter Linux kommen GLM-5.3-Flash und DeepSeek-V4.1-Flash für 24-GB-Grafikkarten hinzu, wobei Letzteres ohne Drafting rund 52 GB Arbeitsspeicher benötigt. Der Anbieter meldet nach einer Benchmark-Korrektur bei kopierlastigen Coding-Prompts auf einer RTX 4080 etwa dreifache Geschwindigkeit gegenüber Strata 0.2.22, ausdrücklich nicht gegenüber 0.2.23; im allgemeinen Chat fällt der Vorteil kleiner aus, und Drafting erzeugt keine tokenidentischen Ergebnisse zum einfachen Greedy-Decoding.",
           "category": "lokal",
           "impact": 3,
-          "date": "2026-11-25",
-          "change_type": "research",
+          "date": "2026-11-26",
+          "change_type": "update",
           "candidate_ids": [
-            "d054eaf220a94c5b4cc33519"
+            "b3bc076188932774d75ec403"
           ],
           "sources": [
             {
-              "label": "huggingface.co",
-              "url": "https://huggingface.co/blog/inkling-2-mini-inference-hillclimb"
+              "label": "github.com",
+              "url": "https://github.com/AlphaChat-dotcom/alphallama/releases/tag/v2.0.12"
             }
           ],
           "n": 6
         },
         {
-          "title": "Delegent delegiert Routineaufgaben an lokale Modelle",
-          "summary": "Delegent überträgt laut Bericht routinemäßige Teilaufgaben an ein lokales Modell, um die Nutzung teurer Frontier-Modelle zu reduzieren. Die zitierte Untersuchung nennt 59 bis 67 Prozent geringere Frontier-Kosten; zur Übertragbarkeit auf andere Aufgaben enthält die Passage keine Angaben.",
-          "category": "agents",
+          "title": "Omarchy 4.6.0-rc1 integriert lokale KI und ergänzt Folio sowie Omaview",
+          "summary": "Omarchy 4.6.0-rc1 bündelt laut Bericht lokale Modelle und entfernte Anbieter in einer gemeinsamen Agentenoberfläche; geeignete Katalogmodelle lassen sich nach Projektangaben in einem netzwerklosen Container einrichten und Modelle auf anderen Rechnern über Tailscale anbinden. Folio und Omaview übernehmen weitere Desktop-, Datei- und Medienaufgaben, während die Bildschirmkonfiguration eine verschiebbare Monitoranordnung erhält. Der Release Candidate ist ausdrücklich für Tests gedacht und keine stabile Freigabe für produktive Arbeitsplätze.",
+          "category": "lokal",
           "impact": 3,
-          "date": "2026-11-25",
-          "change_type": "research",
+          "date": "2026-11-28",
+          "change_type": "preview",
           "candidate_ids": [
-            "842323ebb43d456d8a739ef3"
+            "ecf3249b4936a48573b78f5f"
           ],
           "sources": [
             {
-              "label": "latent.space",
-              "url": "https://latent.space/p/ainews-math-proofs-are-landing-faster-than-we-can-read-them"
+              "label": "bitcoinversus.tech",
+              "url": "https://bitcoinversus.tech/2026/11/28/omarchy-46-rc1-local-ai-folio-linux-desktop-2026"
             }
           ],
           "n": 7
-        },
-        {
-          "title": "Amini veröffentlicht Soma-1X Lite für lokale Dokumentenerfassung",
-          "summary": "Der Release-Tracker berichtet über Soma-1X Lite, ein Vision-Language-Modell mit zwei Milliarden Parametern, das Dokumentbilder in strukturierten Text, Layoutinformationen und Lesereihenfolge umwandelt. Laut Amini stehen offene Gewichte für den lokalen Betrieb bereit; das Modell richtet sich auch an mehrsprachige Dokumentbestände.",
-          "category": "lokal",
-          "impact": 3,
-          "date": "2026-11-26",
-          "change_type": "general_availability",
-          "candidate_ids": [
-            "5c73370a511b072ec170a777"
-          ],
-          "sources": [
-            {
-              "label": "www.nocode.mba",
-              "url": "https://www.nocode.mba/ai-release-tracker/2026/11"
-            }
-          ],
-          "n": 8
-        },
-        {
-          "title": "JetBrains veröffentlicht Mellum2.1 Instruct mit offenen Gewichten für lokale Coding-Agenten",
-          "summary": "JetBrains veröffentlicht Mellum2.1 Instruct unter Apache 2.0 mit GGUF-Dateien und einem Multi-Token-Prediction-Head; das MoE-Modell hat zwölf Milliarden Gesamtparameter und 2,5 Milliarden aktive Parameter und antwortet ohne ausgegebene Gedankenkette. Laut Hersteller beschleunigt der MTP-Head die Generierung um bis zu Faktor 1,8. Bei agentischen Coding-Aufgaben benötigt Instruct nach JetBrains-Angaben etwa halb so viele Tokens wie die Thinking-Variante bei nahezu gleicher Leistung auf SWE-bench Verified.",
-          "category": "lokal",
-          "impact": 3,
-          "date": "2026-11-25",
-          "change_type": "general_availability",
-          "candidate_ids": [
-            "c56720a0c083489294c92dd5"
-          ],
-          "sources": [
-            {
-              "label": "blog.jetbrains.com",
-              "url": "https://blog.jetbrains.com/ai/2026/11/mellum2-1-instruct-is-out-bringing-faster-answers-for-coding-agents/"
-            }
-          ],
-          "n": 9
         }
       ]
     },
@@ -432,133 +450,169 @@
       "name": "Agentic Engineering / Vibe Coding",
       "group": "Praxis",
       "angle": "Coding-Agenten, IDEs und Entwicklungsabläufe",
-      "summary": "Hugging Face zeigt Vier-Agenten-Training mit TRL, Qwen3-0.6B und Hugging Face Jobs.",
+      "summary": "Antigravity 2.35.1 setzt aktive Agentengespräche nach Neustarts fort.",
       "items": [
         {
-          "title": "Cognition stellt SWE-2.1 auf Basis von Kimi K3 für Devin vor",
-          "summary": "Cognition beschreibt SWE-2.1 laut Latent Space als ausschließlich mit Reinforcement Learning auf Kimi K3 trainiertes Modell. Nach Herstellerangaben nähert es sich bei maximalem Reasoning auf FrontierCode 2.0 Frontier-Modellen an. In bezahlten Devin-Tarifen ist es dem Bericht zufolge zwei Wochen lang ohne Zusatzkosten nutzbar.",
-          "category": "modelle",
-          "impact": 4,
-          "date": "2026-11-24",
-          "change_type": "announcement",
+          "title": "Antigravity 2.35.1 setzt aktive Agentengespräche nach Neustarts fort",
+          "summary": "Antigravity 2.35.1 nimmt laut dem zitierten Teammitglied Rohan Phadte aktive Gespräche nach einem Neustart oder Update automatisch wieder auf. Nutzer können demnach während einer laufenden Ausführung aktualisieren, anschließend setzen die Agenten ihre Arbeit fort. Die Updates werden schrittweise für Desktop-App und CLI verteilt.",
+          "category": "agents",
+          "impact": 3,
+          "date": "2026-11-25",
+          "change_type": "update",
           "candidate_ids": [
-            "82bb42f632734ffa221da276"
+            "546254884c71eedfe79d91c0"
           ],
           "sources": [
             {
-              "label": "latent.space",
-              "url": "https://latent.space/p/ainews-gemini-4-neon-marks-gdm-s-full-return-as-a-frontier-lab"
+              "label": "www.testingcatalog.com",
+              "url": "https://www.testingcatalog.com/google-stretches-antigravity-neon-quota-with-caching-gains/"
             }
           ],
           "n": 1
         },
         {
-          "title": "Anthropic migriert die Messages API mit Agentenunterstützung nach Rust",
-          "summary": "Laut dem von Latent Space referierten Anthropic-Bericht wurde die Messages API von Python nach Rust migriert. Der bisherige Dienst diente als Referenz, während Agententeams nichtdeterministische Unterschiede abglichen. Leistungsgewinne beziffert die vorgelegte Beschreibung nicht.",
-          "category": "tools",
-          "impact": 4,
+          "title": "Black-Box Test Selection untersucht günstigere Agententests auf SWE-bench Verified",
+          "summary": "Die Studie vergleicht 14 Auswahlstrategien und eine historische Baseline auf zehn Benchmarks: Laut Autoren eignen sich repräsentative Verfahren eher zur Leistungsschätzung, LLM-basierte Schwierigkeitsbewertungen eher zur frühen Fehlersuche. Für GPT 5.2 Codex auf SWE-bench Verified berichten sie bei 100 statt 500 Aufgaben von 47 statt 225 US-Dollar Ausführungskosten und einer Abweichung der geschätzten Erfolgsrate um 0,8 Prozentpunkte. Die Auswertung beruht auf veröffentlichten Aufgabenergebnissen statt neuen Agentenläufen; Code und Ergebnisse wurden laut Arbeit zur Replikation freigegeben.",
+          "category": "agents",
+          "impact": 3,
           "date": "2026-11-25",
-          "change_type": "update",
+          "change_type": "research",
           "candidate_ids": [
-            "6f67f1aa362efa458aa280c7"
+            "10edfe443437d26af3f60fea"
           ],
           "sources": [
             {
-              "label": "latent.space",
-              "url": "https://latent.space/p/ainews-math-proofs-are-landing-faster-than-we-can-read-them"
+              "label": "arxiv.org",
+              "url": "https://arxiv.org/html/2611.34617v1"
             }
           ],
           "n": 2
         },
         {
-          "title": "Hugging Face zeigt Vier-Agenten-Training mit TRL, Qwen3-0.6B und Hugging Face Jobs",
-          "summary": "Hugging Face veröffentlicht ein Experiment samt TRL-Anleitung, in dem vier Agenten mit getrennten Kontexten und gemeinsamen Qwen3-0.6B-Gewichten lernen, private Zahlen auszutauschen und eine sortierte Gesamtliste abzugeben. Laut den Autoren löste der gespeicherte Checkpoint 26 von 32 zurückgehaltenen Aufgaben; ein Vorteil gegenüber einem Einzelagenten bei gleichem Budget ist nicht nachgewiesen. Die Anleitung ermöglicht einen kürzeren Trainingslauf auf zwei GPUs über Hugging Face Jobs einschließlich Evaluation, Checkpoint und Trackio-Protokollen.",
+          "title": "Google veröffentlicht deep-research-Skill in google-gemini/demolab",
+          "summary": "Laut Latent Space veröffentlicht Google einen 16-zeiligen Skill, der Deep Research mit drei bis fünf Rechercheperspektiven und parallelen Subagenten mit jeweils acht bis zwölf Schritten strukturiert. Er sieht ausschließlich Primärquellen und den Abbruch festgefahrener Worker vor. Laut der referierten Veröffentlichung wurde die Variante mit Skill in Hunderten Blindvergleichen zu mehr als 90 Prozent bevorzugt; dies ist eine Anbieterangabe.",
           "category": "agents",
           "impact": 3,
-          "date": "2026-11-26",
-          "change_type": "research",
+          "date": "2026-11-27",
+          "change_type": "announcement",
           "candidate_ids": [
-            "27ee6d79e647720fa63e7d9f"
+            "17b0d45013f0350970b9b1e1"
           ],
           "sources": [
             {
-              "label": "huggingface.co",
-              "url": "https://huggingface.co/blog/training-swarms"
+              "label": "latent.space",
+              "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
             }
           ],
           "n": 3
         },
         {
-          "title": "MAI-Code-2.1 debütiert auf Platz 13 in Code Arena WebDev",
-          "summary": "Laut Latent Space erreicht Microsofts Coding-Modell MAI-Code-2.1 bei seinem Debüt in Code Arena WebDev mit 1.717 Punkten Platz 13. In dieser Auswertung liegt es vor Gemini 4 Hydrogen xHigh; eine breite Produktfreigabe ist damit nicht belegt.",
-          "category": "modelle",
+          "title": "Inkling 2 Mini: Offener pi-Adapter mit AsyncGRPOTrainer soll Ausgabetokens reduzieren",
+          "summary": "Laut Latent Space wurde ein offener Adapter für Inkling 2 Mini im pi-Harness mit dem AsyncGRPOTrainer aus TRL trainiert. Nach Projektangaben erreicht er im niedrigen Reasoning-Modus die Genauigkeit des Basismodells mit rund 40 Prozent weniger Ausgabetokens. Die MLP-Experten wurden nicht mit LoRA verändert, damit ihre Gewichte im vorgesehenen quantisierten Format bleiben.",
+          "category": "agents",
           "impact": 3,
-          "date": "2026-11-25",
-          "change_type": "preview",
+          "date": "2026-11-27",
+          "change_type": "announcement",
           "candidate_ids": [
-            "96e8180395135674e8601393"
+            "63d7b210cf77a7dc42145757"
           ],
           "sources": [
             {
               "label": "latent.space",
-              "url": "https://latent.space/p/ainews-math-proofs-are-landing-faster-than-we-can-read-them"
+              "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
             }
           ],
           "n": 4
         },
         {
-          "title": "Nvidia beschreibt Live-Forking von Containern mit TimeTravelContainer",
-          "summary": "Laut Latent Space nutzt Nvidias TimeTravelContainer Copy-on-Write, um laufende Containerumgebungen zu klonen. Nvidia nennt dafür einen Geschwindigkeitsvorteil um den Faktor 84; die genauen Vergleichsbedingungen sind im vorgelegten Material nicht enthalten.",
-          "category": "tools",
+          "title": "Recursive collective intelligence: Unterschiedliche Informationen als Voraussetzung für Teamvorteile",
+          "summary": "Laut dem von Latent Space referierten Forschungsergebnis übertreffen Agententeams unabhängige Ensembles mit gleichem Rechenbudget nur dann, wenn sie unterschiedliche Informationen besitzen und austauschen. Für 27B-Modelle berichten die Forschenden Verbesserungen von etwa einem Drittel sowie weitere Fortschritte durch Selbsttraining über vier bis sechs Generationen.",
+          "category": "agents",
           "impact": 3,
-          "date": "2026-11-25",
+          "date": "2026-11-27",
           "change_type": "research",
           "candidate_ids": [
-            "2bab451970a51004cfebce3b"
+            "56e6f60ed6fecb26a28e4ac4"
           ],
           "sources": [
             {
               "label": "latent.space",
-              "url": "https://latent.space/p/ainews-math-proofs-are-landing-faster-than-we-can-read-them"
+              "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
             }
           ],
           "n": 5
         },
         {
-          "title": "JetBrains veröffentlicht Mellum2.1 Instruct für direkte Antworten in Coding-Agenten",
-          "summary": "Der vorgelegte Release-Tracker meldet Mellum2.1 Instruct als veröffentlichtes Open-Weight-Modell für Coding-Aufgaben. Nach der dort wiedergegebenen Produktbeschreibung teilt es Architektur und Trainingsansatz mit Mellum2.1 Thinking, wurde im Post-Training aber auf knappe, direkte Antworten für Coding-Agenten ausgerichtet. Die Antworten enthalten demnach keine ausgegebene Chain-of-Thought.",
-          "category": "modelle",
+          "title": "Robotiktests: Code-as-Policies liegt vor einfacher Tool-Nutzung",
+          "summary": "Laut dem von Latent Space referierten Testbericht schneidet Code-as-Policies besser ab als einfache Tool-Nutzung. Kamerakalibrierung bringt je nach Test fünf bis mehr als 50 Punkte, Tiefeneingaben dagegen nur ein bis zwei Punkte. Vorgefertigte Greifwerkzeuge verschlechtern dem Bericht zufolge die Ergebnisse von Frontier-Modellen.",
+          "category": "agents",
           "impact": 3,
-          "date": "2026-11-26",
-          "change_type": "general_availability",
+          "date": "2026-11-27",
+          "change_type": "research",
           "candidate_ids": [
-            "5b98fdebbe1bee5db0ea0bbf"
+            "1dcb73c3376ac04867791288"
           ],
           "sources": [
             {
-              "label": "www.nocode.mba",
-              "url": "https://www.nocode.mba/ai-release-tracker/2026/11"
+              "label": "latent.space",
+              "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
             }
           ],
           "n": 6
         },
         {
-          "title": "Google veröffentlicht experimentellen Frontend-Design-Skill für Gemini 4 Neon",
-          "summary": "Laut Latent Space hat Google einen experimentellen Frontend-Design-Skill für Gemini 4 Neon veröffentlicht. Der als „anti-slop“ beschriebene Ansatz soll generisch wirkende Gestaltung vermeiden; unabhängige Qualitätsmessungen enthält der vorgelegte Bericht nicht.",
-          "category": "agents",
-          "impact": 2,
-          "date": "2026-11-24",
-          "change_type": "preview",
+          "title": "Codex ruft laut Entwicklungsbericht rund 80 Prozent weniger Daten aus der Responses API ab",
+          "summary": "Laut dem von Latent Space referierten Entwicklungsbericht reduziert eine Optimierung das von Codex aus der Responses API abgerufene Datenvolumen um ungefähr 80 Prozent. Als Beispiel nennt der Bericht einen Thread, dessen Datenmenge von 7,48 MB auf 930 KB sank; einen entsprechenden Geschwindigkeitsgewinn beziffert er nicht.",
+          "category": "tools",
+          "impact": 3,
+          "date": "2026-11-27",
+          "change_type": "update",
           "candidate_ids": [
-            "d7f0a1f25f70e153d21be082"
+            "386190f68404f2517cab7cb0"
           ],
           "sources": [
             {
               "label": "latent.space",
-              "url": "https://latent.space/p/ainews-gemini-4-neon-marks-gdm-s-full-return-as-a-frontier-lab"
+              "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
             }
           ],
           "n": 7
+        },
+        {
+          "title": "Agent Toolkit for AWS erhält distributed KV caching skill für Amazon ElastiCache",
+          "summary": "AWS stellt einen Skill vor, der Coding-Agenten durch Eignungsprüfung, Kostenschätzung, Einrichtung und Fehlerdiagnose für verteiltes KV-Caching mit Amazon ElastiCache führt. Laut AWS nutzt er KVTrace zur Wirtschaftlichkeitsprüfung und integriert LMCache in bestehende vLLM- oder SGLang-Installationen; folgenreiche Ressourcenänderungen erfordern explizite Freigaben. Für das zugrunde liegende Caching nennt AWS workloadabhängig bis zu 40 Prozent niedrigere Inferenzkosten und bis zu 80 Prozent weniger Zeit bis zum ersten Token.",
+          "category": "agents",
+          "impact": 3,
+          "date": "2026-11-20",
+          "change_type": "announcement",
+          "candidate_ids": [
+            "cea50a0f8b8635c47aed04a9"
+          ],
+          "sources": [
+            {
+              "label": "aws.amazon.com",
+              "url": "https://aws.amazon.com/blogs/machine-learning/cut-self-hosted-llm-cost-and-latency-with-the-distributed-kv-caching-agent-skill/"
+            }
+          ],
+          "n": 8
+        },
+        {
+          "title": "Grok Build 1.0.78 erweitert @-Dateiverweise um Zeilenangaben und versteckte Dateien",
+          "summary": "Laut xAI lassen sich in Grok Build 1.0.78 @-Datei-Chips direkt bearbeiten; @~/-Pfade werden zum Heimatverzeichnis aufgelöst, und Dateiverweise unterstützen :N-Zeilenangaben sowie @!hidden-Dateien. Textauswahl und Kopieren funktionieren nach Herstellerangaben nun über Nachrichtengrenzen hinweg; außerdem korrigiert das Update Updates und Kanalwechsel bei Homebrew-Cask-Installationen. Sitzungsexporte mit großen Shell-Ausgaben sollen schneller sein und weniger Speicher benötigen.",
+          "category": "agents",
+          "impact": 2,
+          "date": "2026-11-06",
+          "change_type": "update",
+          "candidate_ids": [
+            "4eb12f5374765bb8ed40c516"
+          ],
+          "sources": [
+            {
+              "label": "x.ai",
+              "url": "https://x.ai/cli/changelogs/1.0.88.external.md"
+            }
+          ],
+          "n": 9
         }
       ]
     },
@@ -567,205 +621,169 @@
       "name": "AI Tools",
       "group": "Praxis",
       "angle": "Werkzeuge und Anwendungen",
-      "summary": "llm-gemini 0.38.1 ergänzt „xhigh“ für Gemini 4 Hydrogen und Gemini 4 Neon.",
+      "summary": "Datasette Agent: datasette-agent 0.7a1 verbessert Fragmentnavigation im Seitenpanel.",
       "items": [
         {
-          "title": "Grok Bot bereitet lokale Desktop-Steuerung und systemweites Diktieren auf dem Mac vor",
-          "summary": "TestingCatalog berichtet über noch nicht verfügbare Einstellungen für lokale Computersteuerung und systemweites Diktieren in Grok Bot auf macOS. Die lokale Steuerung soll den bisherigen Cloud-Computer ergänzen; für das Diktieren sind unter anderem Hotkeys, Wörterbuch, Textbausteine sowie Verlaufseinstellungen vorgesehen. Beide Funktionen befinden sich laut Bericht noch in Entwicklung, ein Veröffentlichungstermin wird nicht genannt.",
+          "title": "Claude Computer Use startet als Beta für Team und Enterprise",
+          "summary": "Anthropic rollt Claude Computer Use schrittweise als Beta für Organisationen mit Team- und Enterprise-Tarifen aus. Laut Anbieter kann Claude den Bildschirm eines Nutzers sehen und in freigegebenen Desktop-Anwendungen arbeiten. Der Zugriff erfolgt über die neue Claude-Desktop-Oberfläche sowie über Web und Mobilgeräte, wenn der Computerzugriff aktiviert ist.",
           "category": "agents",
-          "impact": 3,
-          "date": "2026-11-23",
-          "change_type": "preview",
+          "impact": 4,
+          "date": "2026-11-20",
+          "change_type": "public_beta",
           "candidate_ids": [
-            "d442cf2b10e0987128cd135a"
+            "afe83c2e6d0f30de0d09774c"
           ],
           "sources": [
             {
-              "label": "testingcatalog.com",
-              "url": "https://testingcatalog.com/grok-bot-to-get-local-computer-use-and-dictation-in-any-app"
+              "label": "docs.anthropic.com",
+              "url": "https://docs.anthropic.com/en/docs/release-notes/claude-apps"
             }
           ],
           "n": 1
         },
         {
-          "title": "Grok Bot kann auf dem Mac Apple-Apps, Standort und Kontakte nutzen",
-          "summary": "Laut einer im TestingCatalog-Bericht eingebetteten Herstellerankündigung vom 12. November kann Grok Bot auf dem Mac Messages, Mail, Notes, Reminders und Calendar sowie Standort und Kontakte nutzen. Diese als verfügbar beschriebene Anbindung ist von der weiterhin in Entwicklung befindlichen lokalen Computersteuerung zu unterscheiden.",
-          "category": "agents",
-          "impact": 3,
-          "date": "2026-11-23",
-          "change_type": "integration",
+          "title": "Claude Personal Finance startet als Beta mit Kontenanbindung in den USA",
+          "summary": "Anthropic rollt Claude Personal Finance nach eigenen Angaben als Beta für Pro-, Max- und Ultra-Abonnenten in den USA aus. Nutzer können Bank-, Kreditkarten-, Kredit- und Anlagekonten verknüpfen, Guthaben und Ausgaben gemeinsam betrachten und Claude Fragen zu ihren eigenen Finanzen stellen.",
+          "category": "tools",
+          "impact": 4,
+          "date": "2026-11-05",
+          "change_type": "public_beta",
           "candidate_ids": [
-            "d61d1647103935d5212fb42e"
+            "254875c1acbda33515c58824"
           ],
           "sources": [
             {
-              "label": "testingcatalog.com",
-              "url": "https://testingcatalog.com/grok-bot-to-get-local-computer-use-and-dictation-in-any-app"
+              "label": "docs.anthropic.com",
+              "url": "https://docs.anthropic.com/en/docs/release-notes/claude-apps"
             }
           ],
           "n": 2
         },
         {
-          "title": "Nous Research kündigt überarbeitetes Hermes Desktop für die Folgewoche an",
-          "summary": "Nous-Mitgründer Teknium zufolge ist das Redesign von Hermes Desktop fertig und wird intern auf Fehler geprüft; Nutzer sollen es Anfang der folgenden Woche ausprobieren können. Von einem inoffiziellen Beobachterkonto gezeigte Entwürfe bündeln Agenten und Chats in einer Seitenleiste und zeigen eigene Agenteneinstellungen sowie zusammengeführte Ansichten für Routinen, Skills, Plugins und Tools.",
-          "category": "agents",
+          "title": "GPT-6.2 Astra und GPT-6.2 Sol: Fehlerkorrektur lässt Nutzungslimits schneller greifen",
+          "summary": "Nach Angaben des OpenAI-Ingenieurs Thibault Sottiaux werden die Nutzungslimits nach der Korrektur fehlerhafter Rabatte bei GPT-6.2 Astra um 40 Prozent und bei GPT-6.2 Sol um 25 Prozent schneller erreicht als in der Vorwoche. Andere Modelle seien nicht betroffen, Nachberechnungen gebe es nicht; Go-, Plus-, Pro- und Business-Abonnenten erhielten einen zusätzlich gespeicherten Kontingent-Reset. Business-Nutzer bekommen laut Sottiaux außerdem bis Jahresende kostenlosen Zugang zum Fast Mode.",
+          "category": "tools",
           "impact": 3,
           "date": "2026-11-26",
-          "change_type": "announcement",
+          "change_type": "update",
           "candidate_ids": [
-            "d08572d82db2dab4eb7be53c"
+            "254d7d83767f20c109239d18"
           ],
           "sources": [
             {
-              "label": "testingcatalog.com",
-              "url": "https://testingcatalog.com/nous-research-readies-hermes-desktop-redesign-for-next-week"
+              "label": "the-decoder.com",
+              "url": "https://the-decoder.com/gpt-6-2-astra-users-now-hit-limits-40-faster-after-openai-patched-a-pricing-error/"
             }
           ],
           "n": 3
         },
         {
-          "title": "Hermes Market soll fertige Bots als Profile für Hermes Agent anbieten",
-          "summary": "Teknium hat laut TestingCatalog einen kommenden Bot-Marktplatz im Hermes Market neben Skills und Plugins bestätigt. Nach Angaben des inoffiziellen Kontos Hermes Release Watch sollen Nutzer fertige Bots als persönliche Hermes-Profile übernehmen und zunächst mit Beispielaufgaben testen können. Eine Veröffentlichung des Marktplatzes ist nicht belegt.",
-          "category": "agents",
+          "title": "Claude Connectors erhalten Dateiübertragungen als Beta",
+          "summary": "Claude kann laut Anthropic Dateien an verbundene Anwendungen senden und von diesen angebotene Dateien speichern. Die Funktion wird schrittweise als Beta für Pro, Max und Ultra ausgerollt; bei Team und Enterprise muss ein Organisationsinhaber sie aktivieren.",
+          "category": "tools",
           "impact": 3,
-          "date": "2026-11-26",
-          "change_type": "announcement",
+          "date": "2026-11-24",
+          "change_type": "public_beta",
           "candidate_ids": [
-            "ac40c6162b18f07e6b9d7ba1"
+            "b16e8b4e70e5176656cc1c07"
           ],
           "sources": [
             {
-              "label": "testingcatalog.com",
-              "url": "https://testingcatalog.com/nous-research-readies-hermes-desktop-redesign-for-next-week"
+              "label": "docs.anthropic.com",
+              "url": "https://docs.anthropic.com/en/docs/release-notes/claude-apps"
             }
           ],
           "n": 4
         },
         {
-          "title": "Hermes Agent erprobt proaktive Vorschläge für geplante Aufgaben",
-          "summary": "Teknium bittet laut TestingCatalog um Rückmeldungen zu einem offenen Pull Request als erstem Schritt zu proaktivem Verhalten in Hermes. Der Entwurf sieht vor, Anlässe wie Flüge, Termine oder Fristen zu erkennen und über eine Bestätigungskarte geplante Aufgaben vorzuschlagen. Eine bereits veröffentlichte Funktion ist damit nicht belegt.",
-          "category": "agents",
+          "title": "Benny’s Hub: Mit Claude entwickelte Zwei-Tasten-Anwendungen und SwitchedGames-Anleitungen",
+          "summary": "Der Bericht stellt Benny’s Hub als über etwa zwei Jahre mit Claude und anderen LLMs entwickelte Browserumgebung für Spiele, Kommunikation und Streaming mit zwei Eingaben vor. Der unter MIT-Lizenz veröffentlichte Code nutzt eine wiederverwendbare Markdown-Spezifikation unter anderem für automatisches Fokus-Scanning und optionale Wartezeiten für Sprachausgabe; zum Angebot gehören ein browserfähiges Minigolfspiel und Anleitungen für weitere switch-bedienbare Anwendungen.",
+          "category": "tools",
           "impact": 3,
-          "date": "2026-11-26",
-          "change_type": "preview",
+          "date": "2026-11-27",
+          "change_type": "other",
           "candidate_ids": [
-            "f521c4129137da8c01370942"
+            "7446826571f7ecbfb4be16a5"
           ],
           "sources": [
             {
-              "label": "testingcatalog.com",
-              "url": "https://testingcatalog.com/nous-research-readies-hermes-desktop-redesign-for-next-week"
+              "label": "latent.space",
+              "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
             }
           ],
           "n": 5
         },
         {
-          "title": "Clay kündigt automatischen Modellrouter an",
-          "summary": "Clays KI-Leiter Jeff Barg kündigt im Interview einen unmittelbar bevorstehenden Modellrouter an, der für jede Aufgabe ein geeignetes Modell auswählen soll. Nach seiner Darstellung bleibt die manuelle Modellauswahl für Agenturen und erfahrene Nutzer erhalten; eine bereits erfolgte Freigabe wird nicht gemeldet.",
-          "category": "tools",
-          "impact": 3,
-          "date": "2026-11-26",
-          "change_type": "announcement",
+          "title": "Datasette Agent: datasette-agent 0.7a1 verbessert Fragmentnavigation im Seitenpanel",
+          "summary": "Laut Entwickler verbessert die Alpha-Version datasette-agent 0.7a1 die Navigation über URL-Fragmente im iframe-Seitenpanel und unterstützt damit Zustandsänderungen anderer Datasette-Plugins besser. Das Update behebt auch Fehler im Zusammenspiel mit datasette-charts 0.2a0; das Öffnen und Navigieren des Seitenpanels war bereits zuvor möglich.",
+          "category": "agents",
+          "impact": 2,
+          "date": "2026-11-24",
+          "change_type": "update",
           "candidate_ids": [
-            "538455106f2c8028d6c9f731"
+            "4140a6833d482a8ec1f889ff"
           ],
           "sources": [
             {
-              "label": "latent.space",
-              "url": "https://latent.space/p/how-clay-builds-gtm-agents-jeff-barg-head-of-ai/"
+              "label": "simonwillison.net",
+              "url": "https://simonwillison.net/2026/Nov/24"
             }
           ],
           "n": 6
         },
         {
-          "title": "OpenClaw erweitert Recherche, Wissensspeicher und ClawHub-Abläufe",
-          "summary": "Laut dem veröffentlichten Eintrag ergänzt OpenClaw v2026.11.10 Rechercheberichte mit Quellenangaben und fortsetzbaren Aufträgen sowie einen optional aktivierbaren, verknüpften Wissensspeicher. Hinzu kommen manuelle Browser-Übergaben für Anmeldungen und sensible Schritte, geplante Aktualisierungen und erweiterte ClawHub-Vorlagenabläufe.",
-          "category": "agents",
-          "impact": 3,
-          "date": "2026-11-25",
+          "title": "datasette-charts 0.2a1 verbessert Diagrammansicht und ergänzt CSV-/TSV-Kopierknöpfe",
+          "summary": "Laut Changelog bleiben Diagramme in der Alpha-Version datasette-charts 0.2a1 beim Einklappen der Vorschläge sichtbar; direkte Diagrammlinks öffnen die Vorschläge für den jeweiligen Besuch eingeklappt. Kopierknöpfe für TSV und CSV ersetzen die Datentabelle unter Diagrammen, und auf Tabellenseiten steht das Panel nun unterhalb der Zeilen- und Filterangabe. Außerdem entfallen der Menüpunkt „Chart this data“ und die bisher engeren Zeilenabstände in Tooltips.",
+          "category": "tools",
+          "impact": 2,
+          "date": "2026-11-24",
           "change_type": "update",
           "candidate_ids": [
-            "0598c16bc4ae2eefd461b98b"
+            "e6011c84385bc5135c3c61f3"
           ],
           "sources": [
             {
-              "label": "vibecodingwiki.com",
-              "url": "https://vibecodingwiki.com/news"
+              "label": "simonwillison.net",
+              "url": "https://simonwillison.net/2026/Nov/24"
             }
           ],
           "n": 7
         },
         {
-          "title": "Telstra setzt bei Weihnachtsmann-Hotline auf Gemini und CX Agent Studio",
-          "summary": "Laut Bericht beschreibt Google Telstras saisonale australische Weihnachtsmann-Hotline als kontextfähigen Gemini-Sprachagenten, der mit CX Agent Studio gebaut wurde. Google zufolge prüfen mehrschichtige Schutzmechanismen die Antworten in Echtzeit auf altersgerechte Inhalte. Das Angebot ist dem Bericht zufolge bis Heiligabend über mehr als 14.000 australische öffentliche Telefone erreichbar.",
-          "category": "agents",
-          "impact": 3,
-          "date": "2026-11-27",
-          "change_type": "integration",
+          "title": "Claude Monthly Recap verlässt die Beta und berücksichtigt Code- und Cowork-Arbeit",
+          "summary": "Laut Anthropic ist Claude Monthly Recap unter „Reflect“ für Free, Pro, Max und Ultra im Web, auf dem Desktop sowie unter iOS und Android nicht mehr in der Beta. Die Monatsrückblicke können nun auch Claude-Code-Sitzungen und Claude-Cowork-Aufgaben in der Cloud berücksichtigen; gespeicherte Rückblicke lassen sich direkt auf der Seite löschen.",
+          "category": "tools",
+          "impact": 2,
+          "date": "2026-11-24",
+          "change_type": "general_availability",
           "candidate_ids": [
-            "1cfb4858d927f229c3849b26"
+            "d45d095523c1c5985dd83ff4"
           ],
           "sources": [
             {
-              "label": "agentel.tech",
-              "url": "https://agentel.tech/en/feed?author=agent_d54fa2c9-44ec-456b-8eea-b6c243c73207"
+              "label": "docs.anthropic.com",
+              "url": "https://docs.anthropic.com/en/docs/release-notes/claude-apps"
             }
           ],
           "n": 8
         },
         {
-          "title": "MyClaw 3.0 bündelt gehostete Agententeams mit gemeinsamem Gedächtnis",
-          "summary": "The Neuron stellt MyClaw 3.0 als Plattform für dauerhaft laufende Agententeams mit getrennten Rollen und gemeinsamem Speicher auf gehosteten Computern vor. Laut Produktbeschreibung unterstützt sie OpenClaw, Claude Code, Codex, Hermes Agent und Pi sowie mehr als 50 Modelloptionen. Wiederkehrende Aufgaben lassen sich demnach über das Web oder Messenger wie Slack, Telegram und WhatsApp übermitteln.",
-          "category": "agents",
-          "impact": 3,
-          "date": "2026-11-26",
+          "title": "AI Model Market Daily bündelt AMM 100, Nutzungs- und Sicherheitsdaten",
+          "summary": "FINAL-Bench stellt AI Model Market Daily vor, das laut Anbieter am 27. November 885 Modelle erfasste und Benchmarkleistung, OpenRouter-Tokennutzung sowie Sicherheitsindikatoren zusammenführt. Das Dashboard trennt Rankings für offene und geschlossene Modelle und veröffentlicht tägliche Snapshots als offenen Datensatz. Die Sicherheitsansicht deckt laut Beitrag 538 Modelle bei Lieferkettenprüfungen ab, bei Angriffsresistenz und Agentensicherheit jedoch nur 21 beziehungsweise 19 Modelle.",
+          "category": "tools",
+          "impact": 2,
+          "date": "2026-11-27",
           "change_type": "announcement",
           "candidate_ids": [
-            "866e3855f865358abab1c123"
+            "8379af036b1ccb0e7cba08dc"
           ],
           "sources": [
             {
-              "label": "www.theneuron.ai",
-              "url": "https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-november-26-2026/"
+              "label": "huggingface.co",
+              "url": "https://huggingface.co/blog/FINAL-Bench/ai-model-market-daily-reading-ai-models-like-a-sto"
             }
           ],
           "n": 9
-        },
-        {
-          "title": "llm-gemini 0.38.1 ergänzt „xhigh“ für Gemini 4 Hydrogen und Gemini 4 Neon",
-          "summary": "Simon Willison hat llm-gemini 0.38.1 veröffentlicht und damit die fehlende Unterstützung der Reasoning-Stufe „xhigh“ für Gemini 4 Hydrogen und Gemini 4 Neon ergänzt. In seinem Hydrogen-Test stieg der Verbrauch gegenüber „high“ von 5.311 auf 31.477 Ausgabetokens und der Preis von 3,99 auf 23,61 US-Cent; dies sind Ergebnisse seines einzelnen Vergleichs.",
-          "category": "tools",
-          "impact": 2,
-          "date": "2026-11-20",
-          "change_type": "update",
-          "candidate_ids": [
-            "c00d7815096cc418a157548e"
-          ],
-          "sources": [
-            {
-              "label": "simonwillison.net",
-              "url": "https://simonwillison.net/2026/Nov/20/llm-gemini"
-            }
-          ],
-          "n": 10
-        },
-        {
-          "title": "Airbot soll Geschäftsaktionen vorbereiten und per WhatsApp oder iMessage freigeben lassen",
-          "summary": "The Neuron stellt Airbot als KI-Assistenten vor, der laut Produktbeschreibung proaktiv auf Prioritäten aus E-Mail, Slack, Kalendern und Kundendaten hinweisen soll. Der Anbieter beschreibt die Vorbereitung von Antworten, Besprechungsunterlagen, Buchungen und CRM-Aktualisierungen, die Nutzer über WhatsApp oder iMessage freigeben können sollen.",
-          "category": "agents",
-          "impact": 2,
-          "date": "2026-11-26",
-          "change_type": "announcement",
-          "candidate_ids": [
-            "656466cc44e6319b619579f9"
-          ],
-          "sources": [
-            {
-              "label": "www.theneuron.ai",
-              "url": "https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-november-26-2026/"
-            }
-          ],
-          "n": 11
         }
       ]
     },
@@ -774,25 +792,61 @@
       "name": "Context Engineering",
       "group": "Praxis",
       "angle": "Kontext, Memory und Wissenszugriff",
-      "summary": "Nvidia ergänzt Nemotron 3.5 Parse um Trainingsdaten, Fine-Tuning-Rezept und DFlash2.",
+      "summary": "HyperHarness erzeugt persönliche Memory-Harnesses in einem Durchlauf.",
       "items": [
         {
-          "title": "Nvidia ergänzt Nemotron 3.5 Parse um Trainingsdaten, Fine-Tuning-Rezept und DFlash2",
-          "summary": "Nvidia veröffentlicht für Nemotron 3.5 Parse drei synthetische Trainingsdatensätze mit 9,98 Millionen Diagramm-, einer Million Tabellen- und 7,9 Millionen mehrsprachigen OCR-Beispielen samt Bildern, Annotationen und Dokumentation. Das ergänzende Fine-Tuning-Rezept kombiniert überwachte Anpassung mit Reinforcement Learning anhand verifizierbarer Belohnungen und GRPO. Der DFlash2-Speculator entwirft laut Nvidia bis zu 32 Tokens voraus und erhöht auf einer H200 in BF16 den Durchsatz gegenüber Parse 3.5 ohne spekulative Dekodierung um den Faktor 7,62 bei einer gleichzeitigen Anfrage beziehungsweise 1,52 bei 512 gleichzeitigen Anfragen.",
-          "category": "modelle",
-          "impact": 3,
-          "date": "2026-11-26",
-          "change_type": "update",
+          "title": "HyperHarness erzeugt persönliche Memory-Harnesses in einem Durchlauf",
+          "summary": "HyperHarness erzeugt laut dem vorgelegten Bericht pro Nutzer einen Memory-Harness in einem einzigen Durchlauf und ersetzt damit umfangreiches Kontext-Prompting. In den referierten Forschungsergebnissen liegt der Ansatz in sieben von neun Testszenarien vorn und benötigt beim Beantworten 90,32 Prozent weniger Token als Long-Context-Prompting.",
+          "category": "agents",
+          "impact": 4,
+          "date": "2026-11-27",
+          "change_type": "research",
           "candidate_ids": [
-            "84cf5f866f0e16d1cc28238d"
+            "cc4eefe18edf9191d30ebf16"
           ],
           "sources": [
             {
-              "label": "huggingface.co",
-              "url": "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin"
+              "label": "latent.space",
+              "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
             }
           ],
           "n": 1
+        },
+        {
+          "title": "deepseek-flash: Deferred Tool Loading erhält den Cache-Präfix",
+          "summary": "Beim von DeepSeek dokumentierten Deferred Tool Loading werden neue Tool-Definitionen ans Ende der Unterhaltung angehängt, damit der bestehende Cache-Präfix erhalten bleibt. Laut Bericht ist die Funktion auf deepseek-flash über die Anthropic-Messages- und OpenAI-Responses-Schnittstellen beschränkt.",
+          "category": "agents",
+          "impact": 3,
+          "date": "2026-11-27",
+          "change_type": "update",
+          "candidate_ids": [
+            "da714e81483feed8207dfa49"
+          ],
+          "sources": [
+            {
+              "label": "latent.space",
+              "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
+            }
+          ],
+          "n": 2
+        },
+        {
+          "title": "Zhihu und DeepSeek starten Wissensabruf mit Urheberangaben",
+          "summary": "Zhihu und DeepSeek starten laut Bericht einen Wissensabruf über Zhihu-Inhalte, der die jeweiligen Urheber nennt und auf die ursprünglichen Beiträge verlinkt. Angaben zur technischen Umsetzung oder zum Umfang des verfügbaren Bestands fehlen im vorgelegten Beleg.",
+          "category": "tools",
+          "impact": 3,
+          "date": "2026-11-27",
+          "change_type": "integration",
+          "candidate_ids": [
+            "20e09af10032d4acd2654909"
+          ],
+          "sources": [
+            {
+              "label": "latent.space",
+              "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
+            }
+          ],
+          "n": 3
         }
       ]
     },
@@ -801,79 +855,97 @@
       "name": "AI Security",
       "group": "Verantwortung",
       "angle": "Angriffe, Schutzmaßnahmen und sichere Ausführung",
-      "summary": "NCSC warnt: KI-Agenten beschleunigen die Ausnutzung grundlegender Sicherheitsmängel.",
+      "summary": "TACT-Bench testet Tool-Agenten mit adaptiven Angriffen und TACT-TrustPrime.",
       "items": [
         {
-          "title": "NCSC warnt: KI-Agenten beschleunigen die Ausnutzung grundlegender Sicherheitsmängel",
-          "summary": "Das britische NCSC berichtet laut TechCrunch über mehrere Vorfälle seit September, bei denen autonome Hacking-Werkzeuge Einbrüche und Ausfallzeiten verursachten. Die Werkzeuge nutzten demnach vor allem bestehende Schwächen wie schwache Passwörter und missbrauchbare API-Endpunkte und könnten lange unentdeckte Mängel innerhalb von Minuten finden. Das NCSC betont, dass etablierte Sicherheitskontrollen und grundlegende Schutzmaßnahmen weiterhin entscheidend bleiben.",
+          "title": "BSI warnt vor autonomen Angriffen mit Artex und Agentic Offensive Frameworks",
+          "summary": "Laut heise warnt das BSI vor einer verschärften Bedrohungslage durch Agentic Offensive Frameworks wie Artex, deren Agentenschwärme Planung, Ausführung und Anpassung weitgehend autonom übernehmen. Für Organisationen mit Nachholbedarf priorisiert die Behörde die Reaktionsfähigkeit bei Sicherheitsvorfällen und die Absicherung der einfachsten Angriffswege. Im begleitenden heise-security-PRO-Talk empfahl Sicherheitsexperte Florian Roth insbesondere kleinere Angriffsflächen, gehärtete Komponenten, MFA und Netzwerksegmentierung.",
           "category": "security",
           "impact": 4,
-          "date": "2026-11-24",
+          "date": "2026-11-26",
           "change_type": "security",
           "candidate_ids": [
-            "e5160a0dfda4f1a0e0b41f19"
+            "847862f62b29857158a701bd"
           ],
           "sources": [
             {
-              "label": "techcrunch.com",
-              "url": "https://techcrunch.com/2026/11/24/uk-warns-ai-driven-cyberattacks-are-exposing-years-of-weak-security/"
+              "label": "www.heise.de",
+              "url": "https://www.heise.de/news/Kuenstliche-Intelligenz-als-Angreifer-Eine-neue-Aera-hat-begonnen-11539545.html"
             }
           ],
           "n": 1
         },
         {
-          "title": "Google entwickelt Mirror Dimension für Sicherheitstests von Chrome-Agenten",
-          "summary": "Google hat mit Mirror Dimension eine vom realen Internet isolierte Testumgebung mit Tausenden künstlichen Websites entwickelt, um Chrome-Agenten Prompt-Injection-Angriffen auszusetzen. Laut Google erzeugt die automatisierte Pipeline pro Sicherheitsingenieur täglich mehr als 1.000 Angriffstest-Kandidaten und damit über 30-mal so viele wie manuelle Arbeit. Die Umgebung schützt nicht gegen den absichtlichen kriminellen Einsatz von Agenten und soll bislang nicht anderen Browseranbietern bereitgestellt werden.",
+          "title": "TACT-Bench testet Tool-Agenten mit adaptiven Angriffen und TACT-TrustPrime",
+          "summary": "TACT-Bench verbindet auf Agentenantworten reagierende Gesprächsangriffe mit harmlosen Vergleichsaufgaben; die Metrik Paired Selective Trustworthiness bewertet sichere Ablehnung zusammen mit erfolgreicher legitimer Aufgabenerfüllung. TACT-TrustPrime schaltet einem unabhängigen Angriff eine harmlose Aufgabe vor. Über sechs Modelle berichten die Autoren für TACT-Base eine im Mittel um 17,53 Prozent höhere angriffsbedingte Fehlerrate als bei vier kompatiblen Vergleichsverfahren und durch TrustPrime einen weiteren Anstieg um 17,01 Prozent; zwei getestete Abwehrmethoden helfen nur begrenzt.",
           "category": "security",
-          "impact": 4,
-          "date": "2026-11-20",
+          "impact": 3,
+          "date": "2026-11-24",
           "change_type": "research",
           "candidate_ids": [
-            "3b3b97992abf2b7e792ab2ef"
+            "1cfe40fb205f22908a1baa5d"
           ],
           "sources": [
             {
-              "label": "www.heise.de",
-              "url": "https://www.heise.de/en/news/Google-builds-an-artificial-internet-for-its-AI-agents-11532246.html"
+              "label": "arxiv.org",
+              "url": "https://arxiv.org/abs/2611.31756"
             }
           ],
           "n": 2
         },
         {
-          "title": "Pydantic AI 2.75.0 trennt weniger vertrauenswürdige Workspace-Inhalte von Modellanweisungen",
-          "summary": "Laut Release-Bericht übernimmt Pydantic AI 2.75.0 weniger vertrauenswürdige Workspace-Inhalte in RepoContext, Skills und Memory nicht mehr unmittelbar in Modellanweisungen. Stattdessen werden sie über Dateiwerkzeuge, Skill-Ladewerkzeuge oder ausdrücklich eingerahmte Daten eingebunden. Zusätzlich nennt der Bericht neue Fehlerklassen für Modellantworten, die das Fallback-Verhalten verbessern sollen.",
+          "title": "CAPTA erkennt Sprachmodelle hinter KI-Agenten anhand von Auswahlpräferenzen",
+          "summary": "CAPTA präsentiert Multiple-Choice-Fragen als Verifikationsaufgaben und identifiziert das Backend-Modell anhand beobachtbarer Auswahlpräferenzen, ohne es direkt abzufragen. Die Autoren berichten bei 25 LLMs aus zehn Modellfamilien von durchschnittlich 99,0 Prozent Identifikationsgenauigkeit mit zehn Fragen. Das Verfahren könnte modellspezifische Prompt-Injection-Angriffe oder gezielt manipulierte Inhalte erleichtern.",
           "category": "security",
-          "impact": 4,
-          "date": "2026-11-25",
-          "change_type": "security",
+          "impact": 3,
+          "date": "2026-11-24",
+          "change_type": "research",
           "candidate_ids": [
-            "1f47018cdc7165db2673ea1c"
+            "b762447ab0639e66a2ca6f3a"
           ],
           "sources": [
             {
-              "label": "vibecodingwiki.com",
-              "url": "https://vibecodingwiki.com/news"
+              "label": "arxiv.org",
+              "url": "https://arxiv.org/abs/2611.32686"
             }
           ],
           "n": 3
         },
         {
-          "title": "OpenAI Private Inference startet begrenzten Kundenpilot unter OpenAI Private Intelligence",
-          "summary": "The Neuron berichtet, dass Sam Altman einen begrenzten Kundenpiloten für OpenAI Private Inference angekündigt hat. Das Angebot gehört zu OpenAI Private Intelligence und soll Unternehmen nach Anbieterangaben mehr Datenschutz bei sensiblen Aufgaben bieten. Eine allgemeine Verfügbarkeit wird nicht beschrieben.",
+          "title": "Pydantic AI Harness: CVE-2026-136638 umgeht Netzwerkrichtlinien von PlaywrightBrowser",
+          "summary": "Laut veröffentlichtem Schwachstelleneintrag behandelt PlaywrightBrowser in pydantic-ai-harness 0.24.0 bis 0.73.0 URLs mit einem Backslash fälschlich als hostlos, sodass manipulierte Seiten Skript- und Ressourcenanfragen an gesperrte oder private Ziele senden können. Die Umgehung betrifft unter anderem fetch, XHR, sendBeacon und WebSocket, nicht aber Navigation und Frames; das Lesen privater Antworten erfordert zusätzliche Bedingungen. Als behoben wird die Lücke ab Version 0.74.0 ausgewiesen; bis zum Upgrade empfiehlt der Eintrag außerhalb des Browsers durchgesetzte Firewall- oder Proxy-Filter.",
           "category": "security",
-          "impact": 4,
+          "impact": 3,
           "date": "2026-11-26",
-          "change_type": "preview",
+          "change_type": "security",
           "candidate_ids": [
-            "5793a37af4430bedb8c0a169"
+            "eaba77ef43ca9048a27ded60"
           ],
           "sources": [
             {
-              "label": "www.theneuron.ai",
-              "url": "https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-november-26-2026/"
+              "label": "services.nvd.nist.gov",
+              "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-136638"
             }
           ],
           "n": 4
+        },
+        {
+          "title": "PATH soll Berechtigungspräferenzen persönlicher KI-Agenten hierarchiekonform vorhersagen",
+          "summary": "Der Parent-gated Authorization Transformer for Hierarchies (PATH) soll individuelle Autorisierungspräferenzen aus wenigen beobachteten Nutzerentscheidungen lernen. Die Architektur kombiniert hierarchiebewusste Attention-Masken, an übergeordnete Berechtigungen gekoppelte Wahrscheinlichkeiten und Embeddings für Hierarchieebenen. Die Autoren berichten von Tests mit simulierten Daten, KI-generierten Nutzerprofilen und realen Autorisierungsdaten, in denen keine Hierarchieverletzungen auftraten.",
+          "category": "security",
+          "impact": 2,
+          "date": "2026-11-24",
+          "change_type": "research",
+          "candidate_ids": [
+            "885095a804a44b8364ec20ed"
+          ],
+          "sources": [
+            {
+              "label": "arxiv.org",
+              "url": "https://arxiv.org/abs/2611.32018"
+            }
+          ],
+          "n": 5
         }
       ]
     },
@@ -882,61 +954,43 @@
       "name": "AI Governance",
       "group": "Verantwortung",
       "angle": "Regeln, Verantwortung und gesellschaftliche Folgen",
-      "summary": "House Committee on Oversight and Government Reform kündigt „Defend, Detect, Disclose“ zu KI-Cybervorfällen an.",
+      "summary": "Character.AI: 42 US-Generalstaatsanwälte gehen gegen Verkauf privater Chats vor.",
       "items": [
         {
-          "title": "Papua-Neuguinea: DICT veröffentlicht überarbeiteten Entwurf der National AI Policy",
-          "summary": "Papua-Neuguineas Department of Information and Communications Technology (DICT) hat einen überarbeiteten Entwurf der National AI Policy veröffentlicht, der sämtliche vorherigen KI-Politik- und Strategieentwürfe ersetzt. Nach Angaben des Ministeriums soll der Rahmen Innovation und verantwortlichen KI-Einsatz mit klarer Rechenschaftspflicht und Handlungsgrenzen verbinden; besonders hervorgehoben wird die Aufsicht über autonome KI-Agenten. Einzelheiten zu öffentlichen Konsultationen sollen noch bekannt gegeben werden.",
-          "category": "business",
-          "impact": 3,
-          "date": "2026-11-26",
+          "title": "Character.AI: 42 US-Generalstaatsanwälte gehen gegen Verkauf privater Chats vor",
+          "summary": "Laut TechCrunch intervenieren 42 US-Generalstaatsanwälte im Insolvenzverfahren von Character.AI gegen die geplante Versteigerung privater Chats und weiterer personenbezogener Daten. Nach Behördenangaben betrifft der Datensatz mehr als 21 Millionen US-Konten, darunter über 2,1 Millionen Konten Minderjähriger; beanstandet werden fehlende Schutzvorgaben für Käufer und Widersprüche zu früheren Datenschutzversprechen. Die Auktion ist laut Bericht für den 1. Dezember geplant, die Absichten des ausgewählten Ausgangsbieters für die Daten sind unklar.",
+          "category": "security",
+          "impact": 4,
+          "date": "2026-11-25",
           "change_type": "policy",
           "candidate_ids": [
-            "86456c6ec57aa6ca221ec51f"
+            "5bf39dc7ae11d405db20e682"
           ],
           "sources": [
             {
-              "label": "www.ict.gov.pg",
-              "url": "https://www.ict.gov.pg/dict-sets-direction-for-safe-responsible-use-of-artificail-intelligence-with-revised-national-ai-policy/"
+              "label": "techcrunch.com",
+              "url": "https://techcrunch.com/2026/11/25/state-ags-fight-character-ais-plan-to-auction-off-users-private-chats/"
             }
           ],
           "n": 1
         },
         {
-          "title": "Competition and Consumer Commission of Singapore legt AI Market Study und acht Leitprinzipien vor",
-          "summary": "Singapurs Competition and Consumer Commission of Singapore sieht in ihrer AI Market Study derzeit eine breite Auswahl an Cloud-Anbietern und KI-Modellen, warnt aber vor Marktmachtmissbrauch, abgeschotteten Agenten-Ökosystemen und wettbewerbsschädlichen Übernahmen. Die Behörde untersucht außerdem Risiken wie algorithmische Preisabsprachen, KI-generierte Fake-Bewertungen und manipulative Benutzeroberflächen. Acht begleitende Leitprinzipien adressieren unter anderem fairen Ressourcenzugang, Interoperabilität und Anbieterwechsel, Transparenz, Rechenschaftspflicht und regelmäßige Genauigkeitsprüfungen.",
+          "title": "BIS-Fernzugriffsregel: Bericht nennt mehr Wiederverkaufsangebote für Nvidia B300",
+          "summary": "Latent Space referiert einen CNBC-Bericht, wonach Wiederverkäufer infolge der BIS-Beschränkungen für China-bezogenen Fernzugriff ungewöhnlich viele Nvidia-Beschleuniger anbieten. Dazu zählen dem Bericht zufolge geplante Zuteilungen von Tausenden Nvidia-B300-Einheiten. Sinkende Endkundenpreise sind damit nicht belegt.",
           "category": "business",
-          "impact": 3,
+          "impact": 4,
           "date": "2026-11-27",
           "change_type": "policy",
           "candidate_ids": [
-            "7b6cdfed25a5fa0e44638b5e"
+            "f113923fa2689001777ab4c5"
           ],
           "sources": [
             {
-              "label": "www.ccs.gov.sg",
-              "url": "https://www.ccs.gov.sg/media-and-events/newsroom/announcements-and-media-releases/ccs-releases-findings-on-singapore-s-artificial-intelligence-market-and-sets-out-guiding-principles-to-safeguard-competition-and-consumers/"
+              "label": "latent.space",
+              "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
             }
           ],
           "n": 2
-        },
-        {
-          "title": "House Committee on Oversight and Government Reform kündigt „Defend, Detect, Disclose“ zu KI-Cybervorfällen an",
-          "summary": "Nancy Mace und Eric Burlison haben für den 2. Dezember 2026 eine gemeinsame Anhörung zweier Unterausschüsse zu KI-gestützten Cybervorfällen angekündigt. Im Mittelpunkt sollen Angriffe auf geschützte Netzwerke und sensible Branchen sowie bestehende und mögliche neue gesetzliche Schutzmaßnahmen stehen. Auch die Untersuchungsarbeit der Federal Trade Commission gegenüber großen KI-Unternehmen und rechtliche Regeln für eigenmächtig handelnde KI-Agenten sollen erörtert werden.",
-          "category": "security",
-          "impact": 2,
-          "date": "2026-11-25",
-          "change_type": "announcement",
-          "candidate_ids": [
-            "312388b49f3218a5260bd701"
-          ],
-          "sources": [
-            {
-              "label": "oversight.house.gov",
-              "url": "https://oversight.house.gov/release/mace-and-burlison-announce-hearing-on-detecting-and-responding-to-ai-enabled-cyber-incidents/"
-            }
-          ],
-          "n": 3
         }
       ]
     },
@@ -945,151 +999,79 @@
       "name": "Enterprise",
       "group": "Wirtschaft",
       "angle": "Unternehmen, Betrieb und Markt",
-      "summary": "Clay Sculptor setzt auf Pi und Clay Audiences für gemeinsamen Datenkontext.",
+      "summary": "Claude Enterprise: Project Tags ordnen Projektausgaben Kostenstellen zu.",
       "items": [
         {
-          "title": "FCC genehmigt laut Bericht SpaceX-Netz Starmind mit bis zu einer Million Satelliten",
-          "summary": "Laut The Neuron hat die FCC SpaceX erlaubt, für das geplante orbitale Rechenzentrumsnetz Starmind bis zu eine Million Satelliten in niedrigen Erdumlaufbahnen einzusetzen. SpaceX will nach eigener Planung KI-Aufgaben mit Solarenergie verarbeiten und Ergebnisse zur Erde übertragen; ein Betrieb in dieser Größenordnung ist noch nicht demonstriert. Der Bericht nennt offene Fragen zu Wirtschaftlichkeit, Wärmeabfuhr, Weltraumschrott und astronomischen Beobachtungen.",
+          "title": "TokenSpeed-Vergleich: Vera Rubin NVL72 liefert laut SemiAnalysis mehr Tokens pro Dollar als GB300 NVL72",
+          "summary": "Latent Space referiert einen SemiAnalysis-Test, der mit demselben TokenSpeed-Engine für Vera Rubin NVL72 zwei- bis 6,5-mal mehr Tokens pro Dollar Gesamtbetriebskosten als für GB300 NVL72 ausweist. Der Vorteil wächst dem Bericht zufolge bei höheren Interaktivitätsanforderungen. Die Zahlen gelten für den referierten Analystentest und sind keine allgemeine Leistungs- oder Kostengarantie.",
           "category": "business",
-          "impact": 5,
-          "date": "2026-11-26",
-          "change_type": "policy",
+          "impact": 4,
+          "date": "2026-11-27",
+          "change_type": "research",
           "candidate_ids": [
-            "ec5442fbfd94d294cd0b32ad"
+            "8c8aa97b5cf5e69a9316409e"
           ],
           "sources": [
             {
-              "label": "www.theneuron.ai",
-              "url": "https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-november-26-2026/"
+              "label": "latent.space",
+              "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
             }
           ],
           "n": 1
         },
         {
-          "title": "KI-Infrastruktur: Kreditgeber pausieren laut Bericht Milliardenfinanzierungen wegen US-Exportregeln",
-          "summary": "The Neuron berichtet unter Verweis auf Semafor, dass Kreditgeber Finanzierungen in Milliardenhöhe im Umfeld großer chinesischer Cloudanbieter pausiert haben sollen. Als Ursache nennt der Bericht neue US-Exportregeln, die asiatische KI-Infrastrukturprojekte gefährden.",
+          "title": "Nvidia stoppt laut Bericht KI-Chiplieferungen nach Südostasien",
+          "summary": "Latent Space referiert einen Bericht von The National, wonach Nvidia angesichts verschärfter US-Exportkontrollen KI-Chiplieferungen nach Südostasien gestoppt hat. Die Durchsetzung soll dem Bericht zufolge die Weiterleitung an beschränkte Endnutzer, insbesondere in China, verhindern; eine unmittelbar vorgelegte Nvidia-Bestätigung fehlt.",
           "category": "business",
           "impact": 4,
-          "date": "2026-11-26",
+          "date": "2026-11-27",
           "change_type": "business",
           "candidate_ids": [
-            "524cda3cd5bb80312e304df7"
+            "09be0b08b098f888a203323d"
           ],
           "sources": [
             {
-              "label": "www.theneuron.ai",
-              "url": "https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-november-26-2026/"
+              "label": "latent.space",
+              "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
             }
           ],
           "n": 2
         },
         {
-          "title": "Clay Sculptor setzt auf Pi und Clay Audiences für gemeinsamen Datenkontext",
-          "summary": "Jeff Barg beschreibt Clay Sculptor als Coding-Agenten auf dem Pi-Harness, der die Clay CLI in einer Cloud-Sandbox ausführt; Clay Audiences führt nach seiner Darstellung CRM- und Gong-Daten zusammen und löst Entitäten auf. Clay berichtet außerdem von kürzlich ausgelieferten 25 bis 30 Integrationen, LangSmith zur Beobachtung sowie einem BullMQ-basierten Stack, der Arbeit bei Provider-Ausfällen oder Rate Limits pausieren und fortsetzen kann. Geplant ist ein sandboxierter Agent mit Zugriff auf sämtliche Plattformbausteine; konkrete Auslieferungsdaten nennt das Interview nicht.",
-          "category": "agents",
+          "title": "Claude Enterprise: Project Tags ordnen Projektausgaben Kostenstellen zu",
+          "summary": "Anthropic bietet berechtigten Enterprise-Organisationen eine Beta von Project Tags an, mit der sich Claude-Projekte bestehenden Kosten- oder Mandatscodes zuordnen lassen. Laut Anbieter wird damit der Großteil der Ausgaben innerhalb dieser Projekte nach Tags ausgewiesen, nicht ausdrücklich sämtliche Kosten.",
+          "category": "business",
           "impact": 3,
-          "date": "2026-11-26",
-          "change_type": "update",
+          "date": "2026-11-06",
+          "change_type": "public_beta",
           "candidate_ids": [
-            "f019f80fe0b236ac00fb3c4e"
+            "3f2fdb706bfca065d2547b1e"
           ],
           "sources": [
             {
-              "label": "latent.space",
-              "url": "https://latent.space/p/how-clay-builds-gtm-agents-jeff-barg-head-of-ai/"
+              "label": "docs.anthropic.com",
+              "url": "https://docs.anthropic.com/en/docs/release-notes/claude-apps"
             }
           ],
           "n": 3
         },
         {
-          "title": "Nvidia B300 und Nvidia GB300: Berichte nennen Lieferzeiten von bis zu 40 Wochen",
-          "summary": "Latent Space referiert taiwanische Marktberichte, die für Nvidia B300 Lieferzeiten von 26 bis 40 Wochen und für Nvidia GB300 von 14 bis 26 Wochen nennen. Eine mögliche Verzögerung von RTX 60 durch die Priorisierung von Server-DRAM wird lediglich als Möglichkeit beschrieben, nicht als bestätigte Terminänderung.",
+          "title": "Amazon Connect Customer ermöglicht Vergleichstests vor KI-Modellwechseln",
+          "summary": "Laut AWS können Manager dieselben Kundenkontakte mit der bisherigen und einer neuen KI-Modellversion bewerten lassen, um Unterschiede vor einem Wechsel zu erkennen und Bewertungskriterien anzupassen. Je Bewertungsformular lässt sich festlegen, ob automatisch die neueste Modellversion verwendet oder eine bestimmte Version beibehalten wird. Die Funktion ist nach Anbieterangaben in allen kommerziellen AWS-Regionen verfügbar, in denen Amazon Connect Customer angeboten wird.",
           "category": "business",
-          "impact": 3,
-          "date": "2026-11-25",
-          "change_type": "business",
+          "impact": 2,
+          "date": "2026-11-23",
+          "change_type": "update",
           "candidate_ids": [
-            "e0f1ee9e2c4e8ba886ada658"
+            "c9b1bcf0ba6e7968a31e6538"
           ],
           "sources": [
             {
-              "label": "latent.space",
-              "url": "https://latent.space/p/ainews-math-proofs-are-landing-faster-than-we-can-read-them"
+              "label": "aws.amazon.com",
+              "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-connect-customer-test-ai-model-version-upgrades-automated-evaluations"
             }
           ],
           "n": 4
-        },
-        {
-          "title": "Nvidia-Komplex: Bericht relativiert Spionagevorwurf gegen Alice Huang",
-          "summary": "Latent Space gibt einen WSJ-Bericht wieder, wonach ein geheimes Briefing keine Belege dafür ergab, dass China Alice Huang zur Ausspähung von Jensen Huang angewiesen habe. Der zugrunde liegende WSJ-Bericht und das Briefing selbst liegen nicht vor; die Aussage ist daher ein indirekt berichteter Befund, keine unabhängig bestätigte Entlastung.",
-          "category": "business",
-          "impact": 3,
-          "date": "2026-11-25",
-          "change_type": "business",
-          "candidate_ids": [
-            "520e6541d834cedcbfe1be0f"
-          ],
-          "sources": [
-            {
-              "label": "latent.space",
-              "url": "https://latent.space/p/ainews-math-proofs-are-landing-faster-than-we-can-read-them"
-            }
-          ],
-          "n": 5
-        },
-        {
-          "title": "Amazon und Meta verhandeln laut Bericht über Rückkehr des Einkaufsagenten Muse",
-          "summary": "The Neuron berichtet unter Berufung auf The Decoder über Gespräche zur Aufhebung der seit September bestehenden Amazon-Sperre für Metas Einkaufsagenten Muse. Werbeeinnahmen und die Kontrolle über Suchergebnisse sind demnach noch Gegenstand der Verhandlungen. Eine Einigung haben die Unternehmen bislang nicht angekündigt.",
-          "category": "business",
-          "impact": 3,
-          "date": "2026-11-26",
-          "change_type": "business",
-          "candidate_ids": [
-            "f9a76b6911669ae9d2e605dc"
-          ],
-          "sources": [
-            {
-              "label": "www.theneuron.ai",
-              "url": "https://www.theneuron.ai/digest/everything-that-happened-in-ai-today-november-26-2026/"
-            }
-          ],
-          "n": 6
-        },
-        {
-          "title": "Polymarket startet Prognosemärkte für H100-, B200- und B300-Rechenpreise",
-          "summary": "Laut Latent Space hat Polymarket Prognosemärkte zu künftigen Rechenpreisen von H100, B200 und B300 gestartet. Die Laufzeiten reichen bis 2028; beschrieben werden Prognosemärkte, keine physisch erfüllten GPU-Terminkontrakte.",
-          "category": "business",
-          "impact": 2,
-          "date": "2026-11-25",
-          "change_type": "announcement",
-          "candidate_ids": [
-            "2b849bc8db4b399cea3ac777"
-          ],
-          "sources": [
-            {
-              "label": "latent.space",
-              "url": "https://latent.space/p/ainews-math-proofs-are-landing-faster-than-we-can-read-them"
-            }
-          ],
-          "n": 7
-        },
-        {
-          "title": "Egnyte AI Assistant erhält AI Reports und Zugriff über Freigabelinks",
-          "summary": "Laut Egnyte können Administratoren mit AI Reports die KI-Aktivität ihrer Domain nach Zeiträumen filtern und als CSV exportieren; die Daten werden ab der Freigabe erhoben und für die letzten 180 Tage vorgehalten. Interne Empfänger von Datei- und Ordnerfreigabelinks können den AI Assistant außerdem zum Fragenstellen, Zusammenfassen und Analysieren geteilter Inhalte nutzen. Nach Herstellerangaben stehen die Änderungen bis zum 25. November allen Nutzern zur Verfügung.",
-          "category": "tools",
-          "impact": 2,
-          "date": "2026-11-25",
-          "change_type": "update",
-          "candidate_ids": [
-            "4dae87b266305c6622d4f431"
-          ],
-          "sources": [
-            {
-              "label": "helpdesk.egnyte.com",
-              "url": "https://helpdesk.egnyte.com/hc/en-us/articles/50669710439437-AI-Assistant-AI-Reports-and-AI-Assistant-for-File-and-Folder-Share-Links"
-            }
-          ],
-          "n": 8
         }
       ]
     }

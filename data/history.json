@@ -1,110 +1,6 @@
 {
  "items": [
   {
-   "topic_id": "lokale-llms",
-   "title": "Ollama unterstützt Phonon-Sprachausgabe lokal auf Apple Silicon",
-   "category": "lokal",
-   "impact": 4,
-   "date": "2026-10-24",
-   "summary": "Ollama ergänzt lokale Text-to-Speech-Ausgabe mit Gradiums Phonon auf Apple-Silicon-Macs, einschließlich Streaming und OpenAI-kompatiblem Audio-Endpunkt. Windows und Linux sind noch angekündigt. Wichtig für die Nutzung: Das englische phonon-Modell steht unter Apache 2.0, die 40M-Varianten für weitere Sprachen dagegen unter CC BY-NC 4.0. [10]",
-   "sources": [
-    {
-     "label": "[10] Original / ollama.com",
-     "url": "https://ollama.com/blog/speech-models"
-    }
-   ],
-   "first_seen": "2026-10-25",
-   "change_type": "update"
-  },
-  {
-   "topic_id": "agentic-engineering",
-   "title": "Agensh veröffentlicht dezentralen Multiagenten-Harness als Open Source",
-   "category": "agents",
-   "impact": 4,
-   "date": "2026-10-24",
-   "summary": "Microsoft gibt Agensh am 24. Oktober mit Harness, Experiment-Startskripten und Reproduktionsanleitung unter MIT-Lizenz frei. Die Agenten koordinieren sich ohne zentralen Orchestrator über gemeinsame Arbeitsumgebung, Nachrichten und Kontextboard. Der September-Preprint ist älter; neu ist die Codefreigabe. Versuche bis 1.024 Agenten sind Forschungsbefunde, keine allgemeine Produktions- oder Kostengarantie. [1][2]",
-   "sources": [
-    {
-     "label": "[1] Original / www.marktechpost.com",
-     "url": "https://www.marktechpost.com/2026/10/24/microsoft-agensh-multi-agent-harness-1024-agents/"
-    },
-    {
-     "label": "[2] Original / github.com",
-     "url": "https://github.com/microsoft/Agensh"
-    }
-   ],
-   "first_seen": "2026-10-25",
-   "change_type": "general_availability"
-  },
-  {
-   "topic_id": "agentic-engineering",
-   "title": "Qwen Code v0.26.1 verwaltet MCP-Server ohne neue Sitzung",
-   "category": "agents",
-   "impact": 3,
-   "date": "2026-10-24",
-   "summary": "Die offiziellen Release Notes führen die Verwaltung von MCP-Servern in Managed Agents ohne Neuerstellung der Sitzung auf. Die Funktion gehört zum stabilen Coding-Agent-Update v0.26.1 vom 24. Oktober; eine neue allgemeine Modellfamilie wird damit nicht veröffentlicht. [33]",
-   "sources": [
-    {
-     "label": "[33] Original / github.com",
-     "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.26.1"
-    }
-   ],
-   "first_seen": "2026-10-25",
-   "change_type": "update"
-  },
-  {
-   "topic_id": "context-engineering",
-   "title": "Qwen Code v0.26.1 ergänzt manuelle Kontextkompression für Managed Sessions",
-   "category": "agents",
-   "impact": 3,
-   "date": "2026-10-24",
-   "summary": "Das stabile Coding-Agent-Release ergänzt manuelle Kontextkompression für Workspace-gebundene Managed Sessions über API und WebShell. Die Funktion läuft nur im Leerlauf und erhält laut offiziellen Release Notes die Audit-Historie. Es handelt sich um eine Agentenfunktion, nicht um neue Qwen-Modellgewichte. [33]",
-   "sources": [
-    {
-     "label": "[33] Original / github.com",
-     "url": "https://github.com/QwenLM/qwen-code/releases/tag/v0.26.1"
-    }
-   ],
-   "first_seen": "2026-10-25",
-   "change_type": "update"
-  },
-  {
-   "topic_id": "ai-governance",
-   "title": "CNBC All-America Economic Survey: Mehrheit lehnt KI-Rechenzentren in Wohnnähe ab",
-   "category": "security",
-   "impact": 3,
-   "date": "2026-10-24",
-   "summary": "CNBC berichtet am 24. Oktober, dass 63 Prozent der befragten registrierten US-Wähler ein KI-Rechenzentrum im Umkreis von zehn Meilen ablehnen und 13 Prozent es unterstützen. Die Gesamtbefragung von Hart Research Associates und Public Opinion Strategies umfasste 1.000 registrierte Wähler vom 14. bis 18. Oktober; die Standortfrage ging nur an eine Teilstichprobe von ungefähr 500 Personen und hat laut CNBC eine Fehlermarge von ±4,38 Prozentpunkten. Das sind erklärte Einstellungen, kein Nachweis tatsächlicher Projektstopps oder Wahlausgänge. [20]",
-   "sources": [
-    {
-     "label": "[20] Original / www.cnbc.com",
-     "url": "https://www.cnbc.com/2026/10/24/trump-ai-data-centers-voter-backlash-midterms.html"
-    }
-   ],
-   "first_seen": "2026-10-25",
-   "change_type": "research"
-  },
-  {
-   "topic_id": "ai-governance",
-   "title": "GPT-6.1 Sol und Grok 4.7 geben im Convovo-API-Test gegensätzliche Wahlempfehlungen",
-   "category": "security",
-   "impact": 3,
-   "date": "2026-10-24",
-   "summary": "Convovo vergleicht erzwungene Wahlempfehlungen von GPT-6.1 Sol und Grok 4.7 über APIs mit aktivierter Websuche; TechCrunch berichtet am 24. Oktober über gegenläufige parteipolitische Antwortmuster. Verbraucher-Apps verweigerten laut den gelesenen Quellen die Frage. Das Ergebnis gilt für diesen konkreten Prompt-/API-Aufbau, nicht für alle politischen Antworten. Wegen interner Abweichungen zwischen Analyse- und Methodenzählern werden hier keine exakten Vergleichsquoten übernommen; das Briefing gibt keine Wahlempfehlung. [14][15]",
-   "sources": [
-    {
-     "label": "[14] Original / techcrunch.com",
-     "url": "https://techcrunch.com/2026/10/24/forced-to-pick-groks-ai-model-chooses-republicans-openais-picks-democrats/"
-    },
-    {
-     "label": "[15] Original / convovo.ai",
-     "url": "https://convovo.ai/ballot/"
-    }
-   ],
-   "first_seen": "2026-10-25",
-   "change_type": "research"
-  },
-  {
    "topic_id": "ai-news",
    "title": "When Agents Fail trennt Modell- und Harness-Effekte in Agentenbenchmarks",
    "category": "agents",
@@ -191,30 +87,6 @@
    ],
    "first_seen": "2026-10-26",
    "change_type": "security"
-  },
-  {
-   "topic_id": "ai-governance",
-   "title": "SB 806 verlangt Hinweise auf irreführende KI-Werbung in Pennsylvania",
-   "category": "security",
-   "impact": 3,
-   "date": "2026-10-24",
-   "summary": "Pennsylvania hat SB 806 bereits am 22. Oktober als Act 99 unterzeichnet; The Verge berichtet darüber am 24. Oktober.[18][19] Das Gesetz verlangt klare Hinweise bei synthetischer Werbung, die eine falsche Verbraucherwahrnehmung erzeugt, nimmt aber reine Textinhalte, offenkundige Fiktion und bestimmte satirische oder kommentierende Inhalte ausdrücklich aus.[20] Es tritt laut Gesetz erst 60 Tage später in Kraft, nicht sofort.[20]",
-   "sources": [
-    {
-     "label": "[18] Bericht / The Verge",
-     "url": "https://www.theverge.com/ai-artificial-intelligence/1018187/pennsylvania-ai-deceptive-advertising-act"
-    },
-    {
-     "label": "[19] Gesetzgebungsstatus / Pennsylvania",
-     "url": "https://www.palegis.us/legislation/bills/2025/sb806"
-    },
-    {
-     "label": "[20] Gesetzestext / Pennsylvania",
-     "url": "https://www.palegis.us/legislation/bills/text/HTM/2025/0/SB0806/PN1808"
-    }
-   ],
-   "first_seen": "2026-10-26",
-   "change_type": "policy"
   },
   {
    "topic_id": "ai-governance",
@@ -555,22 +427,6 @@
     {
      "label": "[50] Technischer Originalleitfaden / AWS",
      "url": "https://aws.amazon.com/blogs/machine-learning/groundhog-day-for-ai-agents-prompt-caching-patterns-for-using-openai-models-on-amazon-bedrock/"
-    }
-   ],
-   "first_seen": "2026-10-27",
-   "change_type": "other"
-  },
-  {
-   "topic_id": "context-engineering",
-   "title": "Context Engineering: Breunig diskutiert strategisches Vergessen",
-   "category": "agents",
-   "impact": 2,
-   "date": "2026-10-24",
-   "summary": "Drew Breunig beschreibt, wie über Monate angesammelte Anweisungen und Erinnerungen in Agenten widersprüchlich werden können.[57] Sein Plädoyer für strategisches Vergessen ist persönliche technische Analyse, kein kontrollierter Benchmark und keine neue Produktfreigabe.[57] Das Originaldatum bleibt der 24. Oktober.[57]",
-   "sources": [
-    {
-     "label": "[57] Originalanalyse / Drew Breunig",
-     "url": "https://www.dbreunig.com/2026/10/24/the-state-of-context-engineering.html"
     }
    ],
    "first_seen": "2026-10-27",
@@ -2493,22 +2349,6 @@
    "change_type": "announcement"
   },
   {
-   "topic_id": "ai-security",
-   "title": "National Cyber Shield soll agentische KI für britische Cyberabwehr nutzen",
-   "category": "security",
-   "impact": 3,
-   "date": "2026-10-24",
-   "summary": "Die britische Regierung kündigt 60 Millionen Pfund für den National Cyber Shield mit agentischer KI an.[102] Vorgesehen sind ein Förderwettbewerb für Anbieter und die Prüfung eines regulatorischen Sandkastens; eine bereits eingesetzte nationale Schutzplattform ist damit nicht belegt.[102]",
-   "sources": [
-    {
-     "label": "[102] Originalankündigung / Britische Regierung",
-     "url": "https://www.gov.uk/government/news/chancellor-unveils-britains-ambitious-plan-for-ai"
-    }
-   ],
-   "first_seen": "2026-10-29",
-   "change_type": "policy"
-  },
-  {
    "topic_id": "ai-governance",
    "title": "New York unterzeichnet Schutzgesetz zu Chatbots für Minderjährige",
    "category": "security",
@@ -2591,22 +2431,6 @@
    ],
    "first_seen": "2026-10-29",
    "change_type": "announcement"
-  },
-  {
-   "topic_id": "ai-governance",
-   "title": "AI Biosecurity Lab: Großbritannien kündigt 100 Millionen Pfund an",
-   "category": "security",
-   "impact": 3,
-   "date": "2026-10-24",
-   "summary": "Die britische Regierung kündigt 100 Millionen Pfund für ein AI Biosecurity Lab zur KI-gestützten Erkennung und Überwachung biologischer Bedrohungen an.[102] Der Text belegt weder ein bereits eröffnetes Labor noch die Auszahlung der angekündigten Finanzierung.[102]",
-   "sources": [
-    {
-     "label": "[102] Originalankündigung / Britische Regierung",
-     "url": "https://www.gov.uk/government/news/chancellor-unveils-britains-ambitious-plan-for-ai"
-    }
-   ],
-   "first_seen": "2026-10-29",
-   "change_type": "policy"
   },
   {
    "topic_id": "ai-governance",
@@ -36895,57 +36719,841 @@
    ],
    "first_seen": "2026-11-27",
    "change_type": "update"
-  }
- ],
- "summaries": [
+  },
   {
    "topic_id": "ai-news",
-   "date": "2026-10-24",
-   "summary": "Moonshot stellt Kimi K3.1 Pro und seine Highspeed-Variante in Kimi und der API bereit.[77][78]",
-   "skip": []
+   "title": "Sber veröffentlicht GigaChat 4 unter MIT-Lizenz mit MCP-Anbindung",
+   "category": "modelle",
+   "impact": 4,
+   "date": "2026-11-28",
+   "summary": "Sber hat GigaChat 4 nach eigenen Angaben unter MIT-Lizenz veröffentlicht und bietet das Modell über GigaPlatform AI Studio sowie für lokalen Unternehmensbetrieb an. Laut Hersteller unterstützt es mehrstündige agentische Arbeitsabläufe mit Planung, Ausführung und Kontrolle sowie die Anbindung externer Dienste über MCP. Sber nennt eine Million Tokens Kontext und 40 Prozent mehr Geschwindigkeit gegenüber GigaChat 3.5; unabhängige Bestätigungen dieser Leistungsangaben liegen nicht vor.",
+   "sources": [
+    {
+     "label": "business-standard.com",
+     "url": "https://business-standard.com/content/press-releases-ani/sber-unveils-next-generation-of-gigachat-4-models-capable-of-operating-autonomously-and-solving-complex-tasks-126112800256_1.html"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "general_availability"
+  },
+  {
+   "topic_id": "ai-news",
+   "title": "RLVB trainiert evidenzabhängige Agentenantworten und führt Pro Worlds ein",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-11-24",
+   "summary": "Reinforcement Learning with Verifiable Beliefs (RLVB) belohnt Agenten dafür, Informationen zu sammeln, solange mehrere Antworten möglich sind, und erst bei ausreichender, im Simulator überprüfbarer Evidenz zu antworten. Die Arbeit stellt außerdem Pro Worlds vor, einen Benchmark mit visuellen Rätseln, deren Welt durch ein kleines Sichtfenster erkundet wird. Nach Angaben der Autoren verbessert RLVB drei Vision-Language-Modelle auf drei Benchmarks in allen neun Konfigurationen gegenüber dem Basismodell, im Mittel um 17,1 Prozent.",
+   "sources": [
+    {
+     "label": "arxiv.org",
+     "url": "https://arxiv.org/abs/2611.32884"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "research"
+  },
+  {
+   "topic_id": "ai-news",
+   "title": "DAPO-V gewichtet schwer überprüfbare Halluzinationen stärker – neuer Datensatz ITHV",
+   "category": "modelle",
+   "impact": 3,
+   "date": "2026-11-24",
+   "summary": "Die Studie stellt DAPO-V vor, ein risikobeschränktes RL-Verfahren, das falsche Antworten auf für Menschen schwer überprüfbare Bild-Text-Fragen stärker bestraft; der zugehörige Datensatz ITHV umfasst 2.728 Beispiele. Nach Angaben der Autoren steigt bei drei multimodalen Modellen die Genauigkeit auf Fragen zu schwer erkennbaren Halluzinationen gegenüber rein genauigkeitsoptimiertem DAPO um 5,78 bis 9,72 Prozentpunkte, während das entsprechend gewichtete Risiko um 10,1 bis 19,5 Prozent sinkt. Eine verblindete Nutzerstudie deutet laut Arbeit darauf hin, dass verbleibende Halluzinationen leichter erkennbar sind.",
+   "sources": [
+    {
+     "label": "arxiv.org",
+     "url": "https://arxiv.org/html/2611.32055"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "research"
+  },
+  {
+   "topic_id": "ai-news",
+   "title": "Lossless Latent Diffusion: LLDM soll Bilder pixelgenau rekonstruieren",
+   "category": "modelle",
+   "impact": 3,
+   "date": "2026-11-27",
+   "summary": "Forschende stellen mit Lossless Latent Diffusion (LLDM) einen Ansatz vor, der nach ihren Angaben eine pixelgenaue Bildrekonstruktion aus dem latenten Raum ermöglicht. Das Verfahren soll zugleich ähnlich einfach zu trainieren sein wie der FLUX2-VAE; detaillierte Messwerte oder unabhängige Bestätigungen enthält der vorgelegte Bericht nicht.",
+   "sources": [
+    {
+     "label": "latent.space",
+     "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "research"
+  },
+  {
+   "topic_id": "ai-news",
+   "title": "DeepSeek aktualisiert DeepEP V2.6 und DeepEP-Ascend V1.1",
+   "category": "tools",
+   "impact": 3,
+   "date": "2026-11-27",
+   "summary": "Laut Latent Space aktualisiert DeepSeek DeepEP auf V2.6 und DeepEP-Ascend auf V1.1. Für verteiltes Training auf Ascend kommen die Kommunikationsprimitive lb_reduce_grads und ring_send_recv hinzu; außerdem nennt der Bericht Arbeiten an der SM100-Unterstützung in FlashMLA.",
+   "sources": [
+    {
+     "label": "latent.space",
+     "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "update"
+  },
+  {
+   "topic_id": "ai-news",
+   "title": "Moonshot startet Kimi for Science mit kostenlosen API-Credits",
+   "category": "business",
+   "impact": 3,
+   "date": "2026-11-27",
+   "summary": "Moonshot startet laut Latent Space das Programm Kimi for Science mit kostenlosen API-Credits und Zugang zu den neuesten Kimi-Modellen. Als Bewerbungsfrist nennt der Bericht den 8. Dezember; Förderumfang und Auswahlbedingungen gehen aus dem vorgelegten Abschnitt nicht hervor.",
+   "sources": [
+    {
+     "label": "latent.space",
+     "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "announcement"
+  },
+  {
+   "topic_id": "ai-news",
+   "title": "Liquid AI: d1.3-ultra ist in Liquid Console verfügbar",
+   "category": "modelle",
+   "impact": 3,
+   "date": "2026-11-28",
+   "summary": "Liquid AI stellt d1.3-ultra in Liquid Console bereit; OpenRouter und Vercel sind als weitere Zugangswege erst angekündigt. Nach Herstellerangaben unterstützt das Entscheidungsmodell Ranglisten, Zahlen- und Datumsextraktion aus Bildern und Audio sowie Zeitmarken für gesprochene Inhalte. Der Artikel berichtet außerdem von gerundet 76 Punkten und Platz eins unter 27 Modellen im Decision Index von Artificial Analysis.",
+   "sources": [
+    {
+     "label": "ai.info",
+     "url": "https://ai.info/news/liquid-ai-d1-3-ultra-decision-model"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "general_availability"
+  },
+  {
+   "topic_id": "ai-news",
+   "title": "OpenRouter ergänzt Batch-Ergebnisabruf und context_management für Responses",
+   "category": "tools",
+   "impact": 2,
+   "date": "2026-11-24",
+   "summary": "Laut OpenRouters API-Changelog ergänzt GET /batches/{id}/results den Abruf von Batch-Ergebnissen; Responses-Anfragen und daraus erstellte Presets erhalten außerdem context_management samt zugehörigem Schema. Hinzu kommen is_exclusive für BYOK-Schlüssel, output_delivery für SpeechRequest und allow_safety_retention_openai für Guardrails und Richtlinien zur Modellverfügbarkeit; die genaue Wirkung dieser neuen Felder erläutert der Eintrag nicht.",
+   "sources": [
+    {
+     "label": "openrouter.ai",
+     "url": "https://openrouter.ai/docs/changelog/rss.xml"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "update"
+  },
+  {
+   "topic_id": "ai-news",
+   "title": "OpenRouter ergänzt Schemas für Tool-Suche und allow_provisional_providers",
+   "category": "tools",
+   "impact": 2,
+   "date": "2026-11-23",
+   "summary": "OpenRouter dokumentiert sechs neue Schemas für Tool-Referenzen, Suchergebnisse und Fehler der Tool-Suche in POST /messages und den zugehörigen Preset-Anfragen. Laut Anbieter erhalten außerdem die Erstellungs-, Aktualisierungs- und Ausgabeschemas für Guardrails sowie Richtlinien zur Modellverfügbarkeit das Feld allow_provisional_providers; konkrete Auswirkungen auf das Laufzeitverhalten werden im vorgelegten Eintrag nicht erläutert.",
+   "sources": [
+    {
+     "label": "openrouter.ai",
+     "url": "https://openrouter.ai/docs/changelog/rss.xml"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "update"
+  },
+  {
+   "topic_id": "ai-news",
+   "title": "StepFun bietet STEM-Forschenden drei Monate Step Plan Pro",
+   "category": "business",
+   "impact": 2,
+   "date": "2026-11-27",
+   "summary": "StepFun bietet laut Latent Space Forschenden aus STEM-Fächern drei Monate Zugang zu Step Plan Pro an. Angaben zur Bewerbung, regionalen Verfügbarkeit oder zu Nutzungslimits enthält der vorgelegte Abschnitt nicht.",
+   "sources": [
+    {
+     "label": "latent.space",
+     "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "announcement"
+  },
+  {
+   "topic_id": "ai-news",
+   "title": "Quasar 1.2 358B auf GLM-5.3-Basis erreicht 23 Indexpunkte",
+   "category": "modelle",
+   "impact": 2,
+   "date": "2026-11-27",
+   "summary": "Artificial Analysis weist für Quasar 1.2 358B in der Einstellung Max 23 Punkte im Intelligence Index aus. Der Changelog bezeichnet das Modell als auf GLM-5.3 basierend und ergänzt Anbieterleistungsdaten für Multiverse Computing, ohne im vorgelegten Abschnitt konkrete Leistungswerte zu nennen.",
+   "sources": [
+    {
+     "label": "artificialanalysis.ai",
+     "url": "https://artificialanalysis.ai/de/changelog"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "update"
+  },
+  {
+   "topic_id": "ai-news",
+   "title": "Baidu: ERNIE 5.5 Flash Preview erreicht 31 Punkte im Artificial Analysis Intelligence Index",
+   "category": "modelle",
+   "impact": 2,
+   "date": "2026-11-26",
+   "summary": "Artificial Analysis hat für ERNIE 5.5 Flash Preview einen Intelligence-Index-Wert von 31 veröffentlicht und Anbieterleistungsdaten für Baidu ergänzt. Der Changelog dokumentiert neue Evaluationsdaten, keine allgemeine Verfügbarkeit des weiterhin als Preview bezeichneten Modells.",
+   "sources": [
+    {
+     "label": "artificialanalysis.ai",
+     "url": "https://artificialanalysis.ai/de/changelog"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "update"
+  },
+  {
+   "topic_id": "ai-news",
+   "title": "Ling-3.2-air erreicht 23 Punkte im Artificial Analysis Intelligence Index",
+   "category": "modelle",
+   "impact": 2,
+   "date": "2026-11-23",
+   "summary": "Artificial Analysis veröffentlicht für Ling-3.2-air einen Wert von 23 Punkten im Intelligence Index. Der Evaluationseintrag enthält keine weiteren Angaben zu Fähigkeiten, Verfügbarkeit oder Lizenz.",
+   "sources": [
+    {
+     "label": "artificialanalysis.ai",
+     "url": "https://artificialanalysis.ai/de/changelog"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "update"
   },
   {
    "topic_id": "lokale-llms",
-   "date": "2026-10-24",
-   "summary": "MiniMax veröffentlicht am 23. Oktober die Gewichte von M3.1 Flash auf Hugging Face.[76][6]",
-   "skip": []
+   "title": "GigaChat 4 37B A4B und GigaChat 4 708B A41B erscheinen mit Gewichten und Trainings-Checkpoints",
+   "category": "lokal",
+   "impact": 4,
+   "date": "2026-11-27",
+   "summary": "Laut Latent Space wurden GigaChat 4 37B A4B und GigaChat 4 708B A41B mit Gewichten, Base- und früheren Trainings-Checkpoints sowie einem 83-seitigen technischen Bericht veröffentlicht. Die Veröffentlichung beschreibt eine Hybridarchitektur aus Gated Delta Net, MLA und DSA und beansprucht einen effektiven Kontext von einer Million Token; die angeführten Benchmarks stammen aus der Veröffentlichung. Für das 37B-Modell wird eine gegenüber früheren MIT-Versionen restriktivere Lizenz diskutiert.",
+   "sources": [
+    {
+     "label": "latent.space",
+     "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "announcement"
+  },
+  {
+   "topic_id": "lokale-llms",
+   "title": "Community betreibt vollständiges Kimi-K3.1-Pro mit gb10-hyperflare auf 16 GB10-Systemen",
+   "category": "lokal",
+   "impact": 4,
+   "date": "2026-11-27",
+   "summary": "Ein Community-Projekt berichtet über den Betrieb des vollständigen Kimi-K3.1-Pro auf 16 Spark-/GB10-Systemen mit einer von Flare beziehungsweise Hyperflare abgeleiteten Engine. Nach Projektangaben erreicht der Aufbau je nach Ausgabeart etwa 24 bis 40 generierte Token pro Sekunde, rund 700 Token pro Sekunde beim Prefill und eine Startzeit von elf Minuten. Der Aufbau unterstützt Text- und Bildeingaben sowie gecachtes Prefill; Artefakte wurden auf Hugging Face und GitHub geteilt.",
+   "sources": [
+    {
+     "label": "latent.space",
+     "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "announcement"
+  },
+  {
+   "topic_id": "lokale-llms",
+   "title": "llama.cpp 1.1.0 erweitert Llama Chat und setzt auf llama_batch_ext",
+   "category": "lokal",
+   "impact": 4,
+   "date": "2026-11-26",
+   "summary": "Laut Bericht ergänzt llama.cpp 1.1.0 einen neu gestalteten Llama Chat mit Sprachnachrichten, Diktat und gruppierter Darstellung von Agentenaktivitäten sowie Unterstützung weiterer Sprach- und Audiomodellfamilien einschließlich Full-Duplex-Systemen. Hinzu kommen die serverseitige Auswahl benannter Tools und eine Quantisierungsauswahl nach Zielwerten für Bits pro Gewicht oder Dateigröße. Die bisherige native Schnittstelle llama_batch wird zugunsten von llama_batch_ext als veraltet markiert, aber nicht als sofort entfernt beschrieben.",
+   "sources": [
+    {
+     "label": "worldindebug.com",
+     "url": "https://worldindebug.com/articles/llama-cpp-1-1-local-voice-agent-runtime-2026"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "update"
+  },
+  {
+   "topic_id": "lokale-llms",
+   "title": "Halo kündigt Post-Training-Wettbewerb mit 1,5 Millionen Dollar an Rechenressourcen an",
+   "category": "business",
+   "impact": 3,
+   "date": "2026-11-27",
+   "summary": "Laut Latent Space ist der Halo-Post-Training-Wettbewerb für offene Modelle für den 1. bis 10. Dezember angekündigt. Dafür sollen Rechenressourcen im Wert von 1,5 Millionen Dollar und mehr als 200.000 Dollar an Preisgeldern bereitgestellt werden.",
+   "sources": [
+    {
+     "label": "latent.space",
+     "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "announcement"
+  },
+  {
+   "topic_id": "lokale-llms",
+   "title": "Inkling-2-Mini-Prime bringt Prime-LoRA auf das ursprüngliche Modell",
+   "category": "lokal",
+   "impact": 3,
+   "date": "2026-11-27",
+   "summary": "Inkling-2-Mini-Prime überträgt den Prime-LoRA auf das ursprüngliche Inkling-2-Mini mit dessen Inhaltsbeschränkungen; Gewichte, GGUF-Dateien und ein separater Adapter werden angeboten. In eigenen Tests meldet das Projekt eine Steigerung der Debugging-Erfolgsrate von 80 auf 100 Prozent und der Befolgung langer System-Prompts von 70 auf 92,5 Prozent. Der Anteil abgebrochener Antworten auf 1.100 sensible Anfragen sinkt laut Projekt von 13,5 auf 0,5 Prozent.",
+   "sources": [
+    {
+     "label": "latent.space",
+     "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "announcement"
+  },
+  {
+   "topic_id": "lokale-llms",
+   "title": "AlphaLlama 2.0.12 integriert Inkling-2-Mini und erweitert AlphaInfer",
+   "category": "lokal",
+   "impact": 3,
+   "date": "2026-11-26",
+   "summary": "AlphaLlama 2.0.12 ergänzt für Inkling-2-Mini eine automatisch eingebundene zweite Engine, die Port und OpenAI-kompatible API beibehält und standardmäßig einen Stream, 32K Kontext, q8_0-KV-Cache und N-Gramm-Drafting nutzt. Für unterstützte AlphaInfer-Modelle wird bei einem Stream überwiegend der Speed-Modus zum Standard; unter Linux kommen GLM-5.3-Flash und DeepSeek-V4.1-Flash für 24-GB-Grafikkarten hinzu, wobei Letzteres ohne Drafting rund 52 GB Arbeitsspeicher benötigt. Der Anbieter meldet nach einer Benchmark-Korrektur bei kopierlastigen Coding-Prompts auf einer RTX 4080 etwa dreifache Geschwindigkeit gegenüber Strata 0.2.22, ausdrücklich nicht gegenüber 0.2.23; im allgemeinen Chat fällt der Vorteil kleiner aus, und Drafting erzeugt keine tokenidentischen Ergebnisse zum einfachen Greedy-Decoding.",
+   "sources": [
+    {
+     "label": "github.com",
+     "url": "https://github.com/AlphaChat-dotcom/alphallama/releases/tag/v2.0.12"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "update"
+  },
+  {
+   "topic_id": "lokale-llms",
+   "title": "Omarchy 4.6.0-rc1 integriert lokale KI und ergänzt Folio sowie Omaview",
+   "category": "lokal",
+   "impact": 3,
+   "date": "2026-11-28",
+   "summary": "Omarchy 4.6.0-rc1 bündelt laut Bericht lokale Modelle und entfernte Anbieter in einer gemeinsamen Agentenoberfläche; geeignete Katalogmodelle lassen sich nach Projektangaben in einem netzwerklosen Container einrichten und Modelle auf anderen Rechnern über Tailscale anbinden. Folio und Omaview übernehmen weitere Desktop-, Datei- und Medienaufgaben, während die Bildschirmkonfiguration eine verschiebbare Monitoranordnung erhält. Der Release Candidate ist ausdrücklich für Tests gedacht und keine stabile Freigabe für produktive Arbeitsplätze.",
+   "sources": [
+    {
+     "label": "bitcoinversus.tech",
+     "url": "https://bitcoinversus.tech/2026/11/28/omarchy-46-rc1-local-ai-folio-linux-desktop-2026"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "preview"
   },
   {
    "topic_id": "agentic-engineering",
-   "date": "2026-10-24",
-   "summary": "Die konsolidierte GitHub-App in Teams erlaubt, aus einer Issue-Benachrichtigung per Erwähnung Untersuchung, Fix und Pull Request anzustoßen.[111]",
-   "skip": []
+   "title": "Antigravity 2.35.1 setzt aktive Agentengespräche nach Neustarts fort",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-11-25",
+   "summary": "Antigravity 2.35.1 nimmt laut dem zitierten Teammitglied Rohan Phadte aktive Gespräche nach einem Neustart oder Update automatisch wieder auf. Nutzer können demnach während einer laufenden Ausführung aktualisieren, anschließend setzen die Agenten ihre Arbeit fort. Die Updates werden schrittweise für Desktop-App und CLI verteilt.",
+   "sources": [
+    {
+     "label": "www.testingcatalog.com",
+     "url": "https://www.testingcatalog.com/google-stretches-antigravity-neon-quota-with-caching-gains/"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "update"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "Black-Box Test Selection untersucht günstigere Agententests auf SWE-bench Verified",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-11-25",
+   "summary": "Die Studie vergleicht 14 Auswahlstrategien und eine historische Baseline auf zehn Benchmarks: Laut Autoren eignen sich repräsentative Verfahren eher zur Leistungsschätzung, LLM-basierte Schwierigkeitsbewertungen eher zur frühen Fehlersuche. Für GPT 5.2 Codex auf SWE-bench Verified berichten sie bei 100 statt 500 Aufgaben von 47 statt 225 US-Dollar Ausführungskosten und einer Abweichung der geschätzten Erfolgsrate um 0,8 Prozentpunkte. Die Auswertung beruht auf veröffentlichten Aufgabenergebnissen statt neuen Agentenläufen; Code und Ergebnisse wurden laut Arbeit zur Replikation freigegeben.",
+   "sources": [
+    {
+     "label": "arxiv.org",
+     "url": "https://arxiv.org/html/2611.34617v1"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "research"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "Google veröffentlicht deep-research-Skill in google-gemini/demolab",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-11-27",
+   "summary": "Laut Latent Space veröffentlicht Google einen 16-zeiligen Skill, der Deep Research mit drei bis fünf Rechercheperspektiven und parallelen Subagenten mit jeweils acht bis zwölf Schritten strukturiert. Er sieht ausschließlich Primärquellen und den Abbruch festgefahrener Worker vor. Laut der referierten Veröffentlichung wurde die Variante mit Skill in Hunderten Blindvergleichen zu mehr als 90 Prozent bevorzugt; dies ist eine Anbieterangabe.",
+   "sources": [
+    {
+     "label": "latent.space",
+     "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "announcement"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "Inkling 2 Mini: Offener pi-Adapter mit AsyncGRPOTrainer soll Ausgabetokens reduzieren",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-11-27",
+   "summary": "Laut Latent Space wurde ein offener Adapter für Inkling 2 Mini im pi-Harness mit dem AsyncGRPOTrainer aus TRL trainiert. Nach Projektangaben erreicht er im niedrigen Reasoning-Modus die Genauigkeit des Basismodells mit rund 40 Prozent weniger Ausgabetokens. Die MLP-Experten wurden nicht mit LoRA verändert, damit ihre Gewichte im vorgesehenen quantisierten Format bleiben.",
+   "sources": [
+    {
+     "label": "latent.space",
+     "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "announcement"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "Recursive collective intelligence: Unterschiedliche Informationen als Voraussetzung für Teamvorteile",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-11-27",
+   "summary": "Laut dem von Latent Space referierten Forschungsergebnis übertreffen Agententeams unabhängige Ensembles mit gleichem Rechenbudget nur dann, wenn sie unterschiedliche Informationen besitzen und austauschen. Für 27B-Modelle berichten die Forschenden Verbesserungen von etwa einem Drittel sowie weitere Fortschritte durch Selbsttraining über vier bis sechs Generationen.",
+   "sources": [
+    {
+     "label": "latent.space",
+     "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "research"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "Robotiktests: Code-as-Policies liegt vor einfacher Tool-Nutzung",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-11-27",
+   "summary": "Laut dem von Latent Space referierten Testbericht schneidet Code-as-Policies besser ab als einfache Tool-Nutzung. Kamerakalibrierung bringt je nach Test fünf bis mehr als 50 Punkte, Tiefeneingaben dagegen nur ein bis zwei Punkte. Vorgefertigte Greifwerkzeuge verschlechtern dem Bericht zufolge die Ergebnisse von Frontier-Modellen.",
+   "sources": [
+    {
+     "label": "latent.space",
+     "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "research"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "Codex ruft laut Entwicklungsbericht rund 80 Prozent weniger Daten aus der Responses API ab",
+   "category": "tools",
+   "impact": 3,
+   "date": "2026-11-27",
+   "summary": "Laut dem von Latent Space referierten Entwicklungsbericht reduziert eine Optimierung das von Codex aus der Responses API abgerufene Datenvolumen um ungefähr 80 Prozent. Als Beispiel nennt der Bericht einen Thread, dessen Datenmenge von 7,48 MB auf 930 KB sank; einen entsprechenden Geschwindigkeitsgewinn beziffert er nicht.",
+   "sources": [
+    {
+     "label": "latent.space",
+     "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "update"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "Agent Toolkit for AWS erhält distributed KV caching skill für Amazon ElastiCache",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-11-20",
+   "summary": "AWS stellt einen Skill vor, der Coding-Agenten durch Eignungsprüfung, Kostenschätzung, Einrichtung und Fehlerdiagnose für verteiltes KV-Caching mit Amazon ElastiCache führt. Laut AWS nutzt er KVTrace zur Wirtschaftlichkeitsprüfung und integriert LMCache in bestehende vLLM- oder SGLang-Installationen; folgenreiche Ressourcenänderungen erfordern explizite Freigaben. Für das zugrunde liegende Caching nennt AWS workloadabhängig bis zu 40 Prozent niedrigere Inferenzkosten und bis zu 80 Prozent weniger Zeit bis zum ersten Token.",
+   "sources": [
+    {
+     "label": "aws.amazon.com",
+     "url": "https://aws.amazon.com/blogs/machine-learning/cut-self-hosted-llm-cost-and-latency-with-the-distributed-kv-caching-agent-skill/"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "announcement"
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "title": "Grok Build 1.0.78 erweitert @-Dateiverweise um Zeilenangaben und versteckte Dateien",
+   "category": "agents",
+   "impact": 2,
+   "date": "2026-11-06",
+   "summary": "Laut xAI lassen sich in Grok Build 1.0.78 @-Datei-Chips direkt bearbeiten; @~/-Pfade werden zum Heimatverzeichnis aufgelöst, und Dateiverweise unterstützen :N-Zeilenangaben sowie @!hidden-Dateien. Textauswahl und Kopieren funktionieren nach Herstellerangaben nun über Nachrichtengrenzen hinweg; außerdem korrigiert das Update Updates und Kanalwechsel bei Homebrew-Cask-Installationen. Sitzungsexporte mit großen Shell-Ausgaben sollen schneller sein und weniger Speicher benötigen.",
+   "sources": [
+    {
+     "label": "x.ai",
+     "url": "https://x.ai/cli/changelogs/1.0.88.external.md"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "update"
   },
   {
    "topic_id": "ai-tools",
-   "date": "2026-10-24",
-   "summary": "Firecrawl startet am 22. Oktober einen Government & Legal Index für US-Recht und Behördenmaterialien.[114]",
-   "skip": []
+   "title": "Claude Computer Use startet als Beta für Team und Enterprise",
+   "category": "agents",
+   "impact": 4,
+   "date": "2026-11-20",
+   "summary": "Anthropic rollt Claude Computer Use schrittweise als Beta für Organisationen mit Team- und Enterprise-Tarifen aus. Laut Anbieter kann Claude den Bildschirm eines Nutzers sehen und in freigegebenen Desktop-Anwendungen arbeiten. Der Zugriff erfolgt über die neue Claude-Desktop-Oberfläche sowie über Web und Mobilgeräte, wenn der Computerzugriff aktiviert ist.",
+   "sources": [
+    {
+     "label": "docs.anthropic.com",
+     "url": "https://docs.anthropic.com/en/docs/release-notes/claude-apps"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "public_beta"
+  },
+  {
+   "topic_id": "ai-tools",
+   "title": "Claude Personal Finance startet als Beta mit Kontenanbindung in den USA",
+   "category": "tools",
+   "impact": 4,
+   "date": "2026-11-05",
+   "summary": "Anthropic rollt Claude Personal Finance nach eigenen Angaben als Beta für Pro-, Max- und Ultra-Abonnenten in den USA aus. Nutzer können Bank-, Kreditkarten-, Kredit- und Anlagekonten verknüpfen, Guthaben und Ausgaben gemeinsam betrachten und Claude Fragen zu ihren eigenen Finanzen stellen.",
+   "sources": [
+    {
+     "label": "docs.anthropic.com",
+     "url": "https://docs.anthropic.com/en/docs/release-notes/claude-apps"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "public_beta"
+  },
+  {
+   "topic_id": "ai-tools",
+   "title": "GPT-6.2 Astra und GPT-6.2 Sol: Fehlerkorrektur lässt Nutzungslimits schneller greifen",
+   "category": "tools",
+   "impact": 3,
+   "date": "2026-11-26",
+   "summary": "Nach Angaben des OpenAI-Ingenieurs Thibault Sottiaux werden die Nutzungslimits nach der Korrektur fehlerhafter Rabatte bei GPT-6.2 Astra um 40 Prozent und bei GPT-6.2 Sol um 25 Prozent schneller erreicht als in der Vorwoche. Andere Modelle seien nicht betroffen, Nachberechnungen gebe es nicht; Go-, Plus-, Pro- und Business-Abonnenten erhielten einen zusätzlich gespeicherten Kontingent-Reset. Business-Nutzer bekommen laut Sottiaux außerdem bis Jahresende kostenlosen Zugang zum Fast Mode.",
+   "sources": [
+    {
+     "label": "the-decoder.com",
+     "url": "https://the-decoder.com/gpt-6-2-astra-users-now-hit-limits-40-faster-after-openai-patched-a-pricing-error/"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "update"
+  },
+  {
+   "topic_id": "ai-tools",
+   "title": "Claude Connectors erhalten Dateiübertragungen als Beta",
+   "category": "tools",
+   "impact": 3,
+   "date": "2026-11-24",
+   "summary": "Claude kann laut Anthropic Dateien an verbundene Anwendungen senden und von diesen angebotene Dateien speichern. Die Funktion wird schrittweise als Beta für Pro, Max und Ultra ausgerollt; bei Team und Enterprise muss ein Organisationsinhaber sie aktivieren.",
+   "sources": [
+    {
+     "label": "docs.anthropic.com",
+     "url": "https://docs.anthropic.com/en/docs/release-notes/claude-apps"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "public_beta"
+  },
+  {
+   "topic_id": "ai-tools",
+   "title": "Benny’s Hub: Mit Claude entwickelte Zwei-Tasten-Anwendungen und SwitchedGames-Anleitungen",
+   "category": "tools",
+   "impact": 3,
+   "date": "2026-11-27",
+   "summary": "Der Bericht stellt Benny’s Hub als über etwa zwei Jahre mit Claude und anderen LLMs entwickelte Browserumgebung für Spiele, Kommunikation und Streaming mit zwei Eingaben vor. Der unter MIT-Lizenz veröffentlichte Code nutzt eine wiederverwendbare Markdown-Spezifikation unter anderem für automatisches Fokus-Scanning und optionale Wartezeiten für Sprachausgabe; zum Angebot gehören ein browserfähiges Minigolfspiel und Anleitungen für weitere switch-bedienbare Anwendungen.",
+   "sources": [
+    {
+     "label": "latent.space",
+     "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "other"
+  },
+  {
+   "topic_id": "ai-tools",
+   "title": "Datasette Agent: datasette-agent 0.7a1 verbessert Fragmentnavigation im Seitenpanel",
+   "category": "agents",
+   "impact": 2,
+   "date": "2026-11-24",
+   "summary": "Laut Entwickler verbessert die Alpha-Version datasette-agent 0.7a1 die Navigation über URL-Fragmente im iframe-Seitenpanel und unterstützt damit Zustandsänderungen anderer Datasette-Plugins besser. Das Update behebt auch Fehler im Zusammenspiel mit datasette-charts 0.2a0; das Öffnen und Navigieren des Seitenpanels war bereits zuvor möglich.",
+   "sources": [
+    {
+     "label": "simonwillison.net",
+     "url": "https://simonwillison.net/2026/Nov/24"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "update"
+  },
+  {
+   "topic_id": "ai-tools",
+   "title": "datasette-charts 0.2a1 verbessert Diagrammansicht und ergänzt CSV-/TSV-Kopierknöpfe",
+   "category": "tools",
+   "impact": 2,
+   "date": "2026-11-24",
+   "summary": "Laut Changelog bleiben Diagramme in der Alpha-Version datasette-charts 0.2a1 beim Einklappen der Vorschläge sichtbar; direkte Diagrammlinks öffnen die Vorschläge für den jeweiligen Besuch eingeklappt. Kopierknöpfe für TSV und CSV ersetzen die Datentabelle unter Diagrammen, und auf Tabellenseiten steht das Panel nun unterhalb der Zeilen- und Filterangabe. Außerdem entfallen der Menüpunkt „Chart this data“ und die bisher engeren Zeilenabstände in Tooltips.",
+   "sources": [
+    {
+     "label": "simonwillison.net",
+     "url": "https://simonwillison.net/2026/Nov/24"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "update"
+  },
+  {
+   "topic_id": "ai-tools",
+   "title": "Claude Monthly Recap verlässt die Beta und berücksichtigt Code- und Cowork-Arbeit",
+   "category": "tools",
+   "impact": 2,
+   "date": "2026-11-24",
+   "summary": "Laut Anthropic ist Claude Monthly Recap unter „Reflect“ für Free, Pro, Max und Ultra im Web, auf dem Desktop sowie unter iOS und Android nicht mehr in der Beta. Die Monatsrückblicke können nun auch Claude-Code-Sitzungen und Claude-Cowork-Aufgaben in der Cloud berücksichtigen; gespeicherte Rückblicke lassen sich direkt auf der Seite löschen.",
+   "sources": [
+    {
+     "label": "docs.anthropic.com",
+     "url": "https://docs.anthropic.com/en/docs/release-notes/claude-apps"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "general_availability"
+  },
+  {
+   "topic_id": "ai-tools",
+   "title": "AI Model Market Daily bündelt AMM 100, Nutzungs- und Sicherheitsdaten",
+   "category": "tools",
+   "impact": 2,
+   "date": "2026-11-27",
+   "summary": "FINAL-Bench stellt AI Model Market Daily vor, das laut Anbieter am 27. November 885 Modelle erfasste und Benchmarkleistung, OpenRouter-Tokennutzung sowie Sicherheitsindikatoren zusammenführt. Das Dashboard trennt Rankings für offene und geschlossene Modelle und veröffentlicht tägliche Snapshots als offenen Datensatz. Die Sicherheitsansicht deckt laut Beitrag 538 Modelle bei Lieferkettenprüfungen ab, bei Angriffsresistenz und Agentensicherheit jedoch nur 21 beziehungsweise 19 Modelle.",
+   "sources": [
+    {
+     "label": "huggingface.co",
+     "url": "https://huggingface.co/blog/FINAL-Bench/ai-model-market-daily-reading-ai-models-like-a-sto"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "announcement"
   },
   {
    "topic_id": "context-engineering",
-   "date": "2026-10-24",
-   "summary": "Der neue Raw-RAG-Preprint vergleicht dichte Suche plus Reranking über rohe Gesprächshistorien mit komplexeren Memory-Systemen.[92]",
-   "skip": []
+   "title": "HyperHarness erzeugt persönliche Memory-Harnesses in einem Durchlauf",
+   "category": "agents",
+   "impact": 4,
+   "date": "2026-11-27",
+   "summary": "HyperHarness erzeugt laut dem vorgelegten Bericht pro Nutzer einen Memory-Harness in einem einzigen Durchlauf und ersetzt damit umfangreiches Kontext-Prompting. In den referierten Forschungsergebnissen liegt der Ansatz in sieben von neun Testszenarien vorn und benötigt beim Beantworten 90,32 Prozent weniger Token als Long-Context-Prompting.",
+   "sources": [
+    {
+     "label": "latent.space",
+     "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "research"
+  },
+  {
+   "topic_id": "context-engineering",
+   "title": "deepseek-flash: Deferred Tool Loading erhält den Cache-Präfix",
+   "category": "agents",
+   "impact": 3,
+   "date": "2026-11-27",
+   "summary": "Beim von DeepSeek dokumentierten Deferred Tool Loading werden neue Tool-Definitionen ans Ende der Unterhaltung angehängt, damit der bestehende Cache-Präfix erhalten bleibt. Laut Bericht ist die Funktion auf deepseek-flash über die Anthropic-Messages- und OpenAI-Responses-Schnittstellen beschränkt.",
+   "sources": [
+    {
+     "label": "latent.space",
+     "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "update"
+  },
+  {
+   "topic_id": "context-engineering",
+   "title": "Zhihu und DeepSeek starten Wissensabruf mit Urheberangaben",
+   "category": "tools",
+   "impact": 3,
+   "date": "2026-11-27",
+   "summary": "Zhihu und DeepSeek starten laut Bericht einen Wissensabruf über Zhihu-Inhalte, der die jeweiligen Urheber nennt und auf die ursprünglichen Beiträge verlinkt. Angaben zur technischen Umsetzung oder zum Umfang des verfügbaren Bestands fehlen im vorgelegten Beleg.",
+   "sources": [
+    {
+     "label": "latent.space",
+     "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "integration"
   },
   {
    "topic_id": "ai-security",
-   "date": "2026-10-24",
-   "summary": "OpenAI beschreibt seine umgesetzte Richtlinie ohne Live-Internetzugang für internes Frontier-Training; stattdessen kommen gecachte und simulierte Webumgebungen zum Einsatz.[86][87]",
-   "skip": []
+   "title": "BSI warnt vor autonomen Angriffen mit Artex und Agentic Offensive Frameworks",
+   "category": "security",
+   "impact": 4,
+   "date": "2026-11-26",
+   "summary": "Laut heise warnt das BSI vor einer verschärften Bedrohungslage durch Agentic Offensive Frameworks wie Artex, deren Agentenschwärme Planung, Ausführung und Anpassung weitgehend autonom übernehmen. Für Organisationen mit Nachholbedarf priorisiert die Behörde die Reaktionsfähigkeit bei Sicherheitsvorfällen und die Absicherung der einfachsten Angriffswege. Im begleitenden heise-security-PRO-Talk empfahl Sicherheitsexperte Florian Roth insbesondere kleinere Angriffsflächen, gehärtete Komponenten, MFA und Netzwerksegmentierung.",
+   "sources": [
+    {
+     "label": "www.heise.de",
+     "url": "https://www.heise.de/news/Kuenstliche-Intelligenz-als-Angreifer-Eine-neue-Aera-hat-begonnen-11539545.html"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "security"
+  },
+  {
+   "topic_id": "ai-security",
+   "title": "TACT-Bench testet Tool-Agenten mit adaptiven Angriffen und TACT-TrustPrime",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-11-24",
+   "summary": "TACT-Bench verbindet auf Agentenantworten reagierende Gesprächsangriffe mit harmlosen Vergleichsaufgaben; die Metrik Paired Selective Trustworthiness bewertet sichere Ablehnung zusammen mit erfolgreicher legitimer Aufgabenerfüllung. TACT-TrustPrime schaltet einem unabhängigen Angriff eine harmlose Aufgabe vor. Über sechs Modelle berichten die Autoren für TACT-Base eine im Mittel um 17,53 Prozent höhere angriffsbedingte Fehlerrate als bei vier kompatiblen Vergleichsverfahren und durch TrustPrime einen weiteren Anstieg um 17,01 Prozent; zwei getestete Abwehrmethoden helfen nur begrenzt.",
+   "sources": [
+    {
+     "label": "arxiv.org",
+     "url": "https://arxiv.org/abs/2611.31756"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "research"
+  },
+  {
+   "topic_id": "ai-security",
+   "title": "CAPTA erkennt Sprachmodelle hinter KI-Agenten anhand von Auswahlpräferenzen",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-11-24",
+   "summary": "CAPTA präsentiert Multiple-Choice-Fragen als Verifikationsaufgaben und identifiziert das Backend-Modell anhand beobachtbarer Auswahlpräferenzen, ohne es direkt abzufragen. Die Autoren berichten bei 25 LLMs aus zehn Modellfamilien von durchschnittlich 99,0 Prozent Identifikationsgenauigkeit mit zehn Fragen. Das Verfahren könnte modellspezifische Prompt-Injection-Angriffe oder gezielt manipulierte Inhalte erleichtern.",
+   "sources": [
+    {
+     "label": "arxiv.org",
+     "url": "https://arxiv.org/abs/2611.32686"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "research"
+  },
+  {
+   "topic_id": "ai-security",
+   "title": "Pydantic AI Harness: CVE-2026-136638 umgeht Netzwerkrichtlinien von PlaywrightBrowser",
+   "category": "security",
+   "impact": 3,
+   "date": "2026-11-26",
+   "summary": "Laut veröffentlichtem Schwachstelleneintrag behandelt PlaywrightBrowser in pydantic-ai-harness 0.24.0 bis 0.73.0 URLs mit einem Backslash fälschlich als hostlos, sodass manipulierte Seiten Skript- und Ressourcenanfragen an gesperrte oder private Ziele senden können. Die Umgehung betrifft unter anderem fetch, XHR, sendBeacon und WebSocket, nicht aber Navigation und Frames; das Lesen privater Antworten erfordert zusätzliche Bedingungen. Als behoben wird die Lücke ab Version 0.74.0 ausgewiesen; bis zum Upgrade empfiehlt der Eintrag außerhalb des Browsers durchgesetzte Firewall- oder Proxy-Filter.",
+   "sources": [
+    {
+     "label": "services.nvd.nist.gov",
+     "url": "https://services.nvd.nist.gov/rest/json/cves/2.0?cveId=CVE-2026-136638"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "security"
+  },
+  {
+   "topic_id": "ai-security",
+   "title": "PATH soll Berechtigungspräferenzen persönlicher KI-Agenten hierarchiekonform vorhersagen",
+   "category": "security",
+   "impact": 2,
+   "date": "2026-11-24",
+   "summary": "Der Parent-gated Authorization Transformer for Hierarchies (PATH) soll individuelle Autorisierungspräferenzen aus wenigen beobachteten Nutzerentscheidungen lernen. Die Architektur kombiniert hierarchiebewusste Attention-Masken, an übergeordnete Berechtigungen gekoppelte Wahrscheinlichkeiten und Embeddings für Hierarchieebenen. Die Autoren berichten von Tests mit simulierten Daten, KI-generierten Nutzerprofilen und realen Autorisierungsdaten, in denen keine Hierarchieverletzungen auftraten.",
+   "sources": [
+    {
+     "label": "arxiv.org",
+     "url": "https://arxiv.org/abs/2611.32018"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "research"
   },
   {
    "topic_id": "ai-governance",
-   "date": "2026-10-24",
-   "summary": "Ars und Android Authority berichten am 23. Oktober über eine seit 16. Oktober geltende Ausnahme in Googles Datenschutzrichtlinie: Freiwillig mit anderen Google-Diensten geteilte Gmail-, Drive- oder Photos-Daten können zur personalisierten Werbung beitragen.[105][106][107]",
-   "skip": []
+   "title": "Character.AI: 42 US-Generalstaatsanwälte gehen gegen Verkauf privater Chats vor",
+   "category": "security",
+   "impact": 4,
+   "date": "2026-11-25",
+   "summary": "Laut TechCrunch intervenieren 42 US-Generalstaatsanwälte im Insolvenzverfahren von Character.AI gegen die geplante Versteigerung privater Chats und weiterer personenbezogener Daten. Nach Behördenangaben betrifft der Datensatz mehr als 21 Millionen US-Konten, darunter über 2,1 Millionen Konten Minderjähriger; beanstandet werden fehlende Schutzvorgaben für Käufer und Widersprüche zu früheren Datenschutzversprechen. Die Auktion ist laut Bericht für den 1. Dezember geplant, die Absichten des ausgewählten Ausgangsbieters für die Daten sind unklar.",
+   "sources": [
+    {
+     "label": "techcrunch.com",
+     "url": "https://techcrunch.com/2026/11/25/state-ags-fight-character-ais-plan-to-auction-off-users-private-chats/"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "policy"
+  },
+  {
+   "topic_id": "ai-governance",
+   "title": "BIS-Fernzugriffsregel: Bericht nennt mehr Wiederverkaufsangebote für Nvidia B300",
+   "category": "business",
+   "impact": 4,
+   "date": "2026-11-27",
+   "summary": "Latent Space referiert einen CNBC-Bericht, wonach Wiederverkäufer infolge der BIS-Beschränkungen für China-bezogenen Fernzugriff ungewöhnlich viele Nvidia-Beschleuniger anbieten. Dazu zählen dem Bericht zufolge geplante Zuteilungen von Tausenden Nvidia-B300-Einheiten. Sinkende Endkundenpreise sind damit nicht belegt.",
+   "sources": [
+    {
+     "label": "latent.space",
+     "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "policy"
   },
   {
    "topic_id": "enterprise",
-   "date": "2026-10-24",
-   "summary": "American Express kündigt einen Abbau von rund fünf Prozent seiner weltweiten Belegschaft und eine Restrukturierungsbelastung von 336 Millionen US-Dollar an.[108]",
-   "skip": []
+   "title": "TokenSpeed-Vergleich: Vera Rubin NVL72 liefert laut SemiAnalysis mehr Tokens pro Dollar als GB300 NVL72",
+   "category": "business",
+   "impact": 4,
+   "date": "2026-11-27",
+   "summary": "Latent Space referiert einen SemiAnalysis-Test, der mit demselben TokenSpeed-Engine für Vera Rubin NVL72 zwei- bis 6,5-mal mehr Tokens pro Dollar Gesamtbetriebskosten als für GB300 NVL72 ausweist. Der Vorteil wächst dem Bericht zufolge bei höheren Interaktivitätsanforderungen. Die Zahlen gelten für den referierten Analystentest und sind keine allgemeine Leistungs- oder Kostengarantie.",
+   "sources": [
+    {
+     "label": "latent.space",
+     "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "research"
   },
+  {
+   "topic_id": "enterprise",
+   "title": "Nvidia stoppt laut Bericht KI-Chiplieferungen nach Südostasien",
+   "category": "business",
+   "impact": 4,
+   "date": "2026-11-27",
+   "summary": "Latent Space referiert einen Bericht von The National, wonach Nvidia angesichts verschärfter US-Exportkontrollen KI-Chiplieferungen nach Südostasien gestoppt hat. Die Durchsetzung soll dem Bericht zufolge die Weiterleitung an beschränkte Endnutzer, insbesondere in China, verhindern; eine unmittelbar vorgelegte Nvidia-Bestätigung fehlt.",
+   "sources": [
+    {
+     "label": "latent.space",
+     "url": "https://latent.space/p/ainews-inside-the-exploding-coding-data-market/"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "business"
+  },
+  {
+   "topic_id": "enterprise",
+   "title": "Claude Enterprise: Project Tags ordnen Projektausgaben Kostenstellen zu",
+   "category": "business",
+   "impact": 3,
+   "date": "2026-11-06",
+   "summary": "Anthropic bietet berechtigten Enterprise-Organisationen eine Beta von Project Tags an, mit der sich Claude-Projekte bestehenden Kosten- oder Mandatscodes zuordnen lassen. Laut Anbieter wird damit der Großteil der Ausgaben innerhalb dieser Projekte nach Tags ausgewiesen, nicht ausdrücklich sämtliche Kosten.",
+   "sources": [
+    {
+     "label": "docs.anthropic.com",
+     "url": "https://docs.anthropic.com/en/docs/release-notes/claude-apps"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "public_beta"
+  },
+  {
+   "topic_id": "enterprise",
+   "title": "Amazon Connect Customer ermöglicht Vergleichstests vor KI-Modellwechseln",
+   "category": "business",
+   "impact": 2,
+   "date": "2026-11-23",
+   "summary": "Laut AWS können Manager dieselben Kundenkontakte mit der bisherigen und einer neuen KI-Modellversion bewerten lassen, um Unterschiede vor einem Wechsel zu erkennen und Bewertungskriterien anzupassen. Je Bewertungsformular lässt sich festlegen, ob automatisch die neueste Modellversion verwendet oder eine bestimmte Version beibehalten wird. Die Funktion ist nach Anbieterangaben in allen kommerziellen AWS-Regionen verfügbar, in denen Amazon Connect Customer angeboten wird.",
+   "sources": [
+    {
+     "label": "aws.amazon.com",
+     "url": "https://aws.amazon.com/about-aws/whats-new/2026/11/amazon-connect-customer-test-ai-model-version-upgrades-automated-evaluations"
+    }
+   ],
+   "first_seen": "2026-11-28",
+   "change_type": "update"
+  }
+ ],
+ "summaries": [
   {
    "topic_id": "ai-news",
    "date": "2026-10-25",
@@ -38577,40 +39185,88 @@
    "date": "2026-11-27",
    "summary": "Clay Sculptor setzt auf Pi und Clay Audiences für gemeinsamen Datenkontext.",
    "skip": []
+  },
+  {
+   "topic_id": "ai-news",
+   "date": "2026-11-28",
+   "summary": "OpenRouter ergänzt Batch-Ergebnisabruf und context_management für Responses.",
+   "skip": []
+  },
+  {
+   "topic_id": "lokale-llms",
+   "date": "2026-11-28",
+   "summary": "Halo kündigt Post-Training-Wettbewerb mit 1,5 Millionen Dollar an Rechenressourcen an.",
+   "skip": []
+  },
+  {
+   "topic_id": "agentic-engineering",
+   "date": "2026-11-28",
+   "summary": "Antigravity 2.35.1 setzt aktive Agentengespräche nach Neustarts fort.",
+   "skip": []
+  },
+  {
+   "topic_id": "ai-tools",
+   "date": "2026-11-28",
+   "summary": "Datasette Agent: datasette-agent 0.7a1 verbessert Fragmentnavigation im Seitenpanel.",
+   "skip": []
+  },
+  {
+   "topic_id": "context-engineering",
+   "date": "2026-11-28",
+   "summary": "HyperHarness erzeugt persönliche Memory-Harnesses in einem Durchlauf.",
+   "skip": []
+  },
+  {
+   "topic_id": "ai-security",
+   "date": "2026-11-28",
+   "summary": "TACT-Bench testet Tool-Agenten mit adaptiven Angriffen und TACT-TrustPrime.",
+   "skip": []
+  },
+  {
+   "topic_id": "ai-governance",
+   "date": "2026-11-28",
+   "summary": "Character.AI: 42 US-Generalstaatsanwälte gehen gegen Verkauf privater Chats vor.",
+   "skip": []
+  },
+  {
+   "topic_id": "enterprise",
+   "date": "2026-11-28",
+   "summary": "Claude Enterprise: Project Tags ordnen Projektausgaben Kostenstellen zu.",
+   "skip": []
   }
  ],
  "fingerprints": {
   "ai-news": {
-   "hash": "54749b9a1b0cbfadee50783733a1d487c4302990",
-   "date": "2026-11-27"
+   "hash": "87867660ed260c3a9c97075b9068f146dfc812b8",
+   "date": "2026-11-28"
   },
   "lokale-llms": {
-   "hash": "e7f16fe0cdefbe64913a64aecdf6e89c4503c852",
-   "date": "2026-11-27"
+   "hash": "b6a66bbfbcc45912edff787b9c7dd832fa7d199a",
+   "date": "2026-11-28"
   },
   "agentic-engineering": {
-   "hash": "9ff33af7ddd5366bcd01ac67f9298b43dd14c8d2",
-   "date": "2026-11-27"
+   "hash": "03d6983f3782cb5909207752d66cccda77fcb579",
+   "date": "2026-11-28"
   },
   "ai-tools": {
-   "hash": "31ce577ff5275cef9937cf338d0697447e1d157f",
-   "date": "2026-11-27"
+   "hash": "345a25ca8ad3fc29ab8ef10d3ae800bf409e163c",
+   "date": "2026-11-28"
   },
   "context-engineering": {
-   "hash": "d028613a79093f01379759f6f01c687fbbb065d8",
-   "date": "2026-11-27"
+   "hash": "ea5496799eccfebae4369f13b3d430bd3c2e3a1e",
+   "date": "2026-11-28"
   },
   "ai-security": {
-   "hash": "a0c0737201bd946feeb11a9879f665101348b7b7",
-   "date": "2026-11-27"
+   "hash": "df063b5811cab0c2a1fe2e9d7e2591e46e154628",
+   "date": "2026-11-28"
   },
   "ai-governance": {
-   "hash": "cad3325ae5a2b55945bdba8fb72fd0c79c6e72a4",
-   "date": "2026-11-27"
+   "hash": "08dd8d3fff4511ae83d340d237b5ab2e01a56b35",
+   "date": "2026-11-28"
   },
   "enterprise": {
-   "hash": "8948571372a405d8a5c145d302672d0fab74909d",
-   "date": "2026-11-27"
+   "hash": "a3dcaf9d25ec64a7ff1a6855f2515fc31457aed1",
+   "date": "2026-11-28"
   }
  }
 }
